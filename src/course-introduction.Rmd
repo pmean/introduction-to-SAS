@@ -1,0 +1,78 @@
+---
+title: "Course Introduction"
+author: "Steve Simon"
+date: "July 24, 2018"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+# I will not use too much R in a class called "Introduction to SAS,"
+# but am including this chunk just in case I need something from R.
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Course instructor, Steve Simon
+
+![](~/introduction-to-SAS/images/SteveSimonPic.jpg)
+
+<div class="notes">
+
+Greetings! My name is Steve Simon and I am the instructor for the class, MEDB 5507, Introduction to SAS.
+
+</div>
+
+## Original developer, Mary Gerkovich
+
+![](~/introduction-to-SAS/images/MaryGerkovichUMKC.jpg)
+
+
+<div class="notes">
+
+This course was originally developed by Dr. Mary Gerkovich. I've changed a few things, but I owe a big debt of gratitude to Mary for all of her hard work.
+
+</div>
+
+## A bit about myself
+
+![](~/introduction-to-SAS/images/SteveSimonPic2.jpg)
+
+
+<div class="notes">
+
+Let me share a bit about myself. 
+
+</div>
+
+## DBHI, http://med.umkc.edu/dbhi/
+
+![](~/introduction-to-SAS/images/dbhi.png)
+
+
+<div class="notes">
+
+I am a part-time faculty member in the Department of Biomedical and Health Informatics. 
+
+</div>
+
+## Blog, http://blog.pmean.com
+
+![](~/introduction-to-SAS/images/blog.png)
+
+
+<div class="notes">
+
+I have a blog and a website. Here's a picture of my blog. I write about Statistics, Research Ethics, and Evidence-Based Medicine.
+
+</div>
+
+## Canvas site
+
+![](~/introduction-to-SAS/images/canvas.png)
+
+
+<div class="notes">
+
+My course is currently under development in Canvas. I hope to have a final version soon. Welcome to this class. I hope you'll have fun and learn a lot.
+
+</div>
+
