@@ -1,0 +1,227 @@
+---
+title: "Overview of my Canvas site"
+author: "Steve Simon"
+date: "July 24, 2018"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+# I will not use too much R in a class called "Introduction to SAS,"
+# but am including this chunk just in case I need something from R.
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Assignment objectives
+
+* A course naviagation menu
+* A "Start Here" page
+* Course learning objectives
+* Three module learning objectives
+* A graded assignment
+* A manual grade column
+* A 5-question quiz
+* A captioned instructor introduction video
+* An accessible syllabus
+* An introduction activity for students
+* A rubric attached to an assignment.
+
+<div class="notes">
+
+In the following video, I will illustrate various requirements for my assignment.
+
+Please note that I will rely mostly on screen shots of my Canvas site organized into an html presentation. It's easier for me than a live presentation and more closely mimics how I will do other videos for my online class.
+
+Let me offer two warnings of things I have not quite gotten to, but intend to fix as soon as possible. 
+
+The current incarnation of the html presentation does not have alt text for my images, so I will place the alt text beneath the images for now. I also need to use descriptive text for many of my URLs.
+
+Let me know if you need these fixed prior to certifying my successful completion of this assignment.
+
+To keep this video short, I won't read most of the contents of each slide. In a real class video, I would certainly take the time to do this properly.
+
+</div>
+
+## Course naviagation and start page
+
+![Alt text: Canvas screenshot of course navigation and start page](~/introduction-to-SAS/images/canvas_mainpage.png)
+
+<div class="notes">
+
+Here is what you see when you open my Canvas sandbox site. Notice the organized left-hand course navigation menu.
+
+The same page displays my "Start Here" page.
+
+</div>
+
+## Course learning objectives
+
+![Alt text: Canvas screenshot of my learning objectives](~/introduction-to-SAS/images/canvas_learning_objectives.png)
+
+<div class="notes">
+
+My start here page includes the course learning objectives.
+
+</div>
+
+## Module 1 learning objectives
+
+![Alt text: Canvas screenshot of module 1 learning objectives](~/introduction-to-SAS/images/canvas_module1.png)
+
+<div class="notes">
+
+Here are the learning objectives for module 1, 
+
+</div>
+
+## Module 2 learning objectives
+
+![Alt text: Canvas screenshot of module 2 learning objectives](~/introduction-to-SAS/images/canvas_module2.png)
+
+<div class="notes">
+
+and module 2,
+
+</div>
+
+## Module 3 learning objectives
+
+![Alt text: Canvas screenshot of module 3 learning objectives](~/introduction-to-SAS/images/canvas_module3.png)
+
+<div class="notes">
+
+and module 3.
+
+</div>
+
+## My gradebook
+
+![Alt text: Canvas screenshot of gradebook](~/introduction-to-SAS/images/canvas_gradebook.png)
+
+<div class="notes">
+
+You can find the next three requirements via my gradebook.
+
+</div>
+
+## A published, graded assignment;
+
+![Alt text: Canvas screenshot of Homework 1](~/introduction-to-SAS/images/canvas_assignment.png)
+
+<div class="notes">
+
+Here is my published graded assignment. Notice that I need a descriptive label for the URL listed here. I will fix that as soon as possible.
+
+</div>
+
+## A manual grade column;
+
+![Alt text: Canvas screenshot of 5-question quiz](~/introduction-to-SAS/images/canvas_manual_grade.png)
+
+<div class="notes">
+
+I created a manual grade column using the "on paper" option.
+
+</div>
+
+## A published, 5-question quiz;
+
+![Alt text: Canvas screenshot of 5-question quiz](~/introduction-to-SAS/images/canvas_quiz.png)
+
+<div class="notes">
+
+Here is my five question quiz.
+
+</div>
+
+## A captioned Panopto instructor introduction video;
+
+![Alt text: Canvas screenshot of instructor introduction video](~/introduction-to-SAS/images/canvas_learning_objectives.png)
+
+<div class="notes">
+
+You can find a link to my captioned instructor video on my home page.
+
+</div>
+
+## Syllabus
+
+![Alt text: Canvas screenshot of syllabus](~/introduction-to-SAS/images/canvas_syllabus.png)
+
+<div class="notes">
+
+You can find my syllabus under (surprise!) the syllabus link. It uses headers to make it easier for screen readers. I have yet to includeuse descriptive labels for all my URLs. I will get this done as soon as possible.
+
+</div>
+
+## An introduction activity for students
+
+![Alt text: Canvas screenshot of introduction activity](~/introduction-to-SAS/images/canvas_discussion.png)
+
+<div class="notes">
+
+Here is my introduction activity, using the Canvas discussion board.
+
+</div>
+
+
+## A rubric attached to an assignment.
+
+![Alt text: Canvas screenshot of rubric criteria 1](~/introduction-to-SAS/images/canvas_rubric1.png)
+
+<div class="notes">
+
+Here is the first of four criteria for my rubric,
+
+</div>
+
+## A rubric (part 2)
+
+![Alt text: Canvas screenshot of rubric criteria 2](~/introduction-to-SAS/images/canvas_rubric2.png)
+
+<div class="notes">
+
+and the second,
+
+</div>
+
+## A rubric (part 3)
+
+![Alt text: Canvas screenshot of rubric criteria 2](~/introduction-to-SAS/images/canvas_rubric3.png)
+
+<div class="notes">
+
+and the third,
+
+</div>
+
+## A rubric  (part 4)
+
+![Alt text: Canvas screenshot of rubric criteria 4](~/introduction-to-SAS/images/canvas_rubric4.png)
+
+<div class="notes">
+
+and the fourth.
+
+</div>
+
+## Summary
+
+* A course naviagation menu
+* A "Start Here" page
+* Course learning objectives
+* Three module learning objectives
+* A graded assignment
+* A manual grade column
+* A 5-question quiz
+* A captioned instructor introduction video
+* An accessible syllabus
+* An introduction activity for students
+* A rubric attached to an assignment.
+
+<div class="notes">
+
+Here's a review of everything I covered. Thank you and let me know if I need to address any deficiencies.
+
+</div>
+
+
