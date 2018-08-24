@@ -1,0 +1,58 @@
+---
+title: "Getting started"
+author: "Steve Simon"
+date: "August 23, 2018"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+# I will not use too much R in a class called "Introduction to SAS,"
+# but am including this chunk just in case I need something from R.
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Course instructor, Steve Simon
+
+![](~/introduction-to-SAS/images/SteveSimonPic.jpg)
+
+These slides were printed on `r Sys.time()`.
+
+<div class="notes">
+
+Greetings! My name is Steve Simon and I am the instructor for the class, MEDB 5507, Introduction to SAS.
+
+</div>
+
+- - -
+
+![](~/introduction-to-SAS/images/virtualbox.png)
+
+
+<div class="notes">
+
+If you are using SAS University, you start by opening Oracle Virtualbox
+
+</div>
+
+- - -
+
+![](~/introduction-to-SAS/images/virtualbox2.png)
+
+
+<div class="notes">
+
+Click on the SAS University Edition tab and a new window opens up. It explains that you need to point your web browser to a particular location. It also warns you to keep this window open.
+
+</div>
+
+- - -
+
+![](~/introduction-to-SAS/images/virtualbox3.png)
+
+
+<div class="notes">
+
+When you open your web browser to http://localhost:10080, you get the option of starting with SAS Studio or with a Jupyter notebook. I have not had much luck with Jupyter, but you are welcome to try this on your own.
+
+</div>
+
