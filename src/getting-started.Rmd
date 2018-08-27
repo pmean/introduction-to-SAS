@@ -60,7 +60,18 @@ When you open your web browser to http://localhost:10080, you get the option of 
 
 </div>
 
-- - -
+- - -- - -
+
+![](~/introduction-to-SAS/images/sas-university-startup.png)
+
+
+<div class="notes">
+
+When you open your web browser to http://localhost:10080, you get the option of starting with SAS Studio or with a Jupyter notebook. I have not had much luck with Jupyter, but you are welcome to try this on your own.
+
+</div>
+
+
 
 ![](~/introduction-to-SAS/images/opening-screen.png)
 
@@ -222,6 +233,38 @@ Here's what the output window looks like. Notice that SAS uses a monospaced font
 <div class="notes">
 
 Here's what the html output looks like. Notice variety of font sizes and colors.
+
+</div>
+
+- - -
+
+![](~/introduction-to-SAS/images/sas-university-program.png)
+
+<div class="notes">
+
+You will notice a slightly different appearance with SAS University. Here is the program window.
+
+</div>
+
+- - -
+
+![](~/introduction-to-SAS/images/sas-university-log.png)
+
+<div class="notes">
+
+Here is the log window. Notice that the counts for errors, warnings, and notes appear at the top, and a missing count means zero errors and zero warnings. Hooray!
+
+- - -
+
+![](~/introduction-to-SAS/images/sas-university-results.png)
+
+<div class="notes">
+
+Here is the results window. The icons near the top offer a variety of export options, among other things.
+
+</div>
+
+
 
 </div>
 
