@@ -30,7 +30,11 @@ Greetings! My name is Steve Simon and I am the instructor for the class, MEDB 55
 
 <div class="notes">
 
-If you are using SAS University, you start by opening Oracle Virtualbox
+If you are using SAS University, you start by opening Oracle Virtualbox.
+
+Installation instructions are available.
+
+http://support.sas.com/software/products/university-edition/docs/en/SASUniversityEditionQuickStartVirtualBox.pdf
 
 </div>
 
