@@ -56,3 +56,168 @@ When you open your web browser to http://localhost:10080, you get the option of 
 
 </div>
 
+- - -
+
+![](~/introduction-to-SAS/images/opening-screen.png)
+
+
+<div class="notes">
+
+If you are running the "regular" version of SAS, here's an image of what the opening screen looks like. For the benefit of this presentation, I am going to resize everything, close some of the windows, and maximize the one window of greatest importance, the program editor window.
+
+</div>
+
+- - -
+
+![](~/introduction-to-SAS/images/program-editor.png)
+
+
+<div class="notes">
+
+This is the program editor window. You type in your program in this window, or read an existing program from another window. The other two remaining tabs, the log window, and the output window, are also important.
+
+</div>
+
+- - -
+
+![](~/introduction-to-SAS/images/test-program1.png)
+
+
+<div class="notes">
+
+Here's a simple test program. After you type this program in, click on FILE | SAVE and store your program somewhere safe.
+
+</div>
+
+## Test program
+
+```{sas, eval=FALSE, echo=TRUE}
+data test_example;
+ input x y;
+ cards;
+1 2
+2 4
+3 6
+;
+
+proc means data=test_example;
+  var x y;
+  title "Descriptive statistics";
+run;
+```
+
+<div class="notes">
+
+After you type this program in, click on FILE | SAVE and store your program somewhere safe.
+
+</div>
+
+
+- - -
+
+![](~/introduction-to-SAS/images/log-window1.png)
+
+
+<div class="notes">
+
+The font here is a bit small, but notice that there are no red messages indicating warnings or errors.
+
+</div>
+
+- - -
+
+![](~/introduction-to-SAS/images/log-window2.png)
+
+
+<div class="notes">
+
+Always start looking for error messages at the top. The very first error or warning message is most likely to be helpful, and later errors/warnings are often of less value.
+
+</div>
+
+
+## Log messages
+
+```
+1    data test_example;
+2     input x y;
+3     cards;
+
+NOTE: The data set WORK.TEST_EXAMPLE has 3 observations and 2 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.51 seconds
+      cpu time            0.04 seconds
+```
+
+<div class="notes">
+
+Always watch the log to see that you have read in the proper number of observations.
+
+</div>
+
+
+## Log messages
+
+```
+9    proc means data=test_example;
+10     var x y;
+11     title "Descriptive statistics";
+12   run;
+
+NOTE: Writing HTML Body file: sashtml.htm
+NOTE: There were 3 observations read from the data set WORK.TEST_EXAMPLE.
+NOTE: PROCEDURE MEANS used (Total process time):
+      real time           1.72 seconds
+      cpu time            0.20 seconds
+```
+
+<div class="notes">
+
+..and that you are analyzing the proper number of observations.
+
+</div>
+
+## Where is the output?
+
+SAS has several options for storing output.
+
+- In the output window
+- As an html file
+- As a pdf file
+
+<div class="notes">
+
+There are additional options for storing graphics, which I will talk about later. You control where SAS places its output in the results tab of the preferences dialog box. Select TOOLS | OPTIONS | PREFERENCES from the menu and click on the RESULTS tab.
+
+</div>
+
+- - -
+
+![](~/introduction-to-SAS/images/preferences-results-window.png)
+
+<div class="notes">
+
+Click on the CREATE LISTING option box to send the output to the output window. Click on the CREATE HTML option box to send the output to an html file. Click on the BROWSE button to select a default folder for your html file.
+
+</div>
+
+- - -
+
+![](~/introduction-to-SAS/images/output-window.png)
+
+<div class="notes">
+
+Here's what the output window looks like. Notice that SAS uses a monospaced font here.
+
+</div>
+
+- - -
+
+![](~/introduction-to-SAS/images/output-html.png)
+
+<div class="notes">
+
+Here's what the html output looks like. Notice variety of font sizes and colors.
+
+</div>
+
