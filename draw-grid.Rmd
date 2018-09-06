@@ -1,0 +1,21 @@
+---
+title: "Pixel grid"
+author: "Steve Simon"
+date: "8/29/2018"
+output: html_document
+---
+
+This program produces a grid with lines every ten pixels.
+
+```{r grid}
+bmp(filename="grid.bmp", width=800, height=600)
+par(mar=rep(0,4), xaxs="i", yaxs="i")
+plot(c(0, 800), c(0, 600), type="n", axes=FALSE)
+abline(v=(1:79)*10, col="gray", lty="dotted")
+abline(v=(1:19)*40, col="black")
+abline(h=(1:59)*10, col="gray", lty="dotted")
+abline(h=(1:14)*40, col="black")
+polygon(c(10, 30, 30, 10), c(530, 530, 510, 510), border=NA, density=NA, col="white")
+text(20, 520, "80")
+dev.off()
+```
