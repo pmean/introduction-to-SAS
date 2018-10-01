@@ -9,13 +9,13 @@
   have placed your raw data file.                     ;
 
 filename fat
-  "/folders/myfolders/introduction-to-sas/fat.txt";
+  "c:/Users/simons/My Documents/SASUniversityEdition/myfolders/introduction-to-sas/data/fat.txt";
 
 * The libname statement tells SAS where you want
   it to place any permanent SAS data files            ;
   
 libname intro
-  "/folders/myfolders/introduction-to-sas";
+  "c:/Users/simons/My Documents/SASUniversityEdition/myfolders/introduction-to-sas";
 
 * The ods statement tells SAS where to store your
   output and in what format.        
@@ -30,7 +30,7 @@ libname intro
   your program                                        ;  
 
 ods pdf
-  file="/folders/myfolders/introduction-to-sas/lecture1.pdf";
+  file="c:/Users/simons/My Documents/SASUniversityEdition/myfolders/introduction-to-sas/results/lecture1.pdf";
 
 * The data statement creates a new data set. If 
   you want a permanent data set, specify a two part
@@ -136,7 +136,7 @@ proc print
     data=intro.fat(obs=10);
   var case fat_b fat_s dens age;
   title1 "The first ten rows and five columns";
-  title2 "of the fat data set"
+  title2 "of the fat data set";
 run;
 
 * The means procedure will produce descriptive 
