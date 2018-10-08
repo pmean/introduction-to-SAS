@@ -1,4 +1,4 @@
-* lecture1.sas
+* lecture01.sas
   written by Steve Simon
   September 7, 2018;
 
@@ -47,14 +47,16 @@
   continuous variables.
 ;
 
+%let path=c:/Users/simons/My Documents/SASUniversityEdition/myfolders/introduction-to-sas;
+
 filename fat
-  "c:/Users/simons/My Documents/SASUniversityEdition/myfolders/introduction-to-sas/data/fat.txt";
+  "&path/data/fat.txt";
 
 * The libname statement tells SAS where you want
   it to place any permanent SAS data files            ;
   
 libname intro
-  "c:/Users/simons/My Documents/SASUniversityEdition/myfolders/introduction-to-sas";
+  "&path/bin";
 
 * The ods statement tells SAS where to store your
   output and in what format.        
@@ -69,7 +71,7 @@ libname intro
   your program                                        ;  
 
 ods pdf
-  file="c:/Users/simons/My Documents/SASUniversityEdition/myfolders/introduction-to-sas/results/lecture1.pdf";
+  file="&path/results/lecture01.pdf";
 
 * The data statement creates a new data set. If 
   you want a permanent data set, specify a two part
@@ -374,6 +376,23 @@ proc means
   title "Using the nmiss statistic";
 run;
 
+* You can also make simple transformations
+  of your data, such as converting from
+  English units to metric units.
+;
+
+data converted_units;
+  set intro.fat2;
+  ht_cm = ht * 2.54;
+  wt_kg = wt / 2.2; 
+run;
+
+proc print 
+    data=converted_units(obs=10);
+  var ht ht_cm wt wt_kg;
+  title "Original and converted units";
+run;
+
 * A histogram is useful for displaying a 
   continuous variable graphically.
 ;
@@ -381,7 +400,7 @@ run;
 proc sgplot
     data=intro.fat2;
   histogram ht;
-  title "Histogram with default bins"
+  title "Histogram with default bins";
 run;
 
 * You should not accept the default width and
@@ -416,11 +435,183 @@ proc sgplot
     data=intro.fat2;
   histogram ht / binstart=60 binwidth=5;
   xaxis valuesformat=range_fmt.;
-  title "Histogram with wide bins";
+  title "Histogram with re-labeled bins";
 run;
 
+* Note to myself. Talk about saving graphs
+  to a png file, datasets to a csv file.
+;
 
+* The correlation coefficient is a single 
+  number between -1 and +1 that quantifies 
+  the strength and direction of a relationship 
+  between two continuous variables. As a rough 
+  rule of thumb, a correlation larger than +0.7 
+  indicates a strong positive association and a 
+  correlation smaller than -0.7 indicates a 
+  strong negative association. A correlation 
+  between +0.3 and +0.7 (-0.3 and -0.7) indicates
+  a weak positive (negative) association. A 
+  correlation between -0.3 and +0.3 indicates 
+  little or no association.
 
+  Don't take these rules too literally. You're
+  not trying to make definitive statements about
+  your data set. You are just trying to get 
+  comfortable with some general patterns that 
+  occur in your data set. A complex and 
+  definitive statistical analysis will almost
+  certainly not agree with at least some of the
+  preliminary correlations noted here.
 
+  The corr procedure produces, by default, a
+  square correlation matrix of all the 
+  numeric variables. The noprob and nosimple
+  options cut down on the amount of information
+  printed. The with statement produces a
+  rectangular correlation matrix.
+;
 
+proc corr
+    data=intro.fat2
+    noprob nosimple;
+  var fat_b fat_s;
+  with neck -- wrist;
+  title "Correlation matrix";
+run;
+
+* You can save the correlations in a separate
+  data file.
+;
+
+proc corr
+    data=intro.fat2
+    noprint
+    outp=correlations;
+  var fat_b fat_s;
+  with neck -- wrist;
+run;
+
+proc print 
+    data=correlations;
+  title "Correlation matrix output to a data set";
+run;
+
+* Saving as a data file allows you to 
+  manipulate the individual correlations.
+  Here we multiply the correlations by 100,
+  round them, and sort them. This can often
+  simplify the interpretation of large
+  correlation matrices.
+;
+
+data correlations;
+  set correlations;
+  if _type_="CORR";
+  drop type;
+  fat_b=round(100*fat_b);
+  fat_s=round(100*fat_s);
+run;
+
+proc sort
+    data=correlations;
+  by descending fat_b;
+run;
+
+proc print 
+    data=correlations;
+  title "Rounded and re-ordered correlation matrix";
+run;
+
+* A scatterplot is also useful for examining the
+  relationship among variables. You can produce
+  scatterplots several different ways, but the
+  scatterplots produced by the sgplot procedure
+  have the most flexibility.
+;
+
+proc sgplot
+    data=intro.fat2;
+  scatter x=abdomen y=fat_b;
+  title "Simple scatterplot";
+run;
+
+* The reg statement adds a least squares trend
+  line to your graph.
+;
+
+proc sgplot
+    data=intro.fat2;
+  scatter x=abdomen y=fat_b;
+  reg x=abdomen y=fat_b;
+  title "Scatterplot with linear regression line";
+run;
+
+* The pbspline statement adds a smoothing spline
+  to your graph;
+
+proc sgplot
+    data=intro.fat2;
+  scatter x=abdomen y=fat_b;
+  pbspline x=abdomen y=fat_b;
+  title "Simple scatterplot";
+run;
+
+* Homework01.
+
+Having reviewed these analyses, I would like 
+you to turn in some simple analyses that you 
+run on a fresh data set. This homework 
+assignment will be graded pass/fail.
+
+There is a second data set on sleep in 
+mammals. You can find a brief description of
+this data set at
+
+--> http://www.statsci.org/data/general/sleep.html
+
+and you can download the actual data at
+
+--> http://www.statsci.org/data/general/sleep.txt
+
+For every question, include the relevant SAS 
+output and a brief written commentary explaining
+what the results mean. When you send your 
+answers, please include the original questions.
+
+1. Notice that there is a huge range in body 
+weight. Display the information for the 
+smallest and the largest mammals.
+
+2. Which variables have missing data?
+
+3. Calculate the mean and standard deviation 
+for TotalSleep.
+
+4. Draw a histogram for the BodyWt variable.
+Note that this variable is highly skewed. 
+Re-draw the histogram on the log scale. 
+For exta credit, relabel the axes with values
+at 0.001, 0.01, etc.
+
+5. Calculate the ratio of BrainWt to BodyWt 
+and express it as a percentage. Be sure to 
+convert grams to kilograms (or vice versa) 
+before computing the ratio. What animal has
+the smallest/largest ratio?
+
+6. Do bigger animals sleep longer or live
+longer? Show your results using a correlation
+coefficient.
+
+7. Do animals who have high degrees of 
+Predation, Exposure, or Danger sleep less?
+Show your results using a plot and a trendline.
+
+8. Place all the key results into a Word 
+document or PowerPoint presentation, or 
+as a PDF file or as an HTML file.
+
+;
 ods pdf close;
+
