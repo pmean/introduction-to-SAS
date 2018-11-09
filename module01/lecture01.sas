@@ -47,16 +47,17 @@
   continuous variables.
 ;
 
-%let path=c:/Users/simons/My Documents/SASUniversityEdition/myfolders/introduction-to-sas;
+%let xpath=c:/Users/simons/My Documents/SASUniversityEdition/myfolders/introduction-to-sas;
+%let path=/folders/myfolders/introduction-to-sas;
 
 filename fat
-  "&path/data/fat.txt";
+  "&path/data01/fat.txt";
 
 * The libname statement tells SAS where you want
   it to place any permanent SAS data files            ;
   
 libname intro
-  "&path/bin";
+  "&path/data01";
 
 * The ods statement tells SAS where to store your
   output and in what format.        
@@ -71,7 +72,7 @@ libname intro
   your program                                        ;  
 
 ods pdf
-  file="&path/results/lecture01.pdf";
+  file="&path/module01/lecture01.pdf";
 
 * The data statement creates a new data set. If 
   you want a permanent data set, specify a two part

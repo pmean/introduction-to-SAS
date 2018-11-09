@@ -2,18 +2,17 @@
   written by Steve Simon
   September 17, 2018;
 
-%let path=c:/Users/simons/My Documents/SASUniversityEdition/myfolders/introduction-to-sas;
+ods pdf
+  file="&path/module01/hw01.pdf";
+
+%let xpath=c:/Users/simons/My Documents/SASUniversityEdition/myfolders/introduction-to-sas;
+%let path=/folders/myfolders/introduction-to-sas;
 
 filename sleep
-  "&path/data/sleep.txt";
+  "&path/data01/sleep.txt";
 
 libname intro
-  "&path/bin";
-
-ods pdf
-  file="&path/results/hw01.pdf";
-filename sleep
-  "c:/Users/simons/My Documents/SASUniversityEdition/myfolders/introduction-to-sas/data/sleep.txt";
+  "&path/data01";
 
 data intro.sleep;
   infile sleep delimiter='09'X firstobs=2;
