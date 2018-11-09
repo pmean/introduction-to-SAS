@@ -2,17 +2,17 @@
   written by Steve Simon
   October 22, 2018;
 
-%let xpath=/folders/myfolders;
-%let path=c:/Users/simons/My Documents/SASUniversityEdition/myfolders;
+%let xpath=/folders/myfolders/introduction-to-sas;
+%let path=c:/Users/simons/My Documents/SASUniversityEdition/myfolders/introduction-to-sas;
 
 ods pdf
-  file="&path/introduction-to-sas/module02/lecture02.pdf";
+  file="&path/module02/lecture02.pdf";
 
 filename titanic
-  "&path/data/titanic_v00.txt";
+  "&path/data02/titanic_v00.txt";
 
 libname intro
-  "&path/data";
+  "&path/data02";
 
 * As a general rule, proc import works best for
   simple delimited files where the first row
@@ -25,7 +25,7 @@ libname intro
 ;
 
 proc import
-    datafile="&path/data/titanic_v00.txt"
+    datafile="&path/data02/titanic_v00.txt"
     out=intro.titanic
     dbms=dlm
     replace;
