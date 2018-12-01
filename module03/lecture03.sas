@@ -14,7 +14,12 @@ filename fev
 libname intro
   "&path/data03";
 
-* The fev data set is described on the web at
+* Today, you will analyze some data sets that
+  have a mix of categorical and continuous
+  variables. The first data set looks at 
+  pumonary function in a group of children.
+  You can find a description of this data set at
+
   http://jse.amstat.org/datasets/fev.txt
 ;
 
@@ -49,6 +54,74 @@ proc print
   ;
   title1 "Partial listing of fev data";
 run;
+
+* There is a mix of categorical and continuous variables in this data set, but the summary function should work for all of them.
+
+* Calculate correlations among age, ht, and fev.
+
+* Recall that you use a scatterplot to examine the relationship between two continuous variables.
+
+```{r pu.scatterplot}
+plot(pu$ht,pu$fev)
+smooth.curve <- lowess(pu$ht,pu$fev)
+lines(smooth.curve)
+```
+When you want to look at a relationship between a categorical variable and a continuous variable, you should use a boxplot.
+
+```{r pu.boxplots-fev}
+boxplot(fev~smoke.factor,data=pu)
+```
+
+This is very odd. You can get a hint as to why smokers might have higher fev values than non-smokers by looking at how age and smoking status are related.
+
+```{r pu.boxplots-age}
+boxplot(age~smoke.factor,data=pu)
+```
+
+
+## On your own
+
+Look at the relationship between sex and fev.
+
+You should also calculate the means for each continuous variable within each level of the categorical variable.
+
+Note: you don't really need the na.rm=TRUE argument here, but you might in other examples.
+
+```{r pu.by.fev}
+# fev mean by smoke.factor
+by(pu$fev,pu$smoke.factor,mean,na.rm=TRUE)
+# fev standard deviation by smoke.factor
+by(pu$fev,pu$smoke.factor,sd,na.rm=TRUE)
+```
+
+The output is not labelled all that clearly, but you can use the paste function to make things look nicer.
+
+```{r pu.paste.fev}
+grp.means <- by(pu$fev,pu$smoke.factor,mean)
+grp.stdev <- by(pu$fev,pu$smoke.factor,sd)
+colon <- ": "
+plus.minus <- "+/-"
+paste(names(grp.means),colon,round(grp.means,1),
+      plus.minus,round(grp.stdev,1),sep="")
+```
+
+Let's calculate mean ages for smokers and nonsmokers. Notice that smokers are 4 years older on average than nonsmokers.
+
+```{r pu.paste.age}
+grp.means <- by(pu$age,pu$smoke.factor,mean)
+grp.stdev <- by(pu$age,pu$smoke.factor,sd)
+colon <- ": "
+plus.minus <- "+/-"
+paste(names(grp.means),colon,round(grp.means,1),
+      plus.minus,round(grp.stdev,1),sep="")
+```
+
+## On your own
+
+Compute the mean and standard deviation for fev by sex.
+
+
+;
 
 proc import
     datafile="&path/data03/housing.txt"
