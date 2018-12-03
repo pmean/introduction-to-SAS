@@ -52,75 +52,108 @@ proc print
     sex fsex. 
     smoke fsmoke.
   ;
-  title1 "Partial listing of fev data";
+  title1 "Pulmonary function study";
+  title2 "Partial listing of fev data";
 run;
 
-* There is a mix of categorical and continuous variables in this data set, but the summary function should work for all of them.
+* There is a mix of categorical and continuous 
+  variables in this data set. Recall that you 
+  use proc freq for categorical variables and
+  proc means for continuous variables.
+;
 
-* Calculate correlations among age, ht, and fev.
+proc freq
+    data=intro.fev;
+  tables sex smoke / missing;
+  title2 "Frquency counts";
+run;
 
-* Recall that you use a scatterplot to examine the relationship between two continuous variables.
+proc means
+    data=intro.fev;
+  var age fev ht;
+  title2 "Descriptive statistics";
+run;
 
-```{r pu.scatterplot}
-plot(pu$ht,pu$fev)
-smooth.curve <- lowess(pu$ht,pu$fev)
-lines(smooth.curve)
-```
-When you want to look at a relationship between a categorical variable and a continuous variable, you should use a boxplot.
+* The Pearson correlation coefficient gives you 
+  a numeric measure of the strength of association
+  between two continuous variables.
+;
 
-```{r pu.boxplots-fev}
-boxplot(fev~smoke.factor,data=pu)
-```
+proc corr
+    data=intro.fev;
+  var age fev ht;
+run;
 
-This is very odd. You can get a hint as to why smokers might have higher fev values than non-smokers by looking at how age and smoking status are related.
+* You should also examine the association between
+  continuous variables using a scatterplot
+;
+   
+proc sgplot
+    data=intro.fev;
+  scatter x=age y=fev;
+  title2 "Scatterplots";
+run;
 
-```{r pu.boxplots-age}
-boxplot(age~smoke.factor,data=pu)
-```
+proc sgplot
+    data=intro.fev;
+  scatter x=ht y=fev;
+run;
 
+* When you want to look at a relationship between 
+  a categorical variable and a continuous 
+  variable, you should use a boxplot.
+;
 
-## On your own
+proc sgplot
+    data=intro.fev;
+  vbox fev / category=smoke;
+  title2 "Boxplots";
+run;
 
-Look at the relationship between sex and fev.
+* Also look at how the means and standard
+  deviations of your continuous variable change
+  for each level of your categorical variable.
+;
 
-You should also calculate the means for each continuous variable within each level of the categorical variable.
+proc sort
+    data=intro.fev;
+  by smoke;
+run;
 
-Note: you don't really need the na.rm=TRUE argument here, but you might in other examples.
+proc means
+    data=intro.fev;
+  var fev;
+  by smoke;
+  title2 "Descriptive statistics by group";
+run;
 
-```{r pu.by.fev}
-# fev mean by smoke.factor
-by(pu$fev,pu$smoke.factor,mean,na.rm=TRUE)
-# fev standard deviation by smoke.factor
-by(pu$fev,pu$smoke.factor,sd,na.rm=TRUE)
-```
+* This is very odd. You can get a hint as to why 
+  smokers might have higher fev values than 
+  non-smokers by looking at how age and smoking
+  status are related.
+;
 
-The output is not labelled all that clearly, but you can use the paste function to make things look nicer.
+proc sgplot
+    data=intro.fev;
+  vbox age / category=smoke;
+  title2 "Boxplots";
+run;
 
-```{r pu.paste.fev}
-grp.means <- by(pu$fev,pu$smoke.factor,mean)
-grp.stdev <- by(pu$fev,pu$smoke.factor,sd)
-colon <- ": "
-plus.minus <- "+/-"
-paste(names(grp.means),colon,round(grp.means,1),
-      plus.minus,round(grp.stdev,1),sep="")
-```
+proc means
+    data=intro.fev;
+  var age;
+  by smoke;
+  title2 "Descriptive statistics by group";
+run;
 
-Let's calculate mean ages for smokers and nonsmokers. Notice that smokers are 4 years older on average than nonsmokers.
+* You should also examine the relationship
+  between sex and fev. Do this on your own, but
+  there is no need to torn anything in. 
+;
 
-```{r pu.paste.age}
-grp.means <- by(pu$age,pu$smoke.factor,mean)
-grp.stdev <- by(pu$age,pu$smoke.factor,sd)
-colon <- ": "
-plus.minus <- "+/-"
-paste(names(grp.means),colon,round(grp.means,1),
-      plus.minus,round(grp.stdev,1),sep="")
-```
-
-## On your own
-
-Compute the mean and standard deviation for fev by sex.
-
-
+* Your homework assignment will use a data set of
+  housing prices and factors that influence the
+  price.
 ;
 
 proc import
