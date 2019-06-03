@@ -32,6 +32,7 @@ At the completion of this course, students will be able to:
 *	Prepare a report with a summary of analyses conducted in SAS.
 
 ### Course Framework
+
 This class will be taught as a self-paced, asynchronous online course. The instructor will provide datasets and instructions for running various coding functions within SAS. You will apply these functions to import datasets, manipulate these datasets, and produce basic summaries of these datasets.  As the final project of the class, you will produce an independent analysis on a dataset of your own choice that demonstrates the coding techniques and skills that were covered in the course.   
 
 ## INSTRUCTOR
