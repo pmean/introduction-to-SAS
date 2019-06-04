@@ -1,0 +1,5 @@
+### Learning objectives
+
+1. To read text data from a variety of different formats.
+
+2. To compute simple descriptive statistics for continuous variables.
