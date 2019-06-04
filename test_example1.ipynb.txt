@@ -1,0 +1,39 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "data test_example;\n",
+    " input x y;\n",
+    " cards;\n",
+    "1 2\n",
+    "2 4\n",
+    "3 6\n",
+    ";\n",
+    "\n",
+    "proc means data=test_example;\n",
+    "  var x y;\n",
+    "  title \"Descriptive statistics\";\n",
+    "run;"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "SAS",
+   "language": "sas",
+   "name": "sas"
+  },
+  "language_info": {
+   "codemirror_mode": "sas",
+   "file_extension": ".sas",
+   "mimetype": "text/x-sas",
+   "name": "sas"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}

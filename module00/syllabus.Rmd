@@ -1,207 +1,197 @@
 ---
-title: "Syllabus for MEDB5507, Introduction to SAS"
+title: "Syllabus for Introduction to SAS (MEDB 5507)"
 author: "Steve Simon"
-date: "July 30, 2018"
-output: html_document
+output:
+  html_document: default
 ---
 
-```{r setup, include=FALSE}
-# I will not use too much R in a class called "Introduction to SAS,"
-# but am including this chunk just in case I need something from R.
-knitr::opts_chunk$set(echo = FALSE)
+## Printing date
+
+This syllabus was created on 2019-06-04 and last updated on `r Sys.Date()`.
+
+```{r echo=FALSE}
+source(file="prelims.R", echo=FALSE)
 ```
 
-# MEDB 5507, Introduction to SAS 
+## Course information
 
-## Fall 2018, Online, Asynchronous Canvas Course Site
+<!-- regular html comment -->
 
-## INTRODUCTION
+This is an on-line class taught, starting on `r tue[1]` and ending on `r fri[16]`.
 
-A working knowledge of statistical software is a vital skill for anyone involved in quantitative research. This course will introduce data management, simple descriptive statistics, and basic graphical display using the SAS software package. Students will develop the fundamental skills needed to prepare datasets for analysis, and to conduct simple descriptive and graphic analyses and report those analyses. 
+`r read_text("syllabus-course-instructor")`
 
-### Course Description
+`r read_text("syllabus-course-catalog")`
 
-This course will to provide a working familiarity with SAS. Students are not expected to have advanced programming or statistical analysis skills other than the ability to create and modify text files. A basic understanding of statistical terminology and a working familiarity with computer-based data files (e.g., Excel) is necessary. The class will introduce basic methods for data import, data management, simple graphics, and basic statistical analysis. This class will not cover advanced statistical methods, but will provide you with a firm foundation to address these areas in your advanced statistics classes or in your research efforts, including thesis/dissertation research. 
+`r read_text("syllabus-course-description")`
 
-### Student Learning Objectives
+`r read_text("syllabus-course-topics")`
 
-At the completion of this course, students will be able to:
+`r read_text("syllabus-introduction")`
 
-*	Prepare and manipulate datasets for analysis in SAS.
-*	Conduct simple descriptive and graphic analyses of data in SAS.
-*	Prepare a report with a summary of analyses conducted in SAS.
+Note: Many thanks go to Dr. Mary Gerkoich, who provided an excellent structure and format to this class that I will be following closely. 
 
-### Course Framework
+`r read_text("syllabus-course-objectives")`
 
-This class will be taught as a self-paced, asynchronous online course. The instructor will provide datasets and instructions for running various coding functions within SAS. You will apply these functions to import datasets, manipulate these datasets, and produce basic summaries of these datasets.  As the final project of the class, you will produce an independent analysis on a dataset of your own choice that demonstrates the coding techniques and skills that were covered in the course.   
+`r read_text("syllabus-course-objectives1")`
 
-## INSTRUCTOR
+`r read_text("syllabus-course-requirements")`
 
-Steve Simon (but thanks go to Mary M. Gerkovich who did all the heavy lifting for this class)
+`r read_text("syllabus-course-framework")`
 
-Phone: 816-235-6617
+`r read_text("syllabus-course-structure")`
 
-E-mail: simons@umkc.edu
+`r read_text("syllabus-course-required-materials")`
 
-Office:	Department of Biomedical and Health Informatics, School of Medicine, M5-117
+`r read_text("syllabus-course-recommended-materials")`
 
-Office hours:	By appointment; Assistance is available via email and by pre-arranged appointment. Allow up to 24 hours to receive a response from the instructor to an email enquiry. Email enquiries sent outside the regular work week may take longer for a response.
+`r read_text("syllabus-course-resources")`
 
-Course Location: On-line
+`r read_text("syllabus-course-evaluation")`
 
-## CATALOG INFORMATION
+## Assignments
 
-MEDB 5507-0001
+`r read_text("syllabus-assignments-schedule")`
 
-Course Description – This course is an introduction to SAS statistical programming. The course is designed to teach students basic skills that will prepare them to use SAS for data analysis. 
-1 credit hour
+`r read_text("syllabus-assignments-evaluation")`
 
-Prerequisites – none
+`r read_text("syllabus-assignments-grading")`
 
-Course Attributes – graduate research training
+`r read_text("syllabus-assignments-submission")`
 
-Course Format – Lecture, Self-completed assignments, Final project
+`r read_text("syllabus-assignments-discussion-overview")`
 
-Course Instructional Mode – Online 
+`r read_text("syllabus-assignments-discussion-evaluation")`
 
+`r read_text("syllabus-assignments-assessment")`
 
-## CLASS STRUCTURE
+`r read_text("syllabus-assignments-weekly")`
 
-This class is a self-paced, asynchronous online course.  Course material is organized into six parts.  In order to achieve learning objectives, students need to review provided course materials, including recorded lectures. During the lectures, the instructor will provide coding examples to demonstrate application of SAS, and then students will have hands on programming experience with support and feedback from the instructor. Students have access to the SAS program, either directly on a computer that has SAS installed, through UMKC Remote Labs (http://www.umkc.edu/is/remotelabs/), or through SAS resources (refer below to SAS University under Other Resources).  As the final project of the class, students will independently apply these skills to their own dataset and produce an analysis of these data. 
+`r read_text("syllabus-assignments-quizzes")`
 
+## Final project
 
-## STUDENT PROJECTS AND GRADING
+`r read_text("syllabus-project-overview")`
 
-Students will be presented with instructions on using SAS functions and/or syntax files and be shown how to apply those to a provided dataset. Under the supervision of the instructor, students will apply these skills to a different provided dataset. At the end of each part, students will turn in material that documents their work process and results, and a brief written interpretation of the work done for that assignment. For the final project, students will use a new dataset of their own choosing, import that dataset, manipulate it as needed, and produce a statistical report using at least one graphical display and at least one descriptive statistical method. The final project must include a written explanation of the results. The dataset you work with for the final project should include four or more variables of which at least two variables are continuous measures and at least two variables are categorical measures.
+`r read_text("syllabus-project-presentation")`
 
-Grading - This course is graded as Pass / Fail. In order to receive a passing grade, the student must successfully complete the assignments, including the assignment for the final project that includes work using a new dataset provided in the course or your own dataset. This work must be completed and submitted to the instructor by Friday, April 6, 2018 in order to get credit for the course.
+`r read_text("syllabus-project-poster-material")`
 
+`r read_text("syllabus-project-poster-structure")`
 
-## REQUIRED MATERIAL
+`r read_text("syllabus-project-proposal", wed[16])`
 
-There is NO required textbook for this class.	
-The following books are possible resources you might want to purchase for your future work with SAS. 
+For further information, please see a [guide for formatting Theses and Dissertations](http://sgs.umkc.edu/wp-content/uploads/2014/03/UMKC-Guide-to-Formatting-Theses-and-Dissertations.pdf).
 
-*	Delwiche & Slaughter. The Little SAS Book. 5th Edition. SAS Institute Inc., Cary, NC.
-*	Cody. Learning SAS by Example : A Programmer’s Guide. SAS Institute Inc., Cary, NC.
-*	Cody. SAS Statistics by Example. SAS Institute Inc., Cary, NC.
 
 
-### Resources
+## Policies
 
-This course will use SAS for all assignments and the final project. Students will have access to the SAS program either directly on a computer that has SAS installed, through UMKC Remote Labs (http://www.umkc.edu/is/remotelabs/), or through SAS resources (refer below to SAS University under Other Resources).  The Department of Biomedical and Health Informatics has student computer workstations available that can be used by arrangement.
+<!-- 
+  List the course specific policies first, then
+  the institutional policies. Institutional 
+  policies inlcude:
+    Honor policy,
+    Academic calendar,
+    Campus safety,
+    Disability support services,
+    Grade appeal policy.
+-->
 
-Please note that when you are logged onto Remote Labs, it will probably be difficult to have direct access to a drive (USB or hard drive) on the computer you are sitting at (the remote system has a hard time seeing these local devices/ports). You will, however, be able to save files to your Q drive space. When using the UMKC Remote Labs resource, I recommend that you save your course files on your Q drive space or use cloud storage. The Q drive space is part of the UMKC network and your space is automatically mapped when you log onto the UMKC system. If you have questions about how to access this directory, contact UMKC Information Services (816-235-2000). From the Q drive, files can be copied/moved to other storage locations/devices. 
+`r read_text("syllabus-policies-canvas")`
 
-Your Q drive space is limited (approximately 500 mB), so you might want to also consider using cloud storage for your files. Free cloud storage options include – 
+Acrobat Reader may be downloaded for FREE from the [Adobe website](http://www.adobe.com/products/acrobat/readstep2.html).
 
-* Box.com
-* Drop Box
-* Google Drive (free with a Google email address)
-* Microsoft One Drive
+`r read_text("syllabus-policies-email")`
 
-Cloud storage will give you additional space to store files. If you have any question about setting up a cloud storage account using any of these resources, contact UMKC Information Services (816-235-2000). Additional information about Box cloud storage can be viewed on the UMKC web site – http://www.umkc.edu/is/box/
+`r read_text("syllabus-policies-discussion")`
 
+`r read_text("syllabus-policies-conduct")`
 
-Web Sites (compiled with the help of Dr. Jenifer Allsworth & Michel Conn)
+Please refer to the 
+[UM System standard of conduct](http://www.umsystem.edu/ums/rules/collected_rules/programs/ch200/200.010_standard_of_conduct) for more information.
 
-Tutorials - SAS offers many online tutorials - view the complete listing here: http://support.sas.com/training/tutorial/
+`r read_text("syllabus-policies-honesty")`
 
-SAS's basic programming online tutorial is free: 
-https://support.sas.com/edu/schedules.html?ctry=us&id=2588
+`r read_text("syllabus-policies-attendance")`
 
-SAS Analytics U - A Youtube channel that includes videos on many topics: https://www.youtube.com/playlist?list=PLVBcK_IpFVi9cajJtRel2uBLbtcLz-WIN
- 
-The UCLA SAS Starter Kit: http://www.ats.ucla.edu/stat/sas/sk/default.htm 
+`r read_text("syllabus-policies-discrimination")`
 
+Discrimination Grievance Procedures for Students: Discrimination Grievance Procedures for Students can be found [here](http://www.umsystem.edu/ums/rules/collected_rules/grievance/ch390/grievance_390.010).
 
-Other Resources – A favorite SAS instructional site is published by UCLA - http://www.ats.ucla.edu/stat/sas/   
-The UCLA site is a fantastic resource for new and experienced SAS users and includes tutorials as well as examples of SAS code.
+`r read_text("syllabus-policies-english-proficiency")`
 
-This paper by a SAS user has a comprehensive listing of websites with training materials and coding tips: http://analytics.ncsu.edu/sesug/2003/TD02-Stojanovic.pdf. Note - Some of the links are broken or out of date. 
+`r read_text("syllabus-policies-grade-appeal")`
 
-UM System Training Opportunities (some Columbia only; low cost)
-https://doit.missouri.edu/services/training/classroom-training/course-catalog/sas/
+In the event a student would like to appeal a course grade they must follow the School of Medicine procedure for grade appeal for graduate courses, which is outlined in the student handbook or can be found at the [School of Medicine Graduate Council web page](http://med.umkc.edu/councils/graduate/documents/).
 
-SAS University is free – http://www.sas.com/en_us/software/university-edition.html   
+## Resources
 
-## COURSE OUTLINE 
+Academic Calendar: Students are encouraged to review important add, drop or withdraw dates: https://www.umkc.edu/calendar/
 
-For each part of the course, the instructor will provide a recorded lecture that shows a demonstration of SAS coding and program execution. In addition, in the Course Content area of the course Blackboard site students will have a Course Outline document (MEDB 5507_Intro to SAS_Course Outline_Notes & Assignments_FS2017.pdf) that provides detailed notes and information on each assignment. Also loaded in the Course Content area will be data files that are not publically available, descriptions of these data files, and the SAS program files used for the recorded coding examples. These coding files can be used as the starting point for your own coding if desired; they can be edited using the SAS program editor, or edited using a text editor and copied into the SAS program editor. It is recomended that you copy these files to a local device (i.e., hard drive or USB drive) to simplify working with the information.
+Campus Safety: [Inclement weather, mass notification, and emergency response guide](http://www.umkc.edu/umkcalert/).
 
-If you are trying to work in SAS at the same time as viewing the recorded lectures, it is recommended that you use a system that will allow you to follow along with the recordings and make notes on the coding as needed. If you are using a system that has 2 monitors, this can be accomplished by playing the recording on one screen and doing other operations on the other screen.
+Counseling and Health Services Available at UMKC: UMKC students may experience many challenges in their lives while attending college – stress, depression, suicidality, trauma, relationship issues, health concerns, etc. As your professor I care about your success and well-being, and want to make you aware of some helpful resources on campus. The [UMKC Counseling Center](www.umkc.edu/counselingcenter), located at 4825 Troost in Room 206, offers a wide range of supportive services to students. Appointments can be made by calling 816.235.1635. [UMKC Student Health and Wellness](http://info.umkc.edu/studenthealth/), located at 4825 Troost in Room 115, offers a full range of health care and promotion services. Appointments can be scheduled online or by calling 816.235.6133. The [MindBody Connection](www.umkc.edu/mindbody) is located in the Atterbury Student Success Center in Room 112 and offers a variety of stress-reduction services.
 
-Mp4 versions of all lectures will be created and stored in a « Box » folder that you will have access to. To view these recordings, you need to sign in at – 
-	Box.umkc.edu
-	Use your SSO
-	Look for the folder labeled MEDB 5507 Intro to SAS Recorded Lectures - Fall 2017
-This folder will be available to you during the fall semester.
+Disability Support Services: To obtain disability related accommodations and/or auxiliary aids, students with disabilities must contact the Office of Services for Students with Disabilities (OSSD) as soon as possible. To contact OSSD, call (816) 235-5696 or visit their website. Once verified, OSSD will notify the course instructor and outline the accommodation and/or auxiliary aids to be provided. UMKC has a [web page](http://www.umkc.edu/disability/) with more information about disability services.
 
-A Discussion Board area (Discussion Forum  Intro to SAS – Questions & Answers) is established in the course Blackboard site in order to have a space for questions and answers that will be available to all students. To post a question on this forum, 
-	Click on the Forum name
-	Click on « Create Thread » 
-	Provide info in the « Subject » box to briefly describe your question (that will allow others to quickly identify a question they are interested in)
-	Use the Message box to type in your question
-	Hit « Submit »
+Severe Weather Policy: Cancellation of classes will be posted on the front page of the [University’s website](www.umkc.edu) as well as through the UMKC Alert message system.
 
-Note – if you are getting a SAS error message you don’t understand, you can copy the error message into the Description box. If you want a section of coding reviewed because you are having a problem with it, you can also copy the text into the Description box.
+Statement of Human Rights: The Board of Curators and UMKC are committed to the policy of equal opportunity, regardless of race, color, religion, sex, sexual orientation, national origin, age, disability and status as a Vietnam era veteran. Commitment to the policy is mentored by the [Division of Diversity Equity](https://info.umkc.edu/diversity/), but it is the responsibility of the entire university community to provide equal opportunity through relevant practices, initiatives and programs.
 
-The instructor will review and respond to items posted on the Discussion Board on a regular basis. If you have not gotten a response within a day or two, send an email to the instructor asking her to review your question in the discussion forum.
+Title IX: Under the University of Missouri’s Title IX policy, discrimination, violence and harassment based on sex, gender, and gender identity are subject to the same kinds of accountability and support applied to offenses based on other protected characteristics such as race, color, ethnic or national origin, sexual orientation, religion, age, ancestry, disability, military status, and veteran status. If you or someone you know has been harassed or assaulted, you can find the appropriate resources by visiting [UMKC’s Title IX Office webpage](http://info.umkc.edu/title9/) or contacting UMKC’s Title IX Coordinator, Mikah K. Thompson (816.235.6910 or thompsonmikah@umkc.edu). Additionally, you can file a complaint using [UMKC’s online discrimination complaint form](http://info.umkc.edu/title9/reporting/report-online/).
 
+While most UMKC employees are required to report any known or suspected violation of Title IX, students may seek confidential guidance from the following campus locations: UMKC Counseling Service Volker Campus 4825 Troost Ave, Suite 206 Kansas City, MO 64110 Phone – (816) 235-1635 UMKC Counseling Service Health Sciences Campus Health Sciences Building 1418 2464 Charlotte Kansas City, MO 64108 Phone – (816) 235-1635 (open Tuesdays, 1-5pm) Student Health and Wellness 4825 Troost Ave., Suite 115 Kansas City, MO 64110 Phone - (816) 235-6133
 
-Introduction
+## Week 1: Course Overview and Introductions; Introduction to Clinical Research Methods
 
-* Overview of SAS programming language and program set-up
+Please note that I plan to make minor changes to the objectives, readings, homework assignments, and discussion questions. This list is current through week 1, and will be updated as the course progresses.
 
-Part 1 - Initial Steps – Getting Data into SAS and saving SAS dataset
+`r read_text("objectives01")`
 
-* Setting up SAS library
-* Importing data file
-* Works pace vs SAS library
-* Checking data
-* Saving SAS dataset
+`r read_text("readings01", fri[1])`
 
-Part 2 – Modifying Your Dataset
+`r read_text("hw01", fri[1])`
 
-*	Format information
-*	Variable labels
-* Creating new variables
-* Code missing data
-* Renaming variables
-* Creating a numeric variable from a character variable
+`r read_text("discussion01", fri[1])`
 
-Part 3 – Subsetting Your Dataset and Combining Datasets
+## Week 2: Planning a Research Project, Research Ethics
 
-* Select a subset of variables
-* Select a subset of cases
-* Combining (concatenating) datasets together – adding observations
-* Merging datasets together – adding variables
+`r read_text("objectives02")`
 
-Part 4 – Examining Relationships Between Variables
+`r read_text("readings02", fri[2])`
 
-* Examine relationships between two categorical variables
-* Examine relationships between two continuous variables
-* Examine differences between groups on a continuous measure
+`r read_text("hw02", fri[2])`
 
-Part 5 – More Complicated Coding in the Data Step
+`r read_text("discussion02", fri[2])`
 
-* Coding subscale scores
-* Computing mean scores
-* Using an array and do loop to code
-* Create a « cut-point » score 
+## Week 3: Literature Reviews, Library Resources
 
-Part 6 – Restructuring Your Datasets
+`r read_text("objectives03")`
 
-* Create an « horizontal » dataset from a « vertical » dataset
-* Create a « vertical » dataset from an « horizontal » dataset
+`r read_text("readings03")`
 
-Final Project – DUE DATE : FRIDAY, APRIL13, 2018
+`r read_text("hw03", fri[3])`
 
-* For the final project, use a dataset of your own choosing from those available through this course or a dataset of your own. Demonstrate your mastery of the coding elements covered in the course, including import the dataset, manipulate it as needed, and produce a statistical report using at least one graphical display and at least one descriptive statistical method. This final project should include a written explanation of the coding you performed and the results you obtained. The dataset you work with for this final project should include at least four variables of which two variables represent continuous data and two variables represent categorical data so you can demonstrate your ability to examine relationships between variables.
+`r read_text("discussion03", fri[3])`
 
+## Week 4: Randomized experiments
 
-## COURSE EXPECTATIONS, COURSE POLICIES, REQUIREMENTS, AND STANDARDS FOR STUDENT COURSEWORK AND STUDENT BEHAVIOR
+`r read_text("objectives04")`
 
-Important UMKC Resources and Policies are applicable to every course and every student at UMKC. These are located in the Blackboard site for this course under the “UMKC Policies” tab. As a UMKC student, you are expected to review and abide by these policies. If you have any questions, please contact your instructor for clarification. In addition to the standard UMKC policies, the Department of Biomedical and Health Informatics includes self-plagiarism in their definition of plagiarism. Self-plagiarism is reuse, without prior discussion and consent of the course director, of an existing paper that has been submitted for credit in a different course.
+`r read_text("readings04")`
 
-This course follows the “Faculty allowing recording” option of the Academic Inquiry, Course Discussion and Privacy policy.
+`r read_text("hw04", fri[4])`
+
+`r read_text("discussion04", fri[4])`
+
+## Week 5: Quasi-experimental designs
+
+`r read_text("objectives05")`
+
+`r read_text("readings05")`
+
+`r read_text("hw05", fri[5])`
+
+`r read_text("discussion05", fri[5])`
+

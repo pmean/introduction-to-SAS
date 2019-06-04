@@ -11,9 +11,8 @@
 
 <meta name="author" content="Steve Simon" />
 
-<meta name="date" content="2018-07-30" />
 
-<title>Syllabus for MEDB5507, Introduction to SAS</title>
+<title>Syllabus for Introduction to SAS (MEDB 5507)</title>
 
 <script>/*! jQuery v1.11.3 | (c) 2005, 2015 jQuery Foundation, Inc. | jquery.org/license */
 !function(a,b){"object"==typeof module&&"object"==typeof module.exports?module.exports=a.document?b(a,!0):function(a){if(!a.document)throw new Error("jQuery requires a window with a document");return b(a)}:b(a)}("undefined"!=typeof window?window:this,function(a,b){var c=[],d=c.slice,e=c.concat,f=c.push,g=c.indexOf,h={},i=h.toString,j=h.hasOwnProperty,k={},l="1.11.3",m=function(a,b){return new m.fn.init(a,b)},n=/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g,o=/^-ms-/,p=/-([\da-z])/gi,q=function(a,b){return b.toUpperCase()};m.fn=m.prototype={jquery:l,constructor:m,selector:"",length:0,toArray:function(){return d.call(this)},get:function(a){return null!=a?0>a?this[a+this.length]:this[a]:d.call(this)},pushStack:function(a){var b=m.merge(this.constructor(),a);return b.prevObject=this,b.context=this.context,b},each:function(a,b){return m.each(this,a,b)},map:function(a){return this.pushStack(m.map(this,function(b,c){return a.call(b,c,b)}))},slice:function(){return this.pushStack(d.apply(this,arguments))},first:function(){return this.eq(0)},last:function(){return this.eq(-1)},eq:function(a){var b=this.length,c=+a+(0>a?b:0);return this.pushStack(c>=0&&b>c?[this[c]]:[])},end:function(){return this.prevObject||this.constructor(null)},push:f,sort:c.sort,splice:c.splice},m.extend=m.fn.extend=function(){var a,b,c,d,e,f,g=arguments[0]||{},h=1,i=arguments.length,j=!1;for("boolean"==typeof g&&(j=g,g=arguments[h]||{},h++),"object"==typeof g||m.isFunction(g)||(g={}),h===i&&(g=this,h--);i>h;h++)if(null!=(e=arguments[h]))for(d in e)a=g[d],c=e[d],g!==c&&(j&&c&&(m.isPlainObject(c)||(b=m.isArray(c)))?(b?(b=!1,f=a&&m.isArray(a)?a:[]):f=a&&m.isPlainObject(a)?a:{},g[d]=m.extend(j,f,c)):void 0!==c&&(g[d]=c));return g},m.extend({expando:"jQuery"+(l+Math.random()).replace(/\D/g,""),isReady:!0,error:function(a){throw new Error(a)},noop:function(){},isFunction:function(a){return"function"===m.type(a)},isArray:Array.isArray||function(a){return"array"===m.type(a)},isWindow:function(a){return null!=a&&a==a.window},isNumeric:function(a){return!m.isArray(a)&&a-parseFloat(a)+1>=0},isEmptyObject:function(a){var b;for(b in a)return!1;return!0},isPlainObject:function(a){var b;if(!a||"object"!==m.type(a)||a.nodeType||m.isWindow(a))return!1;try{if(a.constructor&&!j.call(a,"constructor")&&!j.call(a.constructor.prototype,"isPrototypeOf"))return!1}catch(c){return!1}if(k.ownLast)for(b in a)return j.call(a,b);for(b in a);return void 0===b||j.call(a,b)},type:function(a){return null==a?a+"":"object"==typeof a||"function"==typeof a?h[i.call(a)]||"object":typeof a},globalEval:function(b){b&&m.trim(b)&&(a.execScript||function(b){a.eval.call(a,b)})(b)},camelCase:function(a){return a.replace(o,"ms-").replace(p,q)},nodeName:function(a,b){return a.nodeName&&a.nodeName.toLowerCase()===b.toLowerCase()},each:function(a,b,c){var d,e=0,f=a.length,g=r(a);if(c){if(g){for(;f>e;e++)if(d=b.apply(a[e],c),d===!1)break}else for(e in a)if(d=b.apply(a[e],c),d===!1)break}else if(g){for(;f>e;e++)if(d=b.call(a[e],e,a[e]),d===!1)break}else for(e in a)if(d=b.call(a[e],e,a[e]),d===!1)break;return a},trim:function(a){return null==a?"":(a+"").replace(n,"")},makeArray:function(a,b){var c=b||[];return null!=a&&(r(Object(a))?m.merge(c,"string"==typeof a?[a]:a):f.call(c,a)),c},inArray:function(a,b,c){var d;if(b){if(g)return g.call(b,a,c);for(d=b.length,c=c?0>c?Math.max(0,d+c):c:0;d>c;c++)if(c in b&&b[c]===a)return c}return-1},merge:function(a,b){var c=+b.length,d=0,e=a.length;while(c>d)a[e++]=b[d++];if(c!==c)while(void 0!==b[d])a[e++]=b[d++];return a.length=e,a},grep:function(a,b,c){for(var d,e=[],f=0,g=a.length,h=!c;g>f;f++)d=!b(a[f],f),d!==h&&e.push(a[f]);return e},map:function(a,b,c){var d,f=0,g=a.length,h=r(a),i=[];if(h)for(;g>f;f++)d=b(a[f],f,c),null!=d&&i.push(d);else for(f in a)d=b(a[f],f,c),null!=d&&i.push(d);return e.apply([],i)},guid:1,proxy:function(a,b){var c,e,f;return"string"==typeof b&&(f=a[b],b=a,a=f),m.isFunction(a)?(c=d.call(arguments,2),e=function(){return a.apply(b||this,c.concat(d.call(arguments)))},e.guid=a.guid=a.guid||m.guid++,e):void 0},now:function(){return+new Date},support:k}),m.each("Boolean Number String Function Array Date RegExp Object Error".split(" "),function(a,b){h["[object "+b+"]"]=b.toLowerCase()});function r(a){var b="length"in a&&a.length,c=m.type(a);return"function"===c||m.isWindow(a)?!1:1===a.nodeType&&b?!0:"array"===c||0===b||"number"==typeof b&&b>0&&b-1 in a}var s=function(a){var b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u="sizzle"+1*new Date,v=a.document,w=0,x=0,y=ha(),z=ha(),A=ha(),B=function(a,b){return a===b&&(l=!0),0},C=1<<31,D={}.hasOwnProperty,E=[],F=E.pop,G=E.push,H=E.push,I=E.slice,J=function(a,b){for(var c=0,d=a.length;d>c;c++)if(a[c]===b)return c;return-1},K="checked|selected|async|autofocus|autoplay|controls|defer|disabled|hidden|ismap|loop|multiple|open|readonly|required|scoped",L="[\\x20\\t\\r\\n\\f]",M="(?:\\\\.|[\\w-]|[^\\x00-\\xa0])+",N=M.replace("w","w#"),O="\\["+L+"*("+M+")(?:"+L+"*([*^$|!~]?=)"+L+"*(?:'((?:\\\\.|[^\\\\'])*)'|\"((?:\\\\.|[^\\\\\"])*)\"|("+N+"))|)"+L+"*\\]",P=":("+M+")(?:\\((('((?:\\\\.|[^\\\\'])*)'|\"((?:\\\\.|[^\\\\\"])*)\")|((?:\\\\.|[^\\\\()[\\]]|"+O+")*)|.*)\\)|)",Q=new RegExp(L+"+","g"),R=new RegExp("^"+L+"+|((?:^|[^\\\\])(?:\\\\.)*)"+L+"+$","g"),S=new RegExp("^"+L+"*,"+L+"*"),T=new RegExp("^"+L+"*([>+~]|"+L+")"+L+"*"),U=new RegExp("="+L+"*([^\\]'\"]*?)"+L+"*\\]","g"),V=new RegExp(P),W=new RegExp("^"+N+"$"),X={ID:new RegExp("^#("+M+")"),CLASS:new RegExp("^\\.("+M+")"),TAG:new RegExp("^("+M.replace("w","w*")+")"),ATTR:new RegExp("^"+O),PSEUDO:new RegExp("^"+P),CHILD:new RegExp("^:(only|first|last|nth|nth-last)-(child|of-type)(?:\\("+L+"*(even|odd|(([+-]|)(\\d*)n|)"+L+"*(?:([+-]|)"+L+"*(\\d+)|))"+L+"*\\)|)","i"),bool:new RegExp("^(?:"+K+")$","i"),needsContext:new RegExp("^"+L+"*[>+~]|:(even|odd|eq|gt|lt|nth|first|last)(?:\\("+L+"*((?:-\\d)?\\d*)"+L+"*\\)|)(?=[^-]|$)","i")},Y=/^(?:input|select|textarea|button)$/i,Z=/^h\d$/i,$=/^[^{]+\{\s*\[native \w/,_=/^(?:#([\w-]+)|(\w+)|\.([\w-]+))$/,aa=/[+~]/,ba=/'|\\/g,ca=new RegExp("\\\\([\\da-f]{1,6}"+L+"?|("+L+")|.)","ig"),da=function(a,b,c){var d="0x"+b-65536;return d!==d||c?b:0>d?String.fromCharCode(d+65536):String.fromCharCode(d>>10|55296,1023&d|56320)},ea=function(){m()};try{H.apply(E=I.call(v.childNodes),v.childNodes),E[v.childNodes.length].nodeType}catch(fa){H={apply:E.length?function(a,b){G.apply(a,I.call(b))}:function(a,b){var c=a.length,d=0;while(a[c++]=b[d++]);a.length=c-1}}}function ga(a,b,d,e){var f,h,j,k,l,o,r,s,w,x;if((b?b.ownerDocument||b:v)!==n&&m(b),b=b||n,d=d||[],k=b.nodeType,"string"!=typeof a||!a||1!==k&&9!==k&&11!==k)return d;if(!e&&p){if(11!==k&&(f=_.exec(a)))if(j=f[1]){if(9===k){if(h=b.getElementById(j),!h||!h.parentNode)return d;if(h.id===j)return d.push(h),d}else if(b.ownerDocument&&(h=b.ownerDocument.getElementById(j))&&t(b,h)&&h.id===j)return d.push(h),d}else{if(f[2])return H.apply(d,b.getElementsByTagName(a)),d;if((j=f[3])&&c.getElementsByClassName)return H.apply(d,b.getElementsByClassName(j)),d}if(c.qsa&&(!q||!q.test(a))){if(s=r=u,w=b,x=1!==k&&a,1===k&&"object"!==b.nodeName.toLowerCase()){o=g(a),(r=b.getAttribute("id"))?s=r.replace(ba,"\\$&"):b.setAttribute("id",s),s="[id='"+s+"'] ",l=o.length;while(l--)o[l]=s+ra(o[l]);w=aa.test(a)&&pa(b.parentNode)||b,x=o.join(",")}if(x)try{return H.apply(d,w.querySelectorAll(x)),d}catch(y){}finally{r||b.removeAttribute("id")}}}return i(a.replace(R,"$1"),b,d,e)}function ha(){var a=[];function b(c,e){return a.push(c+" ")>d.cacheLength&&delete b[a.shift()],b[c+" "]=e}return b}function ia(a){return a[u]=!0,a}function ja(a){var b=n.createElement("div");try{return!!a(b)}catch(c){return!1}finally{b.parentNode&&b.parentNode.removeChild(b),b=null}}function ka(a,b){var c=a.split("|"),e=a.length;while(e--)d.attrHandle[c[e]]=b}function la(a,b){var c=b&&a,d=c&&1===a.nodeType&&1===b.nodeType&&(~b.sourceIndex||C)-(~a.sourceIndex||C);if(d)return d;if(c)while(c=c.nextSibling)if(c===b)return-1;return a?1:-1}function ma(a){return function(b){var c=b.nodeName.toLowerCase();return"input"===c&&b.type===a}}function na(a){return function(b){var c=b.nodeName.toLowerCase();return("input"===c||"button"===c)&&b.type===a}}function oa(a){return ia(function(b){return b=+b,ia(function(c,d){var e,f=a([],c.length,b),g=f.length;while(g--)c[e=f[g]]&&(c[e]=!(d[e]=c[e]))})})}function pa(a){return a&&"undefined"!=typeof a.getElementsByTagName&&a}c=ga.support={},f=ga.isXML=function(a){var b=a&&(a.ownerDocument||a).documentElement;return b?"HTML"!==b.nodeName:!1},m=ga.setDocument=function(a){var b,e,g=a?a.ownerDocument||a:v;return g!==n&&9===g.nodeType&&g.documentElement?(n=g,o=g.documentElement,e=g.defaultView,e&&e!==e.top&&(e.addEventListener?e.addEventListener("unload",ea,!1):e.attachEvent&&e.attachEvent("onunload",ea)),p=!f(g),c.attributes=ja(function(a){return a.className="i",!a.getAttribute("className")}),c.getElementsByTagName=ja(function(a){return a.appendChild(g.createComment("")),!a.getElementsByTagName("*").length}),c.getElementsByClassName=$.test(g.getElementsByClassName),c.getById=ja(function(a){return o.appendChild(a).id=u,!g.getElementsByName||!g.getElementsByName(u).length}),c.getById?(d.find.ID=function(a,b){if("undefined"!=typeof b.getElementById&&p){var c=b.getElementById(a);return c&&c.parentNode?[c]:[]}},d.filter.ID=function(a){var b=a.replace(ca,da);return function(a){return a.getAttribute("id")===b}}):(delete d.find.ID,d.filter.ID=function(a){var b=a.replace(ca,da);return function(a){var c="undefined"!=typeof a.getAttributeNode&&a.getAttributeNode("id");return c&&c.value===b}}),d.find.TAG=c.getElementsByTagName?function(a,b){return"undefined"!=typeof b.getElementsByTagName?b.getElementsByTagName(a):c.qsa?b.querySelectorAll(a):void 0}:function(a,b){var c,d=[],e=0,f=b.getElementsByTagName(a);if("*"===a){while(c=f[e++])1===c.nodeType&&d.push(c);return d}return f},d.find.CLASS=c.getElementsByClassName&&function(a,b){return p?b.getElementsByClassName(a):void 0},r=[],q=[],(c.qsa=$.test(g.querySelectorAll))&&(ja(function(a){o.appendChild(a).innerHTML="<a id='"+u+"'></a><select id='"+u+"-\f]' msallowcapture=''><option selected=''></option></select>",a.querySelectorAll("[msallowcapture^='']").length&&q.push("[*^$]="+L+"*(?:''|\"\")"),a.querySelectorAll("[selected]").length||q.push("\\["+L+"*(?:value|"+K+")"),a.querySelectorAll("[id~="+u+"-]").length||q.push("~="),a.querySelectorAll(":checked").length||q.push(":checked"),a.querySelectorAll("a#"+u+"+*").length||q.push(".#.+[+~]")}),ja(function(a){var b=g.createElement("input");b.setAttribute("type","hidden"),a.appendChild(b).setAttribute("name","D"),a.querySelectorAll("[name=d]").length&&q.push("name"+L+"*[*^$|!~]?="),a.querySelectorAll(":enabled").length||q.push(":enabled",":disabled"),a.querySelectorAll("*,:x"),q.push(",.*:")})),(c.matchesSelector=$.test(s=o.matches||o.webkitMatchesSelector||o.mozMatchesSelector||o.oMatchesSelector||o.msMatchesSelector))&&ja(function(a){c.disconnectedMatch=s.call(a,"div"),s.call(a,"[s!='']:x"),r.push("!=",P)}),q=q.length&&new RegExp(q.join("|")),r=r.length&&new RegExp(r.join("|")),b=$.test(o.compareDocumentPosition),t=b||$.test(o.contains)?function(a,b){var c=9===a.nodeType?a.documentElement:a,d=b&&b.parentNode;return a===d||!(!d||1!==d.nodeType||!(c.contains?c.contains(d):a.compareDocumentPosition&&16&a.compareDocumentPosition(d)))}:function(a,b){if(b)while(b=b.parentNode)if(b===a)return!0;return!1},B=b?function(a,b){if(a===b)return l=!0,0;var d=!a.compareDocumentPosition-!b.compareDocumentPosition;return d?d:(d=(a.ownerDocument||a)===(b.ownerDocument||b)?a.compareDocumentPosition(b):1,1&d||!c.sortDetached&&b.compareDocumentPosition(a)===d?a===g||a.ownerDocument===v&&t(v,a)?-1:b===g||b.ownerDocument===v&&t(v,b)?1:k?J(k,a)-J(k,b):0:4&d?-1:1)}:function(a,b){if(a===b)return l=!0,0;var c,d=0,e=a.parentNode,f=b.parentNode,h=[a],i=[b];if(!e||!f)return a===g?-1:b===g?1:e?-1:f?1:k?J(k,a)-J(k,b):0;if(e===f)return la(a,b);c=a;while(c=c.parentNode)h.unshift(c);c=b;while(c=c.parentNode)i.unshift(c);while(h[d]===i[d])d++;return d?la(h[d],i[d]):h[d]===v?-1:i[d]===v?1:0},g):n},ga.matches=function(a,b){return ga(a,null,null,b)},ga.matchesSelector=function(a,b){if((a.ownerDocument||a)!==n&&m(a),b=b.replace(U,"='$1']"),!(!c.matchesSelector||!p||r&&r.test(b)||q&&q.test(b)))try{var d=s.call(a,b);if(d||c.disconnectedMatch||a.document&&11!==a.document.nodeType)return d}catch(e){}return ga(b,n,null,[a]).length>0},ga.contains=function(a,b){return(a.ownerDocument||a)!==n&&m(a),t(a,b)},ga.attr=function(a,b){(a.ownerDocument||a)!==n&&m(a);var e=d.attrHandle[b.toLowerCase()],f=e&&D.call(d.attrHandle,b.toLowerCase())?e(a,b,!p):void 0;return void 0!==f?f:c.attributes||!p?a.getAttribute(b):(f=a.getAttributeNode(b))&&f.specified?f.value:null},ga.error=function(a){throw new Error("Syntax error, unrecognized expression: "+a)},ga.uniqueSort=function(a){var b,d=[],e=0,f=0;if(l=!c.detectDuplicates,k=!c.sortStable&&a.slice(0),a.sort(B),l){while(b=a[f++])b===a[f]&&(e=d.push(f));while(e--)a.splice(d[e],1)}return k=null,a},e=ga.getText=function(a){var b,c="",d=0,f=a.nodeType;if(f){if(1===f||9===f||11===f){if("string"==typeof a.textContent)return a.textContent;for(a=a.firstChild;a;a=a.nextSibling)c+=e(a)}else if(3===f||4===f)return a.nodeValue}else while(b=a[d++])c+=e(b);return c},d=ga.selectors={cacheLength:50,createPseudo:ia,match:X,attrHandle:{},find:{},relative:{">":{dir:"parentNode",first:!0}," ":{dir:"parentNode"},"+":{dir:"previousSibling",first:!0},"~":{dir:"previousSibling"}},preFilter:{ATTR:function(a){return a[1]=a[1].replace(ca,da),a[3]=(a[3]||a[4]||a[5]||"").replace(ca,da),"~="===a[2]&&(a[3]=" "+a[3]+" "),a.slice(0,4)},CHILD:function(a){return a[1]=a[1].toLowerCase(),"nth"===a[1].slice(0,3)?(a[3]||ga.error(a[0]),a[4]=+(a[4]?a[5]+(a[6]||1):2*("even"===a[3]||"odd"===a[3])),a[5]=+(a[7]+a[8]||"odd"===a[3])):a[3]&&ga.error(a[0]),a},PSEUDO:function(a){var b,c=!a[6]&&a[2];return X.CHILD.test(a[0])?null:(a[3]?a[2]=a[4]||a[5]||"":c&&V.test(c)&&(b=g(c,!0))&&(b=c.indexOf(")",c.length-b)-c.length)&&(a[0]=a[0].slice(0,b),a[2]=c.slice(0,b)),a.slice(0,3))}},filter:{TAG:function(a){var b=a.replace(ca,da).toLowerCase();return"*"===a?function(){return!0}:function(a){return a.nodeName&&a.nodeName.toLowerCase()===b}},CLASS:function(a){var b=y[a+" "];return b||(b=new RegExp("(^|"+L+")"+a+"("+L+"|$)"))&&y(a,function(a){return b.test("string"==typeof a.className&&a.className||"undefined"!=typeof a.getAttribute&&a.getAttribute("class")||"")})},ATTR:function(a,b,c){return function(d){var e=ga.attr(d,a);return null==e?"!="===b:b?(e+="","="===b?e===c:"!="===b?e!==c:"^="===b?c&&0===e.indexOf(c):"*="===b?c&&e.indexOf(c)>-1:"$="===b?c&&e.slice(-c.length)===c:"~="===b?(" "+e.replace(Q," ")+" ").indexOf(c)>-1:"|="===b?e===c||e.slice(0,c.length+1)===c+"-":!1):!0}},CHILD:function(a,b,c,d,e){var f="nth"!==a.slice(0,3),g="last"!==a.slice(-4),h="of-type"===b;return 1===d&&0===e?function(a){return!!a.parentNode}:function(b,c,i){var j,k,l,m,n,o,p=f!==g?"nextSibling":"previousSibling",q=b.parentNode,r=h&&b.nodeName.toLowerCase(),s=!i&&!h;if(q){if(f){while(p){l=b;while(l=l[p])if(h?l.nodeName.toLowerCase()===r:1===l.nodeType)return!1;o=p="only"===a&&!o&&"nextSibling"}return!0}if(o=[g?q.firstChild:q.lastChild],g&&s){k=q[u]||(q[u]={}),j=k[a]||[],n=j[0]===w&&j[1],m=j[0]===w&&j[2],l=n&&q.childNodes[n];while(l=++n&&l&&l[p]||(m=n=0)||o.pop())if(1===l.nodeType&&++m&&l===b){k[a]=[w,n,m];break}}else if(s&&(j=(b[u]||(b[u]={}))[a])&&j[0]===w)m=j[1];else while(l=++n&&l&&l[p]||(m=n=0)||o.pop())if((h?l.nodeName.toLowerCase()===r:1===l.nodeType)&&++m&&(s&&((l[u]||(l[u]={}))[a]=[w,m]),l===b))break;return m-=e,m===d||m%d===0&&m/d>=0}}},PSEUDO:function(a,b){var c,e=d.pseudos[a]||d.setFilters[a.toLowerCase()]||ga.error("unsupported pseudo: "+a);return e[u]?e(b):e.length>1?(c=[a,a,"",b],d.setFilters.hasOwnProperty(a.toLowerCase())?ia(function(a,c){var d,f=e(a,b),g=f.length;while(g--)d=J(a,f[g]),a[d]=!(c[d]=f[g])}):function(a){return e(a,0,c)}):e}},pseudos:{not:ia(function(a){var b=[],c=[],d=h(a.replace(R,"$1"));return d[u]?ia(function(a,b,c,e){var f,g=d(a,null,e,[]),h=a.length;while(h--)(f=g[h])&&(a[h]=!(b[h]=f))}):function(a,e,f){return b[0]=a,d(b,null,f,c),b[0]=null,!c.pop()}}),has:ia(function(a){return function(b){return ga(a,b).length>0}}),contains:ia(function(a){return a=a.replace(ca,da),function(b){return(b.textContent||b.innerText||e(b)).indexOf(a)>-1}}),lang:ia(function(a){return W.test(a||"")||ga.error("unsupported lang: "+a),a=a.replace(ca,da).toLowerCase(),function(b){var c;do if(c=p?b.lang:b.getAttribute("xml:lang")||b.getAttribute("lang"))return c=c.toLowerCase(),c===a||0===c.indexOf(a+"-");while((b=b.parentNode)&&1===b.nodeType);return!1}}),target:function(b){var c=a.location&&a.location.hash;return c&&c.slice(1)===b.id},root:function(a){return a===o},focus:function(a){return a===n.activeElement&&(!n.hasFocus||n.hasFocus())&&!!(a.type||a.href||~a.tabIndex)},enabled:function(a){return a.disabled===!1},disabled:function(a){return a.disabled===!0},checked:function(a){var b=a.nodeName.toLowerCase();return"input"===b&&!!a.checked||"option"===b&&!!a.selected},selected:function(a){return a.parentNode&&a.parentNode.selectedIndex,a.selected===!0},empty:function(a){for(a=a.firstChild;a;a=a.nextSibling)if(a.nodeType<6)return!1;return!0},parent:function(a){return!d.pseudos.empty(a)},header:function(a){return Z.test(a.nodeName)},input:function(a){return Y.test(a.nodeName)},button:function(a){var b=a.nodeName.toLowerCase();return"input"===b&&"button"===a.type||"button"===b},text:function(a){var b;return"input"===a.nodeName.toLowerCase()&&"text"===a.type&&(null==(b=a.getAttribute("type"))||"text"===b.toLowerCase())},first:oa(function(){return[0]}),last:oa(function(a,b){return[b-1]}),eq:oa(function(a,b,c){return[0>c?c+b:c]}),even:oa(function(a,b){for(var c=0;b>c;c+=2)a.push(c);return a}),odd:oa(function(a,b){for(var c=1;b>c;c+=2)a.push(c);return a}),lt:oa(function(a,b,c){for(var d=0>c?c+b:c;--d>=0;)a.push(d);return a}),gt:oa(function(a,b,c){for(var d=0>c?c+b:c;++d<b;)a.push(d);return a})}},d.pseudos.nth=d.pseudos.eq;for(b in{radio:!0,checkbox:!0,file:!0,password:!0,image:!0})d.pseudos[b]=ma(b);for(b in{submit:!0,reset:!0})d.pseudos[b]=na(b);function qa(){}qa.prototype=d.filters=d.pseudos,d.setFilters=new qa,g=ga.tokenize=function(a,b){var c,e,f,g,h,i,j,k=z[a+" "];if(k)return b?0:k.slice(0);h=a,i=[],j=d.preFilter;while(h){(!c||(e=S.exec(h)))&&(e&&(h=h.slice(e[0].length)||h),i.push(f=[])),c=!1,(e=T.exec(h))&&(c=e.shift(),f.push({value:c,type:e[0].replace(R," ")}),h=h.slice(c.length));for(g in d.filter)!(e=X[g].exec(h))||j[g]&&!(e=j[g](e))||(c=e.shift(),f.push({value:c,type:g,matches:e}),h=h.slice(c.length));if(!c)break}return b?h.length:h?ga.error(a):z(a,i).slice(0)};function ra(a){for(var b=0,c=a.length,d="";c>b;b++)d+=a[b].value;return d}function sa(a,b,c){var d=b.dir,e=c&&"parentNode"===d,f=x++;return b.first?function(b,c,f){while(b=b[d])if(1===b.nodeType||e)return a(b,c,f)}:function(b,c,g){var h,i,j=[w,f];if(g){while(b=b[d])if((1===b.nodeType||e)&&a(b,c,g))return!0}else while(b=b[d])if(1===b.nodeType||e){if(i=b[u]||(b[u]={}),(h=i[d])&&h[0]===w&&h[1]===f)return j[2]=h[2];if(i[d]=j,j[2]=a(b,c,g))return!0}}}function ta(a){return a.length>1?function(b,c,d){var e=a.length;while(e--)if(!a[e](b,c,d))return!1;return!0}:a[0]}function ua(a,b,c){for(var d=0,e=b.length;e>d;d++)ga(a,b[d],c);return c}function va(a,b,c,d,e){for(var f,g=[],h=0,i=a.length,j=null!=b;i>h;h++)(f=a[h])&&(!c||c(f,d,e))&&(g.push(f),j&&b.push(h));return g}function wa(a,b,c,d,e,f){return d&&!d[u]&&(d=wa(d)),e&&!e[u]&&(e=wa(e,f)),ia(function(f,g,h,i){var j,k,l,m=[],n=[],o=g.length,p=f||ua(b||"*",h.nodeType?[h]:h,[]),q=!a||!f&&b?p:va(p,m,a,h,i),r=c?e||(f?a:o||d)?[]:g:q;if(c&&c(q,r,h,i),d){j=va(r,n),d(j,[],h,i),k=j.length;while(k--)(l=j[k])&&(r[n[k]]=!(q[n[k]]=l))}if(f){if(e||a){if(e){j=[],k=r.length;while(k--)(l=r[k])&&j.push(q[k]=l);e(null,r=[],j,i)}k=r.length;while(k--)(l=r[k])&&(j=e?J(f,l):m[k])>-1&&(f[j]=!(g[j]=l))}}else r=va(r===g?r.splice(o,r.length):r),e?e(null,g,r,i):H.apply(g,r)})}function xa(a){for(var b,c,e,f=a.length,g=d.relative[a[0].type],h=g||d.relative[" "],i=g?1:0,k=sa(function(a){return a===b},h,!0),l=sa(function(a){return J(b,a)>-1},h,!0),m=[function(a,c,d){var e=!g&&(d||c!==j)||((b=c).nodeType?k(a,c,d):l(a,c,d));return b=null,e}];f>i;i++)if(c=d.relative[a[i].type])m=[sa(ta(m),c)];else{if(c=d.filter[a[i].type].apply(null,a[i].matches),c[u]){for(e=++i;f>e;e++)if(d.relative[a[e].type])break;return wa(i>1&&ta(m),i>1&&ra(a.slice(0,i-1).concat({value:" "===a[i-2].type?"*":""})).replace(R,"$1"),c,e>i&&xa(a.slice(i,e)),f>e&&xa(a=a.slice(e)),f>e&&ra(a))}m.push(c)}return ta(m)}function ya(a,b){var c=b.length>0,e=a.length>0,f=function(f,g,h,i,k){var l,m,o,p=0,q="0",r=f&&[],s=[],t=j,u=f||e&&d.find.TAG("*",k),v=w+=null==t?1:Math.random()||.1,x=u.length;for(k&&(j=g!==n&&g);q!==x&&null!=(l=u[q]);q++){if(e&&l){m=0;while(o=a[m++])if(o(l,g,h)){i.push(l);break}k&&(w=v)}c&&((l=!o&&l)&&p--,f&&r.push(l))}if(p+=q,c&&q!==p){m=0;while(o=b[m++])o(r,s,g,h);if(f){if(p>0)while(q--)r[q]||s[q]||(s[q]=F.call(i));s=va(s)}H.apply(i,s),k&&!f&&s.length>0&&p+b.length>1&&ga.uniqueSort(i)}return k&&(w=v,j=t),r};return c?ia(f):f}return h=ga.compile=function(a,b){var c,d=[],e=[],f=A[a+" "];if(!f){b||(b=g(a)),c=b.length;while(c--)f=xa(b[c]),f[u]?d.push(f):e.push(f);f=A(a,ya(e,d)),f.selector=a}return f},i=ga.select=function(a,b,e,f){var i,j,k,l,m,n="function"==typeof a&&a,o=!f&&g(a=n.selector||a);if(e=e||[],1===o.length){if(j=o[0]=o[0].slice(0),j.length>2&&"ID"===(k=j[0]).type&&c.getById&&9===b.nodeType&&p&&d.relative[j[1].type]){if(b=(d.find.ID(k.matches[0].replace(ca,da),b)||[])[0],!b)return e;n&&(b=b.parentNode),a=a.slice(j.shift().value.length)}i=X.needsContext.test(a)?0:j.length;while(i--){if(k=j[i],d.relative[l=k.type])break;if((m=d.find[l])&&(f=m(k.matches[0].replace(ca,da),aa.test(j[0].type)&&pa(b.parentNode)||b))){if(j.splice(i,1),a=f.length&&ra(j),!a)return H.apply(e,f),e;break}}}return(n||h(a,o))(f,b,!p,e,aa.test(a)&&pa(b.parentNode)||b),e},c.sortStable=u.split("").sort(B).join("")===u,c.detectDuplicates=!!l,m(),c.sortDetached=ja(function(a){return 1&a.compareDocumentPosition(n.createElement("div"))}),ja(function(a){return a.innerHTML="<a href='#'></a>","#"===a.firstChild.getAttribute("href")})||ka("type|href|height|width",function(a,b,c){return c?void 0:a.getAttribute(b,"type"===b.toLowerCase()?1:2)}),c.attributes&&ja(function(a){return a.innerHTML="<input/>",a.firstChild.setAttribute("value",""),""===a.firstChild.getAttribute("value")})||ka("value",function(a,b,c){return c||"input"!==a.nodeName.toLowerCase()?void 0:a.defaultValue}),ja(function(a){return null==a.getAttribute("disabled")})||ka(K,function(a,b,c){var d;return c?void 0:a[b]===!0?b.toLowerCase():(d=a.getAttributeNode(b))&&d.specified?d.value:null}),ga}(a);m.find=s,m.expr=s.selectors,m.expr[":"]=m.expr.pseudos,m.unique=s.uniqueSort,m.text=s.getText,m.isXMLDoc=s.isXML,m.contains=s.contains;var t=m.expr.match.needsContext,u=/^<(\w+)\s*\/?>(?:<\/\1>|)$/,v=/^.[^:#\[\.,]*$/;function w(a,b,c){if(m.isFunction(b))return m.grep(a,function(a,d){return!!b.call(a,d,a)!==c});if(b.nodeType)return m.grep(a,function(a){return a===b!==c});if("string"==typeof b){if(v.test(b))return m.filter(b,a,c);b=m.filter(b,a)}return m.grep(a,function(a){return m.inArray(a,b)>=0!==c})}m.filter=function(a,b,c){var d=b[0];return c&&(a=":not("+a+")"),1===b.length&&1===d.nodeType?m.find.matchesSelector(d,a)?[d]:[]:m.find.matches(a,m.grep(b,function(a){return 1===a.nodeType}))},m.fn.extend({find:function(a){var b,c=[],d=this,e=d.length;if("string"!=typeof a)return this.pushStack(m(a).filter(function(){for(b=0;e>b;b++)if(m.contains(d[b],this))return!0}));for(b=0;e>b;b++)m.find(a,d[b],c);return c=this.pushStack(e>1?m.unique(c):c),c.selector=this.selector?this.selector+" "+a:a,c},filter:function(a){return this.pushStack(w(this,a||[],!1))},not:function(a){return this.pushStack(w(this,a||[],!0))},is:function(a){return!!w(this,"string"==typeof a&&t.test(a)?m(a):a||[],!1).length}});var x,y=a.document,z=/^(?:\s*(<[\w\W]+>)[^>]*|#([\w-]*))$/,A=m.fn.init=function(a,b){var c,d;if(!a)return this;if("string"==typeof a){if(c="<"===a.charAt(0)&&">"===a.charAt(a.length-1)&&a.length>=3?[null,a,null]:z.exec(a),!c||!c[1]&&b)return!b||b.jquery?(b||x).find(a):this.constructor(b).find(a);if(c[1]){if(b=b instanceof m?b[0]:b,m.merge(this,m.parseHTML(c[1],b&&b.nodeType?b.ownerDocument||b:y,!0)),u.test(c[1])&&m.isPlainObject(b))for(c in b)m.isFunction(this[c])?this[c](b[c]):this.attr(c,b[c]);return this}if(d=y.getElementById(c[2]),d&&d.parentNode){if(d.id!==c[2])return x.find(a);this.length=1,this[0]=d}return this.context=y,this.selector=a,this}return a.nodeType?(this.context=this[0]=a,this.length=1,this):m.isFunction(a)?"undefined"!=typeof x.ready?x.ready(a):a(m):(void 0!==a.selector&&(this.selector=a.selector,this.context=a.context),m.makeArray(a,this))};A.prototype=m.fn,x=m(y);var B=/^(?:parents|prev(?:Until|All))/,C={children:!0,contents:!0,next:!0,prev:!0};m.extend({dir:function(a,b,c){var d=[],e=a[b];while(e&&9!==e.nodeType&&(void 0===c||1!==e.nodeType||!m(e).is(c)))1===e.nodeType&&d.push(e),e=e[b];return d},sibling:function(a,b){for(var c=[];a;a=a.nextSibling)1===a.nodeType&&a!==b&&c.push(a);return c}}),m.fn.extend({has:function(a){var b,c=m(a,this),d=c.length;return this.filter(function(){for(b=0;d>b;b++)if(m.contains(this,c[b]))return!0})},closest:function(a,b){for(var c,d=0,e=this.length,f=[],g=t.test(a)||"string"!=typeof a?m(a,b||this.context):0;e>d;d++)for(c=this[d];c&&c!==b;c=c.parentNode)if(c.nodeType<11&&(g?g.index(c)>-1:1===c.nodeType&&m.find.matchesSelector(c,a))){f.push(c);break}return this.pushStack(f.length>1?m.unique(f):f)},index:function(a){return a?"string"==typeof a?m.inArray(this[0],m(a)):m.inArray(a.jquery?a[0]:a,this):this[0]&&this[0].parentNode?this.first().prevAll().length:-1},add:function(a,b){return this.pushStack(m.unique(m.merge(this.get(),m(a,b))))},addBack:function(a){return this.add(null==a?this.prevObject:this.prevObject.filter(a))}});function D(a,b){do a=a[b];while(a&&1!==a.nodeType);return a}m.each({parent:function(a){var b=a.parentNode;return b&&11!==b.nodeType?b:null},parents:function(a){return m.dir(a,"parentNode")},parentsUntil:function(a,b,c){return m.dir(a,"parentNode",c)},next:function(a){return D(a,"nextSibling")},prev:function(a){return D(a,"previousSibling")},nextAll:function(a){return m.dir(a,"nextSibling")},prevAll:function(a){return m.dir(a,"previousSibling")},nextUntil:function(a,b,c){return m.dir(a,"nextSibling",c)},prevUntil:function(a,b,c){return m.dir(a,"previousSibling",c)},siblings:function(a){return m.sibling((a.parentNode||{}).firstChild,a)},children:function(a){return m.sibling(a.firstChild)},contents:function(a){return m.nodeName(a,"iframe")?a.contentDocument||a.contentWindow.document:m.merge([],a.childNodes)}},function(a,b){m.fn[a]=function(c,d){var e=m.map(this,b,c);return"Until"!==a.slice(-5)&&(d=c),d&&"string"==typeof d&&(e=m.filter(d,e)),this.length>1&&(C[a]||(e=m.unique(e)),B.test(a)&&(e=e.reverse())),this.pushStack(e)}});var E=/\S+/g,F={};function G(a){var b=F[a]={};return m.each(a.match(E)||[],function(a,c){b[c]=!0}),b}m.Callbacks=function(a){a="string"==typeof a?F[a]||G(a):m.extend({},a);var b,c,d,e,f,g,h=[],i=!a.once&&[],j=function(l){for(c=a.memory&&l,d=!0,f=g||0,g=0,e=h.length,b=!0;h&&e>f;f++)if(h[f].apply(l[0],l[1])===!1&&a.stopOnFalse){c=!1;break}b=!1,h&&(i?i.length&&j(i.shift()):c?h=[]:k.disable())},k={add:function(){if(h){var d=h.length;!function f(b){m.each(b,function(b,c){var d=m.type(c);"function"===d?a.unique&&k.has(c)||h.push(c):c&&c.length&&"string"!==d&&f(c)})}(arguments),b?e=h.length:c&&(g=d,j(c))}return this},remove:function(){return h&&m.each(arguments,function(a,c){var d;while((d=m.inArray(c,h,d))>-1)h.splice(d,1),b&&(e>=d&&e--,f>=d&&f--)}),this},has:function(a){return a?m.inArray(a,h)>-1:!(!h||!h.length)},empty:function(){return h=[],e=0,this},disable:function(){return h=i=c=void 0,this},disabled:function(){return!h},lock:function(){return i=void 0,c||k.disable(),this},locked:function(){return!i},fireWith:function(a,c){return!h||d&&!i||(c=c||[],c=[a,c.slice?c.slice():c],b?i.push(c):j(c)),this},fire:function(){return k.fireWith(this,arguments),this},fired:function(){return!!d}};return k},m.extend({Deferred:function(a){var b=[["resolve","done",m.Callbacks("once memory"),"resolved"],["reject","fail",m.Callbacks("once memory"),"rejected"],["notify","progress",m.Callbacks("memory")]],c="pending",d={state:function(){return c},always:function(){return e.done(arguments).fail(arguments),this},then:function(){var a=arguments;return m.Deferred(function(c){m.each(b,function(b,f){var g=m.isFunction(a[b])&&a[b];e[f[1]](function(){var a=g&&g.apply(this,arguments);a&&m.isFunction(a.promise)?a.promise().done(c.resolve).fail(c.reject).progress(c.notify):c[f[0]+"With"](this===d?c.promise():this,g?[a]:arguments)})}),a=null}).promise()},promise:function(a){return null!=a?m.extend(a,d):d}},e={};return d.pipe=d.then,m.each(b,function(a,f){var g=f[2],h=f[3];d[f[1]]=g.add,h&&g.add(function(){c=h},b[1^a][2].disable,b[2][2].lock),e[f[0]]=function(){return e[f[0]+"With"](this===e?d:this,arguments),this},e[f[0]+"With"]=g.fireWith}),d.promise(e),a&&a.call(e,e),e},when:function(a){var b=0,c=d.call(arguments),e=c.length,f=1!==e||a&&m.isFunction(a.promise)?e:0,g=1===f?a:m.Deferred(),h=function(a,b,c){return function(e){b[a]=this,c[a]=arguments.length>1?d.call(arguments):e,c===i?g.notifyWith(b,c):--f||g.resolveWith(b,c)}},i,j,k;if(e>1)for(i=new Array(e),j=new Array(e),k=new Array(e);e>b;b++)c[b]&&m.isFunction(c[b].promise)?c[b].promise().done(h(b,k,c)).fail(g.reject).progress(h(b,j,i)):--f;return f||g.resolveWith(k,c),g.promise()}});var H;m.fn.ready=function(a){return m.ready.promise().done(a),this},m.extend({isReady:!1,readyWait:1,holdReady:function(a){a?m.readyWait++:m.ready(!0)},ready:function(a){if(a===!0?!--m.readyWait:!m.isReady){if(!y.body)return setTimeout(m.ready);m.isReady=!0,a!==!0&&--m.readyWait>0||(H.resolveWith(y,[m]),m.fn.triggerHandler&&(m(y).triggerHandler("ready"),m(y).off("ready")))}}});function I(){y.addEventListener?(y.removeEventListener("DOMContentLoaded",J,!1),a.removeEventListener("load",J,!1)):(y.detachEvent("onreadystatechange",J),a.detachEvent("onload",J))}function J(){(y.addEventListener||"load"===event.type||"complete"===y.readyState)&&(I(),m.ready())}m.ready.promise=function(b){if(!H)if(H=m.Deferred(),"complete"===y.readyState)setTimeout(m.ready);else if(y.addEventListener)y.addEventListener("DOMContentLoaded",J,!1),a.addEventListener("load",J,!1);else{y.attachEvent("onreadystatechange",J),a.attachEvent("onload",J);var c=!1;try{c=null==a.frameElement&&y.documentElement}catch(d){}c&&c.doScroll&&!function e(){if(!m.isReady){try{c.doScroll("left")}catch(a){return setTimeout(e,50)}I(),m.ready()}}()}return H.promise(b)};var K="undefined",L;for(L in m(k))break;k.ownLast="0"!==L,k.inlineBlockNeedsLayout=!1,m(function(){var a,b,c,d;c=y.getElementsByTagName("body")[0],c&&c.style&&(b=y.createElement("div"),d=y.createElement("div"),d.style.cssText="position:absolute;border:0;width:0;height:0;top:0;left:-9999px",c.appendChild(d).appendChild(b),typeof b.style.zoom!==K&&(b.style.cssText="display:inline;margin:0;border:0;padding:1px;width:1px;zoom:1",k.inlineBlockNeedsLayout=a=3===b.offsetWidth,a&&(c.style.zoom=1)),c.removeChild(d))}),function(){var a=y.createElement("div");if(null==k.deleteExpando){k.deleteExpando=!0;try{delete a.test}catch(b){k.deleteExpando=!1}}a=null}(),m.acceptData=function(a){var b=m.noData[(a.nodeName+" ").toLowerCase()],c=+a.nodeType||1;return 1!==c&&9!==c?!1:!b||b!==!0&&a.getAttribute("classid")===b};var M=/^(?:\{[\w\W]*\}|\[[\w\W]*\])$/,N=/([A-Z])/g;function O(a,b,c){if(void 0===c&&1===a.nodeType){var d="data-"+b.replace(N,"-$1").toLowerCase();if(c=a.getAttribute(d),"string"==typeof c){try{c="true"===c?!0:"false"===c?!1:"null"===c?null:+c+""===c?+c:M.test(c)?m.parseJSON(c):c}catch(e){}m.data(a,b,c)}else c=void 0}return c}function P(a){var b;for(b in a)if(("data"!==b||!m.isEmptyObject(a[b]))&&"toJSON"!==b)return!1;
@@ -256,9 +255,7 @@ h6 {
 </style>
 
 
-</head>
 
-<body>
 
 <style type="text/css">
 .main-container {
@@ -283,16 +280,78 @@ img {
 button.code-folding-btn:focus {
   outline: none;
 }
+summary {
+  display: list-item;
+}
 </style>
 
 
 
-<div class="container-fluid main-container">
-
 <!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
 <script>
 $(document).ready(function () {
   window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
 });
 </script>
 
@@ -301,168 +360,610 @@ $(document).ready(function () {
 
 
 
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
 
 
 <div class="fluid-row" id="header">
 
 
 
-<h1 class="title toc-ignore">Syllabus for MEDB5507, Introduction to SAS</h1>
-<h4 class="author"><em>Steve Simon</em></h4>
-<h4 class="date"><em>July 30, 2018</em></h4>
+<h1 class="title toc-ignore">Syllabus for Introduction to SAS (MEDB 5507)</h1>
+<h4 class="author">Steve Simon</h4>
 
 </div>
 
 
-<div id="medb-5507-introduction-to-sas" class="section level1">
-<h1>MEDB 5507, Introduction to SAS</h1>
-<div id="fall-2018-online-asynchronous-canvas-course-site" class="section level2">
-<h2>Fall 2018, Online, Asynchronous Canvas Course Site</h2>
+<div id="printing-date" class="section level2">
+<h2>Printing date</h2>
+<p>This syllabus was created on 2019-06-04 and last updated on 2019-06-04.</p>
 </div>
-<div id="introduction" class="section level2">
-<h2>INTRODUCTION</h2>
-<p>A working knowledge of statistical software is a vital skill for anyone involved in quantitative research. This course will introduce data management, simple descriptive statistics, and basic graphical display using the SAS software package. Students will develop the fundamental skills needed to prepare datasets for analysis, and to conduct simple descriptive and graphic analyses and report those analyses.</p>
+<div id="course-information" class="section level2">
+<h2>Course information</h2>
+<!-- regular html comment -->
+<p>This is an on-line class taught, starting on Tuesday, June 04, 2019 and ending on Friday, September 20, 2019.</p>
+<div id="your-instructor" class="section level3">
+<h3>Your instructor</h3>
+<p>Your instructor is Steve Simon in the Department of Biomedical and Health Informatics. My phone number is 816-235-6617 and my email is <a href="mailto:simons@umkc.edu" class="email">simons@umkc.edu</a>. My office is M5-117, located on the fifth floor of the School of Medicine building in the suite of offices for Biomedical and Health Informatics.</p>
+</div>
+<div id="catalog-information" class="section level3">
+<h3>Catalog information</h3>
+<p>Course Title: Clinical Research Methodology</p>
+<p>Credit Hours: 3 credit hours</p>
+<p>Prerequisites: none</p>
+<p>Course Attributes: graduate research training</p>
+<p>Course Format: Lecture, Discussion, and individual activities</p>
+<p>Course Instructional Mode : OA (Online Asyncronous class instruction); material posted on Canvas course site will support all course activities.</p>
+</div>
 <div id="course-description" class="section level3">
 <h3>Course Description</h3>
-<p>This course will to provide a working familiarity with SAS. Students are not expected to have advanced programming or statistical analysis skills other than the ability to create and modify text files. A basic understanding of statistical terminology and a working familiarity with computer-based data files (e.g., Excel) is necessary. The class will introduce basic methods for data import, data management, simple graphics, and basic statistical analysis. This class will not cover advanced statistical methods, but will provide you with a firm foundation to address these areas in your advanced statistics classes or in your research efforts, including thesis/dissertation research.</p>
+<p>This course trains the student on the fundamentals of research design, planning, and implementation and provides a broad overview of clinical research in terms of definition, methodology, conduct, and applications. The course will explore basic elements of clinical research including the hierarchy of clinical research design and the conduct of clinical research.</p>
+</div>
+<div id="course-topics" class="section level3">
+<h3>Course Topics</h3>
+<ul>
+<li><p>Conceiving the research question;</p></li>
+<li><p>Study designs;</p></li>
+<li><p>Questionnaire construction;</p></li>
+<li><p>Research methodology;</p></li>
+<li><p>Research ethics;</p></li>
+<li><p>Human subjects requirements;</p></li>
+<li><p>The role of statistical analysis in clinical research;</p></li>
+<li><p>Research proposal preparation; and</p></li>
+<li><p>Research based on analysis of secondary data.</p></li>
+</ul>
+</div>
+<div id="introduction" class="section level3">
+<h3>Introduction</h3>
+<p>Clinical research has always been critical for the discovery of new knowledge and the development of new medications and treatments. Now, clinical research carries an increasingly important role as it contributes to critical issues facing our health care system. These issues include such things as the identification of social and individual factors that influence clinical outcomes, determination of optimal treatment regimens, and methods to optimize outcomes and efficiencies in clinical care. This clinical research methods course is designed to provide the foundation for people who plan to contribute to research that has the potential to have a significant impact on health care.</p>
+<p>Note: Many thanks go to Dr. Mary Gerkoich, who provided an excellent structure and format to this class that I will be following closely.</p>
+</div>
+<div id="course-objectives" class="section level3">
+<h3>Course Objectives</h3>
+<p>The course will provide students with the foundation for understanding and contributing to clinical research on a variety of topics. The course will cover a range of topics that are essential components of good clinical research projects. It will serve as a foundation for subsequent course work for students who are obtaining a Master’s or PhD degree and those obtaining the Graduate Certificate in Clinical Research. The overall objective of the course is to give students the information and skills to be active participants in the ongoing efforts to conduct research with the goal of providing improved treatments and outcomes for patients as well as to be more knowledgeable consumers of health care-related material.</p>
 </div>
 <div id="student-learning-objectives" class="section level3">
 <h3>Student Learning Objectives</h3>
-<p>At the completion of this course, students will be able to:</p>
-<ul>
-<li>Prepare and manipulate datasets for analysis in SAS.</li>
-<li>Conduct simple descriptive and graphic analyses of data in SAS.</li>
-<li>Prepare a report with a summary of analyses conducted in SAS.</li>
-</ul>
+<p>At the end of this course, students will be able to:</p>
+<ol style="list-style-type: decimal">
+<li><p>Evaluate existing clinical research literature and identify issues and topics for future research.</p></li>
+<li><p>Develop research questions/hypotheses to address clinical research topics.</p></li>
+<li><p>Determine an appropriate research design to address a clinical research issue.</p></li>
+<li><p>Develop methods and materials to conduct clinical research.</p></li>
+<li><p>Understand issues related to managing data sets.</p></li>
+<li><p>Select appropriate analysis methods in order to test research questions/hypotheses.</p></li>
+<li><p>Write a proposal for a research project to address a clinical research issue.</p></li>
+<li><p>Make a presentation of a research proposal including the background to justify the research questions/hypotheses as well as the methods planned for collecting and analyzing the research data.</p></li>
+</ol>
+</div>
+<div id="course-requirements" class="section level3">
+<h3>Course Requirements</h3>
+<p>Students are responsible for reading all assignments from the text, Canvas material, internet materials, and instructor provided resources before the class period in which they are to be discussed. Each student will complete Human Subjects training, assignments, a research proposal, and an oral presentation of the research proposal that will include poster material.</p>
 </div>
 <div id="course-framework" class="section level3">
 <h3>Course Framework</h3>
-<p>This class will be taught as a self-paced, asynchronous online course. The instructor will provide datasets and instructions for running various coding functions within SAS. You will apply these functions to import datasets, manipulate these datasets, and produce basic summaries of these datasets. As the final project of the class, you will produce an independent analysis on a dataset of your own choice that demonstrates the coding techniques and skills that were covered in the course.</p>
+<p>There is a long tradition of methodology and techniques as applied to research on various health topics from drug development trials to clinical outcomes. Understanding the methods required to conduct valid research is critical as clinical research projects play an increasingly significant role in the evolution of health care. Results from clinical research studies contribute not only to the development of new drugs and treatments but also to the determination of the best treatments for health care providers to offer patients. The readings, discussions, and projects in this course are all presented within the framework of current health care practices and issues. The material covered in this course can be viewed in the context of topics covered every day by the media.</p>
 </div>
+<div id="class-structure" class="section level3">
+<h3>Class structure</h3>
+<p>In general, each class session will consist of a mixture of recorded material available on Canvas as preparation for the session, individual assignments, and discussion/activities that are related to the topic and are completed either individually, within pairs, or within small groups of students. The lecture material is designed to supplement the information assigned from the textbook and other sources.</p>
 </div>
-<div id="instructor" class="section level2">
-<h2>INSTRUCTOR</h2>
-<p>Steve Simon (but thanks go to Mary M. Gerkovich who did all the heavy lifting for this class)</p>
-<p>Phone: 816-235-6617</p>
-<p>E-mail: <a href="mailto:simons@umkc.edu" class="email">simons@umkc.edu</a></p>
-<p>Office: Department of Biomedical and Health Informatics, School of Medicine, M5-117</p>
-<p>Office hours: By appointment; Assistance is available via email and by pre-arranged appointment. Allow up to 24 hours to receive a response from the instructor to an email enquiry. Email enquiries sent outside the regular work week may take longer for a response.</p>
-<p>Course Location: On-line</p>
+<div id="required-materials" class="section level3">
+<h3>Required Materials</h3>
+<p>The required textbook for this class is:</p>
+<p>Gliner JA, Morgan GA, Leech NL. Research Methods in Applied Settings: An Integrated Approach to Design and Analysis. 3rd ed. New York: Routledge, Taylor &amp; Francis Group; 2017.</p>
+<p>This textbook is available for purchase through the UMKC Health Sciences bookstore and online sources, and can be rented through online resources (e.g., Amazon).</p>
 </div>
-<div id="catalog-information" class="section level2">
-<h2>CATALOG INFORMATION</h2>
-<p>MEDB 5507-0001</p>
-<p>Course Description – This course is an introduction to SAS statistical programming. The course is designed to teach students basic skills that will prepare them to use SAS for data analysis. 1 credit hour</p>
-<p>Prerequisites – none</p>
-<p>Course Attributes – graduate research training</p>
-<p>Course Format – Lecture, Self-completed assignments, Final project</p>
-<p>Course Instructional Mode – Online</p>
+<div id="recommended-materials" class="section level3">
+<h3>Recommended Materials</h3>
+<p>Supplemental material for the class has been obtained from the following books:</p>
+<p>Julius Sim and Chris Wright. Research in Health Care: Concepts, Designs and Methods. Cheltenham, United Kingdom: Nelson Thornes Ltd. 2000. (reprinted in 2002)</p>
+<p>Stephen B. Hulley, Steven R. Cummings, Warren S. Browner, Deborah G. Grady, and Thomas B. Newman. Designing Clinical Research, 3rd ed. Philadelpha, Pennsylvania: Lippincott Williams &amp; Wilkins publishing.</p>
+<p>Leslie G. Portney and Mary P. Watkins. Foundations of Clinical Research: Applications to Practice, 3rd ed. Upper Saddle River, New Jersey: Pearson Prentice Hall.</p>
+<p>Students SHOULD NOT purchase the supplementary materials.</p>
 </div>
-<div id="class-structure" class="section level2">
-<h2>CLASS STRUCTURE</h2>
-<p>This class is a self-paced, asynchronous online course. Course material is organized into six parts. In order to achieve learning objectives, students need to review provided course materials, including recorded lectures. During the lectures, the instructor will provide coding examples to demonstrate application of SAS, and then students will have hands on programming experience with support and feedback from the instructor. Students have access to the SAS program, either directly on a computer that has SAS installed, through UMKC Remote Labs (<a href="http://www.umkc.edu/is/remotelabs/" class="uri">http://www.umkc.edu/is/remotelabs/</a>), or through SAS resources (refer below to SAS University under Other Resources). As the final project of the class, students will independently apply these skills to their own dataset and produce an analysis of these data.</p>
-</div>
-<div id="student-projects-and-grading" class="section level2">
-<h2>STUDENT PROJECTS AND GRADING</h2>
-<p>Students will be presented with instructions on using SAS functions and/or syntax files and be shown how to apply those to a provided dataset. Under the supervision of the instructor, students will apply these skills to a different provided dataset. At the end of each part, students will turn in material that documents their work process and results, and a brief written interpretation of the work done for that assignment. For the final project, students will use a new dataset of their own choosing, import that dataset, manipulate it as needed, and produce a statistical report using at least one graphical display and at least one descriptive statistical method. The final project must include a written explanation of the results. The dataset you work with for the final project should include four or more variables of which at least two variables are continuous measures and at least two variables are categorical measures.</p>
-<p>Grading - This course is graded as Pass / Fail. In order to receive a passing grade, the student must successfully complete the assignments, including the assignment for the final project that includes work using a new dataset provided in the course or your own dataset. This work must be completed and submitted to the instructor by Friday, April 6, 2018 in order to get credit for the course.</p>
-</div>
-<div id="required-material" class="section level2">
-<h2>REQUIRED MATERIAL</h2>
-<p>There is NO required textbook for this class.<br />
-The following books are possible resources you might want to purchase for your future work with SAS.</p>
-<ul>
-<li>Delwiche &amp; Slaughter. The Little SAS Book. 5th Edition. SAS Institute Inc., Cary, NC.</li>
-<li>Cody. Learning SAS by Example : A Programmer’s Guide. SAS Institute Inc., Cary, NC.</li>
-<li>Cody. SAS Statistics by Example. SAS Institute Inc., Cary, NC.</li>
-</ul>
 <div id="resources" class="section level3">
 <h3>Resources</h3>
-<p>This course will use SAS for all assignments and the final project. Students will have access to the SAS program either directly on a computer that has SAS installed, through UMKC Remote Labs (<a href="http://www.umkc.edu/is/remotelabs/" class="uri">http://www.umkc.edu/is/remotelabs/</a>), or through SAS resources (refer below to SAS University under Other Resources). The Department of Biomedical and Health Informatics has student computer workstations available that can be used by arrangement.</p>
-<p>Please note that when you are logged onto Remote Labs, it will probably be difficult to have direct access to a drive (USB or hard drive) on the computer you are sitting at (the remote system has a hard time seeing these local devices/ports). You will, however, be able to save files to your Q drive space. When using the UMKC Remote Labs resource, I recommend that you save your course files on your Q drive space or use cloud storage. The Q drive space is part of the UMKC network and your space is automatically mapped when you log onto the UMKC system. If you have questions about how to access this directory, contact UMKC Information Services (816-235-2000). From the Q drive, files can be copied/moved to other storage locations/devices.</p>
-<p>Your Q drive space is limited (approximately 500 mB), so you might want to also consider using cloud storage for your files. Free cloud storage options include –</p>
-<ul>
-<li>Box.com</li>
-<li>Drop Box</li>
-<li>Google Drive (free with a Google email address)</li>
-<li>Microsoft One Drive</li>
-</ul>
-<p>Cloud storage will give you additional space to store files. If you have any question about setting up a cloud storage account using any of these resources, contact UMKC Information Services (816-235-2000). Additional information about Box cloud storage can be viewed on the UMKC web site – <a href="http://www.umkc.edu/is/box/" class="uri">http://www.umkc.edu/is/box/</a></p>
-<p>Web Sites (compiled with the help of Dr. Jenifer Allsworth &amp; Michel Conn)</p>
-<p>Tutorials - SAS offers many online tutorials - view the complete listing here: <a href="http://support.sas.com/training/tutorial/" class="uri">http://support.sas.com/training/tutorial/</a></p>
-<p>SAS’s basic programming online tutorial is free: <a href="https://support.sas.com/edu/schedules.html?ctry=us&amp;id=2588" class="uri">https://support.sas.com/edu/schedules.html?ctry=us&amp;id=2588</a></p>
-<p>SAS Analytics U - A Youtube channel that includes videos on many topics: <a href="https://www.youtube.com/playlist?list=PLVBcK_IpFVi9cajJtRel2uBLbtcLz-WIN" class="uri">https://www.youtube.com/playlist?list=PLVBcK_IpFVi9cajJtRel2uBLbtcLz-WIN</a></p>
-<p>The UCLA SAS Starter Kit: <a href="http://www.ats.ucla.edu/stat/sas/sk/default.htm" class="uri">http://www.ats.ucla.edu/stat/sas/sk/default.htm</a></p>
-<p>Other Resources – A favorite SAS instructional site is published by UCLA - <a href="http://www.ats.ucla.edu/stat/sas/" class="uri">http://www.ats.ucla.edu/stat/sas/</a><br />
-The UCLA site is a fantastic resource for new and experienced SAS users and includes tutorials as well as examples of SAS code.</p>
-<p>This paper by a SAS user has a comprehensive listing of websites with training materials and coding tips: <a href="http://analytics.ncsu.edu/sesug/2003/TD02-Stojanovic.pdf" class="uri">http://analytics.ncsu.edu/sesug/2003/TD02-Stojanovic.pdf</a>. Note - Some of the links are broken or out of date.</p>
-<p>UM System Training Opportunities (some Columbia only; low cost) <a href="https://doit.missouri.edu/services/training/classroom-training/course-catalog/sas/" class="uri">https://doit.missouri.edu/services/training/classroom-training/course-catalog/sas/</a></p>
-<p>SAS University is free – <a href="http://www.sas.com/en_us/software/university-edition.html" class="uri">http://www.sas.com/en_us/software/university-edition.html</a></p>
+<p>Students are encouraged to routinely check news and professional web sites in order to keep up with current information related to clinical research topics. Examples of these sites include:</p>
+<p><a href="http://content.nejm.org/">The New England Journal of Medicine</a></p>
+<p><a href="http://www.nih.gov/news/index.html">National Institutes of Health News &amp; Events</a></p>
+<p><a href="http://www.kaiserhealthnews.org/">Kaiser Health News</a></p>
+<p><a href="http://www.commonwealthfund.org/">The Commonwealth Fund</a></p>
+<p>Students are also encouraged to regularly read national newspapers and print media (e.g., New York Times, Washington Post, and/or listen to national new sources (e.g., NPR) for relevant stories.</p>
+</div>
+<div id="course-evaluation" class="section level3">
+<h3>Course Evaluation</h3>
+<p>Completion of the confidential course evaluation at the end of the semester is available for the course and strongly encouraged. You will receive information about completing the evaluation from the Department office towards the end of the semester.</p>
 </div>
 </div>
-<div id="course-outline" class="section level2">
-<h2>COURSE OUTLINE</h2>
-<p>For each part of the course, the instructor will provide a recorded lecture that shows a demonstration of SAS coding and program execution. In addition, in the Course Content area of the course Blackboard site students will have a Course Outline document (MEDB 5507_Intro to SAS_Course Outline_Notes &amp; Assignments_FS2017.pdf) that provides detailed notes and information on each assignment. Also loaded in the Course Content area will be data files that are not publically available, descriptions of these data files, and the SAS program files used for the recorded coding examples. These coding files can be used as the starting point for your own coding if desired; they can be edited using the SAS program editor, or edited using a text editor and copied into the SAS program editor. It is recomended that you copy these files to a local device (i.e., hard drive or USB drive) to simplify working with the information.</p>
-<p>If you are trying to work in SAS at the same time as viewing the recorded lectures, it is recommended that you use a system that will allow you to follow along with the recordings and make notes on the coding as needed. If you are using a system that has 2 monitors, this can be accomplished by playing the recording on one screen and doing other operations on the other screen.</p>
-<p>Mp4 versions of all lectures will be created and stored in a « Box » folder that you will have access to. To view these recordings, you need to sign in at – Box.umkc.edu Use your SSO Look for the folder labeled MEDB 5507 Intro to SAS Recorded Lectures - Fall 2017 This folder will be available to you during the fall semester.</p>
-<p>A Discussion Board area (Discussion Forum  Intro to SAS – Questions &amp; Answers) is established in the course Blackboard site in order to have a space for questions and answers that will be available to all students. To post a question on this forum, Click on the Forum name Click on « Create Thread » Provide info in the « Subject » box to briefly describe your question (that will allow others to quickly identify a question they are interested in) Use the Message box to type in your question Hit « Submit »</p>
-<p>Note – if you are getting a SAS error message you don’t understand, you can copy the error message into the Description box. If you want a section of coding reviewed because you are having a problem with it, you can also copy the text into the Description box.</p>
-<p>The instructor will review and respond to items posted on the Discussion Board on a regular basis. If you have not gotten a response within a day or two, send an email to the instructor asking her to review your question in the discussion forum.</p>
-<p>Introduction</p>
-<ul>
-<li>Overview of SAS programming language and program set-up</li>
-</ul>
-<p>Part 1 - Initial Steps – Getting Data into SAS and saving SAS dataset</p>
-<ul>
-<li>Setting up SAS library</li>
-<li>Importing data file</li>
-<li>Works pace vs SAS library</li>
-<li>Checking data</li>
-<li>Saving SAS dataset</li>
-</ul>
-<p>Part 2 – Modifying Your Dataset</p>
-<ul>
-<li>Format information</li>
-<li>Variable labels</li>
-<li>Creating new variables</li>
-<li>Code missing data</li>
-<li>Renaming variables</li>
-<li>Creating a numeric variable from a character variable</li>
-</ul>
-<p>Part 3 – Subsetting Your Dataset and Combining Datasets</p>
-<ul>
-<li>Select a subset of variables</li>
-<li>Select a subset of cases</li>
-<li>Combining (concatenating) datasets together – adding observations</li>
-<li>Merging datasets together – adding variables</li>
-</ul>
-<p>Part 4 – Examining Relationships Between Variables</p>
-<ul>
-<li>Examine relationships between two categorical variables</li>
-<li>Examine relationships between two continuous variables</li>
-<li>Examine differences between groups on a continuous measure</li>
-</ul>
-<p>Part 5 – More Complicated Coding in the Data Step</p>
-<ul>
-<li>Coding subscale scores</li>
-<li>Computing mean scores</li>
-<li>Using an array and do loop to code</li>
-<li>Create a « cut-point » score</li>
-</ul>
-<p>Part 6 – Restructuring Your Datasets</p>
-<ul>
-<li>Create an « horizontal » dataset from a « vertical » dataset</li>
-<li>Create a « vertical » dataset from an « horizontal » dataset</li>
-</ul>
-<p>Final Project – DUE DATE : FRIDAY, APRIL13, 2018</p>
-<ul>
-<li>For the final project, use a dataset of your own choosing from those available through this course or a dataset of your own. Demonstrate your mastery of the coding elements covered in the course, including import the dataset, manipulate it as needed, and produce a statistical report using at least one graphical display and at least one descriptive statistical method. This final project should include a written explanation of the coding you performed and the results you obtained. The dataset you work with for this final project should include at least four variables of which two variables represent continuous data and two variables represent categorical data so you can demonstrate your ability to examine relationships between variables.</li>
-</ul>
+<div id="assignments" class="section level2">
+<h2>Assignments</h2>
+<div id="schedule" class="section level3">
+<h3>Schedule</h3>
+<p>The detailed listing of topics, assignments, and deadlines is shown in the Course Overview document in the “Course Content” section of the course Canvas site.</p>
+<p>A calendar showing all dates for submissions (assessment items, assignments, final project oral presentation, and final project written proposal) is shown in the Calendar document in the “Course Content” section of the course Canvas site.</p>
 </div>
-<div id="course-expectations-course-policies-requirements-and-standards-for-student-coursework-and-student-behavior" class="section level2">
-<h2>COURSE EXPECTATIONS, COURSE POLICIES, REQUIREMENTS, AND STANDARDS FOR STUDENT COURSEWORK AND STUDENT BEHAVIOR</h2>
-<p>Important UMKC Resources and Policies are applicable to every course and every student at UMKC. These are located in the Blackboard site for this course under the “UMKC Policies” tab. As a UMKC student, you are expected to review and abide by these policies. If you have any questions, please contact your instructor for clarification. In addition to the standard UMKC policies, the Department of Biomedical and Health Informatics includes self-plagiarism in their definition of plagiarism. Self-plagiarism is reuse, without prior discussion and consent of the course director, of an existing paper that has been submitted for credit in a different course.</p>
-<p>This course follows the “Faculty allowing recording” option of the Academic Inquiry, Course Discussion and Privacy policy.</p>
+<div id="evaluation-criteria" class="section level3">
+<h3>Evaluation Criteria</h3>
+<p>Participation, 3 points per weekly session</p>
+<p>Assessment item development, 3 points each week</p>
+<p>Assignments, 10 points each</p>
+<p>Unscheduled Quizzes, 10 points each</p>
+<p>Oral presentation of research proposal (including poster material), 50 points</p>
+<p>Written Research Proposal, 200 points</p>
+</div>
+<div id="grading-criteria" class="section level3">
+<h3>Grading criteria</h3>
+<p>The student’s grade for the class will be based on the percentage of possible points the student has earned (rounded up to the next percentage point). A letter grade will be assigned based on the following scale:</p>
+<p>94 to 100, A<br />
+90 to 93, A-<br />
+86 to 89, B+<br />
+83 to 85, B<br />
+80 to 82, B-<br />
+76 to 79, C+<br />
+73 to 76, C<br />
+70 to 73, C-<br />
+66 to 69, D+<br />
+63 to 65, D<br />
+60 to 62, D-<br />
+under 60, F</p>
+<p>If a student feels that he/she has been unfairly graded, information on the appeal process can be found in the <a href="https://catalog.umkc.edu/colleges-schools/law/academic-rules-regulations-for-juris-doctor-degree-program/appeal-of-grades/appeal-of-grades.pdf">academic regulations information</a>.</p>
+</div>
+<div id="submission-format" class="section level3">
+<h3>Submission format</h3>
+<p>Unless otherwise noted, all material that is submitted to Dr. Simon must be submitted via the course Canvas site and should be .pdf format. If you have difficulty producing pdf format files, alternate formats may be acceptable, but please clear this in advance. All files sent to Dr. Simon must include the student’s name in the filename.</p>
+</div>
+<div id="canvas-discussions" class="section level3">
+<h3>Canvas Discussions</h3>
+<p>During the semester, you will be expected to participate in online discussions through the course Canvas site. Online discussion forums will provided the basis for discussions and activities that normally take place during an on-campus class period. Your engagement in the discussions will be reflected in the points you earn for participation. The minimum expectation is that you will respond to the topic, using the information you have read and/or the material presented in the recordings. Full participation in the discussion topics will be demonstrated by responses you make to the entries made by other students as well as the content of your own posting, and making these contributions in a timely manner (first posting must be made by Sunday midnight following the posting of the forums. A vital discussion board should include responses between students that expand on the original posting. Think of this as the interchange that occurs when we are all in the same room.</p>
+<p>When a discussion topic is posted, please add your contribution by replying to the original topic. When you are responding to another student’s posting, use the reply function.</p>
+<p>I will regularly assign a student to be the participation leader in a specific discussion forum. The leader is expected to respond to each posting, adding to the discussion as appropriate and findings links between individual postings in a way that adds value to the overall discussion. The quality of what you do when you are the participation leader will be factored into the participation part of the course evaluation.</p>
+</div>
+<div id="discussion-forums" class="section level3">
+<h3>Discussion forums</h3>
+<p>All students are expected to complete the readings prior to class and be prepared for discussion. A portion of the course grade will be based on discussion board participation. For each class session, participation points will be assigned based on the following scale:</p>
+<ul>
+<li><p>0 points (did not participate),</p></li>
+<li><p>1 point (made minimal contribution to discussion and did not respond to others’ postings),</p></li>
+<li><p>2 points (posted own comment and responded to another student’s posting), or</p></li>
+<li><p>3 points (interactively participated in discussions and made initial posting by Sunday midnight).</p></li>
+</ul>
+<p>To get maximum participation credit, you must make your initial posting by Sunday midnight, make an original posting to one of the discussion forums, and respond to at least one posting by another student.</p>
+<p>Students will be assigned to lead discussions; participation credit will take into account this activity.</p>
+</div>
+<div id="assessment-item-development" class="section level3">
+<h3>Assessment Item Development</h3>
+<p>For the weekly sessions, each student will submit through the course Canvas site a file that contains three items that could be used to assess the student’s comprehension of the reading material and lecture presentation. To get full credit for this aspect of evaluation, students must submit the items by midnight on Tuesday night before the weekly class session. An assessment item can be in the form of multiple choice, true/false, short answer - any format that you think is appropriate to assess comprehension of the weekly material. You must indicate the correct response for each item that you submit. Items selected from all those submitted will be compiled and will be the basis of a discussion forum that will be posted on Thursday for each weekly session. Assessment item submissions that are received following the posting of the assessment item discussion forum will receive 0 points.</p>
+</div>
+<div id="weekly-assignments" class="section level3">
+<h3>Weekly assignments</h3>
+<p>The course will require students to complete assignments that are designed to contribute to the identification of a research topic and completion of the final course project - an original research proposal. The requirements for each assignment will be explained in detail. All assignments will be due by midnight of the following Wednesday. Full credit can only be earned on assignments that are turned in by the due date/time; assignments can be turned in after this date for partial credit. All assignments that are turned in will be reviewed by Dr. Simon and the student will receive feedback on the assignment. All assignments, unless otherwise noted, must be electronically submitted through the course Canvas site. All files submitted for grading MUST include the student’s name in the file name. The assignments will be graded and will routinely be returned to students by the next class session.</p>
+</div>
+<div id="unscheduled-quizzes" class="section level3">
+<h3>Unscheduled Quizzes</h3>
+<p>There may be unscheduled quizzes that will be based on the materials covered in the class.</p>
+</div>
+</div>
+<div id="final-project" class="section level2">
+<h2>Final project</h2>
+<div id="final-project---overview" class="section level3">
+<h3>Final Project - Overview</h3>
+<p>All MSB students will complete either a thesis of capstone project as part of their program completion and all PhD students will complete a doctoral dissertation. Completing a thesis is a requirement for students in the genomics emphasis area and an option for all other MSB students. Because of the value department faculty place on the student’s ability to plan and propose a research project, the major project of this course will be a presentation (in both oral and written form) of a proposal for a research project on a specific topic that is of interest to you. The goal is for this research proposal to provide an experience that is relevant to the preparation of proposals such as a thesis or dissertation proposal or a proposal to obtain research funding.</p>
+</div>
+<div id="final-project-oral-presentation" class="section level3">
+<h3>Final Project Oral Presentation</h3>
+<p>You will prepare a recorded video presentation of your research proposal using a research conference style and upload into the course Canvas site. The oral presentation should be planned as a brief presentation (approximately 10 min). The presentation should be based on objectives, background, methods, and discussion of the possible contribution findings of this research project could have. The American Public Health Association has some basic guidelines for presenters on their website that can be used when making your PowerPoint slides and gauging presentation length. All students will complete a scorecard for the presentation of all other students in order to provide constructive comments to the presenters. All scorecards will be submitted to Dr. Simon via the course Canvas site and he will distribute anonymous comments to presenters upon request by the presenter.</p>
+</div>
+<div id="final-project---poster-material" class="section level3">
+<h3>Final project - poster material</h3>
+<p>The presentation needs to include “poster material” so that you get practice preparing material required for poster presentations at professional meetings. The PowerPoint material you prepare for your oral presentation will probably serve as the basis for your poster material. It is not a requirement for this course that the poster material be printed/produced at the same high quality expected for a professional meeting. The purpose of preparing the poster material for this course is to give you experience preparing the content that is expected for a professional poster presentation; you should be able to do this without any additional expense for the preparation of the poster material.</p>
+</div>
+<div id="poster-structure" class="section level3">
+<h3>Poster structure</h3>
+<p>The information to be incorporated into the poster material generally should include:</p>
+<ul>
+<li><p>Title</p></li>
+<li><p>Background</p></li>
+<li><p>Methods</p></li>
+<li><p>Study Design</p></li>
+<li><p>Sample</p></li>
+<li><p>Measures and Materials</p></li>
+<li><p>Procedures</p></li>
+<li><p>Statistical Analysis</p></li>
+<li><p>Potential Implications of the Proposed Study</p></li>
+</ul>
+<p>More detailed information concerning expectations for this presentation will be covered later in the semester. The Grading Rubric for the oral presentation is posted in the “Course Content” section of the course Canvas site.</p>
+</div>
+<div id="final-project-written-research-proposal" class="section level3">
+<h3>Final Project Written Research Proposal</h3>
+<p>The final project for the class will be a written research proposal which must be turned in using “Turnitin” through Canvas by midnight on Wednesday, September 18, 2019; turning in the proposal after this date/time will result in an automatic deduction in points. The structure of the written proposal should follow a truncated version of the five-chapter thesis format. For this project, the written proposal is expected to include the following major sections: introduction to the problem (chapter 1), review of the literature (chapter 2), and description of the methodology (chapter 3). More detailed information concerning expectations for this written proposal will be covered later in the semester. The Grading Rubric for the written research proposal is posted in the “Course Content” section of the course Canvas site.</p>
+<p>Note: The School of Graduate Studies has prepared a guide for formatting Theses and Dissertations. This guide provides information on the general format of a thesis or dissertation, but does not have detailed information regarding the structure and content of individual chapters â€“ this information varies depending on discipline.</p>
+<p>For further information, please see a <a href="http://sgs.umkc.edu/wp-content/uploads/2014/03/UMKC-Guide-to-Formatting-Theses-and-Dissertations.pdf">guide for formatting Theses and Dissertations</a>.</p>
+</div>
+</div>
+<div id="policies" class="section level2">
+<h2>Policies</h2>
+<!-- 
+  List the course specific policies first, then
+  the institutional policies. Institutional 
+  policies inlcude:
+    Honor policy,
+    Academic calendar,
+    Campus safety,
+    Disability support services,
+    Grade appeal policy.
+-->
+<div id="canvas" class="section level3">
+<h3>Canvas</h3>
+<p>Lecture material for weekly sessions will be posted on the Canvas course site before each class session. This material is to be reviewed before the class session - it will provide the foundation for activities that are planned for the weekly sessions.</p>
+<p>Additional materials will be made available in electronic format on the Canvas website. Announcements and schedule updates will also be posted on the website.</p>
+<p>A PowerPoint file containing overhead material for each session will be posted on Canvas before the class. You are responsible for having the material in this file available to refer to - either by downloading the file to your computer or by printing it out in a format for note-taking. Students who are assigned to lead discussions are expected to include this material in their discussions.</p>
+<p>In order to prepare the recording of the oral presentation of your research project, you will need to use a computer on which you can install Panopto - you will need administratorâ€™s rights to install the program. You will also need to have a microphone connected to the computer you are using for the recording â€“ either as an “inboard” mic (e.g., most laptops) or plugged into a microphone/USB jack (e.g., many/most desktop computers). You will receive detailed information regarding how to prepare your presentation recording and upload it to the Canvas course site.</p>
+<p>Many materials on the Canvas website can be read and/or printed with a standard web browser. Other items require Adobe Acrobat Reader to view.</p>
+<p>Acrobat Reader may be downloaded for FREE from the <a href="http://www.adobe.com/products/acrobat/readstep2.html">Adobe website</a>.</p>
+</div>
+<div id="e-mail" class="section level3">
+<h3>E-mail</h3>
+<p>You will be required to use a UMKC e-mail account for correspondence in this class. The instructor will not be responsible for the receipt of e-mails that are sent to locations other than those ending with “umkc.edu.”</p>
+<p>Any files that are submitted to an instructor via email MUST include the student’s name in the filename.</p>
+</div>
+<div id="discussion-board-guidelines---general-information" class="section level3">
+<h3>Discussion Board Guidelines - General Information</h3>
+<p>The purpose of the discussion board forum is to engage students in applying the concepts of this course in an exchange of ideas and opinions that is open, honest, and that stimulates transference of ideas to your own area of expertise and interest. Discussion board conversations also serve to build a sense of community among students in the class for the purpose of examining how the concepts we are studying are relevant to our own experiences. In the best tradition of the value of learning from each other, the following guidelines should guide us all as we participate in these discussions:</p>
+<p>Participants should “listen” to others respectfully. Remember that when communicating via the computer screen, you do not have the benefit of voice intonation, facial expressions, body language or gestures to interpret the meaning behind the words. The same words spoken orally in different manners can mean different things. Remember this and give the person the benefit of the doubt when interpreting discussion board posts. Take your responsibilities seriously and offer meaningful feedback. Disagreements should focus on ideas and concepts, not the individual posting to the discussion board. If you disagree with what another student has written, strive to critique ideas in a respectful and constructive manner. When a disagreement occurs, attempt to understand other personâ€™s perspectives rather than to simply criticize them. Treat other students with the same respect and courtesy that promotes the same thoughtful and fair treatment that is supportive of face to face discussions.</p>
+<p>Intervene politely if someone is being disrespectful or unfair to others. If you find something on the Discussion Board that strikes you as unacceptable in either tone or content, gently share your concern with the poster AND be sure to let the course instructor know about it as soon as possible Usually this kind of thing is the result of some kind of accident or misunderstanding, and I will make sure that it gets cleared up as soon as possible.</p>
+<p>Keep the content of posts relevant to the topic. While the tone of your posts may be informal and genial, the discussion board is not a chat room. If necessary for personal messages, please use Mail or other forms of direct contact.</p>
+<p>Use language, spelling and grammar that are appropriate to an educational setting. Avoid use of overly technical or discipline specific language, slang or Internet shorthand, and remember to proofread work prior to posting it for the class to read. Strive for proper spelling and grammar. Use complete sentences. Do not “shout” (i.e., type in capital letters).</p>
+<p>Read and Reply. Note that your replies to others are just as important as the expression of your own initial thoughts about the topic. Take time to read what others have written and to give them relevant feedback when appropriate. Even if you have completed the requirements for posting in a given week, go back and see what others have written since you were last there.</p>
+<p>Please be sure to bring any problems or suggestions regarding effective and courteous use of the discussion board to the attention of the course director.</p>
+</div>
+<div id="statement-on-expectations-regarding-student-conduct" class="section level3">
+<h3>Statement on Expectations Regarding Student Conduct</h3>
+<p>In order to maintain a proper learning environment within the class, it is important for all students enrolled in this course to treat both the faculty and their peers with courtesy, civility and respect. Conduct for which students are subject to sanctions includes academic dishonesty, such as cheating, plagiarism, or sabotage.</p>
+<p>Students whose behavior is deemed disruptive by their instructor may be told to leave the classroom for the remainder of the session. Zero participation points will be earned for any weekly discussion activities when a student is told to leave the discussion.</p>
+<p>Please refer to the <a href="http://www.umsystem.edu/ums/rules/collected_rules/programs/ch200/200.010_standard_of_conduct">UM System standard of conduct</a> for more information.</p>
+</div>
+<div id="academic-honesty" class="section level3">
+<h3>Academic honesty</h3>
+<p>The Board of Curators of the University of Missouri recognizes that academic honesty is essential for the intellectual life of the University. Faculty members have a special obligation to expect high standards of academic honesty in all student work. Students have a special obligation to adhere to such standards. Academic dishonesty, including cheating, plagiarism or sabotage, is adjudicated through the University of Missouri Student Conduct Code and Rules of Procedures in Student Conduct Matters.</p>
+<p>Conduct for which students are subject to sanctions includes academic dishonesty, such as cheating, plagiarism, or sabotage. In the event misconduct is confirmed, the students will receive 0 points on the exam or assignment. If academic dishonesty is admitted or confirmed by evidence the faculty are required to report the incident to the Assistant Dean for Graduate Studies, who will meet with the faculty member and student to review the event and then determine whether it should be further referred to the Dean of the School of Graduate Studies.</p>
+<p>Students enrolled in this course assume an obligation to behave in a manner compatible with the University’s function as an educational institution as described in the University Collected Rules and Regulations Chapter 200 Student Conduct, section 200.010 Standard of Conduct. Conduct for which students are subject to sanctions includes academic dishonesty, such as cheating, plagiarism, or sabotage. Conduct for which students are subject to sanctions are outlined as follows:</p>
+<p>The term cheating includes but is not limited to: (i) use of any unauthorized assistance in taking quizzes, tests, or examinations; (ii) dependence upon the aid of sources beyond those authorized by the instructor in writing papers, preparing reports, solving problems, or carrying out other assignments; (iii) acquisition or possession without permission of tests or other academic material belonging to a member of the University faculty or staff; or (iv) knowingly providing any unauthorized assistance to another student on quizzes, tests, or examinations.</p>
+<p>The term plagiarism includes, but is not limited to: (i) use by paraphrase or direct quotation of the published or unpublished work of another person without fully and properly crediting the author with footnotes, citations or bibliographical reference; (ii) unacknowledged use of materials prepared by another person or agency engaged in the selling of term papers or other academic materials; or (iii) unacknowledged use of original work/material that has been produced through collaboration with others without release in writing from collaborators. In addition, the Department of Biomedical and Health Informatics includes self-plagiarism in their expanded definition.</p>
+<p>Self-plagiarism is reuse of an existing paper that has been submitted for credit in a different course without prior discussion and consent of the course director.</p>
+<p>The term sabotage includes, but is not limited to, the unauthorized interference with, modification of, or destruction of the work or intellectual property of another member of the University community.</p>
+<p>To ensure academic integrity and prevent plagiarism, UMKC has purchased the Internet-based Turn It In. This site allows faculty and students to submit papers online to examine a paperâ€™s originality. The site compares submitted papers with several proprietary algorithm databases to check for plagiarism. The course director reserves the right to have student assignments reviewed on Turnitin.com in this course. Submissions will have all identifying student information (name, student ID number etc.) removed from the submission to ensure that studentâ€™s rights are protected.</p>
+<p>Academic Inquiry, Course Discussion and Privacy: University of Missouri System Executive Order No. 38 lays out principles regarding the sanctity of classroom discussions at the university. The policy is described fully in Section 200.015 of the Collected Rules and Regulations. In this class, students may make audio or video recordings of course activity unless specifically prohibited by the faculty member. However, the redistribution of any audio or video recordings of statements or comments from the course to individuals who are not students in the course is prohibited without the express permission of the faculty member and of any students who are recorded, including those recordings prepared by an instructor. Students found to have violated this policy are subject to discipline in accordance with provisions of Section 200.020 of the Collected Rules and Regulations of the University of Missouri pertaining to student conduct matters.</p>
+</div>
+<div id="attendance-policy" class="section level3">
+<h3>Attendance Policy</h3>
+<p>Students are expected to attend and participate in classes. Advance notice of attendance policies of academic units and individual instructors should be given, and such notice should be in writing. Students should notify instructors of excused absences in advance, where possible. Students who have an excused absence are expected to make arrangements with instructors for alternative or make-up work. Such arrangements should be made in advance of the absence, where possible. Instructors should accommodate excused absences to the extent that an accommodation can be made that does not unreasonably interfere with the learning objectives of the course or unduly burden the instructor. Attendance policies shall be applied in a non-discriminatory manner.</p>
+</div>
+<div id="discrimination" class="section level3">
+<h3>Discrimination</h3>
+<p>The course faculty is committed to creating and maintaining a supportive learning environment. If at any time you find yourself in an environment that does not support learning, it is best to first contact the course faculty. If faculty members are unable to resolve the situation for you, you may contact: the Chair of the Department, the Associate Dean for Student Affairs, Dr. Brenda Rogers, SOM Rm M4-207, <a href="mailto:rogersbr@umkc.edu" class="email">rogersbr@umkc.edu</a>, (816) 235-1782; Sam Turner, Office of Diversity &amp; Community Partnership, SOM Rm.M1-109, (816) 235-1780.</p>
+<p>Discrimination Grievance Procedures for Students: Discrimination Grievance Procedures for Students can be found <a href="http://www.umsystem.edu/ums/rules/collected_rules/grievance/ch390/grievance_390.010">here</a>.</p>
+</div>
+<div id="english-proficiency-statement" class="section level3">
+<h3>English Proficiency Statement</h3>
+<p>Students who encounter difficulty in their courses because of the English proficiency of their instructors should speak directly with their instructors. If additional assistance is needed, students may contact the UMKC Help Line at 816-235-2222 for assistance.</p>
+</div>
+</div>
+<div id="grade-appeal-policy" class="section level2">
+<h2>Grade Appeal Policy</h2>
+<p>Students are responsible for meeting the standards of academic performance established for each course in which they are enrolled. The establishment of the criteria for grades and the evaluation of student academic performance are the responsibilities of the instructor.</p>
+<p>The University <a href="https://www.umkc.edu/provost/Policy-Library/documents/tzt_Grade%20Appeal%20Policy.pdf">grade appeal procedure</a> is available only for the review of allegedly capricious grading and not for review of the instructor’s evaluation of the student’s academic performance. Capricious grading, as that term is used here, comprises any of the following:</p>
+<ul>
+<li><p>The assignment of a grade to a particular student on some basis other than the performance in the course;</p></li>
+<li><p>The assignment of a grade to a particular student according to more exacting or demanding standards than were applied to other students in the course; (Note: Additional or different grading criteria may be applied to graduate students enrolled for graduate credit in 300- and 400-level courses.)</p></li>
+<li><p>The assignment of a grade by a substantial departure from the instructor’s previously announced standards.</p></li>
+</ul>
+<p>Students who have concerns about this course should first consult with the specific instructor with whom there is a problem. If the issues are not satisfactorily resolved the student should contact the course director.</p>
+<p>In the event a student would like to appeal a course grade they must follow the School of Medicine procedure for grade appeal for graduate courses, which is outlined in the student handbook or can be found at the <a href="http://med.umkc.edu/councils/graduate/documents/">School of Medicine Graduate Council web page</a>.</p>
+</div>
+<div id="resources-1" class="section level2">
+<h2>Resources</h2>
+<p>Academic Calendar: Students are encouraged to review important add, drop or withdraw dates: <a href="https://www.umkc.edu/calendar/" class="uri">https://www.umkc.edu/calendar/</a></p>
+<p>Campus Safety: <a href="http://www.umkc.edu/umkcalert/">Inclement weather, mass notification, and emergency response guide</a>.</p>
+<p>Counseling and Health Services Available at UMKC: UMKC students may experience many challenges in their lives while attending college – stress, depression, suicidality, trauma, relationship issues, health concerns, etc. As your professor I care about your success and well-being, and want to make you aware of some helpful resources on campus. The <a href="www.umkc.edu/counselingcenter">UMKC Counseling Center</a>, located at 4825 Troost in Room 206, offers a wide range of supportive services to students. Appointments can be made by calling 816.235.1635. <a href="http://info.umkc.edu/studenthealth/">UMKC Student Health and Wellness</a>, located at 4825 Troost in Room 115, offers a full range of health care and promotion services. Appointments can be scheduled online or by calling 816.235.6133. The <a href="www.umkc.edu/mindbody">MindBody Connection</a> is located in the Atterbury Student Success Center in Room 112 and offers a variety of stress-reduction services.</p>
+<p>Disability Support Services: To obtain disability related accommodations and/or auxiliary aids, students with disabilities must contact the Office of Services for Students with Disabilities (OSSD) as soon as possible. To contact OSSD, call (816) 235-5696 or visit their website. Once verified, OSSD will notify the course instructor and outline the accommodation and/or auxiliary aids to be provided. UMKC has a <a href="http://www.umkc.edu/disability/">web page</a> with more information about disability services.</p>
+<p>Severe Weather Policy: Cancellation of classes will be posted on the front page of the <a href="www.umkc.edu">University’s website</a> as well as through the UMKC Alert message system.</p>
+<p>Statement of Human Rights: The Board of Curators and UMKC are committed to the policy of equal opportunity, regardless of race, color, religion, sex, sexual orientation, national origin, age, disability and status as a Vietnam era veteran. Commitment to the policy is mentored by the <a href="https://info.umkc.edu/diversity/">Division of Diversity Equity</a>, but it is the responsibility of the entire university community to provide equal opportunity through relevant practices, initiatives and programs.</p>
+<p>Title IX: Under the University of Missouri’s Title IX policy, discrimination, violence and harassment based on sex, gender, and gender identity are subject to the same kinds of accountability and support applied to offenses based on other protected characteristics such as race, color, ethnic or national origin, sexual orientation, religion, age, ancestry, disability, military status, and veteran status. If you or someone you know has been harassed or assaulted, you can find the appropriate resources by visiting <a href="http://info.umkc.edu/title9/">UMKC’s Title IX Office webpage</a> or contacting UMKC’s Title IX Coordinator, Mikah K. Thompson (816.235.6910 or <a href="mailto:thompsonmikah@umkc.edu" class="email">thompsonmikah@umkc.edu</a>). Additionally, you can file a complaint using <a href="http://info.umkc.edu/title9/reporting/report-online/">UMKC’s online discrimination complaint form</a>.</p>
+<p>While most UMKC employees are required to report any known or suspected violation of Title IX, students may seek confidential guidance from the following campus locations: UMKC Counseling Service Volker Campus 4825 Troost Ave, Suite 206 Kansas City, MO 64110 Phone – (816) 235-1635 UMKC Counseling Service Health Sciences Campus Health Sciences Building 1418 2464 Charlotte Kansas City, MO 64108 Phone – (816) 235-1635 (open Tuesdays, 1-5pm) Student Health and Wellness 4825 Troost Ave., Suite 115 Kansas City, MO 64110 Phone - (816) 235-6133</p>
+</div>
+<div id="week-1-course-overview-and-introductions-introduction-to-clinical-research-methods" class="section level2">
+<h2>Week 1: Course Overview and Introductions; Introduction to Clinical Research Methods</h2>
+<p>Please note that I plan to make minor changes to the objectives, readings, homework assignments, and discussion questions. This list is current through week 1, and will be updated as the course progresses.</p>
+<div id="learning-objectives" class="section level3">
+<h3>Learning objectives</h3>
+<ol style="list-style-type: decimal">
+<li><p>To distinguish different types of quantitative non-experimental approaches</p></li>
+<li><p>To discuss strengths and weaknesses of qualitative research</p></li>
+</ol>
+</div>
+<div id="required-reading" class="section level3">
+<h3>Required reading</h3>
+<ol style="list-style-type: decimal">
+<li>Chapters 7</li>
+</ol>
+<p>Optional reading</p>
+<ol style="list-style-type: decimal">
+<li><p>Simon SD. Census Bureau (U.S.). to appear in The Encyclopedia of Big Data. Schintler LA, McNeely CL (eds.). Available on the Canvas website (please do not share beyond this class).</p></li>
+<li><p>Simon SD. Census Bureau (U.S.). to appear in The Encyclopedia of Big Data. Schintler LA, McNeely CL (eds.). Available on the Canvas website (please do not share beyond this class).</p></li>
+<li><p>Gail MH. Statistics in Action. Journal of the American Statistical Association 1996: 91(433); 1-13. Available on the Canvas website.</p></li>
+<li><p>Hill AB. The Environment and Disease: Association or Causation? Proceedings of the Royal Society of Medicine 1964 (May); 58(5): 295-300. Available in <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1898525/pdf/procrsmed00196-0010.pdf">PDF format</a>.</p></li>
+<li><p>Michaels D, Monforton C. Manufacturing Uncertainty: Contested Science and the Protection of the Publicâ€™s Health and Environment. American Journal of Public Health 2005 (July 1); 95(S1): S39-S48. DOI: 10.2105/AJPH.2004.043059. PMID: 16030337. Available in <a href="https://ajph.aphapublications.org/doi/full/10.2105/AJPH.2004.043059">html format</a> or <a href="http://ajph.aphapublications.org/doi/pdf/10.2105/AJPH.2004.043059">PDF format</a>.</p></li>
+<li><p>Monto AS. The Disappearance of Reye’s Syndrome - A Public Health Triumph. New England Journal of Medicine 1999; 340:1423-1424. DOI: 10.1056/NEJM199905063401809. Available in <a href="https://www.nejm.org/doi/full/10.1056/NEJM199905063401809">html format</a> or <a href="https://www.nejm.org/doi/pdf/10.1056/NEJM199905063401809">PDF format</a>.</p></li>
+<li><p>Prasad V, Jorgenson J, Ioannidis JPA, Cifu A. Observational studies often make clinical practice recommendations: an empirical evaluation of authorsâ€™ attitudes. Journal of Clinical Epidemiology 2013 (April); 66(4): 361-366. DOI: 10.1016/j.jclinepi.2012.11.005. Available in <a href="https://www.gwern.net/docs/statistics/causality/2013-prasad.pdf">PDF format</a>.</p></li>
+<li><p>Schwartz DH. Not all scientific studies are created equal. YouTube 2014 (April 24). Available in <a href="https://www.youtube.com/watch?v=GUpd2HJHUt8">streaming video format</a>.</p></li>
+<li><p>Kaplan B, Giesbrecht G, Shannon S, McLeod K. Evaluating treatments in health care: The instability of a one-legged stool. BMC Medical Research Methodology. 2011; 11(1): 65. Available in <a href="http://www.biomedcentral.com/1471-2288/11/65">html format</a> or <a href="https://bmcmedresmethodol.biomedcentral.com/track/pdf/10.1186/1471-2288-11-65">PDF format</a>.</p></li>
+<li><p>Glasziou P, Chalmers I, Rawlins M, McCulloch P. When are randomised trials unnecessary? Picking signal from noise. BMJ 2007; 334(7589): 349-351. DOI: 10.1136/bmj.39070.527986.68. Available in <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1800999/">html format</a> or <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1800999/pdf/bmj-334-7589-ac-00349.pdf">PDF format</a>.</p></li>
+<li><p>Black N. Why we need observational studies to evaluate the effectiveness of health care. BMJ 1996; 312(7040): 1215 -1218. Available in <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2350940/pdf/bmj00541-0043.pdf">PDF format</a>.</p></li>
+<li><p>Simon S. StATS: How two bad control groups can add up to one good comparison. P.Mean website 2007 (June 28). Available in <a href="http://www.pmean.com/07/TwoControlGroups.html">html format</a>.</p></li>
+<li><p>Fillmore KM, Stockwell T, Chikritzhs T, Bostrom A, Kerr W. Moderate Alcohol Use and Reduced Mortality Risk: Systematic Error in Prospective Studies and New Hypotheses. Annals of Epidemiology 2007; 17(5): S16-S23, ISSN 1047-2797. Available in <a href="https://doi.org/10.1016/j.annepidem.2007.01.005">html format</a> or <a href="https://www.sciencedirect.com/science/article/pii/S1047279707000075/pdfft">PDF format</a>.</p></li>
+<li><p>Johns Hopkins University. Jerome Cornfield. Available in <a href="https://www.jhsph.edu/departments/biostatistics/about-us/history/jerome-cornfield.html">html format</a>.</p></li>
+<li><p>Breslow NE. Statistics in Epidemiology: The Case-Control Study. Journal of the American Statistical Association 1996; 91(433): 14-28. Available on the Canvas website.</p></li>
+<li><p>Cheng HG, Phillips MR. Secondary analysis of existing data: opportunities and implementation. Shanghai Arch Psychiatry. 2014;26(6):371-5. Available in <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4311114/">html format</a> or <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4311114/pdf/sap-26-06-371.pdf">PDF format</a>.</p></li>
+<li><p>Fedak KM, Bernal A, Capshaw ZA, Gross S. Applying the Bradford Hill criteria in the 21st century: how data integration has changed causal inference in molecular epidemiology. Emerg Themes Epidemiol. 2015;12:14. Published 2015 Sep 30. <a href="doi:10.1186/s12982-015-0037-4" class="uri">doi:10.1186/s12982-015-0037-4</a>. Available in <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4589117/">html format</a> or <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4589117/pdf/12982_2015_Article_37.pdf">PDF format</a>.</p></li>
+<li><p>Craig P, Cooper C, Gunnell D, et al. Using natural experiments to evaluate population health interventions: new Medical Research Council guidance. J Epidemiol Community Health. 2012;66(12):1182-6. Available in <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3796763/">html format</a> or <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3796763/pdf/emss-54487.pdf">PDF format</a>.</p></li>
+<li><p>Pietkiewicz, Igor, and Jonathan A. Smith. “A practical guide to using interpretative phenomenological analysis in qualitative research psychology.” Psychological Journal 20.1 (2014): 7-14. Available on the Canvas website.</p></li>
+<li><p>Noble H, Mitchell G. What is grounded theory? Evidence-Based Nursing 2016;19:34-35. Available in <a href="https://ebn.bmj.com/content/19/2/34">html format</a> or <a href="https://ebn.bmj.com/content/ebnurs/19/2/34.full.pdf">PDF format</a>.</p></li>
+<li><p>Genzuk M. A Synthesis of Ethnographic Research. Occasional Paper Series. Center for Multilingual, Multicultural Research. Available on the Canvas website.</p></li>
+<li><p>Cochran PA, Marshall CA, Garcia-Downing C, et al. Indigenous ways of knowing: implications for participatory research and community. Am J Public Health. 2008;98(1):22-7. Available in <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2156045/">html format</a> or <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2156045/pdf/0980022.pdf">PDF format</a>.</p></li>
+</ol>
+</div>
+<div id="assignment" class="section level3">
+<h3>Assignment</h3>
+<ol style="list-style-type: decimal">
+<li>See the discussion questions. Also, you should be working on your literature review. It is due on Friday, March 8 at midnight.</li>
+</ol>
+</div>
+<div id="discussion-questions" class="section level3">
+<h3>Discussion questions</h3>
+<p>(Extra credit) Find an article on research methodology relating to secondary data analysis, observational studies, or community based participatory research and provide a three to four sentence summary. Include a link to the text or attach a PDF file if your article is behind a pay wall.</p>
+<ol style="list-style-type: decimal">
+<li><p>Review one of the recommended readings for this week and provide a brief summary (three to four sentences).</p></li>
+<li><p>Review the following studies, all of which were not randomized. Pick one and explain why randomization was not used (impossible, impractical, unethical, strong patient preference, or retrospective). How were the control patients recruited?</p></li>
+</ol>
+<p>Faghih Habibi A, Gerami H, Banan R, et al. Serum 25-Hydroxy Vitamin D in Chronic Rhinosinusitis with and Without Nasal Polyposis: A Case-Control Study. Iran J Otorhinolaryngol. 2019;31(102):19-24. Available in <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6368985/">html format</a> or <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6368985/pdf/ijo-31-019.pdf">PDF format</a>.</p>
+<p>Sperschneider ML, Hengartner MP, Kohl-Schwartz A, et al. Does endometriosis affect professional life? A matched case-control study in Switzerland, Germany and Austria. BMJ Open. 2019;9(1):e019570. Published 2019 Jan 9. <a href="doi:10.1136/bmjopen-2017-019570" class="uri">doi:10.1136/bmjopen-2017-019570</a>. Available in <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6340011/">html format</a> or <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6340011/pdf/bmjopen-2017-019570.pdf">PDF format</a>.</p>
+<p>Hosseini Oskouie F, Vahedi H, Shahrbaf MA, Sadeghi A, Rashidkhani B, Hekmatdoost A. Dietary fiber and risk of irritable bowel syndrome: a case-control study. Gastroenterol Hepatol Bed Bench. 2018;11(Suppl 1):S20-S24. Available in <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6347982/">html format</a> or <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6347982/pdf/GHFBB-11-S020.pdf">PDF format</a>.</p>
+<p>Shen R, Lin S, He L, et al. Association of Two Polymorphisms in CCL2 With Parkinson’s Disease: A Case-Control Study. Front Neurol. 2019;10:35. Published 2019 Jan 29. <a href="doi:10.3389/fneur.2019.00035" class="uri">doi:10.3389/fneur.2019.00035</a>. Available in <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6362632/">html format</a> or <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6362632/pdf/fneur-10-00035.pdf">PDF format</a>.</p>
+<p>Janssen J, Koekkoek PS, Biessels GJ, Kappelle JL, Rutten GEHM, Cog-ID study group. Depressive symptoms and quality of life after screening for cognitive impairment in patients with type 2 diabetes: observations from the Cog-ID cohort study. BMJ Open. 2019;9(1):e024696. Published 2019 Jan 17. <a href="doi:10.1136/bmjopen-2018-024696" class="uri">doi:10.1136/bmjopen-2018-024696</a>. Available in <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6340460/">html format</a> or <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6340460/pdf/bmjopen-2018-024696.pdf">PDF format</a>.</p>
+<p>Lin SM, Yang SH, Liang CC, Huang HK, Loh CH. Association between benzodiazepine use and risks of chronic-onset poststroke pneumonia: a population-based cohort study. BMJ Open. 2019;9(1):e024180. Published 2019 Jan 25. <a href="doi:10.1136/bmjopen-2018-024180" class="uri">doi:10.1136/bmjopen-2018-024180</a>. Available in <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6347861/">html format</a> or <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6347861/pdf/bmjopen-2018-024180.pdf">PDF format</a>.</p>
+<p>Liakopoulos V, FranzÃ©n S, Svensson AM, et al. Pros and cons of gastric bypass surgery in individuals with obesity and type 2 diabetes: nationwide, matched, observational cohort study. BMJ Open. 2019;9(1):e023882. Published 2019 Jan 15. <a href="doi:10.1136/bmjopen-2018-023882" class="uri">doi:10.1136/bmjopen-2018-023882</a>. Available in <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6340417/">html format</a> or <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6340417/pdf/bmjopen-2018-023882.pdf">PDF format</a>.</p>
+<p>Thomson SR, Chogtu B, Shetty R, Devasia T. Analysis of glycemic status in diabetes-naÃ¯ve patients on statins: A hospital-based cross-sectional study. Indian J Pharmacol. 2018;50(6):320-325. Available in <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6364334/">html format</a>.</p>
+<p>Saha SK, Pradhan P, Haldar D, Maji B, Agarwal W, Sarkar GN. Magnitude of Mental Morbidity and Its Correlates with Special Reference to Household Food Insecurity among Adult Slum Dwellers of Bankura, India: A Cross-Sectional Survey. Indian J Psychol Med. 2019;41(1):54-60. Available in <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6337931/">html format</a>.</p>
+<p>Nollett C, Ryan B, Bray N, et al. Depressive symptoms in people with vision impairment: a cross-sectional study to identify who is most at risk. BMJ Open. 2019;9(1):e026163. Published 2019 Jan 17. <a href="doi:10.1136/bmjopen-2018-026163" class="uri">doi:10.1136/bmjopen-2018-026163</a>. Available in <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6340416/">html format</a> or <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6340416/pdf/bmjopen-2018-026163.pdf">PDF format</a>.</p>
+<p>NabÄ±yev VN, Ayhan S, AdhÄ±karÄ± P, CetÄ±n E, Palaoglu S, Acaroglu RE. Cryo-Compression Therapy After Elective Spinal Surgery for Pain Management: A Cross-Sectional Study With Historical Control. Neurospine. 2018;15(4):348-352. Available in <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6347345/">html format</a> or <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6347345/pdf/ns-1836070-035.pdf">PDF format</a>.</p>
+<p>Kinouchi K, Ohashi K. Smartphone-based reminder system to promote pelvic floor muscle training for the management of postnatal urinary incontinence: historical control study with propensity score-matched analysis. PeerJ. 2018;6:e4372. Published 2018 Feb 9. <a href="doi:10.7717/peerj.4372" class="uri">doi:10.7717/peerj.4372</a>. Available in <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5808312/">html format</a> or <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5808312/pdf/peerj-06-4372.pdf">PDF format</a>. Available in <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6325752/">html format</a> or <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6325752/pdf/ansu-269-370.pdf">PDF format</a>.</p>
+</div>
+</div>
+<div id="week-2-planning-a-research-project-research-ethics" class="section level2">
+<h2>Week 2: Planning a Research Project, Research Ethics</h2>
+<div id="learning-objectives-1" class="section level3">
+<h3>Learning objectives</h3>
+<ol style="list-style-type: decimal">
+<li><p>To describe different approaches to probability sampling</p></li>
+<li><p>To discuss advantages and disadvantages of non-probability samples</p></li>
+</ol>
+</div>
+<div id="assignment-1" class="section level3">
+<h3>Assignment</h3>
+<ol style="list-style-type: decimal">
+<li>Submit your literature review. Use the format style suggested for the School of Graduate Studies, even if you do not plan to submit to use this work for a thesis. Several guides are available, including YouTube vidoes on this page in <a href="https://sgs.umkc.edu/current-students/thesis-dissertation-guidelines/">html format</a>.</li>
+</ol>
+<p>It may seem like overkill, but please use the suggested format for the</p>
+<ul>
+<li>cover page,</li>
+<li>copyright notice, and</li>
+<li>approval page.</li>
+</ul>
+<p>Where the abstract would normally go, just place the word “ABSTRACT” in the proper font size, followed by the text line “This section to be completed at a later date,” again in the proper font size. Do the same for the list of illustrations, and the list of tables. You can include an acknowledgements page and/or a dedication page if you like, but these are optional.</p>
+<p>Please follow the recommendations for margins and location of page numbers. You will be graded on the accuracy of details like these.</p>
+<p>Again, it seems like overkill, but include a table of contents. No page numbers are needed here, but please note the use of roman numerals for the preliminary pages in this format.</p>
+<p>Then include the “Introduction” section. You can include some text here, if you like, or you can just use the text line “This section to be completed at a later date.”</p>
+<p>The next section is where you insert your literature review. If you have not already stated your research problem/hypothesis in the introduction, please include it in the first or the last paragraph of your literature review.</p>
+<p>Follow the introduction with the remaining section headers of what would be your research paper. The UMKC thesis guidelines suggest</p>
+<ul>
+<li>Methodology,</li>
+<li>Results, and</li>
+<li>Discussion,</li>
+</ul>
+<p>but you can choose whatever headings you think might be appropriate. Do not include any text for any of these sections, except for the text line “This section to be completed at a later date,” in the proper font size.</p>
+<p>End with your reference list. For now, only include references that are part of your literature review. Your references MUST conform either with a commonly used standard, but I do not require you to use any particular standard. You should consider a standard that you expect to use with a future journal you might publish in. Please include a link to whichever bibliographic standard you choose at the bottom of your reference list.</p>
+<p>You can include your vita (note that the example is just a brief narrative). I think it would fun for you to brag about all the great things you’ve already done, but it is optional.</p>
+<p>You will not be graded on any optional sections that you decide to include.</p>
+<p>There are no page requirements and no requirements for a particular number of references. You do need to present a reasonable comprehensive literature review, but the length may vary depending on your topic.</p>
+<p>Here is the grading rubric for your literature review. There are 30 points total on this assignment.</p>
+</div>
+<div id="formatting-of-main-paper" class="section level3">
+<h3>Formatting of main paper</h3>
+<p>Unsatisfactory (0 points) No serious attempt made to use the layout required.</p>
+<p>Marginal (2 points) Major deviations from the layout.</p>
+<p>Satisfactory (4 points) Follows the required format with only minor departures from the layout.</p>
+<p>Outstanding (6 points) No deviations from the required format.</p>
+</div>
+<div id="formatting-of-the-bibliography" class="section level3">
+<h3>Formatting of the bibliography</h3>
+<p>Unsatisfactory (0 points) Bibliography is incomplete. References are formatted inconsistently.</p>
+<p>Marginal (2 points) Bibliography is formatted consistently, but fails to conform to major aspects of the standard you have chosen.</p>
+<p>Satisfactory (4 points) The bibliography follows the general structure of the standard you have chosen but there are more than a few minor deviations.</p>
+<p>Outstanding (6 points) No more than two minor deviations from the bibliographic standard.</p>
+</div>
+<div id="organization" class="section level3">
+<h3>Organization</h3>
+<p>Unsatisfactory (0 points) References are described in a totally random or haphazard fashion.</p>
+<p>Marginal (2 points) Organization is difficult to follow and is applied inconsistently.</p>
+<p>Satisfactory (4 points) Similar references are grouped in the same paragraph and each paragraph .</p>
+<p>Outstanding (6 points) References organized clearly with logical transitions within a paragraph. Individual paragraphs defined clearly with a topic sentence and follow from one paragraph to another using coherent organizational style.</p>
+</div>
+<div id="grammarspelling" class="section level3">
+<h3>Grammar/spelling</h3>
+<p>Unsatisfactory (0 points) Spelling errors and grammar mistakes make the literature review impossible to follow</p>
+<p>Marginal (2 points) Serious spelling or grammar errors which interfere with readability.</p>
+<p>Satisfactory (4 points) More than a few errors, but most are minor and none interfere substantially with readability.</p>
+<p>Outstanding (6 points) Only two or three errors at most and all errors are minor.</p>
+</div>
+<div id="clarity" class="section level3">
+<h3>Clarity</h3>
+<p>(Note: I understand that research requires the description of concepts that are difficult for the average person to understand. Try to write in a style that allows an expert from a different discipline to follow what you are talking about).</p>
+<p>Unsatisfactory (0 points) Writing is impossible to follow.</p>
+<p>Marginal (2 points) Heavy use of jargon, acronyms, and undefined terms.</p>
+<p>Satisfactory (4 points) Writing is difficult at times, but the general idea comes across.</p>
+<p>Outstanding (6 points) Clear and simple explanations of concept topics. Language avoids excessive use of jargon.</p>
+</div>
+<div id="discussion-questions-1" class="section level3">
+<h3>Discussion questions</h3>
+<p>No discussion questions this week.</p>
+</div>
+</div>
+<div id="week-3-literature-reviews-library-resources" class="section level2">
+<h2>Week 3: Literature Reviews, Library Resources</h2>
+<div id="learning-objectives-2" class="section level3">
+<h3>Learning objectives</h3>
+<ol style="list-style-type: decimal">
+<li><p>To define what a literature review is and to contrast it with an annotated bibliography and a systematic overview.</p></li>
+<li><p>To recognize the different approaches to organizing a literature review.</p></li>
+</ol>
+</div>
+<div id="required-reading-1" class="section level3">
+<h3>Required reading</h3>
+<ol style="list-style-type: decimal">
+<li><p>Chapter 2</p></li>
+<li><p>UMKC University Libraries. Literature Reviews: Graduate Writing Resources. Available in <a href="https://libguides.library.umkc.edu/gradwriting/lit-reviews">html format</a>.</p></li>
+<li><p>The Writing Center, University of North Carolina, Chapel Hill. Literature Reviews. Available in <a href="https://writingcenter.unc.edu/tips-and-tools/literature-reviews/">html format</a></p></li>
+<li><p>Pautasso, Marco. “Ten simple rules for writing a literature review” PLoS computational biology vol. 9,7 (2013): e100314. DOI: 10.1371/journal.pcbi.1003149. Available in <a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003149">html format</a> and <a href="https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1003149&amp;type=printable">PDF format</a>.</p></li>
+<li><p>Kathleen Clarke. Organizing Your Literature: Spreadsheet Style. Gadhaccker blog entry, October 24, 2017. Available in <a href="https://www.insidehighered.com/blogs/gradhacker/organizing-your-literature-spreadsheet-style">html format</a>.</p></li>
+<li><p>Martin J. Osborne. using bibtex: a short guide. Published January 13, 2008. Available in <a href="https://www.economics.utoronto.ca/osborne/latex/BIBTEX.HTM">html format</a>.</p></li>
+<li><p>Robinson KA, Goodman SN. Systematic Examination of the Citation of Prior Research in Reports of Randomized, Controlled Trials. Ann Intern Med. 2011;154(1):50-55. DOI: 10.7326/0003-4819-154-1-201101040-00007. Available in <a href="https://annals.org/aim/fullarticle/746687">html format</a>.</p></li>
+</ol>
+</div>
+<div id="assignment-2" class="section level3">
+<h3>Assignment</h3>
+<ol style="list-style-type: decimal">
+<li><p>No due dates yet, but try to pick a research problem and/or specify a research hypothesis soon.</p></li>
+<li><p>If you have a research problem/hypothesis, start work on your literature review.</p></li>
+</ol>
+</div>
+<div id="discussion-questions-2" class="section level3">
+<h3>Discussion questions</h3>
+<ol style="list-style-type: decimal">
+<li>Find a literature review that is part of a research paper that you find interesting. This can be the same research paper that you discussed earlier or it can be a different paper. How many paragraphs long is this literature review and how many papers did it cite? What organizational structure did it use (chronological, broad to specific, of thematic)?</li>
+</ol>
+<p>Please be sure to include a link to the article if the full free text is available, or attach a PDF file if the article is behind a pay wall.</p>
+<ol start="2" style="list-style-type: decimal">
+<li><p>Read and comment on someone else’s literature review, pointing out an additional positive or negative feature of that literature review.</p></li>
+<li><p>You have the choice of index cards, a spreadsheet, or bibliographic management software to organize your literature review. You don’t have to commit to any of these now, but find a website or article that talks about the notecard or spreadsheet approach or which offers a positive review of a bibliographic software program. Share a link and offer a brief summary (three to four sentences).</p></li>
+</ol>
+<p>Extra credit. There are hundreds of excellent guides on how to write a literature review. Find one that you like (other than the ones I have already recommended) and offer a brief (three to four sentence) summary. Please be sure to include a link to the article if the full free text is available, or attach a PDF file if the article is behind a pay wall.</p>
+</div>
+</div>
+<div id="week-4-randomized-experiments" class="section level2">
+<h2>Week 4: Randomized experiments</h2>
+<div id="learning-objectives-3" class="section level3">
+<h3>Learning objectives</h3>
+<ol style="list-style-type: decimal">
+<li><p>To define what a randomized study is and explain its advantages and disadvantages.</p></li>
+<li><p>To describe how blinding, concealed allocation, and intention to treat analysis can improve the persuasiveness of a randomized trial.</p></li>
+</ol>
+</div>
+<div id="required-reading-2" class="section level3">
+<h3>Required reading</h3>
+<ol style="list-style-type: decimal">
+<li>Chapter 5.</li>
+</ol>
+<p>Recommended readings. Most of these are short and/or easy to skim. See the discussion section for assignments associated with these readings.</p>
+<ol start="2" style="list-style-type: decimal">
+<li><p>Richard Feinman. Intention-to-treat. What is the question?. Nutrition &amp; Metabolism. 2009;6(1):1. Available in <a href="https://nutritionandmetabolism.biomedcentral.com/articles/10.1186/1743-7075-6-1">html format</a> and <a href="https://nutritionandmetabolism.biomedcentral.com/track/pdf/10.1186/1743-7075-6-1">PDF format</a>.</p></li>
+<li><p>Steve Simon. StATS: Exlcuding placebo responders. P.Mean website, June 25, 2004. Available in <a href="http://www.pmean.com/04/placebo.html">html format</a>.</p></li>
+<li><p>Steve Simon. StATS: So you want to volunteer for a research study? P.Mean website, August 4, 2004. Available in [html format] (<a href="http://www.pmean.com/04/volunteer.html" class="uri">http://www.pmean.com/04/volunteer.html</a>).</p></li>
+<li><p>Douglas G Altman, Kenneth F Schulz. Statistics Notes: Concealing treatment allocation in randomised trials. BMJ. 2001 Aug 25; 323(7310): 446â€“447. Avialble in <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1121039/">html format</a> or <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1121039/pdf/446.pdf">PDF format</a>.</p></li>
+<li><p>KP Suresh. An overview of randomization techniques: An unbiased assessment of outcome in clinical research. J Hum Reprod Sci. 2011 Jan-Apr; 4(1): 8â€“11. doi: 10.4103/0974-1208.82352. Available in <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3136079/">html format</a>.</p></li>
+<li><p>Harford T. The random risks of randomised trials. Financial Times, April 25, 2014. Available in <a href="http://www.ft.com/intl/cms/s/2/59bb202c-ca7b-11e3-8a31-00144feabdc0.html#axzz30BOFBYb7">html format</a>.</p></li>
+<li><p>Steve Simon. StATS: Is the randomized trial the gold standard for research? P.Mean website, September 23, 2004. Available in <a href="http://www.pmean.com/04/GoldStandard.html">html format</a>.</p></li>
+<li><p>Kenneth F Schulz, David A Grimes. Blinding in randomised trials: hiding who got what. The Lancet Volume 359, Issue 9307, 23 February 2002, Pages 696-700. Available, but <a href="https://doi.org/10.1016/S0140-6736(02)07816-9">behind a paywall</a>.</p></li>
+<li><p>Steve Simon. StATS: Ethics of a placebo group. P.Mean website, August 2, 2001. Available in <a href="http://www.pmean.com/01/placebo.html">html format</a></p></li>
+<li><p>HrÃ³bjartsson A, GÃ¸tzsche PC. Is the placebo powerless? An analysis of clinical trials comparing placebo with no treatment. N Engl J Med. 2001 May 24;344(21):1594-602. Review. Available in <a href="https://www.nejm.org/doi/10.1056/NEJM200105243442106">html foramt</a> or <a href="https://www.nejm.org/doi/pdf/10.1056/NEJM200105243442106">PDF format</a></p></li>
+<li><p>Farnham Street. Regression Toward the Mean: An Introduction with Examples. Available in <a href="https://fs.blog/2015/07/regression-to-the-mean/">html format</a>.</p></li>
+<li><p>James Penston. Large-scale randomised trials â€“ a misguided approach to clinical research. Medical Hypotheses (2005) 64, 651â€“657. Available, but <a href="https://www.sciencedirect.com/science/article/pii/S0306987704005183">behind a pay wall</a>.</p></li>
+<li><p>Rebecca A. clay. More than one way to measure: Randomized clinical trials have their place, but critics argue that researchers would get better results if they also embraced other methodologies. Monior on Psychology. September 2010, 41(8): 52. Available in <a href="https://www.apa.org/monitor/2010/09/trials">html format</a>.</p></li>
+<li><p>Laura Rosen, Orly Manor, Dan Engelhard, and David Zucker. In Defense of the Randomized Controlled Trial for Health Promotion Research. Am J Public Health. 2006 July; 96(7): 1181â€“1186. doi: 10.2105/AJPH.2004.061713. Avialbe in <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1483860/">html format</a> or <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1483860/pdf/0961181.pdf">PDF format</a>.</p></li>
+</ol>
+</div>
+<div id="assignment-3" class="section level3">
+<h3>Assignment</h3>
+<ol style="list-style-type: decimal">
+<li>No homework this week, other than the discussion board. You will need to have a research question/hypothesis and a literature review completed by the end of the seventh week of class (Friday, June 28, 2019).</li>
+</ol>
+</div>
+<div id="discussion-questions-3" class="section level3">
+<h3>Discussion questions</h3>
+<ol style="list-style-type: decimal">
+<li>Take one of the recommended readings and provide a brief summary (three or four sentences).</li>
+</ol>
+<p>Extra credit. There are many peer-reviewed articles about issues and controversies associated with randomized trials. Find one (other than the ones listed under recommended reading this week) and share it with a brief summary. If the full free text is available, include a link. If not, please attach a PDF file.</p>
+</div>
+</div>
+<div id="week-5-quasi-experimental-designs" class="section level2">
+<h2>Week 5: Quasi-experimental designs</h2>
+<div id="learning-objectives-4" class="section level3">
+<h3>Learning objectives</h3>
+<ol style="list-style-type: decimal">
+<li><p>To contrast the features of a quality improvement study with a research study</p></li>
+<li><p>To describe the various quasi-experimental approaches</p></li>
+</ol>
+</div>
+<div id="required-reading-3" class="section level3">
+<h3>Required reading</h3>
+<ol style="list-style-type: decimal">
+<li>Chapter 6 (also re-read Chapter 5)</li>
+</ol>
+<p>Optional reading</p>
+<p>Mike Evans. Quality Improvement in Healthcare. YouTube, November 26, 2014. Available as a <a href="https://www.youtube.com/watch?v=jq52ZjMzqyI">video (11 minutes)</a>.</p>
+<p>Health Resources and Services Administration. Quality Improvement. Available in <a href="https://www.hrsa.gov/sites/default/files/quality/toolbox/508pdfs/qualityimprovement.pdf">PDF format</a>.</p>
+<p>Anthony D. Harris, Jessina C. McGregor, Eli N. Perencevich, Jon P. Furuno, Jingkun Zhu, Dan E. Peterson, and Joseph Finkelstein. The Use and Interpretation of Quasi-Experimental Studies in Medical Informatics. J Am Med Inform Assoc. 2006 Jan-Feb; 13(1): 16â€“23. doi: 10.1197/jamia.M1749. Avialable in <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1380192/">html format</a> and <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1380192/pdf/16.pdf">PDF format</a>.</p>
+<p>Jones Bryan, Vaux Emma, Olsson-Brown Anna. How to get started in quality improvement BMJ 2019; 364 :k5408. Available in <a href="https://www.bmj.com/content/364/bmj.k5437.long">html format</a> or <a href="https://www.bmj.com/content/364/bmj.k5437.full.pdf">PDF format</a>.</p>
+<p>Rohrbasser A, Harris J, Mickan S, Tal K, Wong G. Quality circles for quality improvement in primary health care: Their origins, spread, effectiveness and lacunae- A scoping review. PLoS One. 2018;13(12):e0202616. Published 2018 Dec 17. <a href="doi:10.1371/journal.pone.0202616" class="uri">doi:10.1371/journal.pone.0202616</a>. Available in <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6296539/">html format</a> or <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6296539/pdf/pone.0202616.pdf">PDF format</a>.</p>
+<p>Centers for Disease Control and Prevention. How to write SMART objectives. Available in <a href="https://www.cdc.gov/cancer/dcpc/pdf/dp17-1701-smart-objectives.pdf">PDF format</a>.</p>
+<p>American Society for Quality. Quality Glossary. Available in <a href="https://asq.org/quality-resources/quality-glossary">html format</a>.</p>
+<p>Brent C. James and Lucy A. Savitz. How Intermountain Trimmed Health Care Costs Through Robust Quality Improvement Efforts. Heealth Affairs 2011. 30(6). DOI: 10.1377/hlthaff.2011.0358. Available in <a href="https://www.healthaffairs.org/doi/10.1377/hlthaff.2011.0358">html format</a>.</p>
+<p>M Best, D Neuhaser. W Edwards Deming: father of quality management, patient and composer. BMJ Quality &amp; Safety 2005; 14: 310-312. Available in <a href="https://qualitysafety.bmj.com/content/14/4/310">html format</a> and <a href="https://qualitysafety.bmj.com/content/qhc/14/4/310.full.pdf">PDF format</a>.</p>
+<p>Diaz M, Neuhauser D. Pasteur and parachutes: when statistical process control is better than a randomized controlled trial. BMJ Quality &amp; Safety 2005;14:140-143. Available in <a href="https://qualitysafety.bmj.com/content/14/2/140">html format</a>.</p>
+<p>David leonhardt. Making Health Care Better. New York Times Magazine 2009 (November 3). Available in <a href="https://www.nytimes.com/2009/11/08/magazine/08Healthcare-t.html">html format</a>.</p>
+<p>Lilford RJ, Brown CA, Nicholl J. Use of process measures to monitor the quality of clinical practice. BMJ. 2007;335(7621):648-50. Avialable in <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1995522/">html format</a> or <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1995522/pdf/bmj-335-7621-ac-00648.pdf">PDF format</a>.</p>
+</div>
+<div id="assignment-4" class="section level3">
+<h3>Assignment</h3>
+<ol style="list-style-type: decimal">
+<li><p>Respond to the two discussion board questions. Due Monday, February 25 at midnight.</p></li>
+<li><p>continue work on your literature review, which is due on Friday, March 8 at midnight.</p></li>
+</ol>
+</div>
+<div id="discussion-questions-4" class="section level3">
+<h3>Discussion questions</h3>
+<p>(Extra credit) Find a resource not listed in the optional readings that discussed quality improvement methodology or quasi-experimental designs. Include a link to the resource, if the full free text is available, or attach a PDF if the resource is behind a pay wall.</p>
+<ol style="list-style-type: decimal">
+<li><p>Take one of the optional readings for week 5 and prepare a brief summary (3-4 sentences)</p></li>
+<li><p>Prepare a summary of one of the quality improvement studies listed below or a study you find on your own. Did the team use a SMART aim? Describe the research design that the team used. Was it quasi-experimental? How might the design have been improved?</p></li>
+</ol>
+<p>Ali F, Qasim Mehdi M, Akhtar S, et al. Impact of Congenital Cardiac Catheterization Project on Outcomes-Quality Improvement (C3PO-QI) in LMICs. Heart Asia. 2019;11(1):e011105. Published 2019 Jan 10. <a href="doi:10.1136/heartasia-2018-011105" class="uri">doi:10.1136/heartasia-2018-011105</a>. Available in <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6340580/">html format</a> or <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6340580/pdf/heartasia-2018-011105.pdf">PDF format</a>.</p>
+<p>A Mistry DA, Rainer TH. Concussion assessment in the emergency department: a preliminary study for a quality improvement project. BMJ Open Sport Exerc Med. 2018;4(1):e000445. Published 2018 Dec 27. <a href="doi:10.1136/bmjsem-2018-000445" class="uri">doi:10.1136/bmjsem-2018-000445</a>. Available in <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6326330/">html format</a> or <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6326330/pdf/bmjsem-2018-000445.pdf">PDF format</a>.</p>
+<p>Rogers AJ, Lye PS, Ciener DA, Ren B, Kuhn EM, Morrison AK. Using Quality Improvement to Change Testing Practices for Community-acquired Pneumonia. Pediatr Qual Saf. 2018;3(5):e105. Published 2018 Sep 20. <a href="doi:10.1097/pq9.0000000000000105" class="uri">doi:10.1097/pq9.0000000000000105</a>. Available in <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6221590/">html format</a> or <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6221590/pdf/pqs-3-e105.pdf">PDF format</a>.</p>
+<p>Liu Z, Zhao Y, Liu D, et al. Effects of Nursing Quality Improvement on Thrombolytic Therapy for Acute Ischemic Stroke. Front Neurol. 2018;9:1025. Published 2018 Nov 29. <a href="doi:10.3389/fneur.2018.01025" class="uri">doi:10.3389/fneur.2018.01025</a>. Available in <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6281878/">html format</a> or <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6281878/pdf/fneur-09-01025.pdf">PDF format</a>.</p>
+<p>Norman S, DeCicco F, Sampson J, Fraser IM. Emergency Room Safer Transfer of Patients (ER-STOP): a quality improvement initiative at a community-based hospital to improve the safety of emergency room patient handovers. BMJ Open. 2018;8(12):e019553. Published 2018 Dec 14. <a href="doi:10.1136/bmjopen-2017-019553" class="uri">doi:10.1136/bmjopen-2017-019553</a>. Available in <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6303585/">html format</a> or <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6303585/pdf/bmjopen-2017-019553.pdf">PDF format</a>.</p>
+<p>Marino LV, Fudge C, Pearson F, et al. Home use of breast milk fortifier to promote postdischarge growth and breast feeding in preterm infants: a quality improvement project. Archives of Disease in Childhood Published Online First: 14 December 2018. doi: 10.1136/archdischild-2018-315951. Available in <a href="https://adc.bmj.com/content/early/2018/12/14/archdischild-2018-315951.long">html format</a> or <a href="https://adc.bmj.com/content/archdischild/early/2018/12/14/archdischild-2018-315951.full.pdf">PDF format</a>.</p>
+<p>Karamagi E, Sensalire S, Muhire M, et al. Improving TB case notification in northern Uganda: evidence of a quality improvement-guided active case finding intervention. BMC Health Serv Res. 2018;18(1):954. Published 2018 Dec 12. <a href="doi:10.1186/s12913-018-3786-2" class="uri">doi:10.1186/s12913-018-3786-2</a>. Available in <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6292080/">html format</a> or <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6292080/pdf/12913_2018_Article_3786.pdf">PDF format</a>.</p>
+<p>Manyazewal T, Mekonnen A, Demelew T, et al. Improving immunization capacity in Ethiopia through continuous quality improvement interventions: a prospective quasi-experimental study. Infect Dis Poverty. 2018;7(1):119. Published 2018 Nov 30. <a href="doi:10.1186/s40249-018-0502-8" class="uri">doi:10.1186/s40249-018-0502-8</a>. Available in <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6267782/">html format</a> or <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6267782/pdf/40249_2018_Article_502.pdf">PDF format</a>.</p>
+<p>Olita’a D, Barnabas R, Vali Boma G, et al. Simplified management protocol for term neonates after prolonged rupture of membranes in a setting with high rates of neonatal sepsis and mortality: a quality improvement study. Archives of Disease in Childhood 2019;104:115-120. Available in <a href="https://adc.bmj.com/content/104/2/115.long">html format</a> or <a href="https://adc.bmj.com/content/archdischild/104/2/115.full.pdf">PDF format</a>.</p>
+<p>Parthiban A, Warta A, Marshall JA, et al. Improving Wait Time for Patients in a Pediatric Echocardiography Laboratory - a Quality Improvement Project. Pediatr Qual Saf. 2018;3(3):e083. Published 2018 Jun 6. <a href="doi:10.1097/pq9.0000000000000083" class="uri">doi:10.1097/pq9.0000000000000083</a>. Available in <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6132813/">html format</a> or <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6132813/pdf/pqs-3-e083.pdf">PDF format</a>.</p>
 </div>
 </div>
 
