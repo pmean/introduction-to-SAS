@@ -1,5 +1,5 @@
 semester_start <- "2019-06-03"
-default_path <- "data00"
+default_path <- "data"
 
 suppressMessages(suppressWarnings(library(lubridate)))
 suppressMessages(suppressWarnings(library(magrittr)))
