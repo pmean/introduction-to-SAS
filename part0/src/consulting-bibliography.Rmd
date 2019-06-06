@@ -1,0 +1,73 @@
+---
+title: "Consulting bibliography"
+author: "Steve Simon"
+output:
+  html_document: default
+---
+
+## Printing date
+
+This bibliography was created on 2019-06-06 and last updated on `r Sys.Date()`.
+
+```{r echo=FALSE}
+source(file="prelims.R", echo=FALSE)
+suppressMessages(suppressWarnings(library(tidyverse)))
+```
+
+```{r echo=FALSE}
+bib_files <- list.files(path="../doc", pattern="*.bib")
+txt_full <- NULL
+for (f in bib_files) {
+  txt_full <- append(txt_full, readLines(paste0("../doc/", f)))
+}
+remove_ch <- function(txt, ch, fixed_flag=FALSE) {
+  gsub(ch, "", txt, fixed=fixed_flag)
+}
+select_txt <- function(txt, lab) {
+  txt %>%
+    grep(lab, ., value=TRUE) %>%
+    remove_ch('"', fixed=TRUE) %>%
+    remove_ch('^\\s*') %>%
+    remove_ch(paste0("^",lab)) %>%
+    remove_ch(' = \\{') %>%
+    remove_ch('\\}') %>%
+    remove_ch('\\s*$') %>%
+    remove_ch(',$') %>%
+    return
+}
+txt_authors <- select_txt(txt_full, "author")
+txt_titles <- select_txt(txt_full, "title")
+txt_html <- select_txt(txt_full, "html")
+txt_pdf <- select_txt(txt_full, "pdf")
+txt_full[1:13]
+prefix_all <- "Available in "
+prefix_html <- ifelse(nchar(txt_html)==0, "", "[html format](")
+postfix_html <- ifelse(nchar(txt_html)==0, "", ")")
+conjunction <- ifelse(nchar(txt_html)==0 | nchar(txt_pdf)==0, "", " and ")
+prefix_pdf <- ifelse(nchar(txt_pdf)==0, "", "[pdf format](")
+postfix_pdf <- ifelse(nchar(txt_pdf)==0, ".", ").")
+prefix_all %>%
+  paste0(prefix_html) %>%
+  paste0(txt_html) %>%
+  paste0(postfix_html) %>%
+  paste0(conjunction) %>%
+  paste0(prefix_pdf) %>%
+  paste0(txt_pdf) %>%
+  paste0(postfix_pdf) -> txt_link
+txt_link
+bib_files %>%
+  sub(".bib", "", .) -> bib_names
+bib_names %>%
+  paste0("![](../doc/", .) %>%
+  paste0(".png)") %>%
+  paste0("\n\n") %>%
+  paste0(txt_authors) %>%
+  paste0(". ") %>%
+  paste0(txt_titles) %>%
+  paste0(". ") %>%
+  paste0(txt_link) %>%
+  paste0("\n\n-----\n\n") %>%
+  paste0(collapse="\n\n") -> bib_output
+```
+
+`r bib_output`.
