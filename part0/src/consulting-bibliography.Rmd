@@ -7,7 +7,7 @@ output:
 
 ## Printing date
 
-This bibliography was created on 2019-06-06 and last updated on `r Sys.Date()`.
+This page was created using R Markdown on 2019-06-06 and last updated on `r Sys.Date()`.
 
 ```{r echo=FALSE}
 source(file="prelims.R", echo=FALSE)
@@ -39,7 +39,6 @@ txt_authors <- select_txt(txt_full, "author")
 txt_titles <- select_txt(txt_full, "title")
 txt_html <- select_txt(txt_full, "html")
 txt_pdf <- select_txt(txt_full, "pdf")
-txt_full[1:13]
 prefix_all <- "Available in "
 prefix_html <- ifelse(nchar(txt_html)==0, "", "[html format](")
 postfix_html <- ifelse(nchar(txt_html)==0, "", ")")
@@ -54,20 +53,28 @@ prefix_all %>%
   paste0(prefix_pdf) %>%
   paste0(txt_pdf) %>%
   paste0(postfix_pdf) -> txt_link
-txt_link
 bib_files %>%
   sub(".bib", "", .) -> bib_names
+divider <- paste0(rep("=", 50), collapse="")
 bib_names %>%
   paste0("![](../doc/", .) %>%
   paste0(".png)") %>%
-  paste0("\n\n") %>%
+  paste0("\n\n## ") %>%
   paste0(txt_authors) %>%
   paste0(". ") %>%
   paste0(txt_titles) %>%
   paste0(". ") %>%
   paste0(txt_link) %>%
-  paste0("\n\n-----\n\n") %>%
+  paste0("\n\n## ") %>%
+  paste0(divider) %>%
   paste0(collapse="\n\n") -> bib_output
 ```
 
+## `r divider`
+
 `r bib_output`.
+
+## Assignment
+
+Review one of the resources listed above and provide a brief summary (approximately 150 words).
+
