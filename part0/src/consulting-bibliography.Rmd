@@ -7,6 +7,10 @@ output:
 
 This bibliography was created on 2019-06-06 and last updated on `r Sys.Date()`.
 
+## Printing date
+
+This page was created using R Markdown on 2019-06-06 and last updated on `r Sys.Date()`.
+
 ```{r echo=FALSE}
 source(file="prelims.R", echo=FALSE)
 suppressMessages(suppressWarnings(library(tidyverse)))
@@ -53,17 +57,26 @@ prefix_all %>%
   paste0(postfix_pdf) -> txt_link
 bib_files %>%
   sub(".bib", "", .) -> bib_names
+divider <- paste0(rep("=", 50), collapse="")
 bib_names %>%
   paste0("![](../doc/", .) %>%
   paste0(".png)") %>%
-  paste0("\n\n") %>%
+  paste0("\n\n## ") %>%
   paste0(txt_authors) %>%
   paste0(". ") %>%
   paste0(txt_titles) %>%
   paste0(". ") %>%
   paste0(txt_link) %>%
-  paste0("\n\n-----\n\n") %>%
+  paste0("\n\n## ") %>%
+  paste0(divider) %>%
   paste0(collapse="\n\n") -> bib_output
 ```
 
+## `r divider`
+
 `r bib_output`.
+
+## Assignment
+
+Review one of the resources listed above and provide a brief summary (approximately 150 words).
+
