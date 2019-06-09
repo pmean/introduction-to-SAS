@@ -1,8 +1,7 @@
 ---
 title: "Getting started"
 author: "Steve Simon"
-date: "August 23, 2018"
-output: ioslides_presentation
+output: powerpoint_presentation
 ---
 
 ```{r setup, include=FALSE}
@@ -22,7 +21,7 @@ run;
 ```
 ## Course instructor, Steve Simon
 
-![](~/introduction-to-SAS/images/SteveSimonPic.jpg)
+![](../images/SteveSimonPic.jpg)
 
 These slides were printed on `r Sys.time()`.
 
@@ -34,7 +33,7 @@ Greetings! My name is Steve Simon and I am the instructor for the class, MEDB 55
 
 - - -
 
-![](~/introduction-to-SAS/images/virtualbox.png)
+![](../images/virtualbox.png)
 
 
 <div class="notes">
@@ -49,7 +48,7 @@ http://support.sas.com/software/products/university-edition/docs/en/SASUniversit
 
 - - -
 
-![](~/introduction-to-SAS/images/virtualbox2.png)
+![](../images/virtualbox2.png)
 
 
 <div class="notes">
@@ -60,7 +59,7 @@ Click on the SAS University Edition tab and a new window opens up. It explains t
 
 - - -
 
-![](~/introduction-to-SAS/images/virtualbox3.png)
+![](../images/virtualbox3.png)
 
 
 <div class="notes">
@@ -71,7 +70,7 @@ When you open your web browser to http://localhost:10080, you get the option of 
 
 - - -
 
-![](~/introduction-to-SAS/images/sas-university-startup.png)
+![](../images/sas-university-startup.png)
 
 
 <div class="notes">
@@ -82,7 +81,7 @@ When you open your web browser to http://localhost:10080, you get the option of 
 
 
 
-![](~/introduction-to-SAS/images/opening-screen.png)
+![](../images/opening-screen.png)
 
 
 <div class="notes">
@@ -93,7 +92,7 @@ If you are running the "regular" version of SAS, here's an image of what the ope
 
 - - -
 
-![](~/introduction-to-SAS/images/program-editor.png)
+![](../images/program-editor.png)
 
 
 <div class="notes">
@@ -104,7 +103,7 @@ This is the program editor window. You type in your program in this window, or r
 
 - - -
 
-![](~/introduction-to-SAS/images/test-program1.png)
+![](../images/test-program1.png)
 
 
 <div class="notes">
@@ -139,7 +138,7 @@ After you type this program in, click on FILE | SAVE and store your program some
 
 - - -
 
-![](~/introduction-to-SAS/images/log-window1.png)
+![](../images/log-window1.png)
 
 
 <div class="notes">
@@ -150,7 +149,7 @@ The font here is a bit small, but notice that there are no red messages indicati
 
 - - -
 
-![](~/introduction-to-SAS/images/log-window2.png)
+![](../images/log-window2.png)
 
 
 <div class="notes">
@@ -217,7 +216,7 @@ There are additional options for storing graphics, which I will talk about later
 
 - - -
 
-![](~/introduction-to-SAS/images/preferences-results-window.png)
+![](../images/preferences-results-window.png)
 
 <div class="notes">
 
@@ -227,7 +226,7 @@ Click on the CREATE LISTING option box to send the output to the output window. 
 
 - - -
 
-![](~/introduction-to-SAS/images/output-window.png)
+![](../images/output-window.png)
 
 <div class="notes">
 
@@ -237,7 +236,7 @@ Here's what the output window looks like. Notice that SAS uses a monospaced font
 
 - - -
 
-![](~/introduction-to-SAS/images/output-html.png)
+![](../images/output-html.png)
 
 <div class="notes">
 
@@ -247,7 +246,7 @@ Here's what the html output looks like. Notice variety of font sizes and colors.
 
 - - -
 
-![](~/introduction-to-SAS/images/sas-university-program.png)
+![](../images/sas-university-program.png)
 
 <div class="notes">
 
@@ -257,7 +256,7 @@ You will notice a slightly different appearance with SAS University. Here is the
 
 - - -
 
-![](~/introduction-to-SAS/images/sas-university-log.png)
+![](../images/sas-university-log.png)
 
 <div class="notes">
 
@@ -265,7 +264,7 @@ Here is the log window. Notice that the counts for errors, warnings, and notes a
 
 - - -
 
-![](~/introduction-to-SAS/images/sas-university-results.png)
+![](../images/sas-university-results.png)
 
 <div class="notes">
 
