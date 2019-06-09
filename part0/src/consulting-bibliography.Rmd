@@ -5,8 +5,6 @@ output:
   html_document: default
 ---
 
-## Printing date
-
 This bibliography was created on 2019-06-06 and last updated on `r Sys.Date()`.
 
 ```{r echo=FALSE}
@@ -39,7 +37,6 @@ txt_authors <- select_txt(txt_full, "author")
 txt_titles <- select_txt(txt_full, "title")
 txt_html <- select_txt(txt_full, "html")
 txt_pdf <- select_txt(txt_full, "pdf")
-txt_full[1:13]
 prefix_all <- "Available in "
 prefix_html <- ifelse(nchar(txt_html)==0, "", "[html format](")
 postfix_html <- ifelse(nchar(txt_html)==0, "", ")")
@@ -54,7 +51,6 @@ prefix_all %>%
   paste0(prefix_pdf) %>%
   paste0(txt_pdf) %>%
   paste0(postfix_pdf) -> txt_link
-txt_link
 bib_files %>%
   sub(".bib", "", .) -> bib_names
 bib_names %>%
