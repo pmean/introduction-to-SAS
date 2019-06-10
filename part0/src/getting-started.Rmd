@@ -14,8 +14,6 @@ knitr::opts_chunk$set(echo = FALSE)
 
 This PowerPoint presentation was written by Steve Simon in 2018-08-29 and was last modified on `r Sys.Date()`. It uses R Markdown, though the actual R code is fairly minimal. You can find the file that created this presentation on my [github repository](https://github.com/pmean/introduction-to-SAS).
 
-
-
 <div class="notes">
 
 Greetings! My name is Steve Simon and I am the instructor for the class, MEDB 5507, Introduction to SAS.
@@ -26,55 +24,90 @@ Greetings! My name is Steve Simon and I am the instructor for the class, MEDB 55
 
 ![](../images/SteveSimonPic.jpg)
 
-## Getting started with SAS University edition (1 of 4)
+## Where can I get SAS
 
-![](../images/virtualbox.png)
-
-<div class="notes">
-
-If you are using SAS University, you start by opening Oracle Virtualbox.
-
-Installation instructions are available.
-
-http://support.sas.com/software/products/university-edition/docs/en/SASUniversityEditionQuickStartVirtualBox.pdf
-
-</div>
-
-## Getting started with SAS University edition (2 of 4)
-
-![](../images/virtualbox2.png)
-
++ On your UMKC computer
+  + Desktop, hard-wired to UMKC network
+  + No laptops, no home computers
++ UMKC Student Computing Labs
+  + Several locations on campus
+  + Remote access
++ SAS University
+  + Works on ANY computer
++ Jupyter lab
++ SASMarkdown
 
 <div class="notes">
 
-Click on the SAS University Edition tab and a new window opens up. It explains that you need to point your web browser to a particular location. It also warns you to keep this window open.
+There are several ways that you can get access to SAS software. One of these three options should work for you.
 
 </div>
 
-## Getting started with SAS University edition (3 of 4)
+## SAS on your UMKC computer
 
-![](../images/virtualbox3.png)
+![Screenshot of UMKC IS page on SAS software](../readings/umkc-2019.png)
 
 <div class="notes">
 
-When you open your web browser to http://localhost:10080, you get the option of starting with SAS Studio or with a Jupyter notebook. I have not had much luck with Jupyter, but you are welcome to try this on your own.
+This screenshot may be too small for you to read, but you can find the proper link on the recommended readings list for this week on the Canvas website. This works for any desktop computer on the UMKC campus that is hard-wired to the UMKC netwok. By hard-wired, I mean that there is an ethernet cable connecting your computer to a socket on the wall.
+
+If you are fortunate enough to have access to a hard-wired computer, you can get SAS installed easily. It may already be sitting on your computer.
+
+With a very few rare exceptions, you cannot get UMKC to load SAS on a laptop computer or a home computer. The license agreement that UMKC signed wih SAS Institute does not allow this.
 
 </div>
 
-## Getting started with SAS University edition (4 of 4)
+## SAS at the UMKC Student Computing Labs
 
-![](../images/sas-university-startup.png)
-
+![Screenshot of UMKC information page on computing labs](../readings/umkc-2019a.png)
 
 <div class="notes">
 
-When you open your web browser to http://localhost:10080, you get the option of starting with SAS Studio or with a Jupyter notebook. I have not had much luck with Jupyter, but you are welcome to try this on your own.
+Again, the image on your screen may be too small to read, but go to the recommended readings page on Canvas to call this up on your computer. 
+
+There are several student computing labs on campus that already have SAS installed on them.
+
+You can visit the labs in person, or you can connect to those labs using Remote Desktop Connection.
+
+</div>
+
+## SAS using SAS University
+
+![Screenshot of main page for SAS University]
+
+<div class="notes">
+
+SAS Institute recognized that their licensing terms sometimes prevented students from having access to SAS software, and they dearly want you to learn SAS so that you'll demand access to SAS when you get your big job in the corporate world. So they developed a system, SAS University, that you can use for free for educational purposes. I have SAS University installed on my laptop computer and it is very nice. The user interface is slightly different, but only slightly, and it seems to have just as many capabilities as the commercial version.
+
+Installation is a bit tricky, but do try it. It is a very nice system. I will do much of my work in preparing teaching examples using SAS University.
+
+</div>
+
+## SAS using Jupyter notebooks
+
+![Screenshot of SAS blog entry on Jupyter]
+
+<div class="notes">
+
+If you are adventurous, you can run SAS within a Jupyter notebook. This works easily with SAS University, but I believe you can also run the commercial version of SAS in a Jupyter notebook. I will not talk about Jupyter in this class, it is beyond the scope of this class. But if you want to explore SAS and Jupyter, I can work with you informally on this.
+
+</div>
+
+## SAS using SAS markdown
+
+![Screenshot of SAS markdown web page]
+
+<div class="notes">
+
+Also beyond the scope of this class is running SAS within R. It uses an R library called SAS markdown.
 
 </div>
 
 
+## Opening screen - SAS commercial version
 
-![](../images/opening-screen.png)
+
+![Opening screen of SAS with multiple windows](../images/opening-screen.png)
 
 
 <div class="notes">
@@ -83,9 +116,9 @@ If you are running the "regular" version of SAS, here's an image of what the ope
 
 </div>
 
-- - -
+## SAS program editor (1 of 2)
 
-![](../images/program-editor.png)
+![Maximized view of empty SAS program editor window](../images/program-editor.png)
 
 
 <div class="notes">
@@ -94,9 +127,9 @@ This is the program editor window. You type in your program in this window, or r
 
 </div>
 
-- - -
+## SAS program editor (2 of 2)
 
-![](../images/test-program1.png)
+![Program editor window with simple SAS program](../images/test-program1.png)
 
 
 <div class="notes">
@@ -105,7 +138,7 @@ Here's a simple test program. After you type this program in, click on FILE | SA
 
 </div>
 
-## Test program
+## SAS Test program
 
 ```
 data test_example;
@@ -128,10 +161,9 @@ After you type this program in, click on FILE | SAVE and store your program some
 
 </div>
 
+## SAS log window (1 of 2)
 
-- - -
-
-![](../images/log-window1.png)
+![Maximized view of SAS log window](../images/log-window1.png)
 
 
 <div class="notes">
@@ -140,9 +172,9 @@ The font here is a bit small, but notice that there are no red messages indicati
 
 </div>
 
-- - -
+## SAS log window (2 of 2)
 
-![](../images/log-window2.png)
+![Maimized view of SAS log window, second page](../images/log-window2.png)
 
 
 <div class="notes">
@@ -151,8 +183,7 @@ Always start looking for error messages at the top. The very first error or warn
 
 </div>
 
-
-## Log messages
+## Log messages (1 of 2)
 
 ```
 1    data test_example;
@@ -172,7 +203,7 @@ Always watch the log to see that you have read in the proper number of observati
 </div>
 
 
-## Log messages
+## Log messages (2 of 2)
 
 ```
 9    proc means data=test_example;
@@ -203,23 +234,23 @@ SAS has several options for storing output.
 
 <div class="notes">
 
+I want to talk in more detail later about this, but you can take the output and save it. There are several ways to do this. If you already have output, click on the CREATE LISTING option box to send the output to the output window. Click on the CREATE HTML option box to send the output to an html file. Click on the BROWSE button to select a default folder for your html file.
+
+</div>
+
+## Preferences window
+
+![Preferences dialog box](../images/preferences-results-window.png)
+
+<div class="notes">
+
 There are additional options for storing graphics, which I will talk about later. You control where SAS places its output in the results tab of the preferences dialog box. Select TOOLS | OPTIONS | PREFERENCES from the menu and click on the RESULTS tab.
 
 </div>
 
-- - -
+## SAS output window
 
-![](../images/preferences-results-window.png)
-
-<div class="notes">
-
-Click on the CREATE LISTING option box to send the output to the output window. Click on the CREATE HTML option box to send the output to an html file. Click on the BROWSE button to select a default folder for your html file.
-
-</div>
-
-- - -
-
-![](../images/output-window.png)
+![Maximized view of default SAS output](../images/output-window.png)
 
 <div class="notes">
 
@@ -227,9 +258,9 @@ Here's what the output window looks like. Notice that SAS uses a monospaced font
 
 </div>
 
-- - -
+## SAS html output
 
-![](../images/output-html.png)
+![Maximized view of html output](../images/output-html.png)
 
 <div class="notes">
 
@@ -237,9 +268,55 @@ Here's what the html output looks like. Notice variety of font sizes and colors.
 
 </div>
 
-- - -
+## Getting started with SAS University edition (1 of 4)
 
-![](../images/sas-university-program.png)
+![View of virtual box, your entry point to SAS University](../images/virtualbox.png)
+
+<div class="notes">
+
+If you are using SAS University, you start by opening Oracle Virtualbox.
+
+Installation instructions are available.
+
+http://support.sas.com/software/products/university-edition/docs/en/SASUniversityEditionQuickStartVirtualBox.pdf
+
+</div>
+
+## Getting started with SAS University edition (2 of 4)
+
+![Second step in starting SAS University](../images/virtualbox2.png)
+
+
+<div class="notes">
+
+Click on the SAS University Edition tab and a new window opens up. It explains that you need to point your web browser to a particular location. It also warns you to keep this window open.
+
+</div>
+
+## Getting started with SAS University edition (3 of 4)
+
+![Third step in staring SAS University](../images/virtualbox3.png)
+
+<div class="notes">
+
+When you open your web browser to http://localhost:10080, you get the option of starting with SAS Studio or with a Jupyter notebook. I have not had much luck with Jupyter, but you are welcome to try this on your own.
+
+</div>
+
+## Getting started with SAS University edition (4 of 4)
+
+![](../images/sas-university-startup.png)
+
+
+<div class="notes">
+
+When you open your web browser to http://localhost:10080, you get the option of starting with SAS Studio or with a Jupyter notebook. I have not had much luck with Jupyter, but you are welcome to try this on your own.
+
+</div>
+
+## SAS University program window
+
+![SAS University program window](../images/sas-university-program.png)
 
 <div class="notes">
 
@@ -249,18 +326,35 @@ You will notice a slightly different appearance with SAS University. Here is the
 
 - - -
 
-![](../images/sas-university-log.png)
+![SAS Univesity log window](../images/sas-university-log.png)
 
 <div class="notes">
 
 Here is the log window. Notice that the counts for errors, warnings, and notes appear at the top, and a missing count means zero errors and zero warnings. Hooray!
 
-- - -
+## SAS University results
 
-![](../images/sas-university-results.png)
+![SAS University results window](../images/sas-university-results.png)
 
 <div class="notes">
 
 Here is the results window. The icons near the top offer a variety of export options, among other things.
+
+</div>
+
+## Conclusion
+
+You can run the commercial version of SAS using
+
++ Your UMKC computer
++ UMKC Student Computing Labs
+
+You can run a free version of SAS using
+
++ SAS University
+
+<div class="notes">
+
+You can run the commercial version of SAS or SAS University and I've shown some screenshots of what this looks like. Try this on your own and let me know if you have been able to get SAS running successfully.
 
 </div>
