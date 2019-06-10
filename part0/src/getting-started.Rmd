@@ -8,22 +8,13 @@ output: powerpoint_presentation
 # I will not use too much R in a class called "Introduction to SAS,"
 # but am including this chunk just in case I need something from R.
 knitr::opts_chunk$set(echo = FALSE)
-require(SASmarkdown)
-saslog_hookset("source")
-sasexe <- "C:/Program Files/SASHome/SASFoundation/9.4/sas.exe"
-sasopts <- "-nosplash -ls 75"
 ```
 
-# Then set up SAS code chunks with
-```{r, engine="saslog", engine.path=sasexe, engine.opts=sasopts, SASecho=FALSE}
-proc means data=sashelp.class;
-run;
-```
-## Course instructor, Steve Simon
+## Documentation
 
-![](../images/SteveSimonPic.jpg)
+This PowerPoint presentation was written by Steve Simon in 2018-08-29 and was last modified on `r Sys.Date()`. It uses R Markdown, though the actual R code is fairly minimal. You can find the file that created this presentation on my [github repository](https://github.com/pmean/introduction-to-SAS).
 
-These slides were printed on `r Sys.time()`.
+
 
 <div class="notes">
 
@@ -31,10 +22,13 @@ Greetings! My name is Steve Simon and I am the instructor for the class, MEDB 55
 
 </div>
 
-- - -
+## Course instructor, Steve Simon
+
+![](../images/SteveSimonPic.jpg)
+
+## Getting started with SAS University edition (1 of 4)
 
 ![](../images/virtualbox.png)
-
 
 <div class="notes">
 
@@ -46,7 +40,7 @@ http://support.sas.com/software/products/university-edition/docs/en/SASUniversit
 
 </div>
 
-- - -
+## Getting started with SAS University edition (2 of 4)
 
 ![](../images/virtualbox2.png)
 
@@ -57,10 +51,9 @@ Click on the SAS University Edition tab and a new window opens up. It explains t
 
 </div>
 
-- - -
+## Getting started with SAS University edition (3 of 4)
 
 ![](../images/virtualbox3.png)
-
 
 <div class="notes">
 
@@ -68,7 +61,7 @@ When you open your web browser to http://localhost:10080, you get the option of 
 
 </div>
 
-- - -
+## Getting started with SAS University edition (4 of 4)
 
 ![](../images/sas-university-startup.png)
 
