@@ -1,12 +1,12 @@
-data test_example;
+* getting-started.sas by Steve Simon;
+data small_example;
  input x y;
  cards;
 1 2
 2 4
 3 6
 ;
-
-proc means data=test_example;
-  var x y;
-  title "Descriptive statistics";
+proc print
+    data=small_example(obs=1);
+title "First row of data";
 run;
