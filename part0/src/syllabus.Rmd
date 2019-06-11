@@ -17,7 +17,7 @@ source(file="prelims.R", echo=FALSE)
 
 <!-- regular html comment -->
 
-This is an on-line class taught, starting on `r tue[1]` and ending on `r fri[16]`.
+This is an on-line class taught during the eight week summer session. The course starts on `r tue[1]` and ends on `r fri[8]`. Please refer to the [UMKC academic calendar](https://www.umkc.edu/registrar/acal.asp) dates for further information.
 
 `r read_text("syllabus-course-instructor")`
 

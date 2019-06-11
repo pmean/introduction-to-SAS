@@ -1,0 +1,46 @@
+### Course information
+
+Required and recommended materials: There is NO required textbook for this class.	The following books are possible resources you might want to purchase for your future work with SAS. 
+
++	Delwiche & Slaughter. The Little SAS Book. 5th Edition. SAS Institute Inc., Cary, NC.
++	Cody. Learning SAS by Example : A Programmer’s Guide. SAS Institute Inc., Cary, NC.
++	Cody. SAS Statistics by Example. SAS Institute Inc., Cary, NC.
+
+Evaluation and grading criteria: All assignments will be graded on a pass-fail criteria. Students who successfully complete 70% or more of the assignments AND complete the final project will be awarded a passing grade.
+
+Schedule: Each module should take roughly one week. 
+
++ Module 0, Getting started. A general introduction to SAS and information on how to run SAS on your computer.
+
++ Module 1, Reading data from a variety of text formats. Variable labels. Missing value codes. Means, standard deviations, and percentiles. Histograms and scatterplots. Functional transformations.
+
++ Module 2, Categorical data. Variable formats. Recoding category levels. Indicator variables. Counts and percentages. Two way crosstabulations.
+
++ Module 3, Boxplots. Group means and standard deviationss.
+
++ Module 4, Merging. Longitudinal data. Tall and thin format. Short and fat format.
+
++ Module 5, Independent project
+
+Student learning outcomes
+
+At the end of this course, students will be able to:
+
+1. Read a variety of differently fomatted text files into SAS.
+
+2. Document both the SAS program and the data set it uses.
+
+3. Produce simple descriptive statistics for a variety of data types.
+
+4. Transform and restructure the data.
+
+5. Code missing values.
+
+6. Produce simple graphical displays of your data.
+
+Course expectations
+
+
+
+
+Course expectations
