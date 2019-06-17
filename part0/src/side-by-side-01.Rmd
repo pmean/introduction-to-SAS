@@ -1,0 +1,85 @@
+---
+title: "Illustrating SAS Markdown"
+author: "Steve Simon"
+output: html_document
+---
+
+```{r setup}
+library(SASmarkdown)
+saslog_hookset("source")
+sasexe <- "C:/Program Files/SASHome/SASFoundation/9.4/sas.exe"
+sasopts <- "-nosplash -ls 75"
+```
+
+# Then set up SAS code chunks with
+```{r sas-lecture01a, engine="saslog", engine.path=sasexe, engine.opts=sasopts, SASecho=FALSE}
+* lecture01.sas by Steve Simon;
+%let path=c:/Users/simons/My Documents/SASUniversityEdition/myfolders/introduction-to-sas;
+%let xpath=/folders/myfolders/introduction-to-sas;
+
+filename fat
+  "&path/part1/data/fat.txt";
+
+libname intro
+  "&path/part1/data";
+
+data intro.fat;
+  infile fat delimiter=' ';
+  input 
+    case
+    fat_b
+    fat_s
+    dens
+    age
+    wt
+    ht
+    bmi
+    ffw
+    neck
+    chest
+    abdomen
+    hip
+    thigh
+    knee
+    ankle
+    biceps
+    forearm
+    wrist;
+  label
+    case="Case number"
+    fat_b="Percentage body fatusing Brozek's equation, 457/Density - 414.2"
+    fat_s="Percent body fat using Siri's equation, 495/Density - 450"
+    dens="Density"
+    age="Age (yrs)"
+    wt="Weight (lbs)"
+    ht="Height (inches)"
+    bmi="Adiposity index = Weight/Height^2 (kg/m^2)"
+    ffw="Fat Free Weight = (1 - fraction of body fat) * Weight using Brozek's formula (lbs)"
+    neck="Neck circumference (cm)"
+    chest="85  Chest circumference (cm)"
+    abdomen="Abdomen circumference (cm) at the umbilicus and level with the iliac crest"
+    hip="Hip circumference (cm)"
+    thigh="Thigh circumference (cm)"
+    knee="Knee circumference (cm)"
+    ankle="Ankle circumference (cm)"
+    biceps="Extended biceps circumference (cm)"
+    forearm="Forearm circumference (cm)"
+    wrist="Wrist circumference (cm) distal to the styloid processes"  
+  ;
+run;
+```
+
+```{r sas-lecture01b, engine="saslog", engine.path=sasexe, engine.opts=sasopts, SASecho=FALSE}
+%let path=c:/Users/simons/My Documents/SASUniversityEdition/myfolders/introduction-to-sas;
+%let xpath=/folders/myfolders/introduction-to-sas;
+
+libname intro
+  "&path/part1/data";
+
+proc print
+    data=intro.fat(obs=10);
+  var case fat_b fat_s dens age;
+  title1 "The first ten rows and five columns";
+  title2 "of the fat data set";
+run;
+```
