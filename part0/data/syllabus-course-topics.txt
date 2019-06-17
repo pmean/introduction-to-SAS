@@ -1,20 +1,15 @@
 ### Course Topics
 
-* Conceiving the research question;
-
-* Study designs;
-
-* Questionnaire construction;
-
-* Research methodology;
-
-* Research ethics;
-
-* Human subjects requirements;
-
-* The role of statistical analysis in clinical research;
-
-* Research proposal preparation; and 
-
-* Research based on analysis of secondary data.
-
++ inputting delimited text files
++ inputting fixed width text files
++ variable labels, variable formats
++ means, standard deviations, and percentiles
++ missing values
++ transformations
++ scatterplots
++ frequency tables and histograms
++ recoding categorical variables
++ two way cross tabulations
++ boxplots
++ merging
++ longitudinal data
