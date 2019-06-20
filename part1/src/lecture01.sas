@@ -609,9 +609,16 @@ coefficient.
 Predation, Exposure, or Danger sleep less?
 Show your results using a plot and a trendline.
 
-8. Place all the key results into a Word 
-document or PowerPoint presentation, or 
-as a PDF file or as an HTML file.
+8. Place all the key results into a document
+and copy the original questions and include
+your own written answer along with the 
+appropriate supporting tables or graphs.
+Do NOT submit uneditted and unannoted
+SAS output. You can use any program to
+prepare the output, but convert it to a PDF
+format before submission. If you have any
+difficulty producing a PDF document, please
+talk to me.
 
 ;
 ods pdf close;
