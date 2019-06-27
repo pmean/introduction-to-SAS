@@ -6,34 +6,30 @@
 %let xpath=/folders/myfolders/introduction-to-sas;
 
 ods pdf
-  file="&path/module01/hw01.pdf";
+  file=
+    "c:/Users/simons/My Documents/SASUniversityEdition/myfolders/introduction-to-sas/part1/results/hw01.pdf";
 
 filename sleep
-  "&path/data01/sleep.txt";
+    "c:/Users/simons/My Documents/SASUniversityEdition/myfolders/introduction-to-sas/part1/data/sleep_modified.txt";
 
 libname intro
-  "&path/data01";
+    "c:/Users/simons/My Documents/SASUniversityEdition/myfolders/introduction-to-sas/part1/data";
 
-data intro.sleep;
-  infile sleep delimiter='09'X firstobs=2;
+data intro.sleep_modified;
+  infile sleep delimiter=' ';
   informat species $24.;
   input 
     species
     bodywt
     brainwt
-    nondreaming $
-    dreaming $
-    totalsleep $
-    lifespan $
-    gestation $
+    nondreaming
+    dreaming
+    totalsleep
+    lifespan
+    gestation
     predation
     exposure
     danger;
-  nondreaming1 = input(nondreaming, ?? 8.);
-  dreaming1 = input(dreaming, ?? 8.);
-  totalsleep1 = input(totalsleep, ?? 8.);
-  lifespan1 = input(lifespan, ?? 8.);
-  gestation1 = input(gestation, ?? 8.);
   label
     BodyWt = "body weight (kg)"
     BrainWt = "brain weight (g)"
@@ -48,42 +44,42 @@ data intro.sleep;
 run;
  
 proc print
-    data=intro.sleep(obs=10);
+    data=intro.sleep_modified(obs=10);
   var species bodywt totalsleep totalsleep1;
   title1 "The first ten rows and two columns";
   title2 "of the sleep data set";
 run;
 
 proc sort
-    data=intro.sleep;
+    data=intro.sleep_modified;
   by bodywt;
 run;
 
 proc print
-    data=intro.sleep(obs=1);
+    data=intro.sleep_modified(obs=1);
   title1 "The smallest body weight";
 run;
 
 proc sort
-    data=intro.sleep;
+    data=intro.sleep_modified;
   by descending bodywt;
 run;
 
 proc print
-    data=intro.sleep(obs=1);
+    data=intro.sleep_modified(obs=1);
   title1 "The largest body weight";
 run;
 
 proc means
-    data=intro.sleep;
+    data=intro.sleep_modified;
   var
     bodywt
     brainwt
-    nondreaming1
-    dreaming1
-    totalsleep1
-    lifespan1
-	gestation1
+    nondreaming
+    dreaming
+    totalsleep
+    lifespan
+	gestation
 	predation
 	exposure
 	danger;
@@ -91,13 +87,13 @@ proc means
 run;
 
 proc sgplot
-    data=intro.sleep;
+    data=intro.sleep_modified;
   histogram bodywt;
   title1 "Histogram of body weight";
 run;
 
 data log_weight;
-  set intro.sleep;
+  set intro.sleep_modified;
   log_w = log10(bodywt);
 run;
 
@@ -112,7 +108,7 @@ run;
 ;
 
 data ratio;
-  set intro.sleep;
+  set intro.sleep_modified;
   brain_body_ratio = 100 * (brainwt/1000) / bodywt;
 run;
 
