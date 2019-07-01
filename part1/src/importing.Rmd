@@ -1,0 +1,225 @@
+---
+title: "Importing a wide range of data formats"
+author: "Steve Simon"
+date: "7/1/2019"
+output: powerpoint_presentation
+---
+
+
+```{r setup, echo=FALSE}
+knitr::opts_chunk$set(echo=FALSE, comment="")
+suppressMessages(suppressWarnings(library(dplyr)))
+suppressMessages(suppressWarnings(library(knitr)))
+suppressMessages(suppressWarnings(library(magrittr)))
+```
+
+### Importing choices (1 of 2)
++ A wide range of formats
+  + Space delimited
+  + Comma separated values
+  + Tab delimited
+  + Fixed format
++ Strings in your input
+
+<div class="notes">
+
+I want to show a few simple examples of importing data. There are several common formats and SAS can handle all of these easily.
+
+</div>
+
+### Importing choices (2 of 2)
++ First row
+  + Includes variable names
+  + Starts directly with data
++ Manual reformatting
+  + Global search and replace
+  + Not usually a good idea
++ Skipping rows
++ Converting strings to numbers
+
+<div class="notes">
+
+Some data sets use the first row to represent variable names while others don't.
+
+If you have to, you can manually reformat the data. Use the global search and replace function in your text editor program. I generally try to avoid this. If your data set changes, you have to redo the reformatting step, which is tedious and error prone. You'd be better off learning a few tricks to get SAS to read a nonstandard data set.
+
+Sometimes you have to skip a few rows. Sometimes you have to convert strings to numbers.
+
+</div>
+
+### Space delimited, example
+
+```{r space-delimited.txt}
+strip_documentation <- function(x) {x[-c(1:9, length(x))]}
+opts_current$get("label") %>%
+  paste0("../data/", .) %>%
+  readLines(warn=FALSE) %>%
+  paste0(collapse="\n") %>%
+  cat
+```
+
+<div class="notes">
+
+You've already imported a file similar to this. It is a space delimited file with one blank between each number.
+
+</div>
+
+### Space delimited, SAS code
+
+```{r import-space-delimited.sas}
+opts_current$get("label") %>%
+  readLines(warn=FALSE) %>%
+  strip_documentation %>%
+  paste0(collapse="\n") %>%
+  cat
+```
+
+<div class="notes">
+
+Here is the SAS code to read and print this file.
+
+</div>
+
+### Multi-space delimited, example
+
+```{r multi-delimited.txt}
+opts_current$get("label") %>%
+  paste0("../data/", .) %>%
+  readLines(warn=FALSE) %>%
+  paste0(collapse="\n") %>%
+  cat
+```
+
+<div class="notes">
+
+Some text files will insert extra spaces, as in the first two lines of this data set, to align the data. It makes the file more readable. SAS will handle multiple blanks, including blanks at the beginning and end of a line, in a way that you probably will want.
+
+Note that multiple blanks as a delimiter is not a problem, but try to avoid this for other delimiters, especially commas.
+
+</div>
+
+### Multi-space delimited, SAS code
+
+```{r import-multi-delimited.sas}
+opts_current$get("label") %>%
+  readLines(warn=FALSE) %>%
+  strip_documentation %>%
+  paste0(collapse="\n") %>%
+  cat
+```
+
+<div class="notes">
+
+Here is the SAS code to read and print this file. Nothing has changed except the name of the raw data (in the filename statement, not shown) and the sas data set name.
+
+</div>
+
+### Comma delimited, example
+
+```{r comma-delimited.csv}
+opts_current$get("label") %>%
+  paste0("../data/", .) %>%
+  readLines(warn=FALSE) %>%
+  paste0(collapse="\n") %>%
+  cat
+```
+
+<div class="notes">
+
+Many text files use commas to separate individual numbers. These often use a special file extension, .csv. These files are especially popular with Excel users, as they are about as easy to import and export as any other type of simple text files.
+
+Here's a simple example of a comma delimited file.
+
+</div>
+
+### Comma delimited, SAS code
+
+```{r import-comma-delimited.sas}
+opts_current$get("label") %>%
+  readLines(warn=FALSE) %>%
+  strip_documentation %>%
+  paste0(collapse="\n") %>%
+  cat
+```
+
+<div class="notes">
+
+Here is the SAS code to read and print this file. Nothing has changed other than the name of the file and the delimiter option on the infile statement.
+
+</div>
+
+### Tilde delimited, example
+
+```{r tilde-delimited.txt}
+opts_current$get("label") %>%
+  paste0("../data/", .) %>%
+  readLines(warn=FALSE) %>%
+  paste0(collapse="\n") %>%
+  cat
+```
+
+<div class="notes">
+
+You might even see a bizzare symbol as a delimiter. Something that almost never appears. The tilde(~) is a good example. We have not talked about string data yet, but if your data has lots of strings and it has a lot of unmatched quote marks, commas, and other weird things that might trip you up, the owner of the data might use a tilde because nothing else works as a delimiter.
+
+Here's a simple example of a tilde delimited file.
+
+</div>
+
+### Tilde delimited, SAS code
+
+```{r import-tilde-delimited.sas}
+opts_current$get("label") %>%
+  readLines(warn=FALSE) %>%
+  strip_documentation %>%
+  paste0(collapse="\n") %>%
+  cat
+```
+
+<div class="notes">
+
+Here is the SAS code to read and print this file. Again, nothing has changed except the file names and the delimiter option on the infile statement.
+
+</div>
+
+### Tab delimited, example
+
+```{r tab-delimited.txt}
+opts_current$get("label") %>%
+  paste0("../data/", .) %>%
+  readLines(warn=FALSE) %>%
+  paste0(collapse="\n") %>%
+  cat
+```
+
+<div class="notes">
+
+I've already told you that tabs are evil, but if you encounter a tab delimited file, don't panic. You can handle it.
+
+Here's a simple example of a tab delimited file. Note that the numbers are left justfied, which is a hint that there are tabs lurking in the file. The tabs here stop at columns, 5, 9, and 13, which is a bit weird, but may just represent how my system treats tabs. The classic thing to look for in a tab delimited file, besides the right justification, is the semi-aligned, but not perfectly aligned numbers. This doesn't happen with this data because all of the numbers are three digits or less, but it can happen when the numbers take up a bit more room and the numbers are uneven in size.
+
+You can also detect tabs by opening the file in a text editor like notebook and playing around with adding extra spaces. A lack of action followed by a sudden hop is a pretty good indication that you are dealing with tabs.
+
+</div>
+
+### Tab delimited, SAS code
+
+```{r import-tab-delimited.sas}
+opts_current$get("label") %>%
+  readLines(warn=FALSE) %>%
+  strip_documentation %>%
+  paste0(collapse="\n") %>%
+  cat
+```
+
+<div class="notes">
+
+Here is the SAS code to read and print this file. You cannot enter the tab character directly as a delimiter. Instead, you have to provide the hex code, 09. Note the use of quote marks and X.
+
+This import worked fine, but beware. Some of these tab separated value files have a few stray blanks mixed in with the tabs, and this can cause havoc.
+
+</div>
+
+
+
+

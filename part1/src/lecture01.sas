@@ -2,6 +2,8 @@
   written by Steve Simon
   September 7, 2018;
 
+********* ********* ********* ********* *********;
+
 * Before you start any serious SAS programming,
   tell SAS where everything belongs
   
