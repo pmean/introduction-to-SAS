@@ -28,9 +28,9 @@ I want to show a few simple examples of importing data. There are several common
 </div>
 
 ### Importing choices (2 of 2)
-+ First row
-  + Includes variable names
-  + Starts directly with data
++ proc import
+  + First row includes variable names
+  + Binary data files
 + Manual reformatting
   + Global search and replace
   + Not usually a good idea
@@ -220,6 +220,139 @@ This import worked fine, but beware. Some of these tab separated value files hav
 
 </div>
 
+### Fixed width, example
+
+```{r fixed-width.txt}
+opts_current$get("label") %>%
+  paste0("../data/", .) %>%
+  readLines(warn=FALSE) %>%
+  paste0(collapse="\n") %>%
+  cat
+```
+
+<div class="notes">
+
+Sometimes you may run across a file with no delimiters at all. The numbers stand next to each other shoulder to shoulder. Here's an example. There's a space or two here or there because not every number is exactly the same number of digits. But there are plenty of numbers without any spaces behind them.
+
+Why might you do this? If your file was very large, you may not want to afford the luxury of delimiters. The file is already straining to fit in and adding delimiters would just be too much.
+
+These days, of course, storage is cheap, but you still might encounter a fixed width file now and then.
+
+The only way an undelimited file would work is if there was a rigid structure where each number would reside in a specified column location. It's like a series of row houses and the address tells you which house is which.
+
+The key that tells you what columns correspond to which numbers has to reside in a different file. And you have to translate this key to the proper SAS code.
+
+In the fixed width file above, you would have to be told there are three numbers, the first in columns 1 and 2, the second in columns 3 and 4 and the last in columns 5 through 7.
+
+</div>
+
+### Fixed width, SAS code
+
+```{r import-fixed-width.sas}
+opts_current$get("label") %>%
+  readLines(warn=FALSE) %>%
+  strip_documentation %>%
+  paste0(collapse="\n") %>%
+  cat
+```
+
+<div class="notes">
+
+Here is the SAS code to read and print this file. Each variable is followed by a column range.
+
+</div>
+
+
+### String data, example
+
+```{r string-data.txt}
+opts_current$get("label") %>%
+  paste0("../data/", .) %>%
+  readLines(warn=FALSE) %>%
+  paste0(collapse="\n") %>%
+  cat
+```
+
+<div class="notes">
+
+Strings add a bit of complication. A string is a sequence of one or more letters, like a person's name, or a mixture of numbers and letters, like a person's address.
+
+Here's a small text file with a string of four to six letters.
+
+</div>
+
+### String data, SAS code
+
+```{r import-string-data.sas}
+opts_current$get("label") %>%
+  readLines(warn=FALSE) %>%
+  strip_documentation %>%
+  paste0(collapse="\n") %>%
+  cat
+```
+
+<div class="notes">
+
+Here is the SAS code to read and print this file. Designate a string variable by adding a dollar sign after the variable name.
+
+</div>
+
+### Complications with string data
++ Strings longer than eight characters
+  + Informat statement
++ Strings with delimiters
+  + Use different delimiter
+  + Enclose sting in quotes
++ Strings with quotes
+  + Use double quotes around string with single quote
+    + "It's my bidthday!"
+  + Use single quotes around string with double quote
+    + 'Smile and say "Cheese!" when I take this picture'
+  + Use escape codes
+
+<div class="notes">
+
+SAS will have problems with certain strings. I don't want to go into too much detail now, but here are some things to look out for.
+
+SAS expects strings to be eight characters in length or less. If your string has more than eight character, you have to warn SAS with an informat statement.
+
+If you have a space delimited file, but your strings have space in them, the simplest thing is to switch to a different delimiter, like a comma. What if your string has commas and spaces? Well you could try using a tilde, or some other obscure character. Another choice is to enclose your string in quotes.
+
+What about strings with quotes in them. This can happen. I did a text analysis of the book A Chirstmas Carol by Charles Dickens and the text itself had lots of he said quotes and lots of apostrophes. There's always a work around. You can use double quotes to enclose a string with an apostrophe. Use single quotes to enclose a string with double quotes. There are also special escape codes.
+
+</div>
+
+
+### First line names, example
+
+```{r first-line-names.txt}
+opts_current$get("label") %>%
+  paste0("../data/", .) %>%
+  readLines(warn=FALSE) %>%
+  paste0(collapse="\n") %>%
+  cat
+```
+
+<div class="notes">
+
+</div>
+
+### First line names, SAS code
+
+```{r import-first-line-names.sas}
+opts_current$get("label") %>%
+  readLines(warn=FALSE) %>%
+  strip_documentation %>%
+  paste0(collapse="\n") %>%
+  cat
+```
+
+<div class="notes">
+
+Here is the SAS code to read and print this file.
+
+</div>
+
 ### Read in these files
 
 https://dasl.datadescription.com/datafile/saratoga-house-prices/
@@ -229,6 +362,8 @@ This is a tab delimited file with the names of the variables in the first row.
 https://raw.githubusercontent.com/fivethirtyeight/data/master/airline-safety/airline-safety.csv
 
 This is a comma separated value file with variable names at the top.
+
+
 
 
 
