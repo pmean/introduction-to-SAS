@@ -220,6 +220,15 @@ This import worked fine, but beware. Some of these tab separated value files hav
 
 </div>
 
+### Read in these files
+
+https://dasl.datadescription.com/datafile/saratoga-house-prices/
+
+This is a tab delimited file with the names of the variables in the first row.
+
+https://raw.githubusercontent.com/fivethirtyeight/data/master/airline-safety/airline-safety.csv
+
+This is a comma separated value file with variable names at the top.
 
 
 
