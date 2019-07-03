@@ -1,0 +1,62 @@
+NOTE: PROCEDURE PRINTTO used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+2    * import-tilde-delimited.sas
+3      written by Steve Simon
+4      2019-07-01;
+5    
+6    ********* ********* ********* ********* *********;
+7    * A simple program to import a comma delimited
+8      file into SAS;
+9    options papersize=(8in 4in) nonumber nodate;
+10   ods pdf file="import-tilde-delimited.pdf";
+NOTE: Writing ODS PDF output to DISK destination 
+      "C:\Users\simons\Documents\SASUniversityEdition\myfolders\introduction-to-sas\part1\src\import-tilde-delimited.pdf", 
+      printer "PDF".
+11   filename raw_data
+12     "../data/tilde-delimited.txt";
+13   libname module01
+14     "../data";
+NOTE: Libref MODULE01 was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: C:\Users\simons\Documents\SASUniversityEdition\myfolders\introduction-to-sas\part1\data
+15   data module01.tilde_delimited;
+16     infile raw_data delimiter="~";
+17     input x y z;
+18   run;
+
+NOTE: The infile RAW_DATA is:
+      Filename=C:\Users\simons\Documents\SASUniversityEdition\myfolders\introduction-to-sas\part1\data\tilde-delimited.txt,
+      RECFM=V,LRECL=32767,File Size (bytes)=50,
+      Last Modified=01Jul2019:15:58:13,
+      Create Time=01Jul2019:15:58:12
+
+NOTE: 5 records were read from the infile RAW_DATA.
+      The minimum record length was 6.
+      The maximum record length was 9.
+NOTE: The data set MODULE01.TILDE_DELIMITED has 5 observations and 3 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.01 seconds
+      
+
+19   
+20   proc print
+NOTE: Writing HTML Body file: sashtml.htm
+21       data=module01.tilde_delimited(obs=2);
+22     title1 "First two rows of data";
+23   run;
+
+NOTE: There were 2 observations read from the data set MODULE01.TILDE_DELIMITED.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.28 seconds
+      cpu time            0.17 seconds
+      
+
+24   ods pdf close;
+ERROR: File is in use, 
+       C:\Users\simons\Documents\SASUniversityEdition\myfolders\introduction-to-sas\part1\src\import-tilde-delimited.pdf.
+25   proc printto; run;
+
