@@ -182,6 +182,20 @@ Here is the SAS code to read and print this file. Again, nothing has changed exc
 
 </div>
 
+### Break #1
+
++ What have you learned.
+  + Space delimited files
+  + Comma separated values
+  + Tilde delimited files
+  
++ What's coming next
+  + Tab delimited files
+  + Fixed width files
+  + First line variable names
+  + Converting strings to numeric
+  
+
 ### Tab delimited, example
 
 ```{r tab-delimited.txt}
@@ -353,12 +367,110 @@ Here is the SAS code to read and print this file.
 
 </div>
 
-### Read in the Saratoga house prices file
-+ Saratoga house prices
-  + This is a tab delimited file with the names of the variables in the first row. The second link provides a brief description of the data.
-    + https://dasl.datadescription.com/download/data/3437
-    + https://dasl.datadescription.com/datafile/saratoga-house-prices/
+### string to numeric dataset
 
+```{r import-string-to-numeric.sas}
+program_name <- opts_current$get("label") 
+program_name %>%
+  readLines(warn=FALSE) -> sas_code
+input_source_line <- grep("filename raw_data", sas_code) + 1
+sas_code[input_source_line] %>%
+  substr(4, 999) %>%
+  sub("\";", "", .) %>% 
+  readLines(n=10) %>%
+  paste0(collapse="\n") %>%
+  cat
+sas_code %>% 
+  grep("********* *********", ., fixed=TRUE) -> comment_lines
+```
+
+### import-string-to-numeric.sas (1 of 5)
+
+```{r string-to-numeric-code-1}
+opts_current$get("label") %>%
+  sub("^.*-", "", .) %>%
+  as.numeric -> i
+section_a <- (comment_lines[2*i-1]+1):(comment_lines[2*i]-1)
+section_b <- (comment_lines[2*i]+2):(comment_lines[2*i+1]-2)
+cat(sas_code[section_b], sep="\n")
+```
+
+<div class="notes">
+
+`r paste0(sas_code[section_a], collapse="\n")`
+
+</div>
+
+### import-string-to-numeric.sas (2 of 5)
+
+```{r string-to-numeric-code-2}
+opts_current$get("label") %>%
+  sub("^.*-", "", .) %>%
+  as.numeric -> i
+section_a <- (comment_lines[2*i-1]+1):(comment_lines[2*i]-1)
+section_b <- (comment_lines[2*i]+2):(comment_lines[2*i+1]-2)
+cat(sas_code[section_b], sep="\n")
+```
+
+<div class="notes">
+
+`r paste0(sas_code[section_a], collapse="\n")`
+
+</div>
+
+### import-string-to-numeric.sas (3 of 5)
+
+![Output from proc print](../images/`r sub(".sas", "", program_name)`1.png)
+
+<div class="notes">
+
+The NA code confused proc import. It saw a column that had some numbers in it and some letters, so it thought "string". If SAS were smart enough to recognize the NA code as missing, then it would have been okay, but NA is a code used by R, and it would be unfair for SAS to know the missing value codes for R and every other statistical package out there.
+
+You can tell that the variable Z is a string because it is left justified. Notice that the 8 and the N and the 2 all line up.
+
+</div>
+
+### import-string-to-numeric.sas (4 of 5)
+
+```{r string-to-numeric-code-3}
+opts_current$get("label") %>%
+  sub("^.*-", "", .) %>%
+  as.numeric -> i
+section_a <- (comment_lines[2*i-1]+1):(comment_lines[2*i]-1)
+section_b <- (comment_lines[2*i]+2):(comment_lines[2*i+1]-2)
+cat(sas_code[section_b], sep="\n")
+```
+
+<div class="notes">
+
+`r paste0(sas_code[section_a], collapse="\n")`
+
+</div>
+
+### import-string-to-numeric.sas (5 of 5)
+
+![Output from proc print](../images/`r sub(".sas", "", program_name)`2.png)
+
+<div class="notes">
+
+With this code, the variable z is input as numeric. Notice the right justification. The 8 and the . and the 4 all line up.) The NA code is converted to the SAS missing value code. Everyone is happy.
+
+There are other ways you can work around this problem, but this is simple and clean.
+
+</div>
+
+### Break #2
+
++ What have you learned.
+  + Tab delimited files
+  + Fixed width files
+  + First line variable names
+  + Converting strings to numeric
++ What's coming next
+  + Two real world examples
+    + Abalone age prediction
+    + Saratoga house prices
+  
 ### Read in the abalone data file
 + Abalone age prediction
   + This is a comma separated value file without variables names at the top. You can find the variable names in a data dictionary published at second link.
@@ -432,7 +544,6 @@ cat(sas_code[section_b], sep="\n")
 
 </div>
 
-
 ### Read in the Saratoga house prices file
 + Saratoga house prices
   + This is a tab delimited file with the names of the variables in the first row. The second link provides a brief description of the data.
@@ -505,3 +616,10 @@ cat(sas_code[section_b], sep="\n")
 `r paste0(sas_code[section_a], collapse="\n")`
 
 </div>
+
+### Summary
++ What have you learned
+  + Reading delimited files
+  + Reading fixed width files
+  + First line variable names
+  + Converting strings to numeric
