@@ -25,6 +25,8 @@ suppressMessages(suppressWarnings(library(magrittr)))
 
 I want to show a few simple examples of importing data. There are several common formats and SAS can handle all of these easily.
 
+Here is the value of pi: `r pi`.
+
 </div>
 
 ### Importing choices (2 of 2)
@@ -353,17 +355,155 @@ Here is the SAS code to read and print this file.
 
 </div>
 
-### Read in these files
+### Read in these files (1 of 2)
 
-https://dasl.datadescription.com/datafile/saratoga-house-prices/
++ Saratoga house prices
+  + This is a tab delimited file with the names of the variables in the first row. The second link provides a brief description of the data.
+    + https://dasl.datadescription.com/download/data/3437
+    + https://dasl.datadescription.com/datafile/saratoga-house-prices/
++ Abalone age prediction
+  + This is a comma separated value file without variables names at the top. You can find the variable names in a data dictionary published at second link.
+    + https://archive.ics.uci.edu/ml/machine-learning-databases/abalone/abalone.data
+    + https://archive.ics.uci.edu/ml/machine-learning-databases/abalone/abalone.names
 
-This is a tab delimited file with the names of the variables in the first row.
+### Read in these files (2 of 2)
 
-https://raw.githubusercontent.com/fivethirtyeight/data/master/airline-safety/airline-safety.csv
++ Airline safety
+  + This is a comma separated value file with variable names at the top.
+    + https://raw.githubusercontent.com/fivethirtyeight/data/master/airline-safety/airline-safety.csv
+    
 
-This is a comma separated value file with variable names at the top.
+### abalone data, first ten lines
+
+```{r import-abalone.sas}
+opts_current$get("label") %>%
+  readLines(warn=FALSE) -> sas_code
+input_source_line <- grep("filename raw_data", sas_code) + 1
+sas_code[input_source_line] %>%
+  substr(4, 999) %>%
+  sub("\";", "", .) %>% 
+  readLines(n=10) %>%
+  paste0(collapse="\n") %>%
+  cat
+sas_code %>% 
+  grep("********* *********", ., fixed=TRUE) -> comment_lines
+```
+
+### import-abalone.sas (1 of 3)
+
+```{r abalone-code-1}
+opts_current$get("label") %>%
+  sub("^.*-", "", .) %>%
+  as.numeric -> i
+section_a <- (comment_lines[2*i-1]+1):(comment_lines[2*i]-1)
+section_b <- (comment_lines[2*i]+2):(comment_lines[2*i+1]-2)
+cat(sas_code[section_b], sep="\n")
+```
+
+<div class="notes">
+
+`r paste0(sas_code[section_a], collapse="\n")`
+
+</div>
+
+### import-abalone.sas (2 of 3)
+
+```{r abalone-code-2}
+opts_current$get("label") %>%
+  sub("^.*-", "", .) %>%
+  as.numeric -> i
+section_a <- (comment_lines[2*i-1]+1):(comment_lines[2*i]-1)
+section_b <- (comment_lines[2*i]+2):(comment_lines[2*i+1]-2)
+cat(sas_code[section_b], sep="\n")
+```
+
+<div class="notes">
+
+`r paste0(sas_code[section_a], collapse="\n")`
+
+</div>
+
+### import-abalone.sas (3 of 3)
+
+```{r abalone-code-3}
+opts_current$get("label") %>%
+  sub("^.*-", "", .) %>%
+  as.numeric -> i
+section_a <- (comment_lines[2*i-1]+1):(comment_lines[2*i]-1)
+section_b <- (comment_lines[2*i]+2):(comment_lines[2*i+1]-2)
+cat(sas_code[section_b], sep="\n")
+```
+
+<div class="notes">
+
+`r paste0(sas_code[section_a], collapse="\n")`
+
+</div>
 
 
+### saratoga data, first ten lines
 
+```{r import-saratoga.sas}
+opts_current$get("label") %>%
+  readLines(warn=FALSE) -> sas_code
+input_source_line <- grep("filename raw_data", sas_code) + 1
+sas_code[input_source_line] %>%
+  substr(4, 999) %>%
+  sub("\";", "", .) %>% 
+  readLines(n=10) %>%
+  paste0(collapse="\n") %>%
+  cat
+sas_code %>% 
+  grep("********* *********", ., fixed=TRUE) -> comment_lines
+```
 
+### import-saratoga.sas (1 of 3)
 
+```{r saratoga-code-1}
+opts_current$get("label") %>%
+  sub("^.*-", "", .) %>%
+  as.numeric -> i
+section_a <- (comment_lines[2*i-1]+1):(comment_lines[2*i]-1)
+section_b <- (comment_lines[2*i]+2):(comment_lines[2*i+1]-2)
+cat(sas_code[section_b], sep="\n")
+```
+
+<div class="notes">
+
+`r paste0(sas_code[section_a], collapse="\n")`
+
+</div>
+
+### import-saratoga.sas (2 of 3)
+
+```{r saratoga-code-2}
+opts_current$get("label") %>%
+  sub("^.*-", "", .) %>%
+  as.numeric -> i
+section_a <- (comment_lines[2*i-1]+1):(comment_lines[2*i]-1)
+section_b <- (comment_lines[2*i]+2):(comment_lines[2*i+1]-2)
+cat(sas_code[section_b], sep="\n")
+```
+
+<div class="notes">
+
+`r paste0(sas_code[section_a], collapse="\n")`
+
+</div>
+
+### import-saratoga.sas (3 of 3)
+
+```{r saratoga-code-3}
+opts_current$get("label") %>%
+  sub("^.*-", "", .) %>%
+  as.numeric -> i
+section_a <- (comment_lines[2*i-1]+1):(comment_lines[2*i]-1)
+section_b <- (comment_lines[2*i]+2):(comment_lines[2*i+1]-2)
+cat(sas_code[section_b], sep="\n")
+```
+
+<div class="notes">
+
+`r paste0(sas_code[section_a], collapse="\n")`
+
+</div>
