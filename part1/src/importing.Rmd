@@ -13,10 +13,6 @@ suppressMessages(suppressWarnings(library(knitr)))
 suppressMessages(suppressWarnings(library(magrittr)))
 ```
 
-### Test
-
-![](../images/test-tilde.png)
-
 ### Importing choices (1 of 2)
 + A wide range of formats
   + Space delimited
@@ -28,8 +24,6 @@ suppressMessages(suppressWarnings(library(magrittr)))
 <div class="notes">
 
 I want to show a few simple examples of importing data. There are several common formats and SAS can handle all of these easily.
-
-Here is the value of pi: `r pi`.
 
 </div>
 
@@ -359,23 +353,17 @@ Here is the SAS code to read and print this file.
 
 </div>
 
-### Read in these files (1 of 2)
-
+### Read in the Saratoga house prices file
 + Saratoga house prices
   + This is a tab delimited file with the names of the variables in the first row. The second link provides a brief description of the data.
     + https://dasl.datadescription.com/download/data/3437
     + https://dasl.datadescription.com/datafile/saratoga-house-prices/
+
+### Read in the abalone data file
 + Abalone age prediction
   + This is a comma separated value file without variables names at the top. You can find the variable names in a data dictionary published at second link.
     + https://archive.ics.uci.edu/ml/machine-learning-databases/abalone/abalone.data
     + https://archive.ics.uci.edu/ml/machine-learning-databases/abalone/abalone.names
-
-### Read in these files (2 of 2)
-
-+ Airline safety
-  + This is a comma separated value file with variable names at the top.
-    + https://raw.githubusercontent.com/fivethirtyeight/data/master/airline-safety/airline-safety.csv
-    
 
 ### abalone data, first ten lines
 
@@ -444,6 +432,12 @@ cat(sas_code[section_b], sep="\n")
 
 </div>
 
+
+### Read in the Saratoga house prices file
++ Saratoga house prices
+  + This is a tab delimited file with the names of the variables in the first row. The second link provides a brief description of the data.
+    + https://dasl.datadescription.com/download/data/3437
+    + https://dasl.datadescription.com/datafile/saratoga-house-prices/
 
 ### saratoga data, first ten lines
 

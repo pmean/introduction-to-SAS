@@ -1,0 +1,6 @@
+name x y
+Alpha 4 8
+Bravo 8 NA
+Charlie 12 24
+Delta 16 32
+Echo 24 48
