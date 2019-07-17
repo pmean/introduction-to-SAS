@@ -1,27 +1,31 @@
+options papersize=(8in 4in) nodate;
+proc printto log="lecture02.log" new; run;
+
 * lecture03.sas
   written by Steve Simon
   November 27, 2018;
 
-%let path=/folders/myfolders/introduction-to-sas;
-%let xpath=c:/Users/simons/My Documents/SASUniversityEdition/myfolders;
-
 ods pdf
-  file="&path/module03/lecture03.pdf";
+  file="lecture03.pdf";
 
 filename fev
-  "&path/data03/fev.txt";
+  "../data/fev.txt";
 
 libname intro
-  "&path/data03";
+  "../data";
 
-* Today, you will analyze some data sets that
-  have a mix of categorical and continuous
-  variables. The first data set looks at 
-  pumonary function in a group of children.
-  You can find a description of this data set at
+********* ********* ********* *********
+Today, you will analyze some data sets
+that have a mix of categorical and 
+continuous variables. The first data 
+set looks at pumonary function in a
+group of children.
+
+You can find a description of this data set at
 
   http://jse.amstat.org/datasets/fev.txt
-;
+********* ********* ********* *********;
+
 
 proc format;
   value fsex
