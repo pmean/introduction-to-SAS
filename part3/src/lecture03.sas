@@ -248,24 +248,9 @@ Details for this data set can be found
 on the DASL web site.
 ********* ********* ********* *********;
 
-
-proc import
-    datafile="../data/housing.txt"
-    out=intro.housing
-    dbms=dlm
-    replace;
-  delimiter='09'x;
-  getnames=yes;
-run;
-
-proc print
-    data=intro.housing(obs=10);
-  title1 "Partial listing of housing data";
-run;
-
-* Here is the homework assignment for this module.
-
 ********* ********* ********* *********
+Homework assignment (1/4)
+
 + Read in the data housing.txt. 
   
 + Convert the asterisks in the AGE and TAX
@@ -277,6 +262,8 @@ Draw bar charts for each of these factors.
 ********* ********* ********* *********;
      
 ********* ********* ********* *********
+Homework assignment (2/4)
+
 + Find the largest house (biggest SQFT)
 in the data set. Is the largest house
 also the most expensive house?
@@ -288,6 +275,8 @@ every possible feature?
 ********* ********* ********* *********;
 
 ********* ********* ********* *********
+Homework assignment (3/4)
+
 + Evaluate the relationship between
 PRICE and SQFT using a scatterplot. 
 Include a smooth curve. Do larger 
@@ -300,6 +289,8 @@ deviation by CUST.
 ********* ********* ********* *********;
 
 ********* ********* ********* *********
+Homework assignment (4/4)
+
 + What is the difference in average
 prices between northeast houses and 
 other houses? What is the difference in
