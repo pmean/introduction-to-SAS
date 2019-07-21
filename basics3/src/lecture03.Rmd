@@ -1,0 +1,210 @@
+---
+title: "Lecture03 - A mix of categorical and continuous variables"
+author: "Steve Simon"
+date: "7/19/2019"
+output: powerpoint_presentation
+---
+
+
+```{r setup, echo=FALSE}
+knitr::opts_chunk$set(echo=FALSE, comment="")
+suppressMessages(suppressWarnings(library(dplyr)))
+suppressMessages(suppressWarnings(library(knitr)))
+suppressMessages(suppressWarnings(library(magrittr)))
+```
+
+### Topics in this lecture
++ Review
+  + proc format, proc freq, proc means
++ proc corr
++ proc sgplot
+  + scatterplot
+  + boxplot
++ by statement
+
+<div class="notes">
+
+Here are the topics we will cover. It is a lot of material, but you will pick it up very easily.
+
+</div>
+
+```{r lecture03.sas}
+program_name <- opts_current$get("label") 
+program_name %>%
+  readLines(warn=FALSE) -> sas_code
+
+input_source_line <- grep("filename raw_data", sas_code) + 1
+sas_code[input_source_line] %>%
+  sub('^.*?"', '', .)                                      %>%
+  sub('";',    '', .)                                      %>% 
+  readLines(n=10)                                          %>%
+  paste0(collapse="\n")                                    -> ppt_data
+
+sas_code %>% 
+  grep("********* *********", ., fixed=TRUE)               -> comment_lines
+k <- (length(comment_lines)-1) %/% 2
+
+ppt_head <- rep(" ", k)
+ppt_note <- rep(" ", k)
+ppt_code <- rep(" ", k)
+for (i in 1:k) {
+  ppt_head[i] <- paste0("### ", sas_code[comment_lines[2*i-1] + 1])
+  ppt_note[i] <- paste0(sas_code[(comment_lines[2*i-1]+3):(comment_lines[2*i]  -1)], collapse="\n")
+  ppt_code[i] <- paste0(sas_code[(comment_lines[2*i]  +2):(comment_lines[2*i+1]-2)], collapse="\n")
+}
+```
+
+<!---Preliminaries--->`r j <- 1`
+`r ppt_head[j]`
+
+`r ppt_note[j]`
+
+### fev data set
+```{r}
+cat(ppt_data)
+```
+<div class="notes">
+Here are the first ten rows of the fev data set.
+</div>
+
+<!---Preliminaries--->`r j <- j+1`
+`r ppt_head[j]`
+```{r}
+cat(ppt_code[j])
+```
+<div class="notes">
+`r ppt_note[j]`
+</div>
+
+<!---proc format--->`r j <- j+1`
+`r ppt_head[j]`
+```{r}
+cat(ppt_code[j])
+```
+<div class="notes">
+`r ppt_note[j]`
+</div>
+
+<!---data step--->`r j <- j+1`
+`r ppt_head[j]`
+```{r}
+cat(ppt_code[j])
+```
+<div class="notes">
+`r ppt_note[j]`
+</div>
+
+<!---proc print--->`r j <- j+1`
+`r ppt_head[j]`
+```{r}
+cat(ppt_code[j])
+```
+<div class="notes">
+`r ppt_note[j]`
+</div>
+
+### Test image
+![Output, proc print](../images/lecture03-01.png)
+<div class="notes">
+Here are the first ten rows of the data .
+</div>
+
+<!---proc freq and means--->`r j <- j+1`
+`r ppt_head[j]`
+```{r}
+cat(ppt_code[j])
+```
+<div class="notes">
+`r ppt_note[j]`
+</div>
+
+### Output from proc freq (page 2)
+
+### Output from proc means (page 3)
+
+<!---proc corr--->`r j <- j+1`
+`r ppt_head[j]`
+```{r}
+cat(ppt_code[j])
+```
+<div class="notes">
+`r ppt_note[j]`
+</div>
+
+
+### Output from proc corr (page 4)
+
+<!---proc sgplot--->`r j <- j+1`
+`r ppt_head[j]`
+```{r}
+cat(ppt_code[j])
+```
+<div class="notes">
+`r ppt_note[j]`
+</div>
+
+### Output from proc sgplot (page 5)
+
+<!---proc sgplot--->`r j <- j+1`
+`r ppt_head[j]`
+```{r}
+cat(ppt_code[j])
+```
+<div class="notes">
+`r ppt_note[j]`
+</div>
+
+### Output from proc sgplot (page 6)
+
+<!---by statement--->`r j <- j+1`
+`r ppt_head[j]`
+```{r}
+cat(ppt_code[j])
+```
+<div class="notes">
+`r ppt_note[j]`
+</div>
+
+### Output from proc means with by statement (page 7)
+
+<!---proc sgplot--->`r j <- j+1`
+`r ppt_head[j]`
+```{r}
+cat(ppt_code[j])
+```
+<div class="notes">
+`r ppt_note[j]`
+</div>
+
+### Output from proc sgplot (page 8)
+
+<!---Further investigation--->`r j <- j+1`
+`r ppt_head[j]`
+
+`r ppt_note[j]`
+
+<!---hw 1/5--->`r j <- j+1`
+`r ppt_head[j]`
+
+`r ppt_note[j]`
+
+<!---hw 2/5--->`r j <- j+1`
+`r ppt_head[j]`
+
+`r ppt_note[j]`
+
+<!---hw 3/5--->`r j <- j+1`
+`r ppt_head[j]`
+
+`r ppt_note[j]`
+
+<!---hw 4/5--->`r j <- j+1`
+`r ppt_head[j]`
+
+`r ppt_note[j]`
+
+<!---hw 5/5--->`r j <- j+1`
+`r ppt_head[j]`
+
+`r ppt_note[j]`
+

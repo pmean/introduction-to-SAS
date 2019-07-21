@@ -28,7 +28,7 @@ place its own data files and where to
 store the output.
 ********* ********* ********* *********;
 
-filename fev
+filename raw_data
   "../data/fev.txt";
 
 libname intro
@@ -240,7 +240,9 @@ to turn anything in.
 
 
 ********* ********* ********* *********
-13. Your homework assignment will use a 
+Homework assignment (1/5)
+
+Your homework assignment will use a 
 data set of housing prices and factors
 that influence the price.
 
@@ -249,7 +251,7 @@ on the DASL web site.
 ********* ********* ********* *********;
 
 ********* ********* ********* *********
-Homework assignment (1/4)
+Homework assignment (2/5)
 
 + Read in the data housing.txt. 
   
@@ -262,7 +264,7 @@ Draw bar charts for each of these factors.
 ********* ********* ********* *********;
      
 ********* ********* ********* *********
-Homework assignment (2/4)
+Homework assignment (3/5)
 
 + Find the largest house (biggest SQFT)
 in the data set. Is the largest house
@@ -275,7 +277,7 @@ every possible feature?
 ********* ********* ********* *********;
 
 ********* ********* ********* *********
-Homework assignment (3/4)
+Homework assignment (4/5)
 
 + Evaluate the relationship between
 PRICE and SQFT using a scatterplot. 
@@ -289,7 +291,7 @@ deviation by CUST.
 ********* ********* ********* *********;
 
 ********* ********* ********* *********
-Homework assignment (4/4)
+Homework assignment (5/5)
 
 + What is the difference in average
 prices between northeast houses and 
@@ -302,4 +304,6 @@ percentages and compute a relative risk.
 ********* ********* ********* *********;
 
 ods pdf close;
+
+********* ********* ********* *********;
 
