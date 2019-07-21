@@ -35,7 +35,6 @@ This PowerPoint presentation was itself produced by a program, so it is only fai
 + This program is written in R Markdown. It was run using `r R.version.string`. It requires the use of the knitr package. It produces a PowerPoint file, including speaker notes that you can use to talk about good documentation practices.
   + Why R Markdown? See http://blog.pmean.com/powerpoint-with-r-markdown/
 
-
 <div class="notes">
 
 Here is some additional information in my documentation header. It is a bit unusual to use R Markdown to produce a PowerPoint presentation. If you are curious about this, please refer to the entry on my blog listed at the bottom of this slide.
@@ -127,7 +126,7 @@ You should let everyone know what restrictions you are placing on your computer 
 
 You have to explicitly place your program in the public domain. If you fail to specify any details, you are automatically assumed to be the copyright holder. One exception is if you are doing work for an employer and your employer insists controlling copyright. Another exception is if you are doing consulting work under contract and that contract demands that you turn over copyright control of any program that you write to your client.
 
-Even thoug it is not required, it is probably a good idea to assert copyright ownership. This could be as simple as a statement like "This program is copyrighted by Steve Simon in 2019." You can formally register copyright with the U.S. Copyright office or the corresponding copyright office in your own country. This provides a few additional legal protections, but probably is not worth it for a small program.
+Even though it is not required, it is probably a good idea to assert copyright ownership. This could be as simple as a statement like "This program is copyrighted by Steve Simon in 2019." You can formally register copyright with the U.S. Copyright office or the corresponding copyright office in your own country. This provides a few additional legal protections, but probably is not worth it for a small program.
 
 If you or your company asserts copyright, you can specify a bit more. If you don't want other people using your code put some dire warning like "Any use of this program without express written consent is strictly forbidden" or you can be a bit more open by asking someone to contact you to explore any re-use of your work.
 
@@ -272,11 +271,16 @@ This is a SAS macro named add_string. The author explains the purpose of the pro
 ```{}
 Required arguments: 
     words – the variable list 
-    str – the text string to add to each variable in the &words list 
+    str – the text string to add to each variable
+          in the &words list 
 
 Optional arguments: 
-    location – whether to add the text string as a prefix or suffix [prefix|suffix, default: suffix] 
-    delim – the character(s) separating each variable in the &words list [default: space] 
+    location – whether to add the text string as
+               a prefix or suffix [prefix|suffix, 
+               default: suffix] 
+    delim – the character(s) separating each 
+            variable in the &words list
+            [default: space] 
 ```
 
 <div class="notes">
@@ -289,9 +293,12 @@ This macro has two required arguments, words and str. It has two optional argume
 
 ```{}
 Examples: 
-    %put %add_string(a b c, _max);                      *produces the text a_max b_max c_max;            
-    %put %add_string(a b c, max_, location=prefix);     *produces the text max_a max_b max_c;            
-    %put %add_string(%str(a,b,c), _max, delim=%str(,)); *produces the text a_max,b_max,c_max;
+  %put %add_string(a b c, _max);
+    *produces the text a_max b_max c_max;            
+  %put %add_string(a b c, max_, location=prefix);
+    *produces the text max_a max_b max_c;            
+  %put %add_string(%str(a,b,c), _max, delim=%str(,));
+    *produces the text a_max,b_max,c_max;
 ```
 
 <div class="notes">
@@ -304,10 +311,10 @@ This is very nice. The author gives three short and simple examples and shows wh
 
 ```{}
 Credit:
-    source code from Robert J. Morris, 
-    Text Utility Macros for Manipulating
-    Lists of Variable Names (SUGI 30, 2005)
-    www2.sas.com/proceedings/sugi30/029-30.pdf           
+  source code from Robert J. Morris, Text
+  Utility Macros for Manipulating Lists of 
+  Variable Names (SUGI 30, 2005)
+  www2.sas.com/proceedings/sugi30/029-30.pdf           
 ```
 
 <div class="notes">
@@ -327,93 +334,89 @@ The author also tells us that this macro was documented as a SAS Users Group con
 
 Perhaps it is listed elsewhere, but I did not see the name of the current author anywhere in this program. I know it is not Robert J. Morris. I did not also see a creation date. Perhaps the date of the SAS presentation would serve as a proxy for the creation date. I also did not see under what provisions I might be able to use this macro myself.
 
+You might find some of this, however, in other files in the repository listed here.
+
 </div>
 
 
-## Documentation
+## Documentation, example #2
 
 ![Screenshot of documentation header for Financial Risk Group sas program](../images/documentation-financialriskgroup.png)
 
-## https://github.com/FinancialRiskGroup/SASPerformanceAnalytics
+## Documentation example #2, snippet 1 of 4.
+
 
 ```{}
-/*---------------------------------------------------------------
+/*-----------------------------------------------
 * NAME: ActivePremium.sas
 *
-* PURPOSE: Cacluate the return on an investment's annualized return minus the benchmark's annualized return.
+* PURPOSE: Cacluate the return on an investment's
+* annualized return minus the benchmark's 
+* annualized return.
 *
 * NOTES: Also known as active return.
-*		 Active premium= Investment's annualized return- Benchmark's annualized return. 
-*
+*		 Active premium= Investment's annualized 
+*    return - Benchmark's annualized return. 
+```
+
+## Documentation example #2, snippet 2 of 4.
+
+```{}
 * MACRO OPTIONS:
-* returns - Required.  Data Set containing returns.
-* BM - Required.  Specifies the variable name of benchmark asset or index in the returns data set.
-* scale - Optional. Number of periods in a year {any positive integer, ie daily scale= 252, monthly scale= 12, quarterly scale= 4}.
-          Default=1
-* method - Optional. Specifies either DISCRETE or LOG chaining method {DISCRETE, LOG}.  
-           Default=DISCRETE
-* dateColumn - Optional. Date column in Data Set. Default=DATE
-* outData - Optional. Output Data Set with active premium.  Default="active_premium"
-*
+* returns - Required.  Data Set containing 
+*           returns.
+* BM - Required.  Specifies the variable 
+*      name of benchmark asset or index 
+*      in the returns data set.
+* scale - Optional. Number of periods in a
+*         year {any positive integer, ie 
+*         daily scale= 252, monthly scale
+*         = 12, quarterly scale= 4}.
+*         Default=1
+```
+
+## Documentation example #2, snippet 3 of 4.
+
+```{}
+* method - Optional. Specifies either 
+*          DISCRETE or LOG chaining 
+*          method {DISCRETE, LOG}.  
+*          Default=DISCRETE
+* dateColumn - Optional. Date column in
+*              Data Set. Default=DATE
+* outData - Optional. Output Data Set 
+*           with active premium.  
+*           Default="active_premium"
+```
+
+## Documentation example #2, snippet 4 of 4.
+
+```{}
 * MODIFIED:
 * 7/22/2015 – CJ - Initial Creation
 * 3/05/2016 – RM - Comments modification  
 * 3/09/2016 - QY - Parameter consistency 
 *
-* Copyright (c) 2015 by The Financial Risk Group, Cary, NC, USA.
-*-------------------------------------------------------------*/
+* Copyright (c) 2015 by The Financial Risk Group,
+* Cary, NC, USA.
+*----------------------------------------------*/
 ```
 
-## Documentation
+  + Source: https://github.com/FinancialRiskGroup/SASPerformanceAnalytics
+
+
+## On your own (1 of 2)
 
 ![Screenshot of documentation header for hhs sas program](../images/documentation-hhs.png)
 
-## https://www.hhs.gov/opa/performance-measures/claims-data-sas-program-instructions/index.html
+## On your own (2 of 2)
 
-```{}
-/*
-________________________________________________________________________________
++ Evaluate the documentation shown above, available at
+  + https://www.hhs.gov/opa/performance-measures/claims-data-sas-program-instructions/index.html
++ What elements did these programmers include in their documentation?
++ What elements did the programmers leave out?
+  + Are any of the omissions critical?
 
-   00.setup.sas 
-   OPA Measure Calculations
-   Step 0: Define macro variables
-
-   Summary  : Define macro variables used in subsequent programs.
-              User enters environment- and data-specific info (directories,
-              variable names). User specifies whether to perform measure 
-              calculations on postpartum women (and number of days postpartum). 
-              Measure calculations will be performed on all women population 
-              by default. User can also specify demographic variables for 
-              stratification of final measures.
-
-   Data Reqs: 1) A sas data file containing women with one calendar year of claims
-              2) Every record must contain at least: 
-                  a) patient ID 
-                  b) patient date of birth (or age at service date)
-                  c) date of service
-
-   Authors  : P. Hastings / phil -at- farharbor -dot- com
-            : H. Monti / holly -at- farharbor -dot- com  
-            : Based on original code by B. Frederiksen -at- DHHS/OPA
-   Version  : 2.01
-   Date     : 2019-02-26
-   Revisions: Now using contraceptive provision to describe measures.  
-			  Updated OPA contact in setup helper. Updated names of revised claims code 
-		   	  lookup tables. Updated LARC flag to exclude surveillance codes. 
-		  	  Separated IUD and implant methods from LARC for MostMod report only. 
-		   	  Updated the live birth date of service as the first date rather than 
-              the last date of live birth claim in the postpartum period. 
-		   	  Added a flag for each contraceptive method used during the time period,
-              and added these variables to final dataset. Calculating measures based on
-	   		  2018 specifications. 
-   History  : 2016-12-19(1.00), 2017-02-22(1.01), 2017-05-17(1.02), 
-              2018-04-20(1.03), 2018-08-20(1.03a)
-
-________________________________________________________________________________
-
-*/
-```
-
-### Further resources
+## Further resources
 
 The Pennsylvania State University. 1.6 - Guidelines for Formatting and Commenting SAS Programs. Available in [html format](https://newonlinecourses.science.psu.edu/stat480/node/13/).

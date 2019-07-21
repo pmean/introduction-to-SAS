@@ -4,39 +4,15 @@ author: "Steve Simon"
 output: powerpoint_presentation
 ---
 
-## Abstract (1 of 2)
-
-+ Have you ever experienced befuddlement when you dust off a data analysis that you ran six months ago? Ever gritted your teeth when your collaborator invalidates all your hard work by telling you that the data set you were working on had "a few minor changes"? Or panicked when someone running a big meta-analysis asks you to share your data? If any of these experiences rings true to you, then you need to adopt the philosophy of reproducible research. Reproducible research refers to methods and tools developed by large software development teams but which can help you keep a sense of order in your data, analysis programs, and results.
-
-<div class="notes">
-
-I want to talk about reproducible research. This is research that will help you if you are reviewinng your code from a data analysis you ran six months ago. It will help when your collaborators give you a few minor changes
-
-</div>
-
-
-## Abstract (2 of 2)
-
-+ In this webinar, we'll review reproducible research methodology, using recent recommendations in the literature. Although these recommendations may ask you to break long entrenched habits, the approach is easy to implement, even for data analysts who are new to computation.
-
-<div class="notes">
-
-I want to talk about software tools, but you don't have to be a programmer to understand how to use these tools.
-
-</div>
-
-
-## My recommendations in 1999
+## Recommendations from 1999
 
 ![](../images/image2.png)
 
 <div class="notes">
 
-I wrote about this issue in 1999, but much of the advice I offered back then is obsolete today.
+Here is a web page with some general advice that I wrote way back in 1999. Some of the advice still holds but some of it is obsolete today.
 
 </div>
-
-
 
 ## Much newer (and better) recommendations
 
@@ -46,8 +22,11 @@ I wrote about this issue in 1999, but much of the advice I offered back then is 
 
 http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510
 
-</div>
+A much better and more recent set of recommendations appeared in PLOS Computational Biology in 2017.
 
+Have you ever experienced befuddlement when you dust off a data analysis that you ran six months ago? Ever gritted your teeth when your collaborator invalidates all your hard work by telling you that the data set you were working on had "a few minor changes"? Or panicked when someone running a big meta-analysis asks you to share your data? If any of these experiences rings true to you, then you need to adopt the philosophy of reproducible research. 
+
+</div>
 
 ## Methods and Tools for Reproducible Research 
 
@@ -55,239 +34,258 @@ http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510
 
 <div class="notes">
 
+Reproducible research refers to methods and tools developed by large software development teams but which can help you keep a sense of order in your data, analysis programs, and results.
+
+The recommendations are based on decades of experience from software development teams. The lessons that they learned can also help with data analysis. They are great when you are part of a team doing data analysis, but they can also help with a solo analyst.
+
+Most importantly, you don't have to be a programmer to understand how to use these tools.
+
 http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510
 
 </div>
 
-
-## Methods and Tools for Reproducible Research 
-
-+ If you adopt good programming practices, you will?
-	+ make your job easier today. **(only partially true!)**
-	+ make your job easier six months down the road when you have to dust off your work and dig in again.
-	+ help everyone who is currently working with you.
-	+ encourage future collaborators to work with you.
-	+ make your research more reproducible.
-	+ enhance the quality of your publications.
-+ But, it requires time and energy and the breaking of many old habits.
-+ Why should you adopt these recommendations?
+## Change is never easy
++ Good practices require time and energy.
++ You have to break old habits.
++ You cannot retrofit these recommendations.
 
 <div class="notes">
 
+All of the recommendations that I will make today require an investment of time and energy. This investment will pay off, especially in the long run, but don't let me fool you into thinking that this is easy. It requires you to break old habits, and for someone as old as I am, that means a whole bunch of old habits.
 
+Another thing that you need to realize is that you have to build these changes in to the data analysis itself. It is not something that you can tack on at the end once you're done with your work.
 
 </div>
 
+## Why should you adopt good programming practices?
++ These recommendations will
+  + make your job easier today.
+    + Only partially true!
+  + make your job easier six months down the road.
+  + help everyone who is currently working with you.
+  + encourage future collaborators to work with you.
+  + enhance the quality of your work.
+    + make your work more reproducible.
 
+<div class="notes">
 
+You will see some immediate benefits to adopting these practices, but that's only partially true because you will be investing time. The real payoff comes six months down the road.
 
-## Methods and Tools for Reproducible Research 
+You'll also see benefits if you are working in a group. Even if you are going solo, the recommendations will help if you want to attract future collaborators.
 
+The other direct benefit is quality. You will have a better product when you are done because everything that you do will be easy to reproduce.
+
+</div>
+
+## Recommendations in six areas
 + Data management.
 + Software.
 + Collaboration.
 + Project organization.
 + Keeping track of changes.
 + Manuscripts.
-+ Recommendations in six areas
 
 <div class="notes">
 
+Wilson et al have made recommendations in six broad areas: data management, software, collaboration, project organizations, tracking changes, and preparing manuscripts or reports.
 
+</div>
+
+## Data management recommendations
++ Save the raw data.
++ Ensure that raw data are backed up in more than one location.
++ Create the data you wish to see in the world.
++ Create analysis-friendly data.
++ Record all the steps used to process data.
++ Use a unique identifier for every record.
++ Submit data to a reputable DOI-issuing repository.
+
+<div class="notes">
+
+The first set of recommendations relate to data management. You need to save the raw data, make sure it is backed up, create a version of the data that you would have liekd to see, make it analysis-friendly, document all the data processing steps, provide a unique identifier for every records, and submit your data to a repository.
+
+</div>
+
+## Save the raw data.
++ Never make changes directly on top of the data you receive.
++ Note the version number and date of any data you receive remotely.
+  + Wilson et al (2017) page 2, recommendation 1a.
+
+<div class="notes">
+
+When you get your data, store it someplace safe and do not make any changes to this data. Always make changes to a copy of the original data. This allows you to more easily undo any bad choices that you might make during the data clean-up.
+
+If you receive data from the web, see if there is a date and/or version number. Data on the web will sometimes change, and you want to make sure that your analysis is not affected adversely by these changes. This is also part of the process of documenting what you do.
+
+</div>
+
+## Ensure that raw data are backed up in more than one location.
++ Your company/university network may include remote back up, but check first.
++ You can also use cloud services or your own USB stick/drive, but be sure to encrypt anything confidential.
+  + Wilson et al (2017) page 4, recommendation 1b.
+
+<div class="notes">
+
+An off-site backup is very important. You don't want a local disaster to set you back. Two copies of a file on two different locations on your hard drive will not help you if your hard drive fails or if your machine gets stolen.
+
+Generally, most companies will provide off-site backup of any files stored on the local network, but as the saying goes "Trust but verify." Make a local backup, then "accidentally" delete your network file. Then see if the computer experts at your company can get your file back from the daily backup.
+
+If you use your own USB stick and store it at home, that works well. But please make sure that any sensitive information is encrypted. That also is true for any backups you do on the cloud.
+
+Many things that you do, such as your programs and documentation, are not confidential, and it might be overkill to encrypt these. As the saying goes "he who steals my purse steals trash." (Iago, in the Shakespeare play, Othello)
+
+Sensitive financial or health data, on the other hand, can get you in a lot of trouble if it falls into the wrong hands.
+
+</div>
+
+## Create the data you wish to see in the world
++ Use open formats like csv, json , yaml , or xml.
++ Replace cryptic names with self-explaining alternatives.
+  + Wilson et al (2017) page 4, recommendation 1c.
+
+<div class="notes">
+
+The data that you get may come in a proprietary format, but please spend the time to convert it to an open format. There are a variety of open formats, but they almost all share a nice feature. Open formats are easily opened in notepad or any other text editing program. You may not want to manipulate your data in a text editor, but there is great value in being able to peek at any time at your data.
+
+</div>
+
+## What is json?
+
+![http://json.org/example.html](../images/image5.png)
+
+<div class="notes">
+
+For simple files that can fit into a single table, the comma separated value (csv) files are quite common.
+
+The json format is quite popular because it is fairly easy to review, but the multiple levels of nesting allow you to store very complex data sets.
+
+</div>
+
+## Create analysis-friendly data.
++ Each column is a variable. (No double dipping).
+  + Avoid age/gender combinations (44M, 52F)
+  + Avoid bivariate measures separated by a delimiter
+    + Ex. blood pressure (120/80).
++ Make each row an observation (use a tall/thin format).
+  + Wilson et al (2017) page 5, recommendation 1d.
+
+<div class="notes">
+
+Your next step is to manipulate your data into a form that is easily amenable to analysis. There's a term for this: "tidy data."
+
+For tidy data, each column is a variable. That means no double dipping. You want to avoid squeezing two independent pieces of information into the same column of data. This could occur if you have codes like 44M for a 44 year old male and 52F for a 52 year old female. Also watch out for bivariate measures that are commonly paired. Blood pressure, for example, is often listed as two numbers, the systolic and diastolic measure, separated by a slash.
+
+When you double dip, you limit the statistics that you can compute. A column of data filled with 44M, 52F, and so forth, will not be easily summarized into an average age and a proportion of females. The 120/80 will not allow you to compute either an average systolic blood pressure or an average diastolic blood pressure.
+
+The other key feature of tidy data is that each row represents a single observation, not multiple observations. In a longitudinal study, subjects are measured at different time points. Each time point represents a separate row. Do not try to string out multiple time points across a very long row. Five time points means five rows per patient.
+
+There are two reasons for this. First, the long rows require a lot of left/right scrolling, which is difficult on the eyes. You can easily lose track of which row corresponds to which patient. Second, the long row is inefficient for many settings, especially when subjects may not have data at one or more of the time points.
 
 </div>
 
 
-
-<div class="notes">
-
-
-
-</div>
-
-
-## Methods and Tools for Reproducible Research 
-
-+ Data management.
-+ Software.
-+ Collaboration.
-+ Project organization.
-+ Keeping track of changes.
-+ Manuscripts.
-+ Recommendations in six areas
-
-
-
-
-<div class="notes">
-
-
-
-</div>
-
-
-## Methods and Tools for Reproducible Research 
-
-+ a. Save the raw data.
-	+ Never make changes directly on top of the data you receive.
-	+ Note the version number and date of any data you receive remotely.
-+ 1. Data management
-+ Wilson et al (2017) page 2.
-
-
-
-
-<div class="notes">
-
-
-
-</div>
-
-
-## Methods and Tools for Reproducible Research 
-
-+ b. Ensure that raw data are backed up in more than one location.
-	+ Your company/university network may include remote back up, but check first.
-	+ You can also use cloud services or your own USB stick/drive, but be sure to encrypt anything confidential.
-+ 1. Data management
-+ Wilson et al (2017) page 4.
-
-
-
-
-<div class="notes">
-
-
-
-</div>
-
-
-## Methods and Tools for Reproducible Research 
-
-+ c. Create the data you wish to see in the world
-	+ Use open formats like csv, json , yaml , or xml.
-	+ Replace cryptic names with self-explaining alternatives.
-+ 1. Data management
-+ Wilson et al (2017) page 4.
-
-
-
-
-<div class="notes">
-
-
-
-</div>
-
-
-## Methods and Tools for Reproducible Research 
-
-+ http://json.org/example.html
-![](../images/image5.png)
-
-
-
-
-<div class="notes">
-
-
-
-</div>
-
-
-## Methods and Tools for Reproducible Research 
-
-+ d. Create analysis-friendly data.
-	+ Each column is a variable. (No double dipping).
-	+ Make each row an observation (use a tall/thin format).
-+ 1. Data management
-+ Wilson et al (2017) page 5.
-
-
-
-<div class="notes">
-
-
-
-</div>
-
-
-## Methods and Tools for Reproducible Research 
+## What is tidy data?
 
 + https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html
 ![](../images/image6.png)
 
-
-
-
 <div class="notes">
 
-
+Th website listed here provides a nice overview of the principle of tidy data.
 
 </div>
 
-
-## Methods and Tools for Reproducible Research 
-
-+ e. Record all the steps used to process data.
-	+ Write scripts/use syntax instead of a graphical user interface.
-	+ If you can?t use scripts/syntax, hand document all your steps.
-+ 1. Data management
-+ Wilson et al (2017) page 5.
-
-
-
+## Record all the steps used to process data.
++ Write scripts/use syntax instead of a graphical user interface.
++ If you can't use scripts/syntax, hand document all your steps.
+  + Wilson et al (2017) page 5, recommendation 1e.
 
 <div class="notes">
 
-
+Document all the steps that you used to process your data. This is fairly easy to do with a program that uses scripts or syntax. If your program has a graphical user interface instead, take the time to write down all the steps that you used during data wrangling.
 
 </div>
 
-
-## Methods and Tools for Reproducible Research 
-
-+ f. Anticipate the need to use multiple tables and use a unique identifier for every record.
-	+ This allows you to split your data into pieces (e.g., time-constant and time-varying data in a longitudinal study).
-+ 1. Data management
-+ Wilson et al (2017) page 5.
-
-
-
+##  Anticipate the need to use multiple tables and use a unique identifier for every record.
++ Prevents loss of information from simple sorts.
++ Allows you to split your data into pieces
+  + Time-constant and time-varying data in a longitudinal study.
++ Wilson et al (2017) page 5, recommendation 1f.
 
 <div class="notes">
 
+Make sure that the very first column or the first few columns of data represent a unique identifier. This allows you to track things after a simple operation like sorting your data.
 
+It also helps if you see some weird values and want to track back to the original source.
+
+For large and complex data sets, you may wish to split your data into several pieces. This might involve separating longitudinal data into time constant and time varying data. In a longitudinal study, certain variables like gender and race, do not change over time. These are time constant data. Other variables, like a person's weight, do fluctuate from one time point to another. These are time varying data.
 
 </div>
 
-
-## Methods and Tools for Reproducible Research 
-
-+ g. Submit data to a reputable DOI-issuing repository so that others can access and cite it.
-	+ DOI is Digital Object Identifier, which assigns a permanent, unchanging URL.
-	+ This avoids the problem of ?link rot?.
-	+ Include a README file with information that will simplify the task of others using your data.
-+ 1. Data management
-+ Wilson et al (2017) page 6.
-
-
-
+## Submit data to a reputable DOI-issuing repository
++ Only for non-proprietary data
+  + No personal identifiers
++ This will allow others to access and cite your data.
++ Include a README file.
+  + Wilson et al (2017) page 6, recommendation 1g.
 
 <div class="notes">
 
+If your data is proprietary, skip this step. But if your data is not proprietary, think about how it might benefit others. This includes teaching. Your data set might be the perfect example that can help with those of us who are trying to develop the next generation of data scientists.
 
+Strip out any personal identifiers. Keep in mind that a single variable may not allow someone to de-identify your data, but a combination might. You might share your birthday with lots of other people and you might share your zip code with a lot of other people. But the combination of a particular birthday with a particular zip code might lead to someone being able to easily identify who you are.
+
+When you share your data, provide a data dictionary and other important information in a README file.
+
+DOI is Digital Object Identifier, which assigns a permanent, unchanging URL. This avoids the problem of "link rot." 
 
 </div>
 
-
-## Methods and Tools for Reproducible Research 
+## Dryad, an examploe of a DOI-issuing repository 
 
 + http://datadryad.org
 ![](../images/image7.png)
 
+<div class="notes">
+
+if you publish research papers, there are repositories like Dryad that allow you to easily share your information.
+
+</div>
 
 
+## Review of data management recommendations
++ Save the raw data.
++ Ensure that raw data are backed up in more than one location.
++ Create the data you wish to see in the world.
++ Create analysis-friendly data.
++ Record all the steps used to process data.
++ Use a unique identifier for every record.
++ Submit data to a reputable DOI-issuing repository.
+
+<div class="notes">
+
+Here are the seven data management recommendations again.
+
+</div>
+
+## Software recommendations
++ Place a brief explanatory comment at the start of every program.
++ Decompose programs into functions.
++ Be ruthless about eliminating duplication.
++ Always search for well-maintained libraries that do what you need.
++ Test libraries before relying on them.
+
+<div class="notes">
+
+There are ten software recommendations. Let's take them in two pieces, The first five recommendations are listed here.
+
+</div>
+
+## Place a brief explanatory comment at the start of every program.
++ Give an example of how it is used, and explain what parameters are needed.
++ Write the explanatory comment BEFORE you write your program
++ Revise comment as needed as you revise your program.
+  + Wilson et al (2017) page 6, recommendation 2a.
 
 <div class="notes">
 
@@ -295,20 +293,11 @@ http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510
 
 </div>
 
-
-## Methods and Tools for Reproducible Research 
-
-+ a. Save the raw data.
-+ b. Ensure that raw data are backed up in more than one location.
-+ c. Create the data you wish to see in the world.
-+ d. Create analysis-friendly data.
-+ e. Record all the steps used to process data.
-+ f. Anticipate the need to use multiple tables and use a unique identifier for every record.
-+ g. Submit data to a reputable DOI-issuing repository so that others can access and cite it.
-+ 1. Data management (What do you think?)
-
-
-
+## Decompose programs into functions.
++ This really means using macros for programs like SPSS and SAS.
++ Keep it short: one page and no more than 6 input parameters.
++ Do not reference information outside the function.
+  + Wilson et al (2017) page 7, recommendation 2b.
 
 <div class="notes">
 
@@ -316,19 +305,10 @@ http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510
 
 </div>
 
-
-## Methods and Tools for Reproducible Research 
-
-+ Data management.
-+ Software.
-+ Collaboration.
-+ Project organization.
-+ Keeping track of changes.
-+ Manuscripts.
-+ Recommendations in six areas
-
-
-
+## Be ruthless about eliminating duplication.
++ DRY code (don't repeat yourself).
++ Cut, paste, and slightly modify is your enemy.
+  + Wilson et al (2017) page 7, recommendation 2c.
 
 <div class="notes">
 
@@ -336,17 +316,10 @@ http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510
 
 </div>
 
-
-## Methods and Tools for Reproducible Research 
-
-+ a. Place a brief explanatory comment at the start of every program.
-	+ Give an example of how it is used, and explain what parameters are needed.
-	+ Write the explanatory comment BEFORE you write your program, and revise it as needed as you revise your program.
-+ 2. Software
-+ Wilson et al (2017) page 6.
-
-
-
+## Always search for well-maintained libraries that do what you need.
++ The "buy" versus "build" trade-off.
++ Don't be a Frank Sinatra programmer ("I did it my way.")
+  + Wilson et al (2017) page 7, recommendation 2d.
 
 <div class="notes">
 
@@ -354,68 +327,21 @@ http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510
 
 </div>
 
-
-## Methods and Tools for Reproducible Research 
-
-+ b. Decompose programs into functions.
-	+ This really means using macros for programs like SPSS and SAS.
-	+ Keep it short: one page and no more than 6 input parameters.
-	+ Do not reference information outside the function.
-+ 2. Software
-+ Wilson et al (2017) page 7.
-
-
-
-
-<div class="notes">
-
-
-
-</div>
-
-
-## Methods and Tools for Reproducible Research 
-
-+ c. Be ruthless about eliminating duplication.
-	+ DRY code (don?t repeat yourself).
-	+ Cut, paste, and slightly modify is your enemy.
-+ 2. Software
-+ Wilson et al (2017) page 7.
-
-
-
-
-<div class="notes">
-
-
-
-</div>
-
-
-## Methods and Tools for Reproducible Research 
-
-+ d. Always search for well-maintained libraries that do what you need.
-	+ Don?t be a Frank Sinatra programmer (?I did it my way.?)
-+ 2. Software
-+ Wilson et al (2017) page 7.
-
-
-
-
-<div class="notes">
-
-
-
-</div>
-
-
-## Methods and Tools for Reproducible Research 
+## Example of well-maintained libraries
 
 + https://cran.r-project.org/web/packages/index.html
 ![](../images/image8.png)
 
+<div class="notes">
 
 
+
+</div>
+
+## Test libraries before relying on them.
++ Run textbook examples.
++ Evaluate instead of test?
+  + Wilson et al (2017) page 7, recommendation 2e.
 
 <div class="notes">
 
@@ -423,32 +349,10 @@ http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510
 
 </div>
 
+## Suggestions for evaluation
 
-## Methods and Tools for Reproducible Research 
-
-+ e. Test libraries before relying on them.
-	+ It might be more practical to say ?evaluate libraries? rather than ?test libraries.?
-+ 2. Software
-+ Wilson et al (2017) page 7.
-
-
-
-
-<div class="notes">
-
-
-
-</div>
-
-
-## Methods and Tools for Reproducible Research 
-
-+ Wilson et al (2017) page 7.
 ![](../images/image9.png)
 
-
-
-
 <div class="notes">
 
 
@@ -456,18 +360,12 @@ http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510
 </div>
 
 
-## Methods and Tools for Reproducible Research 
-
-+ a. Place a brief explanatory comment at the start of every program.
-+ b. Decompose programs into functions.
-+ c. Be ruthless about eliminating duplication.
-+ d. Always search for well-maintained libraries that do what you need.
-+ e. Test libraries before relying on them.
-+ 2. Software (What do you think?)
-+ Wilson et al (2017) page 7.
-
-
-
+## Review of software recommendations 
++ Place a brief explanatory comment at the start of every program.
++ Decompose programs into functions.
++ Be ruthless about eliminating duplication.
++ Always search for well-maintained libraries that do what you need.
++ Test libraries before relying on them.
 
 <div class="notes">
 
@@ -475,18 +373,12 @@ http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510
 
 </div>
 
-
-## Methods and Tools for Reproducible Research 
-
-+ f. Give functions and variables meaningful names.
-	+ Functions are verbs and variables are nouns.
-	+ With the exception of loop counters, avoid one character variable names.
-	+ Be consistent with your delimiters (CamelCase, dot.delimiters , or underscore_delimiters ) and with case ( lower_case , Title_Case , or UPPER_CASE).
-+ 2. Software
-+ Wilson et al (2017) page 7.
-
-
-
+## Additional software recommendations
++ Give functions and variables meaningful names.
++ Make dependencies explicit.
++ Do not comment and uncomment sections of code to control a program's behavior.
++ Provide a simple example or test data set.
++ Submit your code to a reputable DOI-issuing repository.
 
 <div class="notes">
 
@@ -494,17 +386,14 @@ http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510
 
 </div>
 
-
-## Methods and Tools for Reproducible Research 
-
-+ g. Make dependencies explicit.
-	+ Dependencies include what version of the software you need (e.g., 3.1.0 or later) and what additional software or libraries you need.
-	+ Document this as part of README, or in REQUIREMENTS.TXT.
-+ 2. Software
-+ Wilson et al (2017) page 7.
-
-
-
+## Give functions and variables meaningful names.
++ Functions are verbs and variables are nouns.
++ With the exception of loop counters, avoid one character variable names.
++ Be consistent with your delimiters
+  + CamelCase, dot.delimiters , or underscore_delimiters
++ Be consistent with case
+  + lower_case , Title_Case , or UPPER_CASE.
++ Wilson et al (2017) page 7, recommendation 2f.
 
 <div class="notes">
 
@@ -512,17 +401,10 @@ http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510
 
 </div>
 
-
-## Methods and Tools for Reproducible Research 
-
-+ h. Do not comment and uncomment sections of code to control a program?s behavior.
-	+ Use if/else statements and verbose/debug flags instead.
-	+ Don?t keep old code around for historical reference, use version control instead.
-+ 2. Software
-+ Wilson et al (2017) page 8.
-
-
-
+## Make dependencies explicit.
++ Dependencies include what version of the software you need (e.g., 3.1.0 or later) and what additional software or libraries you need.
++ Document this as part of README, or in REQUIREMENTS.TXT.
+  + Wilson et al (2017) page 7, recommendation 2g.
 
 <div class="notes">
 
@@ -530,16 +412,10 @@ http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510
 
 </div>
 
-
-## Methods and Tools for Reproducible Research 
-
-+ i . Provide a simple example or test data set.
-	+ Run these tests when you switch computers, upgrade to a new software version, or add new pieces to your program.
-+ 2. Software
-+ Wilson et al (2017) page 8.
-
-
-
+##  Do not comment and uncomment sections of code to control a program's behavior.
++ Use if/else statements and verbose/debug flags instead.
++ Don't keep old code around for historical reference, use version control instead.
+  + Wilson et al (2017) page 8, recommendation 2h.
 
 <div class="notes">
 
@@ -547,16 +423,13 @@ http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510
 
 </div>
 
-
-## Methods and Tools for Reproducible Research 
-
-+ j. Submit your code to a reputable DOI-issuing repository.
-	+ When you share both your data and your code, you help insure reproducibility and you encourage new collaborations.
-+ 2. Software
-+ Wilson et al (2017) page 8.
-
-
-
+## Provide a simple example or test data set.
++ Run these tests when you 
+  + switch computers, 
+  + upgrade to a new software version, or 
+  + add new pieces to your program.
++ Simplify the work of others who follow in your footsteps.
+  + Wilson et al (2017) page 8, recommendation 2i.
 
 <div class="notes">
 
@@ -564,19 +437,12 @@ http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510
 
 </div>
 
-
-## Methods and Tools for Reproducible Research 
-
-+ f. Give functions and variables meaningful names.
-+ g. Make dependencies explicit.
-+ h. Do not comment and uncomment sections of code to control a program?s behavior.
-+ i . Provide a simple example or test data set.
-+ j. Submit your code to a reputable DOI-issuing repository.
-+ 2. Software (What do you think?)
-+ Wilson et al (2017) page 8.
-
-
-
+##  Submit your code to a reputable DOI-issuing repository.
++ Share BOTH your data and your code
+  + Helps insure reproducibility
+  + Encourages new collaborations
++ Is your program code really so important that you must keep it secret?
+  + Wilson et al (2017) page 8, recommendation 2j.
 
 <div class="notes">
 
@@ -584,19 +450,12 @@ http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510
 
 </div>
 
-
-## Methods and Tools for Reproducible Research 
-
-+ Data management.
-+ Software.
-+ Collaboration.
-+ Project organization.
-+ Keeping track of changes.
-+ Manuscripts.
-+ Recommendations in six areas
-
-
-
+## Review software recommendations
++ Give functions and variables meaningful names.
++ Make dependencies explicit.
++ Do not comment and uncomment sections of code to control a program?s behavior.
++ Provide a simple example or test data set.
++ Submit your code to a reputable DOI-issuing repository.
 
 <div class="notes">
 
@@ -604,18 +463,12 @@ http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510
 
 </div>
 
-
-## Methods and Tools for Reproducible Research 
-
-+ a. Create an overview of your project.
-	+ This is useful even if you work alone, because it gives a focus to your work.
-	+ Store the overview in a README file.
-	+ Include information about opportunities for collaboration in a CONTRIBUTING file.
-+ 3. Collaboration
-+ Wilson et al (2017) page 8.
-
-
-
+## Collaboration recommendations
++ Create an overview of your project.
++ Create a shared to-do list.
++ Decide on communication strategies.
++ Make the license explicit.
++ Make the project citable.
 
 <div class="notes">
 
@@ -623,16 +476,11 @@ http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510
 
 </div>
 
-
-## Methods and Tools for Reproducible Research 
-
-+ b. Create a shared to-do list.
-	+ Document this well enough for an outsider to understand.
-+ 3. Collaboration
-+ Wilson et al (2017) page 8.
-
-
-
+## Create an overview of your project.
++ This is useful even if you work alone, because it gives a focus to your work.
++ Store the overview in a README file.
++ Include information about opportunities for collaboration in a CONTRIBUTING file.
+  + Wilson et al (2017) page 8, recommendation 3a.
 
 <div class="notes">
 
@@ -640,18 +488,9 @@ http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510
 
 </div>
 
-
-## Methods and Tools for Reproducible Research 
-
-+ c. Decide on communication strategies.
-	+ Where and how will your team meet to resolve issues.
-	+ Explain how new collaborators can get involved.
-	+ Specify where key documents are stored and who can modify them.
-+ 3. Collaboration
-+ Wilson et al (2017) page 8.
-
-
-
+## Create a shared to-do list.
++ Document this well enough for an outsider to understand.
+  + Wilson et al (2017) page 8, recommendation 3b.
 
 <div class="notes">
 
@@ -659,18 +498,11 @@ http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510
 
 </div>
 
-
-## Methods and Tools for Reproducible Research 
-
-+ d. Make the license explicit.
-	+ Use a liberal license to makes it easy for future collaborators to join in the fun.
-	+ Remember that you are far better off being the pioneer in a new research area that everyone is working in than a new research area that no one is working in.
-	+ ?A candle loses nothing by lighting another candle.? James Keller
-+ 3. Collaboration
-+ Wilson et al (2017) page 9.
-
-
-
+## Decide on communication strategies.
++ Where and how will your team meet to resolve issues.
++ Explain how new collaborators can get involved.
++ Specify where key documents are stored and who can modify them.
+  + Wilson et al (2017) page 8, recommendation 3c.
 
 <div class="notes">
 
@@ -678,22 +510,11 @@ http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510
 
 </div>
 
-
-## Methods and Tools for Reproducible Research 
-
-+ e. Make the project citable.
-	+ Include a suggested citation for your work in a CITATION file.
-	+ Here?s what I put in my CITATION file
-		+ You are free to use any of the material in this repository without
-		+ restriction. If you do wish to give credit, however, when you use
-		+ this work, it would be appreciated. An example of appropriate credit
-		+ would be "thanks to Steve Simon (list the url of this repository)
-		+ for sharing this material."
-+ 3. Collaboration
-+ Wilson et al (2017) page 9.
-
-
-
+## Make the license explicit.
++ Use a liberal license to makes it easy for future collaborators to join in the fun.
++ Remember that you are far better off being the pioneer in a new research area that everyone is working in than a new research area that no one is working in.
++ "A candle loses nothing by lighting another candle." James Keller
+  + Wilson et al (2017) page 9, recommendation 3d.
 
 <div class="notes">
 
@@ -701,18 +522,10 @@ http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510
 
 </div>
 
-
-## Methods and Tools for Reproducible Research 
-
-+ a. Create an overview of your project.
-+ b. Create a shared to-do list.
-+ c. Decide on communication strategies.
-+ d. Make the license explicit.
-+ e. Make the project citable.
-+ 3. Collaboration (What do you think?)
-
-
-
+## Make the project citable.
++ Include a suggested citation for your work in a CITATION file.
++ Here's what I put in my CITATION file: "You are free to use any of the material in this repository without restriction. If you do wish to give credit, however, when you use this work, it would be appreciated. An example of appropriate credit would be "thanks to Steve Simon (list the url of this repository) for sharing this material."
+  + Wilson et al (2017) page 9, recommendation 3e.
 
 <div class="notes">
 
@@ -720,19 +533,13 @@ http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510
 
 </div>
 
-
 ## Methods and Tools for Reproducible Research 
 
-+ Data management.
-+ Software.
-+ Collaboration.
-+ Project organization.
-+ Keeping track of changes.
-+ Manuscripts.
-+ Recommendations in six areas
-
-
-
++ Create an overview of your project.
++ Create a shared to-do list.
++ Decide on communication strategies.
++ Make the license explicit.
++ Make the project citable.
 
 <div class="notes">
 
@@ -740,38 +547,129 @@ http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510
 
 </div>
 
-
-## Methods and Tools for Reproducible Research 
-
-+ a. Put each project in its own directory, which is named for the project.
-	+ If two projects share more than 50% of the code or data, then they can be safely combined into one project.
-	+ Two projects that share no code or data belong in separate directories.
-+ 4. Project organization
-+ Wilson et al (2017) page 9.
-
-
-
-
-<div class="notes">
-
-
-
-</div>
-
-
-## Methods and Tools for Reproducible Research 
-
+## Project organization recommendations
++ Put each project in its own directory, which is named for the project.
 + Use standard names for subdirectories.
-	+ b. DOC for most other documentation.
-	+ c. DATA for raw data, RESULTS for intermediate data sets and program output.
-	+ d. SRC for source code.
-	+ e. BIN for compiled programs.
++ Name all files to reflect their content or function.
+
+<div class="notes">
+
+
+
+</div>
+
+
+## Put each project in its own directory, which is named for the project.
++ If two projects share more than 50% of the code or data, then they can be safely combined into one project.
++ Two projects that share no code or data belong in separate directories.
+  + Wilson et al (2017) page 9, recommendation 4a.
+
+<div class="notes">
+
+
+
+</div>
+
+## Use standard names for subdirectories.
++ DOC for most other documentation.
++ DATA for raw data, 
++ RESULTS for intermediate data sets and program output.
++ SRC for source code.
++ BIN for compiled programs.
 + README, LICENSE, CITATION, REQUIREMENTS go in root directory.
-+ 4. Project organization
-+ Wilson et al (2017) page 10.
+  + Wilson et al (2017) page 10, recommendation 4b-e.
+
+<div class="notes">
 
 
 
+</div>
+
+## Methods and Tools for Reproducible Research 
+
+![Sample project layout](../images/image10.png)
+
+<div class="notes">
+
+
+
+</div>
+
+## Name all files to reflect their content or function.
++ Avoid sequence names like logistic_model1, logistic_model2, ...
+  + Not descriptive
+  + Subject to frequent renumbering.
++ Better choice would be simple_logistic_model, cubic_spline_logistic_model, ...
+  + Wilson et al (2017) page 11, recommendation 4f.
+
+<div class="notes">
+
+
+
+</div>
+
+## Review project organization recommendations
+
++ Put each project in its own directory, which is named for the project.
++ Use standard names for subdirectories.
++ Name all files to reflect their content or function.
+
+<div class="notes">
+
+
+
+</div>
+
+## Review tracking changes (manual) recommendations
++ Back up (almost) everything created by a human being as soon as it is created.
++ Keep changes small.
++ Share changes frequently.
++ Create, maintain, and use a checklist for saving and sharing changes to the project.
++ Store each project in a folder that is mirrored off the researcher?s working machine.
++ Add a file called CHANGELOG.txt to the project?s DOC subfolder.
++ Copy the entire project whenever a significant change has been made.
+
+<div class="notes">
+
+
+
+</div>
+
+## Back up (almost) everything created by a human being as soon as it is created.
++ This is easily automated.
++ If your team is all within the same organization, a shared network folder works well.
+  + Wilson et al (2017) page 12, recommendation 5a.
+
+<div class="notes">
+
+
+
+</div>
+
+## Keep changes small.
++ Any group of edits that you might think about undoing as a batch should be considered a single change.
+  + Wilson et al (2017) page 12, recommendation 5b.
+
+<div class="notes">
+
+
+
+</div>
+
+## Share changes frequently.
++ Do not allow different investigator versions to drift apart.
++ This is even a problem if you run analyses on both a work and home computer.
+  + Wilson et al (2017) page 12, recommendation 5c.
+
+<div class="notes">
+
+
+
+</div>
+
+## Create, maintain, and use a checklist for saving and sharing changes to the project.
++ This is stored as TODO.txt.
+  + Wilson et al (2017) page 12, recommendation 5d.
 
 <div class="notes">
 
@@ -780,13 +678,19 @@ http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510
 </div>
 
 
-## Methods and Tools for Reproducible Research 
+## Store each project in a folder that is mirrored off the researcher's working machine.
++ Several products can automate this process. I use Dropbox, but there are a lot of excellent alternatives out there.
+  + Wilson et al (2017) page 12, recommendation 5e.
 
-+ Wilson et al (2017) page 11.
-![](../images/image10.png)
+<div class="notes">
 
 
 
+</div>
+
+## Add a file called CHANGELOG.txt to the project's DOC subfolder
++ Date entries and put most recent changes as the top.
+  + Wilson et al (2017) page 13., recommendation 5f.
 
 <div class="notes">
 
@@ -795,15 +699,19 @@ http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510
 </div>
 
 
-## Methods and Tools for Reproducible Research 
+## Sample changelog file
 
-+ f. Name all files to reflect their content or function.
-	+ Avoid sequence names like logistic_model1, logistic_model2, ? as these are not descriptive and subject to frequent renumbering. Better would be simple_logistic_model , cubic_spline_logistic_model , ?
-+ 4. Project organization
-+ Wilson et al (2017) page 11.
+![Sample changelong file](../images/image11.png)
 
+<div class="notes">
 
 
+
+</div>
+
+## Copy the entire project whenever a significant change has been made.
++ It is better to waste hardware resources than to waste your time.
+  + Wilson et al (2017) page 13, recommendation 5g.
 
 <div class="notes">
 
@@ -812,218 +720,34 @@ http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510
 </div>
 
 
-## Methods and Tools for Reproducible Research 
+## Storage is cheap, thanks to Moore's Law
 
-+ a. Put each project in its own directory, which is named for the project (4a, page 9).
-+ b-e. Use standard names for subdirectories.
-+ f. Name all files to reflect their content or function.
-+ 4. Project organization (What do you think?)
-
-
-
-
-<div class="notes">
-
-
-
-</div>
-
-
-## Methods and Tools for Reproducible Research 
-
-+ Data management.
-+ Software.
-+ Collaboration.
-+ Project organization.
-+ Keeping track of changes.
-+ Manuscripts.
-+ Recommendations in six areas
-
-
-
-
-<div class="notes">
-
-
-
-</div>
-
-
-## Methods and Tools for Reproducible Research 
-
-+ a. Back up (almost) everything created by a human being as soon as it is created.
-	+ This is easily automated.
-	+ If your team is all within the same organization, a shared network folder works well.
-+ 5. Keeping track of changes.
-+ Wilson et al (2017) page 12.
-
-
-
-
-<div class="notes">
-
-
-
-</div>
-
-
-## Methods and Tools for Reproducible Research 
-
-+ b. Keep changes small.
-	+ Any group of edits that you might think about undoing as a batch should be considered a single change.
-+ 5. Keeping track of changes.
-+ Wilson et al (2017) page 12.
-
-
-
-
-<div class="notes">
-
-
-
-</div>
-
-
-## Methods and Tools for Reproducible Research 
-
-+ c. Share changes frequently.
-	+ Do not allow different investigator versions to drift apart.
-	+ This is even a problem if you run analyses on both a work and home computer.
-+ 5. Keeping track of changes.
-+ Wilson et al (2017) page 12.
-
-
-
-
-<div class="notes">
-
-
-
-</div>
-
-
-## Methods and Tools for Reproducible Research 
-
-+ a. Back up (almost) everything created by a human being as soon as it is created.
-+ b. Keep changes small.
-+ c. Share changes frequently.
-+ 5. Keeping track of changes (What do you think?)
-
-
-
-
-<div class="notes">
-
-
-
-</div>
-
-
-## Methods and Tools for Reproducible Research 
-
-+ d. Create, maintain, and use a checklist for saving and sharing changes to the project.
-	+ This is stored as TODO.txt.
-+ 5. Keeping track of changes.
-+ Wilson et al (2017) page 12.
-
-
-
-
-<div class="notes">
-
-
-
-</div>
-
-
-## Methods and Tools for Reproducible Research 
-
-+ e. Store each project in a folder that is mirrored off the researcher?s working machine.
-	+ Several products can automate this process. I use Dropbox, but there are a lot of excellent alternatives out there.
-+ 5. Keeping track of changes.
-+ Wilson et al (2017) page 12.
-
-
-
-
-<div class="notes">
-
-
-
-</div>
-
-
-## Methods and Tools for Reproducible Research 
-
-+ f. Add a file called CHANGELOG.txt to the project?s DOC subfolder (5f, page 13).
-	+ Date entries and put most recent changes as the top.
-+ 5. Keeping track of changes.
-+ Wilson et al (2017) page 13.
-
-
-
-
-<div class="notes">
-
-
-
-</div>
-
-
-## Methods and Tools for Reproducible Research 
-
-+ Wilson et al (2017) page 13.
-![](../images/image11.png)
-
-
-
-
-<div class="notes">
-
-
-
-</div>
-
-
-## Methods and Tools for Reproducible Research 
-
-+ g. Copy the entire project whenever a significant change has been made.
-	+ It is better to waste hardware resources than to waste your time.
-+ 5. Keeping track of changes.
-+ Wilson et al (2017) page 13.
-
-
-
-
-<div class="notes">
-
-
-
-</div>
-
-
-## Methods and Tools for Reproducible Research 
-
-+ https://en.wikipedia.org/wiki/History_of_IBM_magnetic_disk_drives#IBM_350
 ![](../images/image12.png)
 
-
-
-
 <div class="notes">
 
-
+https://en.wikipedia.org/wiki/History_of_IBM_magnetic_disk_drives#IBM_350
 
 </div>
 
+## Example of sequential project copies
 
-## Methods and Tools for Reproducible Research 
-
-+ Wilson et al (2017) page 13.
 ![](../images/image13.png)
 
+<div class="notes">
 
 
+
+</div>
+
+## Review tracking changes (manual) recommendations
++ Back up (almost) everything created by a human being as soon as it is created.
++ Keep changes small.
++ Share changes frequently.
++ Create, maintain, and use a checklist for saving and sharing changes to the project.
++ Store each project in a folder that is mirrored off the researcher?s working machine.
++ Add a file called CHANGELOG.txt to the project?s DOC subfolder.
++ Copy the entire project whenever a significant change has been made.
 
 <div class="notes">
 
@@ -1031,40 +755,17 @@ http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510
 
 </div>
 
-
-## Methods and Tools for Reproducible Research 
-
-+ d. Create, maintain, and use a checklist for saving and sharing changes to the project.
-+ e. Store each project in a folder that is mirrored off the researcher?s working machine.
-+ f. Add a file called CHANGELOG.txt to the project?s DOC subfolder.
-+ g. Copy the entire project whenever a significant change has been made.
-+ 5. Keeping track of changes (What do you think?)
-
-
-
-
-<div class="notes">
-
-
-
-</div>
-
-
-## Methods and Tools for Reproducible Research 
-
-+ h. Use a version control system to manage changes to a project.
+## OR automate the process
++ Use a version control system to manage changes to a project.
 	+ Version control tracks the actual changes rather than what you think the changes were.
 	+ Version control handles dating automatically.
 	+ Version control can rollback changes that you end up regretting.
-+ But?
++ But:
 	+ Do not put large binary files in your version control system.
 	+ Avoid putting confidential or proprietary information on a public version control system.
 	+ Don?t store passwords for database access on a public version control system.
-+ 5. Keeping track of changes.
-+ Wilson et al (2017) page 13.
-
-
-
++ Most version control software is open source
+  + Wilson et al (2017) page 13, recommendation 5h.
 
 <div class="notes">
 
@@ -1072,44 +773,48 @@ http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510
 
 </div>
 
+## Example of version control using git
 
-## Methods and Tools for Reproducible Research 
-
-+ https://github.com/pmean
 ![](../images/image14.png)
 
-
-
-
 <div class="notes">
 
-
+https://github.com/pmean
 
 </div>
 
-
 ## Methods and Tools for Reproducible Research 
 
-+ Private coorespondance
 ![](../images/image15.png)
 
-
-
-
 <div class="notes">
 
-
+Private coorespondance
 
 </div>
 
 
 ## Methods and Tools for Reproducible Research 
 
-+ Private correspondance
 ![](../images/image16.png)
 
+<div class="notes">
 
+Private correspondance
 
+</div>
+
+## Manuscripts/reports recommendations
+
++ Two choices
++ Write manuscripts using online tools
+	+ Rich text formatting, 
+	+ Change tracking, and 
+	+ Reference management.
+		+ Google Doc, but not Microsoft Word
++ Write the manuscript in a plain text format that allows version control.
+	+ LaTeX .
+	+ Markdown.
 
 <div class="notes">
 
@@ -1117,158 +822,53 @@ http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510
 
 </div>
 
+## Google docs
 
-## Methods and Tools for Reproducible Research 
-
-+ h. Use a version control system to manage changes to a project.
-+ 5. Keeping track of changes (What do you think?)
-
-
-
-
-<div class="notes">
-
-
-
-</div>
-
-
-## Methods and Tools for Reproducible Research 
-
-+ Data management.
-+ Software.
-+ Collaboration.
-+ Project organization.
-+ Keeping track of changes.
-+ Manuscripts.
-+ Recommendations in six areas
-
-
-
-
-<div class="notes">
-
-
-
-</div>
-
-
-## Methods and Tools for Reproducible Research 
-
-+ Either
-	+ Write manuscripts using online tools with rich text formatting, change tracking, and reference management.
-		+ Google Docs
-		+  Microsoft Word
-+ Or
-	+ Write the manuscript in a plain text format that allows version control.
-		+ LaTeX .
-		+ Markdown.
-+ 6. Manuscripts
-+ Wilson et al (2017) page 16.
-
-
-
-
-<div class="notes">
-
-
-
-</div>
-
-
-## Methods and Tools for Reproducible Research 
-
-+ Wilson et al (2017) page 16.
 ![](../images/image17.png)
 
-
-
-
 <div class="notes">
-
-
 
 </div>
 
 
-## Methods and Tools for Reproducible Research 
+## Markdown
 
-+ Wilson et al (2017) page 16.
 ![](../images/image18.png)
 
-
-
-
 <div class="notes">
 
 
 
 </div>
 
+## Bookdown
 
-## Methods and Tools for Reproducible Research 
-
-+ Wilson et al (2017) page 16.
 ![](../images/image19.png)
 
-
-
-
 <div class="notes">
 
 
 
 </div>
 
+## LaTex
 
-## Methods and Tools for Reproducible Research 
-
-+ Wilson et al (2017) page 16.
 ![](../images/image20.png)
 
-
-
-
 <div class="notes">
 
 
 
 </div>
 
-
-## Methods and Tools for Reproducible Research 
-
-+ Either
-	+ Write manuscripts using online tools with rich text formatting, change tracking, and reference management.
-		+ Google Docs
-		+  Microsoft Word
-+ Or
-	+ Write the manuscript in a plain text format that allows version control.
-		+ LaTeX .
-		+ Markdown.
-+ 6. Manuscripts (What do you think?)
-
-
-
-
-<div class="notes">
-
-
-
-</div>
-
-
-## Methods and Tools for Reproducible Research 
+## Advanced tools (1/3)
 
 + Branches: allows better control over changes in version control.
 + Build tools: ?re-compile? everything down to the final paper if your data changes.
 + Unit tests: rigorous approach to insure quality of your functions.
 + Coverage: measures what lines are used/ignored to winnow out unused code.
 + Continuous integration: automate your testing process whenever you make changes.
-+ But wait, there?s more!
-
-
-
+  + But wait, there's more!
 
 <div class="notes">
 
@@ -1276,34 +876,17 @@ http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510
 
 </div>
 
-
-## Methods and Tools for Reproducible Research 
+## Advanced tools (2/2)
 
 + Profiling: identify parts of your code that are bottlenecks.
 + The semantic web: using consensus standards for naming things.
 + Documentation: meaning more than just a few comments here and there.
 + Bibliography manager: EndNotes / Zotero / Mendeley and get an ORCID number.
 + Code reviews and pair programming: have a partner to check your work.
-+ But wait, there?s more!
-
-
-
+  + But wait, there's more!
 
 <div class="notes">
 
 
 
 </div>
-
-
-## Methods and Tools for Reproducible Research 
-
-+ Here are the recommendations I see as most important:
-+ Document and save all your data preparation work.
-+ Take the time to write decent code.
-+ Standardize how you archive information from your work.
-+ Share liberally, if you can.
-+ Conclusion
-
-
-
