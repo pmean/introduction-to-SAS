@@ -1,0 +1,448 @@
+NOTE: PROCEDURE PRINTTO used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+2992  
+2993  * lecture03.sas
+2994    written by Steve Simon
+2995    November 27, 2018;
+2996  
+2997  ********* ********* ********* *********
+2998  1. Introduction
+2999  
+3000  Today, you will analyze some data sets
+3001  that have a mix of categorical and
+3002  continuous variables. The first data
+3003  set looks at pumonary function in a
+3004  group of children.
+3005  
+3006  You can find a description of this data set at
+3007  
+3008    http://jse.amstat.org/datasets/fev.txt
+3009  ********* ********* ********* *********;
+3010  
+3011  ********* ********* ********* *********
+3012  2. Data and output locations
+3013  
+3014  Here are the standard commands to tell
+3015  SAS where to find the data, where to
+3016  place its own data files and where to
+3017  store the output.
+3018  ********* ********* ********* *********;
+3019  
+3020  filename raw_data
+3021    "../data/fev.txt";
+3022  
+3023  libname intro
+3024    "../data";
+NOTE: Libref INTRO was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: C:\Users\simons\Documents\SASUniversityEdition\myfolders\introduction-to-sas\basics3\data
+3025  
+3026  ods pdf
+3027    file="lecture03.pdf";
+NOTE: Writing ODS PDF output to DISK destination 
+      "C:\Users\simons\Documents\SASUniversityEdition\myfolders\introduction-to-sas\basics3\src\lecture03.pdf", printer "PDF".
+3028  
+3029  ********* ********* ********* *********
+3030  3. Labels for categorical data
+3031  
+3032  There are several categorical variables
+3033  in this data set with number codes, so
+3034  you should define labels for those
+3035  codes.
+3036  ********* ********* ********* *********;
+3037  
+3038  proc format;
+3039    value fsex
+3040      0 = "Female"
+3041      1 = "Male"
+3042    ;
+NOTE: Format FSEX is already on the library WORK.FORMATS.
+NOTE: Format FSEX has been output.
+3043    value fsmoke
+3044      0 = "Nonsmoker"
+3045      1 = "Smoker"
+3046    ;
+NOTE: Format FSMOKE is already on the library WORK.FORMATS.
+NOTE: Format FSMOKE has been output.
+3047  run;
+
+NOTE: PROCEDURE FORMAT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+3048  
+3049  ********* ********* ********* *********
+3050  4. Reading the data using a data step
+3051  
+3052  The data file is comma delimited and
+3053  the first row includes variable names.
+3054  
+3055  Normally, this means that you can save
+3056  a bit of time by using proc import,
+3057  but I chose to read in the data using
+3058  a data step. The number of variables
+3059  was so small that this didn't matter
+3060  that much. It also allowed me to define
+3061  variable labels in the initial data
+3062  step rather than later.
+3063  ********* ********* ********* *********;
+3064  
+3065  data intro.fev;
+3066    infile raw_data delimiter="," firstobs=2;
+3067    input age fev ht sex smoke;
+3068    label
+3069      age=Age in years
+3070      fev=Forced Expiratory Volume (liters)
+3071      ht=Height in inches
+3072      sex=Sex
+3073      smoke=Smoking status
+3074    ;
+3075  run;
+
+NOTE: The infile RAW_DATA is:
+      Filename=C:\Users\simons\Documents\SASUniversityEdition\myfolders\introduction-to-sas\basics3\data\fev.txt,
+      RECFM=V,LRECL=32767,File Size (bytes)=11219,
+      Last Modified=22Jul2019:11:27:14,
+      Create Time=22Jul2019:11:27:14
+
+NOTE: 654 records were read from the infile RAW_DATA.
+      The minimum record length was 12.
+      The maximum record length was 17.
+NOTE: The data set INTRO.FEV has 654 observations and 5 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+3076  
+3077  ********* ********* ********* *********
+3078  5. Print the first ten rows of data
+3079  
+3080  It's alsways a good idea to peek at
+3081  the first few rows of data.
+3082  ********* ********* ********* *********;
+3083  
+3084  
+3085  title1 "Pulmonary function study";
+3086  title2 "Partial listing of fev data";
+3087  proc print
+3088      data=intro.fev(obs=10);
+3089    format
+3090      sex fsex.
+3091      smoke fsmoke.
+3092    ;
+3093  run;
+
+NOTE: There were 10 observations read from the data set INTRO.FEV.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.09 seconds
+      cpu time            0.06 seconds
+      
+
+3094  
+3095  ********* ********* ********* *********
+3096  6. Proc freq and proc means
+3097  
+3098  There is a mix of categorical and
+3099  continuous variables in this data set.
+3100  Recall that you use proc freq for
+3101  categorical variables and proc means
+3102  for continuous variables.
+3103  
+3104  Always get in the habit of checking for
+3105  missing values.
+3106  ********* ********* ********* *********;
+3107  
+3108  title2 "Frequency counts";
+3109  proc freq
+3110      data=intro.fev;
+3111    tables sex smoke / missing;
+3112    format
+3113      sex fsex.
+3114      smoke fsmoke.
+3115  run;
+WARNING: Variable RUN not found in data set INTRO.FEV.
+3116  
+3117  title2 "Descriptive statistics";
+
+NOTE: There were 654 observations read from the data set INTRO.FEV.
+NOTE: PROCEDURE FREQ used (Total process time):
+      real time           0.11 seconds
+      cpu time            0.03 seconds
+      
+
+3118  proc means
+3119      n nmiss mean std min max
+3120      data=intro.fev;
+3121    var age fev ht;
+3122  run;
+
+NOTE: There were 654 observations read from the data set INTRO.FEV.
+NOTE: PROCEDURE MEANS used (Total process time):
+      real time           0.07 seconds
+      cpu time            0.03 seconds
+      
+
+3123  
+3124  ********* ********* ********* *********
+3125  7. Pearson correlation, proc corr
+3126  
+3127  The Pearson correlation coefficient
+3128  gives you a numeric measure of the
+3129  strength of association between two
+3130  continuous variables.
+3131  ********* ********* ********* *********;
+3132  
+3133  title2 "Correlations";
+3134  proc corr
+3135      nosimple noprob
+3136      data=intro.fev;
+3137    var age fev ht;
+3138  run;
+
+NOTE: PROCEDURE CORR used (Total process time):
+      real time           0.06 seconds
+      cpu time            0.03 seconds
+      
+
+3139  
+3140  ********* ********* ********* *********
+3141  8. Scatterplot, proc sgplot
+3142  
+3143  You should also examine the association
+3144  between continuous variables using a
+3145  scatterplot.
+3146  
+3147  I am only showing the plot of ht
+3148  versus fev, but you should also
+3149  examine the plot of age versus
+3150  fev.
+3151  ********* ********* ********* *********;
+3152  
+3153  title2 "Scatterplots";
+3154  proc sgplot
+3155      data=intro.fev;
+3156    scatter x=age y=fev;
+3157  run;
+
+NOTE: PROCEDURE SGPLOT used (Total process time):
+      real time           0.53 seconds
+      cpu time            0.14 seconds
+      
+NOTE: There were 654 observations read from the data set INTRO.FEV.
+
+3158  
+3159  ********* ********* ********* *********
+3160  9. Scatterplot, smoothing curve
+3161  
+3162  Sometimes a trend line can help. You
+3163  should consider a smoothing method
+3164  like loess or pbspline, as this will
+3165  help you visualize any potential
+3166  nonlinear relationships.
+3167  ********* ********* ********* *********;
+3168  
+3169  title3 "with loess, smooth=0.1";
+3170  proc sgplot
+3171      data=intro.fev;
+3172    scatter x=ht y=fev;
+3173    loess x=ht y=fev /
+3174      nomarkers
+3175      smooth=0.1
+3176      lineattrs=(color=Red);
+3177  run;
+
+NOTE: PROCEDURE SGPLOT used (Total process time):
+      real time           0.66 seconds
+      cpu time            0.14 seconds
+      
+NOTE: There were 654 observations read from the data set INTRO.FEV.
+
+3178  
+3179  ********* ********* ********* *********
+3180  10. Boxplot, proc sgplot
+3181  
+3182  When you want to look at a relationship
+3183  between a categorical variable and a
+3184  continuous variable, you should use a
+3185  boxplot.
+3186  
+3187  Notice that you use proc sgplot for
+3188  both a scatterplot and a boxplot. This
+3189  is a big improvement over previous
+3190  methods in SAS to produce plots
+3191  because it is easier to learn one
+3192  procedure and minor variations in that
+3193  procedure rather than having to learn
+3194  multiple procedures.
+3195  ********* ********* ********* *********;
+3196  
+3197  title2 "Boxplots";
+3198  proc sgplot
+3199      data=intro.fev;
+3200    vbox fev / category=smoke;
+3201    format smoke fsmoke.;
+3202  run;
+
+NOTE: PROCEDURE SGPLOT used (Total process time):
+      real time           0.41 seconds
+      cpu time            0.09 seconds
+      
+NOTE: There were 654 observations read from the data set INTRO.FEV.
+
+3203  
+3204  ********* ********* ********* *********
+3205  11. Descriptive statistics, by statement
+3206  
+3207  Also look at how the means and standard
+3208  deviations of your continuous variable
+3209  change for each level of your
+3210  categorical variable.
+3211  ********* ********* ********* *********;
+3212  
+3213  proc sort
+3214      data=intro.fev;
+3215    by smoke;
+3216  run;
+
+NOTE: There were 654 observations read from the data set INTRO.FEV.
+NOTE: The data set INTRO.FEV has 654 observations and 5 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+3217  
+3218  proc means
+3219      data=intro.fev;
+3220    var fev;
+3221    by smoke;
+3222    format smoke fsmoke.;
+3223    title2 "Descriptive statistics by group";
+3224  run;
+
+NOTE: There were 654 observations read from the data set INTRO.FEV.
+NOTE: PROCEDURE MEANS used (Total process time):
+      real time           0.07 seconds
+      cpu time            0.01 seconds
+      
+
+3225  
+3226  ********* ********* ********* *********
+3227  12. Investigate unusual trend, proc sgplot and means
+3228  
+3229  This is very odd. You can get a hint as
+3230  to why smokers might have higher fev
+3231  values than non-smokers by looking at
+3232  how age and smoking status are related.
+3233  ********* ********* ********* *********;
+3234  
+3235  proc sgplot
+3236      data=intro.fev;
+3237    vbox ht / category=smoke;
+3238    format smoke fsmoke.;
+3239    title2 "Boxplots";
+3240  run;
+
+NOTE: PROCEDURE SGPLOT used (Total process time):
+      real time           0.54 seconds
+      cpu time            0.07 seconds
+      
+NOTE: There were 654 observations read from the data set INTRO.FEV.
+
+3241  
+3242  proc means
+3243      data=intro.fev;
+3244    var ht;
+3245    by smoke;
+3246    format smoke fsmoke.;
+3247    title2 "Descriptive statistics by group";
+3248  run;
+
+NOTE: There were 654 observations read from the data set INTRO.FEV.
+NOTE: PROCEDURE MEANS used (Total process time):
+      real time           0.07 seconds
+      cpu time            0.01 seconds
+      
+
+3249  
+3250  ********* ********* ********* *********
+3251  13. Further investigation on your own
+3252  
+3253  You should also examine the
+3254  relationship between sex and fev. Do
+3255  this on your own, but there is no need
+3256  to turn anything in.
+3257  ********* ********* ********* *********;
+3258  
+3259  
+3260  ********* ********* ********* *********
+3261  Homework assignment (1/5)
+3262  
+3263  Your homework assignment will use a
+3264  data set of housing prices and factors
+3265  that influence the price.
+3266  
+3267  Details for this data set can be found
+3268  on the DASL web site.
+3269  ********* ********* ********* *********;
+3270  
+3271  ********* ********* ********* *********
+3272  Homework assignment (2/5)
+3273  
+3274  + Read in the data housing.txt.
+3275  
+3276  + Convert the asterisks in the AGE and TAX
+3277  variables to missing. How many missing
+3278  values are there for AGE and for TAX?
+3279  
+3280  + Create factors for NE, CUST, and COR.
+3281  Draw bar charts for each of these factors.
+3282  ********* ********* ********* *********;
+3283  
+3284  ********* ********* ********* *********
+3285  Homework assignment (3/5)
+3286  
+3287  + Find the largest house (biggest SQFT)
+3288  in the data set. Is the largest house
+3289  also the most expensive house?
+3290  
+3291  + Calculate frequency counts for FEATS.
+3292  Are there any houses with the no
+3293  features? Are there any houses with
+3294  every possible feature?
+3295  ********* ********* ********* *********;
+3296  
+3297  ********* ********* ********* *********
+3298  Homework assignment (4/5)
+3299  
+3300  + Evaluate the relationship between
+3301  PRICE and SQFT using a scatterplot.
+3302  Include a smooth curve. Do larger
+3303  houses tend to cost more?
+3304  
+3305  + Evaluate the relationship between
+3306  CUST and PRICE using a boxplot.
+3307  Calculate the mean price and standard
+3308  deviation by CUST.
+3309  ********* ********* ********* *********;
+3310  
+3311  ********* ********* ********* *********
+3312  Homework assignment (5/5)
+3313  
+3314  + What is the difference in average
+3315  prices between northeast houses and
+3316  other houses? What is the difference in
+3317  average taxes?
+3318  
+3319  + Are custombuilt houses more likely to
+3320  appear on corner lots? Calculate the
+3321  percentages and compute a relative risk.
+3322  ********* ********* ********* *********;
+3323  
+3324  proc printto; run;
+

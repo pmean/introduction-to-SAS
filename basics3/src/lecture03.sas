@@ -1,5 +1,5 @@
 options papersize=(8in 4in) nodate;
-proc printto log="lecture02.log" new; run;
+proc printto log="lecture03.log" new; run;
 
 * lecture03.sas
   written by Steve Simon
@@ -74,7 +74,7 @@ step rather than later.
 ********* ********* ********* *********;
 
 data intro.fev;
-  infile fev delimiter="," firstobs=2;
+  infile raw_data delimiter="," firstobs=2;
   input age fev ht sex smoke;
   label
     age=Age in years
@@ -93,14 +93,14 @@ the first few rows of data.
 ********* ********* ********* *********;
 
 
+title1 "Pulmonary function study";
+title2 "Partial listing of fev data";
 proc print
     data=intro.fev(obs=10);
   format 
     sex fsex. 
     smoke fsmoke.
   ;
-  title1 "Pulmonary function study";
-  title2 "Partial listing of fev data";
 run;
 
 ********* ********* ********* *********
@@ -116,17 +116,21 @@ Always get in the habit of checking for
 missing values.
 ********* ********* ********* *********;
 
+title2 "Frequency counts";
 proc freq
     data=intro.fev;
   tables sex smoke / missing;
-  title2 "Frequency counts";
+  format 
+    sex fsex. 
+    smoke fsmoke.
+  ;
 run;
 
+title2 "Descriptive statistics";
 proc means
     n nmiss mean std min max
     data=intro.fev;
   var age fev ht;
-  title2 "Descriptive statistics";
 run;
 
 ********* ********* ********* *********
@@ -138,7 +142,9 @@ strength of association between two
 continuous variables.
 ********* ********* ********* *********;
 
+title2 "Correlations";
 proc corr
+    nosimple noprob
     data=intro.fev;
   var age fev ht;
 run;
@@ -148,22 +154,42 @@ run;
 
 You should also examine the association
 between continuous variables using a 
-scatterplot
+scatterplot.
+
+I am only showing the plot of ht
+versus fev, but you should also
+examine the plot of age versus
+fev.
 ********* ********* ********* *********;
 
-proc sgplot
-    data=intro.fev;
-  scatter x=age y=fev;
-  title2 "Scatterplots";
-run;
-
+title2 "Scatterplots";
 proc sgplot
     data=intro.fev;
   scatter x=ht y=fev;
 run;
 
 ********* ********* ********* *********
-9. Boxplot, proc sgplot
+9. Scatterplot, smoothing curve
+
+Sometimes a trend line can help. You
+should consider a smoothing method
+like loess or pbspline, as this will
+help you visualize any potential
+nonlinear relationships.
+********* ********* ********* *********;
+
+title3 "with loess, smooth=0.1";
+proc sgplot
+    data=intro.fev;
+  scatter x=ht y=fev;
+  loess x=ht y=fev / 
+    nomarkers 
+    smooth=0.1
+    lineattrs=(color=Red);
+run;
+
+********* ********* ********* *********
+10. Boxplot, proc sgplot
 
 When you want to look at a relationship
 between a categorical variable and a
@@ -180,14 +206,15 @@ procedure rather than having to learn
 multiple procedures.
 ********* ********* ********* *********;
 
+title2 "Boxplots";
 proc sgplot
     data=intro.fev;
   vbox fev / category=smoke;
-  title2 "Boxplots";
+  format smoke fsmoke.;
 run;
 
 ********* ********* ********* *********
-10. Descriptive statistics, by statement
+11. Descriptive statistics, by statement
 
 Also look at how the means and standard
 deviations of your continuous variable
@@ -204,11 +231,12 @@ proc means
     data=intro.fev;
   var fev;
   by smoke;
+  format smoke fsmoke.;
   title2 "Descriptive statistics by group";
 run;
 
 ********* ********* ********* *********
-11. Investigate unusual trend, proc sgplot
+12. Investigate unusual trend, proc sgplot and means
 
 This is very odd. You can get a hint as
 to why smokers might have higher fev 
@@ -218,19 +246,21 @@ how age and smoking status are related.
 
 proc sgplot
     data=intro.fev;
-  vbox age / category=smoke;
+  vbox ht / category=smoke;
+  format smoke fsmoke.;
   title2 "Boxplots";
 run;
 
 proc means
     data=intro.fev;
-  var age;
+  var ht;
   by smoke;
+  format smoke fsmoke.;
   title2 "Descriptive statistics by group";
 run;
 
 ********* ********* ********* *********
-12. Further investigation on your own
+13. Further investigation on your own
 
 You should also examine the 
 relationship between sex and fev. Do 
@@ -302,6 +332,8 @@ average taxes?
 appear on corner lots? Calculate the 
 percentages and compute a relative risk.
 ********* ********* ********* *********;
+
+proc printto; run;
 
 ods pdf close;
 

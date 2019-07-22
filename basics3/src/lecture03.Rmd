@@ -103,8 +103,9 @@ cat(ppt_code[j])
 `r ppt_note[j]`
 </div>
 
-### Test image
-![Output, proc print](../images/lecture03-01.png)
+<!---output--->`r k <- 1`
+`r ppt_head[j]`
+![Output, proc print](../images/lecture03-0`r k`.png)
 <div class="notes">
 Here are the first ten rows of the data .
 </div>
@@ -118,9 +119,14 @@ cat(ppt_code[j])
 `r ppt_note[j]`
 </div>
 
-### Output from proc freq (page 2)
+<!---output--->`r k <- k+1`
+`r ppt_head[j]`
+![Output, proc freq](../images/lecture03-0`r k`.png)
 
-### Output from proc means (page 3)
+
+<!---output--->`r k <- k+1`
+`r ppt_head[j]`
+![Output, proc means](../images/lecture03-0`r k`.png)
 
 <!---proc corr--->`r j <- j+1`
 `r ppt_head[j]`
@@ -131,8 +137,9 @@ cat(ppt_code[j])
 `r ppt_note[j]`
 </div>
 
-
-### Output from proc corr (page 4)
+<!---output--->`r k <- k+1`
+`r ppt_head[j]`
+![Output, proc corr](../images/lecture03-0`r k`.png)
 
 <!---proc sgplot--->`r j <- j+1`
 `r ppt_head[j]`
@@ -143,7 +150,9 @@ cat(ppt_code[j])
 `r ppt_note[j]`
 </div>
 
-### Output from proc sgplot (page 5)
+<!---output--->`r k <- k+1`
+`r ppt_head[j]`
+![Output, proc sgplot](../images/lecture03-0`r k`.png)
 
 <!---proc sgplot--->`r j <- j+1`
 `r ppt_head[j]`
@@ -154,7 +163,22 @@ cat(ppt_code[j])
 `r ppt_note[j]`
 </div>
 
-### Output from proc sgplot (page 6)
+<!---output--->`r k <- k+1`
+`r ppt_head[j]`
+![Output, proc sgplot](../images/lecture03-0`r k`.png)
+
+<!---proc sgplot--->`r j <- j+1`
+`r ppt_head[j]`
+```{r}
+cat(ppt_code[j])
+```
+<div class="notes">
+`r ppt_note[j]`
+</div>
+
+<!---output--->`r k <- k+1`
+`r ppt_head[j]`
+![Output, proc sgplot](../images/lecture03-0`r k`.png)
 
 <!---by statement--->`r j <- j+1`
 `r ppt_head[j]`
@@ -165,7 +189,10 @@ cat(ppt_code[j])
 `r ppt_note[j]`
 </div>
 
-### Output from proc means with by statement (page 7)
+<!---output--->`r k <- k+1`
+`r ppt_head[j]`
+![Output, proc means with by statement](../images/lecture03-0`r k`.png)
+
 
 <!---proc sgplot--->`r j <- j+1`
 `r ppt_head[j]`
@@ -176,7 +203,13 @@ cat(ppt_code[j])
 `r ppt_note[j]`
 </div>
 
-### Output from proc sgplot (page 8)
+<!---output--->`r k <- k+1`
+`r ppt_head[j]`
+![Output, proc sgplot](../images/lecture03-0`r k`.png)
+
+<!---output--->`r k <- k+1`
+`r ppt_head[j]`
+![Output, proc means with by statement](../images/lecture03-`r k`.png)
 
 <!---Further investigation--->`r j <- j+1`
 `r ppt_head[j]`
