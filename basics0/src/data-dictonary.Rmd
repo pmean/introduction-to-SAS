@@ -1,0 +1,97 @@
+---
+title: "Data Dictionary"
+author: "Steve Simon"
+output: powerpoint_presentation
+---
+
+```{r setup, echo=FALSE}
+# This R markdown file will create a Powerpoint presentation. It uses a minimal amount of R code. You do need to have knitr installed, and process of creating a pptx file goes more smoothly if you have RStudio. See the bottom of this program or the very last slide in the Powerpoint presentation for documentation.
+```
+
+## Data dictionary
+
+
+~/introduction-to-r-part1/doc/data_dictionary_fd.txt
+Written by Steve Simon
+
+See ~/introduction-to-r-part1/README.md for an overview of everything.
+
+This file was downloaded from
+
+http://www.amstat.org/publications/jse/datasets/fat.dat.txt.
+
+A description of the file appears at
+
+https://ww2.amstat.org/publications/jse/datasets/fat.txt.
+
+It represents a study of body fat and body circumference measurements
+on 252 men. The data was first used in
+Penrose, K., Nelson, A., and Fisher, A. (1985), "Generalized Body 
+Composition Prediction Equation for Men Using Simple Measurement 
+Techniques" (abstract), Medicine and Science in Sports and Exercise,
+17(2), 189.
+
+and later described in a publication
+
+Johnson (1996) "Fitting Percentage of Body Fat to Simple Body
+Measurements" Journal of Statistics Education.
+
+and stored in the data archive for this journal. The data set is 
+freely available for re-use for non-commercial purposes.
+
+There are 252 rows and 19 columns in this data set. It is stored as a
+text file with tab delimiters. There are no missing value codes in this data set.
+
+case, Case Number, a sequential number from 1 to 252.
+fat.b, Percent body fat using Brozek's equation, 457/Density - 414.2
+fat.s, Percent body fat using Siri's equation, 495/Density - 450
+dens, Density (gm/cm^3)
+age, Age (yrs)
+wt, Weight (lbs)
+ht, Height (inches)
+bmi, Adiposity index = Weight/Height^2 (kg/m^2)
+ffw, Fat Free Weight = (1 - fraction of body fat) * Weight, using Brozek's formula (lbs)
+neck, Neck circumference (cm)
+chest, Chest circumference (cm)
+abdomen, Abdomen circumference (cm) "at the umbilicus and level with the iliac crest"
+hip, Hip circumference (cm)
+thigh, Thigh circumference (cm)
+knee, Knee circumference (cm)
+ankle, Ankle circumference (cm)
+biceps, Extended biceps circumference (cm)
+forearm, Forearm circumference (cm)
+wrist, Wrist circumference (cm) "distal to the styloid processes"
+
+There are no hard and fast rules about what goes in a data dictionary, but here are the elements that I included in this particular data dictionary.
+
+## Elements of a data dictionary
++ Where the data came from, including urls and references, if available
++ A brief description of the data
++ Licensing information for this data
++ The format of the data, including information about delimiters, if appropriate
++ The number of rows and columns in the data
++ The codes for missing values
+
+## Elements of a data dictionary
++ The data dictionary also includes an entry for each variable with
+   + the name of the variable, 
+   + a brief description, 
+   + range restrictions (if applicable), and 
+   + units of measurement (if appropriate).
++ If the data is categorical
+  + all possible values,
+  + with labels for number codes/abbreviations
+
+## Elements of a data dictionary
++ A data dictionary does not have to include all of the things I listed above and it can include things that I did not include. Use your best judgement to decide how much to document in the data dictionary.
+
+## Further reading
+
++ Kristin Briney. Data dictionaries. Data Ab Initio blog, August 5, 2014. Available at http://dataabinitio.com/?p=454%C2%A0.
++ 
+
+## About this presentation
+
++ This Powerpoint presentation was created using an RMarkdown program. The program and presentation were written by Steve Simon on 2019-07-22. 
+
++ Both the program and the presentation are placed in the public domain (no copyright). If you use this program or the Powerpoint file, an acknowledgement, such as "Thanks to Steve Simon (www.pmean.com) for sharing this material." would be appreciated, but it is not required.
