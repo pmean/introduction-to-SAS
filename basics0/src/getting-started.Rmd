@@ -16,6 +16,8 @@ This PowerPoint presentation was written by Steve Simon in 2018-08-29 and was la
 
 <div class="notes">
 
+Okay. I want to get started. I want to get you started using SAS. It's either going to be really easy or it's going to be really really. I want to give you as much guidance as I can without staring over your shoulder. Just quickly, I wrote this Powerpoint presentation and all the Powerpoint presentations using R Markdown. If you are curious I have a repository. It has some beautiful output.
+
 Greetings! My name is Steve Simon and I am the instructor for the class, MEDB 5507, Introduction to SAS.
 
 </div>
@@ -23,6 +25,12 @@ Greetings! My name is Steve Simon and I am the instructor for the class, MEDB 55
 ## Course instructor, Steve Simon
 
 ![](../images/SteveSimonPic.jpg)
+
+<div class="notes">
+
+Stop by. This class is very impersonal. I don't get to see you and you don't get to see me.
+
+</div>
 
 ## Where can I get SAS
 
@@ -41,6 +49,8 @@ Greetings! My name is Steve Simon and I am the instructor for the class, MEDB 55
 
 There are several ways that you can get access to SAS software. One of these three options should work for you.
 
+You can get it running on your UMKC computer, you can run it on the student computing labs.
+
 </div>
 
 ## SAS on your UMKC computer
@@ -49,11 +59,11 @@ There are several ways that you can get access to SAS software. One of these thr
 
 <div class="notes">
 
-This screenshot may be too small for you to read, but you can find the proper link on the recommended readings list for this week on the Canvas website. This works for any desktop computer on the UMKC campus that is hard-wired to the UMKC netwok. By hard-wired, I mean that there is an ethernet cable connecting your computer to a socket on the wall.
+This screenshot may be too small for you to read, but you can find the proper link on the recommended readings list for this week on the Canvas website. SAS works for any desktop computer on the UMKC campus. But it has to be hard-wired to the UMKC netwok. By hard-wired, I mean that there is an ethernet cable connecting your computer to a socket on the wall.
 
-If you are fortunate enough to have access to a hard-wired computer, you can get SAS installed easily. It may already be sitting on your computer.
+If you are fortunate enough to have access to a hard-wired computer, you can get SAS installed easily. Someone else will do it for you. It may already be sitting on your computer.
 
-With a very few rare exceptions, you cannot get UMKC to load SAS on a laptop computer or a home computer. The license agreement that UMKC signed wih SAS Institute does not allow this.
+With a very few rare exceptions, you cannot get UMKC to load SAS on a laptop computer or on a home computer. This because of the license agreement that UMKC signed wih SAS Institute. It does not allow for home use of SAS.
 
 </div>
 
@@ -69,6 +79,8 @@ There are several student computing labs on campus that already have SAS install
 
 You can visit the labs in person, or you can connect to those labs using Remote Desktop Connection.
 
+If you have any trouble with this, come and see me and I'll muddle through it with you.
+
 </div>
 
 ## SAS using SAS University
@@ -77,9 +89,11 @@ You can visit the labs in person, or you can connect to those labs using Remote 
 
 <div class="notes">
 
+I don't have the right picture here. Sorry!
+
 SAS Institute recognized that their licensing terms sometimes prevented students from having access to SAS software, and they dearly want you to learn SAS so that you'll demand access to SAS when you get your big job in the corporate world. So they developed a system, SAS University, that you can use for free for educational purposes. I have SAS University installed on my laptop computer and it is very nice. The user interface is slightly different, but only slightly, and it seems to have just as many capabilities as the commercial version.
 
-Installation is a bit tricky, but do try it. It is a very nice system. I will do much of my work in preparing teaching examples using SAS University.
+Now, installation is a bit tricky, but do try it. It is a very nice system. I will do much of my work in preparing teaching examples using SAS University. I don't do all of it. Sometimes I'll switch between systems. SAS University allows me to continue my work at home.
 
 </div>
 
@@ -89,7 +103,9 @@ Installation is a bit tricky, but do try it. It is a very nice system. I will do
 
 <div class="notes">
 
-If you are adventurous, you can run SAS within a Jupyter notebook. This works easily with SAS University, but I believe you can also run the commercial version of SAS in a Jupyter notebook. I will not talk about Jupyter in this class, it is beyond the scope of this class. But if you want to explore SAS and Jupyter, I can work with you informally on this.
+Again, I apologize.
+
+If you are adventurous, (and I certainly encourage people to be adventurous) you can run SAS within a Jupyter notebook. This works easily with SAS University, but I believe you can also run the commercial version of SAS in a Jupyter notebook. I will not talk about Jupyter in this class, it is beyond the scope of this class. We only have a certain amount of time and I'm not going to waste time on Jupyter. But if you want to explore SAS and Jupyter, I can work with you informally on this.
 
 </div>
 
@@ -99,7 +115,7 @@ If you are adventurous, you can run SAS within a Jupyter notebook. This works ea
 
 <div class="notes">
 
-Also beyond the scope of this class is running SAS within R. It uses an R library called SAS markdown.
+Also beyond the scope of this class is running SAS within R. It uses an R library called SAS markdown. Very nice actually.
 
 </div>
 
@@ -112,7 +128,7 @@ Also beyond the scope of this class is running SAS within R. It uses an R librar
 
 <div class="notes">
 
-If you are running the "regular" version of SAS, here's an image of what the opening screen looks like. For the benefit of this presentation, I am going to resize everything, close some of the windows, and maximize the one window of greatest importance, the program editor window.
+If you are running the "regular" version of SAS, click on the icon and here's an image of what the opening screen looks like. SAS uses a multi-window format. The layout is a bit chaotic. I usually close some windows and re-arrange others. For the benefit of this presentation, I am going to resize everything, close some of the windows, and maximize the one window of greatest importance, the program editor window.
 
 </div>
 
@@ -134,7 +150,9 @@ This is the program editor window. You type in your program in this window, or r
 
 <div class="notes">
 
-Here's a simple test program. After you type this program in, click on FILE | SAVE and store your program somewhere safe.
+If you have SAS running, try running the following sample program. Here's a simple test program. After you type this program in, click on FILE | SAVE and store your program somewhere safe. Save it to a location where you can remember things.
+
+If you are using the computer labs, you need to save things on a network folder. You can't use a USB stick.
 
 </div>
 
@@ -168,7 +186,7 @@ After you type this program in, click on FILE | SAVE and store your program some
 
 <div class="notes">
 
-The font here is a bit small, but notice that there are no red messages indicating warnings or errors.
+The font here is a bit small, but notice that there are no red messages indicating warnings or errors. We're thrilled when we see no warnings or error messages. We're always looking for warnings and errors. We also watch closely the number of observations.
 
 </div>
 
@@ -234,7 +252,7 @@ SAS has several options for storing output.
 
 <div class="notes">
 
-I want to talk in more detail later about this, but you can take the output and save it. There are several ways to do this. If you already have output, click on the CREATE LISTING option box to send the output to the output window. Click on the CREATE HTML option box to send the output to an html file. Click on the BROWSE button to select a default folder for your html file.
+Output is tricky. I want to talk in more detail later about this, but you can take the output and save it. There are several ways to do this. If you already have output, click on the CREATE LISTING option box to send the output to the output window. Click on the CREATE HTML option box to send the output to an html file. Click on the BROWSE button to select a default folder for your html file.
 
 </div>
 
@@ -244,7 +262,7 @@ I want to talk in more detail later about this, but you can take the output and 
 
 <div class="notes">
 
-There are additional options for storing graphics, which I will talk about later. You control where SAS places its output in the results tab of the preferences dialog box. Select TOOLS | OPTIONS | PREFERENCES from the menu and click on the RESULTS tab.
+There is a preference box. I don't want to talk about it today, but if you are adventurous, take a look at this. There are additional options for storing graphics, which I will talk about later. You control where SAS places its output in the results tab of the preferences dialog box. Select TOOLS | OPTIONS | PREFERENCES from the menu and click on the RESULTS tab.
 
 </div>
 
@@ -264,7 +282,7 @@ Here's what the output window looks like. Notice that SAS uses a monospaced font
 
 <div class="notes">
 
-Here's what the html output looks like. Notice variety of font sizes and colors.
+Here's what the html output looks like. Notice variety of font sizes and colors. It tries to fit things within the available space.
 
 </div>
 
@@ -274,7 +292,7 @@ Here's what the html output looks like. Notice variety of font sizes and colors.
 
 <div class="notes">
 
-If you are using SAS University, you start by opening Oracle Virtualbox.
+If you are using SAS University, you start by opening Oracle Virtualbox. This is machine within a machine. It is similar to docker, if you are familiar with the Linus environment.
 
 Installation instructions are available.
 
@@ -320,7 +338,7 @@ When you open your web browser to http://localhost:10080, you get the option of 
 
 <div class="notes">
 
-You will notice a slightly different appearance with SAS University. Here is the program window.
+You will notice a slightly different appearance with SAS University. Not so much that it's going to cause problems. Here is the program window.
 
 </div>
 
@@ -340,6 +358,8 @@ Here is the log window. Notice that the counts for errors, warnings, and notes a
 
 Here is the results window. The icons near the top offer a variety of export options, among other things.
 
+It won't work the first time for you. Don't be intimidated by this. It didn't work the first time for me either, and I'm a genius.
+
 </div>
 
 ## Conclusion
@@ -356,5 +376,7 @@ You can run a free version of SAS using
 <div class="notes">
 
 You can run the commercial version of SAS or SAS University and I've shown some screenshots of what this looks like. Try this on your own and let me know if you have been able to get SAS running successfully.
+
+If you cannot get SAS running, drop me an email. It's tricky because it's the first time, but it's not that hard.
 
 </div>

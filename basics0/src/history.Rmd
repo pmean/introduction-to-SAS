@@ -1,0 +1,41 @@
+---
+title: "History of SAS"
+author: "Steve Simon"
+date: "8/12/2019"
+output: powerpoint_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+### Getting started
+
+<div class="notes">
+
+I'm going to record several extra lectures. If you're having trouble running SAS, it's okay. Your first program is the hardest.
+
+History of SAS. If you understand where SAS comes from, you understand some of the limitations.
+
+This is on my blog.
+
+SAS was developed at NC State. SAS Institute was formed in 1976. It is a privately held company.
+
+The SAS Headquarters is in Cary, NC, and it is huge. It is a pretty nice place to work.
+
+In the 1960's, IBM mainframes dominated. So SAS was originally written just for these systems. Originally, SAS was written in a mix of PL/1, Fortran, and Assembler. Millions of lines of code re-written in C in 1985 so that SAS could run on personal computers.
+
+Talk about JMP. Extensive use of dynamic graphics. If you can see a demo, it is pretty amazing.
+
+SAS is oriented around various data sets and procedures. There is a menu driven version of SAS, but it is not very good. If you want a good package that is totally menu driven, use SPSS.
+
+SAS has a licensing model that is prohibitive for individual consultants. They offer a free product, SAS University, that is intended for teaching.
+
+SAS has literally hundreds of books. It has a certification program. 
+
+SAS was built in the 1960s. There is very little software written in the 1960s. It shows the staying power, but it is "long in the tooth."
+
+I'll show some more videos about SAS.
+
+</div>
+

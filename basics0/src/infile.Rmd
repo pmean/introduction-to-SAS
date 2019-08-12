@@ -1,0 +1,52 @@
+---
+title: "Reading external data using infile and filename"
+author: "Steve Simon"
+date: "8/12/2019"
+output: powerpoint_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+### filename and infile
+
+<div class="notes">
+
+One more baby step and you can tackle the homework. Pause the video and try the same thing yourself. I want to be able to take a file.
+
+I like pdf better than html. There's advantages and disadvantages.
+
+it's a bad idea to store the data and the program in the same place.
+
+You want it in a folder called data.
+
+I'm going to creat the data set.
+
+And let's put a line at the end.
+
+Sometimes it gets confused if the line ends as six. 
+
+No I want to go to my computer and the q drive and I'm going to create a new folder.
+
+Now what am I going to call this six-numbers. Okay? So we have a file called six-nubmers.txt.
+
+Oh I hope I can remember this. We're going to call this input-text. File save as input-text.sas. We're going to get rid of cards. I hope I get this right. I called it six-numbers.txt. Quote semicolon and then run . Instead of having the data beneath the cards statement. We said delimiter equals quote space quote.
+
+I am going to open Firefox and go to google and look for sas infile statement. And notice you can use 9.4, 9.2, it doesn't matter. You can read this but sometimes the best thing is to take an example and adapt it.
+
+I think I passed what I wanted to do. By the way, this is all good stuff but you don't need to know any of it.
+
+Example 1. Changing how delimiters. Delimiters are what separate one number from the next. It doesn't. Oh man, this is crazy. Let's close this. Delimiter equals space. So let's try this and see if it works.
+
+Save it first. Let's look at it one more time. We got rid of the data. We said it is a space delimited file. I think that should work. It didn't like that. Shoot. Let's close this. I should have changed the name of the PDF file. Input statement. I do infile then input. Instead of saved-pdf, it is now input-text.
+
+Fair enough. ods says where we are going to store the resulting output. Let's run it and see what happens.
+
+Edit, clear all, edit clear all. And it ran. I did this change. Oh, you want to look at this stuff. That's cool. Let's remind ourselves what happened. They like to put it up at the top. You do this with a filename statement. And then you say infile rawdata. And rawdata points back to the filename. Look to see if the previous line had a semicolon. Let's save it first. Let's clear this. Edit, clear all, edit, clear all. I think it worked. There's the output. That's exactly what we want to see. It gives you a cumulative output. It drives me nuts. Let's emphasize what we've learned so far. First we ran a sas program that didn't save anything anywhere. Then we added an ods statement. You can say ods pdf or ods html. That's the second baby step. Next baby step was the infile statement.
+
+If you have problem, it's normal. The remaining programs will be easy. I used sas for 40 years. Once I got it to run it was easy. Baby steps. The you add filenane. Notice that all of this was adding a file lines at a time.
+
+The rest will be easy-peasy. All right. So good luck.
+
+</div>

@@ -1,0 +1,56 @@
+---
+title: "Storing SAS output using ods"
+author: "Steve Simon"
+date: "8/12/2019"
+output: powerpoint_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+### Output Delivery System
+
+<div class="notes">
+
+WE're going to take another baby step. The first step was an utter and miserable failure. It usually runs the first time, but it did not run the second time or the third time or the fourth time. So I stopped the tape.
+
+Let's take permanent storage. That's a good one to start with.
+
+ODS is short for Output Delivery System. Back in the 1960's you submitted a bunch of cards and you got output on green paper.
+
+People were tired of not having output that they could re-use.
+
+Give the name of the file. Let's change the name to saved-pdf.
+
+That's a little bit redundant. If I have a program with a certain name, I use the same name (but a different extension) for the output.
+
+We have to sell SAS to close the output. Everything you saved in the queue will be processed and converted to a PDF file.
+
+What do I call this? saved-pdf.sas.
+
+That's saved, and hit the run button. It's thinking. It can't be that hard.
+
+It opened it for me. That was very nice. Where was that? It is on the computer on the Q drive under documents and results. I was sweating at 1:26 and got it at 2:09.
+
+I went to tools and options and preferences and results. By default, SAS stores everything in the work folder and I had trouble finding it. If you go to SAS Explorer. The work folder is for temporary files. It is located at users simon appdata local . I'm not going to read the rest of this. We don't need those temporary files. 
+
+Go to tools options. Do not use the work folder. That is incorrect. I want the documents slash results. I want things stored in q documents results. Make sure that use work folder is unchecked. Make sure it is a place you can remember. Then wehen you look at your computer and documents and results you will see that I have some html output and some pdf. Let's clean that up now. I'm going to delete that. It's confusing to see all my false results. Let's delete this one. Now remember the sas7bdat. We want to create a permanent version of the output as well.
+
+Clear all. Okay. So this is going to create the file. I can change it now to html. The weird thing about html is that instead of saying file equals you say body equals. I believe it is going to get upset if you give it the path. If we add the q documents results in a second place it will cause confusion.
+
+SAS developed these things over many decades and there is a lot of legacy stuff going on.
+
+We want html. You have to say body equals instead of file equals and you don't specify the path.
+
+You don't want a header, trust me, unless you are really html jockey.
+
+This time it's going to work fine. If you're struggling, it is because the program is new. You'll just have a lot of worked examples. Running these programs from scratch is a pain in the neck. Man, it's embarrassing. 
+
+The body of the html firl is saved-web.html.
+
+Go here and run. And you know it call up the results window. If you go to the Q drive to documents to results. There is now a saved-web.html. By default, it will open in Firefox on my system. You can take this file and what can you do with it. You can send it by email. You can put it in dropbox. It's calling up my mail client. I am composing an email and sending it to my favoriter person. I just myself an email with the output.
+
+if you guys are feeling some pain, I'm feeling some pain. We're going to do one more baby step and you'll feel comfortable doing the homework, I hope.
+
+</div>
