@@ -1,0 +1,11 @@
+### Required Materials
+
+There are no required materials in this class. There is a recommended textbook:
+
+(For R) Donato Teutonico. Ggplot2 essentials. New York, NY: Packt Publishing; 2015.
+
+(For SAS) Sanjay Matange and Dan Heath, Statistical Graphics Procedures by Example: Effective Graphs Using SAS. Cary, NC: SAS Institute, 2011.
+
+(For SPSS) to be determined
+
+In addition, the instructor will provide a variety of web based resources for each module of the class.

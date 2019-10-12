@@ -1,0 +1,20 @@
+### Catalog information
+
+Catalog number: MEDB 55xx
+
+Course Title: Data visualization using R (substitute SAS or SPSS)
+
+Course Description: Course provides a working familiarity with SAS. Students are not expected to have advanced programming or statistical analysis skills, other than the ability to create and modify text files. Basic methods for data import, data management, simple graphics, and basic statistical analysis are introduced. This class will not cover advanced statistical methods, but will provide the student with a firm foundation to address these areas in advanced statistics classes or in the student's research efforts, including thesis/dissertation research. A basic understanding of statistical terminology and a working familiarity with computer-based data files (e.g., Excel) is necessary.
+
+Credit Hours: 1 credit hours
+
+Prerequisites: MEDB 5505 (substitute 5506 or 5507) or basic knowledge of the R (substitute SAS or SPSS) package.
+
+Restrictions/exclusions: none
+
+Course Attributes: graduate research training
+
+Course Format: Lecture, discussion, and individual activities
+
+Course Instructional Mode : OA (Online Asyncronous class instruction); material posted on Canvas course site will support all course activities.
+

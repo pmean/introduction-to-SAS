@@ -1,0 +1,7 @@
+### Final Project - Overview
+
+For the final project in this class, you need to find a data set different from the ones used in the previous videos. This could be a publicly available data set or a data set that the student has worked on as part of their job. The teacher will have some suggestions for interesting publicly available data sets if you cannot find one on your own.
+
+You will turn in at least two different visualizations using your data set. These visualizations should be original and they should be similar in structure to the examples shown in class (no pie charts).
+
+Turn in a brief explanation of your data set and an explanation of the choices you made for the type of graph, colors, etc. This should be no more than two pages in length.

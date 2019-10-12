@@ -1,0 +1,3 @@
+### Course Description
+
+This course trains the student on how to run a broad range of data visualizations using R/SAS/SPSS. It covers the issues in psychological perception and the visual properties of color that influence how you understand and evaluate a graph. Emphasis will placed on changing the default options to produce a simpler and more effective graph.

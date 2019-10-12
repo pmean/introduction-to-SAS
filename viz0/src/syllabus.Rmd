@@ -1,0 +1,111 @@
+---
+title: "Syllabus for Data visualization using R (MEDB 55xx) or SAS (MEDB 55xx) or SPSS (MEDB 55xx)"
+author: "Steve Simon"
+output:
+  html_document: default
+---
+
+## Printing date
+
+This syllabus was created on 2019-10-11 and last updated on `r Sys.Date()`.
+
+```{r echo=FALSE}
+source(file="prelims.R", echo=FALSE)
+```
+
+## Course information
+
+<!-- regular html comment -->
+
+This is an on-line class taught during the [list session here]. The course starts on [list start date here]`r # tue[1]` and ends on [list end date here]`r # fri[8]`. Please refer to the [UMKC academic calendar](https://www.umkc.edu/registrar/acal.asp) dates for further information.
+
+`r read_text("syllabus-course-instructor")`
+
+`r read_text("syllabus-catalog-information")`
+
+`r read_text("syllabus-course-description")`
+
+`r read_text("syllabus-course-topics")`
+
+`r read_text("syllabus-introduction")`
+
+`r read_text("syllabus-course-objectives")`
+
+`r read_text("syllabus-course-objectives1")`
+
+`r read_text("syllabus-course-requirements")`
+
+`r read_text("syllabus-course-structure")`
+
+`r read_text("syllabus-course-required-materials")`
+
+`r read_text("syllabus-course-evaluation")`
+
+## Assignments
+
+`r read_text("syllabus-assignments-schedule")`
+
+`r read_text("syllabus-assignments-evaluation")`
+
+`r read_text("syllabus-assignments-submission")`
+
+`r read_text("syllabus-project-overview")`
+
+
+## Policies
+
+<!-- 
+  List the course specific policies first, then
+  the institutional policies. Institutional 
+  policies inlcude:
+    Honor policy,
+    Academic calendar,
+    Campus safety,
+    Disability support services,
+    Grade appeal policy.
+-->
+
+`r read_text("syllabus-policies-canvas")`
+
+Acrobat Reader may be downloaded for FREE from the [Adobe website](http://www.adobe.com/products/acrobat/readstep2.html).
+
+`r read_text("syllabus-policies-email")`
+
+`r read_text("syllabus-policies-discussion")`
+
+`r read_text("syllabus-policies-conduct")`
+
+Please refer to the 
+[UM System standard of conduct](http://www.umsystem.edu/ums/rules/collected_rules/programs/ch200/200.010_standard_of_conduct) for more information.
+
+`r read_text("syllabus-policies-honesty")`
+
+`r read_text("syllabus-policies-attendance")`
+
+`r read_text("syllabus-policies-discrimination")`
+
+Discrimination Grievance Procedures for Students: Discrimination Grievance Procedures for Students can be found [here](http://www.umsystem.edu/ums/rules/collected_rules/grievance/ch390/grievance_390.010).
+
+`r read_text("syllabus-policies-english-proficiency")`
+
+`r read_text("syllabus-policies-grade-appeal")`
+
+In the event a student would like to appeal a course grade they must follow the School of Medicine procedure for grade appeal for graduate courses, which is outlined in the student handbook or can be found at the [School of Medicine Graduate Council web page](http://med.umkc.edu/councils/graduate/documents/).
+
+## Resources
+
+Academic Calendar: Students are encouraged to review important add, drop or withdraw dates: https://www.umkc.edu/calendar/
+
+Campus Safety: [Inclement weather, mass notification, and emergency response guide](http://www.umkc.edu/umkcalert/).
+
+Counseling and Health Services Available at UMKC: UMKC students may experience many challenges in their lives while attending college – stress, depression, suicidality, trauma, relationship issues, health concerns, etc. As your professor I care about your success and well-being, and want to make you aware of some helpful resources on campus. The [UMKC Counseling Center](www.umkc.edu/counselingcenter), located at 4825 Troost in Room 206, offers a wide range of supportive services to students. Appointments can be made by calling 816.235.1635. [UMKC Student Health and Wellness](http://info.umkc.edu/studenthealth/), located at 4825 Troost in Room 115, offers a full range of health care and promotion services. Appointments can be scheduled online or by calling 816.235.6133. The [MindBody Connection](www.umkc.edu/mindbody) is located in the Atterbury Student Success Center in Room 112 and offers a variety of stress-reduction services.
+
+Disability Support Services: To obtain disability related accommodations and/or auxiliary aids, students with disabilities must contact the Office of Services for Students with Disabilities (OSSD) as soon as possible. To contact OSSD, call (816) 235-5696 or visit their website. Once verified, OSSD will notify the course instructor and outline the accommodation and/or auxiliary aids to be provided. UMKC has a [web page](http://www.umkc.edu/disability/) with more information about disability services.
+
+Severe Weather Policy: Cancellation of classes will be posted on the front page of the [University’s website](www.umkc.edu) as well as through the UMKC Alert message system.
+
+Statement of Human Rights: The Board of Curators and UMKC are committed to the policy of equal opportunity, regardless of race, color, religion, sex, sexual orientation, national origin, age, disability and status as a Vietnam era veteran. Commitment to the policy is mentored by the [Division of Diversity Equity](https://info.umkc.edu/diversity/), but it is the responsibility of the entire university community to provide equal opportunity through relevant practices, initiatives and programs.
+
+Title IX: Under the University of Missouri’s Title IX policy, discrimination, violence and harassment based on sex, gender, and gender identity are subject to the same kinds of accountability and support applied to offenses based on other protected characteristics such as race, color, ethnic or national origin, sexual orientation, religion, age, ancestry, disability, military status, and veteran status. If you or someone you know has been harassed or assaulted, you can find the appropriate resources by visiting [UMKC’s Title IX Office webpage](http://info.umkc.edu/title9/) or contacting UMKC’s Title IX Coordinator, Mikah K. Thompson (816.235.6910 or thompsonmikah@umkc.edu). Additionally, you can file a complaint using [UMKC’s online discrimination complaint form](http://info.umkc.edu/title9/reporting/report-online/).
+
+While most UMKC employees are required to report any known or suspected violation of Title IX, students may seek confidential guidance from the following campus locations: UMKC Counseling Service Volker Campus 4825 Troost Ave, Suite 206 Kansas City, MO 64110 Phone – (816) 235-1635 UMKC Counseling Service Health Sciences Campus Health Sciences Building 1418 2464 Charlotte Kansas City, MO 64108 Phone – (816) 235-1635 (open Tuesdays, 1-5pm) Student Health and Wellness 4825 Troost Ave., Suite 115 Kansas City, MO 64110 Phone - (816) 235-6133

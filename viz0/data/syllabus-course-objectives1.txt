@@ -1,0 +1,15 @@
+### Student Learning Objectives
+
+At the end of this course, students will be able to:
+
+1. Produce scatterplots, bar charts, and line graphs using R (substitute SAS or SPSS) software.
+
+2. Change default features of the graphs, including color, size, and shape.
+
+3. Describe the components of color and how colors are used in visualizations.
+
+4. Apply the psychological theories of perception to influence how others view and interpret your graphs.
+
+5. List the advantages and disadvantages of different types of graphs.
+
+6. Use the skills you have learned to develop an effective visualization of an independent data set.

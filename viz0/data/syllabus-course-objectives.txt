@@ -1,0 +1,3 @@
+### Course Objectives
+
+The course will provide students with knowledge of the components of color and the principles of psychological perception that influence how we view and interpret graphs. The principles will help students create effective graphs, graphs that help viewers quickly and accurately answer questions about the data. This work will be combined with information about the syntax of R (substitute SAS or SPSS) to create three basic visualizations: scatterplots, bar charts, and line graphs. You will learn how to change the default features of these graphs, such as color, shape, and size, to improve the quality of these graphs and to emphasize important features of your data. You will then apply these principles on a data set of your own choosing.

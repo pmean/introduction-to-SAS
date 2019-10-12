@@ -1,0 +1,3 @@
+### Introduction
+
+Visualization is a fundamental tool in data analysis both to aid your discovery of features and patterns in your data and to communicate those features and patterns to others. This class will This class will show you how to produce three fundamental data visualizations in R (substitute SAS or SPSS here), scatterplots, bar charts, and line graphs. You will learn how to use elements of these visualizations like color, size, and shape to make your graphs more effective.

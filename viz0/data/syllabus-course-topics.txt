@@ -1,0 +1,39 @@
+### Course Topics
+
++ What makes a graph effective?
+  + Case study: the bar chart versus the pie chart
+  + Simple and difficult perceptual tasks
+  + Facilitating perception
++ The "grammar" of graphics
+  + Unifying framework of all data visualizations
+  + Marks (points, bars, lines)
+  + Aesthetics (size, shape, color)
++ Coding for basic scatterplots (marks=points)
+  + Changing size, shape, color of points
+  + Strategies for controlling excessive overprinting
+  + Limitations on shape and size
+  + Evaluating scatterplots found in major newspaper articles
++ Color theory
+  + The rgb model
+  + Alternative color models (hcl, hsv, cmyk)
+  + Effective use of contrasting colors
+  + Modeling continuous scales using gradients
++ Coding for basic bar charts (marks=bars)
+  + Changing color, size, and orientation
+  + Grouped versus stacked versus normalized barcharts
+  + When to change to horizontal orientation
+  + Ordering bars to facilitate perception
+  + Evaluating scatterplots found in major newspaper articles
++ Gestalt principles for visual grouping
+  + Similarity, proximity, connectedness, continuity
+  + Using Gestalt principles to create a different emphasis
++ Coding for basic line graphs (marks=lines)
+  + Changing color, size, shape
+  + Adding lines to a scatterplot
+  + Text versus legends
+  + The problem with error bars (and some alternatives)
+  + Evaluating line graphs found in major newspaper articles
++ Final project
+  + Find your own data set
+  + Create a visualization using two different types of graphs
+  + Defend your choice of graph and its use of color
