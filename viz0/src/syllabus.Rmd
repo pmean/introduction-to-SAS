@@ -65,10 +65,6 @@ This is an on-line class taught during the [list session here]. The course start
     Grade appeal policy.
 -->
 
-`r read_text("syllabus-policies-canvas")`
-
-Acrobat Reader may be downloaded for FREE from the [Adobe website](http://www.adobe.com/products/acrobat/readstep2.html).
-
 `r read_text("syllabus-policies-email")`
 
 `r read_text("syllabus-policies-discussion")`
