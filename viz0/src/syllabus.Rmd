@@ -19,17 +19,13 @@ source(file="prelims.R", echo=FALSE)
 
 This is an on-line class taught during the [list session here]. The course starts on [list start date here]`r # tue[1]` and ends on [list end date here]`r # fri[8]`. Please refer to the [UMKC academic calendar](https://www.umkc.edu/registrar/acal.asp) dates for further information.
 
-`r read_text("syllabus-course-instructor")`
+`r # read_text("syllabus-course-instructor")`
 
 `r read_text("syllabus-catalog-information")`
 
 `r read_text("syllabus-course-description")`
 
 `r read_text("syllabus-course-topics")`
-
-`r read_text("syllabus-introduction")`
-
-`r read_text("syllabus-course-objectives")`
 
 `r read_text("syllabus-course-objectives1")`
 
@@ -54,6 +50,7 @@ This is an on-line class taught during the [list session here]. The course start
 
 ## Policies
 
+<<<<<<< HEAD
 <!-- 
   List the course specific policies first, then
   the institutional policies. Institutional 
@@ -105,3 +102,6 @@ Statement of Human Rights: The Board of Curators and UMKC are committed to the p
 Title IX: Under the University of Missouri’s Title IX policy, discrimination, violence and harassment based on sex, gender, and gender identity are subject to the same kinds of accountability and support applied to offenses based on other protected characteristics such as race, color, ethnic or national origin, sexual orientation, religion, age, ancestry, disability, military status, and veteran status. If you or someone you know has been harassed or assaulted, you can find the appropriate resources by visiting [UMKC’s Title IX Office webpage](http://info.umkc.edu/title9/) or contacting UMKC’s Title IX Coordinator, Mikah K. Thompson (816.235.6910 or thompsonmikah@umkc.edu). Additionally, you can file a complaint using [UMKC’s online discrimination complaint form](http://info.umkc.edu/title9/reporting/report-online/).
 
 While most UMKC employees are required to report any known or suspected violation of Title IX, students may seek confidential guidance from the following campus locations: UMKC Counseling Service Volker Campus 4825 Troost Ave, Suite 206 Kansas City, MO 64110 Phone – (816) 235-1635 UMKC Counseling Service Health Sciences Campus Health Sciences Building 1418 2464 Charlotte Kansas City, MO 64108 Phone – (816) 235-1635 (open Tuesdays, 1-5pm) Student Health and Wellness 4825 Troost Ave., Suite 115 Kansas City, MO 64110 Phone - (816) 235-6133
+=======
+[Use standard text for campus safety, grade appeal policy, etc.]
+>>>>>>> 60fe52da46ded6108e45383887d3e6ba707366ba
