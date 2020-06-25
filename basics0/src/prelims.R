@@ -1,4 +1,3 @@
-semester_start <- "2019-06-03"
 default_path <- "data"
 
 suppressMessages(suppressWarnings(library(lubridate)))
@@ -16,7 +15,11 @@ read_text <- function(fn, due="", path=default_path, char_max=999999) {
     paste0(path) %>%
     paste0("/") %>%
     paste0(fn) %>% 
-    paste0(".txt") %>%
+    paste0(".txt") -> full_name
+  if (!file.exists(full_name)) {
+    return(paste("### ", full_name, " not found!\n"))
+  }
+  full_name %>%
     readLines  -> text_lines
   text_lines %>%
     nchar %>%

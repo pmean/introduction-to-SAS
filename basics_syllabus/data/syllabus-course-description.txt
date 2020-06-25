@@ -1,0 +1,3 @@
+### Course Description
+
+This course trains the student on how to run a basic SAS program. It covers input of various file formats, documentation of the data, data manipulation, basic descriptive statistics, and simple graphs.
