@@ -1,7 +1,12 @@
 ---
 title: "Getting started"
 author: "Steve Simon"
-output: powerpoint_presentation
+output:
+  powerpoint_presentation: default
+  pdf_document: default
+knit: (function(inputFile, encoding) {
+  rmarkdown::render(inputFile, encoding = encoding,
+  output_dir = "../results", output_format = "all") })  
 ---
 
 ```{r setup, include=FALSE}
@@ -9,6 +14,11 @@ output: powerpoint_presentation
 # but am including this chunk just in case I need something from R.
 knitr::opts_chunk$set(echo = FALSE)
 ```
+
+## Test image
+
+![](../images/blog.png)
+
 
 ## Documentation
 

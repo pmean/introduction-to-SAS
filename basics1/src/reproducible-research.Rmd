@@ -1,7 +1,12 @@
 ---
 title: "Methods and Tools for Reproducible Research"
 author: "Steve Simon"
-output: powerpoint_presentation
+output:
+  powerpoint_presentation: default
+  pdf_document: default
+knit: (function(inputFile, encoding) {
+  rmarkdown::render(inputFile, encoding = encoding,
+  output_dir = "../results", output_format = "all") })  
 ---
 
 ## Recommendations from 1999

@@ -1,5 +1,5 @@
-### Learning objectives
+### Module1 - Introduction
 
-1. To read text data from a variety of different formats.
+1. To udnerstand the historical roots of the SAS program.
 
-2. To compute simple descriptive statistics for continuous variables.
+2. To identify an access method for SAS that works for you.
