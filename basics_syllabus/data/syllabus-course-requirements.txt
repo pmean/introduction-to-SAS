@@ -1,3 +1,0 @@
-### Course Requirements
-
-Students are responsible for viewing all the videos, running the example programs shown in the videos, and then running similar programs using different data sets. Students must participate in discussion boards, take short quizzes, and prepare a final project.

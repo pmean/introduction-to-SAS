@@ -1,10 +1,14 @@
 ---
 title: "Syllabus for Introduction to SAS (MEDB 5507)"
 output:
+  powerpoint_presentation: default
   html_document: default
+knit: (function(inputFile, encoding) {
+  rmarkdown::render(inputFile, encoding = encoding,
+  output_dir = "../results", output_format = "all") })  
 ---
 
-## Printing date
+### Printing date
 
 This syllabus was created on 2019-06-04 and last updated on `r Sys.Date()`.
 
@@ -13,77 +17,23 @@ semester_start <- "2020-06-08"
 source(file="prelims.R", echo=FALSE)
 ```
 
-## Course information
+### Course information
 
 <!-- regular html comment -->
 
-This is an on-line class taught during the eight week summer session. The course starts on `r tue[1]` and ends on `r fri[8]`. Please refer to the [UMKC academic calendar](https://www.umkc.edu/registrar/acal.asp) dates for further information.
+This is an on-line class taught during the eight week summer session. The course starts on `r mon[1]` and ends on `r fri[8]`. Please refer to the [UMKC academic calendar](https://www.umkc.edu/registrar/acal.asp) dates for further information.
+
+Note: Many thanks go to Dr. Mary Gerkovich, who provided an excellent structure and format to this class that I will be following closely. 
 
 `r read_text("syllabus-course-instructor")`
 
-`r read_text("syllabus-course-description")`
+`r read_text("syllabus-catalog-information")`
 
-`r read_text("syllabus-course-topics")`
-
-`r read_text("syllabus-introduction")`
-
-Note: Many thanks go to Dr. Mary Gerkoich, who provided an excellent structure and format to this class that I will be following closely. 
-
-`r read_text("syllabus-course-objectives")`
-
-`r read_text("syllabus-course-objectives1")`
-
-`r read_text("syllabus-course-requirements")`
-
-`r read_text("syllabus-course-framework")`
-
-`r read_text("syllabus-course-structure")`
-
-`r read_text("syllabus-course-required-materials")`
-
-`r read_text("syllabus-course-recommended-materials")`
-
-`r read_text("syllabus-course-resources")`
-
-`r read_text("syllabus-course-evaluation")`
-
-## Assignments
-
-`r read_text("syllabus-assignments-schedule")`
-
-`r read_text("syllabus-assignments-evaluation")`
-
-`r read_text("syllabus-assignments-grading")`
-
-`r read_text("syllabus-assignments-submission")`
-
-`r read_text("syllabus-assignments-discussion-overview")`
-
-`r read_text("syllabus-assignments-discussion-evaluation")`
-
-`r read_text("syllabus-assignments-assessment")`
-
-`r read_text("syllabus-assignments-weekly")`
-
-`r read_text("syllabus-assignments-quizzes")`
-
-## Final project
-
-`r read_text("syllabus-project-overview")`
-
-`r read_text("syllabus-project-presentation")`
-
-`r read_text("syllabus-project-poster-material")`
-
-`r read_text("syllabus-project-poster-structure")`
-
-`r read_text("syllabus-project-proposal", wed[16])`
-
-For further information, please see a [guide for formatting Theses and Dissertations](http://sgs.umkc.edu/wp-content/uploads/2014/03/UMKC-Guide-to-Formatting-Theses-and-Dissertations.pdf).
+`r read_text("syllabus-course-information")`
 
 
 
-## Policies
+### Policies
 
 <!-- 
   List the course specific policies first, then
@@ -123,7 +73,7 @@ Discrimination Grievance Procedures for Students: Discrimination Grievance Proce
 
 In the event a student would like to appeal a course grade they must follow the School of Medicine procedure for grade appeal for graduate courses, which is outlined in the student handbook or can be found at the [School of Medicine Graduate Council web page](http://med.umkc.edu/councils/graduate/documents/).
 
-## Resources
+### Resources
 
 Academic Calendar: Students are encouraged to review important add, drop or withdraw dates: https://www.umkc.edu/calendar/
 
@@ -140,56 +90,4 @@ Statement of Human Rights: The Board of Curators and UMKC are committed to the p
 Title IX: Under the University of Missouri’s Title IX policy, discrimination, violence and harassment based on sex, gender, and gender identity are subject to the same kinds of accountability and support applied to offenses based on other protected characteristics such as race, color, ethnic or national origin, sexual orientation, religion, age, ancestry, disability, military status, and veteran status. If you or someone you know has been harassed or assaulted, you can find the appropriate resources by visiting [UMKC’s Title IX Office webpage](http://info.umkc.edu/title9/) or contacting UMKC’s Title IX Coordinator, Mikah K. Thompson (816.235.6910 or thompsonmikah@umkc.edu). Additionally, you can file a complaint using [UMKC’s online discrimination complaint form](http://info.umkc.edu/title9/reporting/report-online/).
 
 While most UMKC employees are required to report any known or suspected violation of Title IX, students may seek confidential guidance from the following campus locations: UMKC Counseling Service Volker Campus 4825 Troost Ave, Suite 206 Kansas City, MO 64110 Phone – (816) 235-1635 UMKC Counseling Service Health Sciences Campus Health Sciences Building 1418 2464 Charlotte Kansas City, MO 64108 Phone – (816) 235-1635 (open Tuesdays, 1-5pm) Student Health and Wellness 4825 Troost Ave., Suite 115 Kansas City, MO 64110 Phone - (816) 235-6133
-
-## Week 1: Course Overview and Introductions; Introduction to Clinical Research Methods
-
-Please note that I plan to make minor changes to the objectives, readings, homework assignments, and discussion questions. This list is current through week 1, and will be updated as the course progresses.
-
-`r read_text("objectives01")`
-
-`r read_text("readings01", fri[1])`
-
-`r read_text("hw01", fri[1])`
-
-`r read_text("discussion01", fri[1])`
-
-## Week 2: Planning a Research Project, Research Ethics
-
-`r read_text("objectives02")`
-
-`r read_text("readings02", fri[2])`
-
-`r read_text("hw02", fri[2])`
-
-`r read_text("discussion02", fri[2])`
-
-## Week 3: Literature Reviews, Library Resources
-
-`r read_text("objectives03")`
-
-`r read_text("readings03")`
-
-`r read_text("hw03", fri[3])`
-
-`r read_text("discussion03", fri[3])`
-
-## Week 4: Randomized experiments
-
-`r read_text("objectives04")`
-
-`r read_text("readings04")`
-
-`r read_text("hw04", fri[4])`
-
-`r read_text("discussion04", fri[4])`
-
-## Week 5: Quasi-experimental designs
-
-`r read_text("objectives05")`
-
-`r read_text("readings05")`
-
-`r read_text("hw05", fri[5])`
-
-`r read_text("discussion05", fri[5])`
 

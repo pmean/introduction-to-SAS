@@ -1,5 +1,0 @@
-### Introduction
-
-In order for you to be successful in your graduate education, your research projects, and your future career, you need to learn to use statistical software like SAS. This class will introduce you to fundamental skills that are crtical in any SAS program and allow you to learn more advanced programming skills and data analyses on your own.
-
-Note: Many thanks go to Dr. Mary Gerkoich, who provided an excellent structure and format to this class that I will be following closely.

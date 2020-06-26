@@ -1,14 +1,69 @@
 ### Course information
 
-Required and recommended materials: There is NO required textbook for this class.	The following books are possible resources you might want to purchase for your future work with SAS. 
+In order for you to be successful in your graduate education, your research projects, and your future career, you need to learn to use statistical software like SAS. This class will introduce you to fundamental skills that are crtical in any SAS program and allow you to learn more advanced programming skills and data analyses on your own.
+
+<div class="notes">
+
+This course trains the student on how to run a basic SAS program. It covers input of various file formats, documentation of the data, data manipulation, basic descriptive statistics, and simple graphs.
+
+</div>
+
+### Course Evaluation
+
+Completion of the confidential course evaluation at the end of the semester is available for the course and strongly encouraged. You will receive information about completing the evaluation from the Department office towards the end of the semester.
+
+### Required and recommended materials
+
+There is NO required textbook for this class.	The following books are possible resources you might want to purchase for your future work with SAS. 
 
 +	Delwiche & Slaughter. The Little SAS Book. 5th Edition. SAS Institute Inc., Cary, NC.
 +	Cody. Learning SAS by Example : A Programmer’s Guide. SAS Institute Inc., Cary, NC.
 +	Cody. SAS Statistics by Example. SAS Institute Inc., Cary, NC.
 
-Evaluation and grading criteria: All assignments will be graded on a pass-fail criteria. Students who successfully complete 70% or more of the assignments AND complete the final project will be awarded a passing grade.
+### Evaluation and grading criteria
 
-Schedule: Each module should take roughly one week. 
+All assignments will be graded on a pass-fail criteria. Students who successfully complete 70% or more of the assignments AND complete the final project will be awarded a passing grade.
+ 
+### Class structure
+
+In general, each class session will consist of a mixture of recorded material available on Canvas as preparation for the session, individual assignments, and discussion/activities that are related to the topic and are completed either individually, within pairs, or within small groups of students. The lecture material is designed to supplement the information assigned from the textbook and other sources.
+
+### Student Learning Objectives
+
+At the end of this course, students will be able to:
+
+1. Read a variety of differently fomatted text files into SAS.
+
+2. Document both the SAS program and the data set it uses.
+
+3. Produce simple descriptive statistics for a variety of data types.
+
+4. Transform and restructure the data.
+
+5. Code missing values.
+
+6. Produce simple graphical displays of your data.
+ 
+### Course Topics
+
++ inputting delimited text files
++ inputting fixed width text files
++ variable labels, variable formats
++ means, standard deviations, and percentiles
++ missing values
++ transformations
++ scatterplots
++ frequency tables and histograms
++ recoding categorical variables
++ two way cross tabulations
++ boxplots
++ merging
++ longitudinal data
+ 
+
+### Schedule
+
+Each module should take roughly one week. If a particular topic is causing the class as a whole some difficulty, you may get some extra time for a particular module.
 
 + Module 0, Getting started. A general introduction to SAS and information on how to run SAS on your computer.
 
@@ -38,9 +93,10 @@ At the end of this course, students will be able to:
 
 6. Produce simple graphical displays of your data.
 
-Course expectations
+### Course Requirements
+
+Students are responsible for viewing all the videos, running the example programs shown in the videos, and then running similar programs using different data sets. Students must participate in discussion boards, take short quizzes, and prepare a final project.
+
+### Course expectations
 
 Students must complete all assignments on time. If special circumstances arise, a student may request an extension of up to one week for all the work in a particular module. This request must be made prior to the due date of the work in a module.
-
-
-Course expectations

@@ -1,3 +1,7 @@
-### Instructor information
+### Course Instructor
 
 Your instructor is Steve Simon in the Department of Biomedical and Health Informatics. My phone number is 816-235-6617 and my email is simons@umkc.edu. My office is M5-117, located on the fifth floor of the School of Medicine building in the suite of offices for Biomedical and Health Informatics. Office hours by appointment only.
+
+This class is online and asynchronous. You can work on the material at whatever time is convenient to you, as long as you respect the deadlines for discussion boards and assignments.
+
+Check out my [web pages](http://www.pmean.com) and [my blog](http://blog.pmean.com). I am currently trying to combine these into a [single site](http://www.pmean.com/archive/index.html) but this work is still in progress.
