@@ -34,9 +34,9 @@ source("prelims.R")
 
 <!-- regular html comment -->
 
-This is an on-line class taught during the eight week summer session. The course starts on `r mon[1]` and ends on `r fri[8]`. Please refer to the [UMKC academic calendar](https://www.umkc.edu/registrar/acal.asp) dates for further information.
++ This is an on-line class taught during the eight week summer session. The course starts on `r mon[1]` and ends on `r fri[8]`. Please refer to the [UMKC academic calendar](https://www.umkc.edu/registrar/acal.asp) dates for further information.
 
-Note: Many thanks go to Dr. Mary Gerkovich, who provided an excellent structure and format to this class that I will be following closely. 
++ Note: Many thanks go to Dr. Mary Gerkovich, who provided an excellent structure and format to this class that I will be following closely. 
 
 ### Course Instructor
 
@@ -82,20 +82,6 @@ Material posted on Canvas course site will support all course activities.
 Course Description: Course provides a working familiarity with SAS. Students are not expected to have advanced programming or statistical analysis skills, other than the ability to create and modify text files. Basic methods for data import, data management, simple graphics, and basic statistical analysis are introduced. This class will not cover advanced statistical methods, but will provide the student with a firm foundation to address these areas in advanced statistics classes or in the student's research efforts, including thesis/dissertation research. A basic understanding of statistical terminology and a working familiarity with computer-based data files (e.g., Excel) is necessary.
 
 </div>
-
-### Course information
-
-In order for you to be successful in your graduate education, your research projects, and your future career, you need to learn to use statistical software like SAS. This class will introduce you to fundamental skills that are crtical in any SAS program and allow you to learn more advanced programming skills and data analyses on your own.
-
-<div class="notes">
-
-This course trains the student on how to run a basic SAS program. It covers input of various file formats, documentation of the data, data manipulation, basic descriptive statistics, and simple graphs.
-
-</div>
-
-### Course Evaluation
-
-Completion of the confidential course evaluation at the end of the semester is available for the course and strongly encouraged. You will receive information about completing the evaluation from the Department office towards the end of the semester.
 
 ### Required and recommended materials
 
