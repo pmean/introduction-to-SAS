@@ -8,13 +8,26 @@ knit: (function(inputFile, encoding) {
   output_dir = "../results", output_format = "all") })  
 ---
 
-### Printing date
+### Documentation about this syllabus
 
-This syllabus was created on 2019-06-04 and last updated on `r Sys.Date()`.
+This syllabus was created on 2019-06-04 and last updated on `r Sys.Date()`. It uses R Markdown to create both a Powerpoint presentation and an html document. If you wish to see the R Markdown code, you can find it at [my github site](https://github.com/pmean/introduction-to-SAS/blob/master/basics_syllabus/src/syllabus.Rmd).
 
 ```{r echo=FALSE}
+suppressMessages(suppressWarnings(library(lubridate)))
+suppressMessages(suppressWarnings(library(magrittr)))
+
 semester_start <- "2020-06-08"
-source(file="prelims.R", echo=FALSE)
+
+dat1 <- as.Date(semester_start, format="%Y-%m-%d")
+d <- dat1+(0:15)*7
+f <- "%A, %B %d, %Y"
+mon <- format(d, f)
+tue <- format(d+1, f)
+wed <- format(d+2, f)
+thu <- format(d+3, f)
+fri <- format(d+4, f)
+
+source("prelims.R")
 ```
 
 ### Course information
@@ -25,12 +38,153 @@ This is an on-line class taught during the eight week summer session. The course
 
 Note: Many thanks go to Dr. Mary Gerkovich, who provided an excellent structure and format to this class that I will be following closely. 
 
-`r read_text("syllabus-course-instructor")`
+### Course Instructor
 
-`r read_text("syllabus-catalog-information")`
++ Steve Simon 
+  + Department of Biomedical and Health Informatics
+  + M5-117, School of Medicine Building
+  + 816-235-6617
+  + simons@umkc.edu
+  
++ Check out my [web pages](http://www.pmean.com) and [my blog](http://blog.pmean.com). I am currently trying to combine these into a [single site](http://www.pmean.com/archive/index.html) but this work is still in progress.
 
-`r read_text("syllabus-course-information")`
+<div class="notes">
+  
+My office is located on the fifth floor of the School of Medicine building in the suite of offices for Biomedical and Health Informatics. 
 
+E-mail is my preferred mode of contact.
+
+</div>
+
+### Office hours
+
++ Office hours by appointment only. 
+  + During the COVID-19 crisis, I will be working almost exclusively from home. I can set up a Zoom videoconfernce for any reasonable day and time.
+
++ This class is online and asynchronous. You can work on the material at whatever time is convenient to you, as long as you respect the deadlines for discussion boards and assignments.
+
+
+### Catalog Information
+
++ Catalog number: MEDB 5507
++ Course Title: Introduction to SAS
++ Credit Hours: 1 credit hours
++ Prerequisites: none
++ Restrictions/exclusions: none
++ Course Attributes: graduate research training
++ Course Format: Lecture, discussion, and individual activities
++ Course Instructional Mode : OA (Online Asyncronous class instruction)
+
+<div class="notes">
+
+Material posted on Canvas course site will support all course activities.
+
+Course Description: Course provides a working familiarity with SAS. Students are not expected to have advanced programming or statistical analysis skills, other than the ability to create and modify text files. Basic methods for data import, data management, simple graphics, and basic statistical analysis are introduced. This class will not cover advanced statistical methods, but will provide the student with a firm foundation to address these areas in advanced statistics classes or in the student's research efforts, including thesis/dissertation research. A basic understanding of statistical terminology and a working familiarity with computer-based data files (e.g., Excel) is necessary.
+
+</div>
+
+### Course information
+
+In order for you to be successful in your graduate education, your research projects, and your future career, you need to learn to use statistical software like SAS. This class will introduce you to fundamental skills that are crtical in any SAS program and allow you to learn more advanced programming skills and data analyses on your own.
+
+<div class="notes">
+
+This course trains the student on how to run a basic SAS program. It covers input of various file formats, documentation of the data, data manipulation, basic descriptive statistics, and simple graphs.
+
+</div>
+
+### Course Evaluation
+
+Completion of the confidential course evaluation at the end of the semester is available for the course and strongly encouraged. You will receive information about completing the evaluation from the Department office towards the end of the semester.
+
+### Required and recommended materials
+
+There is NO required textbook for this class.	The following books are possible resources you might want to purchase for your future work with SAS. 
+
++	Delwiche & Slaughter. The Little SAS Book. 5th Edition. SAS Institute Inc., Cary, NC.
++	Cody. Learning SAS by Example : A Programmer’s Guide. SAS Institute Inc., Cary, NC.
++	Cody. SAS Statistics by Example. SAS Institute Inc., Cary, NC.
+
+### Evaluation and grading criteria
+
+All assignments will be graded on a pass-fail criteria. Students who successfully complete 70% or more of the assignments AND complete the final project will be awarded a passing grade.
+ 
+### Class structure
+
+In general, each class session will consist of a mixture of recorded material available on Canvas as preparation for the session, individual assignments, and discussion/activities that are related to the topic and are completed either individually, within pairs, or within small groups of students. The lecture material is designed to supplement the information assigned from the textbook and other sources.
+
+### Student Learning Objectives
+
+At the end of this course, students will be able to:
+
+1. Read a variety of differently fomatted text files into SAS.
+
+2. Document both the SAS program and the data set it uses.
+
+3. Produce simple descriptive statistics for a variety of data types.
+
+4. Transform and restructure the data.
+
+5. Code missing values.
+
+6. Produce simple graphical displays of your data.
+ 
+### Course Topics
+
++ inputting delimited text files
++ inputting fixed width text files
++ variable labels, variable formats
++ means, standard deviations, and percentiles
++ missing values
++ transformations
++ scatterplots
++ frequency tables and histograms
++ recoding categorical variables
++ two way cross tabulations
++ boxplots
++ merging
++ longitudinal data
+ 
+
+### Schedule
+
+Each module should take roughly one week. If a particular topic is causing the class as a whole some difficulty, you may get some extra time for a particular module.
+
++ Module 0, Getting started. A general introduction to SAS and information on how to run SAS on your computer.
+
++ Module 1, Reading data from a variety of text formats. Variable labels. Missing value codes. Means, standard deviations, and percentiles. Histograms and scatterplots. Functional transformations. Program documentation.
+
++ Module 2, Categorical data. Variable formats. Recoding category levels. Indicator variables. Counts and percentages. Two way crosstabulations. Data dictionary.
+
++ Module 3, Boxplots. Group means and standard deviationss. Report formats.
+
++ Module 4, Merging. Longitudinal data. Tall and thin format. Short and fat format.
+
++ Module 5, Independent project
+
+Student learning outcomes
+
+At the end of this course, students will be able to:
+
+1. Read a variety of differently fomatted text files into SAS.
+
+2. Document both the SAS program and the data set it uses.
+
+3. Produce simple descriptive statistics for a variety of data types.
+
+4. Transform and restructure the data.
+
+5. Code missing values.
+
+6. Produce simple graphical displays of your data.
+
+### Course Requirements
+
+Students are responsible for viewing all the videos, running the example programs shown in the videos, and then running similar programs using different data sets. Students must participate in discussion boards, take short quizzes, and prepare a final project.
+
+### Course expectations
+
+Students must complete all assignments on time. If special circumstances arise, a student may request an extension of up to one week for all the work in a particular module. This request must be made prior to the due date of the work in a module.
 
 
 ### Policies
