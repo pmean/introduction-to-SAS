@@ -136,6 +136,8 @@ At the end of this course, students will be able to:
 
 Each module should take roughly one week. If a particular topic is causing the class as a whole some difficulty, you may get some extra time for a particular module.
 
+`r read_text("objectives01", path="../basics1/data")`
+
 + Module 0, Getting started. A general introduction to SAS and information on how to run SAS on your computer.
 
 + Module 1, Reading data from a variety of text formats. Variable labels. Missing value codes. Means, standard deviations, and percentiles. Histograms and scatterplots. Functional transformations. Program documentation.
