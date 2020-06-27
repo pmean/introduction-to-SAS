@@ -13,7 +13,7 @@ knit: (function(inputFile, encoding) {
 
 ![](../images/image2.png)
 
-<div class="notes">
+<div class="notes">[[Speaker notes]]
 
 Here is a web page with some general advice that I wrote way back in 1999. Some of the advice still holds but some of it is obsolete today.
 

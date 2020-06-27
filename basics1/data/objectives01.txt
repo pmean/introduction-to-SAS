@@ -1,5 +1,5 @@
 ### Module1 - Introduction
 
-1. To udnerstand the historical roots of the SAS program.
+1. To understand the historical roots of the SAS program.
 
 2. To identify an access method for SAS that works for you.

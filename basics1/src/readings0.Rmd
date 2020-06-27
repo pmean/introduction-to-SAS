@@ -2,7 +2,11 @@
 title: "Readings for week 0"
 author: "Steve Simon"
 output:
+  pdf_document: default
   html_document: default
+knit: (function(inputFile, encoding) {
+  rmarkdown::render(inputFile, encoding = encoding,
+  output_dir = "../results", output_format = "all") })  
 ---
 
 This list of readings was created by Steve Simon using bibtex and R Markdown on 2019-06-10 and last updated on `r Sys.Date()`.

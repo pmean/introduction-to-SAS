@@ -1,0 +1,14 @@
+---
+title: "Overview for Module1"
+author: "Steve Simon"
+output:
+  html_document: default
+  pdf_document: default
+knit: (function(inputFile, encoding) {
+  rmarkdown::render(inputFile, encoding = encoding,
+  output_dir = "../results", output_format = "all") })  
+---
+
+This list of readings was created by Steve Simon using bibtex and R Markdown on 2019-06-10 and last updated on `r Sys.Date()`.
+
+`r paste(readLines("../data/objectives01.txt"), collapse="\n")`
