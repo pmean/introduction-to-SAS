@@ -15,18 +15,13 @@ knit: (function(inputFile, encoding) {
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-## Test image
-
-![](../images/blog.png)
-
-
 ## Documentation
 
 This PowerPoint presentation was written by Steve Simon in 2018-08-29 and was last modified on `r Sys.Date()`. It uses R Markdown, though the actual R code is fairly minimal. You can find the file that created this presentation on my [github repository](https://github.com/pmean/introduction-to-SAS).
 
-<div class="notes">
+<div class="notes">[[Speaker notes]]
 
-Okay. I want to get started. I want to get you started using SAS. It's either going to be really easy or it's going to be really really. I want to give you as much guidance as I can without staring over your shoulder. Just quickly, I wrote this Powerpoint presentation and all the Powerpoint presentations using R Markdown. If you are curious I have a repository. It has some beautiful output.
+Okay. I want to get you started using SAS. It's either going to be really easy or it's going to be really really hard. I want to give you as much guidance as I can without staring over your shoulder. Just quickly, I wrote this Powerpoint presentation and all the Powerpoint presentations using R Markdown. If you are curious I have a repository. It has some beautiful output.
 
 Greetings! My name is Steve Simon and I am the instructor for the class, MEDB 5507, Introduction to SAS.
 
@@ -36,7 +31,7 @@ Greetings! My name is Steve Simon and I am the instructor for the class, MEDB 55
 
 ![](../images/SteveSimonPic.jpg)
 
-<div class="notes">
+<div class="notes">[[Speaker notes]]
 
 Stop by. This class is very impersonal. I don't get to see you and you don't get to see me.
 
@@ -55,7 +50,7 @@ Stop by. This class is very impersonal. I don't get to see you and you don't get
 + Jupyter lab
 + SASMarkdown
 
-<div class="notes">
+<div class="notes">[[Speaker notes]]
 
 There are several ways that you can get access to SAS software. One of these three options should work for you.
 
@@ -67,7 +62,7 @@ You can get it running on your UMKC computer, you can run it on the student comp
 
 ![Screenshot of UMKC IS page on SAS software](../readings/umkc-2019.png)
 
-<div class="notes">
+<div class="notes">[[Speaker notes]]
 
 This screenshot may be too small for you to read, but you can find the proper link on the recommended readings list for this week on the Canvas website. SAS works for any desktop computer on the UMKC campus. But it has to be hard-wired to the UMKC netwok. By hard-wired, I mean that there is an ethernet cable connecting your computer to a socket on the wall.
 
@@ -81,7 +76,7 @@ With a very few rare exceptions, you cannot get UMKC to load SAS on a laptop com
 
 ![Screenshot of UMKC information page on computing labs](../readings/umkc-2019a.png)
 
-<div class="notes">
+<div class="notes">[[Speaker notes]]
 
 Again, the image on your screen may be too small to read, but go to the recommended readings page on Canvas to call this up on your computer. 
 
@@ -97,7 +92,7 @@ If you have any trouble with this, come and see me and I'll muddle through it wi
 
 ![Screenshot of main page for SAS University]
 
-<div class="notes">
+<div class="notes">[[Speaker notes]]
 
 I don't have the right picture here. Sorry!
 
@@ -111,7 +106,7 @@ Now, installation is a bit tricky, but do try it. It is a very nice system. I wi
 
 ![Screenshot of SAS blog entry on Jupyter]
 
-<div class="notes">
+<div class="notes">[[Speaker notes]]
 
 Again, I apologize.
 
@@ -123,7 +118,7 @@ If you are adventurous, (and I certainly encourage people to be adventurous) you
 
 ![Screenshot of SAS markdown web page]
 
-<div class="notes">
+<div class="notes">[[Speaker notes]]
 
 Also beyond the scope of this class is running SAS within R. It uses an R library called SAS markdown. Very nice actually.
 
@@ -136,7 +131,7 @@ Also beyond the scope of this class is running SAS within R. It uses an R librar
 ![Opening screen of SAS with multiple windows](../images/opening-screen.png)
 
 
-<div class="notes">
+<div class="notes">[[Speaker notes]]
 
 If you are running the "regular" version of SAS, click on the icon and here's an image of what the opening screen looks like. SAS uses a multi-window format. The layout is a bit chaotic. I usually close some windows and re-arrange others. For the benefit of this presentation, I am going to resize everything, close some of the windows, and maximize the one window of greatest importance, the program editor window.
 
@@ -147,7 +142,7 @@ If you are running the "regular" version of SAS, click on the icon and here's an
 ![Maximized view of empty SAS program editor window](../images/program-editor.png)
 
 
-<div class="notes">
+<div class="notes">[[Speaker notes]]
 
 This is the program editor window. You type in your program in this window, or read an existing program from another window. The other two remaining tabs, the log window, and the output window, are also important.
 
@@ -158,7 +153,7 @@ This is the program editor window. You type in your program in this window, or r
 ![Program editor window with simple SAS program](../images/test-program1.png)
 
 
-<div class="notes">
+<div class="notes">[[Speaker notes]]
 
 If you have SAS running, try running the following sample program. Here's a simple test program. After you type this program in, click on FILE | SAVE and store your program somewhere safe. Save it to a location where you can remember things.
 
@@ -183,7 +178,7 @@ proc means data=test_example;
 run;
 ```
 
-<div class="notes">
+<div class="notes">[[Speaker notes]]
 
 After you type this program in, click on FILE | SAVE and store your program somewhere safe.
 
@@ -194,7 +189,7 @@ After you type this program in, click on FILE | SAVE and store your program some
 ![Maximized view of SAS log window](../images/log-window1.png)
 
 
-<div class="notes">
+<div class="notes">[[Speaker notes]]
 
 The font here is a bit small, but notice that there are no red messages indicating warnings or errors. We're thrilled when we see no warnings or error messages. We're always looking for warnings and errors. We also watch closely the number of observations.
 
@@ -205,7 +200,7 @@ The font here is a bit small, but notice that there are no red messages indicati
 ![Maimized view of SAS log window, second page](../images/log-window2.png)
 
 
-<div class="notes">
+<div class="notes">[[Speaker notes]]
 
 Always start looking for error messages at the top. The very first error or warning message is most likely to be helpful, and later errors/warnings are often of less value.
 
@@ -224,7 +219,7 @@ NOTE: DATA statement used (Total process time):
       cpu time            0.04 seconds
 ```
 
-<div class="notes">
+<div class="notes">[[Speaker notes]]
 
 Always watch the log to see that you have read in the proper number of observations.
 
@@ -246,7 +241,7 @@ NOTE: PROCEDURE MEANS used (Total process time):
       cpu time            0.20 seconds
 ```
 
-<div class="notes">
+<div class="notes">[[Speaker notes]]
 
 ..and that you are analyzing the proper number of observations.
 
@@ -260,7 +255,7 @@ SAS has several options for storing output.
 - As an html file
 - As a pdf file
 
-<div class="notes">
+<div class="notes">[[Speaker notes]]
 
 Output is tricky. I want to talk in more detail later about this, but you can take the output and save it. There are several ways to do this. If you already have output, click on the CREATE LISTING option box to send the output to the output window. Click on the CREATE HTML option box to send the output to an html file. Click on the BROWSE button to select a default folder for your html file.
 
@@ -270,7 +265,7 @@ Output is tricky. I want to talk in more detail later about this, but you can ta
 
 ![Preferences dialog box](../images/preferences-results-window.png)
 
-<div class="notes">
+<div class="notes">[[Speaker notes]]
 
 There is a preference box. I don't want to talk about it today, but if you are adventurous, take a look at this. There are additional options for storing graphics, which I will talk about later. You control where SAS places its output in the results tab of the preferences dialog box. Select TOOLS | OPTIONS | PREFERENCES from the menu and click on the RESULTS tab.
 
@@ -280,7 +275,7 @@ There is a preference box. I don't want to talk about it today, but if you are a
 
 ![Maximized view of default SAS output](../images/output-window.png)
 
-<div class="notes">
+<div class="notes">[[Speaker notes]]
 
 Here's what the output window looks like. Notice that SAS uses a monospaced font here.
 
@@ -290,7 +285,7 @@ Here's what the output window looks like. Notice that SAS uses a monospaced font
 
 ![Maximized view of html output](../images/output-html.png)
 
-<div class="notes">
+<div class="notes">[[Speaker notes]]
 
 Here's what the html output looks like. Notice variety of font sizes and colors. It tries to fit things within the available space.
 
@@ -300,7 +295,7 @@ Here's what the html output looks like. Notice variety of font sizes and colors.
 
 ![View of virtual box, your entry point to SAS University](../images/virtualbox.png)
 
-<div class="notes">
+<div class="notes">[[Speaker notes]]
 
 If you are using SAS University, you start by opening Oracle Virtualbox. This is machine within a machine. It is similar to docker, if you are familiar with the Linus environment.
 
@@ -315,7 +310,7 @@ http://support.sas.com/software/products/university-edition/docs/en/SASUniversit
 ![Second step in starting SAS University](../images/virtualbox2.png)
 
 
-<div class="notes">
+<div class="notes">[[Speaker notes]]
 
 Click on the SAS University Edition tab and a new window opens up. It explains that you need to point your web browser to a particular location. It also warns you to keep this window open.
 
@@ -325,7 +320,7 @@ Click on the SAS University Edition tab and a new window opens up. It explains t
 
 ![Third step in staring SAS University](../images/virtualbox3.png)
 
-<div class="notes">
+<div class="notes">[[Speaker notes]]
 
 When you open your web browser to http://localhost:10080, you get the option of starting with SAS Studio or with a Jupyter notebook. I have not had much luck with Jupyter, but you are welcome to try this on your own.
 
@@ -336,7 +331,7 @@ When you open your web browser to http://localhost:10080, you get the option of 
 ![](../images/sas-university-startup.png)
 
 
-<div class="notes">
+<div class="notes">[[Speaker notes]]
 
 When you open your web browser to http://localhost:10080, you get the option of starting with SAS Studio or with a Jupyter notebook. I have not had much luck with Jupyter, but you are welcome to try this on your own.
 
@@ -346,7 +341,7 @@ When you open your web browser to http://localhost:10080, you get the option of 
 
 ![SAS University program window](../images/sas-university-program.png)
 
-<div class="notes">
+<div class="notes">[[Speaker notes]]
 
 You will notice a slightly different appearance with SAS University. Not so much that it's going to cause problems. Here is the program window.
 
@@ -356,7 +351,7 @@ You will notice a slightly different appearance with SAS University. Not so much
 
 ![SAS Univesity log window](../images/sas-university-log.png)
 
-<div class="notes">
+<div class="notes">[[Speaker notes]]
 
 Here is the log window. Notice that the counts for errors, warnings, and notes appear at the top, and a missing count means zero errors and zero warnings. Hooray!
 
@@ -364,7 +359,7 @@ Here is the log window. Notice that the counts for errors, warnings, and notes a
 
 ![SAS University results window](../images/sas-university-results.png)
 
-<div class="notes">
+<div class="notes">[[Speaker notes]]
 
 Here is the results window. The icons near the top offer a variety of export options, among other things.
 
@@ -383,7 +378,7 @@ You can run a free version of SAS using
 
 + SAS University
 
-<div class="notes">
+<div class="notes">[[Speaker notes]]
 
 You can run the commercial version of SAS or SAS University and I've shown some screenshots of what this looks like. Try this on your own and let me know if you have been able to get SAS running successfully.
 
