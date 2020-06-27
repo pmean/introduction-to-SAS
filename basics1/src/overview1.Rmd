@@ -8,8 +8,15 @@ knit: (function(inputFile, encoding) {
   output_dir = "../results", output_format = "all") })  
 ---
 
-This file was created by Steve Simon using R Markdown on 2020-06-27 and last updated on `r Sys.Date()`. You can find the source code on [his github repository](https://github.com/pmean/introduction-to-SAS/tree/master/basics1/src).
+This file was created by Steve Simon using R Markdown on 2020-06-27 and last updated on `r Sys.Date()`. You can find the source code on [my github repository](https://github.com/pmean/introduction-to-SAS/tree/master/basics1/src).
 
 `r paste(readLines("../data/objectives01.txt"), collapse="\n")`
 
-V01-01. Getting started. Available in [video format](https://umkc.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=3c8860e3-ec58-4873-ba83-aa68012a84c2).
+### Videos
+
+V01-01. Getting started (16 minutes). Available in [Panopto format](https://umkc.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=3c8860e3-ec58-4873-ba83-aa68012a84c2). Slides with speaker notes available in [pdf format](https://github.com/pmean/introduction-to-SAS/blob/master/basics1/results/getting-started.pdf).
+
+V01-02. History of SAS (8 minutes). Available in [Panopto format](https://umkc.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=ba88be23-73d8-4804-ada4-aa73011ac94a). Slides with speaker notes are not available.
+
+V01-03. Your first SAS program (10 minutes). Available in [Panopto format](https://umkc.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=671572b5-a25a-46e0-8d85-aa730122496b).  Slides with speaker notes are not available. The SAS program used in this video is available on [my github repository](https://github.com/pmean/introduction-to-SAS/tree/master/basics1/src/getting-started.sas).
+
