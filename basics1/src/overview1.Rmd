@@ -27,7 +27,10 @@ This file was created by Steve Simon using R Markdown on 2020-06-27 and last upd
 + V01-03. Your first SAS program (10 minutes). 
   + Available in [Panopto format](https://umkc.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=671572b5-a25a-46e0-8d85-aa730122496b).
   + Slides with speaker notes are not available.
-  + The SAS program used in this video is available on [my github repository](https://github.com/pmean/introduction-to-SAS/tree/master/basics1/src/getting-started.sas).
+  + your-first-program.sas is available in [text format](https://github.com/pmean/introduction-to-SAS/tree/master/basics1/src/getting-started.sas).
 
-V01-04. Storing SAS datasets using libname (xx minutes). Available in [Panopto format](https://umkc.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=a8dbb622-2d61-41a7-b6a4-aa7301264e3e).  Slides with speaker notes are not available. The SAS program used in this video is available on [my github repository](https://github.com/pmean/introduction-to-SAS/tree/master/basics1/src/getting-started.sas).
++ V01-04. Storing SAS datasets using libname (xx minutes). 
+  + Available in [Panopto format](https://umkc.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=a8dbb622-2d61-41a7-b6a4-aa7301264e3e).
+  + Slides with speaker notes are not available.
+  + your-first-program.sas is available in [text format](https://github.com/pmean/introduction-to-SAS/tree/master/basics1/src/getting-started.sas).
 
