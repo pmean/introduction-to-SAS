@@ -1,6 +1,5 @@
 ---
 title: "Overview for Module1"
-author: "Steve Simon"
 output:
   html_document: default
   pdf_document: default
@@ -9,6 +8,8 @@ knit: (function(inputFile, encoding) {
   output_dir = "../results", output_format = "all") })  
 ---
 
-This list of readings was created by Steve Simon using bibtex and R Markdown on 2019-06-10 and last updated on `r Sys.Date()`.
+This file was created by Steve Simon using R Markdown on 2020-06-27 and last updated on `r Sys.Date()`. You can find the source code on [his github repository](https://github.com/pmean/introduction-to-SAS/tree/master/basics1/src).
 
 `r paste(readLines("../data/objectives01.txt"), collapse="\n")`
+
+V01-01. Getting started. Available in [video format](https://umkc.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=3c8860e3-ec58-4873-ba83-aa68012a84c2).
