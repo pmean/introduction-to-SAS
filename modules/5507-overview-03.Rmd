@@ -1,0 +1,139 @@
+---
+title: "MEDB 5507, Introduction to SAS"
+---
+
+## Module03. Working with mostly continuous variables
+
+This file was created by Steve Simon using R Markdown on 2020-09-24 and last updated on `r Sys.Date()`. You can find the [source code](https://github.com/classes-medb/classes-medb.github.io/blob/master/5507-overview-03.Rmd) on my github repository, [classes-medb](https://github.com/classes-medb).
+
+### Learning objectives
+
+1. To produce means and standard deviations
+
+2. To create and manipulate missing value
+
+3. To draw histograms and scatterplots
+
+### SAS code that you will learn
+
++ if ... then
++ proc corr
+  + noprint
+  + output
++ proc format
+  + values
++ proc means
+  + nmiss
++ proc sgplot
+  + histogram
+    + binstart
+    + binwidth
+  + pbspline
+  + reg
+  + scatter
++ proc sort
+  + by
+    + descending
++ set
+ 
+
+### Videos and handouts
+
++ V03-01. libname, filename, print (21 minutes). 
+  + Available in [Panopto format](https://umkc.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=97d00c33-5197-4a0f-9f16-aa6f014da077).
+  + Slides with speaker notes available in [pdf format](https://umkc.instructure.com/courses/59353/files/2399372).
+
++ V03-02. Variable names, proc means (10 minutes). 
+  + Available in [Panopto format](https://umkc.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=996a7c89-0e5a-4118-92ce-aa6f015599d0).
+  + Slides with speaker notes available above.
+
++ V03-03. Missing values (15 minutes). 
+  + Available in [Panopto format](https://umkc.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=d5794c7d-3933-488c-bc3c-aa6f015a3d7c).
+  + Slides with speaker notes available above.
+
++ V03-04. Simple transformations, histograms (9 minutes). 
+  + Available in [Panopto format](https://umkc.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=17b9a21d-df54-4705-928d-aa6f016161d4).
+  + Slides with speaker notes available above.
+
++ V03-05. Correlations and scatterplots (25 minutes). 
+  + Available in [Panopto format](https://umkc.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=bd9a8ec9-6cee-4f5a-b83b-aa6f0165b591).
+  + Slides with speaker notes available above.
+
+### Discussion board
+
+I'd like some brief feedback to the videos you just watched. Keep it short. One or two sentences per question is fine. You can also say something briefer like "I agree with [other student]". If you found everything confusing or nothing confusing, just respond with the word "everything" or "nothing." Please don't spend more than a minute on this assignment. I just want a quick reaction.
+
+1. What was the most important thing you learned in these videos?
+
+2. What was the one thing that you found confusing?
+
+3. What would you like to see covered next?
+
+Submit your discussion comments [here](https://umkc.instructure.com/courses/59353/discussion_topics/186809).
+
+### Homework
+
+Homework03.
+
+Having reviewed these analyses, I would like
+you to turn in some simple analyses that you
+run on a fresh data set. This homework
+assignment will be graded pass/fail.
+
+There is a second data set on sleep in
+mammals. You can find a brief description of
+this data set at
+
+--> http://www.statsci.org/data/general/sleep.html
+
+and you can download the actual data at
+
+--> http://www.statsci.org/data/general/sleep.txt
+
+For every question, include the relevant SAS
+output and a brief written commentary explaining
+what the results mean. When you send your
+answers, please include the original questions.
+
+1. Notice that there is a huge range in body
+weight. Display the information for the
+smallest and the largest mammals.
+
+2. Which variables have missing data?
+
+3. Calculate the mean and standard deviation
+for TotalSleep.
+
+4. Draw a histogram for the BodyWt variable.
+Note that this variable is highly skewed.
+Re-draw the histogram on the log scale.
+For exta credit, relabel the axes with values
+at 0.001, 0.01, etc.
+
+5. Calculate the ratio of BrainWt to BodyWt
+and express it as a percentage. Be sure to
+convert grams to kilograms (or vice versa)
+before computing the ratio. What animal has
+the smallest/largest ratio?
+
+6. Do bigger animals sleep longer or live
+longer? Show your results using a correlation
+coefficient.
+
+7. Do animals who have high degrees of
+Predation, Exposure, or Danger sleep less?
+Show your results using a plot and a trendline.
+
+8. Place all the key results into a document
+and copy the original questions and include
+your own written answer along with the
+appropriate supporting tables or graphs.
+Do NOT submit uneditted and unannoted
+SAS output. You can use any program to
+prepare the output, but convert it to a PDF
+format before submission. If you have any
+difficulty producing a PDF document, please
+talk to me.
+
+Submit your assignment [here](https://umkc.instructure.com/courses/59353/assignments/228706).
+

@@ -1,0 +1,76 @@
+---
+title: "MEDB 5507, Introduction to SAS."
+---
+
+### Overview of Module01 - Getting started
+    
+This file was created by Steve Simon using R Markdown on 2020-09-24 and last updated on `r Sys.Date()`. You can find the [source code](https://github.com/classes-medb/classes-medb.github.io/blob/master/5507-overview-01.Rmd) on my github repository, [classes-medb](https://github.com/classes-medb).
+
+### Learning objectives
+
+1. To understand the historical roots of the SAS program.
+
+2. To identify an access method for SAS that works for you.
+
+### SAS code that you will learn
+
++ data
++ delimiter
++ filename
++ infile
++ input
++ ods
++ proc print
++ run
++ title
+
+### Videos and handouts
+
+Please note that the code shown in these videos will not run exactly the same on your system. It might be something as simple as changing the path or the drive letter or both on the ods, libname, or filename statements. If you have any trouble, let me know.
+
++ V01-01. Getting started (16 minutes). 
+  + Available in [Panopto format](https://umkc.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=3c8860e3-ec58-4873-ba83-aa68012a84c2).
+  + Slides with speaker notes available in [pdf format](https://github.com/classes-medb/5507/blob/master/module01/results/slides-with-speaker-notes-01-01.pdf).
+
++ V01-02. History of SAS (8 minutes). 
+  + Available in [Panopto format](https://umkc.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=ba88be23-73d8-4804-ada4-aa73011ac94a). 
+  + There is no set of slides with speaker notes, but you can refer to the blog post used in the video, available in [html format](http://blog.pmean.com/history-of-sas/).
+
++ V01-03. Your first SAS program (10 minutes). 
+  + Available in [Panopto format](https://umkc.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=671572b5-a25a-46e0-8d85-aa730122496b).
+  + Slides with speaker notes are not available.
+
++ V01-04. Storing SAS datasets using libname (12 minutes). 
+  + Available in [Panopto format](https://umkc.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=a8dbb622-2d61-41a7-b6a4-aa7301264e3e).
+  + Slides with speaker notes are not available.
+
++ V01-05. Storing SAS output using ODS (15 minutes). 
+  + Available in [Panopto format](https://umkc.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=cebf1a98-06bf-41e0-9be1-aa7301384dc6).
+  + Slides with speaker notes are not available.
+
++ V01-06. Reading external data using infile and filename (13 minutes). 
+  + Available in [Panopto format](https://umkc.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=faeefa60-c4ed-4d5b-a959-aa73013ea6af).
+  + Slides with speaker notes are not available.
+
++ Programs used in these modules
+  + my-first-program.sas is available in [text format](https://github.com/classes-medb/5507/blob/master/module01/src/code-01-01-my-first-sas-program.sas).
+  + permanent-storage.sas is available in [text format](https://github.com/classes-medb/5507/blob/master/module01/src/code-01-02-permanent-storage.sas).
+  + re-use.sas is available in [text format](https://github.com/classes-medb/5507/blob/master/module01/src/code-01-03-re-use.sas).
+  + saved-pdf.sas is available in [text format](https://github.com/classes-medb/5507/blob/master/module01/src/code-01-04-saved-pdf).sas.
+  + saved-html.sas is available in [text format](https://github.com/pmean/introduction-to-SAS/tree/master/basics1/src/code01-05-saved-html.sas).
+  + input-text.sas is available in [text format](https://github.com/classes-medb/5507/blob/master/module01/src/code-01-06-input-text.sas).
+  
+### Discussion board
+
+Please briefly introduce yourself. Tell us a bit about yourself professionally, and optionally tell us one thing that is not related to your work or your career. Also optional, but greatly appreciated, would be a picture of yourself.
+
+Submit your discussion comments [here](https://umkc.instructure.com/courses/59353/discussion_topics/186810).   
+
+### Homework
+
+Take the code in your-first-program.sas and run it on your system. If you get an error message that you can't fix, document that error message in the text box. You will get full credit for any reasonable attempt to get the program to run. If your program ran successfully, describe your difficulties (if any) in getting the program to run. 
+
+THe format in which you submit your assignment is also very flexible. The best thing to send me would be a PDF of the output window combined with a PDF of your code. Second best would be two separate PDF files, one for the output and one for the code. I like the PDF format, but you can submit in any reasonable format, if have difficulty producing a PDF file. There are at least a dozen different ways of producing a PDF file and I probably know about half of them. So don't be afraid to ask questions about this.
+
+Submit your assignment [here](https://umkc.instructure.com/courses/59353/assignments/228704).
+

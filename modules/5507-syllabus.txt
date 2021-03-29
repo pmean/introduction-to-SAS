@@ -1,0 +1,153 @@
+**Questions you may have about your instructors**
+
+Who will be my instructor(s)?
+  Steve Simon, PhD
+
+Which UMKC Departmentis this course from?
+  Department of Biomedical and Health Informatics
+
+How do my instructors prefer to be contacted outside of class?
+  Steve Simon, 816-235-6617, simons@umkc.edu
+
+Preferred Contact Method
+  Email.
+
+How quickly can I anticipate hearing back from one of my instructors if I ask send an email or post a question?
+  Most emails and phone calls will be returned within 24 hours. Email enquiries sent outside the regular work week may take longer for a response.
+
+If I'd like to drop-in to talk with my instructors about questions, applications of what we've discussed in class, or their research, when can I do that?
+  Office hours are by appointment only, and will be conducted using the Zoom video conference system.
+
+Where are my instructors' links for us to meet outside of class?
+  Zoom links will be sent by email once an appointment has been scheduled.
+
+**Common Questions about Course Details**
+
+Catalog Course ID 	
+  MEDB 5507-0001 (44430)
+
+How many Credit Hours will I receive after successfully completing this course?	
+  1
+
+What are the Meeting Times and Location for the course?	
+  This is an online class with no pre-specified meeting times.
+
+What is the format of this course?	
+  Asynchronous online.
+
+What is this course about (Course Description)?	 
+  SAS is a very popular and very powerful software system for data management and data analysis. In this class, you will learn basic features of SAS that will help you.
+
+What are the knowledge, skills or perspectives (Student Learning Outcomes) that I will gain from the course?	
+  You will learn how to read data into SAS from a variety of text formats, how to manipulate data, and how to produce simple tables of descriptive statists and some basic graphs.
+
+Are there Pre-requisites/Co-requisites that are key to my success in this course?	
+  This course will provide a working familiarity with SAS. Students are not expected to have advanced programming or statistical analysis skills. A basic understanding of statistical terminology and a working familiarity with computer-based data files (e.g., Excel) is necessary.
+
+**General Policies for UMKC Courses**
+
+Will I be dropped from class if I not attend class?  What happens if I do not attend class without communicating with my instructor?
+  Maintaining accurate enrollment records throughout the term is a partnership between instructors and students.  Instructors are responsible for verifying student attendance and participation within the first three weeks (16 week course) through the Attendance Verification Survey (administered through UMKC Connect) as well as maintain records of participation throughout the term so that the last date of attendance for students with recorded "F" or "W" final grades may be submitted.  Because student plans for enrollment sometimes change prior to the semester start, students not engaging in courses through the initial weeks of each course may be administratively dropped.  For more detailed information regarding the policy, [click here](https://catalog.umkc.edu/undergraduate-academic-regulations-information/registration/administrative-drop-policy/)
+
+How do I get permission before recording class sessions?
+  Instructor(s) may record class sessions for the sole purpose of sharing the recording with students who can't attend class. Instructor(s) will take care not to disclose personally identifiable information from the student education records during the recorded lesson. Students are not permitted to record class sessions without written consent from the course instructor.
+
+Is there Recommended Technology that I should have access to?
+  You will need access to the computing resources necessary to complete this course through personal and/or University channels (e.g., computer labs). Our course will take place within the Canvas LMS and utilizing various software technologies that facilitate interaction and communication. We can make alternate arrangements should your reason for being without computer access warrant an accommodation (note: travel for vacation/work does not necessitate accommodations).  Below is a list of some helpful computer requirements for full participation in this online class: the latest version of Java; the latest version of QuickTime; the latest version of Adobe Reader; a current version of word processing software or a text editing program; a headset with microphone; a webcam; Google Chrome, Firefox, or Edge for Windows computers; Google Chrome, Firefox, or Safari for Apple computers. Broadband Internet connection is preferred. Examples of broadband Internet connection are high-speed DSL or a Cable modem.
+
+If I am having difficulty is there Technical Support that I can contact?
+  The links below will connect you with answers and information for the most common technical questions and issues students experience: [UM System Keep Learning](https://keeplearning.umsystem.edu/students); [UMKC Instructional Design/Technology](https://idt.umkc.edu/support)
+
+What other academic policies should I review?
+  Additional important information about UMKC's policies and resources can be found [here](https://online.umkc.edu/support-policies).
+
+**COVID-19 Policies**
+
+Do I need to have a Mask/Face-Coverings while on campus?
+  UMKC's mask/face-coverings policy is available [here](https://www.umkc.edu/coronavirus/). Any student requesting an ADA accommodation for the University mask/face covering policy should contact Scott Laurent the Office of Disability Services as soon as possible by calling (816) 235-5696 or via email at laurentr@umkc.edu.  
+
+If I have a disability (including COVID-related disabilities), who can assist me with getting important accommodations on campus?
+  Any student seeking COVID-related academic accommodations should contact Scott Laurent the Office of Disability Services as soon as possible by calling (816) 235-5696 or via email at laurentr@umkc.edu.  
+
+If I have questions regarding COVID-19 General Information, where do I go?
+  Up to date information and FAQs regarding COVID-19 may be found on the [UMKC COVID website](https://www.umkc.edu/news/coronavirus.html).
+
+**Specific Information about this class**
+
+Required and Recommended Materials	
+  There is NO required textbook for this class. A recommended textbook is Learning SQL- Master SQL Fundamentals, By Alan Beaulieu Publisher: O'Reilly Media. Dr. Simon and Suman Sahil have copies of this book and students may review by appointment. Online tutorials include [w3schools](https://www.w3schools.com/sql/) (this may be used as a step by step tutorial or you as a reference to learn more about a specific SQL command), [SQL Tutorial](http://www.sqltutorial.org/) (this site organizes the SQL commands into groups for easy review).
+
+Course Expectations, Course Policies, Requirements and Standards for Student Coursework and Student Behavior
+  You are expected to do your homework independently. You can seek help from your instructors, from colleagues, or from the Internet to help decode an error message that you don't understand. You can adapt code that you find on the Internet. We recommend that you acknowledge the source for that code in the comments of your program, but this is not required.
+
+Evaluation and Grading
+  Students will be required to post messages on the Canvas discussion boards, take brief quizzes on Canvas, and submit homework assignments in PDF format on Canvas. Your work is due on the specified date. We need to keep the class on the same time schedule for a variety of reasons. If illness, family issues, work responsibilities, or other commitments prevent you from completing on time, please contact me before the due date. Late submission without prior notice will receive a one point deduction. If you find yourself repeatedly falling behind on quizzes and assignments, it would be good to set up a videoconfernce with one or both of us to discuss this.
+
+
+  This course is grade Credit/No Credit (Pass/Fail). Students who complete at least 80% of the regular coursework and sucessfully complete the final project will receive credit for the course.
+
+Final Exam
+  This is no final exam. Your final project needs to be completed prior to December 18, 2020.
+
+**Description of Course Topics, Assignments, Requirements and Assignment deadlines**
+
+Student Learning Outcomes
+  At the completion of this course, students will be able to:
+  + read text data into SAS, 
+  + save your output as a PDF file
+  + save your data in a SAS file
+  + print all or part of a SAS data set
+  + create and manipulate missing values
+  + Calculate means, standard deviations, and percentages
+  + Draw a simple histogram
+  + Plot a scatterplot and include a trend line
+  + Attach labels to categorical data codes
+
+Introduction
+  + The various ways to run SAS at UMKC
+  + History of SAS
+  + Printing all or part of a dataset
+  + Saving your output as a PDF file
+  
+**Key Dates	for Fall semester, 2020 (16-week session only)**
+
+August 28
+  + Last day for 100% refund
+  + Last day to add without an instructor signature
+
+September 7
+  + Labor Day Holiday - University Closed
+
+September 21
+  + Last day for 50% refund
+  + Last day to drop a class and not have it appear on your transcript
+  + Census Day
+  + Last day to change credit to audit (undergraduate)
+
+October 16
+  + Last day for 25% refund
+  + Last day to withdraw with a W (graduate/professional)
+
+October 31
+  + Last Day to File for December Graduation
+
+November 13
+  + Last day to withdraw (undergraduate)
+
+November 23
+  + Thanksgiving Holiday Begins
+
+November 30
+  + Course Work Resumes
+
+December 11
+  + Last day to withdraw with assessment (W or WF) (graduate/professional)
+  + Last day to change credit to audit (graduate/professional)
+  + Last Day of Classes
+
+December 14
+  + Exams Begin
+
+December 18
+  + Exams End
+  + Classes End (final exams)

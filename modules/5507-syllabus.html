@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>MEDB 5507, Introduction to SAS, Syllabus</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Home page</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="5505-overview.html">5505 Overview</a>
+</li>
+<li>
+  <a href="5507-overview.html">5507 Overview</a>
+</li>
+<li>
+  <a href="5508-overview.html">5508 Overview</a>
+</li>
+<li>
+  <a href="5510-overview.html">5510 Overview</a>
+</li>
+<li>
+  <a href="reproducible-research.html">Reproducible research</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">MEDB 5507, Introduction to SAS, Syllabus</h1>
+
+</div>
+
+
+<div id="questions-you-may-have-about-your-instructors" class="section level3">
+<h3>Questions you may have about your instructors</h3>
+<div id="who-will-be-my-instructors" class="section level4">
+<h4>Who will be my instructor(s)?</h4>
+<ul>
+<li>Steve Simon, PhD</li>
+</ul>
+</div>
+<div id="which-umkc-departmentis-this-course-from" class="section level4">
+<h4>Which UMKC Departmentis this course from?</h4>
+<ul>
+<li>Department of Biomedical and Health Informatics</li>
+</ul>
+</div>
+<div id="how-do-my-instructors-prefer-to-be-contacted-outside-of-class" class="section level4">
+<h4>How do my instructors prefer to be contacted outside of class?</h4>
+<ul>
+<li>Steve Simon, 816-235-6617, <a href="mailto:simons@umkc.edu" class="email">simons@umkc.edu</a></li>
+</ul>
+</div>
+<div id="preferred-contact-method" class="section level4">
+<h4>Preferred Contact Method</h4>
+<ul>
+<li>Email</li>
+</ul>
+</div>
+<div id="how-quickly-can-i-anticipate-hearing-back-from-one-of-my-instructors-if-i-ask-send-an-email-or-post-a-question" class="section level4">
+<h4>How quickly can I anticipate hearing back from one of my instructors if I ask send an email or post a question?</h4>
+<ul>
+<li>Most emails and phone calls will be returned within 24 hours. Email enquiries sent outside the regular work week may take longer for a response.</li>
+</ul>
+</div>
+<div id="if-id-like-to-drop-in-to-talk-with-my-instructors-about-questions-applications-of-what-weve-discussed-in-class-or-their-research-when-can-i-do-that" class="section level4">
+<h4>If I’d like to drop-in to talk with my instructors about questions, applications of what we’ve discussed in class, or their research, when can I do that?</h4>
+<ul>
+<li>Office hours are by appointment only, and will be conducted using the Zoom video conference system.</li>
+</ul>
+</div>
+<div id="where-are-my-instructors-links-for-us-to-meet-outside-of-class" class="section level4">
+<h4>Where are my instructors’ links for us to meet outside of class?</h4>
+<ul>
+<li>Zoom links will be sent by email once an appointment has been scheduled.</li>
+</ul>
+</div>
+</div>
+<div id="common-questions-about-course-details" class="section level3">
+<h3>Common Questions about Course Details</h3>
+<div id="catalog-course-id" class="section level4">
+<h4>Catalog Course ID</h4>
+<ul>
+<li>MEDB 5507</li>
+</ul>
+</div>
+<div id="how-many-credit-hours-will-i-receive-after-successfully-completing-this-course" class="section level4">
+<h4>How many Credit Hours will I receive after successfully completing this course?</h4>
+<ul>
+<li>1</li>
+</ul>
+</div>
+<div id="what-are-the-meeting-times-and-location-for-the-course" class="section level4">
+<h4>What are the Meeting Times and Location for the course?</h4>
+<ul>
+<li>This is an online class with no pre-specified meeting times.</li>
+</ul>
+</div>
+<div id="what-is-the-format-of-this-course" class="section level4">
+<h4>What is the format of this course?</h4>
+<ul>
+<li>Asynchronous online.</li>
+</ul>
+</div>
+<div id="what-is-this-course-about-course-description" class="section level4">
+<h4>What is this course about (Course Description)?</h4>
+<ul>
+<li>SAS …</li>
+</ul>
+</div>
+<div id="what-are-the-knowledge-skills-or-perspectives-student-learning-outcomes-that-i-will-gain-from-the-course" class="section level4">
+<h4>What are the knowledge, skills or perspectives (Student Learning Outcomes) that I will gain from the course?</h4>
+<ul>
+<li>SAS …</li>
+</ul>
+</div>
+<div id="are-there-pre-requisitesco-requisites-that-are-key-to-my-success-in-this-course" class="section level4">
+<h4>Are there Pre-requisites/Co-requisites that are key to my success in this course?</h4>
+<ul>
+<li>This course will provide a working familiarity with SAS. Students are not expected to have advanced programming or statistical analysis skills. A basic understanding of statistical terminology and a working familiarity with computer-based data files (e.g., Excel) is necessary.</li>
+</ul>
+</div>
+</div>
+<div id="general-policies-for-umkc-courses" class="section level3">
+<h3>General Policies for UMKC Courses</h3>
+<div id="will-i-be-dropped-from-class-if-i-not-attend-class-what-happens-if-i-do-not-attend-class-without-communicating-with-my-instructor" class="section level4">
+<h4>Will I be dropped from class if I not attend class? What happens if I do not attend class without communicating with my instructor?</h4>
+<ul>
+<li>Maintaining accurate enrollment records throughout the term is a partnership between instructors and students. Instructors are responsible for verifying student attendance and participation within the first three weeks (16 week course) through the Attendance Verification Survey (administered through UMKC Connect) as well as maintain records of participation throughout the term so that the last date of attendance for students with recorded “F” or “W” final grades may be submitted. Because student plans for enrollment sometimes change prior to the semester start, students not engaging in courses through the initial weeks of each course may be administratively dropped. For more detailed information regarding the policy, <a href="https://catalog.umkc.edu/undergraduate-academic-regulations-information/registration/administrative-drop-policy/">click here</a></li>
+</ul>
+</div>
+<div id="how-do-i-get-permission-before-recording-class-sessions" class="section level4">
+<h4>How do I get permission before recording class sessions?</h4>
+<ul>
+<li>Instructor(s) may record class sessions for the sole purpose of sharing the recording with students who can’t attend class. Instructor(s) will take care not to disclose personally identifiable information from the student education records during the recorded lesson. Students are not permitted to record class sessions without written consent from the course instructor.</li>
+</ul>
+</div>
+<div id="is-there-recommended-technology-that-i-should-have-access-to" class="section level4">
+<h4>Is there Recommended Technology that I should have access to?</h4>
+<ul>
+<li>You will need access to the computing resources necessary to complete this course through personal and/or University channels (e.g., computer labs). Our course will take place within the Canvas LMS and utilizing various software technologies that facilitate interaction and communication. We can make alternate arrangements should your reason for being without computer access warrant an accommodation (note: travel for vacation/work does not necessitate accommodations). Below is a list of some helpful computer requirements for full participation in this online class: the latest version of Java; the latest version of QuickTime; the latest version of Adobe Reader; a current version of word processing software or a text editing program; a headset with microphone; a webcam; Google Chrome, Firefox, or Edge for Windows computers; Google Chrome, Firefox, or Safari for Apple computers. Broadband Internet connection is preferred. Examples of broadband Internet connection are high-speed DSL or a Cable modem.</li>
+</ul>
+</div>
+<div id="if-i-am-having-difficulty-is-there-technical-support-that-i-can-contact" class="section level4">
+<h4>If I am having difficulty is there Technical Support that I can contact?</h4>
+<ul>
+<li>The links below will connect you with answers and information for the most common technical questions and issues students experience: <a href="https://keeplearning.umsystem.edu/students">UM System Keep Learning</a>; <a href="https://idt.umkc.edu/support">UMKC Instructional Design/Technology</a></li>
+</ul>
+</div>
+<div id="what-other-academic-policies-should-i-review" class="section level4">
+<h4>What other academic policies should I review?</h4>
+<ul>
+<li>Additional important information about UMKC’s policies and resources can be found <a href="https://online.umkc.edu/support-policies">here</a>.</li>
+</ul>
+</div>
+</div>
+<div id="covid-19-policies" class="section level3">
+<h3>COVID-19 Policies</h3>
+<div id="do-i-need-to-have-a-maskface-coverings-while-on-campus" class="section level4">
+<h4>Do I need to have a Mask/Face-Coverings while on campus?</h4>
+<ul>
+<li>UMKC’s mask/face-coverings policy is available <a href="https://www.umkc.edu/coronavirus/">here</a>. Any student requesting an ADA accommodation for the University mask/face covering policy should contact Scott Laurent the Office of Disability Services as soon as possible by calling (816) 235-5696 or via email at <a href="mailto:laurentr@umkc.edu" class="email">laurentr@umkc.edu</a>.</li>
+</ul>
+</div>
+<div id="if-i-have-a-disability-including-covid-related-disabilities-who-can-assist-me-with-getting-important-accommodations-on-campus" class="section level4">
+<h4>If I have a disability (including COVID-related disabilities), who can assist me with getting important accommodations on campus?</h4>
+<ul>
+<li>Any student seeking COVID-related academic accommodations should contact Scott Laurent the Office of Disability Services as soon as possible by calling (816) 235-5696 or via email at <a href="mailto:laurentr@umkc.edu" class="email">laurentr@umkc.edu</a>.</li>
+</ul>
+</div>
+<div id="if-i-have-questions-regarding-covid-19-general-information-where-do-i-go" class="section level4">
+<h4>If I have questions regarding COVID-19 General Information, where do I go?</h4>
+<ul>
+<li>Up to date information and FAQs regarding COVID-19 may be found on the <a href="https://www.umkc.edu/news/coronavirus.html">UMKC COVID website</a>.</li>
+</ul>
+</div>
+</div>
+<div id="specific-information-about-this-class" class="section level3">
+<h3>Specific Information about this class</h3>
+<div id="required-and-recommended-materials" class="section level4">
+<h4>Required and Recommended Materials</h4>
+<ul>
+<li>There is NO required textbook for this class. A recommended textbook is …</li>
+</ul>
+</div>
+<div id="course-expectations-course-policies-requirements-and-standards-for-student-coursework-and-student-behavior" class="section level4">
+<h4>Course Expectations, Course Policies, Requirements and Standards for Student Coursework and Student Behavior</h4>
+<ul>
+<li>You are expected to do your homework independently. You can seek help from your instructors, from colleagues, or from the Internet to help decode an error message that you don’t understand. You can adapt code that you find on the Internet. We recommend that you acknowledge the source for that code in the comments of your program, but this is not required.</li>
+</ul>
+</div>
+<div id="evaluation-and-grading" class="section level4">
+<h4>Evaluation and Grading</h4>
+<ul>
+<li>Students will be required to post messages on the Canvas discussion boards, take brief quizzes on Canvas, and submit homework assignments in PDF format on Canvas. Your work is due on the specified date. We need to keep the class on the same time schedule for a variety of reasons. If illness, family issues, work responsibilities, or other commitments prevent you from completing on time, please contact me before the due date. Late submission without prior notice will receive a one point deduction. If you find yourself repeatedly falling behind on quizzes and assignments, it would be good to set up a videoconfernce with one or both of us to discuss this.</li>
+<li>This course is grade Credit/No Credit (Pass/Fail). Students who complete at least 80% of the regular coursework and sucessfully complete the final project will receive credit for the course.</li>
+</ul>
+</div>
+<div id="final-exam" class="section level4">
+<h4>Final Exam</h4>
+<ul>
+<li>This is no final exam. Your final project needs to be completed prior to the last day of classes (2021-05-07, Friday).</li>
+</ul>
+</div>
+</div>
+<div id="description-of-course-topics-assignments-requirements-and-assignment-deadlines" class="section level3">
+<h3>Description of Course Topics, Assignments, Requirements and Assignment deadlines</h3>
+<p>Please refer to the <a href="https://pmean.github.io/docs/5505-overview.Rmd">course overview</a>.</p>
+<p><strong>Key Dates for Spring semester, 2021 (16-week session only)</strong></p>
+<p>Please verify these dates on the <a href="https://calendar.umkc.edu/academic-calendar/all">UMKC academic calendar</a>. If you notice a discrepancy, let me know. The UMKC academic calendar always takes precedence.</p>
+<ul>
+<li>2021-01-19 (Tuesday)
+<ul>
+<li>Coursework begins</li>
+</ul></li>
+<li>2021-01-25 (Monday)
+<ul>
+<li>Last day to add without an instructor signature</li>
+<li>Last day for 100% refund</li>
+<li>Last day to register without paying a late registration fee</li>
+</ul></li>
+<li>2021-02-15 (Monday)
+<ul>
+<li>Last day for 50% refund</li>
+<li>Last day to drop a class and not have it appear on your transcript</li>
+</ul></li>
+<li>2021-03-12 (Friday)
+<ul>
+<li>Last day for 25% refund</li>
+<li>Last day to withdraw with a W (graduate/professional)</li>
+</ul></li>
+<li>2021-30-29 (Monday)
+<ul>
+<li>First day of Spring Break (no classes)</li>
+</ul></li>
+<li>2021-04-02 (Friday)
+<ul>
+<li>Last day of Spring Break (no classes)</li>
+</ul></li>
+<li>2021-04-16 (Friday)
+<ul>
+<li>Last day to withdraw with a “W” (undergraduate)</li>
+</ul></li>
+<li>2021-05-07 (Friday)
+<ul>
+<li>Last day to withdraw with a “W” (graduate/professional)</li>
+<li>Last day of classes</li>
+</ul></li>
+</ul>
+<p>This document was written on 2020-08-26 and last modifed on 2021-01-16.</p>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

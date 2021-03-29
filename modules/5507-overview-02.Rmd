@@ -1,0 +1,71 @@
+---
+title: "MEDB 5507, Introduction to SAS."
+---
+
+### Overview of Module02 - Reading a variety of formats
+    
+This file was created by Steve Simon using R Markdown on 2020-09-24 and last updated on `r Sys.Date()`. You can find the [source code](https://github.com/classes-medb/classes-medb.github.io/blob/master/5507-overview-02.Rmd) on my github repository, [classes-medb](https://github.com/classes-medb).
+
+### Learning objectives
+
+1. To read delimited text files
+
+2. To read fixed width files
+
+3. To read files with variable names in the first row
+
+### SAS code that you will learn
+
++ delimiter
++ filename
++ proc import
+  + getnames
+
+### Videos and handouts
+
++ V02-01. Importing a wide range of data formats, part 1 (7 minutes). 
+  + Available in [Panopto format](https://umkc.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=6de8440a-1bd4-4d2e-9631-aa7f015b2953).
+  + Slides with speaker notes available in [pdf format](https://github.com/pmean/introduction-to-SAS/blob/master/basics2/src/importing-speaker-notes.pdf).
+
++ V02-02. Importing a wide range of data formats, part 2 (23 minutes). 
+  + Available in [Panopto format](https://umkc.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=4954f8af-d8be-4657-bc24-aa7f015edf92).
+  + Slides with speaker notes available above.
+
++ V02-03. Evil tab character (12 minutes). 
+  + Available in [Panopto format](https://umkc.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=0ce9339f-f3c9-4bb3-908e-aa790131a2a9).
+  + There are no slides for this video.
+
++ V02-04. If you still need a little extra help (20 minutes). 
+  + Available in [Panopto format](https://umkc.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=c53d9a11-aa2e-4ee0-ac8e-aa78017aaea2).
+  + There are no slides for this video.
+
++ Lecture example code
+  + import-space-delimited.sas, available in [text format](https://github.com/classes-medb/5507/blob/master/module02/src/code-02-01-import-space-delimited.sas).
+  + import-multi-delimited.sas, available in [text format](https://github.com/classes-medb/5507/blob/master/module02/src/code-02-02-import-multi-delimited.sas).
+  + import-comma-delimited.sas, available in [text format](https://github.com/classes-medb/5507/blob/master/module02/src/code-02-03-import-comma-delimited.sas).
+  + import-tilde-delimited.sas, available in [text format](https://github.com/classes-medb/5507/blob/master/module02/src/code-02-04-import-tilde-delimited.sas).
+  + import-tab-delimited.sas, available in [text format](https://github.com/classes-medb/5507/blob/master/module02/src/code-02-05-import-tab-delimited.sas).
+  + import-fixed-width-delimited.sas, available in [text format](https://github.com/classes-medb/5507/blob/master/module02/src/code-02-06-import-fixed-width-delimited.sas).
+  + import-string-data.sas, available in [text format](https://github.com/classes-medb/5507/blob/master/module02/src/code-02-07-import-string-data.sas).
+  + import-first-line-names,sas, available in [text format](https://github.com/classes-medb/5507/blob/master/module02/src/code-02-08-import-first-line-names.sas).
+  + import-string-to-numeric.sas, available in [text format](https://github.com/classes-medb/5507/blob/master/module02/src/code-02-09-string-to-numeric.sas).
+  + import-abalone.sas, available in [text format](https://github.com/classes-medb/5507/blob/master/module02/src/code-02-10-import-abalonesas).
+  + import-saratoga.sas, available in [text format](https://github.com/classes-medb/5507/blob/master/module02/src/code-02-11-import-saratoga.sas).
+
+### Discussion board
+
+I'd like some brief feedback to the videos you just watched. Keep it short. One or two sentences per question is fine. You can also say something briefer like "I agree with [other student]". If you found everything confusing or nothing confusing, just respond with the word "everything" or "nothing." Please don't spend more than a minute on this assignment. I just want a quick reaction.
+
+1. What was the most important thing you learned in these videos?
+
+2. What was the one thing that you found confusing?
+
+3. What would you like to see covered next?
+
+Submit your discussion comments [here](https://umkc.instructure.com/courses/59353/discussion_topics/186808).
+
+### Homework
+
+Read the data in the file sleep.txt or in the file sleep_modified.txt and print out the first ten rows of data. Include your code and your output in a single PDF file.
+
+Submit your assignment [here](https://umkc.instructure.com/courses/59353/assignments/228705).

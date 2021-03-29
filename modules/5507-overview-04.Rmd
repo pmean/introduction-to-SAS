@@ -1,0 +1,46 @@
+---
+title: "MEDB 5507, Introduction to SAS"
+---
+
+### Module04. Working with mostly categorical variables
+
+This page is under construction.
+    
+This file was created by Steve Simon using R Markdown on 2020-06-27 and last updated on `r Sys.Date()`. You can find the [source code](https://github.com/classes-medb/classes-medb.github.io/blob/master/5507-overview.Rmd) on my github repository, [classes-medb](https://github.com/classes-medb).
+
+### Learning objectives
+
+
+
+### SAS code that you will learn
+
+
+### Videos and handouts
+
++ V04-01.  ( minutes). 
+  + Available in [Panopto format]().
+  + Slides with speaker notes available in [pdf format]().
+
++ V04-02.  ( minutes). 
+  + Available in [Panopto format]().
+  + Slides with speaker notes available above.
+
+### Discussion board
+
+I'd like some brief feedback to the videos you just watched. Keep it short. One or two sentences per question is fine. You can also say something briefer like "I agree with [other student]". If you found everything confusing or nothing confusing, just respond with the word "everything" or "nothing." Please don't spend more than a minute on this assignment. I just want a quick reaction.
+
+1. What was the most important thing you learned in these videos?
+
+2. What was the one thing that you found confusing?
+
+3. What would you like to see covered next?
+
+Submit your discussion comments [here]().
+
+### Homework
+
+
+
+Submit your assignment [here]().
+
+

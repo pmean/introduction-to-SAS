@@ -1,0 +1,33 @@
+---
+title: "MEDB 5507, Introduction to SAS, Overview"
+---
+
+### General information
+    
+This file was created by Steve Simon using R Markdown on 2020-06-27 and last updated on `r Sys.Date()`. You can find the [source code](https://github.com/classes-medb/classes-medb.github.io/blob/master/5507-overview.Rmd) on my github repository, [classes-medb](https://github.com/classes-medb).
+
+This class is taught using the Canvas learning management system. Access to Canvas is limited to me and students currently enrolled. If you have access, the main page for the Canvas site for Fall Semester 2020 is found [here](https://umkc.instructure.com/courses/59353).
+
+The resources on this website will be generally consistent with those on Canvas. If you find any major discrepancies, please bring them to my attention. The information on Canvas takes precedence over the information presented here.
+
+### Syllabus
+
+The syllabus is available on [Canvas](https://umkc.instructure.com/courses/59353/assignments/syllabus) or in [html format](5507-syllabus.html). These should be identical, but if there are any discrepancies, the Canvas site takes precedence.
+
+### Overviews
+
+Each module in this class has an overview page that lists the objectives, videos, handouts, and assignments. Here are the overviews for each module of the class.
+
+[Module01 - Getting started](5507-overview-01.html)
+
+[Module02 - Reading a variety of formats](5507-overview-02.html)
+
+[Module03 - Working with mostly continuous variables](5507-overview-03.html)
+
+[Module04 - Working with mostly categorical variables](5507-overview-04.html)
+
+[Module05 - Working with a mix of continuous and categorical variables](5507-overview-05.html)
+
+[Module06](5507-overview-06.html)
+
+All of information in these links above should be identical to the information found on Canvas, but if there are any discrepancies, the Canvas site takes precedence.

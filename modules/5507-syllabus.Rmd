@@ -1,0 +1,24 @@
+---
+title: "MEDB 5507, Introduction to SAS, Syllabus"
+output: html_document
+---
+
+```{r part-a, child="data/syllabus-part-a-5507.md"}
+```
+
+```{r part-b, child="data/syllabus-part-b-all-classes.md"}
+```
+
+```{r part-c, child="data/syllabus-part-c-5507.md"}
+```
+
+```{r part-d, child="data/syllabus-part-d-all-classes.md"}
+```
+
+```{r part-e, child="data/syllabus-part-e-5507.md"}
+```
+
+```{r part-f, child="data/syllabus-part-f-all-classes.md"}
+```
+
+This document was written on 2020-08-26 and last modifed on `r Sys.Date()`.
