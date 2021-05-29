@@ -1,6 +1,11 @@
-* hw01.sas
-  written by Steve Simon
-  September 17, 2018;
+* simon-5507-hw01.sas
+
+  Written by Steve Simon, creation date: 2018-09-17
+
+  This program reads the sleep data set and produces
+  some simple descriptive statistics. It is placed
+  in the public domain and you can use this in any
+  way you please.;
 
 %let path=c:/Users/simons/My Documents/SASUniversityEdition/myfolders/introduction-to-sas;
 %let xpath=/folders/myfolders/introduction-to-sas;
