@@ -1,5 +1,8 @@
-* input-text.sas 
-written by Steve Simon;
+* m01-5507-simon-input-text.sas
+* author: Steve Simon
+* date: created 2021-05-30
+* purpose: to read data from a separate file
+* license: public domain;
 
 libname perm "q:/Documents/results";
 

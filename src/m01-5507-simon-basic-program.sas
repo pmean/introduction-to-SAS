@@ -1,4 +1,4 @@
-* m01-5507-[put your name here]-basic-program.sas
+* m01-5507-[put your name here]-basic-progrm.sas
 * author: Steve Simon and [put your name here]
 * date: created 2021-05-30
 * purpose: to read and print a small data set

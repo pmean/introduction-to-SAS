@@ -105,12 +105,12 @@ The run statement tells SAS that there is no more information associated with th
   + m01-libname.sas
   + m01-reuse.sas
 
-### The libname statement
+### Permanent storage, part 1
 
 ```{r}
 tx <- readLines("m01-5507-simon-permanent-storage.sas")
 tx %>% 
-  str_subset(fixed("libname")) %>%
+  str_subset(fixed("*")) %>%
   paste0(collapse="\n") -> tx1  
 ```
 
@@ -120,10 +120,98 @@ tx %>%
 
 <div class="notes">
 
+Let's look at a modified program that stores the data in a permanent location.
 
+Here is the documentation header. No big changes here other than the name of the program and the purpose.
+
+</div>
+
+### Permanent storage, part 2
+
+```{r}
+tx %>% str_which("libname") -> i1
+tx %>% str_which("^;") -> i2
+tx %>%
+  extract(i1:i2) %>%
+  paste0(collapse="\n") -> tx2  
+```
+
+
+```{}
+`r tx2`
+```
+
+<div class="notes">
+
+Notice the top line in this section. This is the libname statement. It tells SAS that you want to establish a permanent storage location at ../data. The ../data tells the computer system to go one level closer to the root directory, and then slide into the data subdirectory.
+
+You assign a brief name (no more than eight characters!) to this location. In my program, I use the name "perm" but anything is fine here.
+
+Then you prefix the dataset name simple_example with the libname location and a dot. This is called a two part name by SAS. The first part gives the permanent location folder and the second part gives the file name.
+
+Once you establish a two-part name for a dataset, you assure that it is stored for later re-use.
+
+</div>
+
+### Permanent storage, part 3
+
+```{r}
+tx %>% str_which("proc") -> i3
+tx %>% str_which("run;") -> i4
+tx %>%
+  extract(i3:i4) %>%
+  paste0(collapse="\n") -> tx3  
+```
+
+
+```{}
+`r tx3`
+```
+
+<div class="notes">
+
+Once you establish a two-part name, use it everywhere.
 
 </div>
   
+### Re-using data in permanent storage, part 1
+
+```{r}
+tx <- readLines("m01-5507-simon-re-use.sas")
+tx %>% 
+  str_subset(fixed("*")) %>%
+  paste0(collapse="\n") -> tx1  
+```
+
+```{}
+`r tx1`
+```
+
+<div class="notes">
+
+</div>
+
+### Re-using data in permanent storage, part 2
+
+```{r}
+tx %>% str_which("libname") -> i1
+tx %>% str_which("run;") -> i2
+tx %>%
+  extract(i1:i2) %>%
+  paste0(collapse="\n") -> tx2  
+```
+
+
+```{}
+`r tx2`
+```
+
+<div class="notes">
+
+
+
+</div>
+
 ### Break #2
 
 + What have you learned
