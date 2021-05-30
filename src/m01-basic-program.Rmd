@@ -1,0 +1,70 @@
+---
+title: "Running a basic SAS program"
+author: "Steve Simon"
+date: "Created 2021-05-30"
+output: powerpoint_presentation
+---
+
+```{r setup, echo=FALSE}
+knitr::opts_chunk$set(echo=FALSE, comment="")
+suppressMessages(suppressWarnings(library(dplyr)))
+suppressMessages(suppressWarnings(library(knitr)))
+suppressMessages(suppressWarnings(library(magrittr)))
+suppressMessages(suppressWarnings(library(stringr)))
+```
+
+### Basic program, part 1
+
+```{r}
+tx <- readLines("m01-5507-simon-basic-program.sas")
+tx %>% 
+  str_subset(fixed("*")) %>%
+  paste0(collapse="\n") -> tx1  
+```
+
+```{}
+`r tx1`
+```
+
+<div class="notes">
+
+author: Steve Simon and [put your name here]
+date: created 2021-05-30
+purpose: to produce slides for module01 videos
+license: public domain
+
+Here is the first piece of the basic program I want you to run. It has a brief documentation header that lists the author, date, purpose of the program, and license. I always place my code in the public domain.
+
+</div>
+
+### Basic program, part 2
+
+```{r}
+tx %>% str_which("^data") -> i1
+tx %>% str_which("^;") -> i2
+tx[i1:i2] %>%
+  paste0(collapse="\n") -> tx2  
+  
+```
+
+```{}
+`r tx2`
+```
+
+<div class="notes">
+
+
+
+</div>
+
+### Break #1
+
++ What have you learned.
+
++ What's coming next
+
+
+
+### Summary
+
++ What have you learned
