@@ -3,6 +3,9 @@ title: "Running a basic SAS program"
 author: "Steve Simon"
 date: "Created 2021-05-30"
 output: powerpoint_presentation
+knit: (function(inputFile, encoding) {
+  rmarkdown::render(inputFile, encoding = encoding,
+  output_dir = "../results", output_format = "all") })  
 ---
 
 ```{r setup, echo=FALSE}
@@ -42,7 +45,8 @@ Here is the first piece of the basic program I want you to run. It has a brief d
 ```{r}
 tx %>% str_which("^data") -> i1
 tx %>% str_which("^;") -> i2
-tx[i1:i2] %>%
+tx %>%
+  extract(i1:i2) %>%
   paste0(collapse="\n") -> tx2  
   
 ```
@@ -53,16 +57,91 @@ tx[i1:i2] %>%
 
 <div class="notes">
 
+The data statement creates a dataset with the name "small_example".
 
+The input statement tells SAS to expect two variables and assigns them the names x and y.
+
+The datalines statement tells SAS to read the data directly below this line. This is NOT a recommended practice. You should normally keep your data separate from your code. I am doing this only for the sake of simplicity. You will see in just a minute how to handle data that comes in a separate file.
+
+The three lines of data follow. A single semicolon tells SAS that this is the end of the data.
+
+</div>
+
+### Basic program, part 3
+
+```{r}
+tx %>% str_which("^proc") -> i3
+tx %>% str_which("run;") -> i4
+tx %>%
+  extract(i3:i4) %>%
+  paste0(collapse="\n") -> tx3  
+  
+```
+
+```{}
+`r tx3`
+```
+
+<div class="notes">
+
+The print procedure will print part or all of a dataset. 
+
+You specify the name of the dataset with the data= option. The options obs=1 tells SAS to print only the first row.
+
+The title1 statement prints a descriptive title on the first line of output.
+
+The run statement tells SAS that there is no more information associated with this procedure.
 
 </div>
 
 ### Break #1
 
-+ What have you learned.
++ What have you learned
+  + How to read a small dataset
+  + How to print a small dataset
 
 + What's coming next
+  + Permanent storage
+  + m01-libname.sas
+  + m01-reuse.sas
 
+### The libname statement
+
+```{r}
+tx <- readLines("m01-5507-simon-permanent-storage.sas")
+tx %>% 
+  str_subset(fixed("libname")) %>%
+  paste0(collapse="\n") -> tx1  
+```
+
+```{}
+`r tx1`
+```
+
+<div class="notes">
+
+
+
+</div>
+  
+### Break #2
+
++ What have you learned
+  + Permanent storage
+  
++ What's coming next
+  + Saving your output
+  + m01-saved-pdf.sas
+  + m01-saved-pdf.sas
+
+### Break #3
+
++ What have you learned
+  + Saving your output
+  
++ What's coming next
+  + Getting data from a file
+  + m01-input-text.sas
 
 
 ### Summary

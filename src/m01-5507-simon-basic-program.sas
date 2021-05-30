@@ -6,7 +6,7 @@
 
 data small_example;
  input x y;
- cards;
+ datalines;
 1 2
 2 4
 3 6

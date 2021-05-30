@@ -9,6 +9,7 @@ title: "MEDB 5507, Introduction to SAS, Module01, Objectives"
 
 ### You will also see the following SAS keywords and procedures
 
++ cards
 + data
 + delimiter
 + filename
