@@ -1,7 +1,7 @@
 ---
-title: "Importing a wide range of data formats"
+title: "Introduction to SAS, Importing a wide range of data formats"
 author: "Steve Simon"
-date: "7/1/2019"
+date: "Created: 2021-05-31"
 output: powerpoint_presentation
 ---
 
@@ -12,6 +12,19 @@ suppressMessages(suppressWarnings(library(dplyr)))
 suppressMessages(suppressWarnings(library(knitr)))
 suppressMessages(suppressWarnings(library(magrittr)))
 ```
+
+### Overview
+
+<div class="notes">
+
+author: Steve Simon
+date: Created 2021-05-30
+purpose: to produce slides for module01 videos
+license: public domain
+
+Here is an overview of what I want to cover in module03. 
+
+</div>
 
 ### Importing choices (1 of 2)
 + A wide range of formats

@@ -1,8 +1,25 @@
 ---
-title: "Introduction to SAS, Lecture01"
+title: "Introduction to SAS, Working with continuous variables"
 author: "Steve Simon"
+date: "Created 2021-05-30"
 output: powerpoint_presentation
+knit: (function(inputFile, encoding) {
+  rmarkdown::render(inputFile, encoding = encoding,
+  output_dir = "../results", output_format = "all") })  
 ---
+
+### Overview
+
+<div class="notes">
+
+author: Steve Simon
+date: created 2021-05-30
+purpose: to produce slides for module01 videos
+license: public domain
+
+Here is an overview of what I want to cover in module02.
+
+</div>
 
 ## SAS code
 

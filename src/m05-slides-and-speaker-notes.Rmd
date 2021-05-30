@@ -1,7 +1,10 @@
 ---
-title: "Lecture03 - A mix of categorical and continuous variables"
+title: "Introduction to SAS, Working with a mix of categorical and continuous variables"
 author: "Steve Simon"
 date: "7/19/2019"
+output: powerpoint_presentation
+---
+date: "Created: 2021-05-31"
 output: powerpoint_presentation
 ---
 
@@ -13,7 +16,8 @@ suppressMessages(suppressWarnings(library(knitr)))
 suppressMessages(suppressWarnings(library(magrittr)))
 ```
 
-### Topics in this lecture
+### Overview
+
 + Review
   + proc format, proc freq, proc means
 + proc corr
@@ -24,9 +28,17 @@ suppressMessages(suppressWarnings(library(magrittr)))
 
 <div class="notes">
 
-Here are the topics we will cover. It is a lot of material, but you will pick it up very easily.
+author: Steve Simon
+date: Created 2021-05-30
+purpose: to produce slides for module01 videos
+license: public domain
+
+Here is an overview of what I want to cover in module05. 
 
 </div>
+
+
+
 
 ```{r lecture03.sas}
 program_name <- opts_current$get("label") 
