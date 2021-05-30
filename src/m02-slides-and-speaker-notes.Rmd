@@ -21,51 +21,41 @@ Here is an overview of what I want to cover in module02.
 
 </div>
 
-## SAS code
+## Review definitions
 
-+ Review definitions
-  + Categorical
-  + Continuous
++ Categorical
+  + Small number of possible values
+  + Each value associated with a category
++ Continuous
+  + Large number of possible values
+  + Potentially any value in an interval
   
 <div class="notes">
 
-  Before we start, let's review a couple of 
-  definitions. 
+Before we start, let's review a couple of   definitions. 
 
-  A **categorical variable** is a variable that
-  can only take on a small number of values. 
-  Each value is usually associated with a 
-  particular category.
+A **categorical variable** is a variable that can only take on a small number of values. Each value is usually associated with a particular category.
 
-  Examples of categorical variables are
+Examples of categorical variables are
 
   * sex (Male or Female),
   * race (White, Black, Native American, etc.),
   * cancer stage (I, II, III, or IV),
   * birth delivery type (Vaginal, C-section). 
 
-  A **continuous variable** is a variable that
-  can take on a large number of possible values,
-  potentially any value in some interval.
+A **continuous variable** is a variable that can take on a large number of possible values, potentially any value in some interval.
 
-  Examples of continuous variables are
+Examples of continuous variables are
 
   * Birth weight in grams,
   * gestational age,
   * fasting LDL level.
 
-  There are some variables that are on the 
-  boundary between categorical and continuous, 
-  but it is not worth quibbling about here. 
+There are some variables that are on the boundary between categorical and continuous, but it is not worth quibbling about here. 
 
-  The point to remember is that the types of 
-  graphs that you use and the types of statistics
-  that you compute are dependent on many things,
-  but first and foremost on whether the variables
-  are categorical, continuous, or a mixture.
+The point to remember is that the types of graphs that you use and the types of statistics that you compute are dependent on many things, but first and foremost on whether the variables are categorical, continuous, or a mixture.
 
-  Today, you will see examples involving mostly
-  continuous variables.
+Today, you will see examples involving mostly continuous variables. 
   
 </div>
   
@@ -112,47 +102,6 @@ There is no official rule of thumb on this, but I do try to keep my lines below 
 Don't obsess about this now, but you'll see a fairly consistent coding style that I use for my SAS code. You don't have to follow my format, of course, which might be a bit too extreme for your tastes. Just experiment with things a bit until you can settle on a layout that you are comfortable with.
 
 </div>  
-
-## Where to find everything
-
-```{}
-%let xpath=c:/Users/simons/My Documents/SASUniversityEdition/myfolders/introduction-to-sas;
-%let path=/folders/myfolders/introduction-to-sas;
-
-ods pdf
-  file="&path/module01/lecture01.pdf";
-
-filename fat
-  "&path/data01/fat.txt";
-
-libname intro
-  "&path/data01";
-
-```
-
-<div class="notes">
-
-I created a macro variable called path that gives the full pathname that will be needed for several future statements. It changes when I work on my home computer versus my office computer, so I designate the path that I currently don't need as xpath. Then when I move the program from one computer to another, I just switch xpath and path and everything works.
-
-The ods statement tells SAS where to store your
-output and in what format.        
-  
-VERY IMPORTANT! You need to turn off ODS at the 
-completion of your program or none of the 
-output gets saved.
-  
-You can view the output on the screen and then
-save the output manually, but it is good form
-to explicity specify the location of output in 
-your program                                         
-
-The filename statement tells SAS where you want
-it to find the raw data
-
-The libname statement tells SAS where you want
-it to place any permanent SAS data files           
-
-</div>
 
 ## Data and infile statements
 
