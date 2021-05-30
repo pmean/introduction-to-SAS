@@ -16,6 +16,57 @@ suppressMessages(suppressWarnings(library(magrittr)))
 suppressMessages(suppressWarnings(library(stringr)))
 ```
 
+### Overview
+
++ Run a very basic SAS program
++ Baby steps
+  + Store data in a permanent location
+  + Store output as pdf or html files
+  + Read data from a text file
+
+<div class="notes">
+
+author: Steve Simon
+date: created 2021-05-30
+purpose: to produce slides for module01 videos
+license: public domain
+
+Here is an overview of what I want to cover in module01. We'll start very slowly with a simple and basic SAS program that reads in a small dataset and prints out the first line of data.
+
+Then we will take a series of baby steps. These follow my basic philosophy of data analysis. Never jump in at the deep end of a swimming pool. Start at the shallow end and slowly wade into deeper water.
+
+THink of this as baby steps. You don't want to add too much complexity to the program all at once. 
+
+The first baby step is storing the data that you read in at a permanent location so that it can be re-used easily in a later program.
+
+Then you will see the code you need to add so that your output is stored in pdf or html format.
+
+Finally, you will see how to move the data outside the program to a separate file.
+
+</div>
+
+### Directory structure
+
++ One directory for the entire class
+  + Possibly one directory for each module
++ Subdirectory structure
+  + src
+  + results
+  + data
+  + others?
+    + images
+    + doc
+    
+<div class="notes">
+
+Make sure you store things consistently. This part of the requirements for this class.
+
+Store all your programs for this calss in a single directory. You can call it "sas" or "5507" or anything you like. Some people may prefer to create a separate directory for each module in this class. That's fine also.
+
+Most importantly, create three subdirectories, src, results, and data. Store your programs in src, your output in results and your raw and intermediate datasets in data. You may wish to create other subdirectories, such an images folder for any graphs you produce, a doc folder for any documentation you collect, but the three imporant subdirectory folders are src, results, and data.
+
+</div>
+
 ### Basic program, part 1
 
 ```{r}
@@ -30,11 +81,6 @@ tx %>%
 ```
 
 <div class="notes">
-
-author: Steve Simon and [put your name here]
-date: created 2021-05-30
-purpose: to produce slides for module01 videos
-license: public domain
 
 Here is the first piece of the basic program I want you to run. It has a brief documentation header that lists the author, date, purpose of the program, and license. I always place my code in the public domain.
 
@@ -189,6 +235,10 @@ tx %>%
 
 <div class="notes">
 
+Here's a program that re-uses the dataset you just placed in permanent storage.
+
+First, let's show the documentation header.
+
 </div>
 
 ### Re-using data in permanent storage, part 2
@@ -208,7 +258,7 @@ tx %>%
 
 <div class="notes">
 
-
+Notice that there is no data step in this program, you start with a libname statement that reminds SAS where you stored the permanent dataset. Then you just refer to the two-part name in the data= option of any SAS procedure. Here we are computing some simple descriptive statistics using proc means.
 
 </div>
 
@@ -222,6 +272,132 @@ tx %>%
   + m01-saved-pdf.sas
   + m01-saved-pdf.sas
 
+### Saving output as pdf, part 1
+
+```{r}
+tx <- readLines("m01-5507-simon-saved-pdf.sas")
+tx %>% 
+  str_subset(fixed("*")) %>%
+  paste0(collapse="\n") -> tx1  
+```
+
+```{}
+`r tx1`
+```
+
+<div class="notes">
+
+Let's look at a modified program that stores your output as a pdf file.
+
+Here is the documentation header.
+
+</div>
+
+### Saving output as pdf, part 2
+
+```{r}
+tx %>% str_which("libname") -> i1
+tx %>% str_which("^;") -> i2
+tx %>%
+  extract(i1:i2) %>%
+  paste0(collapse="\n") -> tx2  
+```
+
+
+```{}
+`r tx2`
+```
+
+<div class="notes">
+
+The ods statement should be placed near the top of the code, certainly before any SAS procedure that produces output.
+
+</div>
+
+### Saving output as pdf, part 3
+
+```{r}
+tx %>% str_which("proc") -> i3
+tx %>% str_which("close;") -> i4
+tx %>%
+  extract(i3:i4) %>%
+  paste0(collapse="\n") -> tx3  
+```
+
+
+```{}
+`r tx3`
+```
+
+<div class="notes">
+
+Near the bottom, you turn off the output. Place this AFTER the last SAS procedure that produces output.
+
+</div>
+  
+### Saving output as html, part 1
+
+```{r}
+tx <- readLines("m01-5507-simon-saved-html.sas")
+tx %>% 
+  str_subset(fixed("*")) %>%
+  paste0(collapse="\n") -> tx1  
+```
+
+```{}
+`r tx1`
+```
+
+<div class="notes">
+
+Things change just a little bit if you want to save your output in html format.
+
+Here is the documentation header.
+
+</div>
+
+### Saving output as html, part 2
+
+```{r}
+tx %>% str_which("libname") -> i1
+tx %>% str_which("^;") -> i2
+tx %>%
+  extract(i1:i2) %>%
+  paste0(collapse="\n") -> tx2  
+```
+
+
+```{}
+`r tx2`
+```
+
+<div class="notes">
+
+Notice the use of "body" in the ods statement.
+
+</div>
+
+### Saving output as html, part 3
+
+```{r}
+tx %>% str_which("proc") -> i3
+tx %>% str_which("close;") -> i4
+tx %>%
+  extract(i3:i4) %>%
+  paste0(collapse="\n") -> tx3  
+```
+
+
+```{}
+`r tx3`
+```
+
+<div class="notes">
+
+Near the bottom, you turn off the output in pretty much the same way.
+
+</div>
+  
 ### Break #3
 
 + What have you learned
@@ -231,7 +407,92 @@ tx %>%
   + Getting data from a file
   + m01-input-text.sas
 
+### Reading data from a file, part 1
+
+```{r}
+tx <- readLines("m01-5507-simon-input-text.sas")
+tx %>% 
+  str_subset(fixed("*")) %>%
+  paste0(collapse="\n") -> tx1  
+```
+
+```{}
+`r tx1`
+```
+
+<div class="notes">
+
+It is a very basic principle of good computing practices that you keep your data and your program in separate files. This code shows you how to do this using the infile statement.
+
+</div>
+
+### Reading data from a file, part 2
+
+```{r}
+tx %>% str_which("libname") -> i1
+tx %>% str_which("input x y;") -> i2
+tx %>%
+  extract(i1:(i2+1)) %>%
+  paste0(collapse="\n") -> tx2  
+```
+
+
+```{}
+`r tx2`
+```
+
+<div class="notes">
+
+The filename statement tells SAS where a particular dataset is stored: both the path and the name of the file. It associates that path and filename with a variable that you refer to using the infile statement.
+
+</div>
+
+### Reading data from a file, part 3
+
+```{r}
+tx %>% str_which("proc") -> i3
+tx %>% str_which("close;") -> i4
+tx %>%
+  extract(i3:i4) %>%
+  paste0(collapse="\n") -> tx3  
+```
+
+
+```{}
+`r tx3`
+```
+
+<div class="notes">
+
+The last part of the program remains unchanged.
+
+</div>
+  
+### Reading data from a file, part 4
+
+```{r}
+tx <- readLines("../data/six-numbers.txt")
+tx %>% 
+  paste0(collapse="\n") -> tx1  
+```
+
+```{}
+`r tx1`
+```
+
+<div class="notes">
+
+This is what your data file looks like. It is just six numbers arranged in a grid.
+
+You will see many variations on the layout of data, and SAS can handle just about any variation. You will see how to handle many of those variations in an upcoming module.
+
+</div>
+
 
 ### Summary
 
 + What have you learned
+  + Run a very basic SAS program
+  + Store data in a permanent location
+  + Store output as pdf or html files
+  + Read data from a text file

@@ -1,23 +1,25 @@
-* m01-5507-simon-input-text.sas
+* m01-5507-simon-saved-html.sas
 * author: Steve Simon
 * date: created 2021-05-30
-* purpose: to read data from a separate file
+* purpose: to save your output in html format
 * license: public domain;
 
 libname perm "../data";
 
-filename rawdata "../data/six-numbers.txt";
-
-ods pdf file="../results/input-text.pdf";
+ods html body=
+  "../results/m01-5507-simon-saved-html.html";
 
 data perm.simple_example;
-  infile rawdata;
   input x y;
-run;
+datalines;
+1 2
+2 4
+3 6
+;
 
 proc print
     data=perm.simple_example(obs=1);
   title1 "First row";
 run;
 
-ods pdf close;
+ods html close;
