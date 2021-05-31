@@ -1,113 +1,20 @@
-* lecture01.sas
-  written by Steve Simon
-  September 7, 2018;
-
-********* ********* ********* ********* *********;
-
-* Before you start any serious SAS programming,
-  tell SAS where everything belongs
-  
-  The filename statement tells SAS where you 
-  have placed your raw data file.                     
-
-  Before we start, let's review a couple of 
-  definitions. 
-
-  A **categorical variable** is a variable that
-  can only take on a small number of values. 
-  Each value is usually associated with a 
-  particular category.
-
-  Examples of categorical variables are
-
-  * sex (Male or Female),
-  * race (White, Black, Native American, etc.),
-  * cancer stage (I, II, III, or IV),
-  * birth delivery type (Vaginal, C-section). 
-
-  A **continuous variable** is a variable that
-  can take on a large number of possible values,
-  potentially any value in some interval.
-
-  Examples of continuous variables are
-
-  * Birth weight in grams,
-  * gestational age,
-  * fasting LDL level.
-
-  There are some variables that are on the 
-  boundary between categorical and continuous, 
-  but it is not worth quibbling about here. 
-
-  The point to remember is that the types of 
-  graphs that you use and the types of statistics
-  that you compute are dependent on many things,
-  but first and foremost on whether the variables
-  are categorical, continuous, or a mixture.
-
-  Today, you will see examples involving mostly
-  continuous variables.
-;
-
-%let xpath=c:/Users/simons/My Documents/SASUniversityEdition/myfolders/introduction-to-sas;
-%let path=/folders/myfolders/introduction-to-sas;
+* m02-5507-simon-continuous-variables.sas
+* author: Steve Simon
+* date: created 2021-05-30
+* purpose: to work with continuous variables
+* license: public domain;
 
 filename fat
-  "&path/data01/fat.txt";
+  "../data/fat.txt";
 
-* The libname statement tells SAS where you want
-  it to place any permanent SAS data files            ;
-  
 libname intro
-  "&path/data01";
+  "../data";
 
-* The ods statement tells SAS where to store your
-  output and in what format.        
-  
-  VERY IMPORTANT! You need to turn off ODS at the 
-  completion of your program or none of the 
-  output gets saved.
-  
-  You can view the output on the screen and then
-  save the output manually, but it is good form
-  to explicity specify the location of output in 
-  your program                                        ;  
-
-ods pdf
-  file="&path/module01/lecture01.pdf";
-
-* The data statement creates a new data set. If 
-  you want a permanent data set, specify a two part
-  name. The part before the period is the libname
-  and tells SAS where to store your file. The part
-  after the period gives the name of the file. By
-  default, all SAS files use the extension .sas7bdat  
-  
-  The infile statement tells SAS where to find the
-  raw data. The delimiter option tells SAS how to
-  tell when one number stops and when another
-  begins. In this example, spaces are delimiters.     
-  
-  The input statement tells SAS what the names are
-  for the variables you are reading in.
-  
-  The label statement provides descriptive labels
-  for your variables. You can use special characters
-  like parentheses, slashes, and dashes that would
-  not be allowed in a variable name. The variable
-  label provides you with the opportunity to give
-  a more detailed description of your variable,
-  including the units of measurement. The variable
-  labels will appear on some of the SAS output,
-  which helps you clarify what the tables and
-  graphs are representing.  
-  
-  The run statement tells SAS that you are ready
-  to go and there is nothing more to input or 
-  manipulate.                                         ;
+ods pdf file=
+  "../results/m02-5507-simon-continuous-variables.pdf";
 
 data intro.fat;
-  infile fat delimiter=' ';
+  infile fat;
   input 
     case
     fat_b
@@ -128,6 +35,7 @@ data intro.fat;
     biceps
     forearm
     wrist;
+
   label
     case="Case number"
     fat_b="Percentage body fatusing Brozek's equation, 457/Density - 414.2"

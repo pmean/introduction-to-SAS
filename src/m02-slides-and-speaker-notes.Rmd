@@ -8,6 +8,14 @@ knit: (function(inputFile, encoding) {
   output_dir = "../results", output_format = "all") })  
 ---
 
+```{r setup, echo=FALSE}
+knitr::opts_chunk$set(echo=FALSE, comment="")
+suppressMessages(suppressWarnings(library(dplyr)))
+suppressMessages(suppressWarnings(library(knitr)))
+suppressMessages(suppressWarnings(library(magrittr)))
+suppressMessages(suppressWarnings(library(stringr)))
+```
+
 ### Overview
 
 <div class="notes">
@@ -21,7 +29,7 @@ Here is an overview of what I want to cover in module02.
 
 </div>
 
-## Review definitions
+### Review definitions
 
 + Categorical
   + Small number of possible values
@@ -60,7 +68,7 @@ Today, you will see examples involving mostly continuous variables.
 </div>
   
 
-## Semicolons are important
+### Semicolons are important
 
 + Ends every SAS statement
 + Easy to forget
@@ -74,7 +82,7 @@ Before I go too far, let me mention and important thing. Every SAS statement end
 
 </div>  
 
-## Example of stretching statement across multiple lines.
+### Example of stretching statement across multiple lines.
 
 One long line
 
@@ -103,7 +111,60 @@ Don't obsess about this now, but you'll see a fairly consistent coding style tha
 
 </div>  
 
-## Data and infile statements
+### m02-5507-simon-continuous-variables.sas, part 1
+
+```{r}
+tx <- readLines("m02-5507-simon-continuous-variables.sas")
+px <- function(tx, s1, s2) {
+  tx %>% str_which(s1) -> i1
+  tx %>% str_which(s2) -> j1
+  tx %>%
+    extract(i1:j1) %>%
+    paste0(collapse="\n") %>%
+    return
+}
+```
+
+```{}
+`r px(tx, fixed("* m02-"), fixed("* license"))`
+```
+
+<div class="notes">
+
+Here is the documentation header for a program that will show how to work with a dataset with mostly continuous variables.
+
+</div>
+
+### m02-5507-simon-continuous-variables.sas, part 2
+
+```{}
+`r px(tx, "^filename", fixed(".pdf"))`
+```
+
+<div class="notes">
+
+The filename statement tells you where the raw data is stored.
+
+The libname statement tells you where SAS will store any permanent datsets.
+
+The ods statement tells you that SAS is going to store the results with a particular filename and in pdf format.
+
+</div>
+
+### m02-5507-simon-continuous-variables.sas, part 3
+
+```{}
+`r px(tx, "^data intro", "^    bmi$")`
+```
+
+<div class="notes">
+
+The input statement is very long.
+
+</div>
+
+
+### Data and infile statements
 
 ```{}
 filename fat
@@ -138,7 +199,7 @@ begins. In this example, spaces are delimiters.
 
 </div>
 
-## Input statement
+### Input statement
 
 ```{}
   input 
@@ -172,7 +233,7 @@ which I will describe later.
 
 </div>
 
-## Label statement
+### Label statement
 
 ```{}
   label
@@ -209,7 +270,7 @@ run;
 </div>
 
 
-## Print procedure
+### Print procedure
 
 ```{}
 proc print
@@ -254,7 +315,7 @@ file is available at
 
 </div>
 
-## output, page 1
+### output, page 1
 
 ![SAS output](../images/output01.png)
 
@@ -264,7 +325,7 @@ This is what your output looks like.
 
 </div>
 
-## Break #1
+### Break #1
 
 + What have you learned
   + libname and filename statements
@@ -275,7 +336,7 @@ This is what your output looks like.
   + Rules for variable names
   + proc means
 
-## Variable names
+### Variable names
 
 + Brief but descriptive
 + Avoid special symbols
@@ -332,7 +393,7 @@ Here's how you can simulate blanks without actually using blanks.
 
 </div>
 
-## Means procedure
+### Means procedure
   
 ```{}
 proc means
@@ -362,7 +423,7 @@ Let's try to do something useful now. Let's calculated some descriptive statisti
 
 </div>
 
-## output, page 2. 
+### output, page 2. 
 
 ![SAS output](../images/output02.png)
 
@@ -372,14 +433,14 @@ Here's the output. There is an unusual data value for ht, 29.5 inches. While thi
 
 </div>
 
-## Break #2
+### Break #2
 + What have you learned
   + Rules for variable names
   + proc means
 + What's next
   + Missing values
 
-## Look at unusual row
+### Look at unusual row
 
 ```{}
 proc sort
@@ -406,7 +467,7 @@ If you don't have a case variable, store the sorted data in a separate location:
 
 </div>
 
-## output, page 3
+### output, page 3
 
 ![SAS output](../images/output03.png)
 
@@ -418,7 +479,7 @@ big weight.
 
 </div>
 
-## Look at opposite end
+### Look at opposite end
 
 ```{}
 proc sort
@@ -440,7 +501,7 @@ happening for the tallest person in the data set.
 
 </div>
 
-## output, page 4
+### output, page 4
 
 ![SAS output](../images/output04.png)
 
@@ -460,7 +521,7 @@ No, that looks just fine.
 
 </div>
 
-## Remove outlier
+### Remove outlier
 
 ```{}
 data intro.fat1;
@@ -475,7 +536,7 @@ This code removes the entire row of data. Notice that I store the modified data 
 
 </div>
 
-## Change to missing value
+### Change to missing value
 
 ```{}
 data intro.fat2;
@@ -525,7 +586,7 @@ analyses of this data set.
 
 </div>
 
-## Logic statements and missing values
+### Logic statements and missing values
 
 ```{}
 proc print
@@ -543,7 +604,7 @@ Logic statements involving missing value codes
    
 </div>
 
-## output, page 5
+### output, page 5
 
 ![SAS output](../images/output05.png)
 
@@ -566,7 +627,7 @@ correctly reflects what you want.
   
 </div>
 
-## The proper way to search for negative ht values
+### The proper way to search for negative ht values
 
 ```{}
 where (ht < 0) & (ht ~= .) 
@@ -578,7 +639,7 @@ You may hate having to do this and wish that SAS would have handled things diffe
 
 </div>
 
-## nmiss option
+### nmiss option
 
 ```{}
 proc means
@@ -597,7 +658,7 @@ run;
 ;
 </div>
 
-## output, page 6
+### output, page 6
 
 ![SAS output](../images/output06.png)
 
@@ -607,14 +668,14 @@ Note that your data set has 251 observations and 1 missing value.
 
 </div>
 
-## Break #3
+### Break #3
 + What have you learned
   + Missing values
 + What's next
   + Simple transformations
   + Histograms
 
-## Simple transformations
+### Simple transformations
 
 ```{}
 data converted_units;
@@ -638,7 +699,7 @@ I want to talk more about transformations later, especially the log transformati
 
 </div>
 
-## output, page 7
+### output, page 7
 
 ![SAS output](../images/output07.png)
 
@@ -648,7 +709,7 @@ This is your output with measurements both in the original units and metric. Not
 
 </div>
 
-## Histogram
+### Histogram
 
 ```{}
 proc sgplot
@@ -664,7 +725,7 @@ A histogram is useful for displaying a continuous variable graphically.
 
 </div>
 
-## output, page 8
+### output, page 8
 
 ![SAS output](../images/output08.png)
 
@@ -677,7 +738,7 @@ to you.
 
 </div>
 
-## Histogram with one unit wide intervals
+### Histogram with one unit wide intervals
 
 ```{}
 proc sgplot
@@ -687,7 +748,7 @@ proc sgplot
 run;
 ```
 
-## output, page 9
+### output, page 9
 
 ![SAS output](../images/output09.png)
 
@@ -697,7 +758,7 @@ This might be a bit too narrow. The only way you can set the widths properly is 
 
 </div>
 
-## Histogram with five unit wide intervals
+### Histogram with five unit wide intervals
 
 ```{}
 proc sgplot
@@ -713,7 +774,7 @@ It is easy enough to try different interval widths.
 
 </div>
 
-## output, page 10
+### output, page 10
 
 ![SAS output](../images/output10.png)
 
@@ -723,7 +784,7 @@ These bars are maybe too wide. The ideal width is probably 2. But I'll stop here
 
 </div>
 
-## Nice labels
+### Nice labels
 
 ```{}
 proc format;
@@ -748,7 +809,7 @@ We'll talk more about proc format next week, but a simple application is providi
 
 </div>
 
-## Break #4
+### Break #4
 + What have you learned
   + Simple transformations
   + Histograms
@@ -756,7 +817,7 @@ We'll talk more about proc format next week, but a simple application is providi
   + Correlations
   + Scatterplots
 
-## Correlations
+### Correlations
 
 ```{}
 proc corr
@@ -805,7 +866,7 @@ run;
   
 </div>
 
-## output, page 12
+### output, page 12
 
 ![SAS output](../images/output12.png)
 
@@ -815,7 +876,7 @@ Notice that I deliberately avoided printing out the entire corelation matrix, wh
 
 </div>
 
-## Save correlations
+### Save correlations
 
 ```{}
 proc corr
@@ -838,7 +899,7 @@ run;
 
 </div>
 
-## output, page 13
+### output, page 13
 
 ![SAS output](../images/output13.png)
 
@@ -848,7 +909,7 @@ The output is a bit unusual because SAS wants to include means and standard devi
 
 </div>
 
-## SAS code to round correlations
+### SAS code to round correlations
 
 ```{}
 data correlations;
@@ -875,7 +936,7 @@ slides. This code does the rounding.
 
 </div>
 
-## SAS code to reorder correlations
+### SAS code to reorder correlations
 
 ```{}
 proc sort
@@ -894,7 +955,7 @@ This code does the reordering and printing.
 
 </div>
 
-## output, page 14
+### output, page 14
 
 ![SAS output](../images/output14.png)
 
@@ -904,7 +965,7 @@ This is the output. You can see that measurements at the extremities are poor pr
 
 </div>
 
-## Scatterplot
+### Scatterplot
 
 ```{}
 proc sgplot
@@ -924,7 +985,7 @@ run;
 ;
 </div>
 
-## output, page 15
+### output, page 15
 
 ![SAS output](../images/output15.png)
 
@@ -934,7 +995,7 @@ This plot shows a general upward trend.
 
 </div>
 
-## Trend line
+### Trend line
 
 ```{}
 proc sgplot
@@ -951,7 +1012,7 @@ The reg statement adds a least squares trend line to your graph.
 
 </div>
 
-## output, page 16
+### output, page 16
 
 ![SAS output](../images/output16.png)
 
@@ -961,7 +1022,7 @@ The trend line is very useful for large and noisy data sets. It also allows you 
 
 </div>
 
-## Smoothing spline
+### Smoothing spline
 
 ```{}
 proc sgplot
@@ -979,7 +1040,7 @@ The pbspline statement adds a smoothing spline to your graph. This allows you to
 </div>
 
 
-## output, page 17
+### output, page 17
 
 ![SAS output](../images/output17.png)
 
@@ -989,7 +1050,7 @@ The smoothing spline provides some evidence that the relationship is roughly lin
 
 </div>
 
-## Don't forget!
+### Don't forget!
 
 ```{}
 ods pdf close;
@@ -1001,7 +1062,7 @@ I always seem to forget this last statement and then I get upset with SAS for no
 
 </div>
 
-## Summary
+### Summary
 + What have you learned
   + libname and filename statements
   + input and label statements
@@ -1009,14 +1070,14 @@ I always seem to forget this last statement and then I get upset with SAS for no
   + Missing values and simple transformations
   + Histograms, correlations, scatterplots
 
-## Homework01 (1 of 7)
+### Homework01 (1 of 7)
 
 Having reviewed these analyses, I would like 
 you to turn in some simple analyses that you 
 run on a fresh data set. This homework 
 assignment will be graded pass/fail.
 
-## Homework01 (2 of 7)
+### Homework01 (2 of 7)
 
 There is a second data set on sleep in 
 mammals. You can find a brief description of
@@ -1028,14 +1089,14 @@ and you can download the actual data at
 
 --> http://www.statsci.org/data/general/sleep.txt
 
-## Homework01 (3 of 7)
+### Homework01 (3 of 7)
 
 For every question, include the relevant SAS 
 output and a brief written commentary explaining
 what the results mean. When you send your 
 answers, please include the original questions.
 
-## Homework01 (4 of 7)
+### Homework01 (4 of 7)
 
 + Notice that there is a huge range in body 
 weight. Display the information for the 
@@ -1046,7 +1107,7 @@ smallest and the largest mammals.
 + Calculate the mean and standard deviation 
 for TotalSleep.
 
-## Homework01 (5 of 7)
+### Homework01 (5 of 7)
 
 + Draw a histogram for the BodyWt variable.
 Note that this variable is highly skewed. 
@@ -1060,7 +1121,7 @@ convert grams to kilograms (or vice versa)
 before computing the ratio. What animal has
 the smallest/largest ratio?
 
-## Homework01 (6 of 7)
+### Homework01 (6 of 7)
 
 + Do bigger animals sleep longer or live
 longer? Show your results using a correlation
@@ -1070,7 +1131,7 @@ coefficient.
 Predation, Exposure, or Danger sleep less?
 Show your results using a plot and a trendline.
 
-## Homework01 (7 of 7)
+### Homework01 (7 of 7)
 
 + Place all the key results into a document
 and copy the original questions and include
