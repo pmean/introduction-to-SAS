@@ -159,6 +159,8 @@ The ods statement tells you that SAS is going to store the results with a partic
 
 <div class="notes">
 
+`r px(tx, "^data intro", "^    bmi$")`
+
 The input statement is very long.
 
 </div>
