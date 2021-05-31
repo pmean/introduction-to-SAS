@@ -4,7 +4,9 @@
 * purpose: to store data set in a permanent location
 * license: public domain;
 
-libname perm "../data";
+%let path=q:\introduction-to-sas;
+
+libname perm "&path/data";
 
 data perm.simple_example;
   input x y;

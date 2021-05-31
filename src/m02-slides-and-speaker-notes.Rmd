@@ -18,6 +18,18 @@ suppressMessages(suppressWarnings(library(stringr)))
 
 ### Overview
 
++ Rules for variable names
++ Using variable labels
++ Printing a small piece of data
++ Simple descriptive statistics
++ Printing row with smallest/largest value
++ Handling outliers
++ Missing value logic
++ Simple transformations
++ Histograms
++ Correlations
++ Scatterplots
+
 <div class="notes">
 
 author: Steve Simon
@@ -111,13 +123,18 @@ Don't obsess about this now, but you'll see a fairly consistent coding style tha
 
 </div>  
 
-### m02-5507-simon-continuous-variables.sas, part 1
+### SAS code, documentation header
 
 ```{r}
 tx <- readLines("m02-5507-simon-continuous-variables.sas")
-px <- function(tx, s1, s2) {
+px <- function(tx, s1, s2, xtra_lines=0) {
   tx %>% str_which(s1) -> i1
   tx %>% str_which(s2) -> j1
+  if (length(i1)==0) return("No beginning found")
+  if (length(j1)==0) return("No ending found")
+  if (length(i1) > 1) return("Multiple beginnings found")
+  if (length(j1) > 1) return("Multiple endings found")
+  j1 <- j1 + xtra_lines
   tx %>%
     extract(i1:j1) %>%
     paste0(collapse="\n") %>%
@@ -135,7 +152,7 @@ Here is the documentation header for a program that will show how to work with a
 
 </div>
 
-### m02-5507-simon-continuous-variables.sas, part 2
+### SAS code: filename, libname, ods statements
 
 ```{}
 `r px(tx, "^filename", fixed(".pdf"))`
@@ -151,230 +168,65 @@ The ods statement tells you that SAS is going to store the results with a partic
 
 </div>
 
-### m02-5507-simon-continuous-variables.sas, part 3
+### SAS code, input statement (1/2)
 
 ```{}
-`r px(tx, "^data intro", "^    bmi$")`
+`r px(tx, "^data intro.fat;", "^    bmi$")`
+...
 ```
 
 <div class="notes">
-
-`r px(tx, "^data intro", "^    bmi$")`
 
 The input statement is very long.
 
 </div>
 
 
-### Data and infile statements
+### SAS code, input statement (2/2)
 
 ```{}
-filename fat
-  "&path/data01/fat.txt";
+...
+`r px(tx, "^    ffw$", "^    wrist;$")`
 
-libname intro
-  "&path/data01";
-
-data intro.fat;
-  infile fat delimiter=' ';
-```
-
-
-<div class="notes">
-
-I'm carrying over the filename and libname statements from the previous page so you can see how it affects the next two statements.
-
-The data statement creates a new data set. If 
-you want a permanent data set, specify a two part
-name. The part before the period is the libname
-and tells SAS where to store your file. The part
-after the period gives the name of the file.
-  
-If you peek at the file after it is created, you 
-will see an extension, .sas7bdat. This the default
-extension used by all the internal SAS data sets.
-  
-The infile statement tells SAS where to find the
-raw data. The delimiter option tells SAS how to
-tell when one number stops and when another
-begins. In this example, spaces are delimiters.     
-
-</div>
-
-### Input statement
-
-```{}
-  input 
-    case
-    fat_b
-    fat_s
-    dens
-    age
-    wt
-    ht
-    bmi
-    ffw
-    neck
-    .
-    .
-    .
-    wrist;
 ```
 
 <div class="notes">
 
-The input statement tells SAS what the names are for the variables you are reading in. There are lots of variables, so I can only show part of the input statement.
-
-Generally, you should use short names, but not so short as to be cryptic. I recommend lengths of about 8 to 16 characters for a variable name. I am a bit more terse here because I want to minimize the amount of typing that you have to do.
-
-This data set did not have a header, a line
-at the very top of the file that lists 
-variable names. For files with a header, you
-should consider using the import procedure,
-which I will describe later.
+Here's the rest of it.
 
 </div>
 
-### Label statement
+### Rules for variable names
 
-```{}
-  label
-    case="Case number"
-    fat_b="Percentage body fatusing Brozek's equation, 457/Density - 414.2"
-    fat_s="Percent body fat using Siri's equation, 495/Density - 450"
-    dens="Density"
-    age="Age (yrs)"
-    wt="Weight (lbs)"
-    .
-    .
-    .
-    wrist="Wrist circumference (cm) distal to the styloid processes"  
-  ;
-run;
-```
-<div class="notes">
-
-  The label statement provides descriptive labels
-  for your variables. You can use special characters
-  like parentheses, slashes, and dashes that would
-  not be allowed in a variable name. The variable
-  label provides you with the opportunity to give
-  a more detailed description of your variable,
-  including the units of measurement. The variable
-  labels will appear on some of the SAS output,
-  which helps you clarify what the tables and
-  graphs are representing.  
-  
-  The run statement tells SAS that you are ready
-  to go and there is nothing more to input or 
-  manipulate.                                         
-  
-</div>
-
-
-### Print procedure
-
-```{}
-proc print
-    data=intro.fat(obs=10);
-  var case fat_b fat_s dens age;
-  title1 "The first ten rows and five columns";
-  title2 "of the fat data set";
-run;
-```
++ Can use mix of
+  + letters (A-Z, a-z),
+  + numbers (0-9)
+  + underscore (_)
+  + no blanks
+  + no symbols
++ Can't start with a number
+  + "a1" but not "1a"
++ Capitalization not important
+  + BMI, Bmi, bmi are same
++ Up to 32 characters in length
 
 <div class="notes">
 
-It's always a good idea to print out a small 
-piece of your data to make sure everything
-is okay.
-  
-The data option tells SAS what data set you
-want to print. If you omit this, SAS will
-print the most recently created data set.
-  
-The obs=10 option limits the number of rows 
-printed to the first 10. For large data sets,
-you should always take advantage of this 
-option. ALWAYS. Always, always, always.
-  
-The var statement limits the variables that
-you print to those that you specify. Again,
-a great idea for large data sets.
-  
-The title statement tells SAS to provide
-a descriptive title at the top of the page
-of output.
-  
-The run statement says you're done with the
-procedure.
-  
-This data set shows data various body 
-measurements. A brief description of this 
-file is available at
+There are important rules for variable names in SAS. You can use a mix of letters, numbers, and the underscore. You can't use blanks or any special symbols like the dollar sign ($) or the dash/minus sign.
 
-  http://www.amstat.org/publications/jse/datasets/fat.txt
+You can't start with a number. So "a1" is okay, but "1a" is not.
 
-</div>
+Capitalization is not important in SAS. So you can call your variable "BMI" with all caps, or "Bmi" with mixed capitals or "bmi" with all lower case. SAS treats all of these the same.
 
-### output, page 1
+Your variable name has to be 32 characters or less in length.
 
-![SAS output](../images/output01.png)
+I'm using the variable names provided but if you create your own names, use brief (but descriptive) name for EVERY variable in your data set. There's no precise rule, but names should be around 8 characters long. Longer variable names make your typing tedious and much shorter variable names makes your code terse and cryptic.
 
-<div class="notes">
+I'm a bit more terse with these variable names than I normally would be just to reduce the amount of typing you have to do.
 
-This is what your output looks like.
+You should avoid special symbols in your variable names especially symbols that are likely to cause confusion (the dash symbol, for example, which is also the symbol for subtraction). You should also avoid blanks. These rules are pretty much universal across most statistical software packages.
 
-</div>
-
-### Break #1
-
-+ What have you learned
-  + libname and filename statements
-  + input statement
-  + label statement
-  + proc print
-+ What's next
-  + Rules for variable names
-  + proc means
-
-### Variable names
-
-+ Brief but descriptive
-+ Avoid special symbols
-+ No blanks
-  + Anecdote: Writer's Exchange website
-  + underscore_delimited_name
-  + dot.delimited.name
-  + CamelCaseName
-
-<div class="notes">
-
-I'm using the variable names provided but if
-you create your own names, use brief (but 
-descriptive) name for EVERY variable in your
-data set. There's no precise rule, but names
-should be around 8 characters long. Longer 
-variable names make your typing tedious and 
-much shorter variable names makes your code 
-terse and cryptic.
-
-I'm a bit more terse with these variable names
-than I normally would be just to reduce the 
-amount of typing you have to do.
-
-You should avoid special symbols in your 
-variable names especially symbols that are 
-likely to cause confusion (the dash symbol,
-for example, which is also the symbol for 
-subtraction). You should also avoid blanks.
-These rules are pretty much universal across
-most statistical software packages.
-
-There are times when you'd like to have a 
-blank in your variable name and you can use
-two special symbols in SAS (and most other 
-statistical pacakges).
+There are times when you'd like to have a blank in your variable name and you can use two special symbols in SAS (and most other statistical pacakges).
   
 Before I talk too much about this, let me share an anecdote. There was a working group of writers called The Writer's Exchange, and in the early years of the Internet, they decided to create a website: www.writersexchage.com with no space, of course between writers and exchange because the Internet is not to fond of spaces in domain names. It sounded like a natural web site address to use, but then someone noticed something unfortunate. When you run the words writers exchange together, it can also be read as three words: writer sex change. So you need to be careful that your variable names are not so easily misconstrued when you run two or more words together to get a single variable name.
 
@@ -383,78 +235,175 @@ Here's how you can simulate blanks without actually using blanks.
   * the underscore symbol (above the minus key
   on most keyboards) and
     
-  * the dot (period).
+  * the dot (period). (Note that SAS does not allow you to use the perior this way.)
 
-  These symbols create some artificial spacing
-  that mimics the blanks. Another approach is 
-  "CamelCase" which is the mixture of upper and
-  lower case within a variable name with each 
-  uppercase designating the beginning of a new "word".
-;
-
+These symbols create some artificial spacing that mimics the blanks. Another approach is  "CamelCase" which is the mixture of upper and lower case within a variable name with each uppercase designating the beginning of a new "word".
 
 </div>
 
-### Means procedure
+### Recommendations for variable names
+
++ Avoid generic names (x1, var01, etc.)
++ Keep it short
+  + Use commonly known abbreviations...
+  + ...but nothing cryptic
++ Use all lower case (age, not AGE or Age)
++ Separate words with underscores
+  + fat_brozek, not fatbrozek
++ Alternative: CamelCase
+  + FatBrozek
++ Caution: Writer's Exchange website
+  + www.writersexchange.com
   
+<div class="notes">
+
+Your variable names should by descriptive. Avoid generic names like x1, var01, and so forth.
+
+Keep things short. You can use commonly known abbreviations, such as "wt" for "weight". But avoid any cryptic abbreviations.
+
+I like to keep everything in lower case. It is more readable than all upper case, and easier to remember than a mixture of upper and lower case. Some people prefer an initiial upper case, and there's nothing wrong with that. It is important, however, to be consistent.
+
+You can use two or three short words in a variable name, but be sure to separate them using underscores. So the variable for percentage body fat as measured by Brozek's equation is "fat" and "brozek" separated by an underscore. Some people prefer CamelCase, where each word starts with an initial capital letter: capital F fat, capital B brozek.
+
+The one thing you do want to avoid is just running two or three words together and all lower case. There's a story about a group that started up in the era before the web called Writer's Exchange. As you can guess this was a resource for new authors. When the web came out, they decided to put their resources up on a website, www.writersexchange.com. That seemed logical enough, but then someone notices that you could read the website as "www dot writer sex change dot com". Not exactly the image they wanted.
+
+</div>
+
+### Break #1
+
++ What have you learned so far
+  + Rules for variable names
+  
++ What's next
+  + Using variable labels
+  + Printing a small piece of data
+
+### SAS variable labels
+
++ Longer description of a variable
+  + Can include blanks, special symbols
+  + Internal documentation
+  + Labels substituted on some (but not all) output
++ Required in this class (see grading rubric)
++ Recommendations for variable labels
+  + Judicious use of upper and lower case
+  + Spell out abbreviations
+  + Specify units of measurement
+  + Any other important details
+
+<div class="notes">
+
+SAS offers an opportunity for you to add documentation to your program about individual variables. These are called variable labels. They have almost no restrictions. You can use blanks, or special symbols like a dollar sign or a dash. The documentation that variable labels provide is mostly internal, but these labels are substituted in a few places like some graphs.
+
+I strongly recommend use of variable labels and will require them for any homework you submit in this class. See the grading rubric for details.
+
+What makes a good variable label? First take advantage of a mixture of upper and lower case to make your labels more readable. Spell out any abbreviations, even obvious abbreviations. If your variable has a measurement unit, specify that unit in your variable label. If there are other important details, put these in the variable label as well.
+
+</div>
+
+### SAS code, labels (1/2)
+
 ```{}
-proc means
-    n mean std min max
-    data=intro.fat;
-  var ht;
-  title1 "Simple descriptive statistics for ht";
-  title2 "Notice the unusual minimum value";
-run;
+`r px(tx, "^  label$", "^    ffw=")`
+...
 ```
 
 <div class="notes">
 
-Let's try to do something useful now. Let's calculated some descriptive statistics on height.
-
-  The means procedure will produce descriptive 
-  statistics for your data. By default, it will
-  produce the count of non-missing values, the 
-  mean, the standard deviation, and the minimum
-  and maximum values, but I am listing them
-  explicitly here, just for show.
-  
-  The data option tells SAS which data set you
-  want descriptive statistics on, and the var
-  statement tells SAS which variable(s) you
-  want descriptive statistics on.
+Every variable in a SAS program should have a label. This label will make some (but not all) of the SAS output more readable. it is also part of the internal documentation of your program. Note that some of these labels do not fit well in this Powerpoint slide, but that's okay.
 
 </div>
 
-### output, page 2. 
+### SAS code, labels (2/2)
 
-![SAS output](../images/output02.png)
+```{}
+...
+`r px(tx, "^    neck=", "styloid processes", 2)`
+
+```
 
 <div class="notes">
 
-Here's the output. There is an unusual data value for ht, 29.5 inches. While this is not totally outside the realm of possibility, you should always ask when you see something unusual like this.
+
+
+</div>
+
+### SAS code, proc print
+
+```{}
+`r px(tx, "Print a small piece", "of the fat data set", 1)`
+```
+
+<div class="notes">
+
+It's always a good idea to print out a small piece of your data to make sure everything is okay.
+  
+The data option tells SAS what data set you want to print. If you omit this, SAS will print the most recently created data set.
+  
+The obs=10 option limits the number of rows printed to the first 10. For large data sets, you should always take advantage of this option.
+  
+The var statement limits the variables that you print to those that you specify. Again, this is important for large data sets. 
+
+Please do not ever print more than ten rows or more than five variables, if you can help it. Excessively lengthy outputs will lose you a few points (see the grading rubric).
+  
+The title statement tells SAS to provide a descriptive title at the top of the page of output.
+  
+The run statement says you're done with the procedure.
+
+</div>
+
+### SAS output, proc print
+
+![SAS output](../images/tst_01.png)
+
+<div class="notes">
+
+This is what your output looks like.
 
 </div>
 
 ### Break #2
-+ What have you learned
-  + Rules for variable names
-  + proc means
-+ What's next
-  + Missing values
 
-### Look at unusual row
++ What have you learned so far
+  + Using variable labels
+  + Printing a small piece of data
+  
++ What's next
+  + Simple statistics
+  + Printing row with smallest/largest value
+
+### SAS code, proc means
 
 ```{}
-proc sort
-    data=intro.fat;
-  by ht;
-run;
+`r px(tx, "Calculate simple statistics", "unusual minimum value", 1)`
+```
 
-proc print
-    data=intro.fat(obs=1);
-  title1 "The row with the smallest ht";
-run;
+<div class="notes">
 
+The means procedure will produce descriptive statistics for your data. By default, it will produce the count of non-missing values, the mean, the standard deviation, and the minimum and maximum values, but I am listing them explicitly here, just for show.
+
+The data option tells SAS which data set you want descriptive statistics on, and the var statement tells SAS which variable(s) you want descriptive statistics on.
+
+</div>
+
+### SAS output, proc means
+
+![SAS output](../images/tst_02.png)
+
+<div class="notes">
+
+This is what your output looks like.
+
+Notice the unusual minimum value. While this is not totally outside the realm of possibility, you should always ask when you see something unusual like this. 
+
+First, let's look at this value in the context of the other values in this row of data.
+
+</div>
+
+### SAS code, proc means
+
+```{}
+`r px(tx, "Look at smallest value", "inconsistency with wt", 1)`
 ```
 
 <div class="notes">
@@ -469,57 +418,68 @@ If you don't have a case variable, store the sorted data in a separate location:
 
 </div>
 
-### output, page 3
+### SAS output, proc means
 
-![SAS output](../images/output03.png)
+![SAS output](../images/tst_03.png)
 
 <div class="notes">
 
-Clearly something is wrong. There's no way that a
-person with such a small height would have such a
-big weight.
+This is what your output looks like.
+
+There is no possible way that a height of 29.5 inches could be paired with a weight of 205 pounds.
+
+With this outlier on the low end, you might consider doing nothing other than noting the unusual value.
+
+Alternately, you could delete the entire row associated with this value. Finally, you might consider converting the small ht value to a missing value code.
+
+There is no one method that is preferred in this setting. If you encounter an unusual value, you should discuss it with your research team, investigate the original data sources, if possible, and review any procedures for handling unusual data values that might be specified in your research protocol.
+
+Your data set may arrive with missing values in it already. Data might be designated as missing for a variety of reasons (lab result lost, value below the limit of detection, patient refused to answer this question) and how you handle missing values is way beyond the scope of this class. Just remember to tread cautiously around missing values as they are a minefield.
+
+Notice that I store the revised data sets with the row removed and with the 29.5 replaced by a missing value in different data frames. This is good programming practice. If you ever have to make a destructive change to your data set (a change that wipes out one or more values or a change that is difficult to undo), it is good form to store the new results in a fresh spot. That way, if you get cold feet, you can easily backtrack.
+
+We'll use the data set with the 29.5 changed to a missing value for all of the remaining analyses of this data set.
+
+Logic statements involving missing value codes are tricky. SAS stores missing value codes as the most extreme legal negative number. So if you want, for example, to exclude negative values, make sure that you account for missing values as well.
+
+   (ht < 0) & (ht ~= .) 
 
 </div>
 
-### Look at opposite end
+### SAS code, proc means
 
 ```{}
-proc sort
-    data=intro.fat;
-  by descending ht;
-run;
-
-proc print
-    data=intro.fat(obs=1);
-  title1 "The row with the largest ht";
-run;
+`r px(tx, "Look at largest value", "normal to me", 1)`
 ```
 
 <div class="notes">
 
-There are several ways to handle this outlier, but
-first, let's check to see if something weird is
-happening for the tallest person in the data set.
+Just for the sake of completeness, let's look at the row of data with the largest height value. Add the keyword desc to sort the data in reverse order.
 
 </div>
 
-### output, page 4
+### SAS output, proc means
 
-![SAS output](../images/output04.png)
+![SAS output](../images/tst_04.png)
 
 <div class="notes">
 
-No, that looks just fine.
+This is what your output looks like.
 
-  With this outlier on the low end, you might
-  consider doing nothing other than noting the
-  unusual value.
+These values seem reasonable to me.
+
+</div>
+
+### Break #3
+
++ What have you learned so far
+  + Simple statistics
+  + Printing row with smallest/largest value
   
-  Alternately, you could delete the entire row
-  associated with this value.
++ What's next
+  + Handling outliers
+  + Missing values
 
-  Finally, you might consider converting the
-  small ht value to a missing value code.
 
 </div>
 
@@ -549,85 +509,44 @@ run;
 
 <div class="notes">
 
-This code converts the height to a missing value,
-but keeps the original data.
+This code converts the height to a missing value, but keeps the original data.
 
-There is no one method that is preferred 
-in this setting. If you encounter an unusual
-value, you should discuss it with your 
-research team, investigate the original
-data sources, if possible, and review any
-procedures for handling unusual data values
-that might be specified in your research
-protocol.
+There is no one method that is preferred in this setting. If you encounter an unusual value, you should discuss it with your research team, investigate the original data sources, if possible, and review any procedures for handling unusual data values that might be specified in your research protocol.
 
-Your data set may arrive with missing values
-in it already. Data might be designated as 
-missing for a variety of reasons (lab result
-lost, value below the limit of detection, 
-patient refused to answer this question) and
-how you handle missing values is way beyond 
-the scope of this class. Just remember to 
-tread cautiously around missing values as they
-are a minefield.
+Your data set may arrive with missing values in it already. Data might be designated as missing for a variety of reasons (lab result lost, value below the limit of detection, patient refused to answer this question) and how you handle missing values is way beyond the scope of this class. Just remember to tread cautiously around missing values as they are a minefield.
 
-Notice that I store the revised data sets with
-the row removed and with the 29.5 replaced by 
-a missing value in different data frames. This
-is good programming practice. If you ever have
-to make a destructive change to your data set
-(a change that wipes out one or more values or
-a change that is difficult to undo), it is good 
-form to store the new results in a fresh spot. 
-That way, if you get cold feet, you can easily
-backtrack.
+Notice that I store the revised data sets with the row removed and with the 29.5 replaced by a missing value in different data frames. This is good programming practice. If you ever have to make a destructive change to your data set (a change that wipes out one or more values or a change that is difficult to undo), it is good form to store the new results in a fresh spot. That way, if you get cold feet, you can easily backtrack.
 
-We'll use the data set with the 29.5 changed
-to a missing value for all of the remaining
-analyses of this data set.
+We'll use the data set with the 29.5 changed to a missing value for all of the remaining analyses of this data set.
 
 </div>
 
 ### Logic statements and missing values
 
 ```{}
-proc print
-    data=intro.fat2;
-  where ht < 0;
-  title "ht < 0 will include ht = .";
-run;
+`r px(tx, "Faulty approach", "0 will include ht", 1)`
 ```
 
 <div class="notes">
 
-Logic statements involving missing value codes
-   are tricky. Look at the output from this sample 
-   code. 
-   
+Here's an important thing to remember about missing values. SAS stores missing value codes as the most extreme legal negative number. This can sometimes lead to surprising and misleading results.
+
+Every procedure in SAS has its own default approach to missing values and often provides you with one or more alternatives. You have to review this carefully for each and every statistical procedure that you run. If you do data manipulations involving missing values, you have to make sure that the result correctly reflects what you want.
+
 </div>
 
-### output, page 5
+### SAS output, proc print wiht faulty logic
 
-![SAS output](../images/output05.png)
+![SAS output](../images/tst_05.png)
 
 <div class="notes">
 
-SAS stores missing value codes as
-the most extreme legal negative number. So if
-you want, for example, to exclude negative
-values, make sure that you account for missing
-values as well.
+This is what your output looks like.
 
-Every procedure in SAS has its own default
-approach to missing values and often provides
-you with one or more alternatives. You have
-to review this carefully for each and every
-statistical procedure that you run. If you
-do data manipulations involving missing
-values, you have to make sure that the result
-correctly reflects what you want.
-  
+In order to prevent this from happening, you need to check for missingness before applying any other logic statement.
+
 </div>
+
 
 ### The proper way to search for negative ht values
 
@@ -641,177 +560,131 @@ You may hate having to do this and wish that SAS would have handled things diffe
 
 </div>
 
-### nmiss option
+### SAS code, nmiss option
 
 ```{}
-proc means
-    n nmiss mean std min max
-    data=intro.fat2;
-  var ht;
-  title "Using the nmiss statistic";
-run;
+`r px(tx, "Counting missing values", "nmiss statistic", 1)`
 ```
 
 <div class="notes">
 
-  If you are concerned at all about missing 
-  values, ask for the number of missing values
-  in proc means using nmiss. 
-;
+If you are concerned at all about missing values (and you should be), ask for the number of missing values in proc means using nmiss.
+
 </div>
 
-### output, page 6
+### SAS output, proc means with nmiss option
 
-![SAS output](../images/output06.png)
+![SAS output](../images/tst_06.png)
 
 <div class="notes">
 
-Note that your data set has 251 observations and 1 missing value.
+This is what your output looks like. Note that your data set has 251 observations and 1 missing value.
 
 </div>
 
-### Break #3
+### Break #4
 + What have you learned
   + Missing values
 + What's next
   + Simple transformations
   + Histograms
 
-### Simple transformations
+### SAS code, simple transformations
 
 ```{}
-data converted_units;
-  set intro.fat2;
-  ht_cm = ht * 2.54;
-  wt_kg = wt / 2.2; 
-run;
-
-proc print 
-    data=converted_units(obs=10);
-  var ht ht_cm wt wt_kg;
-  title "Original and converted units";
-run;
+`r px(tx, "Simple transformations", "Display a histogram", -2)`
 ```
 
 <div class="notes">
 
-You can also make simple transformations of your data, such as converting from English units to metric units.
+You can do simple transformations like unit conversions in SAS. Create a new dataset with the data statement. Use the set command to tell SAS that you plan to use and modify an existing dataset.
 
-I want to talk more about transformations later, especially the log transformation.
+The conversions done here will turn height and weight into centimeters and kilograms, respectively.
 
 </div>
 
-### output, page 7
+### SAS output, simple transformations
 
-![SAS output](../images/output07.png)
+![SAS output](../images/tst_07.png)
 
 <div class="notes">
 
 This is your output with measurements both in the original units and metric. Notice that I did not print any more than 10 rows of data.
 
+
 </div>
 
-### Histogram
+
+### SAS code, Histogram
 
 ```{}
-proc sgplot
-    data=intro.fat2;
-  histogram ht;
-  title "Histogram with default bins";
-run;
+`r px(tx, "Display a histogram", "Revised histogram with narrow bins", -2)`
 ```
 
 <div class="notes">
 
-A histogram is useful for displaying a continuous variable graphically.
+Here's the code to create a histogram with the default option. Generally, it is wise to modify the defaults for any graphic image.
 
 </div>
 
-### output, page 8
+### SAS output, Histogram
 
-![SAS output](../images/output08.png)
+![SAS output](../images/tst_08.png)
 
 <div class="notes">
 
-You should not accept the default width and
-starting values for your histogram, but 
-should specify values that are meaningful
-to you.
+This is your output with measurements both in the original units and metric. Notice that I did not print any more than 10 rows of data.
+
 
 </div>
 
-### Histogram with one unit wide intervals
+### SAS code, Histogram with many bars
 
 ```{}
-proc sgplot
-    data=intro.fat2;
-  histogram ht / binstart=60 binwidth=1;
-  title "Histogram with narrow bins";
-run;
-```
-
-### output, page 9
-
-![SAS output](../images/output09.png)
-
-<div class="notes">
-
-This might be a bit too narrow. The only way you can set the widths properly is through trial and error.
-
-</div>
-
-### Histogram with five unit wide intervals
-
-```{}
-proc sgplot
-    data=intro.fat2;
-  histogram ht / binstart=60 binwidth=5;
-  title "Histogram with wide bins";
-run;
+`r px(tx, "Display a histogram", "Revised histogram with narrow bins", -2)`
 ```
 
 <div class="notes">
 
-It is easy enough to try different interval widths.
+Here's the code to create a histogram with many bars. The first bar is centered at 60, and each bin has a width of 1 inch (plus or minus 0.5 inches)
 
 </div>
 
-### output, page 10
+### SAS output, Histogram with many bars
 
-![SAS output](../images/output10.png)
+![SAS output](../images/tst_09.png)
 
 <div class="notes">
 
-These bars are maybe too wide. The ideal width is probably 2. But I'll stop here, except to note that the labels for this histogram are not ideal. 
+This is the revised histogram. You can also go in the opposite direction.
 
 </div>
 
-### Nice labels
+
+### SAS code, Histogram with fewer bars
 
 ```{}
-proc format;
-  value range_fmt
-    60="58-62"
-  	65="63-67"
-	  70="68-72"
-  	75="73-77"
-	  80="78-82";
-run;
-proc sgplot
-    data=intro.fat2;
-  histogram ht / binstart=60 binwidth=5;
-  xaxis valuesformat=range_fmt.;
-  title "Histogram with re-labeled bins";
-run;
+`r px(tx, "Revised histogram with narrow bins", "Note to myself", -2)`
 ```
 
 <div class="notes">
 
-We'll talk more about proc format next week, but a simple application is providing nicer labels for your graphs and tables. The value of 60 that appears on the graph is actually 58 to 62. The value of 65 is actually 63 to 67. Spell out this relationship in proc format to get better labels. Note, however, that if you modify the widths of the bars, you will have to go back and modify the format as well.
+Here's the code to create a histogram with few bars. The first bar is again centered at 60, but now each bin has a width of 5 inches (plus or minus 2.5 inches). 
 
 </div>
 
-### Break #4
+### SAS output, Histogram with many bars
+
+![SAS output](../images/tst_10.png)
+
+<div class="notes">
+
+This is the revised histogram. There is no "correct" version of the histogram. Try several widths and see which one gives the clearest picture of your data.
+
+</div>
+
+
+### Break #5
 + What have you learned
   + Simple transformations
   + Histograms
@@ -822,55 +695,40 @@ We'll talk more about proc format next week, but a simple application is providi
 ### Correlations
 
 ```{}
-proc corr
-    data=intro.fat2
-    noprob nosimple;
-  var fat_b fat_s;
-  with neck -- wrist;
-  title "Correlation matrix";
-run;
+`r px(tx, "Calculate correlations", "Save the correlations", -2)`
 ```
 
 <div class="notes">
 
-* Note to myself. Talk about saving graphs
-  to a png file, datasets to a csv file.
-;
+The correlation coefficient is a single number between -1 and +1 that quantifies the strength and direction of a relationship between two continuous variables. As a rough rule of thumb, a correlation larger than +0.7 indicates a strong positive association and a correlation smaller than -0.7 indicates a strong negative association. A correlation between +0.3 and +0.7 (-0.3 and -0.7) indicates a weak positive (negative) association. A correlation between -0.3 and +0.3 indicates little or no association.
 
-* The correlation coefficient is a single 
-  number between -1 and +1 that quantifies 
-  the strength and direction of a relationship 
-  between two continuous variables. As a rough 
-  rule of thumb, a correlation larger than +0.7 
-  indicates a strong positive association and a 
-  correlation smaller than -0.7 indicates a 
-  strong negative association. A correlation 
-  between +0.3 and +0.7 (-0.3 and -0.7) indicates
-  a weak positive (negative) association. A 
-  correlation between -0.3 and +0.3 indicates 
-  little or no association.
+Don't take these rules too literally. You're not trying to make definitive statements about your data set. You are just trying to get comfortable with some general patterns that occur in your data set. A complex and definitive statistical analysis will almost certainly not agree with at least some of the preliminary correlations noted here.
 
-  Don't take these rules too literally. You're
-  not trying to make definitive statements about
-  your data set. You are just trying to get 
-  comfortable with some general patterns that 
-  occur in your data set. A complex and 
-  definitive statistical analysis will almost
-  certainly not agree with at least some of the
-  preliminary correlations noted here.
-
-  The corr procedure produces, by default, a
-  square correlation matrix of all the 
-  numeric variables. The noprob and nosimple
-  options cut down on the amount of information
-  printed. The with statement produces a
-  rectangular correlation matrix.
+The corr procedure produces, by default, a square correlation matrix of all the numeric variables. The noprob and nosimple options cut down on the amount of information printed. The with statement produces a rectangular correlation matrix.
   
 </div>
 
-### output, page 12
+### SAS code, Simple correlations
 
-![SAS output](../images/output12.png)
+```{}
+`r px(tx, "Calculate correlations", "Save the correlations", -2)`
+```
+
+<div class="notes">
+
+</div>
+
+### SAS output, Correlations (1/2)
+
+![SAS output](../images/tst_12.png)
+
+<div class="notes">
+
+</div>
+
+### SAS output, Correlations (2/2)
+
+![SAS output](../images/tst_13.png)
 
 <div class="notes">
 
@@ -878,32 +736,21 @@ Notice that I deliberately avoided printing out the entire corelation matrix, wh
 
 </div>
 
-### Save correlations
+### SAS code, New dataset with correlations
 
 ```{}
-proc corr
-    data=intro.fat2
-    noprint
-    outp=correlations;
-  var fat_b fat_s;
-  with neck -- wrist;
-run;
-
-proc print 
-    data=correlations;
-  title "Correlation matrix output to a data set";
-run;
+`r px(tx, "Save the correlations", "Modifying these correlations", -2)`
 ```
 
 <div class="notes">
 
-* You can save the correlations in a separate data file. 
+You can save the correlations in a separate data file. 
 
 </div>
 
-### output, page 13
+### SAS output, New dataset with correlations (1/2)
 
-![SAS output](../images/output13.png)
+![SAS output](../images/tst_14.png)
 
 <div class="notes">
 
@@ -911,55 +758,31 @@ The output is a bit unusual because SAS wants to include means and standard devi
 
 </div>
 
-### SAS code to round correlations
+### SAS output, New dataset with correlations (2/2)
 
-```{}
-data correlations;
-  set correlations;
-  if _type_="CORR";
-  drop type;
-  fat_b=round(100*fat_b);
-  fat_s=round(100*fat_s);
-run;
-```
+![SAS output](../images/tst_15.png)
 
 <div class="notes">
-
-Saving as a data file allows you to 
-manipulate the individual correlations.
-Here we multiply the correlations by 100,
-round them, and sort them. This can often
-simplify the interpretation of large
-correlation matrices.
-
-I'm splitting the code onto two PowerPoint
-slides. This code does the rounding.
-
 
 </div>
 
-### SAS code to reorder correlations
+### SAS code, Modified correlations
 
 ```{}
-proc sort
-    data=correlations;
-  by descending fat_b;
-run;
-proc print 
-    data=correlations;
-  title "Rounded and re-ordered correlation matrix";
-run;
+`r px(tx, "Modifying these correlations", "Draw a scatterplot", -2)`
 ```
 
 <div class="notes">
+
+Saving as a data file allows you to manipulate the individual correlations. Here we multiply the correlations by 100, round them, and sort them. This can often simplify the interpretation of large correlation matrices.
 
 This code does the reordering and printing.
 
 </div>
 
-### output, page 14
+### SAS output, Modified correlations
 
-![SAS output](../images/output14.png)
+![SAS output](../images/tst_16.png)
 
 <div class="notes">
 
@@ -967,29 +790,21 @@ This is the output. You can see that measurements at the extremities are poor pr
 
 </div>
 
-### Scatterplot
+### SAS code, Simple scatterplot
 
 ```{}
-proc sgplot
-    data=intro.fat2;
-  scatter x=abdomen y=fat_b;
-  title "Simple scatterplot";
-run;
+`r px(tx, "Draw a scatterplot", "Adding linear", -2)`
 ```
 
 <div class="notes">
 
-* A scatterplot is also useful for examining the
-  relationship among variables. You can produce
-  scatterplots several different ways, but the
-  scatterplots produced by the sgplot procedure
-  have the most flexibility.
-;
+A scatterplot is also useful for examining the relationship among variables. You can produce scatterplots several different ways, but the scatterplots produced by the sgplot procedure have the most flexibility.
+
 </div>
 
-### output, page 15
+### SAS output, Simple scatterplot
 
-![SAS output](../images/output15.png)
+![SAS output](../images/tst_17.png)
 
 <div class="notes">
 
@@ -997,15 +812,10 @@ This plot shows a general upward trend.
 
 </div>
 
-### Trend line
+### SAS code, Linear trend line
 
 ```{}
-proc sgplot
-    data=intro.fat2;
-  scatter x=abdomen y=fat_b;
-  reg x=abdomen y=fat_b;
-  title "Scatterplot with linear regression line";
-run;
+`r px(tx, "Adding linear", "Adding a smooth curve", -2)`
 ```
 
 <div class="notes">
@@ -1014,9 +824,9 @@ The reg statement adds a least squares trend line to your graph.
 
 </div>
 
-### output, page 16
+### SAS output, Simple scatterplot with linear trend
 
-![SAS output](../images/output16.png)
+![SAS output](../images/tst_18.png)
 
 <div class="notes">
 
@@ -1024,15 +834,10 @@ The trend line is very useful for large and noisy data sets. It also allows you 
 
 </div>
 
-### Smoothing spline
+### SAS code, Smooth curve
 
 ```{}
-proc sgplot
-    data=intro.fat2;
-  scatter x=abdomen y=fat_b;
-  pbspline x=abdomen y=fat_b;
-  title "Simple scatterplot";
-run;
+`r px(tx, "Adding a smooth curve", "with a smooth curve", 1)`
 ```
 
 <div class="notes">
@@ -1042,9 +847,9 @@ The pbspline statement adds a smoothing spline to your graph. This allows you to
 </div>
 
 
-### output, page 17
+### SAS output, Simple scatterplot with smooth curve
 
-![SAS output](../images/output17.png)
+![SAS output](../images/tst_19.png)
 
 <div class="notes">
 
@@ -1066,83 +871,14 @@ I always seem to forget this last statement and then I get upset with SAS for no
 
 ### Summary
 + What have you learned
-  + libname and filename statements
-  + input and label statements
-  + proc print and proc means
-  + Missing values and simple transformations
-  + Histograms, correlations, scatterplots
-
-### Homework01 (1 of 7)
-
-Having reviewed these analyses, I would like 
-you to turn in some simple analyses that you 
-run on a fresh data set. This homework 
-assignment will be graded pass/fail.
-
-### Homework01 (2 of 7)
-
-There is a second data set on sleep in 
-mammals. You can find a brief description of
-this data set at
-
---> http://www.statsci.org/data/general/sleep.html
-
-and you can download the actual data at
-
---> http://www.statsci.org/data/general/sleep.txt
-
-### Homework01 (3 of 7)
-
-For every question, include the relevant SAS 
-output and a brief written commentary explaining
-what the results mean. When you send your 
-answers, please include the original questions.
-
-### Homework01 (4 of 7)
-
-+ Notice that there is a huge range in body 
-weight. Display the information for the 
-smallest and the largest mammals.
-
-+ Which variables have missing data?
-
-+ Calculate the mean and standard deviation 
-for TotalSleep.
-
-### Homework01 (5 of 7)
-
-+ Draw a histogram for the BodyWt variable.
-Note that this variable is highly skewed. 
-Re-draw the histogram on the log scale. 
-For exta credit, relabel the axes with values
-at 0.001, 0.01, etc.
-
-+ Calculate the ratio of BrainWt to BodyWt 
-and express it as a percentage. Be sure to 
-convert grams to kilograms (or vice versa) 
-before computing the ratio. What animal has
-the smallest/largest ratio?
-
-### Homework01 (6 of 7)
-
-+ Do bigger animals sleep longer or live
-longer? Show your results using a correlation
-coefficient.
-
-+ Do animals who have high degrees of 
-Predation, Exposure, or Danger sleep less?
-Show your results using a plot and a trendline.
-
-### Homework01 (7 of 7)
-
-+ Place all the key results into a document
-and copy the original questions and include
-your own written answer along with the 
-appropriate supporting tables or graphs. 
-Do NOT submit uneditted and unannoted
-SAS output. You can use any program to
-prepare the output, but convert it to a PDF
-format before submission. If you have any
-difficulty producing a PDF document, please
-talk to me.
-
+  + Rules for variable names
+  + Using variable labels
+  + Printing a small piece of data
+  + Simple descriptive statistics
+  + Printing row with smallest/largest value
+  + Handling outliers
+  + Missing value logic
+  + Simple transformations
+  + Histograms
+  + Correlations
+  + Scatterplots
