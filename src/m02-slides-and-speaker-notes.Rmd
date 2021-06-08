@@ -52,7 +52,7 @@ Here is an overview of what I want to cover in module02.
   
 <div class="notes">
 
-Before we start, let's review a couple of   definitions. 
+Before we start, let's review a couple of definitions. 
 
 A **categorical variable** is a variable that can only take on a small number of values. Each value is usually associated with a particular category.
 
