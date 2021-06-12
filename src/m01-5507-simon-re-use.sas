@@ -7,7 +7,9 @@
 * re-use.sas 
 written by Steve Simon;
 
-libname perm "q:/Documents/results";
+%let path=q:/introduction-to-sas;
+
+libname perm "&path/data";
 
 proc means
     data=perm.simple_example;

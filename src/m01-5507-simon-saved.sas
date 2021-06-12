@@ -7,10 +7,12 @@
 * saved-pdf.sas 
 written by Steve Simon;
 
-libname perm "../data";
+%let path=q:/introduction-to-sas;
+
+libname perm "&path/data";
 
 ods pdf file=
-  "../results/m01-5507-simon-saved-pdf.pdf";
+  "&path/results/m01-5507-simon.pdf";
 
 data perm.simple_example;
   input x y;

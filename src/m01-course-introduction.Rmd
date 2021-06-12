@@ -11,16 +11,26 @@ knit: (function(inputFile, encoding) {
 ```{r setup, include=FALSE}
 # I will not use too much R in a class called "Introduction to SAS,"
 # but am including this chunk just in case I need something from R.
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo=FALSE, comment="")
+suppressMessages(suppressWarnings(library(dplyr)))
+suppressMessages(suppressWarnings(library(knitr)))
+suppressMessages(suppressWarnings(library(magrittr)))
+suppressMessages(suppressWarnings(library(stringr)))
 ```
+
 
 ### Overview
 
 + Introducing your instructor
++ Where you can get SAS
++ Your first SAS program
++ History of SAS
++ Directory structure and documentation header
++ Permanent storage
++ Saving your output
++ Getting data from a file
 
-<div class="notes">
-
-[[Speaker notes]]
+<div class="notes">[[Speaker notes]]
 
 author: Steve Simon
 date: created 2018-08-29
@@ -39,7 +49,7 @@ Greetings! My name is Steve Simon and I am the instructor for the class, MEDB 55
 
 ![Photo of Steve Simon](../images/m01-steve-simon-pic01.png)
 
-<div class="notes">
+<div class="notes">[[Speaker notes]]
 
 Greetings! My name is Steve Simon and I am the instructor for the class, MEDB 5507, Introduction to SAS.
 
@@ -50,7 +60,7 @@ Greetings! My name is Steve Simon and I am the instructor for the class, MEDB 55
 ![Photo of Mary Gerkovich](../images/m01-mary-gerkovich.png)
 
 
-<div class="notes">
+<div class="notes">[[Speaker notes]]
 
 This course was originally developed by Dr. Mary Gerkovich. I've changed a few things, but I owe a big debt of gratitude to Mary for all of her hard work.
 
@@ -61,7 +71,7 @@ This course was originally developed by Dr. Mary Gerkovich. I've changed a few t
 ![](../images/m01-steve-simon-pic02.png)
 
 
-<div class="notes">
+<div class="notes">[[Speaker notes]]
 
 Let me share a bit about myself. 
 
@@ -72,7 +82,7 @@ Let me share a bit about myself.
 ![](../images/m01-dbhi.png)
 
 
-<div class="notes">
+<div class="notes">[[Speaker notes]]
 
 I am a part-time faculty member in the Department of Biomedical and Health Informatics. 
 
@@ -83,7 +93,7 @@ I am a part-time faculty member in the Department of Biomedical and Health Infor
 ![](../images/m01-website.png)
 
 
-<div class="notes">
+<div class="notes">[[Speaker notes]]
 
 I have a blog and a website. I am trying to combine the two into a single site. It's a work in progress, but here is the url for my effort.
 
@@ -94,7 +104,7 @@ I have a blog and a website. I am trying to combine the two into a single site. 
 ![](../images/m01-github.png)
 
 
-<div class="notes">
+<div class="notes">[[Speaker notes]]
 
 I have a github site. It includes some of the programs used in this class. All the material is public donain, but please do not plagiarize your homework from this github site.
 
@@ -105,7 +115,7 @@ I have a github site. It includes some of the programs used in this class. All t
 ![Screenshot of Canvas site](../images/m01-canvas.png)
 
 
-<div class="notes">
+<div class="notes">[[Speaker notes]]
 
 My course is currently under development in Canvas. This is the instructors view. You will see a slightly different interface.
 
@@ -181,9 +191,15 @@ You can also run SAS through the UMKC Remote Labs. It should run fine on most br
 + What's coming next
   + Your first SAS program
 
-### Your first SAS program
+### Opening screen - SAS commercial version
 
-<div class="notes">
+
+![Opening screen of SAS with multiple windows](../images/opening-screen.png)
+
+
+<div class="notes">[[Speaker notes]]
+
+If you are running the "regular" version of SAS, click on the icon and here's an image of what the opening screen looks like. SAS uses a multi-window format. The layout is a bit chaotic. I usually close some windows and re-arrange others. For the benefit of this presentation, I am going to resize everything, close some of the windows, and maximize the one window of greatest importance, the program editor window.
 
 I want to show how to use SAS. I had the screen resolution too high. It is now 800 by 600 and I think it is like going back.
 
@@ -224,19 +240,6 @@ You see some diagnostic information. Work is a scratch. We are not using this ag
 There is the output. SAS by default centers things, and it doesn't work well with 800 by 600.
 
 Try this yourself. It's a baby step. If it works then you can take more baby steps.
-
-</div>
-
-
-### Opening screen - SAS commercial version
-
-
-![Opening screen of SAS with multiple windows](../images/opening-screen.png)
-
-
-<div class="notes">[[Speaker notes]]
-
-If you are running the "regular" version of SAS, click on the icon and here's an image of what the opening screen looks like. SAS uses a multi-window format. The layout is a bit chaotic. I usually close some windows and re-arrange others. For the benefit of this presentation, I am going to resize everything, close some of the windows, and maximize the one window of greatest importance, the program editor window.
 
 </div>
 
@@ -364,15 +367,6 @@ Output is tricky. I want to talk in more detail later about this, but you can ta
 
 </div>
 
-### Preferences window
-
-![Preferences dialog box](../images/preferences-results-window.png)
-
-<div class="notes">[[Speaker notes]]
-
-There is a preference box. I don't want to talk about it today, but if you are adventurous, take a look at this. There are additional options for storing graphics, which I will talk about later. You control where SAS places its output in the results tab of the preferences dialog box. Select TOOLS | OPTIONS | PREFERENCES from the menu and click on the RESULTS tab.
-
-</div>
 
 ### SAS output window
 
@@ -381,35 +375,6 @@ There is a preference box. I don't want to talk about it today, but if you are a
 <div class="notes">[[Speaker notes]]
 
 Here's what the output window looks like. Notice that SAS uses a monospaced font here.
-
-</div>
-
-### SAS html output
-
-![Maximized view of html output](../images/output-html.png)
-
-<div class="notes">[[Speaker notes]]
-
-Here's what the html output looks like. Notice variety of font sizes and colors. It tries to fit things within the available space.
-
-</div>
-
-### Conclusion
-
-You can run the commercial version of SAS using
-
-+ Your UMKC computer
-+ UMKC Student Computing Labs
-
-You can run a free version of SAS using
-
-+ SAS University
-
-<div class="notes">[[Speaker notes]]
-
-You can run the commercial version of SAS or SAS University and I've shown some screenshots of what this looks like. Try this on your own and let me know if you have been able to get SAS running successfully.
-
-If you cannot get SAS running, drop me an email. It's tricky because it's the first time, but it's not that hard.
 
 </div>
 
@@ -424,29 +389,80 @@ If you cannot get SAS running, drop me an email. It's tricky because it's the fi
 
 ![Blog post on the history of SAS](../images/m01-history-of-sas.png)
 
-<div class="notes">
+<div class="notes">[[Speaker notes]]
 
 History of SAS. If you understand where SAS comes from, you understand some of the limitations.
 
 This is on my blog.
 
-SAS was developed at NC State. SAS Institute was formed in 1976. It is a privately held company.
+</div>
 
-The SAS Headquarters is in Cary, NC, and it is huge. It is a pretty nice place to work.
+### History of SAS
+
++ SAS=Statistical Analysis System
++ Founders come from NCSU
+  + Anthony Barr
+  + James Goodnight
+  + Jane Helwig
+  + John Sall
++ Originally for IBM mainframes
+  + PL/1, FORTRAN, Assembler
+  + Translated to C in 1985
+
+<div class="notes">[[Speaker notes]]
+
+SAS was developed at NC State. 
 
 In the 1960's, IBM mainframes dominated. So SAS was originally written just for these systems. Originally, SAS was written in a mix of PL/1, Fortran, and Assembler. Millions of lines of code re-written in C in 1985 so that SAS could run on personal computers.
 
-Talk about JMP. Extensive use of dynamic graphics. If you can see a demo, it is pretty amazing.
+SAS was built in the 1960s. There is very little software written in the 1960s that is still in regular use. It shows the staying power of SAS, but it is "long in the tooth."
+
+</div>
+
+### History of SAS
+
++ SAS Institute
+  + Founded 1976
+  + Privately held
+  + Huge spending on R&D
+  + Great place to work
+
+<div class="notes">[[Speaker notes]]
+
+SAS Institute was formed in 1976. It is a privately held company.
+
+SAS spends over a quarter of its budget, which is a huge fraction, on Research and Development.
+
+The SAS Headquarters is in Cary, NC, and it is huge. It is a pretty nice place to work with many family friednly policies even from the 1980s. SAS Institure has been rated in many magazine reviews as one of the top places to work.
+
+</div>
+
+### History of SAS
+
++ SAS licensing model
+  + Great for large organizations
+  + Prohibitively expensive for individuals
++ Excellent training resources
+  + SAS publications
+  + Certification program
+  + SAS user conferences
++ Other products
+  + JMP, 1989
+  + Viya, 2017
+
+<div class="notes">[[Speaker notes]]
+
+SAS has a licensing model that is aggressively priced for large corporations but prohibitively expensive for individual consultants.
 
 SAS is oriented around various data sets and procedures. There is a menu driven version of SAS, but it is not very good. If you want a good package that is totally menu driven, use SPSS.
 
 SAS has a licensing model that is prohibitive for individual consultants. They offer a free product, SAS University, that is intended for teaching.
 
-SAS has literally hundreds of books. It has a certification program. 
+SAS has literally hundreds of books published through an in-house publisher. It has a certification program that allows you to earn credetials that can help you in your job search. SAS also sponsors some very extravagant user conferences.
 
-SAS was built in the 1960s. There is very little software written in the 1960s. It shows the staying power, but it is "long in the tooth."
+SAS Institute has many products beyond SAS. Most notable of these is JMP (pronounced "jump"). This is an acronym for John's Macintosh Product. it was released in 1989 when the Macintosh series of computers had many graphical user interface features that were not yet available for other personal computers. It pioneered (and continues to lead) in many interactive and dynamic graphic features.
 
-I'll show some more videos about SAS.
+SAS Viya is a cloud based platform with many advanced visualization and machine learning algorithms not found in SAS.
 
 </div>
 
@@ -455,161 +471,391 @@ I'll show some more videos about SAS.
 + What have you learned
   + History of SAS
 + What's coming next
-  +  Documentation header
+  +  Directory structure/Documentation header
   
-### Documentation header
+### Directory structure
 
-### Permanent storage
-
-### Saving output
-
-### Input text
-
-### filename and infile
-
++ One directory for the entire class
+  + Possibly one directory for each module
++ Subdirectory structure
+  + src
+  + results
+  + data
+  + others?
+    + images
+    + doc
+    
 <div class="notes">
 
-One more baby step and you can tackle the homework. Pause the video and try the same thing yourself. I want to be able to take a file.
+Make sure you store things consistently. This part of the requirements for this class.
 
-I like pdf better than html. There's advantages and disadvantages.
+Store all your programs for this calss in a single directory. You can call it "sas" or "5507" or anything you like. Some people may prefer to create a separate directory for each module in this class. That's fine also.
 
-it's a bad idea to store the data and the program in the same place.
-
-You want it in a folder called data.
-
-I'm going to creat the data set.
-
-And let's put a line at the end.
-
-Sometimes it gets confused if the line ends as six. 
-
-No I want to go to my computer and the q drive and I'm going to create a new folder.
-
-Now what am I going to call this six-numbers. Okay? So we have a file called six-nubmers.txt.
-
-Oh I hope I can remember this. We're going to call this input-text. File save as input-text.sas. We're going to get rid of cards. I hope I get this right. I called it six-numbers.txt. Quote semicolon and then run . Instead of having the data beneath the cards statement. We said delimiter equals quote space quote.
-
-I am going to open Firefox and go to google and look for sas infile statement. And notice you can use 9.4, 9.2, it doesn't matter. You can read this but sometimes the best thing is to take an example and adapt it.
-
-I think I passed what I wanted to do. By the way, this is all good stuff but you don't need to know any of it.
-
-Example 1. Changing how delimiters. Delimiters are what separate one number from the next. It doesn't. Oh man, this is crazy. Let's close this. Delimiter equals space. So let's try this and see if it works.
-
-Save it first. Let's look at it one more time. We got rid of the data. We said it is a space delimited file. I think that should work. It didn't like that. Shoot. Let's close this. I should have changed the name of the PDF file. Input statement. I do infile then input. Instead of saved-pdf, it is now input-text.
-
-Fair enough. ods says where we are going to store the resulting output. Let's run it and see what happens.
-
-Edit, clear all, edit clear all. And it ran. I did this change. Oh, you want to look at this stuff. That's cool. Let's remind ourselves what happened. They like to put it up at the top. You do this with a filename statement. And then you say infile rawdata. And rawdata points back to the filename. Look to see if the previous line had a semicolon. Let's save it first. Let's clear this. Edit, clear all, edit, clear all. I think it worked. There's the output. That's exactly what we want to see. It gives you a cumulative output. It drives me nuts. Let's emphasize what we've learned so far. First we ran a sas program that didn't save anything anywhere. Then we added an ods statement. You can say ods pdf or ods html. That's the second baby step. Next baby step was the infile statement.
-
-If you have problem, it's normal. The remaining programs will be easy. I used sas for 40 years. Once I got it to run it was easy. Baby steps. The you add filenane. Notice that all of this was adding a file lines at a time.
-
-The rest will be easy-peasy. All right. So good luck.
+Most importantly, create three subdirectories, src, results, and data. Store your programs in src, your output in results and your raw and intermediate datasets in data. You may wish to create other subdirectories, such an images folder for any graphs you produce, a doc folder for any documentation you collect, but the three imporant subdirectory folders are src, results, and data.
 
 </div>
 
-### Storing SAS datasets
+### Basic program, part 1
+
+```{r}
+tx <- readLines("m01-5507-simon-basic-program.sas")
+tx %>% 
+  str_subset(fixed("*")) %>%
+  paste0(collapse="\n") -> tx1  
+```
+
+```{}
+`r tx1`
+```
 
 <div class="notes">
 
-We're back. If you're listening to this video, you got the first program running.
-
-I'm mourning the loss of this data set.
-
-To save the data permanenty, use the libname statement.
-
-I'll call it permanent.
-
-We have to figure out where we are. I'm guessing documents/results.
-
-There is a standard, storing new information in a results directory.
-
-if you have any trouble accessing the Q drive, let me know.
-
-Create a new folder called results.
-
-Double click to enter it.
-
-It turns out that in Windows, case insensitive. SAS also.
-
-Hold your breath, let's try running this. 
-
-It annoys me about SAS, it keeps the log around.
-
-Use clear all on the log window. Use clear all on the output window as well.
-
-Hit the little running guy.
-
-Permanent is not a valid SAS name.
-
-It exceeds eight characters. Oh the pain. SAS was built in the 1960s. String constants, for the most part, has to fit in the same space as a floating point number. This means eight characters. SAS since in the 1960's, has some legacy issues.
-
-Say data perm. It sounds like we're hair stylists now.
-
-Two partr name that means it's going to be stored.
-
-Did I say it wouldn't run the first time. I was right. Do we want to save it under the same name.
-
-Let's call the permanent-storage.sas. I have to change it up here as well.
-
-I'm typing it live. I want you to learn that the best way is to type rather than use cut-and-paste. It makes a lot of sense to type this in.
-
-The file is not stored yet. You can see an asterisk. Hold your breath. I think it will run the second time.
-
-Let's make this big so we can see. We're happy because there is no red.
-
-Let me go back to computer and the Q drive and the documents folder and results.
-
-The extension is eight characters, sas7bdat. The most ridiculous extension I have ever seen.
-
-I'm going to exit. Are you sure? Now I'm going to show something cool here.
-
-SAS do this and this and tile. Because it is stored permanently. It always wants to store in 9.4. I'm going to use the Q drive. Documents, SAS programs. What's under source? The interesting thing is I can get rid of the data step now and rename the program. File save as, re-sue.sas. Save. Let's take a careful look. There is no data step anymore. Just call it from perm.simple_example. This program will work now without a data step. It's find of fun in a geeky way. Libname works. Only only observation because of obs=1. Do this baby program. It is storing your data using a two part name.
+Here is the first piece of the basic program I want you to run. It has a brief documentation header that lists the author, date, purpose of the program, and license. I always place my code in the public domain.
 
 </div>
 
-### Output Delivery System
+### Basic program, part 2
+
+```{r}
+tx %>% str_which("^data") -> i1
+tx %>% str_which("^;") -> i2
+tx %>%
+  extract(i1:i2) %>%
+  paste0(collapse="\n") -> tx2  
+  
+```
+
+```{}
+`r tx2`
+```
 
 <div class="notes">
 
-WE're going to take another baby step. The first step was an utter and miserable failure. It usually runs the first time, but it did not run the second time or the third time or the fourth time. So I stopped the tape.
+The data statement creates a dataset with the name "small_example".
 
-Let's take permanent storage. That's a good one to start with.
+The input statement tells SAS to expect two variables and assigns them the names x and y.
 
-ODS is short for Output Delivery System. Back in the 1960's you submitted a bunch of cards and you got output on green paper.
+The datalines statement tells SAS to read the data directly below this line. This is NOT a recommended practice. You should normally keep your data separate from your code. I am doing this only for the sake of simplicity. You will see in just a minute how to handle data that comes in a separate file.
 
-People were tired of not having output that they could re-use.
-
-Give the name of the file. Let's change the name to saved-pdf.
-
-That's a little bit redundant. If I have a program with a certain name, I use the same name (but a different extension) for the output.
-
-We have to sell SAS to close the output. Everything you saved in the queue will be processed and converted to a PDF file.
-
-What do I call this? saved-pdf.sas.
-
-That's saved, and hit the run button. It's thinking. It can't be that hard.
-
-It opened it for me. That was very nice. Where was that? It is on the computer on the Q drive under documents and results. I was sweating at 1:26 and got it at 2:09.
-
-I went to tools and options and preferences and results. By default, SAS stores everything in the work folder and I had trouble finding it. If you go to SAS Explorer. The work folder is for temporary files. It is located at users simon appdata local . I'm not going to read the rest of this. We don't need those temporary files. 
-
-Go to tools options. Do not use the work folder. That is incorrect. I want the documents slash results. I want things stored in q documents results. Make sure that use work folder is unchecked. Make sure it is a place you can remember. Then wehen you look at your computer and documents and results you will see that I have some html output and some pdf. Let's clean that up now. I'm going to delete that. It's confusing to see all my false results. Let's delete this one. Now remember the sas7bdat. We want to create a permanent version of the output as well.
-
-Clear all. Okay. So this is going to create the file. I can change it now to html. The weird thing about html is that instead of saying file equals you say body equals. I believe it is going to get upset if you give it the path. If we add the q documents results in a second place it will cause confusion.
-
-SAS developed these things over many decades and there is a lot of legacy stuff going on.
-
-We want html. You have to say body equals instead of file equals and you don't specify the path.
-
-You don't want a header, trust me, unless you are really html jockey.
-
-This time it's going to work fine. If you're struggling, it is because the program is new. You'll just have a lot of worked examples. Running these programs from scratch is a pain in the neck. Man, it's embarrassing. 
-
-The body of the html firl is saved-web.html.
-
-Go here and run. And you know it call up the results window. If you go to the Q drive to documents to results. There is now a saved-web.html. By default, it will open in Firefox on my system. You can take this file and what can you do with it. You can send it by email. You can put it in dropbox. It's calling up my mail client. I am composing an email and sending it to my favoriter person. I just myself an email with the output.
-
-if you guys are feeling some pain, I'm feeling some pain. We're going to do one more baby step and you'll feel comfortable doing the homework, I hope.
+The three lines of data follow. A single semicolon tells SAS that this is the end of the data.
 
 </div>
+
+### Basic program, part 3
+
+```{r}
+tx %>% str_which("^proc") -> i3
+tx %>% str_which("run;") -> i4
+tx %>%
+  extract(i3:i4) %>%
+  paste0(collapse="\n") -> tx3  
+  
+```
+
+```{}
+`r tx3`
+```
+
+<div class="notes">
+
+The print procedure will print part or all of a dataset. 
+
+You specify the name of the dataset with the data= option. The options obs=1 tells SAS to print only the first row.
+
+The title1 statement prints a descriptive title on the first line of output.
+
+The run statement tells SAS that there is no more information associated with this procedure.
+
+</div>
+
+### Break #5
+
++ What have you learned
+  + How to read a small dataset
+  + How to print a small dataset
+
++ What's coming next
+  + Permanent storage
+
+### Permanent storage, part 1
+
+```{r}
+tx <- readLines("m01-5507-simon-permanent-storage.sas")
+tx %>% 
+  str_subset(fixed("*")) %>%
+  paste0(collapse="\n") -> tx1  
+```
+
+```{}
+`r tx1`
+```
+
+<div class="notes">
+
+Let's look at a modified program that stores the data in a permanent location.
+
+Here is the documentation header. No big changes here other than the name of the program and the purpose.
+
+</div>
+
+### Permanent storage, part 2
+
+```{r}
+tx %>% str_which("^%let") -> i1
+tx %>% str_which("^;") -> i2
+tx %>%
+  extract(i1:i2) %>%
+  paste0(collapse="\n") -> tx2  
+```
+
+
+```{}
+`r tx2`
+```
+
+<div class="notes">
+
+Notice the top line in this section. This is the libname statement. It tells SAS that you want to establish a permanent storage location at ../data. The ../data tells the computer system to go one level closer to the root directory, and then slide into the data subdirectory.
+
+You assign a brief name (no more than eight characters!) to this location. In my program, I use the name "perm" but anything is fine here.
+
+Then you prefix the dataset name simple_example with the libname location and a dot. This is called a two part name by SAS. The first part gives the permanent location folder and the second part gives the file name.
+
+Once you establish a two-part name for a dataset, you assure that it is stored for later re-use.
+
+</div>
+
+### Permanent storage, part 3
+
+```{r}
+tx %>% str_which("proc") -> i3
+tx %>% str_which("run;") -> i4
+tx %>%
+  extract(i3:i4) %>%
+  paste0(collapse="\n") -> tx3  
+```
+
+
+```{}
+`r tx3`
+```
+
+<div class="notes">
+
+Once you establish a two-part name, use it everywhere.
+
+</div>
+  
+### Re-using data in permanent storage, part 1
+
+```{r}
+tx <- readLines("m01-5507-simon-re-use.sas")
+tx %>% 
+  str_subset(fixed("*")) %>%
+  paste0(collapse="\n") -> tx1  
+```
+
+```{}
+`r tx1`
+```
+
+<div class="notes">
+
+Here's a program that re-uses the dataset you just placed in permanent storage.
+
+First, let's show the documentation header.
+
+</div>
+
+### Re-using data in permanent storage, part 2
+
+```{r}
+tx %>% str_which("^%let") -> i1
+tx %>% str_which("run;") -> i2
+tx %>%
+  extract(i1:i2) %>%
+  paste0(collapse="\n") -> tx2  
+```
+
+
+```{}
+`r tx2`
+```
+
+<div class="notes">
+
+Notice that there is no data step in this program, you start with a libname statement that reminds SAS where you stored the permanent dataset. Then you just refer to the two-part name in the data= option of any SAS procedure. Here we are computing some simple descriptive statistics using proc means.
+
+</div>
+
+### Break #6
+
++ What have you learned
+  + Permanent storage
+  
++ What's coming next
+  + Saving your output
+
+### Saving output as pdf, part 1
+
+```{r}
+tx <- readLines("m01-5507-simon-saved.sas")
+tx %>% 
+  str_subset(fixed("*")) %>%
+  paste0(collapse="\n") -> tx1  
+```
+
+```{}
+`r tx1`
+```
+
+<div class="notes">
+
+Let's look at a modified program that stores your output as a pdf file.
+
+Here is the documentation header.
+
+</div>
+
+### Saving output as pdf, part 2
+
+```{r}
+tx %>% str_which("^%let") -> i1
+tx %>% str_which("^;") -> i2
+tx %>%
+  extract(i1:i2) %>%
+  paste0(collapse="\n") -> tx2  
+```
+
+
+```{}
+`r tx2`
+```
+
+<div class="notes">
+
+The ods statement should be placed near the top of the code, certainly before any SAS procedure that produces output.
+
+</div>
+
+### Saving output as pdf, part 3
+
+```{r}
+tx %>% str_which("proc") -> i3
+tx %>% str_which("close;") -> i4
+tx %>%
+  extract(i3:i4) %>%
+  paste0(collapse="\n") -> tx3  
+```
+
+
+```{}
+`r tx3`
+```
+
+<div class="notes">
+
+Near the bottom, you turn off the output. Place this AFTER the last SAS procedure that produces output.
+
+</div>
+
+### Break #7
+
++ What have you learned
+  + Saving your output
+  
++ What's coming next
+  + Getting data from a file
+
+### Reading data from a file, part 1
+
+```{r}
+tx <- readLines("m01-5507-simon-input-text.sas")
+tx %>% 
+  str_subset(fixed("*")) %>%
+  paste0(collapse="\n") -> tx1  
+```
+
+```{}
+`r tx1`
+```
+
+<div class="notes">
+
+It is a very basic principle of good computing practices that you keep your data and your program in separate files. This code shows you how to do this using the infile statement.
+
+</div>
+
+### Reading data from a file, part 2
+
+```{r}
+tx %>% str_which("^%let") -> i1
+tx %>% str_which("input x y;") -> i2
+tx %>%
+  extract(i1:(i2+1)) %>%
+  paste0(collapse="\n") -> tx2  
+```
+
+
+```{}
+`r tx2`
+```
+
+<div class="notes">
+
+The filename statement tells SAS where a particular dataset is stored: both the path and the name of the file. It associates that path and filename with a variable that you refer to using the infile statement.
+
+</div>
+
+### Reading data from a file, part 3
+
+```{r}
+tx %>% str_which("proc") -> i3
+tx %>% str_which("close;") -> i4
+tx %>%
+  extract(i3:i4) %>%
+  paste0(collapse="\n") -> tx3  
+```
+
+
+```{}
+`r tx3`
+```
+
+<div class="notes">
+
+The last part of the program remains unchanged.
+
+</div>
+  
+### Reading data from a file, part 4
+
+```{r}
+tx <- readLines("../data/six-numbers.txt")
+tx %>% 
+  paste0(collapse="\n") -> tx1  
+```
+
+```{}
+`r tx1`
+```
+
+<div class="notes">
+
+This is what your data file looks like. It is just six numbers arranged in a grid.
+
+You will see many variations on the layout of data, and SAS can handle just about any variation. You will see how to handle many of those variations in an upcoming module.
+
+</div>
+
+### Summary
++ What have you learned?
+  + Introducing your instructor
+  + Where you can get SAS
+  + Your first SAS program
+  + History of SAS
+  + Directory structure and documentation header
+  + Permanent storage
+  + Saving your output
+  + Getting data from a file
 

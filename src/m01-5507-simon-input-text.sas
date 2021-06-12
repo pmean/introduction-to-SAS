@@ -4,11 +4,13 @@
 * purpose: to read data from a separate file
 * license: public domain;
 
-libname perm "../data";
+%let path=q:/introduction-to-sas;
 
-filename rawdata "../data/six-numbers.txt";
+libname perm "&path/data";
 
-ods pdf file="../results/input-text.pdf";
+filename rawdata "&path/data/six-numbers.txt";
+
+ods pdf file="&path/results/input-text.pdf";
 
 data perm.simple_example;
   infile rawdata;
