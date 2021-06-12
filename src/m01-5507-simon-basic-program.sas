@@ -1,9 +1,3 @@
-* m01-5507-[put your name here]-basic-progrm.sas
-* author: Steve Simon and [put your name here]
-* date: created 2021-05-30
-* purpose: to read and print a small data set
-* license: public domain;
-
 data small_example;
  input x y;
  datalines;
