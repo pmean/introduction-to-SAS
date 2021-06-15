@@ -1,19 +1,22 @@
-* import-saratoga.sas
-  written by Steve Simon
-  2019-07-02;
+* m03-5507-simon-import-saratoga.sas
+* author: Steve Simon
+* creation date: 2019-07-02
+* purpose: to import the Saratoga dataset
+* license: public domain;
 
-* Import the Saratoga housing data set;
+%let path=q:/introduction-to-sas;
 
-********* ********* ********* ********* *********
-This is the first few lines of code,
-showing where to store the output,
-where to find the input and where
-to store the SAS binary data set
-the program creates.
+ods pdf file=
+    "&path/results/m03-5507-simon-import-saratoga.pdf";
 
-Notice that the filename statement
-points directly to the website.
-********* ********* ********* ********* *********;
+libname perm
+    "&path/data";
+
+filename raw_data
+    "&path/data/string-data.txt";
+
+options papersize=(8in 4in) nonumber nodate;
+
 
 ods pdf file="../results/import-saratoga.pdf";
 filename raw_data
@@ -44,7 +47,7 @@ ten rows and the first five variables.
 
 proc print
     data=module01.saratoga(obs=10);
-  title1 "First two rows of data";
+  title1 "First ten rows of data";
 run;
 ods pdf close;
 

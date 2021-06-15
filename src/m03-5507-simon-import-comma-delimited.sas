@@ -1,23 +1,29 @@
-* import-comma-delimited.sas
-  written by Steve Simon
-  2019-07-01;
+* m03-5507-simon-import-comma-delimited.sas
+* author: Steve Simon
+* creation date: 2019-07-01
+* purpose: to import comma delimited files
+* license: public domain;
 
-********* ********* ********* ********* *********;
-* A simple program to import a comma delimited
-  file into SAS;
+%let path=q:/introduction-to-sas;
 
-ods pdf file="../results/import-comma-delimited.pdf";
+ods pdf file=
+    "&path/results/m03-5507-simon-import-comma-delimited.pdf";
+
+libname perm
+    "&path/data";
+
 filename raw_data
-  "../data/comma-delimited.csv";
-libname module01
-  "../data";
-data module01.comma_delimited;
+    "&path/data/comma-delimited.csv";
+
+options papersize=(8in 4in) nonumber nodate;
+
+data perm.comma_delimited;
   infile raw_data delimiter=",";
   input x y z;
 run;
 
 proc print
-    data=module01.comma_delimited(obs=2);
+    data=perm.comma_delimited(obs=2);
   title1 "First two rows of data";
 run;
 ods pdf close;

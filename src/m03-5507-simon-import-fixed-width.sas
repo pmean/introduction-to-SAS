@@ -1,16 +1,22 @@
-* import-fixed-width.sas
-  written by Steve Simon
-  2019-07-01;
+* m03-5507-simon-import-fixed-width.sas
+* author: Steve Simon
+* creation date: 2019-07-01
+* purpose: to import data in a fixed width format
+* license: public domain;
 
-********* ********* ********* ********* *********;
-* A simple program to import a fixed width
-  file into SAS;
+%let path=q:/introduction-to-sas;
 
-ods pdf file="../results/import-fixed-width.pdf";
+ods pdf file=
+    "&path/results/m03-5507-simon-import-fixed-width.pdf";
+
+libname perm
+    "&path/data";
+
 filename raw_data
-  "../data/fixed-width.txt";
-libname module01
-  "../data";
+    "&path/data/string-data.txt";
+
+options papersize=(8in 4in) nonumber nodate;
+
 data module01.fixed_width;
   infile raw_data delimiter=",";
   input 

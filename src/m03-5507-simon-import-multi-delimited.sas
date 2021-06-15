@@ -1,14 +1,22 @@
-* import-multi-delimited.sas
-  written by Steve Simon
-  2019-07-01;
+* m03-5507-simon-import-multi-delimited.sas
+* author: Steve Simon
+* creation date: 2019-07-01
+* purpose: to import data with multiple blanks as delimiters
+* license: public domain;
 
-********* ********* ********* ********* *********;
-* A simple program to import a multiple space
-  delimited file into SAS;
+%let path=q:/introduction-to-sas;
 
-ods pdf file="../results/import-multi-delimited.pdf";
-filename raw_data "../data/multi-delimited.txt";
-libname module01 "../data";
+ods pdf file=
+    "&path/results/m03-5507-simon-import-multi-delimited.pdf";
+
+libname perm
+    "&path/data";
+
+filename raw_data
+    "&path/data/string-data.txt";
+
+options papersize=(8in 4in) nonumber nodate;
+
 
 data module01.multi_delimited;
   infile raw_data delimiter=" ";

@@ -1,22 +1,29 @@
-* import-space-delimited.sas
-  written by Steve Simon
-  2019-07-01;
+* m03-5507-simon-import-space-delimited.sas
+* author: Steve Simon
+* creation date: 2019-07-01
+* purpose: to import data with spaces as delimiters
+* license: public domain;
 
-********* ********* ********* ********* *********;
-* A simple program to import a space delimited
-  file into SAS;
+%let path=q:/introduction-to-sas;
 
-ods pdf file="../results/import-space-delimited.pdf";
-filename raw_data "../data/space-delimited.txt";
-libname module01 "../data";
+ods pdf file=
+    "&path/results/m03-5507-simon-import-space-delimited.pdf";
 
-data module01.space_delimited;
-  infile raw_data delimiter=" ";
+libname perm
+    "&path/data";
+
+filename raw_data
+    "&path/data/space-delimited.txt";
+
+
+data perm.space_delimited;
+  infile raw_data;
   input x y z;
 run;
 
 proc print
-    data=module01.space_delimited(obs=2);
+    data=perm.space_delimited(obs=2);
   title1 "First two rows of data";
 run;
+
 ods pdf close;

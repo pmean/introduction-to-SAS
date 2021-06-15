@@ -1,25 +1,30 @@
-* import-first-line-names.sas
-  written by Steve Simon
-  2019-07-02;
+* m03-5507-simon-import-first-line-names.sas
+* author: Steve Simon
+* creation date: 2019-07-02
+* purpose: to import data with variable names on the first line
+* license: public domain;
 
-********* ********* ********* ********* *********;
-* A simple program to import a file with variable
-  names on the first line;
+%let path=q:/introduction-to-sas;
 
-ods pdf file="../results/import-first-line-names.pdf";
+ods pdf file=
+    "&path/results/m03-5507-simon-import-first-line-names.pdf";
+
+libname perm
+    "&path/data";
+
 filename raw_data
-  "../data/first-line-names.txt";
-libname module01
-  "../data";
+    "&path/data/first-line-names.csv";
+
 proc import
     datafile=raw_data dbms=dlm
-    out=module01.first_line_names replace;
-  delimiter=" ";
+    out=perm.first_line_names replace;
+  delimiter=",";
   getnames=yes;
 run;
 
 proc print
-    data=module01.first_line_names(obs=2);
+    data=perm.first_line_names(obs=2);
   title1 "First two rows of data";
 run;
+
 ods pdf close;

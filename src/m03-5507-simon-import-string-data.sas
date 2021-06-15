@@ -17,7 +17,7 @@ filename raw_data
 
 options papersize=(8in 4in) nonumber nodate;
 
-data module01.string_data;
+data perm.string_data;
   infile raw_data delimiter=" ";
   input 
     name $
@@ -26,7 +26,8 @@ data module01.string_data;
 run;
 
 proc print
-    data=module01.string_data(obs=2);
+    data=perm.string_data(obs=2);
   title1 "First two rows of data";
 run;
+
 ods pdf close;

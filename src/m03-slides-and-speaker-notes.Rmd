@@ -1,7 +1,5 @@
 ---
 title: "Introduction to SAS, Importing a wide range of data formats"
-author: "Steve Simon"
-date: "Created: 2021-05-31"
 output: powerpoint_presentation
 ---
 
@@ -11,9 +9,18 @@ knitr::opts_chunk$set(echo=FALSE, comment="")
 suppressMessages(suppressWarnings(library(dplyr)))
 suppressMessages(suppressWarnings(library(knitr)))
 suppressMessages(suppressWarnings(library(magrittr)))
+suppressMessages(suppressWarnings(library(stringr)))
 ```
 
 ### Overview
+
++ Space delimited files
++ Comma delimited files
++ Tab delimited files
++ Tilde delimited files
++ Fixed width files
++ String data
++ First line names
 
 <div class="notes">
 
@@ -63,7 +70,6 @@ Sometimes you have to skip a few rows. Sometimes you have to convert strings to 
 ### Space delimited, example
 
 ```{r space-delimited.txt}
-strip_documentation <- function(x) {x[-c(1:9, length(x))]}
 opts_current$get("label") %>%
   paste0("../data/", .) %>%
   readLines(warn=FALSE) %>%
@@ -73,59 +79,67 @@ opts_current$get("label") %>%
 
 <div class="notes">
 
-You've already imported a file similar to this. It is a space delimited file with one blank between each number.
+You've already imported a file similar to this. It is a space delimited file with one blank between each number. This is the simplest case, and requires very little code.
 
 </div>
 
-### Space delimited, SAS code
+### Space delimited, SAS code (1/3)
 
-```{r import-space-delimited.sas}
+```{r m03-5507-simon-import-space-delimited.sas}
+px <- function(tx, s1, s2, xtra_lines=0) {
+  tx %>% str_which(s1) -> i1
+  tx %>% str_which(s2) -> j1
+  if (length(i1)==0) return("No beginning found")
+  if (length(j1)==0) return("No ending found")
+  if (length(i1) > 1) return(paste("Multiple beginnings found:", head(i1)))
+  if (length(j1) > 1) return(paste("Multiple endings found:", head(j1)))
+  j1 <- j1 + xtra_lines
+  tx %>%
+    extract(i1:j1) %>%
+    paste0(collapse="\n") %>%
+    return
+}
 opts_current$get("label") %>%
-  readLines(warn=FALSE) %>%
-  strip_documentation %>%
-  paste0(collapse="\n") %>%
-  cat
+  readLines(warn=FALSE) -> tx
+tx %>% px("^\\* m03", "license") %>% cat
 ```
 
 <div class="notes">
 
-Here is the SAS code to read and print this file.
+Here is the SAS code to read and print this file, starting with the documentation header.
 
 </div>
 
-### Multi-space delimited, example
+### Space delimited, SAS code (2/3)
 
-```{r multi-delimited.txt}
-opts_current$get("label") %>%
-  paste0("../data/", .) %>%
-  readLines(warn=FALSE) %>%
-  paste0(collapse="\n") %>%
-  cat
+```{r}
+tx %>% px("%let", "txt") %>% cat
 ```
 
 <div class="notes">
 
-Some text files will insert extra spaces, as in the first two lines of this data set, to align the data. It makes the file more readable. SAS will handle multiple blanks, including blanks at the beginning and end of a line, in a way that you probably will want.
-
-Note that multiple blanks as a delimiter is not a problem, but try to avoid this for other delimiters, especially commas.
+Here are the lines to tell SAS where everything belongs
 
 </div>
 
-### Multi-space delimited, SAS code
+### Space delimited, SAS code (3/3)
 
-```{r import-multi-delimited.sas}
-opts_current$get("label") %>%
-  readLines(warn=FALSE) %>%
-  strip_documentation %>%
-  paste0(collapse="\n") %>%
-  cat
+```{r}
+tx %>% px("^data", "close;") %>% cat
 ```
 
 <div class="notes">
 
-Here is the SAS code to read and print this file. Nothing has changed except the name of the raw data (in the filename statement, not shown) and the sas data set name.
+Here is the rest of the program.
 
 </div>
+
+### Break #1
+
++ What have you learned
+  + Space delimited files
++ What's next
+  + Comma delimited files
 
 ### Comma delimited, example
 
@@ -145,15 +159,43 @@ Here's a simple example of a comma delimited file.
 
 </div>
 
-### Comma delimited, SAS code
+### Comma delimited, SAS code (1/3)
 
-```{r import-comma-delimited.sas}
+```{r m03-5507-simon-import-comma-delimited.sas}
 opts_current$get("label") %>%
-  readLines(warn=FALSE) %>%
-  strip_documentation %>%
-  paste0(collapse="\n") %>%
-  cat
+  readLines(warn=FALSE) -> tx
+tx %>% px("^\\* m03", "license") %>% cat
 ```
+
+<div class="notes">
+
+Here is the SAS code to read and print this file, starting with the documentation header.
+
+</div>
+
+### Comma delimited, SAS code (2/3)
+
+```{r}
+tx %>% px("%let", "txt") %>% cat
+```
+
+<div class="notes">
+
+Here are the lines to tell SAS where everything belongs
+
+</div>
+
+### Comma delimited, SAS code (3/3)
+
+```{r}
+tx %>% px("^data", "close;") %>% cat
+```
+
+<div class="notes">
+
+Here is the rest of the program.
+
+</div>
 
 <div class="notes">
 
@@ -161,53 +203,12 @@ Here is the SAS code to read and print this file. Nothing has changed other than
 
 </div>
 
-### Tilde delimited, example
+### Break #2
 
-```{r tilde-delimited.txt}
-opts_current$get("label") %>%
-  paste0("../data/", .) %>%
-  readLines(warn=FALSE) %>%
-  paste0(collapse="\n") %>%
-  cat
-```
-
-<div class="notes">
-
-You might even see a bizzare symbol as a delimiter. Something that almost never appears. The tilde(~) is a good example. We have not talked about string data yet, but if your data has lots of strings and it has a lot of unmatched quote marks, commas, and other weird things that might trip you up, the owner of the data might use a tilde because nothing else works as a delimiter.
-
-Here's a simple example of a tilde delimited file.
-
-</div>
-
-### Tilde delimited, SAS code
-
-```{r import-tilde-delimited.sas}
-opts_current$get("label") %>%
-  readLines(warn=FALSE) %>%
-  strip_documentation %>%
-  paste0(collapse="\n") %>%
-  cat
-```
-
-<div class="notes">
-
-Here is the SAS code to read and print this file. Again, nothing has changed except the file names and the delimiter option on the infile statement.
-
-</div>
-
-### Break #1
-
-+ What have you learned.
-  + Space delimited files
-  + Comma separated values
-  + Tilde delimited files
-  
-+ What's coming next
++ What have you learned
+  + Comma delimited files
++ What's next
   + Tab delimited files
-  + Fixed width files
-  + First line variable names
-  + Converting strings to numeric
-  
 
 ### Tab delimited, example
 
@@ -229,14 +230,12 @@ You can also detect tabs by opening the file in a text editor like notebook and 
 
 </div>
 
-### Tab delimited, SAS code
+### Tab delimited, SAS code (1/3)
 
-```{r import-tab-delimited.sas}
+```{r m03-5507-simon-import-tab-delimited.sas}
 opts_current$get("label") %>%
-  readLines(warn=FALSE) %>%
-  strip_documentation %>%
-  paste0(collapse="\n") %>%
-  cat
+  readLines(warn=FALSE) -> tx
+tx %>% px("^\\* m03", "license") %>% cat
 ```
 
 <div class="notes">
@@ -246,6 +245,102 @@ Here is the SAS code to read and print this file. You cannot enter the tab chara
 This import worked fine, but beware. Some of these tab separated value files have a few stray blanks mixed in with the tabs, and this can cause havoc.
 
 </div>
+
+### Tab delimited, SAS code (2/3)
+
+```{r}
+tx %>% px("%let", "txt") %>% cat
+```
+
+<div class="notes">
+
+Here are the lines to tell SAS where everything belongs
+
+</div>
+
+### Tab delimited, SAS code (3/3)
+
+```{r}
+tx %>% px("^data", "close;") %>% cat
+```
+
+<div class="notes">
+
+Here is the rest of the program.
+
+</div>
+
+### Break #3
+
++ What have you learned
+  + Tab delimited files
++ What's next
+  + Tilde delimited files
+
+### Tilde delimited, example
+
+```{r tilde-delimited.txt}
+opts_current$get("label") %>%
+  paste0("../data/", .) %>%
+  readLines(warn=FALSE) %>%
+  paste0(collapse="\n") %>%
+  cat
+```
+
+<div class="notes">
+
+You might even see a bizzare symbol as a delimiter. Something that almost never appears. The tilde(~) is a good example. We have not talked about string data yet, but if your data has lots of strings and it has a lot of unmatched quote marks, commas, and other weird things that might trip you up, the owner of the data might use a tilde because nothing else works as a delimiter.
+
+Here's a simple example of a tilde delimited file.
+
+</div>
+
+### Tilde delimited, SAS code (1/3)
+
+```{r m03-5507-simon-import-tilde-delimited.sas}
+opts_current$get("label") %>%
+  readLines(warn=FALSE) -> tx
+tx %>% px("^\\* m03", "license") %>% cat
+```
+
+<div class="notes">
+
+Here is the SAS code to read and print this file. You cannot enter the tab character directly as a delimiter. Instead, you have to provide the hex code, 09. Note the use of quote marks and X.
+
+This import worked fine, but beware. Some of these tab separated value files have a few stray blanks mixed in with the tabs, and this can cause havoc.
+
+</div>
+
+### Tilde delimited, SAS code (2/3)
+
+```{r}
+tx %>% px("%let", "txt") %>% cat
+```
+
+<div class="notes">
+
+Here are the lines to tell SAS where everything belongs
+
+</div>
+
+### Tilde delimited, SAS code (3/3)
+
+```{r}
+tx %>% px("^data", "close;") %>% cat
+```
+
+<div class="notes">
+
+Here is the rest of the program.
+
+</div>
+
+### Break #4
+
++ What have you learned
+  + Tilde delimited files
++ What's next
+  + Fixed width files
 
 ### Fixed width, example
 
@@ -273,14 +368,38 @@ In the fixed width file above, you would have to be told there are three numbers
 
 </div>
 
-### Fixed width, SAS code
+### Fixed width, SAS code (1/3)
 
-```{r import-fixed-width.sas}
+```{r m03-5507-simon-import-fixed-width.sas}
 opts_current$get("label") %>%
-  readLines(warn=FALSE) %>%
-  strip_documentation %>%
-  paste0(collapse="\n") %>%
-  cat
+  readLines(warn=FALSE) -> tx
+tx %>% px("^\\* m03", "license") %>% cat
+```
+
+<div class="notes">
+
+Here is the SAS code to read and print this file. You cannot enter the tab character directly as a delimiter. Instead, you have to provide the hex code, 09. Note the use of quote marks and X.
+
+This import worked fine, but beware. Some of these tab separated value files have a few stray blanks mixed in with the tabs, and this can cause havoc.
+
+</div>
+
+### Fixed width, SAS code (2/3)
+
+```{r}
+tx %>% px("%let", "txt") %>% cat
+```
+
+<div class="notes">
+
+Here are the lines to tell SAS where everything belongs
+
+</div>
+
+### Fixed width, SAS code (3/3)
+
+```{r}
+tx %>% px("^data", "close;") %>% cat
 ```
 
 <div class="notes">
@@ -289,6 +408,12 @@ Here is the SAS code to read and print this file. Each variable is followed by a
 
 </div>
 
+### Break #5
+
++ What have you learned
+  + Fixed width files
++ What's next
+  + String data
 
 ### String data, example
 
@@ -308,14 +433,36 @@ Here's a small text file with a string of four to six letters.
 
 </div>
 
-### String data, SAS code
+### String data, SAS code (1/3)
 
-```{r import-string-data.sas}
+```{r m03-5507-simon-import-string-data.sas}
 opts_current$get("label") %>%
-  readLines(warn=FALSE) %>%
-  strip_documentation %>%
-  paste0(collapse="\n") %>%
-  cat
+  readLines(warn=FALSE) -> tx
+tx %>% px("^\\* m03", "license") %>% cat
+```
+
+<div class="notes">
+
+Here is the documentation header.
+
+</div>
+
+### String data, SAS code (2/3)
+
+```{r}
+tx %>% px("%let", "txt") %>% cat
+```
+
+<div class="notes">
+
+Here are the lines to tell SAS where everything belongs
+
+</div>
+
+### String data, SAS code (3/3)
+
+```{r}
+tx %>% px("^data", "close;") %>% cat
 ```
 
 <div class="notes">
@@ -349,10 +496,16 @@ What about strings with quotes in them. This can happen. I did a text analysis o
 
 </div>
 
+### Break #6
+
++ What have you learned
+  + String data
++ What's next
+  + First line names
 
 ### First line names, example
 
-```{r first-line-names.txt}
+```{r first-line-names.csv}
 opts_current$get("label") %>%
   paste0("../data/", .) %>%
   readLines(warn=FALSE) %>%
@@ -364,198 +517,50 @@ opts_current$get("label") %>%
 
 </div>
 
-### First line names, SAS code
+### First line names, SAS code (1/3)
 
-```{r import-first-line-names.sas}
+```{r m03-5507-simon-import-first-line-names.sas}
 opts_current$get("label") %>%
-  readLines(warn=FALSE) %>%
-  strip_documentation %>%
-  paste0(collapse="\n") %>%
-  cat
+  readLines(warn=FALSE) -> tx
+tx %>% px("^\\* m03", "license") %>% cat
 ```
 
 <div class="notes">
 
-Here is the SAS code to read and print this file.
+Here is the documentation header.
 
 </div>
 
-### string to numeric dataset
+### First line names, SAS code (2/3)
 
-```{r import-string-to-numeric.sas}
-program_name <- opts_current$get("label") 
-program_name %>%
-  readLines(warn=FALSE) -> sas_code
-input_source_line <- grep("filename raw_data", sas_code) + 1
-sas_code[input_source_line] %>%
-  substr(4, 999) %>%
-  sub("\";", "", .) %>% 
-  readLines(n=10) %>%
-  paste0(collapse="\n") %>%
-  cat
-sas_code %>% 
-  grep("********* *********", ., fixed=TRUE) -> comment_lines
-```
-
-### import-string-to-numeric.sas (1 of 5)
-
-```{r string-to-numeric-code-1}
-opts_current$get("label") %>%
-  sub("^.*-", "", .) %>%
-  as.numeric -> i
-section_a <- (comment_lines[2*i-1]+1):(comment_lines[2*i]-1)
-section_b <- (comment_lines[2*i]+2):(comment_lines[2*i+1]-2)
-cat(sas_code[section_b], sep="\n")
+```{r}
+tx %>% px("%let", "txt") %>% cat
 ```
 
 <div class="notes">
 
-`r paste0(sas_code[section_a], collapse="\n")`
+Here are the lines to tell SAS where everything belongs
 
 </div>
 
-### import-string-to-numeric.sas (2 of 5)
+### First line names, SAS code (3/3)
 
-```{r string-to-numeric-code-2}
-opts_current$get("label") %>%
-  sub("^.*-", "", .) %>%
-  as.numeric -> i
-section_a <- (comment_lines[2*i-1]+1):(comment_lines[2*i]-1)
-section_b <- (comment_lines[2*i]+2):(comment_lines[2*i+1]-2)
-cat(sas_code[section_b], sep="\n")
+```{r}
+tx %>% px("proc import", "close;") %>% cat
 ```
 
 <div class="notes">
 
-`r paste0(sas_code[section_a], collapse="\n")`
+
 
 </div>
 
-### import-string-to-numeric.sas (3 of 5)
-
-![Output from proc print](../images/`r sub(".sas", "", program_name)`1.png)
-
-<div class="notes">
-
-The NA code confused proc import. It saw a column that had some numbers in it and some letters, so it thought "string". If SAS were smart enough to recognize the NA code as missing, then it would have been okay, but NA is a code used by R, and it would be unfair for SAS to know the missing value codes for R and every other statistical package out there.
-
-You can tell that the variable Z is a string because it is left justified. Notice that the 8 and the N and the 2 all line up.
-
-</div>
-
-### import-string-to-numeric.sas (4 of 5)
-
-```{r string-to-numeric-code-3}
-opts_current$get("label") %>%
-  sub("^.*-", "", .) %>%
-  as.numeric -> i
-section_a <- (comment_lines[2*i-1]+1):(comment_lines[2*i]-1)
-section_b <- (comment_lines[2*i]+2):(comment_lines[2*i+1]-2)
-cat(sas_code[section_b], sep="\n")
-```
-
-<div class="notes">
-
-`r paste0(sas_code[section_a], collapse="\n")`
-
-</div>
-
-### import-string-to-numeric.sas (5 of 5)
-
-![Output from proc print](../images/`r sub(".sas", "", program_name)`2.png)
-
-<div class="notes">
-
-With this code, the variable z is input as numeric. Notice the right justification. The 8 and the . and the 4 all line up.) The NA code is converted to the SAS missing value code. Everyone is happy.
-
-There are other ways you can work around this problem, but this is simple and clean.
-
-</div>
-
-### Break #2
-
-+ What have you learned.
-  + Tab delimited files
-  + Fixed width files
-  + First line variable names
-  + Converting strings to numeric
-+ What's coming next
-  + Two real world examples
-    + Abalone age prediction
-    + Saratoga house prices
-  
 ### Read in the abalone data file
 + Abalone age prediction
   + This is a comma separated value file without variables names at the top. You can find the variable names in a data dictionary published at second link.
     + https://archive.ics.uci.edu/ml/machine-learning-databases/abalone/abalone.data
     + https://archive.ics.uci.edu/ml/machine-learning-databases/abalone/abalone.names
 
-### abalone data, first ten lines
-
-```{r import-abalone.sas}
-opts_current$get("label") %>%
-  readLines(warn=FALSE) -> sas_code
-input_source_line <- grep("filename raw_data", sas_code) + 1
-sas_code[input_source_line] %>%
-  substr(4, 999) %>%
-  sub("\";", "", .) %>% 
-  readLines(n=10) %>%
-  paste0(collapse="\n") %>%
-  cat
-sas_code %>% 
-  grep("********* *********", ., fixed=TRUE) -> comment_lines
-```
-
-### import-abalone.sas (1 of 3)
-
-```{r abalone-code-1}
-opts_current$get("label") %>%
-  sub("^.*-", "", .) %>%
-  as.numeric -> i
-section_a <- (comment_lines[2*i-1]+1):(comment_lines[2*i]-1)
-section_b <- (comment_lines[2*i]+2):(comment_lines[2*i+1]-2)
-cat(sas_code[section_b], sep="\n")
-```
-
-<div class="notes">
-
-`r paste0(sas_code[section_a], collapse="\n")`
-
-</div>
-
-### import-abalone.sas (2 of 3)
-
-```{r abalone-code-2}
-opts_current$get("label") %>%
-  sub("^.*-", "", .) %>%
-  as.numeric -> i
-section_a <- (comment_lines[2*i-1]+1):(comment_lines[2*i]-1)
-section_b <- (comment_lines[2*i]+2):(comment_lines[2*i+1]-2)
-cat(sas_code[section_b], sep="\n")
-```
-
-<div class="notes">
-
-`r paste0(sas_code[section_a], collapse="\n")`
-
-</div>
-
-### import-abalone.sas (3 of 3)
-
-```{r abalone-code-3}
-opts_current$get("label") %>%
-  sub("^.*-", "", .) %>%
-  as.numeric -> i
-section_a <- (comment_lines[2*i-1]+1):(comment_lines[2*i]-1)
-section_b <- (comment_lines[2*i]+2):(comment_lines[2*i+1]-2)
-cat(sas_code[section_b], sep="\n")
-```
-
-<div class="notes">
-
-`r paste0(sas_code[section_a], collapse="\n")`
-
-</div>
 
 ### Read in the Saratoga house prices file
 + Saratoga house prices
@@ -563,76 +568,15 @@ cat(sas_code[section_b], sep="\n")
     + https://dasl.datadescription.com/download/data/3437
     + https://dasl.datadescription.com/datafile/saratoga-house-prices/
 
-### saratoga data, first ten lines
-
-```{r import-saratoga.sas}
-opts_current$get("label") %>%
-  readLines(warn=FALSE) -> sas_code
-input_source_line <- grep("filename raw_data", sas_code) + 1
-sas_code[input_source_line] %>%
-  substr(4, 999) %>%
-  sub("\";", "", .) %>% 
-  readLines(n=10) %>%
-  paste0(collapse="\n") %>%
-  cat
-sas_code %>% 
-  grep("********* *********", ., fixed=TRUE) -> comment_lines
-```
-
-### import-saratoga.sas (1 of 3)
-
-```{r saratoga-code-1}
-opts_current$get("label") %>%
-  sub("^.*-", "", .) %>%
-  as.numeric -> i
-section_a <- (comment_lines[2*i-1]+1):(comment_lines[2*i]-1)
-section_b <- (comment_lines[2*i]+2):(comment_lines[2*i+1]-2)
-cat(sas_code[section_b], sep="\n")
-```
-
-<div class="notes">
-
-`r paste0(sas_code[section_a], collapse="\n")`
-
-</div>
-
-### import-saratoga.sas (2 of 3)
-
-```{r saratoga-code-2}
-opts_current$get("label") %>%
-  sub("^.*-", "", .) %>%
-  as.numeric -> i
-section_a <- (comment_lines[2*i-1]+1):(comment_lines[2*i]-1)
-section_b <- (comment_lines[2*i]+2):(comment_lines[2*i+1]-2)
-cat(sas_code[section_b], sep="\n")
-```
-
-<div class="notes">
-
-`r paste0(sas_code[section_a], collapse="\n")`
-
-</div>
-
-### import-saratoga.sas (3 of 3)
-
-```{r saratoga-code-3}
-opts_current$get("label") %>%
-  sub("^.*-", "", .) %>%
-  as.numeric -> i
-section_a <- (comment_lines[2*i-1]+1):(comment_lines[2*i]-1)
-section_b <- (comment_lines[2*i]+2):(comment_lines[2*i+1]-2)
-cat(sas_code[section_b], sep="\n")
-```
-
-<div class="notes">
-
-`r paste0(sas_code[section_a], collapse="\n")`
-
-</div>
 
 ### Summary
+
 + What have you learned
-  + Reading delimited files
-  + Reading fixed width files
-  + First line variable names
-  + Converting strings to numeric
+  + Space delimited files
+  + Comma delimited files
+  + Tab delimited files
+  + Tilde delimited files
+  + Fixed width files
+  + String data
+  + First line names
+
