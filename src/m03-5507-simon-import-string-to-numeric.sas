@@ -1,21 +1,21 @@
-* import-string-to-numeric.sas
-  written by Steve Simon
-  2019-07-03;
+* m03-5507-simon-import-string-to-numeric.sas
+* author: Steve Simon
+* creation date: 2019-07-03
+* purpose: to import data and convert a string to missing
+* license: public domain;
 
-* Import data and convert a string to missing;
+%let path=q:/introduction-to-sas;
+
+ods pdf file=
+    "&path/results/m03-5507-simon-import-string-to-numeric.pdf";
+
+libname perm
+    "&path/data";
+
+filename raw_data
+  "&path/data/tab-delimited.txt";
+
 options papersize=(8in 4in) nonumber nodate;
-
-********* ********* ********* *********
-Here are the standard headers. Tell SAS
-where to store the output, where to
-find the data set and where to place
-any data files it creates.
-********* ********* ********* *********;
-
-ods pdf file="../src/import-string-to-numeric.pdf";
-filename raw_data 
-  "../data/string-to-numeric.txt";
-libname module01 "../data";
 
 ********* ********* ********* *********
 You might be tempted to read in the data
