@@ -4,7 +4,7 @@
 * purpose: to work with continuous variables
 * license: public domain;
 
-options papersize=(6 4);
+options papersize=(6 4); * needed to have the output fit on PowerPoint;
 
 %let p=q:/introduction-to-sas;
 
@@ -16,6 +16,8 @@ libname intro
 
 ods pdf file=
   "&p/results/m02-5507-simon.pdf";
+
+* Part01. Read in the data;
 
 data intro.fat;
   infile fat;
@@ -40,6 +42,8 @@ data intro.fat;
     forearm
     wrist;
 
+* Part02. Add variable labels;
+
   label
     case="Case number"
     fat_brozek="Percentage body fat using Brozek's equation, 457/Density - 414.2"
@@ -51,7 +55,7 @@ data intro.fat;
     bmi="Adiposity index = Weight/Height^2 (kg/m^2)"
     ffw="Fat Free Weight = (1 - fraction of body fat) * Weight using Brozek's formula (lbs)"
     neck="Neck circumference (cm)"
-    chest="+ SimplChest circumference (cm)"
+    chest="Chest circumference (cm)"
     abdomen="Abdomen circumference (cm) at the umbilicus and level with the iliac crest"
     hip="Hip circumference (cm)"
     thigh="Thigh circumference (cm)"
@@ -63,7 +67,7 @@ data intro.fat;
   ;
 run;
 
-* Print a small piece of the data;
+* Part03. Print a small piece of the data;
 
 proc print
     data=intro.fat(obs=10);
@@ -72,7 +76,7 @@ proc print
   title2 "of the fat data set";
 run;
 
-* Calculate simple statistics for ht;
+* Part04. Calculate simple statistics for ht;
 
 proc means
     n mean std min max
@@ -82,7 +86,7 @@ proc means
   title2 "Notice the unusual minimum value";
 run;
 
-* Look at smallest value;
+* Part05. Look at smallest value;
 
 proc sort
     data=intro.fat;
@@ -95,7 +99,7 @@ proc print
   title2 "Note the inconsistency with wt";
 run;
 
-* Look at the largest value;
+* Part06. Look at the largest value;
 
 proc sort
     data=intro.fat;
@@ -108,21 +112,21 @@ proc print
   title2 "This seems quite normal to me";
 run;
 
-* Removing the entire row;
+* Part07. Removing the entire row;
 
 data intro.fat1;
   set intro.fat;
   if ht > 29.5;
 run;
 
-* Converting the outlier to a missing value;
+* Part08. Converting the outlier to a missing value;
 
 data intro.fat2;
   set intro.fat;
   if ht=29.5 then ht=.;
 run;
 
-* Faulty approach for filtering out negative values;
+* Part09. Faulty approach for filtering out negative values;
 
 proc print
     data=intro.fat2;
@@ -130,7 +134,7 @@ proc print
   title1 "ht < 0 will include ht = .";
 run;
 
-* Counting missing values;
+* Part10. Counting missing values;
 
 proc means
     n nmiss mean std min max
@@ -139,7 +143,7 @@ proc means
   title "Using the nmiss statistic";
 run;
 
-* Simple transformations;
+* Part11. Simple transformations;
 
 data converted_units;
   set intro.fat2;
@@ -153,7 +157,7 @@ proc print
   title1 "Original and converted units";
 run;
 
-* Display a histogram;
+* Part12. Display a histogram;
 
 proc sgplot
     data=intro.fat2;
@@ -161,7 +165,7 @@ proc sgplot
   title "Histogram with default bins";
 run;
 
-* Revised histogram with narrow bins;
+* Part13. Revised histogram with narrow bins;
 
 proc sgplot
     data=intro.fat2;
@@ -169,7 +173,7 @@ proc sgplot
   title "Histogram with narrow bins";
 run;
 
-* Revised histogram with wide bins;
+* Part14. Revised histogram with wide bins;
 
 proc sgplot
     data=intro.fat2;
@@ -177,11 +181,7 @@ proc sgplot
   title "Histogram with wide bins";
 run;
 
-* Note to myself. Talk about saving graphs
-  to a png file, datasets to a csv file.
-;
-
-* Calculate correlations;
+* Part15. Calculate correlations;
 
 proc corr
     data=intro.fat2
@@ -191,7 +191,7 @@ proc corr
   title "Correlation matrix";
 run;
 
-* Save the correlations in a separate data file.;
+* Part16. Save the correlations in a separate data file.;
 
 proc corr
     data=intro.fat2
@@ -206,7 +206,7 @@ proc print
   title "Correlation matrix output to a data set";
 run;
 
-* Modifying these correlations.;
+* Part17. Modify these correlations.;
 
 data correlations;
   set correlations;
@@ -221,12 +221,14 @@ proc sort
   by descending fat_brozek;
 run;
 
+* Part18. Print the modified correlations.;
+
 proc print 
     data=correlations;
   title "Rounded and re-ordered correlation matrix";
 run;
 
-* Draw a scatterplot.;
+* Part19. Draw a scatterplot.;
 
 proc sgplot
     data=intro.fat2;
@@ -234,7 +236,7 @@ proc sgplot
   title "Simple scatterplot";
 run;
 
-* Adding linear trend line.;
+* Part20. Adding linear trend line.;
 
 proc sgplot
     data=intro.fat2;
@@ -243,7 +245,7 @@ proc sgplot
   title "Scatterplot with linear regression line";
 run;
 
-* Adding a smooth curve.;
+* Part21. Adding a smooth curve.;
 
 proc sgplot
     data=intro.fat2;
@@ -252,68 +254,7 @@ proc sgplot
   title "Scatterplot with a smooth curve";
 run;
 
-* Homework01.
-
-Having reviewed these analyses, I would like 
-you to turn in some simple analyses that you 
-run on a fresh data set. This homework 
-assignment will be graded pass/fail.
-
-There is a second data set on sleep in 
-mammals. You can find a brief description of
-this data set at
-
---> http://www.statsci.org/data/general/sleep.html
-
-and you can download the actual data at
-
---> http://www.statsci.org/data/general/sleep.txt
-
-For every question, include the relevant SAS 
-output and a brief written commentary explaining
-what the results mean. When you send your 
-answers, please include the original questions.
-
-1. Notice that there is a huge range in body 
-weight. Display the information for the 
-smallest and the largest mammals.
-
-2. Which variables have missing data?
-
-3. Calculate the mean and standard deviation 
-for TotalSleep.
-
-4. Draw a histogram for the BodyWt variable.
-Note that this variable is highly skewed. 
-Re-draw the histogram on the log scale. 
-For exta credit, relabel the axes with values
-at 0.001, 0.01, etc.
-
-5. Calculate the ratio of BrainWt to BodyWt 
-and express it as a percentage. Be sure to 
-convert grams to kilograms (or vice versa) 
-before computing the ratio. What animal has
-the smallest/largest ratio?
-
-6. Do bigger animals sleep longer or live
-longer? Show your results using a correlation
-coefficient.
-
-7. Do animals who have high degrees of 
-Predation, Exposure, or Danger sleep less?
-Show your results using a plot and a trendline.
-
-8. Place all the key results into a document
-and copy the original questions and include
-your own written answer along with the 
-appropriate supporting tables or graphs.
-Do NOT submit uneditted and unannoted
-SAS output. You can use any program to
-prepare the output, but convert it to a PDF
-format before submission. If you have any
-difficulty producing a PDF document, please
-talk to me.
-
-;
 ods pdf close;
+
+* End of program;
 

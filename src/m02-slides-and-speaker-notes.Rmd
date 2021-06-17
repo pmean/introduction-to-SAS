@@ -18,12 +18,10 @@ suppressMessages(suppressWarnings(library(stringr)))
 
 ### Overview
 
-+ Rules for variable names
 + Using variable labels
 + Printing a small piece of data
 + Simple descriptive statistics
 + Printing row with smallest/largest value
-+ Handling outliers
 + Missing value logic
 + Simple transformations
 + Histograms
@@ -33,11 +31,14 @@ suppressMessages(suppressWarnings(library(stringr)))
 <div class="notes">
 
 author: Steve Simon
+
 date: created 2021-05-30
+
 purpose: to produce slides for module01 videos
+
 license: public domain
 
-Here is an overview of what I want to cover in module02.
+Here is an overview of the topics I want to cover in module02.
 
 </div>
 
@@ -127,7 +128,7 @@ Don't obsess about this now, but you'll see a fairly consistent coding style tha
 
 ```{r}
 tx <- readLines("m02-5507-simon-continuous-variables.sas")
-px <- function(tx, s1, s2, xtra_lines=0) {
+px <- function(tx, s1, s2, xtra_lines=-2) {
   tx %>% str_which(s1) -> i1
   tx %>% str_which(s2) -> j1
   if (length(i1)==0) return("No beginning found")
@@ -143,7 +144,7 @@ px <- function(tx, s1, s2, xtra_lines=0) {
 ```
 
 ```{}
-`r px(tx, fixed("* m02-"), fixed("* license"))`
+`r px(tx, "^\\* m02-", "^\\* license", xtra_lines=0)`
 ```
 
 <div class="notes">
@@ -155,7 +156,7 @@ Here is the documentation header for a program that will show how to work with a
 ### SAS code: filename, libname, ods statements
 
 ```{}
-`r px(tx, "^filename", fixed(".pdf"))`
+`r px(tx, "^%let", ("Part01"))`
 ```
 
 <div class="notes">
@@ -171,7 +172,7 @@ The ods statement tells you that SAS is going to store the results with a partic
 ### SAS code, input statement (1/2)
 
 ```{}
-`r px(tx, "^data intro.fat;", "^    bmi$")`
+`r px(tx, "Part01", "^    bmi$", xtra_lines=0)`
 ...
 ```
 
@@ -186,7 +187,7 @@ The input statement is very long.
 
 ```{}
 ...
-`r px(tx, "^    ffw$", "^    wrist;$")`
+`r px(tx, "^    ffw$", "Part02")`
 
 ```
 
@@ -228,14 +229,12 @@ You should avoid special symbols in your variable names especially symbols that 
 
 There are times when you'd like to have a blank in your variable name and you can use two special symbols in SAS (and most other statistical pacakges).
   
-Before I talk too much about this, let me share an anecdote. There was a working group of writers called The Writer's Exchange, and in the early years of the Internet, they decided to create a website: www.writersexchage.com with no space, of course between writers and exchange because the Internet is not to fond of spaces in domain names. It sounded like a natural web site address to use, but then someone noticed something unfortunate. When you run the words writers exchange together, it can also be read as three words: writer sex change. So you need to be careful that your variable names are not so easily misconstrued when you run two or more words together to get a single variable name.
-
 Here's how you can simulate blanks without actually using blanks.
 
   * the underscore symbol (above the minus key
   on most keyboards) and
     
-  * the dot (period). (Note that SAS does not allow you to use the perior this way.)
+  * the dot (period). (Note that SAS does not allow you to use the period this way.)
 
 These symbols create some artificial spacing that mimics the blanks. Another approach is  "CamelCase" which is the mixture of upper and lower case within a variable name with each uppercase designating the beginning of a new "word".
 
@@ -304,7 +303,7 @@ What makes a good variable label? First take advantage of a mixture of upper and
 ### SAS code, labels (1/2)
 
 ```{}
-`r px(tx, "^  label$", "^    ffw=")`
+`r px(tx, "Part02", "^    ffw=")`
 ...
 ```
 
@@ -318,7 +317,7 @@ Every variable in a SAS program should have a label. This label will make some (
 
 ```{}
 ...
-`r px(tx, "^    neck=", "styloid processes", 2)`
+`r px(tx, "^    neck=", "Part03")`
 
 ```
 
@@ -375,7 +374,7 @@ This is what your output looks like.
 ### SAS code, proc means
 
 ```{}
-`r px(tx, "Calculate simple statistics", "unusual minimum value", 1)`
+`r px(tx, "Part04", "Part05")`
 ```
 
 <div class="notes">
@@ -400,10 +399,10 @@ First, let's look at this value in the context of the other values in this row o
 
 </div>
 
-### SAS code, proc means
+### SAS code, print the smallest value
 
 ```{}
-`r px(tx, "Look at smallest value", "inconsistency with wt", 1)`
+`r px(tx, "Part05", "Part06")`
 ```
 
 <div class="notes">
@@ -412,13 +411,13 @@ First, let's look at this value in the context of the other values in this row o
 
 You do this by sorting the data so that the shortest subject becomes the first row of the data and the tallest subject becomes the last. Then print just the very first row of your data.
 
-Warning: be careful about sorting your data if you can't get the data easily back to the original order. It might be okay, but there are times when you'd like your data all the way back and that means data in the original order. This data set has a case variable that you can resort by in order to get bakc ot the original order.
+Warning: be careful about sorting your data if you can't get the data easily back to the original order. It might be okay, but there are times when you'd like your data all the way back and that means data in the original order. This data set has a case variable that you can resort by in order to get back ot the original order.
 
 If you don't have a case variable, store the sorted data in a separate location: something along the lines of proc sort data=x out=y.
 
 </div>
 
-### SAS output, proc means
+### SAS output, print the smallest value
 
 ![SAS output](../images/tst_03.png)
 
@@ -446,10 +445,10 @@ Logic statements involving missing value codes are tricky. SAS stores missing va
 
 </div>
 
-### SAS code, proc means
+### SAS code, printing the largest value
 
 ```{}
-`r px(tx, "Look at largest value", "normal to me", 1)`
+`r px(tx, "Part06", "Part07")`
 ```
 
 <div class="notes">
@@ -458,7 +457,7 @@ Just for the sake of completeness, let's look at the row of data with the larges
 
 </div>
 
-### SAS output, proc means
+### SAS output, printing the largest value
 
 ![SAS output](../images/tst_04.png)
 
@@ -486,11 +485,9 @@ These values seem reasonable to me.
 ### Remove outlier
 
 ```{}
-data intro.fat1;
-  set intro.fat;
-  if ht > 29.5;
-run;
+`r px(tx, "Part07", "Part08")`
 ```
+
 
 <div class="notes">
 
@@ -501,10 +498,7 @@ This code removes the entire row of data. Notice that I store the modified data 
 ### Change to missing value
 
 ```{}
-data intro.fat2;
-  set intro.fat;
-  if ht=29.5 then ht=.;
-run;
+`r px(tx, "Part08", "Part09")`
 ```
 
 <div class="notes">
@@ -524,7 +518,7 @@ We'll use the data set with the 29.5 changed to a missing value for all of the r
 ### Logic statements and missing values
 
 ```{}
-`r px(tx, "Faulty approach", "0 will include ht", 1)`
+`r px(tx, "Part09", "Part10")`
 ```
 
 <div class="notes">
@@ -535,7 +529,7 @@ Every procedure in SAS has its own default approach to missing values and often 
 
 </div>
 
-### SAS output, proc print wiht faulty logic
+### SAS output, proc print with faulty logic
 
 ![SAS output](../images/tst_05.png)
 
@@ -563,7 +557,7 @@ You may hate having to do this and wish that SAS would have handled things diffe
 ### SAS code, nmiss option
 
 ```{}
-`r px(tx, "Counting missing values", "nmiss statistic", 1)`
+`r px(tx, "Part10", "Part11")`
 ```
 
 <div class="notes">
@@ -592,7 +586,7 @@ This is what your output looks like. Note that your data set has 251 observation
 ### SAS code, simple transformations
 
 ```{}
-`r px(tx, "Simple transformations", "Display a histogram", -2)`
+`r px(tx, "Part11", "Part12")`
 ```
 
 <div class="notes">
@@ -618,7 +612,7 @@ This is your output with measurements both in the original units and metric. Not
 ### SAS code, Histogram
 
 ```{}
-`r px(tx, "Display a histogram", "Revised histogram with narrow bins", -2)`
+`r px(tx, "Part12", "Part13")`
 ```
 
 <div class="notes">
@@ -641,7 +635,7 @@ This is your output with measurements both in the original units and metric. Not
 ### SAS code, Histogram with many bars
 
 ```{}
-`r px(tx, "Display a histogram", "Revised histogram with narrow bins", -2)`
+`r px(tx, "Part13", "Part14")`
 ```
 
 <div class="notes">
@@ -664,7 +658,7 @@ This is the revised histogram. You can also go in the opposite direction.
 ### SAS code, Histogram with fewer bars
 
 ```{}
-`r px(tx, "Revised histogram with narrow bins", "Note to myself", -2)`
+`r px(tx, "Part14", "Part15")`
 ```
 
 <div class="notes">
@@ -694,9 +688,12 @@ This is the revised histogram. There is no "correct" version of the histogram. T
 
 ### Correlations
 
-```{}
-`r px(tx, "Calculate correlations", "Save the correlations", -2)`
-```
++ Informal interpretation
+  + between +0.7 and +1.0: strong positive association
+  + between +0.3 and +0.7: weak positive association
+  + between -0.3 and +0.3: little or no association
+  + between -0.3 and -0.7: weak positive association
+  + between -0.7 and -1.0: strong negative association
 
 <div class="notes">
 
@@ -711,7 +708,7 @@ The corr procedure produces, by default, a square correlation matrix of all the 
 ### SAS code, Simple correlations
 
 ```{}
-`r px(tx, "Calculate correlations", "Save the correlations", -2)`
+`r px(tx, "Part15", "Part16")`
 ```
 
 <div class="notes">
@@ -739,7 +736,7 @@ Notice that I deliberately avoided printing out the entire corelation matrix, wh
 ### SAS code, New dataset with correlations
 
 ```{}
-`r px(tx, "Save the correlations", "Modifying these correlations", -2)`
+`r px(tx, "Part16", "Part17")`
 ```
 
 <div class="notes">
@@ -766,10 +763,10 @@ The output is a bit unusual because SAS wants to include means and standard devi
 
 </div>
 
-### SAS code, Modified correlations
+### SAS code, Modified correlations (1/2)
 
 ```{}
-`r px(tx, "Modifying these correlations", "Draw a scatterplot", -2)`
+`r px(tx, "Part17", "Part18")`
 ```
 
 <div class="notes">
@@ -777,6 +774,16 @@ The output is a bit unusual because SAS wants to include means and standard devi
 Saving as a data file allows you to manipulate the individual correlations. Here we multiply the correlations by 100, round them, and sort them. This can often simplify the interpretation of large correlation matrices.
 
 This code does the reordering and printing.
+
+</div>
+
+### SAS code, Modified correlations (2/2)
+
+```{}
+`r px(tx, "Part18", "Part19")`
+```
+
+<div class="notes">
 
 </div>
 
@@ -793,7 +800,7 @@ This is the output. You can see that measurements at the extremities are poor pr
 ### SAS code, Simple scatterplot
 
 ```{}
-`r px(tx, "Draw a scatterplot", "Adding linear", -2)`
+`r px(tx, "Part19", "Part20")`
 ```
 
 <div class="notes">
@@ -815,7 +822,7 @@ This plot shows a general upward trend.
 ### SAS code, Linear trend line
 
 ```{}
-`r px(tx, "Adding linear", "Adding a smooth curve", -2)`
+`r px(tx, "Part20", "Part21")`
 ```
 
 <div class="notes">
@@ -837,7 +844,7 @@ The trend line is very useful for large and noisy data sets. It also allows you 
 ### SAS code, Smooth curve
 
 ```{}
-`r px(tx, "Adding a smooth curve", "with a smooth curve", 1)`
+`r px(tx, "Part21", "End of program")`
 ```
 
 <div class="notes">
@@ -871,12 +878,10 @@ I always seem to forget this last statement and then I get upset with SAS for no
 
 ### Summary
 + What have you learned
-  + Rules for variable names
   + Using variable labels
   + Printing a small piece of data
   + Simple descriptive statistics
   + Printing row with smallest/largest value
-  + Handling outliers
   + Missing value logic
   + Simple transformations
   + Histograms
