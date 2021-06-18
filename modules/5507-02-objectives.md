@@ -1,6 +1,6 @@
 ---
 title: "MEDB 5507, Introduction to SAS, Module02, Objectives"
-author: Steve Simon
+authors: Steve Simon
 date: Created 2021-06-13
 knit: (function(inputFile, encoding) {
   rmarkdown::render(inputFile, encoding = encoding,
