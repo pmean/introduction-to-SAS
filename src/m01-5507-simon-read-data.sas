@@ -1,7 +1,7 @@
 * m01-5507-simon-read-data.sas
 * author: Steve Simon and Steve Simon
 * date: created 2021-06-12
-* purpose: to create a permanent dataset
+* purpose: to read data from a separate file
 * license: public domain;
 
 %let path=q:/introduction-to-sas;

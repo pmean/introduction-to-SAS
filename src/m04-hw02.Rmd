@@ -1,0 +1,102 @@
+---
+title: "Homework 02"
+author: "Steve Simon"
+date: "7/1/2019"
+output: powerpoint_presentation
+---
+
+
+```{r setup, echo=FALSE}
+knitr::opts_chunk$set(echo=FALSE, comment="")
+suppressMessages(suppressWarnings(library(dplyr)))
+suppressMessages(suppressWarnings(library(knitr)))
+suppressMessages(suppressWarnings(library(magrittr)))
+```
+
+```{r hw02.sas}
+program_name <- opts_current$get("label") 
+program_name %>%
+  readLines(warn=FALSE) -> sas_code
+
+input_source_line <- grep("filename raw_data", sas_code) + 1
+sas_code[input_source_line] %>%
+  sub('^.*?"', '', .)                                      %>%
+  sub('";',    '', .)                                      %>% 
+  readLines(n=10)                                          %>%
+  paste0(collapse="\n")                                    -> ppt_data
+
+sas_code %>% 
+  grep("********* *********", ., fixed=TRUE)               -> comment_lines
+k <- (length(comment_lines)-1) %/% 2
+
+ppt_head <- rep(" ", k)
+ppt_note <- rep(" ", k)
+ppt_code <- rep(" ", k)
+for (i in 1:k) {
+  ppt_head[i] <- paste0("### ", sas_code[comment_lines[2*i-1] + 1])
+  ppt_note[i] <- paste0(sas_code[(comment_lines[2*i-1]+3):(comment_lines[2*i]  -1)], collapse="\n")
+  ppt_code[i] <- paste0(sas_code[(comment_lines[2*i]  +2):(comment_lines[2*i+1]-2)], collapse="\n")
+}
+```
+
+<!---hw 1/4--->
+`r ppt_head[1]`
+`r ppt_note[1]`
+
+<!---hw 2/4--->
+`r ppt_head[2]`
+`r ppt_note[2]`
+
+<!---hw 3/4--->
+`r ppt_head[3]`
+`r ppt_note[3]`
+
+<!---hw 4/4--->
+`r ppt_head[4]`
+`r ppt_note[4]`
+
+
+### Gardasil, raw data
+```{r}
+cat(ppt_data)
+```
+<div class="notes">
+Here are the first ten rows of the Titanic data set.
+</div>
+
+<!---Preliminaries--->
+`r ppt_head[5]`
+```{r}
+cat(ppt_code[5])
+```
+<div class="notes">
+`r ppt_note[5]`
+</div>
+
+<!---proc import--->
+`r ppt_head[6]`
+```{r}
+cat(ppt_code[6])
+```
+<div class="notes">
+`r ppt_note[6]`
+</div>
+
+<!---proc print--->
+`r ppt_head[7]`
+```{r}
+cat(ppt_code[7])
+```
+<div class="notes">
+`r ppt_note[7]`
+</div>
+
+### First ten rows of the Gardasil data set
+
+CHANGE !!!
+
+![Output, proc print](../images/lecture02-01.png)
+<div class="notes">
+At first glance, everything looks fine. But if you look closely, you will see that age is left justified. It is caused by the NA code for missing value, which doesn't appear until about line 14 or 15 of the code.
+</div>
+
