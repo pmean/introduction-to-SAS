@@ -14,13 +14,13 @@ libname perm
 
 proc sort 
     data=perm.cigarettes;
-  by descending tar;
+  by tar;
 run;
 
 proc print
     data=perm.cigarettes(obs=1);
   title1 "M02-Q2. What brand has the lowest tar?";
-  footnote1 "xxx has the lowest level of tar";
+  footnote1 "Now has the lowest level of tar";
 run;
 
 ods pdf close;
