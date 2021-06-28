@@ -1,0 +1,51 @@
+---
+data_dictionary: energy01.csv
+
+format: 
+  delimiter: comma
+  varnames: not included
+  missing-value-code: not needed
+  rows: 8
+  columns: 4
+
+vars:
+  Subject:
+    label: Subject number
+    scale: positive integer
+
+  Running:
+    label: energy expended while running
+	scale: positive real
+    unit: kilocalories expended per kilometer
+  
+  Walking:
+    label: energy expended while walking
+	scale: positive real
+    unit: kilocalories expended per kilometer
+  
+  Cycling:
+    label: energy expended while cycling
+	scale: positive real
+    unit: kilocalories expended per kilometer
+
+creation_date: 2021-06-26
+
+description:
+  Energy Requirements Running, Walking and Cycling
+  http://www.statsci.org/data/general/energy.html
+
+download:
+  http://www.statsci.org/data/general/energy.txt
+  www.pmean.com/15/images/day4energy.txt
+  
+source: 
+  JS Milton. Statistical Methods in the Biological
+  and Health Sciences, Second edition. 1992. McGraw-Hill.
+
+copyright:  
+  Unknown. You should be able to use this data for
+  individual educational purposes under the Fair Use
+  guidelines of U.S. copyright law.
+
+---
+
