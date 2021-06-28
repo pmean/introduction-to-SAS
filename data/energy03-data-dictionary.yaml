@@ -39,8 +39,7 @@ description:
   http://www.statsci.org/data/general/energy.html
 
 download:
-  http://www.statsci.org/data/general/energy.txt
-  www.pmean.com/15/images/day4energy.txt
+  Modified from http://www.statsci.org/data/general/energy.txt
   
 source: 
   JS Milton. Statistical Methods in the Biological
