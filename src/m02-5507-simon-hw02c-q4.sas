@@ -1,4 +1,4 @@
-* m02-5507-simon-hw02b-q4.sas
+* m02-5507-simon-hw02c-q4.sas
 * author: Steve Simon
 * creation date: 2021-06-14
 * purpose: to draw and interpret histograms
