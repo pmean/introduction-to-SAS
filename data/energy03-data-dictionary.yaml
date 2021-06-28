@@ -17,19 +17,19 @@ vars:
   Running:
     columns: 2-4
     label: energy expended while running
-	scale: positive real
+    scale: positive real
     unit: kilocalories expended per kilometer
   
   Walking:
     columns: 5-7
     label: energy expended while walking
-	scale: positive real
+    scale: positive real
     unit: kilocalories expended per kilometer
   
   Cycling:
     columns: 8-10
     label: energy expended while cycling
-	scale: positive real
+    scale: positive real
     unit: kilocalories expended per kilometer
 
 creation_date: 2021-06-26
