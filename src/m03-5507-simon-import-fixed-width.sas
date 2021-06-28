@@ -29,4 +29,5 @@ proc print
     data=module01.fixed_width(obs=2);
   title1 "First two rows of data";
 run;
+
 ods pdf close;
