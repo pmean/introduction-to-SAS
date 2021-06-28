@@ -1,13 +1,13 @@
-* m02-5507-simon-hw02b-q1.sas
+* m02-5507-simon-hw02b-q4.sas
 * author: Steve Simon
 * creation date: 2021-06-14
-* purpose: to list the cigarette brand with the highest tar
+* purpose: to draw and interpret histograms
 * license: public domain;
 
 %let path=q:/introduction-to-sas;
 
 ods pdf file=
-    "&path/results/m02-5507-simon-hw02b-q1-output.pdf";
+    "&path/results/m02-5507-simon-hw02b-q4-output.pdf";
 
 libname perm
     "&path/data";
