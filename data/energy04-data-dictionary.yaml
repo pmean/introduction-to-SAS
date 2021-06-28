@@ -15,12 +15,12 @@ vars:
 
   Running:
     label: energy expended while running
-	scale: positive real
+    scale: positive real
     unit: kilocalories expended per kilometer
   
   Walking:
     label: energy expended while walking
-	scale: positive real
+    scale: positive real
     unit: kilocalories expended per kilometer
   
   Cycling:
