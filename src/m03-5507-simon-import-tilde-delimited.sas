@@ -1,17 +1,22 @@
-proc printto log="import-tilde-delimited.log" new; run;
 * import-tilde-delimited.sas
-  written by Steve Simon
-  2019-07-01;
+* author: Steve Simon
+* creation date: 2019-07-01
+* purpose: to import comma delimited files
+* license: public domain;
 
-********* ********* ********* ********* *********;
-* A simple program to import a comma delimited
-  file into SAS;
-options papersize=(8in 4in) nonumber nodate;
-ods pdf file="import-tilde-delimited.pdf";
-filename raw_data
-  "../data/tilde-delimited.txt";
+%let path=q:/introduction-to-sas;
+
+ods pdf file=
+  "&path/results/import-tilde-delimited.pdf";
+
 libname module01
-  "../data";
+  "&path/data";
+
+filename raw_data
+  "&path/data/tilde-delimited.txt";
+  
+options papersize=(8in 4in) nonumber nodate;
+
 data module01.tilde_delimited;
   infile raw_data delimiter="~";
   input x y z;
@@ -21,5 +26,5 @@ proc print
     data=module01.tilde_delimited(obs=2);
   title1 "First two rows of data";
 run;
+
 ods pdf close;
-proc printto; run;

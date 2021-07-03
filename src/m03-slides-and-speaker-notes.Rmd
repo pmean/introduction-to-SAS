@@ -29,7 +29,7 @@ suppressMessages(suppressWarnings(library(stringr)))
 
 author: Steve Simon
 date: Created 2021-05-30
-purpose: to produce slides for module01 videos
+purpose: to produce slides for module02 videos
 license: public domain
 
 Here is an overview of what I want to cover in module03. 
@@ -179,7 +179,7 @@ Here is the SAS code to read and print this file, starting with the documentatio
 ### Comma delimited, SAS code (2/3)
 
 ```{r}
-tx %>% px("%let", "txt") %>% cat
+tx %>% px("%let", "csv") %>% cat
 ```
 
 <div class="notes">
@@ -537,7 +537,7 @@ Here is the documentation header.
 ### First line names, SAS code (2/3)
 
 ```{r}
-tx %>% px("%let", "txt") %>% cat
+tx %>% px("%let", "csv") %>% cat
 ```
 
 <div class="notes">
@@ -554,23 +554,9 @@ tx %>% px("proc import", "close;") %>% cat
 
 <div class="notes">
 
-
+proc import will read the file, and the getnames=yes subcommand will read the variable names from the first line of data.
 
 </div>
-
-### Read in the abalone data file
-+ Abalone age prediction
-  + This is a comma separated value file without variables names at the top. You can find the variable names in a data dictionary published at second link.
-    + https://archive.ics.uci.edu/ml/machine-learning-databases/abalone/abalone.data
-    + https://archive.ics.uci.edu/ml/machine-learning-databases/abalone/abalone.names
-
-
-### Read in the Saratoga house prices file
-+ Saratoga house prices
-  + This is a tab delimited file with the names of the variables in the first row. The second link provides a brief description of the data.
-    + https://dasl.datadescription.com/download/data/3437
-    + https://dasl.datadescription.com/datafile/saratoga-house-prices/
-
 
 ### Summary
 
