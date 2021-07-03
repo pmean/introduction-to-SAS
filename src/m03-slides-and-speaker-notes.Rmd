@@ -1,6 +1,9 @@
 ---
 title: "Introduction to SAS, Importing a wide range of data formats"
 output: powerpoint_presentation
+knit: (function(inputFile, encoding) {
+  rmarkdown::render(inputFile, encoding = encoding,
+  output_dir = "../results", output_format = "all") })  
 ---
 
 
