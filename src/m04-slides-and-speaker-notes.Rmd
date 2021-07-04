@@ -93,7 +93,7 @@ The ods statement tells you that SAS is going to store the results with a partic
 `r px(tx, "Part02", "Part03")`
 ```
 
-</div class="notes">
+<div class="notes">
 
 As a general rule, proc import works 
 best for simple delimited files where
@@ -112,6 +112,16 @@ handled by a data step.
 ```{}
 `r px(tx, "Part03", "Part04")`
 ```
+
+<div class="notes">
+
+
+
+</div>
+
+### SAS output:
+
+![SAS Output](../images/m04-5507-simon-categorical_01.png)
 
 <div class="notes">
 
@@ -142,6 +152,14 @@ first step is to get frequency counts.
 
 </div>
 
+### SAS output:
+
+![SAS Output](../images/m04-5507-simon-categorical_02.png)
+
+### SAS output:
+
+![SAS Output](../images/m04-5507-simon-categorical_03.png)
+
 ### SAS code: 
 
 ```{}
@@ -163,6 +181,14 @@ marks avoids this issue.
 
 </div>
 
+### SAS output:
+
+![SAS Output](../images/m04-5507-simon-categorical_04.png)
+
+### SAS output:
+
+![SAS Output](../images/m04-5507-simon-categorical_05.png)
+
 ### SAS code: 
 
 ```{}
@@ -178,6 +204,10 @@ this using a format statement.
 
 </div>
 
+### SAS output:
+
+![SAS Output](../images/m04-5507-simon-categorical_06.png)
+
 ### SAS code: 
 
 ```{}
@@ -190,6 +220,10 @@ I don't normally like bar charts, but
 they do have their uses.
 
 </div>
+
+### SAS output:
+
+![SAS Output](../images/m04-5507-simon-categorical_07.png)
 
 ### SAS code: 
 
@@ -216,6 +250,10 @@ to 100%.
 
 </div>
 
+### SAS output:
+
+![SAS Output](../images/m04-5507-simon-categorical_08.png)
+
 ### SAS code: 
 
 ```{}
@@ -229,6 +267,10 @@ categorical variables use a two
 dimensional crosstabulation.
 
 </div>
+
+### SAS output:
+
+![SAS Output](../images/m04-5507-simon-categorical_09.png)
 
 ### SAS code: 
 
@@ -247,6 +289,10 @@ statements
 
 </div>
 
+### SAS output:
+
+![SAS Output](../images/m04-5507-simon-categorical_10.png)
+
 ### SAS code: 
 
 ```{}
@@ -259,6 +305,10 @@ Always cross check your results against
 the original variable.
 
 </div>
+
+### SAS output:
+
+![SAS Output](../images/m04-5507-simon-categorical_11.png)
 
 ### SAS code: 
 
@@ -276,6 +326,10 @@ formats.
 
 </div>
 
+### SAS output:
+
+![SAS Output](../images/m04-5507-simon-categorical_12.png)
+
 ### SAS code: 
 
 ```{}
@@ -290,6 +344,10 @@ format.
 
 </div>
 
+### SAS output:
+
+![SAS Output](../images/m04-5507-simon-categorical_13.png)
+
 ### SAS code: 
 
 ```{}
@@ -301,6 +359,10 @@ format.
 Here's the quality check again.
 
 </div>
+
+### SAS output:
+
+![SAS Output](../images/m04-5507-simon-categorical_14.png)
 
 ### SAS code: 
 
@@ -316,6 +378,15 @@ Second and Third class passengers
 combined.
 
 </div>
+
+### SAS output:
+
+![SAS Output](../images/m04-5507-simon-categorical_15.png)
+
+### SAS output:
+
+![SAS Output](../images/m04-5507-simon-categorical_16.png)
+
 
 
 ### Titanic data set

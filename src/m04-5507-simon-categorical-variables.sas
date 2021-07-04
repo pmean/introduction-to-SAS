@@ -11,18 +11,22 @@ License: public domain
 
 ************************************************/
 
-* Part01. Tell SAS where to find and store things.
+* Part01. Tell SAS where to find and store things.;
+
+options papersize=(6 in 4 in); * needed to have the output fit on PowerPoint;
+
+%let path=q:/introduction-to-sas;
 
 ods pdf
-  file="lecture02.pdf";
+  file="&path/results/m04-5507-simon-categorical.pdf";
 
 filename raw_data
-  "../data/titanic_v00.txt";
+  "&path/data/titanic_v00.txt";
 
 libname intro
-  "../data";
+  "&path/data";
 
-* Part02. Reading using  proc import
+* Part02. Reading using  proc import;
 
 proc import
     datafile=raw_data
@@ -33,7 +37,7 @@ proc import
   getnames=yes;
 run;
 
-* Part03. Pring the first ten lines.
+* Part03. Pring the first ten lines.;
 
 proc print
     data=intro.titanic(obs=10);
@@ -41,14 +45,14 @@ proc print
 run;
 
 
-* Part04. Counts, proc freq
+* Part04. Counts, proc freq.;
 
 proc freq
     data=intro.titanic;
-  tables PClass Sex Survived;
+  table PClass Sex Survived;
 run;
 
-* Part05. Convert string to numeric, data step
+* Part05. Convert string to numeric, data step.;
 
 data intro.titanic;
   set intro.titanic;
@@ -61,7 +65,7 @@ proc means
   var age_c;
 run;
 
-* Part06. Using proc format to code categorical data
+* Part06. Using proc format to code categorical data,;
 
 proc format;
   value f_survived
@@ -75,7 +79,7 @@ proc freq
   format Survived f_survived.;
 run;
 
-* Part07. Bar charts, proc sgplot
+* Part07. Bar charts, proc sgplot.;
 
 proc sgplot
     data=intro.titanic;
@@ -83,7 +87,7 @@ proc sgplot
   format Survived f_survived.;
 run;
 
-* Part08. Percentages for bar chart
+* Part08. Percentages for bar chart.;
 
 proc freq
     data=intro.titanic;
@@ -102,7 +106,7 @@ proc sgplot
   format Survived f_survived.;
 run;
 
-* Part09. Crosstabulation
+* Part09. Crosstabulation.;
 
 proc freq
     data=intro.titanic;
@@ -110,7 +114,7 @@ proc freq
   format Survived f_survived.;
 run;
 
-* Part10. Converting a continuous variable to categorical
+* Part10. Converting a continuous variable to categorical.;
 
 data age_categories;
   set intro.titanic;
@@ -125,7 +129,7 @@ data age_categories;
   else age_cat   = "adult   ";
 run;
 
-* Part11. Quality check
+* Part11. Quality check.;
 
 proc sort
     data=age_categories;
@@ -139,7 +143,7 @@ proc means
   var age_c;
 run;
 
-* Part12. Controlling the display order
+* Part12. Controlling the display order.;
 
 data age_codes;
   set intro.titanic;
@@ -154,7 +158,7 @@ data age_codes;
   else age_cat = 4;
 run;
 
-* Part13. With number codes, use proc format
+* Part13. With number codes, use proc format.;
 
 proc format;
   value f_age
@@ -165,7 +169,7 @@ proc format;
   	9 = "unknown";
 run;
 
-* Part14. Quality check
+* Part14. Quality check.;
 
 proc sort
     data=age_codes;
@@ -180,7 +184,7 @@ proc means
   format age_cat f_age.;
 run;
 
-* Part15. Modifying a categorical variable
+* Part15. Modifying a categorical variable.;
 
 data first_class;
   set intro.titanic;
