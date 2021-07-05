@@ -64,25 +64,34 @@ co <- function(tx, i, d1=2, d2=-2) {
   s1 <- paste0("Part", zpad(i))
   s2 <- paste0("Notes", zpad(i))
   px(tx, s1, s2, d1, d2) %>%
+    append("```{}", after=0) %>%
+	append("```") %>%
     paste0(collapse="\n") %>%
 	return
 }
 ```
 
 ```{r}
+ap <- function(tx) {
+  '\n<div class="notes">\n' %>%
+    append(tx) %>%
+	append('\n</div>\n') %>%
+	paste0(collapse="\n")
+}
+
 no <- function(tx, i, d1=0, d2=-2, part=0) {
   s1 <- paste0("Notes", zpad(i))
   s2 <- paste0("Part", zpad(i+1))
   px(tx, s1, s2, d1, d2) %>%
-  	str_replace(fixed("* Notes"), "") %>%
-  	str_replace(";$", "") %>%
-	str_replace("^[0-9][0-9]. ", "") -> notes_text
-  if (part==0) return(paste0(notes_text, collapse="\n"))
+    str_replace(fixed("* "), "") %>%
+  	str_replace(";$", "") -> notes_text
+  if (part==0) 
+    return(ap(notes_text))
   blank_lines <- c(1, str_which(notes_text, "^\\s*$"), length(notes_text))
   if (part > length(blank_lines)-1)
     return(paste0(c("Error", blank_lines), collapse=","))
   ra <- blank_lines[part]:blank_lines[part+1] 
-  return(paste0(notes_text[ra], collapse="\n"))
+  return(ap(notes_text[ra]))
 }
 ```
 
@@ -96,382 +105,165 @@ ti <- function(tx, i) {
 }
 ```
 
-### SAS code: `r ti(tx, 0)` <!--documentation header-->
-```{}
-`r co(tx, 0)`
+```{r}
+
+`%0%` <- function(a, b) {paste0(a, b)}
+
+ou <- function(j) {
+  "![SAS Output]" %0%
+    "(../images/m04-5507" %0%
+	"-simon-categorical_" %0%
+	zpad(j) %0%
+	".png)"
+}
 ```
-<div class="notes">`r no(tx, 0)`</div>
+
+### SAS code: `r ti(tx, 0)` <!--documentation header-->
+`r co(tx, 0)`
+`r no(tx, 0)`
 
 
 ### SAS code: `r ti(tx, 1)` <!--where to find and store things-->
-```{}
 `r co(tx, 1)`
-```
-<div class="notes">`r no(tx, 1)`</div>
+`r no(tx, 1)`
 
 
 ### SAS code: `r ti(tx, 2)` <!--import-->
-```{}
 `r co(tx, 2)`
-```
-<div class="notes">`r no(tx, 2)`</div>
+`r no(tx, 2)`
 
 ### SAS code: `r ti(tx, 3)` <!--print-->
-```{}
 `r co(tx, 3)`
-```
-<div class="notes">`r no(tx, 3, part=1)`</div>
+`r no(tx, 3, part=1)`
 
 ### SAS output: `r ti(tx, 3)`
-![SAS Output](../images/m04-5507-simon-categorical_01.png)
-<div class="notes">`r no(tx, 3, part=2)`</div>
+`r ou(1)`
+`r no(tx, 3, part=2)`
 
 ### SAS code: `r ti(tx, 4)` <!--freq-->
-```{}
 `r co(tx, 4)`
-```
-<div class="notes">`r no(tx, 4, part=1)`</div>
+`r no(tx, 4, part=1)`
 
 ### SAS output: `r ti(tx, 4)` (1/2)
-![SAS Output](../images/m04-5507-simon-categorical_02.png)
-<div class="notes">`r no(tx, 4, part=2)`</div>
+`r ou(2)`
+`r no(tx, 4, part=2)`
 
 ### SAS output: `r ti(tx, 4)` (2/2)
-![SAS Output](../images/m04-5507-simon-categorical_03.png)
-<div class="notes">`r no(tx, 4, part=3)`</div>
+`r ou(3)`
+`r no(tx, 4, part=3)`
 
 ### SAS code: `r ti(tx, 5)`  <!--convert-->
-```{}
 `r co(tx, 5)`
-```
-<div class="notes">`r no(tx, 5)`</div>
+`r no(tx, 5, part=1)`
 
 ### SAS output: `r ti(tx, 5)` (1/2)
-![SAS Output](../images/m04-5507-simon-categorical_04.png)
-<div class="notes">`r no(tx, 5)`</div>
+`r ou(4)`
+`r no(tx, 5, part=2)`
 
 ### SAS code: `r ti(tx, 6)` <!--format-->
-```{}
 `r co(tx, 6)`
-```
-<div class="notes">`r no(tx, 6)`</div>
+`r no(tx, 6, part=1)`
 
 ### SAS output: `r ti(tx, 6)` 
-![SAS Output](../images/m04-5507-simon-categorical_05.png)
-<div class="notes">`r no(tx, 6)`</div>
+`r ou(5)`
+`r no(tx, 6, part=2)`
 
-### SAS code: Creating bar charts
+### SAS code: `r ti(tx, 7)` <!--bar chart-->
+`r co(tx, 7)`
+`r no(tx, 7, part=1)`
 
-```{}
-`r px(tx, "Part07", "Part08")`
-```
+### SAS output: `r ti(tx, 7)` 
+`r ou(6)`
+`r no(tx, 7, part=2)`
 
-<div class="notes">
+### SAS code: `r ti(tx, 8)` <!--bar percentages-->
+`r co(tx, 8)`
+`r no(tx, 8)`
 
-I don't normally like bar charts, but
-they do have their uses.
+### SAS output: `r ti(tx, 8)` 
+`r ou(7)`
+`r no(tx, 8)`
 
-</div>
+### SAS code: `r ti(tx, 9)` <!--crosstabs-->
+`r co(tx, 9)`
+`r no(tx, 9, part=1)`
 
-### SAS output:  Creating bar charts
+### SAS output: `r ti(tx, 9)` 
+`r ou(8)`
+`r no(tx, 9, part=2)`
 
-![SAS Output](../images/m04-5507-simon-categorical_06.png)
+### SAS code: `r ti(tx, 10)` <!-- -->
+`r co(tx, 10)`
+`r no(tx, 10)`
 
-### SAS code: Percentages for bar chart
+### SAS code: `r ti(tx, 11)` <!-- -->
+`r co(tx, 11)`
+`r no(tx, 11, part=1)`
 
-```{}
-`r px(tx, "Part08", "Part09")`
-```
+### SAS output: `r ti(tx, 11)` 
+`r ou(9)`
+`r no(tx, 11, part=2)`
 
-<div class="notes">
+### SAS code: `r ti(tx, 12)` <!-- -->
+`r co(tx, 12)`
+`r no(tx, 12)`
 
-Getting percentages is a bit tricky. You have to run proc freq and output the results to a new data file, pct_survived. I am using the noprint option, because I only want the percentages for internal use. It wouldn't have hurt anything to print out a bit extra, but I want to encourage you to limit the amount of output that you present to a consulting client.
+### SAS code: `r ti(tx, 13)` <!-- -->
+`r co(tx, 13)`
+`r no(tx, 13)`
 
-Note the yaxis max=100 statement which expands the upper limit of the y axis  to 100%.
+### SAS code: `r ti(tx, 14)` <!-- -->
+`r co(tx, 14)`
+`r no(tx, 14, part=1)`
 
-</div>
+### SAS output: `r ti(tx, 14)` 
+`r ou(10)`
+`r no(tx, 14, part=2)`
 
-### SAS output: Percentages for bar chart
+### SAS output: `r ti(tx, 14)` 
+`r ou(11)`
+`r no(tx, 14, part=3)`
 
-![SAS Output](../images/m04-5507-simon-categorical_07.png)
+### SAS code: `r ti(tx, 15)` 
+`r co(tx, 15)`
+`r no(tx, 15, part=1)`
 
-### SAS code: Crosstabulation
-
-```{}
-`r px(tx, "Part09", "Part10")`
-```
-
-<div class="notes">
-
-To examine relationships among categorical variables use a two dimensional crosstabulation.
-
-</div>
-
-### SAS output: Crosstabulation
-
-![SAS Output](../images/m04-5507-simon-categorical_08.png)
-
-### SAS code: Converting a continuous variable to categorical (1/2)
-
-```{}
-`r px(tx, "Part10", "Part11")`
-```
-
-<div class="notes">
-
-If you want to create categories from a
-continuous variable, use a series of
-
-  if - then - else
-  
-statements
-
-</div>
-
-### SAS code: Converting a continuous variable to categorical (2/2)
-
-```{}
-`r px(tx, "Part11", "Part12")`
-```
-
-<div class="notes">
-
-Always cross check your results against the original variable.
-
-</div>
-
-### SAS output: Converting a continuous variable to categorical (1/2)
-
-![SAS Output](../images/m04-5507-simon-categorical_09.png)
-
-### SAS output: Converting a continuous variable to categorical (2/2)
-
-![SAS Output](../images/m04-5507-simon-categorical_10.png)
-
-<div class="notes">
-
-Notice that the order for age_cat is alphabetical, which is probably not what you want. You can control the order by using number codes and formats.
-
-</div>
-
-### SAS code: Converting a continuous variable to categorical (2/2)
-
-```{}
-`r px(tx, "Part12", "Part13")`
-```
-
-<div class="notes">
-
-You'd like these tables orderd from toddler to pre-teen to teenager to adult, then missing.
-
-</div>
-
-
-### SAS output: A better conversion
-
-![SAS Output](../images/m04-5507-simon-categorical_11.png)
-
-<div class="notes">
-
-Here is the trick to get things ordered properly. Use a number code in the conversion and then add labels with proc format.
-
-</div>
-
-### SAS code: A better conversion
-
-```{}
-`r px(tx, "Part13", "Part14")`
-```
-
-<div class="notes">
-
-Once  you have the number codes, assign
-an interpretable label using proc 
-format.
-
-</div>
-
-### SAS output: A better conversion
-
-![SAS Output](../images/m04-5507-simon-categorical_13.png)
-
-### SAS code: 
-
-```{}
-`r px(tx, "Part14", "Part15")`
-```
-
-<div class="notes">
-
-Here's the quality check again.
-
-</div>
+### SAS output: `r ti(tx, 15)` 
+`r ou(12)`
+`r no(tx, 15, part=2)`
 
 ### SAS output:
-
-![SAS Output](../images/m04-5507-simon-categorical_14.png)
-
-### SAS code: 
-
-```{}
-`r px(tx, "Part15", "End of program")`
-```
-
-<div class="notes">
-
-Here's another example where you 
-compare First Class passengers to
-Second and Third class passengers 
-combined.
-
-</div>
+`r ou(13)`
+`r no(tx, 15, part=2)`
 
 ### SAS output:
-
-![SAS Output](../images/m04-5507-simon-categorical_15.png)
+`r ou(14)`
+`r no(tx, 15, part=2)`
 
 ### SAS output:
-
-![SAS Output](../images/m04-5507-simon-categorical_16.png)
-
-
-
-### Titanic data set
-
-<div class="notes">
-
-Here are the first ten rows of the Titanic data set.
-
-At first glance, everything looks fine. But if you look closely, you will see that age is left justified. It is caused by the NA code for missing value, which doesn't appear until about line 14 or 15 of the code.
-
-</div>
-
-### Counts for categorical data (1/2)
-
-
-<div class="notes">
-
-Here are the counts for passenger class and sex.
-
-</div>
-
-### Counts for categorical data (2/2)
-
-<div class="notes">
-
-Here are the counts for Survived.
-
-</div>
-
-
-### Means and standard deviations for age
-
-<div class="notes">
-
-Here are the descriptive statistics for age. Notice the number of missing values.
-
-</div>
-
-### Nicely formatted counts for survival
-
-<div class="notes">
-
-Notice that the format statement replaces the cryptic 0-1 code with the words no and yes.
-
-</div>
+`r ou(15)`
+`r no(tx, 15, part=2)`
 
 ### Bar chart
 
-<div class="notes">
-
 Here are the descriptive statistics for age. Notice the number of missing values.
 
-</div>
-
-### Percentages, proc freq
-
-<div class="notes">
-
 Here is what the output from proc freq looks like. Just two rows.
 
-</div>
-
-### Percentages in a bar chart
-
-
-<div class="notes">
-
 Here is what the output from proc freq looks like. Just two rows.
-
-</div>
-
-### Percentages, proc freq
-
-
-<div class="notes">
 
 Here is what the output from proc freq looks like. Among the males, almost 5/6 died. Among the females only 1/3 died.
 
-</div>
-
-### Recoding age (1 / 3)
-
-
-<div class="notes">
-
 Here is the quality check. Notice that adult starts at 21. Should adult start at 18 instead?
-
-</div>
-
-### Recoding age (2 / 3)
-
-
-<div class="notes">
 
 Are the ranges for pre-teen and teenager reasonable?
 
-</div>
-
-### Recoding age (3 / 3)
-
-
-<div class="notes">
-
 How about the ranges for toddler?
-
-</div>
-
-### Better age recode (1 /3)
-
-
-<div class="notes">
 
 This shows the age categories starting at the youngest: toddler and pre-teen...
 
-</div>
-
-### Better age recode (2 /3)
-
-<div class="notes">
-
 followed y teenager and adult...
-
-</div>
-
-### Better age recode (3 /3)
-
-
-<div class="notes">
 
 with missing bring up the rear. This order was the order of the number codes. So if you want to display your results in a non-alphabetical order, use number codes.
 
-</div>
-
-### Quality check
-
-<div class="notes">
-
 Here is the quality check. PClass=1st codes to first_class=Yes. PClass=2nd or 3rd codes to first_class=No.
-
-</div>
-

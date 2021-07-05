@@ -7,9 +7,7 @@ Date created: 2018-10-22
 Purpose: To illustrate how to work with datasets
 with mostly continuous variables.
 
-License: public domain
-
-;
+License: public domain;
 
 * Notes00. This is the standard documentation header;
 
@@ -54,7 +52,7 @@ individual extends across more than one line) or
 files without variable names in the first row are 
 usually better handled by a data step.;
 
-* Part03. Pring the first ten lines;
+* Part03. Print the first ten lines;
 
 proc print
     data=perm.titanic(obs=10);
@@ -64,15 +62,16 @@ run;
 * Notes03. It's always a good idea to peek at the 
 first few rows of data.
 
-If you look at the first few rows of data, you 
-will see that the import went reasonably well. It 
-is not always this easy. Do take notice that age 
-is left justified. It is caused by a number of 
-"NA" codes for missing values. You don't see it 
-here, but if you print a few more observations, 
-you can see the "NA" values. It would have been 
-easier to anticipate these ahead of time, but 
-we'll fix things up after the fact.;
+Output, page 1. If you look at the first few 
+rows of data, you will see that the import went 
+reasonably well. It is not always this easy. Do 
+take notice that age is left justified. It is 
+caused by a number of "NA" codes for missing 
+values. You don't see it here, but if you print a 
+few more observations, you can see the "NA" 
+values. It would have been easier to anticipate 
+these ahead of time, but we'll fix things up 
+after the fact.;
 
 * Part04. Counts, proc freq;
 
@@ -85,14 +84,14 @@ run;
 * Notes04. For any categorical variables, your 
 first step is to get frequency counts.
 
-There is a mix of three passenger classes, with a 
-lot more in third class. There are also a lot 
-more men than women.
+Output, page 2. There is a mix of three passenger 
+classes, with a lot more in third class. There 
+are also a lot more men than women.
 
-The survived variable is a number code. You 
-should look at the data dictionary to find out 
-that 1=survived and 2=died. Only about a third of 
-the passengers survived.;
+Output, page 3. The survived variable is a number 
+code. You should look at the data dictionary to 
+find out that 1=survived and 2=died. Only about a 
+third of the passengers survived.;
 
 * Part05. Convert string to numeric, data step;
 
@@ -118,7 +117,10 @@ occurence of NA, which can get tedious. The input
 function with two question marks avoids this 
 issue.
 
-The numeric variable, age_c, can now be analyzed using proc means. The average age is about 30, and there are a large number of missing values.;
+Output, page 4. The numeric variable, age_c, can 
+now be analyzed using proc means. The average age 
+is about 30, and there are a large number of 
+missing values.;
 
 * Part06. Using proc format to code categorical data;
 
@@ -140,10 +142,12 @@ numbers, but the numbers represent a particular
 category, you can document this using a format 
 statement.
 
-It is almost always a good idea to attach labels 
-to any categorical variable using number codes. 
-It makes your output more readable and avoids any 
-confusion or mixing up the codes.;
+Output, page 5. Notice that the format statement 
+replaces the cryptic 0-1 code with the words no 
+and yes. It is almost always a good idea to 
+attach labels to any categorical variable using 
+number codes. It makes your output more readable 
+and avoids any confusion or mixing up the codes.;
 
 * Part07. Bar charts, proc sgplot;
 
@@ -154,13 +158,17 @@ proc sgplot
   title1 "Bar chart for number surviving";
 run;
 
-* Notes07. ;
+* Notes07. I don't normally like bar charts, but
+they do have their uses.
+
+Output, page 6. This is a basic bar chart.;
 
 * Part08. Percentages for bar chart;
 
 proc freq
+    noprint 
     data=perm.titanic;
-  tables Survived / noprint out=pct_survived;
+  tables Survived / out=pct_survived;
 run;
 
 proc sgplot
@@ -171,7 +179,18 @@ proc sgplot
   title1 "Bar chart for percent surviving";
 run;
 
-* Notes08. ;
+* Notes08. Getting percentages is a bit tricky. 
+You have to run proc freq and output the results 
+to a new data file, pct_survived. I am using the 
+noprint option, because I only want the 
+percentages for internal use. It wouldn't have 
+hurt anything to print out a bit extra, but I 
+want to encourage you to limit the amount of 
+output that you present to a consulting client.
+
+Output, page 7. Note that the yaxis max=100 
+statement expands the upper limit of the y axis  
+to 100%.;
 
 * Part09. Crosstabulation;
 
@@ -182,7 +201,12 @@ proc freq
   title1 "Crosstabulation with row percentages";
 run;
 
-* Notes09. ;
+* Notes09. To examine relationships among 
+categorical variables use a two dimensional 
+crosstabulation.
+
+Output, page 8. The mortality rate was 83% among 
+the mean and 33% among the women;
 
 * Part10. Converting a continuous variable to categorical;
 
@@ -199,7 +223,12 @@ data age_categories;
   else age_cat   = "adult   ";
 run;
 
-* Notes10. ;
+* Notes10. If you want to create categories from a
+continuous variable, use a series of
+
+if - then - else
+  
+statements;
 
 * Part11. Quality check;
 
@@ -216,7 +245,11 @@ proc means
   title1 "Quality check for conversion";
 run;
 
-* Notes11. ;
+* Notes11. Always cross check your results against the original variable.
+
+Output, page 9. These results look good. Notice, 
+however, that the order for age_cat is 
+alphabetical, which is probably not what you want.;
 
 * Part12. Controlling the display order;
 
@@ -233,7 +266,7 @@ data age_codes;
   else age_cat = 4;
 run;
 
-* Notes12. ;
+* Notes12. You can control the order by using number codes and formats.;
 
 * Part13. With number codes, use proc format;
 
@@ -246,7 +279,8 @@ proc format;
   	9 = "unknown";
 run;
 
-* Notes13. ;
+* Notes13. The format statement attaches a label 
+to each number code.;
 
 * Part14. Quality check;
 
@@ -263,7 +297,11 @@ proc means
   format age_cat f_age.;
 run;
 
-* Notes14. ;
+* Notes14. Again, a quality check is important.
+
+Output, page 10. The tables are ordered from 
+toddler to pre-teen to teenager to adult, then 
+missing.;
 
 * Part15. Modifying a categorical variable;
 
@@ -282,6 +320,13 @@ run;
 
 ods pdf close;
 
-* Notes15. ;
+* Notes15. Here's another example where you 
+compare First Class passengers to
+Second and Third class passengers 
+combined.
+
+Output, page 11. You could have done these 
+calcuations by hand, of course, but this helps 
+others who are not as patient as you are.;
 
 * Part16. End of program;
