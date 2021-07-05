@@ -18,4 +18,5 @@ knit: (function(inputFile, encoding) {
 
 ##### You will also see the following SAS keyworkds and procedures
 
++ proc freq
 + proc format
