@@ -13,7 +13,8 @@ License: public domain;
 
 * Part01. Tell SAS where to find and store things;
 
-options papersize=(6 in 4 in); * needed to have the output fit on PowerPoint;
+options papersize=(6in 4in); 
+* This needed to have the output fit on PowerPoint;
 
 %let path=q:/introduction-to-sas;
 
@@ -192,23 +193,7 @@ Output, page 7. Note that the yaxis max=100
 statement expands the upper limit of the y axis  
 to 100%.;
 
-* Part09. Crosstabulation;
-
-proc freq
-    data=perm.titanic;
-  tables Sex*Survived / nocol nopercent;
-  format Survived f_survived.;
-  title1 "Crosstabulation with row percentages";
-run;
-
-* Notes09. To examine relationships among 
-categorical variables use a two dimensional 
-crosstabulation.
-
-Output, page 8. The mortality rate was 83% among 
-the mean and 33% among the women;
-
-* Part10. Converting a continuous variable to categorical;
+* Part09. Converting a continuous variable to categorical;
 
 data age_categories;
   set perm.titanic;
@@ -223,14 +208,14 @@ data age_categories;
   else age_cat   = "adult   ";
 run;
 
-* Notes10. If you want to create categories from a
+* Notes09. If you want to create categories from a
 continuous variable, use a series of
 
 if - then - else
   
 statements;
 
-* Part11. Quality check;
+* Part10. Quality check;
 
 proc sort
     data=age_categories;
@@ -245,13 +230,17 @@ proc means
   title1 "Quality check for conversion";
 run;
 
-* Notes11. Always cross check your results against the original variable.
+* Notes10. Always cross check your results against the original variable.
 
-Output, page 9. These results look good. Notice, 
+Output, page 8. These results look good. Notice, 
 however, that the order for age_cat is 
-alphabetical, which is probably not what you want.;
+alphabetical, which is probably not what you want.
 
-* Part12. Controlling the display order;
+Output, page 9. 
+
+Output, page 10. 
+
+* Part11. Controlling the display order;
 
 data age_codes;
   set perm.titanic;
@@ -266,9 +255,10 @@ data age_codes;
   else age_cat = 4;
 run;
 
-* Notes12. You can control the order by using number codes and formats.;
+* Notes11. You can control the order by using 
+number codes and formats.; 
 
-* Part13. With number codes, use proc format;
+* Part12. With number codes, use proc format;
 
 proc format;
   value f_age
@@ -279,10 +269,10 @@ proc format;
   	9 = "unknown";
 run;
 
-* Notes13. The format statement attaches a label 
+* Notes12. The format statement attaches a label 
 to each number code.;
 
-* Part14. Quality check;
+* Part13. Quality check;
 
 proc sort
     data=age_codes;
@@ -295,15 +285,20 @@ proc means
   by age_cat;
   var age_c;
   format age_cat f_age.;
+  title1 "Quality check for conversion";
+  title2 "Revision to control ordering";
 run;
 
-* Notes14. Again, a quality check is important.
+* Notes13. Again, a quality check is important.
 
-Output, page 10. The tables are ordered from 
-toddler to pre-teen to teenager to adult, then 
-missing.;
+Output, page 11. The tables are ordered from 
+toddler to pre-teen, 
 
-* Part15. Modifying a categorical variable;
+Output, page 12. to teenager to adult,
+
+Output, page 13. then missing.;
+
+* Part14. Modifying a categorical variable;
 
 data first_class;
   set perm.titanic;
@@ -318,15 +313,85 @@ proc freq
     norow nocol nopercent;
 run;
 
-ods pdf close;
-
-* Notes15. Here's another example where you 
+* Notes14. Here's another example where you 
 compare First Class passengers to
 Second and Third class passengers 
 combined.
 
-Output, page 11. You could have done these 
+Output, page 14. You could have done these 
 calcuations by hand, of course, but this helps 
 others who are not as patient as you are.;
 
-* Part16. End of program;
+* Part15. Crosstabulation, default option;
+
+proc freq
+    data=perm.titanic;
+  tables Sex*Survived;
+  format Survived f_survived.;
+  title1 "Crosstabulation with row percentages";
+run;
+
+* Notes15. To examine relationships among 
+categorical variables use a two dimensional 
+crosstabulation.
+
+Output, page 15. Notice that SAS provides three
+different percentages. I do NOT recommend that you
+show every percentage.;
+
+* Part16. Crosstabulation, row percents;
+
+proc freq
+    data=perm.titanic;
+  tables Sex*Survived / nocol nopercent;
+  format Survived f_survived.;
+  title1 "Crosstabulation with row percentages";
+run;
+
+* Notes16. Row percentages add up to 100% within
+each row
+
+Output, page 15. Notice that among the men, 17% 
+survived and 83% died. 17% and 83% adds up to 100%
+within that row. Among the women 67% survived and
+33% died. 67% and 33% addes up to 100% within that
+row.;
+
+* Part17. Crosstabulation, column percents;
+
+proc freq
+    data=perm.titanic;
+  tables Sex*Survived / norow nopercent;
+  format Survived f_survived.;
+  title1 "Crosstabulation with column percentages";
+run;
+
+* Notes17. Column percentages add up to 100%
+within each column
+
+Output, page 16. Notice that among the survivors,
+xx% were women and xx% were men. Among those who died,
+xx% were women and xx percent were men.;
+
+* Part18. Crosstabulation, row percents;
+
+proc freq
+    data=perm.titanic;
+  tables Sex*Survived / norow nocol;
+  format Survived f_survived.;
+  title1 "Crosstabulation with cell percentages";
+run;
+
+ods pdf close;
+
+* Notes18. Cell percentages add up to 100% across
+the entire table
+
+Output, page 17.  There were xx% female survivors
+among all the passengers, xx% male survivors, xx%
+female deaths, and xx% male deaths. These four 
+percentages all add up to 100%. Which is best: row,
+column, or cell percents. The answer is "it depends."
+I have a handout that talks about these issues.;
+
+* Part19. End of program;
