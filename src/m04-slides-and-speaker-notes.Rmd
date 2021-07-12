@@ -19,10 +19,13 @@ suppressMessages(suppressWarnings(library(stringr)))
 
 ### Overview
 
-+ proc format
-+ recoding
-+ proc freq
-+ barcharts
++ Frequency counts
++ Convert string to numeric
++ Labels for number codes
++ Drawing bar charts
++ Converting continuous to categorical
++ Crosstabulations
++ Recoding
 
 <div class="notes">
 
@@ -144,21 +147,35 @@ ou <- function(j) {
 `r co(tx, 4)`
 `r no(tx, 4, part=1)`
 
-### SAS output: `r ti(tx, 4)` (1/2)
+### SAS output: `r ti(tx, 4)`
 `r ou(2)`
 `r no(tx, 4, part=2)`
 
-### SAS output: `r ti(tx, 4)` (2/2)
+### SAS output: `r ti(tx, 4)`
 `r ou(3)`
 `r no(tx, 4, part=3)`
+
+### Break #1
+
++ What have you learned
+  + Frequency counts
++ What's coming next
+  + Convert string to numeric
 
 ### SAS code: `r ti(tx, 5)`  <!--convert-->
 `r co(tx, 5)`
 `r no(tx, 5, part=1)`
 
-### SAS output: `r ti(tx, 5)` (1/2)
+### SAS output: `r ti(tx, 5)`
 `r ou(4)`
 `r no(tx, 5, part=2)`
+
+### Break #2
+
++ What you have learned
+  + Convert string to numeric
++ What's coming next
+  + Labels for number codes
 
 ### SAS code: `r ti(tx, 6)` <!--format-->
 `r co(tx, 6)`
@@ -167,6 +184,13 @@ ou <- function(j) {
 ### SAS output: `r ti(tx, 6)` 
 `r ou(5)`
 `r no(tx, 6, part=2)`
+
+### Break #3
+
++ What you have learned
+  + Labels for number codes
++ What's coming next
+  + Drawing bar charts
 
 ### SAS code: `r ti(tx, 7)` <!--bar chart-->
 `r co(tx, 7)`
@@ -178,13 +202,13 @@ ou <- function(j) {
 
 ### SAS code: `r ti(tx, 8)` <!--bar percentages-->
 `r co(tx, 8)`
-`r no(tx, 8)`
+`r no(tx, 8, part=1)`
 
 ### SAS output: `r ti(tx, 8)` 
 `r ou(7)`
-`r no(tx, 8)`
+`r no(tx, 8, part=2)`
 
-### SAS code: `r ti(tx, 9)` <!--crosstabs-->
+### SAS code: `r ti(tx, 9)` 
 `r co(tx, 9)`
 `r no(tx, 9, part=1)`
 
@@ -192,11 +216,18 @@ ou <- function(j) {
 `r ou(8)`
 `r no(tx, 9, part=2)`
 
-### SAS code: `r ti(tx, 10)` <!-- -->
+### Break #4
+
++ What you have learned
+  + Drawing bar charts
++ What's coming next
+  + Converting continuous to categorical
+
+### SAS code: `r ti(tx, 10)` <!--converting 1-->
 `r co(tx, 10)`
 `r no(tx, 10)`
 
-### SAS code: `r ti(tx, 11)` <!-- -->
+### SAS code: `r ti(tx, 11)` <!--converting 2-->
 `r co(tx, 11)`
 `r no(tx, 11, part=1)`
 
@@ -204,36 +235,52 @@ ou <- function(j) {
 `r ou(9)`
 `r no(tx, 11, part=2)`
 
-### SAS code: `r ti(tx, 12)` <!-- -->
+### SAS output: `r ti(tx, 11)` 
+`r ou(10)`
+`r no(tx, 11, part=3)`
+
+### SAS output: `r ti(tx, 11)` 
+`r ou(11)`
+`r no(tx, 11, part=4)`
+
+### SAS code: `r ti(tx, 12)` <!--converting 3-->
 `r co(tx, 12)`
 `r no(tx, 12)`
 
-### SAS code: `r ti(tx, 13)` <!-- -->
+### SAS code: `r ti(tx, 13)` <!--converting 4-->
 `r co(tx, 13)`
 `r no(tx, 13)`
 
-### SAS code: `r ti(tx, 14)` <!-- -->
+### SAS code: `r ti(tx, 14)` <!--converting 5-->
 `r co(tx, 14)`
 `r no(tx, 14, part=1)`
 
 ### SAS output: `r ti(tx, 14)` 
-`r ou(10)`
+`r ou(12)`
 `r no(tx, 14, part=2)`
 
 ### SAS output: `r ti(tx, 14)` 
-`r ou(11)`
+`r ou(13)`
 `r no(tx, 14, part=3)`
 
-### SAS code: `r ti(tx, 15)` 
+### SAS output: `r ti(tx, 14)` 
+`r ou(14)`
+`r no(tx, 14, part=4)`
+
+### SAS code: `r ti(tx, 15)` <!--modifying 1-->
 `r co(tx, 15)`
 `r no(tx, 15, part=1)`
 
 ### SAS output: `r ti(tx, 15)` 
-`r ou(12)`
+`r ou(15)`
 `r no(tx, 15, part=2)`
 
-### SAS output:
-`r ou(13)`
+### SAS code: `r ti(tx, 16)` <!--modifying 2-->
+`r co(tx, 16)`
+`r no(tx, 16, part=1)`
+
+### SAS output: `r ti(tx, 16)` 
+`r ou(15)`
 `r no(tx, 15, part=2)`
 
 ### SAS output:

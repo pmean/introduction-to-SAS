@@ -164,7 +164,7 @@ they do have their uses.
 
 Output, page 6. This is a basic bar chart.;
 
-* Part08. Percentages for bar chart;
+* Part08. Percentages for bar chart (1/2);
 
 proc freq
     noprint 
@@ -172,13 +172,9 @@ proc freq
   tables Survived / out=pct_survived;
 run;
 
-proc sgplot
+proc print
     data=pct_survived;
-  vbar Survived / response=Percent;
-  yaxis max=100;
-  format Survived f_survived.;
-  title1 "Bar chart for percent surviving";
-run;
+  title
 
 * Notes08. Getting percentages is a bit tricky. 
 You have to run proc freq and output the results 
@@ -189,11 +185,30 @@ hurt anything to print out a bit extra, but I
 want to encourage you to limit the amount of 
 output that you present to a consulting client.
 
-Output, page 7. Note that the yaxis max=100 
+Output, page 7. You don't need to print out this
+dataset, but I wanted to show it so you can
+understand what the file looks like. It has 
+the "by" variable, survival, along with COUNT
+and PERCENT;
+
+* Part09. Percentages for bar chart (2/2);
+
+proc sgplot
+    data=pct_survived;
+  vbar Survived / response=Percent;
+  yaxis max=100;
+  format Survived f_survived.;
+  title1 "Bar chart for percent surviving";
+run;
+
+* Notes09. You use this newly created dataset
+to show percentages instead of counts.
+
+Output, page 8. Note that the yaxis max=100 
 statement expands the upper limit of the y axis  
 to 100%.;
 
-* Part09. Converting a continuous variable to categorical;
+* Part10. Converting a continuous variable to categorical (1/5);
 
 data age_categories;
   set perm.titanic;
@@ -208,14 +223,14 @@ data age_categories;
   else age_cat   = "adult   ";
 run;
 
-* Notes09. If you want to create categories from a
+* Notes10. If you want to create categories from a
 continuous variable, use a series of
 
 if - then - else
   
 statements;
 
-* Part10. Quality check;
+* Part11. Converting a continuous variable to categorical (2/5);
 
 proc sort
     data=age_categories;
@@ -230,17 +245,16 @@ proc means
   title1 "Quality check for conversion";
 run;
 
-* Notes10. Always cross check your results against the original variable.
+* Notes11. Always cross check your results against the original variable.
 
-Output, page 8. These results look good. Notice, 
-however, that the order for age_cat is 
-alphabetical, which is probably not what you want.
+Output, page 9. These results look good. 
 
-Output, page 9. 
+output, page 10, And these look good also.
 
-Output, page 10. 
+output, page 11, Notice, however, that the order for age_cat is 
+alphabetical, which is probably not what you want.;
 
-* Part11. Controlling the display order;
+* Part12. Converting a continuous variable to categorical (3/5);
 
 data age_codes;
   set perm.titanic;
@@ -255,10 +269,10 @@ data age_codes;
   else age_cat = 4;
 run;
 
-* Notes11. You can control the order by using 
+* Notes12. You can control the order by using 
 number codes and formats.; 
 
-* Part12. With number codes, use proc format;
+* Part13. Converting a continuous variable to categorical (4/5);
 
 proc format;
   value f_age
@@ -269,10 +283,10 @@ proc format;
   	9 = "unknown";
 run;
 
-* Notes12. The format statement attaches a label 
+* Notes13. The format statement attaches a label 
 to each number code.;
 
-* Part13. Quality check;
+* Part14. Converting a continuous variable to categorical (5/5);
 
 proc sort
     data=age_codes;
@@ -289,16 +303,16 @@ proc means
   title2 "Revision to control ordering";
 run;
 
-* Notes13. Again, a quality check is important.
+* Notes14. Again, a quality check is important.
 
-Output, page 11. The tables are ordered from 
+Output, page 12. The tables are ordered from 
 toddler to pre-teen, 
 
-Output, page 12. to teenager to adult,
+Output, page 13. to teenager to adult,
 
-Output, page 13. then missing.;
+Output, page 14. then missing.;
 
-* Part14. Modifying a categorical variable;
+* Part15. Modifying a categorical variable (1/2);
 
 data first_class;
   set perm.titanic;
@@ -313,33 +327,30 @@ proc freq
     norow nocol nopercent;
 run;
 
-* Notes14. Here's another example where you 
-compare First Class passengers to
-Second and Third class passengers 
-combined.
+* Notes15. Here's how you combine categories for
+a categorical variable. It uses the same 
+"if - then - else" code.
 
-Output, page 14. You could have done these 
-calcuations by hand, of course, but this helps 
-others who are not as patient as you are.;
+Output, page 15. Here is a quality check.
 
-* Part15. Crosstabulation, default option;
+* Part16. Crosstabulation (1)
 
 proc freq
     data=perm.titanic;
   tables Sex*Survived;
   format Survived f_survived.;
-  title1 "Crosstabulation with row percentages";
+  title1 "Crosstabulation with all percentages";
 run;
 
-* Notes15. To examine relationships among 
+* Notes16. To examine relationships among 
 categorical variables use a two dimensional 
 crosstabulation.
 
-Output, page 15. Notice that SAS provides three
+Output, page 16. Notice that SAS provides three
 different percentages. I do NOT recommend that you
 show every percentage.;
 
-* Part16. Crosstabulation, row percents;
+* Part17. Crosstabulation (2);
 
 proc freq
     data=perm.titanic;
@@ -348,16 +359,17 @@ proc freq
   title1 "Crosstabulation with row percentages";
 run;
 
-* Notes16. Row percentages add up to 100% within
-each row
+* Notes17. You get row percentages by excluding
+column percentages (nocol) and cell percentages
+(nopercent).
 
-Output, page 15. Notice that among the men, 17% 
+Output, page 17. Notice that among the men, 17% 
 survived and 83% died. 17% and 83% adds up to 100%
 within that row. Among the women 67% survived and
 33% died. 67% and 33% addes up to 100% within that
 row.;
 
-* Part17. Crosstabulation, column percents;
+* Part18. Crosstabulation (3);
 
 proc freq
     data=perm.titanic;
@@ -366,14 +378,16 @@ proc freq
   title1 "Crosstabulation with column percentages";
 run;
 
-* Notes17. Column percentages add up to 100%
-within each column
+* Notes18. You get column percentages by excluding
+row percentages (norow) and cell percentages 
+(nopercent).
 
-Output, page 16. Notice that among the survivors,
+Output, page 18. Column percentages add up to 100%
+within each column. Notice that among the survivors,
 xx% were women and xx% were men. Among those who died,
 xx% were women and xx percent were men.;
 
-* Part18. Crosstabulation, row percents;
+* Part19. Crosstabulation (4)
 
 proc freq
     data=perm.titanic;
@@ -384,14 +398,16 @@ run;
 
 ods pdf close;
 
-* Notes18. Cell percentages add up to 100% across
-the entire table
+* Notes19. You get cell percentages by excluding
+row percents (norow) and column percents (nocol).
 
-Output, page 17.  There were xx% female survivors
-among all the passengers, xx% male survivors, xx%
-female deaths, and xx% male deaths. These four 
-percentages all add up to 100%. Which is best: row,
-column, or cell percents. The answer is "it depends."
-I have a handout that talks about these issues.;
+Output, page 19. Cell percentages add up to 100%
+across the entire table. There were xx% female
+survivors among all the passengers, xx% male
+survivors, xx% female deaths, and xx% male deaths.
+These four percentages all add up to 100%.
+Which is best: row, column, or cell percents. 
+The answer is "it depends." I have a handout that
+talks about these issues.;
 
-* Part19. End of program;
+* Part20. End of program;
