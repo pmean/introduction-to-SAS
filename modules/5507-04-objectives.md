@@ -16,7 +16,20 @@ knit: (function(inputFile, encoding) {
 + Creating categories for a continuous variable
 + Bar charts
 
-##### You will also see the following SAS keyworkds and procedures
+##### You will also see the following SAS keywords and procedures
 
++ format
++ if - then - else
++ input
++ nocol
++ nopercent
++ noprint
++ norow
++ out
 + proc freq
 + proc format
++ table / tables
++ value
++ vbar
++ yaxis
++ ??
