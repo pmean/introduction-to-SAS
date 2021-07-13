@@ -5,7 +5,7 @@ author: Steve Simon
 Date created: 2018-10-22
 
 Purpose: To illustrate how to work with datasets
-with mostly continuous variables.
+with mostly categorical variables.
 
 License: public domain;
 
@@ -319,7 +319,7 @@ data first_class;
   set perm.titanic;
   if PClass = "1st"
     then first_class = "Yes";
-	else first_class = "No";
+	else first_class = "No ";
 run;
 
 proc freq

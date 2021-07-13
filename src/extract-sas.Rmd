@@ -1,0 +1,100 @@
+---
+title: "Extract SAS code and comments"
+author: "Steve Simon"
+date: "Created 2021-07-13"
+output: html_document
+---
+
+```{r setup, echo=FALSE}
+knitr::opts_chunk$set(echo=FALSE, comment="")
+suppressMessages(suppressWarnings(library(dplyr)))
+suppressMessages(suppressWarnings(library(knitr)))
+suppressMessages(suppressWarnings(library(magrittr)))
+suppressMessages(suppressWarnings(library(stringr)))
+```
+
+```{r}
+tx <- readLines("m04-5507-simon-categorical-variables.sas")
+
+zpad <- function(i) {ifelse(i <10, paste0("0", i), paste0(i))}
+```
+
+```{r}
+px <- function(tx, s1, s2, d1=0, d2=-2) {
+  tx %>% str_which(s1) -> i1
+  tx %>% str_which(s2) -> j1
+  if (length(i1)==0) return("No beginning found")
+  if (length(j1)==0) return("No ending found")
+  if (length(i1) > 1) return("Multiple beginnings found")
+  if (length(j1) > 1) return("Multiple endings found")
+  i1 <- i1 + d1
+  j1 <- j1 + d2
+  tx %>%
+    extract(i1:j1) %>%
+    return
+}
+```
+
+```{r}
+co <- function(tx, i, d1=2, d2=-2) {
+  s1 <- paste0("Part", zpad(i))
+  s2 <- paste0("Notes", zpad(i))
+  px(tx, s1, s2, d1, d2) %>%
+    append("```{}", after=0) %>%
+	append("```") %>%
+    paste0(collapse="\n") %>%
+	return
+}
+```
+
+```{r}
+ap <- function(tx) {
+  '\n<div class="notes">\n' %>%
+    append(tx) %>%
+	append('\n</div>\n') %>%
+	paste0(collapse="\n")
+}
+
+no <- function(tx, i, d1=0, d2=-2, part=0) {
+  s1 <- paste0("Notes", zpad(i))
+  s2 <- paste0("Part", zpad(i+1))
+  px(tx, s1, s2, d1, d2) %>%
+    str_remove(fixed("* ")) %>%
+  	str_remove(";$") -> notes_text
+  if (part==0) 
+    return(ap(notes_text))
+  blank_lines <- c(1, str_which(notes_text, "^\\s*$"), length(notes_text))
+  if (part > length(blank_lines)-1)
+    return(paste0(c("Error", blank_lines), collapse=","))
+  ra <- blank_lines[part]:blank_lines[part+1] 
+  return(ap(notes_text[ra]))
+}
+```
+
+```{r}
+ti <- function(tx, i) {
+  s1 <- paste0("Part", zpad(i))
+  px(tx, s1, s1, 0, 0) %>%
+  	str_remove(fixed("* Part")) %>%
+	  str_remove("^....") %>%
+    str_remove(";$") %>%
+    return   
+}
+```
+
+```{r}
+
+`%0%` <- function(a, b) {paste0(a, b)}
+
+ou <- function(j) {
+  "![SAS Output]" %0%
+    "(../images/m04-5507" %0%
+	"-simon-categorical_" %0%
+	zpad(j) %0%
+	".png)"
+}
+
+tx %>%
+  str_subset("^\\* ") %>%
+  paste(collapse="\n\n") -> general_structure
+```
