@@ -1,5 +1,6 @@
-* Part00. Documentation header
+* Part00. Documentation header;
 
+*************************************************
 m04-5507-simon-categorical-variables
 author: Steve Simon
 Date created: 2018-10-22
@@ -8,6 +9,7 @@ Purpose: To illustrate how to work with datasets
 with mostly categorical variables.
 
 License: public domain;
+*************************************************;
 
 * Notes00. This is the standard documentation header;
 
