@@ -64,8 +64,53 @@ Here is an overview of what I want to cover in module05.
 `r ou(2)`
 `r no(tx, part=2)`
 ### SAS output: `r ti(tx, 5)`
-`r ou(2)`
+`r ou(3)`
 `r no(tx, part=2)`
+
+### SAS code: `r ti(tx, 6)` <!--corr-->
+`r co(tx)`
+`r no(tx, part=1)`
+### SAS output: `r ti(tx, 6)`
+`r ou(4)`
+`r no(tx, part=2)`
+
+### SAS code: `r ti(tx, 7)` <!--scatter-->
+`r co(tx)`
+`r no(tx, part=1)`
+### SAS output: `r ti(tx, 7)`
+`r ou(5)`
+`r no(tx, part=2)`
+
+### SAS code: `r ti(tx, 8)` <!--loess-->
+`r co(tx)`
+`r no(tx, part=1)`
+### SAS output: `r ti(tx, 8)`
+`r ou(6)`
+`r no(tx, part=2)`
+
+### SAS code: `r ti(tx, 9)` <!--vbox-->
+`r co(tx)`
+`r no(tx, part=1)`
+### SAS output: `r ti(tx, 9)`
+`r ou(7)`
+`r no(tx, part=2)`
+
+### SAS code: `r ti(tx, 10)` <!--by-->
+`r co(tx)`
+`r no(tx, part=1)`
+### SAS output: `r ti(tx, 10)`
+`r ou(8)`
+`r no(tx, part=2)`
+
+### SAS code: `r ti(tx, 11)` <!--sgplot and means-->
+`r co(tx)`
+`r no(tx, part=1)`
+### SAS output: `r ti(tx, 11)`
+`r ou(9)`
+`r no(tx, part=2)`
+### SAS output: `r ti(tx, 11)`
+`r ou(10)`
+`r no(tx, part=3)`
 
 
 
