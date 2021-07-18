@@ -20,7 +20,7 @@ options papersize=(6in 4in);
 %let path=q:/introduction-to-sas;
 
 ods pdf
-  file="&path/results/m04-5507-simon-categorical.pdf";
+  file="&path/results/m05-5507-simon-mix.pdf";
 
 filename raw_data
   "&path/data/fev.txt";

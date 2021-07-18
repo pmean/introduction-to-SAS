@@ -111,26 +111,3 @@ Here is an overview of what I want to cover in module05.
 ### SAS output: `r ti(tx, 11)`
 `r ou(10)`
 `r no(tx, part=3)`
-
-
-
-
-
-
-<!---proc freq and means--->`r j <- j+1`
-<!---output--->`r k <- k+1`
-<!---output--->`r k <- k+1`
-<!---proc corr--->`r j <- j+1`
-<!---output--->`r k <- k+1`
-<!---proc sgplot--->`r j <- j+1`
-<!---output--->`r k <- k+1`
-<!---proc sgplot--->`r j <- j+1`
-<!---output--->`r k <- k+1`
-<!---proc sgplot--->`r j <- j+1`
-<!---output--->`r k <- k+1`
-<!---by statement--->`r j <- j+1`
-<!---output--->`r k <- k+1`
-<!---proc sgplot--->`r j <- j+1`
-<!---output--->`r k <- k+1`
-<!---output--->`r k <- k+1`
-<!---Further investigation--->`r j <- j+1`
