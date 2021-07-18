@@ -61,50 +61,12 @@ run;
 *************************************************
 Q1. Do any of the variables have missing values?
 How many?
-
-Q2. Calculate the mean and standard deviation
-for the two levels of CUST. How much more do
- custom built houses cost on average?
-
-Q3. Evaluate the relationship between CUST and 
-SQFT using a boxplot. Do custom built houses 
-tend to be bigger?
-
-Q4. Are custom built houses more likely to 
-appear on corner lots? Calculate the percentages.
-Hint: use COR as the rows, CUST as the columns, 
-and display row percentages.
 *************************************************;
 proc means
     n nmiss
     data=perm.housing;
   title1 "There are 49 missing values for age";
   title2 "No other variables have missing values";
-run;
-
-proc sort
-    data=perm.housing;
-  by cust;
-run;
-
-proc means
-    data=perm.housing;
-  by cust;
-  var price;
-  title1 "Custom built houses are about $xx more expensive on average.";
-run;
-
-proc sgplot
-    data=perm.housing;
-  vbox sqft / category=cust;
-  title1 "Custom built houses tend to be much larger.";
-run;
- 
-proc freq
-    data=perm.housing;
-  tables cor*cust / nocol nopercent;
-  title1 "Custom built houses are roughly equally likely";
-  title2 "to be built on corner lots or side lots.";
 run;
 
 ods pdf close;
