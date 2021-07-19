@@ -59,7 +59,6 @@ Here is an overview of what I want to cover in module05.
 `r ou(1)`
 `r no(tx, part=2)`
 
-
 ### SAS code: `r ti(tx, 5)` <!--means and freqs-->
 `r co(tx)`
 `r no(tx, part=1)`
@@ -69,6 +68,12 @@ Here is an overview of what I want to cover in module05.
 ### SAS output: `r ti(tx, 5)`
 `r ou(3)`
 `r no(tx, part=2)`
+
+### Break #1
++ What have you learned
+  + Reviewing descriptive statistics
++ What's next
+  + Correlations and scatterplots
 
 ### SAS code: `r ti(tx, 6)` <!--corr-->
 `r co(tx)`
@@ -91,6 +96,12 @@ Here is an overview of what I want to cover in module05.
 `r ou(6)`
 `r no(tx, part=2)`
 
+### Break #2
++ What have you learned
+  + Correlations and scatterplots
++ Wht's next
+  + Boxplots
+
 ### SAS code: `r ti(tx, 9)` <!--vbox-->
 `r co(tx)`
 `r no(tx, part=1)`
@@ -98,12 +109,24 @@ Here is an overview of what I want to cover in module05.
 `r ou(7)`
 `r no(tx, part=2)`
 
+### Break #3
++ What have you learned
+  + Boxplots
++ What's next
+  + Means by group
+
 ### SAS code: `r ti(tx, 10)` <!--by-->
 `r co(tx)`
 `r no(tx, part=1)`
 ### SAS output: `r ti(tx, 10)`
 `r ou(8)`
 `r no(tx, part=2)`
+
+### Break #4
++ What have you learned
+  + Means by group
++ What's next
+  + Investigating an odd association
 
 ### SAS code: `r ti(tx, 11)` <!--sgplot and means-->
 `r co(tx)`
@@ -114,3 +137,10 @@ Here is an overview of what I want to cover in module05.
 ### SAS output: `r ti(tx, 11)`
 `r ou(10)`
 `r no(tx, part=3)`
+
+### Summary
++ Reviewing descriptive statistcs
++ Correlations and scatterplots
++ Boxplots
++ Means by group
++ Investigating an odd association
