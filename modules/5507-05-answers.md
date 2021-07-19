@@ -30,11 +30,11 @@ Here are the answers to the homework assignment. Please note that you are requir
 + click [here][m05q04b] for the output.
 
 [m05q01a]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m05-5507-simon-hw05-q1.sas
-[m05q01a]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m05-5507-simon-hw05-q2.sas
-[m05q01a]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m05-5507-simon-hw05-q3.sas
-[m05q01a]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m05-5507-simon-hw05-q4.sas
+[m05q02a]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m05-5507-simon-hw05-q2.sas
+[m05q03a]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m05-5507-simon-hw05-q3.sas
+[m05q04a]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m05-5507-simon-hw05-q4.sas
 
 [m05q01b]: https://github.com/pmean/introduction-to-SAS/blob/master/results/m05-5507-simon-hw05-q1.pdf
-[m05q01b]: https://github.com/pmean/introduction-to-SAS/blob/master/results/m05-5507-simon-hw05-q2.pdf
-[m05q01b]: https://github.com/pmean/introduction-to-SAS/blob/master/results/m05-5507-simon-hw05-q3.pdf
-[m05q01b]: https://github.com/pmean/introduction-to-SAS/blob/master/results/m05-5507-simon-hw05-q4.pdf
+[m05q02b]: https://github.com/pmean/introduction-to-SAS/blob/master/results/m05-5507-simon-hw05-q2.pdf
+[m05q03b]: https://github.com/pmean/introduction-to-SAS/blob/master/results/m05-5507-simon-hw05-q3.pdf
+[m05q04b]: https://github.com/pmean/introduction-to-SAS/blob/master/results/m05-5507-simon-hw05-q4.pdf
