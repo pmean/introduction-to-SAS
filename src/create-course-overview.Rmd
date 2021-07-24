@@ -1,0 +1,83 @@
+---
+title: "List files in the github repository"
+author: "Steve Simon"
+date: "Created 2021-07-24"
+output: html_document
+---
+
+```{r setup, echo=FALSE}
+knitr::opts_chunk$set(echo=FALSE, comment="")
+suppressMessages(suppressWarnings(library(dplyr)))
+suppressMessages(suppressWarnings(library(knitr)))
+suppressMessages(suppressWarnings(library(magrittr)))
+suppressMessages(suppressWarnings(library(stringr)))
+```
+
+```{r}
+zpad <- function(i) {ifelse(i <10, paste0("0", i), paste0(i))}
+`%0%` <- function(x, y) {paste0(x, y)}
+`%1%` <- function(x, y) {paste(x, y, sep="\n")}
+`%2%` <- function(x, y) {paste(x, y, sep="\n\n")}
+`%[]%` <- function(x, y) {paste0(x, "[", y, "]")}
+prefix <- 'https://github.com/pmean/introduction-to-SAS/blob/master/'
+
+modules <- zpad(c(0:6, 8))
+keywords <- c("Objectives", "Videos", "Hw", "Answers")
+
+md_files <- list.files(path="../modules", pattern="\\.md")
+md_files %>%
+  str_subset("-01-") -> md01
+
+# md01 %<>% paste(collapse="\n")
+
+bullet <- function(md, keyword) {
+  md %>%
+    str_subset(str_to_lower(keyword)) -> filename
+  if (length(filename)==0) return(paste("+", str_to_title(keyword), "not yet available."))
+  "+ " %[]% keyword %[]% filename %0% "." %>% return
+}
+add_links <- function(md, keyword) {
+  md %>%
+    str_subset(str_to_lower(keyword)) -> filename
+  "" %[]% 
+    filename %0%
+    ": " %0%
+    prefix %0%
+    "modules/" %0%
+    filename %>%
+    paste0(collapse="\n") %>% return
+}
+```
+
+```{r}
+readLines("create-course-overview.txt") %>%
+  paste0(collapse="\n") -> course_overview
+```
+
+```{r}
+course_overview %<>% paste0("\n\nThis file was last updated on ", Sys.Date())
+```
+
+```{r}
+for (module in modules) {
+  course_overview %<>% paste0("\n\n### Module", module)
+  md_files %>% str_subset(paste0("-", module, "-")) -> md
+  for (keyword in keywords) {
+    course_overview %<>% paste0("\n", bullet(md, keyword))
+  }
+}
+```
+
+```{r}
+for (keyword in keywords) {
+  course_overview %<>% paste0("\n\n", add_links(md_files, keyword))
+}
+```
+
+```{r}
+course_overview %>%
+  writeLines("../README.md")
+
+course_overview %>% cat
+```
+
