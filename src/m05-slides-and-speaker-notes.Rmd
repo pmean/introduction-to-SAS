@@ -3,6 +3,9 @@ title: "Introduction to SAS, Working with a mix of categorical and continuous va
 author: "Steve Simon"
 date: "Created: 2019-07-19"
 output: powerpoint_presentation
+knit: (function(inputFile, encoding) {
+  rmarkdown::render(inputFile, encoding = encoding,
+  output_dir = "../results", output_format = "all") })  
 ---
 
 ```{r common-code, child="extract-sas.Rmd"}
@@ -56,7 +59,6 @@ Here is an overview of what I want to cover in module05.
 `r ou(1)`
 `r no(tx, part=2)`
 
-
 ### SAS code: `r ti(tx, 5)` <!--means and freqs-->
 `r co(tx)`
 `r no(tx, part=1)`
@@ -66,6 +68,12 @@ Here is an overview of what I want to cover in module05.
 ### SAS output: `r ti(tx, 5)`
 `r ou(3)`
 `r no(tx, part=2)`
+
+### Break #1
++ What have you learned
+  + Reviewing descriptive statistics
++ What's next
+  + Correlations and scatterplots
 
 ### SAS code: `r ti(tx, 6)` <!--corr-->
 `r co(tx)`
@@ -88,6 +96,12 @@ Here is an overview of what I want to cover in module05.
 `r ou(6)`
 `r no(tx, part=2)`
 
+### Break #2
++ What have you learned
+  + Correlations and scatterplots
++ Wht's next
+  + Boxplots
+
 ### SAS code: `r ti(tx, 9)` <!--vbox-->
 `r co(tx)`
 `r no(tx, part=1)`
@@ -95,12 +109,24 @@ Here is an overview of what I want to cover in module05.
 `r ou(7)`
 `r no(tx, part=2)`
 
+### Break #3
++ What have you learned
+  + Boxplots
++ What's next
+  + Means by group
+
 ### SAS code: `r ti(tx, 10)` <!--by-->
 `r co(tx)`
 `r no(tx, part=1)`
 ### SAS output: `r ti(tx, 10)`
 `r ou(8)`
 `r no(tx, part=2)`
+
+### Break #4
++ What have you learned
+  + Means by group
++ What's next
+  + Investigating an odd association
 
 ### SAS code: `r ti(tx, 11)` <!--sgplot and means-->
 `r co(tx)`
@@ -112,25 +138,9 @@ Here is an overview of what I want to cover in module05.
 `r ou(10)`
 `r no(tx, part=3)`
 
-
-
-
-
-
-<!---proc freq and means--->`r j <- j+1`
-<!---output--->`r k <- k+1`
-<!---output--->`r k <- k+1`
-<!---proc corr--->`r j <- j+1`
-<!---output--->`r k <- k+1`
-<!---proc sgplot--->`r j <- j+1`
-<!---output--->`r k <- k+1`
-<!---proc sgplot--->`r j <- j+1`
-<!---output--->`r k <- k+1`
-<!---proc sgplot--->`r j <- j+1`
-<!---output--->`r k <- k+1`
-<!---by statement--->`r j <- j+1`
-<!---output--->`r k <- k+1`
-<!---proc sgplot--->`r j <- j+1`
-<!---output--->`r k <- k+1`
-<!---output--->`r k <- k+1`
-<!---Further investigation--->`r j <- j+1`
+### Summary
++ Reviewing descriptive statistcs
++ Correlations and scatterplots
++ Boxplots
++ Means by group
++ Investigating an odd association

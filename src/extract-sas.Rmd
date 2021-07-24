@@ -14,7 +14,7 @@ suppressMessages(suppressWarnings(library(stringr)))
 ```
 
 ```{r}
-tx <- readLines("m04-5507-simon-categorical-variables.sas")
+tx <- readLines("m05-working-with-mix-of-variables.sas")
 
 zpad <- function(i) {ifelse(i <10, paste0("0", i), paste0(i))}
 ```
@@ -89,8 +89,8 @@ ti <- function(tx=tx, i) {
 
 ou <- function(j) {
   "![SAS Output]" %0%
-    "(../images/m04-5507" %0%
-	"-simon-categorical_" %0%
+    "(../images/m05-5507" %0%
+	"-simon-mix_" %0%
 	zpad(j) %0%
 	".png)"
 }
