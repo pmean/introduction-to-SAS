@@ -15,7 +15,7 @@ if you use this material, but this is not required.
 
 Here are links to the key files within each module. It includes pages listing the course objectives, videos, homework, and homework. These should be consistent with what you see on the Canvas website. If you notice any discrepancies, please let me know. What is on the Canvas website always takes precedence.
 
-This file was last updated on 2021-07-24
+This file was last updated on 2021-07-28
 
 ### Module00
 + [Objectives][5507-00-objectives.md].

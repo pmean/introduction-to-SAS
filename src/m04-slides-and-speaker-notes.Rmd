@@ -8,7 +8,7 @@ knit: (function(inputFile, encoding) {
   output_dir = "../results", output_format = "all") })  
 ---
 
-```{r common-code, child="extract-sas.Rmd"}
+```{r common-code, child="common-functions.Rmd"}
 ```
 
 

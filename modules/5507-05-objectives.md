@@ -17,4 +17,8 @@ nit: (function(inputFile, encoding) {
 ##### You will also see the following R functions
 
 + by
++ category
++ format
++ proc format
++ proc freq
 + vbox

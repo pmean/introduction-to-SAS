@@ -11,13 +11,12 @@ knit: (function(inputFile, encoding) {
 
 ##### In this module, you will learn
 
-+ Rules for variable names
-+ Descriptive statistics
-+ Missing values
-+ Histograms
-+ Scatterplots
++ How to read delimited files
++ How to read fixed width files
++ How to handle strings in your input
 
 ##### You will also see the following SAS keywords and procedures
 
-+ proc means
-+ proc sgplot
++ delimiter
++ getnames
++ proc import
