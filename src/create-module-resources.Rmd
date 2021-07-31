@@ -1,0 +1,53 @@
+---
+title: "Create overviews of key files for each module"
+author: "Steve Simon"
+date: "Created 2021-07-28"
+output: html_document
+---
+
+```{r common-code, child="common-functions.Rmd"}
+```
+
+```{r}
+list.files(path="../src", pattern="\\.sas") %>%
+  str_subset("-hw0", negate=TRUE) -> sas_v
+
+list.files(path="../src", pattern="\\.sas") %>%
+  str_subset("-hw0") -> sas_h
+
+list.files(path="../src", pattern="\\.Rmd") -> slides_r
+
+sas_v
+sas_h
+slides_r
+```
+
+```{r}
+for (module in modules) {
+  module_num <- paste0("Module", module)
+  sas_v %>% str_subset(paste0(module, "-")) -> sas_v_subset
+  sas_h %>% str_subset(paste0(module, "-")) -> sas_h_subset
+  filename <- str_replace("../modules/5507-xx-resources.md", "xx", module)
+
+  readLines("create-module-resources.txt") %>%
+    paste0(collapse="\n")  %>%
+    str_replace("Module", module_num) %>%
+    str_replace ("the individual modules", module_num) %>%
+    paste0("\n\nThis file was last updated on ", Sys.Date(), ".") %>%
+    paste0("\n\n### Resources for ") %>%
+    paste0(module_num) %>%
+    paste0("\n\n### ") %>%
+    paste0("SAS programs used in the videos\n") %>%
+    paste0("\n", bullet(sas_v_subset)) %>%
+    paste0("\n\n### ") %>%
+    paste0("Homework solutions, SAS code\n") %>%
+    paste0("\n", bullet(sas_h_subset)) %>%
+    paste0("\n\n", add_links(sas_v_subset, "sas", "src/")) %>%
+    paste0("\n\n", add_links(sas_h_subset, "sas", "src/")) -> module_overviews
+  module_overviews %>% cat
+  module_overviews %>%
+    writeLines(filename)
+}
+```
+
+

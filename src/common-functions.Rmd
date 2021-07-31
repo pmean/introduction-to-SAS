@@ -25,6 +25,7 @@ zpad <- function(i) {ifelse(i<10, paste0("0", i), paste0(i))}
 ```{r add_links}
 add_links <- function(md, keyword, folder="modules/") {
   # add links to the bottom of a markdown file
+  if (length(md)==0) return("\n\n<!---No links for this section--->\n\n")
   md %>%
     str_subset(str_to_lower(keyword)) -> filename
   
