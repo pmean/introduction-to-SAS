@@ -15,11 +15,18 @@ list.files(path="../src", pattern="\\.sas") %>%
 list.files(path="../src", pattern="\\.sas") %>%
   str_subset("-hw0") -> sas_h
 
-list.files(path="../src", pattern="\\.Rmd") -> slides_r
+list.files(path="../src", pattern="\\.Rmd") -> rmd_v
+
+list.files(path="../results", pattern="\\.pdf") %>%
+  str_subset("-hw0", negate=TRUE) -> pdf_v
+
+list.files(path="../results", pattern="\\.pdf") %>%
+  str_subset("-hw0") -> pdf_h
 
 sas_v
 sas_h
-slides_r
+pdf_v
+pdf_h
 ```
 
 ```{r}
@@ -27,23 +34,35 @@ for (module in modules) {
   module_num <- paste0("Module", module)
   sas_v %>% str_subset(paste0(module, "-")) -> sas_v_subset
   sas_h %>% str_subset(paste0(module, "-")) -> sas_h_subset
+  rmd_v %>% str_subset(paste0(module, "-")) -> rmd_v_subset
   filename <- str_replace("../modules/5507-xx-resources.md", "xx", module)
 
   readLines("create-module-resources.txt") %>%
     paste0(collapse="\n")  %>%
     str_replace("Module", module_num) %>%
     str_replace ("the individual modules", module_num) %>%
+
     paste0("\n\nThis file was last updated on ", Sys.Date(), ".") %>%
+
     paste0("\n\n### Resources for ") %>%
     paste0(module_num) %>%
-    paste0("\n\n### ") %>%
+
+    paste0("\n\n#### ") %>%
+    paste0("Slides used in the videos\n") %>%
+    paste0("\n", bullet(rmd_v)) %>%
+    
+    paste0("\n\n#### ") %>%
     paste0("SAS programs used in the videos\n") %>%
     paste0("\n", bullet(sas_v_subset)) %>%
-    paste0("\n\n### ") %>%
+    
+    paste0("\n\n#### ") %>%
     paste0("Homework solutions, SAS code\n") %>%
     paste0("\n", bullet(sas_h_subset)) %>%
+    
+    paste0("\n\n", add_links(slides_r_subset, "r", "src/")) %>%
     paste0("\n\n", add_links(sas_v_subset, "sas", "src/")) %>%
     paste0("\n\n", add_links(sas_h_subset, "sas", "src/")) -> module_overviews
+  
   module_overviews %>% cat
   module_overviews %>%
     writeLines(filename)

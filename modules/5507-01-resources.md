@@ -15,31 +15,37 @@ if you use this material, but this is not required.
 
 
 
-This file was last updated on 2021-07-31.
+This file was last updated on 2021-08-01.
 
-Resources for Module01
+### Resources for Module01
 
-### SAS programs used in the videos
+#### Slides used in the videos
 
-+ [m01-5507-simon-basic-program.sas][m01-5507-simon-basic-program.sas].
-+ [m01-5507-simon-documentation-header.sas][m01-5507-simon-documentation-header.sas].
-+ [m01-5507-simon-input-text.sas][m01-5507-simon-input-text.sas].
-+ [m01-5507-simon-permanent-storage.sas][m01-5507-simon-permanent-storage.sas].
-+ [m01-5507-simon-re-use.sas][m01-5507-simon-re-use.sas].
-+ [m01-5507-simon-read-data.sas][m01-5507-simon-read-data.sas].
-+ [m01-5507-simon-save-output.sas][m01-5507-simon-save-output.sas].
++ [m01-course-introduction.Rmd][course-introduction.Rmd].
 
-### Homework solutions, SAS code
+#### SAS programs used in the videos
 
-+  not yet available.
++ [m01-5507-simon-basic-program.sas][basic-program.sas].
++ [m01-5507-simon-documentation-header.sas][documentation-header.sas].
++ [m01-5507-simon-input-text.sas][input-text.sas].
++ [m01-5507-simon-permanent-storage.sas][permanent-storage.sas].
++ [m01-5507-simon-re-use.sas][re-use.sas].
++ [m01-5507-simon-read-data.sas][read-data.sas].
++ [m01-5507-simon-save-output.sas][save-output.sas].
 
-[m01-5507-simon-basic-program.sas]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m01-5507-simon-basic-program.sas
-[m01-5507-simon-documentation-header.sas]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m01-5507-simon-documentation-header.sas
-[m01-5507-simon-input-text.sas]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m01-5507-simon-input-text.sas
-[m01-5507-simon-permanent-storage.sas]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m01-5507-simon-permanent-storage.sas
-[m01-5507-simon-re-use.sas]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m01-5507-simon-re-use.sas
-[m01-5507-simon-read-data.sas]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m01-5507-simon-read-data.sas
-[m01-5507-simon-save-output.sas]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m01-5507-simon-save-output.sas
+#### Homework solutions, SAS code
+
++   not yet available.
+
+[course-introduction.Rmd]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m01-course-introduction.Rmd
+
+[basic-program.sas]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m01-5507-simon-basic-program.sas
+[documentation-header.sas]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m01-5507-simon-documentation-header.sas
+[input-text.sas]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m01-5507-simon-input-text.sas
+[permanent-storage.sas]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m01-5507-simon-permanent-storage.sas
+[re-use.sas]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m01-5507-simon-re-use.sas
+[read-data.sas]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m01-5507-simon-read-data.sas
+[save-output.sas]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m01-5507-simon-save-output.sas
 
 
 

@@ -15,24 +15,30 @@ if you use this material, but this is not required.
 
 
 
-This file was last updated on 2021-07-31.
+This file was last updated on 2021-08-01.
 
-Resources for Module05
+### Resources for Module05
 
-### SAS programs used in the videos
+#### Slides used in the videos
 
-+ [m05-working-with-mix-of-variables.sas][m05-working-with-mix-of-variables.sas].
++ [m05-slides-and-speaker-notes.Rmd][slides-and-speaker-notes.Rmd].
 
-### Homework solutions, SAS code
+#### SAS programs used in the videos
 
-+ [m05-5507-simon-hw05-q1.sas][m05-5507-simon-hw05-q1.sas].
-+ [m05-5507-simon-hw05-q2.sas][m05-5507-simon-hw05-q2.sas].
-+ [m05-5507-simon-hw05-q3.sas][m05-5507-simon-hw05-q3.sas].
-+ [m05-5507-simon-hw05-q4.sas][m05-5507-simon-hw05-q4.sas].
++ [m05-working-with-mix-of-variables.sas][working-with-mix-of-variables.sas].
 
-[m05-working-with-mix-of-variables.sas]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m05-working-with-mix-of-variables.sas
+#### Homework solutions, SAS code
 
-[m05-5507-simon-hw05-q1.sas]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m05-5507-simon-hw05-q1.sas
-[m05-5507-simon-hw05-q2.sas]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m05-5507-simon-hw05-q2.sas
-[m05-5507-simon-hw05-q3.sas]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m05-5507-simon-hw05-q3.sas
-[m05-5507-simon-hw05-q4.sas]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m05-5507-simon-hw05-q4.sas
++ [m05-5507-simon-hw05-q1.sas][hw05-q1.sas].
++ [m05-5507-simon-hw05-q2.sas][hw05-q2.sas].
++ [m05-5507-simon-hw05-q3.sas][hw05-q3.sas].
++ [m05-5507-simon-hw05-q4.sas][hw05-q4.sas].
+
+[slides-and-speaker-notes.Rmd]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m05-slides-and-speaker-notes.Rmd
+
+[working-with-mix-of-variables.sas]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m05-working-with-mix-of-variables.sas
+
+[hw05-q1.sas]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m05-5507-simon-hw05-q1.sas
+[hw05-q2.sas]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m05-5507-simon-hw05-q2.sas
+[hw05-q3.sas]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m05-5507-simon-hw05-q3.sas
+[hw05-q4.sas]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m05-5507-simon-hw05-q4.sas

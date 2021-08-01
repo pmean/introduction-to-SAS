@@ -30,7 +30,7 @@ add_links <- function(md, keyword, folder="modules/") {
     str_subset(str_to_lower(keyword)) -> filename
   
   "" %[]% 
-    filename %0%
+    sh(filename) %0%
     ": " %0%
     prefix %0%
     folder %0%
@@ -53,10 +53,10 @@ ap <- function(tx) {
 bullet <- function(md, keyword=md) {
   # creates a bulleted list
   md %>%
-    str_subset(str_to_lower(keyword)) -> filename
+    str_subset(regex(keyword, ignore_case=TRUE)) -> filename
   if (length(filename)==0) return(
-    paste("+", str_to_title(keyword), "not yet available."))
-  "+ " %[]% keyword %[]% filename %0% "." %>%
+    paste("+", str_to_title(keyword), " not yet available."))
+  "+ " %[]% keyword %[]% sh(filename) %0% "." %>%
     paste0(collapse="\n") %>%
     return
 }
@@ -117,6 +117,16 @@ ou <- function(j) {
 	"-simon-mix_" %0%
 	zpad(j) %0%
 	".png)"
+}
+```
+
+```{r sh}
+sh <- function(s) {
+  s %>%
+    str_remove("m0.-") %>%
+    str_remove("5507-") %>%
+    str_remove("simon-") %>%
+    return
 }
 ```
 

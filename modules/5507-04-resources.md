@@ -15,26 +15,32 @@ if you use this material, but this is not required.
 
 
 
-This file was last updated on 2021-07-31.
+This file was last updated on 2021-08-01.
 
-Resources for Module04
+### Resources for Module04
 
-### SAS programs used in the videos
+#### Slides used in the videos
 
-+ [m04-5507-simon-categorical-variables.sas][m04-5507-simon-categorical-variables.sas].
++ [m04-slides-and-speaker-notes.Rmd][slides-and-speaker-notes.Rmd].
 
-### Homework solutions, SAS code
+#### SAS programs used in the videos
 
-+ [m04-5507-simon-hw04-q1.sas][m04-5507-simon-hw04-q1.sas].
-+ [m04-5507-simon-hw04-q2.sas][m04-5507-simon-hw04-q2.sas].
-+ [m04-5507-simon-hw04-q3.sas][m04-5507-simon-hw04-q3.sas].
-+ [m04-5507-simon-hw04-q4.sas][m04-5507-simon-hw04-q4.sas].
-+ [m04-5507-simon-hw04-q5.sas][m04-5507-simon-hw04-q5.sas].
++ [m04-5507-simon-categorical-variables.sas][categorical-variables.sas].
 
-[m04-5507-simon-categorical-variables.sas]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m04-5507-simon-categorical-variables.sas
+#### Homework solutions, SAS code
 
-[m04-5507-simon-hw04-q1.sas]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m04-5507-simon-hw04-q1.sas
-[m04-5507-simon-hw04-q2.sas]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m04-5507-simon-hw04-q2.sas
-[m04-5507-simon-hw04-q3.sas]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m04-5507-simon-hw04-q3.sas
-[m04-5507-simon-hw04-q4.sas]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m04-5507-simon-hw04-q4.sas
-[m04-5507-simon-hw04-q5.sas]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m04-5507-simon-hw04-q5.sas
++ [m04-5507-simon-hw04-q1.sas][hw04-q1.sas].
++ [m04-5507-simon-hw04-q2.sas][hw04-q2.sas].
++ [m04-5507-simon-hw04-q3.sas][hw04-q3.sas].
++ [m04-5507-simon-hw04-q4.sas][hw04-q4.sas].
++ [m04-5507-simon-hw04-q5.sas][hw04-q5.sas].
+
+[slides-and-speaker-notes.Rmd]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m04-slides-and-speaker-notes.Rmd
+
+[categorical-variables.sas]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m04-5507-simon-categorical-variables.sas
+
+[hw04-q1.sas]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m04-5507-simon-hw04-q1.sas
+[hw04-q2.sas]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m04-5507-simon-hw04-q2.sas
+[hw04-q3.sas]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m04-5507-simon-hw04-q3.sas
+[hw04-q4.sas]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m04-5507-simon-hw04-q4.sas
+[hw04-q5.sas]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m04-5507-simon-hw04-q5.sas

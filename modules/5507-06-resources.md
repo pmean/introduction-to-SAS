@@ -15,17 +15,27 @@ if you use this material, but this is not required.
 
 
 
-This file was last updated on 2021-07-31.
+This file was last updated on 2021-08-01.
 
-Resources for Module06
+### Resources for Module06
 
-### SAS programs used in the videos
+#### Slides used in the videos
 
-+  not yet available.
++   not yet available.
 
-### Homework solutions, SAS code
+#### SAS programs used in the videos
 
-+  not yet available.
++   not yet available.
+
+#### Homework solutions, SAS code
+
++   not yet available.
+
+
+
+<!---No links for this section--->
+
+
 
 
 
