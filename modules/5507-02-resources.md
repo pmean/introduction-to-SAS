@@ -15,12 +15,13 @@ if you use this material, but this is not required.
 
 
 
-This file was last updated on 2021-08-01.
+This file was last updated on 2021-08-01. You can find this file on [my github site][mygit].
 
 ### Resources for Module02
 
 #### Slides used in the videos
 
++ [m02-5507-simon-slides-and-speaker-notes.pdf][slides-and-speaker-notes.pdf].
 + [m02-slides-and-speaker-notes.Rmd][slides-and-speaker-notes.Rmd].
 
 #### SAS programs used in the videos
@@ -28,18 +29,45 @@ This file was last updated on 2021-08-01.
 + [m02-5507-simon-cigarettes.sas][cigarettes.sas].
 + [m02-5507-simon-continuous-variables.sas][continuous-variables.sas].
 
-#### Homework solutions, SAS code
+#### Homework solutions, SAS code and output
 
++ [m02-5507-simon-hw02b-q1-output.pdf][hw02b-q1-output.pdf].
 + [m02-5507-simon-hw02b-q1.sas][hw02b-q1.sas].
++ [m02-5507-simon-hw02b-q2-output.pdf][hw02b-q2-output.pdf].
 + [m02-5507-simon-hw02b-q2.sas][hw02b-q2.sas].
++ [m02-5507-simon-hw02b-q3-output.pdf][hw02b-q3-output.pdf].
 + [m02-5507-simon-hw02b-q3.sas][hw02b-q3.sas].
++ [m02-5507-simon-hw02c-q4-output.pdf][hw02c-q4-output.pdf].
 + [m02-5507-simon-hw02c-q4.sas][hw02c-q4.sas].
++ [m02-5507-simon-hw02c-q5-output.pdf][hw02c-q5-output.pdf].
 + [m02-5507-simon-hw02c-q5.sas][hw02c-q5.sas].
++ [m02-hw01.pdf][hw01.pdf].<!---my git--->
+
+[mygit]: https://github.com/pmean/introduction-to-SAS/blob/master/modules/5507-02-resources.md
+
+<!---pdf_h--->
+
+[hw02b-q1-output.pdf]: https://github.com/pmean/introduction-to-SAS/blob/master/results/m02-5507-simon-hw02b-q1-output.pdf
+[hw02b-q2-output.pdf]: https://github.com/pmean/introduction-to-SAS/blob/master/results/m02-5507-simon-hw02b-q2-output.pdf
+[hw02b-q3-output.pdf]: https://github.com/pmean/introduction-to-SAS/blob/master/results/m02-5507-simon-hw02b-q3-output.pdf
+[hw02c-q4-output.pdf]: https://github.com/pmean/introduction-to-SAS/blob/master/results/m02-5507-simon-hw02c-q4-output.pdf
+[hw02c-q5-output.pdf]: https://github.com/pmean/introduction-to-SAS/blob/master/results/m02-5507-simon-hw02c-q5-output.pdf
+[hw01.pdf]: https://github.com/pmean/introduction-to-SAS/blob/master/results/m02-hw01.pdf
+
+<!---pdf_v--->
+
+[slides-and-speaker-notes.pdf]: https://github.com/pmean/introduction-to-SAS/blob/master/results/m02-5507-simon-slides-and-speaker-notes.pdf
+
+<!---rmd_v--->
 
 [slides-and-speaker-notes.Rmd]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m02-slides-and-speaker-notes.Rmd
 
+<!---sas_v--->
+
 [cigarettes.sas]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m02-5507-simon-cigarettes.sas
 [continuous-variables.sas]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m02-5507-simon-continuous-variables.sas
+
+<!---sas_h--->
 
 [hw02b-q1.sas]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m02-5507-simon-hw02b-q1.sas
 [hw02b-q2.sas]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m02-5507-simon-hw02b-q2.sas

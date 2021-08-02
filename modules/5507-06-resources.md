@@ -15,7 +15,7 @@ if you use this material, but this is not required.
 
 
 
-This file was last updated on 2021-08-01.
+This file was last updated on 2021-08-01. You can find this file on [my github site][mygit].
 
 ### Resources for Module06
 
@@ -27,9 +27,21 @@ This file was last updated on 2021-08-01.
 
 +   not yet available.
 
-#### Homework solutions, SAS code
+#### Homework solutions, SAS code and output
 
-+   not yet available.
++   not yet available.<!---my git--->
+
+[mygit]: https://github.com/pmean/introduction-to-SAS/blob/master/modules/5507-06-resources.md
+
+<!---pdf_h--->
+
+
+
+<!---No links for this section--->
+
+
+
+<!---pdf_v--->
 
 
 
@@ -37,11 +49,23 @@ This file was last updated on 2021-08-01.
 
 
 
+<!---rmd_v--->
+
 
 
 <!---No links for this section--->
 
 
+
+<!---sas_v--->
+
+
+
+<!---No links for this section--->
+
+
+
+<!---sas_h--->
 
 
 

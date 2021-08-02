@@ -15,7 +15,7 @@ if you use this material, but this is not required.
 
 
 
-This file was last updated on 2021-08-01.
+This file was last updated on 2021-08-01. You can find this file on [my github site][mygit].
 
 ### Resources for Module01
 
@@ -33,11 +33,33 @@ This file was last updated on 2021-08-01.
 + [m01-5507-simon-read-data.sas][read-data.sas].
 + [m01-5507-simon-save-output.sas][save-output.sas].
 
-#### Homework solutions, SAS code
+#### Homework solutions, SAS code and output
 
-+   not yet available.
++   not yet available.<!---my git--->
+
+[mygit]: https://github.com/pmean/introduction-to-SAS/blob/master/modules/5507-01-resources.md
+
+<!---pdf_h--->
+
+
+
+<!---No links for this section--->
+
+
+
+<!---pdf_v--->
+
+
+
+<!---No links for this section--->
+
+
+
+<!---rmd_v--->
 
 [course-introduction.Rmd]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m01-course-introduction.Rmd
+
+<!---sas_v--->
 
 [basic-program.sas]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m01-5507-simon-basic-program.sas
 [documentation-header.sas]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m01-5507-simon-documentation-header.sas
@@ -46,6 +68,8 @@ This file was last updated on 2021-08-01.
 [re-use.sas]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m01-5507-simon-re-use.sas
 [read-data.sas]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m01-5507-simon-read-data.sas
 [save-output.sas]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m01-5507-simon-save-output.sas
+
+<!---sas_h--->
 
 
 

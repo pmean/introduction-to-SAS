@@ -15,12 +15,13 @@ if you use this material, but this is not required.
 
 
 
-This file was last updated on 2021-08-01.
+This file was last updated on 2021-08-01. You can find this file on [my github site][mygit].
 
 ### Resources for Module03
 
 #### Slides used in the videos
 
++ [m03-5507-simon-slides-and-speaker-notes.pdf][slides-and-speaker-notes.pdf].
 + [m03-slides-and-speaker-notes.Rmd][slides-and-speaker-notes.Rmd].
 
 #### SAS programs used in the videos
@@ -37,14 +38,35 @@ This file was last updated on 2021-08-01.
 + [m03-5507-simon-import-tab-delimited.sas][import-tab-delimited.sas].
 + [m03-5507-simon-import-tilde-delimited.sas][import-tilde-delimited.sas].
 
-#### Homework solutions, SAS code
+#### Homework solutions, SAS code and output
 
++ [m03-5507-simon-hw03-q1.pdf][hw03-q1.pdf].
 + [m03-5507-simon-hw03-q1.sas][hw03-q1.sas].
++ [m03-5507-simon-hw03-q2.pdf][hw03-q2.pdf].
 + [m03-5507-simon-hw03-q2.sas][hw03-q2.sas].
++ [m03-5507-simon-hw03-q3.pdf][hw03-q3.pdf].
 + [m03-5507-simon-hw03-q3.sas][hw03-q3.sas].
-+ [m03-5507-simon-hw03-q4.sas][hw03-q4.sas].
++ [m03-5507-simon-hw03-q4.pdf][hw03-q4.pdf].
++ [m03-5507-simon-hw03-q4.sas][hw03-q4.sas].<!---my git--->
+
+[mygit]: https://github.com/pmean/introduction-to-SAS/blob/master/modules/5507-03-resources.md
+
+<!---pdf_h--->
+
+[hw03-q1.pdf]: https://github.com/pmean/introduction-to-SAS/blob/master/results/m03-5507-simon-hw03-q1.pdf
+[hw03-q2.pdf]: https://github.com/pmean/introduction-to-SAS/blob/master/results/m03-5507-simon-hw03-q2.pdf
+[hw03-q3.pdf]: https://github.com/pmean/introduction-to-SAS/blob/master/results/m03-5507-simon-hw03-q3.pdf
+[hw03-q4.pdf]: https://github.com/pmean/introduction-to-SAS/blob/master/results/m03-5507-simon-hw03-q4.pdf
+
+<!---pdf_v--->
+
+[slides-and-speaker-notes.pdf]: https://github.com/pmean/introduction-to-SAS/blob/master/results/m03-5507-simon-slides-and-speaker-notes.pdf
+
+<!---rmd_v--->
 
 [slides-and-speaker-notes.Rmd]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m03-slides-and-speaker-notes.Rmd
+
+<!---sas_v--->
 
 [import-abalone.sas]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m03-5507-simon-import-abalone.sas
 [import-comma-delimited.sas]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m03-5507-simon-import-comma-delimited.sas
@@ -57,6 +79,8 @@ This file was last updated on 2021-08-01.
 [import-string-to-numeric.sas]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m03-5507-simon-import-string-to-numeric.sas
 [import-tab-delimited.sas]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m03-5507-simon-import-tab-delimited.sas
 [import-tilde-delimited.sas]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m03-5507-simon-import-tilde-delimited.sas
+
+<!---sas_h--->
 
 [hw03-q1.sas]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m03-5507-simon-hw03-q1.sas
 [hw03-q2.sas]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m03-5507-simon-hw03-q2.sas
