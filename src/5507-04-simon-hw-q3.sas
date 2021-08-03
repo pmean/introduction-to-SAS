@@ -1,5 +1,5 @@
 *************************************************
-m04-5507-simon-hw04-q3.sas
+5507-04-simon-hw-q3.sas
 author: Steve Simon
 date created: 2019-10-30
 purpose: To answer homework questions for module04
@@ -10,7 +10,7 @@ license: public domain
 
 libname perm "&path/data";
 
-ods pdf file="&path/results/m04-5507-simon-hw04-q3.pdf";
+ods pdf file="&path/results/5507-04-simon-hw-q3.pdf";
 
 proc format;
   value f_agegroup

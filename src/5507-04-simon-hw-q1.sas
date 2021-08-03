@@ -1,5 +1,5 @@
 *************************************************
-m04-5507-simon-hw04-q1.sas
+5507-04-simon-hw-q1.sas
 author: Steve Simon
 date created: 2019-10-30
 purpose: To answer homework questions for module04
@@ -12,7 +12,7 @@ libname perm "&path/data";
 
 filename raw_data "&path/data/gardasil.csv";
 
-ods pdf file="&path/results/m04-5507-simon-hw04-q1.pdf";
+ods pdf file="&path/results/5507-04-simon-hw-q1.pdf";
 
 proc import
     datafile=raw_data

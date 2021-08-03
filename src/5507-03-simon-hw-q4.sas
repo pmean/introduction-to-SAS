@@ -1,4 +1,4 @@
-* m03-5507-hw03-q4.sas
+* 5507-03-simon-hw-q4.sas
 * author: Steve Simon
 * date: created 2021-06-28
 * purpose: to read first line variable names
@@ -10,7 +10,7 @@ libname perm "&path/data";
 
 filename rawdata "&path/data/energy04.csv";
 
-ods pdf file="&path/results/m03-5507-simon-hw03-q4.pdf";
+ods pdf file="&path/results/5507-03-simon-hw-q4.pdf";
 
 proc import
     datafile=rawdata dbms=dlm

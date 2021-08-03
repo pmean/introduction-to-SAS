@@ -1,4 +1,4 @@
-* m02-5507-simon-hw02b-q3.sas
+* 5507-02-simon-hw-q3.sas
 * author: Steve Simon
 * creation date: 2021-06-20
 * purpose: to compute a correlation coefficient

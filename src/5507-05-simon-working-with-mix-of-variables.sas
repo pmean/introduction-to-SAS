@@ -1,6 +1,6 @@
 * Part00. Documentation header
 
-m05-working-with-a-mix-of-variables.sas
+5507-05-simon-working-with-a-mix-of-variables.sas
 author: Steve Simon
 date created: 2018-11-27
 
@@ -20,7 +20,7 @@ options papersize=(6in 4in);
 %let path=q:/introduction-to-sas;
 
 ods pdf
-  file="&path/results/m05-5507-simon-mix.pdf";
+  file="&path/results/5507-05-simon-working-with-mix-of-variables.pdf";
 
 filename raw_data
   "&path/data/fev.txt";

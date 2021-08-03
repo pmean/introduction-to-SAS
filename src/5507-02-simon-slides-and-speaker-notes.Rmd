@@ -127,7 +127,7 @@ Don't obsess about this now, but you'll see a fairly consistent coding style tha
 ### SAS code, documentation header
 
 ```{r}
-tx <- readLines("m02-5507-simon-continuous-variables.sas")
+tx <- readLines("5507-02-simon-continuous-variables.sas")
 px <- function(tx, s1, s2, xtra_lines=-2) {
   tx %>% str_which(s1) -> i1
   tx %>% str_which(s2) -> j1
@@ -144,7 +144,7 @@ px <- function(tx, s1, s2, xtra_lines=-2) {
 ```
 
 ```{}
-`r px(tx, "^\\* m02-", "^\\* license", xtra_lines=0)`
+`r px(tx, "^\\* 5507-02-", "^\\* license", xtra_lines=0)`
 ```
 
 <div class="notes">

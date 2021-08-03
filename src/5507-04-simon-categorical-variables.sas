@@ -1,7 +1,7 @@
 * Part00. Documentation header;
 
 *************************************************
-m04-5507-simon-categorical-variables
+5507-04-simon-categorical-variables
 author: Steve Simon
 Date created: 2018-10-22
 
@@ -21,7 +21,7 @@ options papersize=(6in 4in);
 %let path=q:/introduction-to-sas;
 
 ods pdf
-  file="&path/results/m04-5507-simon-categorical.pdf";
+  file="&path/results/5507-04-simon-categorical.pdf";
 
 filename raw_data
   "&path/data/titanic_v00.txt";

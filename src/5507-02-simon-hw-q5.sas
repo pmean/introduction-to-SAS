@@ -1,4 +1,4 @@
-* m02-5507-simon-hw02c-q5.sas
+* 5507-02-simon-hw-q5.sas
 * author: Steve Simon
 * creation date: 2021-06-14
 * purpose: to draw a scatterplot between tar and nicotine

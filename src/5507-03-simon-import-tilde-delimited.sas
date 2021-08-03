@@ -1,4 +1,4 @@
-* import-tilde-delimited.sas
+* 5507-03-simon-import-tilde-delimited.sas
 * author: Steve Simon
 * creation date: 2019-07-01
 * purpose: to import comma delimited files
@@ -7,7 +7,7 @@
 %let path=q:/introduction-to-sas;
 
 ods pdf file=
-  "&path/results/import-tilde-delimited.pdf";
+  "&path/results/5507-03-simon-import-tilde-delimited.pdf";
 
 libname module01
   "&path/data";

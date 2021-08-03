@@ -1,5 +1,5 @@
 *************************************************
-m05-5507-simon-hw05-q1.sas
+5507-05-simon-hw-q1.sas
 author: Steve Simon
 date created: 2018-11-27
 purpose: to answer module05 homework questions
@@ -8,7 +8,7 @@ purpose: to answer module05 homework questions
 %let path=q:/introduction-to-sas;
 
 ods pdf
-  file="&path/results/m05-5507-simon-hw05-q1.pdf";
+  file="&path/results/5507-05-simon-hw-q1.pdf";
 
 libname perm
   "&path/data";
