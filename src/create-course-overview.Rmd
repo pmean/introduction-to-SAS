@@ -1,5 +1,5 @@
 ---
-title: "List files in the github repository"
+title: "Create overview and place in README.md"
 author: "Steve Simon"
 date: "Created 2021-07-24"
 output: html_document
@@ -8,11 +8,18 @@ output: html_document
 ```{r common-code, child="common-functions.Rmd"}
 ```
 
+```{r constants}
+modules <- zpad(1:6)
+prefix <- 'https://github.com/pmean/introduction-to-SAS/blob/master/'
+```
+
 ```{r}
 list.files(path="../modules", pattern="\\.md") -> md_files
 
 keywords <- c(
-  "Objectives", 
+  "Overview",
+  "Objectives",
+  "Resources",
   "Videos", 
   "Hw", 
   "Answers")

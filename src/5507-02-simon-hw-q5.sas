@@ -1,4 +1,4 @@
-* m02-5507-simon-hw02c-q5.sas
+* 5507-02-simon-hw-q5.sas
 * author: Steve Simon
 * creation date: 2021-06-14
 * purpose: to draw a scatterplot between tar and nicotine
@@ -7,7 +7,7 @@
 %let path=q:/introduction-to-sas;
 
 ods pdf file=
-    "&path/results/m02-5507-simon-hw02c-q5-output.pdf";
+    "&path/results/5507-02-simon-hw-q5-output.pdf";
 
 libname perm
     "&path/data";

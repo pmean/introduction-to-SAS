@@ -10,10 +10,10 @@ output: html_document
 
 ```{r}
 list.files(path="../src", pattern="\\.sas") %>%
-  str_subset("-hw0", negate=TRUE) -> sas_v
+  str_subset("-hw-", negate=TRUE) -> sas_v
 
 list.files(path="../src", pattern="\\.sas") %>%
-  str_subset("-hw0") -> sas_h
+  str_subset("-hw-") -> sas_h
 
 list.files(path="../src", pattern="\\.Rmd") -> rmd_v
 
@@ -23,10 +23,15 @@ list.files(path="../results", pattern="\\.pdf") %>%
 list.files(path="../results", pattern="\\.pdf") %>%
   str_subset("-hw0") -> pdf_h
 
-sas_v
-sas_h
-pdf_v
-pdf_h
+sas_v %>% kable
+sas_h %>% kable
+pdf_v %>% kable
+pdf_h %>% kable
+```
+
+```{r constants}
+modules <- zpad(1:5)
+prefix <- 'https://github.com/pmean/introduction-to-SAS/blob/master/'
 ```
 
 ```{r}

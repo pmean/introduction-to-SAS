@@ -13,29 +13,23 @@ All of the text, programs, and output are public domain. That means that you can
 
 if you use this material, but this is not required.
 
-
-
-This file was last updated on 2021-08-01. You can find this file on [my github site][mygit].
-
 ### Resources for Module01
 
 #### Slides used in the videos
 
-+ [m01-course-introduction.Rmd][course-introduction.Rmd].
++   not yet available.
 
 #### SAS programs used in the videos
 
-+ [m01-5507-simon-basic-program.sas][basic-program.sas].
-+ [m01-5507-simon-documentation-header.sas][documentation-header.sas].
-+ [m01-5507-simon-input-text.sas][input-text.sas].
-+ [m01-5507-simon-permanent-storage.sas][permanent-storage.sas].
-+ [m01-5507-simon-re-use.sas][re-use.sas].
-+ [m01-5507-simon-read-data.sas][read-data.sas].
-+ [m01-5507-simon-save-output.sas][save-output.sas].
++   not yet available.
 
 #### Homework solutions, SAS code and output
 
-+   not yet available.<!---my git--->
++   not yet available.
+
+This file was last updated on 2021-08-03. You can find this file on [my github site][mygit].
+
+<!---my git--->
 
 [mygit]: https://github.com/pmean/introduction-to-SAS/blob/master/modules/5507-01-resources.md
 
@@ -57,17 +51,19 @@ This file was last updated on 2021-08-01. You can find this file on [my github s
 
 <!---rmd_v--->
 
-[course-introduction.Rmd]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m01-course-introduction.Rmd
+
+
+<!---No links for this section--->
+
+
 
 <!---sas_v--->
 
-[basic-program.sas]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m01-5507-simon-basic-program.sas
-[documentation-header.sas]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m01-5507-simon-documentation-header.sas
-[input-text.sas]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m01-5507-simon-input-text.sas
-[permanent-storage.sas]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m01-5507-simon-permanent-storage.sas
-[re-use.sas]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m01-5507-simon-re-use.sas
-[read-data.sas]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m01-5507-simon-read-data.sas
-[save-output.sas]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m01-5507-simon-save-output.sas
+
+
+<!---No links for this section--->
+
+
 
 <!---sas_h--->
 

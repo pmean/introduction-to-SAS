@@ -143,17 +143,12 @@ ti <- function(tx=tx, i) {
 }
 ```
 
-```{r}
+```{r, eval=FALSE}
 tx <- readLines("m05-working-with-mix-of-variables.sas")
 ```
 
-```{r show-general-structure}
+```{r show-general-structure, eval=FALSE}
 tx %>%
   str_subset("^\\* ") %>%
   paste(collapse="\n\n") -> general_structure
-```
-
-```{r constants}
-modules <- zpad(c(0:6, 8))
-prefix <- 'https://github.com/pmean/introduction-to-SAS/blob/master/'
 ```
