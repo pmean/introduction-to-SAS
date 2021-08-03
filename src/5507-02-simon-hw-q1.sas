@@ -1,4 +1,4 @@
-* m02-5507-simon-hw02b-q1.sas
+* 5507-02-simon-hw-q1.sas
 * author: Steve Simon
 * creation date: 2021-06-14
 * purpose: to list the cigarette brand with the highest tar
@@ -7,7 +7,7 @@
 %let path=q:/introduction-to-sas;
 
 ods pdf file=
-    "&path/results/m02-5507-simon-hw02b-q1-output.pdf";
+    "&path/results/5507-02-simon-hw-q1.pdf";
 
 libname perm
     "&path/data";

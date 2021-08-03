@@ -1,4 +1,4 @@
-* m03-5507-simon-import-string-data.sas
+* 5507-03-simon-import-string-data.sas
 * author: Steve Simon
 * creation date: 2019-07-02
 * purpose: to import data that includes a string
@@ -7,7 +7,7 @@
 %let path=q:/introduction-to-sas;
 
 ods pdf file=
-    "&path/results/m03-5507-simon-import-string-data.pdf";
+    "&path/results/5507-03-simon-import-string-data.pdf";
 
 libname perm
     "&path/data";

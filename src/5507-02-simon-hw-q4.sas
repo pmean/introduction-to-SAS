@@ -1,4 +1,4 @@
-* m02-5507-simon-hw02c-q4.sas
+* 5507-02-simon-hw-q4.sas
 * author: Steve Simon
 * creation date: 2021-06-14
 * purpose: to draw and interpret histograms
@@ -7,7 +7,7 @@
 %let path=q:/introduction-to-sas;
 
 ods pdf file=
-    "&path/results/m02-5507-simon-hw02c-q4-output.pdf";
+    "&path/results/5507-02-simon-hw-q4.pdf";
 
 libname perm
     "&path/data";

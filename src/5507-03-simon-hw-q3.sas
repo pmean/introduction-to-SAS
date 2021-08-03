@@ -1,4 +1,4 @@
-* m03-5507-hw03-q2.sas
+* 5507-03-simon-hw-q3.sas
 * author: Steve Simon
 * date: created 2021-06-28
 * purpose: to read a fixed width file
@@ -10,7 +10,7 @@ libname perm "&path/data";
 
 filename rawdata "&path/data/energy03.txt";
 
-ods pdf file="&path/results/m03-5507-simon-hw03-q3.pdf";
+ods pdf file="&path/results/5507-03-simon-hw-q3.pdf";
 
 data perm.energy03;
   infile rawdata;

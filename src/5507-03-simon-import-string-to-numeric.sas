@@ -1,4 +1,4 @@
-* m03-5507-simon-import-string-to-numeric.sas
+* 5507-03-simon-import-string-to-numeric.sas
 * author: Steve Simon
 * creation date: 2019-07-03
 * purpose: to import data and convert a string to missing
@@ -7,7 +7,7 @@
 %let path=q:/introduction-to-sas;
 
 ods pdf file=
-    "&path/results/m03-5507-simon-import-string-to-numeric.pdf";
+    "&path/results/5507-03-simon-import-string-to-numeric.pdf";
 
 libname perm
     "&path/data";

@@ -1,4 +1,4 @@
-* m03-5507-simon-import-fixed-width.sas
+* 5507-03-simon-import-fixed-width.sas
 * author: Steve Simon
 * creation date: 2019-07-01
 * purpose: to import data in a fixed width format
@@ -7,7 +7,7 @@
 %let path=q:/introduction-to-sas;
 
 ods pdf file=
-    "&path/results/m03-5507-simon-import-fixed-width.pdf";
+    "&path/results/5507-03-simon-import-fixed-width.pdf";
 
 libname perm
     "&path/data";

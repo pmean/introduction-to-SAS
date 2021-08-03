@@ -1,4 +1,4 @@
-* m03-5507-simon-import-first-line-names.sas
+* 5507-03-simon-import-first-line-names.sas
 * author: Steve Simon
 * creation date: 2019-07-02
 * purpose: to import data with variable names on the first line
@@ -7,7 +7,7 @@
 %let path=q:/introduction-to-sas;
 
 ods pdf file=
-    "&path/results/m03-5507-simon-import-first-line-names.pdf";
+    "&path/results/5507-03-simon-import-first-line-names.pdf";
 
 libname perm
     "&path/data";

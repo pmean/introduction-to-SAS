@@ -1,4 +1,4 @@
-* m03-5507-hw03-q2.sas
+* 5507-03-simon-hw-q2.sas
 * author: Steve Simon
 * date: created 2021-06-28
 * purpose: to read a tab delimited file
@@ -10,7 +10,7 @@ libname perm "&path/data";
 
 filename rawdata "&path/data/energy02.tsv";
 
-ods pdf file="&path/results/m03-5507-simon-hw03-q2.pdf";
+ods pdf file="&path/results/5507-03-simon-hw-q2.pdf";
 
 data perm.energy02;
   infile rawdata delimiter="09"X;

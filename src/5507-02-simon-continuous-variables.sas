@@ -1,4 +1,4 @@
-* m02-5507-simon-continuous-variables.sas
+* 5507-02-simon-continuous-variables.sas
 * author: Steve Simon
 * date: created 2021-05-30
 * purpose: to work with continuous variables
