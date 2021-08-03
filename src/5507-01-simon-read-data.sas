@@ -1,4 +1,4 @@
-* m01-5507-simon-read-data.sas
+* 5507-01-simon-read-data.sas
 * author: Steve Simon and Steve Simon
 * date: created 2021-06-12
 * purpose: to read data from a separate file
@@ -12,7 +12,7 @@ filename rawdata
     "&path/data/six-numbers.txt";
 
 ods pdf file=
-   "&path/results/m01-5507-simon.pdf";
+   "&path/results/5507-01-simon-read-data.pdf";
 
 data perm.small_example;
   infile rawdata;

@@ -1,4 +1,4 @@
-* m01-5507-[put your name here]-first-program.sas
+* 5507-01-[put your name here]-documentation-header.sas
 * author: Steve Simon and [put your name here]
 * date: created 2021-06-12
 * purpose: to read and print a small dataset

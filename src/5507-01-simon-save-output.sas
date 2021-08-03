@@ -1,4 +1,4 @@
-* m01-5507-simon-save-output.sas
+* 5507-01-simon-save-output.sas
 * author: Steve Simon and Steve Simon
 * date: created 2021-06-12
 * purpose: to create a permanent dataset
@@ -9,7 +9,7 @@
 libname perm "&path/data";
 
 ods pdf file=
-   "&path/results/m01-5507-simon.pdf";
+   "&path/results/5507-01-simon-save-output.pdf";
 
 data perm.small_example;
   input x y;

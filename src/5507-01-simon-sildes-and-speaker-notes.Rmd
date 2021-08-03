@@ -292,7 +292,7 @@ After you type this program in, click on FILE | SAVE and store your program some
 
 ### SAS log window (1 of 2)
 
-![Maximized view of SAS log window](../images/log-window1.png)
+<!---![Maximized view of SAS log window](../images/log-window1.png)--->
 
 
 <div class="notes">[[Speaker notes]]
@@ -303,7 +303,7 @@ The font here is a bit small, but notice that there are no red messages indicati
 
 ### SAS log window (2 of 2)
 
-![Maximized view of SAS log window, second page](../images/log-window2.png)
+<!---![Maximized view of SAS log window, second page](../images/log-window2.png)--->
 
 
 <div class="notes">[[Speaker notes]]
@@ -498,9 +498,8 @@ Most importantly, create three subdirectories, src, results, and data. Store you
 ### Basic program, part 1
 
 ```{r}
-tx <- readLines("m01-5507-simon-basic-program.sas")
+tx <- readLines("5507-01-simon-basic-program.sas")
 tx %>% 
-  str_subset(fixed("*")) %>%
   paste0(collapse="\n") -> tx1  
 ```
 
@@ -510,26 +509,7 @@ tx %>%
 
 <div class="notes">
 
-Here is the first piece of the basic program I want you to run. It has a brief documentation header that lists the author, date, purpose of the program, and license. I always place my code in the public domain.
-
-</div>
-
-### Basic program, part 2
-
-```{r}
-tx %>% str_which("^data") -> i1
-tx %>% str_which("^;") -> i2
-tx %>%
-  extract(i1:i2) %>%
-  paste0(collapse="\n") -> tx2  
-  
-```
-
-```{}
-`r tx2`
-```
-
-<div class="notes">
+Here is the basic program I want you to run. 
 
 The data statement creates a dataset with the name "small_example".
 
@@ -538,25 +518,6 @@ The input statement tells SAS to expect two variables and assigns them the names
 The datalines statement tells SAS to read the data directly below this line. This is NOT a recommended practice. You should normally keep your data separate from your code. I am doing this only for the sake of simplicity. You will see in just a minute how to handle data that comes in a separate file.
 
 The three lines of data follow. A single semicolon tells SAS that this is the end of the data.
-
-</div>
-
-### Basic program, part 3
-
-```{r}
-tx %>% str_which("^proc") -> i3
-tx %>% str_which("run;") -> i4
-tx %>%
-  extract(i3:i4) %>%
-  paste0(collapse="\n") -> tx3  
-  
-```
-
-```{}
-`r tx3`
-```
-
-<div class="notes">
 
 The print procedure will print part or all of a dataset. 
 
@@ -580,7 +541,7 @@ The run statement tells SAS that there is no more information associated with th
 ### Permanent storage, part 1
 
 ```{r}
-tx <- readLines("m01-5507-simon-permanent-storage.sas")
+tx <- readLines("5507-01-simon-permanent-storage.sas")
 tx %>% 
   str_subset(fixed("*")) %>%
   paste0(collapse="\n") -> tx1  
@@ -594,7 +555,7 @@ tx %>%
 
 Let's look at a modified program that stores the data in a permanent location.
 
-Here is the documentation header. No big changes here other than the name of the program and the purpose.
+Here is the documentation header. You should include a documentation header with any program you run for this class.
 
 </div>
 
@@ -649,7 +610,7 @@ Once you establish a two-part name, use it everywhere.
 ### Re-using data in permanent storage, part 1
 
 ```{r}
-tx <- readLines("m01-5507-simon-re-use.sas")
+tx <- readLines("5507-01-simon-re-use.sas")
 tx %>% 
   str_subset(fixed("*")) %>%
   paste0(collapse="\n") -> tx1  
@@ -699,7 +660,7 @@ Notice that there is no data step in this program, you start with a libname stat
 ### Saving output as pdf, part 1
 
 ```{r}
-tx <- readLines("m01-5507-simon-saved.sas")
+tx <- readLines("5507-01-simon-save-output.sas")
 tx %>% 
   str_subset(fixed("*")) %>%
   paste0(collapse="\n") -> tx1  
@@ -770,7 +731,7 @@ Near the bottom, you turn off the output. Place this AFTER the last SAS procedur
 ### Reading data from a file, part 1
 
 ```{r}
-tx <- readLines("m01-5507-simon-input-text.sas")
+tx <- readLines("5507-01-simon-input-text.sas")
 tx %>% 
   str_subset(fixed("*")) %>%
   paste0(collapse="\n") -> tx1  

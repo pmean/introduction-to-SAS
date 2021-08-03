@@ -46,9 +46,6 @@ for (module in modules) {
     str_replace("Module", module_num) %>%
     str_replace ("the individual modules", module_num) %>%
 
-    paste0("\n\nThis file was last updated on ", Sys.Date()) %>%
-    paste0(". You can find this file on [my github site][mygit].") %>%
-
     paste0("\n\n### Resources for ") %>%
     paste0(module_num) %>%
 
@@ -63,6 +60,9 @@ for (module in modules) {
     paste0("\n\n#### ") %>%
     paste0("Homework solutions, SAS code and output\n") %>%
     paste0("\n", bullet(hlist)) %>%
+    
+    paste0("\n\nThis file was last updated on ", Sys.Date()) %>%
+    paste0(". You can find this file on [my github site][mygit].") %>%
       
     paste0("\n\n<!---my git--->") %>%
     paste0("\n\n[mygit]: ") %>%

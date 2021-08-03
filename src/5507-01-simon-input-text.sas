@@ -1,4 +1,4 @@
-* m01-5507-simon-input-text.sas
+* 5507-01-simon-input-text.sas
 * author: Steve Simon
 * date: created 2021-05-30
 * purpose: to read data from a separate file
@@ -10,7 +10,7 @@ libname perm "&path/data";
 
 filename rawdata "&path/data/six-numbers.txt";
 
-ods pdf file="&path/results/input-text.pdf";
+ods pdf file="&path/results/5507-01-simon-input-text.pdf";
 
 data perm.simple_example;
   infile rawdata;

@@ -1,4 +1,4 @@
-* m01-5507-simon-permanent-storage.sas
+* 5507-01-simon-permanent-storage.sas
 * author: Steve Simon
 * date: created 2021-05-30
 * purpose: to store data set in a permanent location

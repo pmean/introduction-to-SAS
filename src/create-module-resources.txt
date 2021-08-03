@@ -12,5 +12,3 @@ All of the text, programs, and output are public domain. That means that you can
 + https://github.com/pmean/introduction-to-sas
 
 if you use this material, but this is not required.
-
-
