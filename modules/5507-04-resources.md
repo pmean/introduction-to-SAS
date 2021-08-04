@@ -17,58 +17,49 @@ if you use this material, but this is not required.
 
 #### Slides used in the videos
 
-+ [m04-5507-simon-slides-and-speaker-notes.pdf][slides-and-speaker-notes.pdf].
++ [5507-04-simon-slides-and-speaker-notes.Rmd][slides-and-speaker-notes.Rmd].
 
 #### SAS programs used in the videos
 
-+   not yet available.
++ [5507-04-simon-categorical-variables.sas][categorical-variables.sas].
 
 #### Homework solutions, SAS code and output
 
-+ [m04-5507-simon-hw04-q1.pdf][hw04-q1.pdf].
-+ [m04-5507-simon-hw04-q2.pdf][hw04-q2.pdf].
-+ [m04-5507-simon-hw04-q3.pdf][hw04-q3.pdf].
-+ [m04-5507-simon-hw04-q4.pdf][hw04-q4.pdf].
-+ [m04-5507-simon-hw04-q5.pdf][hw04-q5.pdf].
++ [5507-04-simon-hw-q1.pdf][hw-q1.pdf].
++ [5507-04-simon-hw-q1.sas][hw-q1.sas].
++ [5507-04-simon-hw-q2.pdf][hw-q2.pdf].
++ [5507-04-simon-hw-q2.sas][hw-q2.sas].
++ [5507-04-simon-hw-q3.pdf][hw-q3.pdf].
++ [5507-04-simon-hw-q3.sas][hw-q3.sas].
++ [5507-04-simon-hw-q4.pdf][hw-q4.pdf].
++ [5507-04-simon-hw-q4.sas][hw-q4.sas].
++ [5507-04-simon-hw-q5.pdf][hw-q5.pdf].
++ [5507-04-simon-hw-q5.sas][hw-q5.sas].
 
 This file was last updated on 2021-08-03. You can find this file on [my github site][mygit].
 
 <!---my git--->
-
 [mygit]: https://github.com/pmean/introduction-to-SAS/blob/master/modules/5507-04-resources.md
 
 <!---pdf_h--->
-
-[hw04-q1.pdf]: https://github.com/pmean/introduction-to-SAS/blob/master/results/m04-5507-simon-hw04-q1.pdf
-[hw04-q2.pdf]: https://github.com/pmean/introduction-to-SAS/blob/master/results/m04-5507-simon-hw04-q2.pdf
-[hw04-q3.pdf]: https://github.com/pmean/introduction-to-SAS/blob/master/results/m04-5507-simon-hw04-q3.pdf
-[hw04-q4.pdf]: https://github.com/pmean/introduction-to-SAS/blob/master/results/m04-5507-simon-hw04-q4.pdf
-[hw04-q5.pdf]: https://github.com/pmean/introduction-to-SAS/blob/master/results/m04-5507-simon-hw04-q5.pdf
+[hw-q1.pdf]: https://github.com/pmean/introduction-to-SAS/blob/master/results/5507-04-simon-hw-q1.pdf
+[hw-q2.pdf]: https://github.com/pmean/introduction-to-SAS/blob/master/results/5507-04-simon-hw-q2.pdf
+[hw-q3.pdf]: https://github.com/pmean/introduction-to-SAS/blob/master/results/5507-04-simon-hw-q3.pdf
+[hw-q4.pdf]: https://github.com/pmean/introduction-to-SAS/blob/master/results/5507-04-simon-hw-q4.pdf
+[hw-q5.pdf]: https://github.com/pmean/introduction-to-SAS/blob/master/results/5507-04-simon-hw-q5.pdf
 
 <!---pdf_v--->
-
-[slides-and-speaker-notes.pdf]: https://github.com/pmean/introduction-to-SAS/blob/master/results/m04-5507-simon-slides-and-speaker-notes.pdf
+<!---No links for this section--->
 
 <!---rmd_v--->
-
-
-
-<!---No links for this section--->
-
-
+[slides-and-speaker-notes.Rmd]: https://github.com/pmean/introduction-to-SAS/blob/master/src/5507-04-simon-slides-and-speaker-notes.Rmd
 
 <!---sas_v--->
-
-
-
-<!---No links for this section--->
-
-
+[categorical-variables.sas]: https://github.com/pmean/introduction-to-SAS/blob/master/src/5507-04-simon-categorical-variables.sas
 
 <!---sas_h--->
-
-
-
-<!---No links for this section--->
-
-
+[hw-q1.sas]: https://github.com/pmean/introduction-to-SAS/blob/master/src/5507-04-simon-hw-q1.sas
+[hw-q2.sas]: https://github.com/pmean/introduction-to-SAS/blob/master/src/5507-04-simon-hw-q2.sas
+[hw-q3.sas]: https://github.com/pmean/introduction-to-SAS/blob/master/src/5507-04-simon-hw-q3.sas
+[hw-q4.sas]: https://github.com/pmean/introduction-to-SAS/blob/master/src/5507-04-simon-hw-q4.sas
+[hw-q5.sas]: https://github.com/pmean/introduction-to-SAS/blob/master/src/5507-04-simon-hw-q5.sas

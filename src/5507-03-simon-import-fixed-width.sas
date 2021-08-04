@@ -13,11 +13,11 @@ libname perm
     "&path/data";
 
 filename raw_data
-    "&path/data/string-data.txt";
+    "&path/data/fixed-width.txt";
 
 options papersize=(8in 4in) nonumber nodate;
 
-data module01.fixed_width;
+data perm.fixed_width;
   infile raw_data delimiter=",";
   input 
     x 1-2
@@ -26,7 +26,7 @@ data module01.fixed_width;
 run;
 
 proc print
-    data=module01.fixed_width(obs=2);
+    data=perm.fixed_width(obs=2);
   title1 "First two rows of data";
 run;
 

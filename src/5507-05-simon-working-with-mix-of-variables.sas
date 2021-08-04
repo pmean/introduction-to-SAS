@@ -1,4 +1,4 @@
-* Part00. Documentation header
+* Part00. Documentation header;
 
 5507-05-simon-working-with-a-mix-of-variables.sas
 author: Steve Simon
@@ -105,7 +105,7 @@ run;
 * Notes04. It's always a good idea to peek at
 the first few rows of data.
 
-Output, page 1. There is no obvious problems 
+Output, page 1. There are no obvious problems 
 with this dataset.;
 
 * Part05. Proc freq and proc means;

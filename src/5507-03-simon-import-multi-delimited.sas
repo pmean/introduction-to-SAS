@@ -13,18 +13,18 @@ libname perm
     "&path/data";
 
 filename raw_data
-    "&path/data/string-data.txt";
+    "&path/data/multi-delimited.txt";
 
 options papersize=(8in 4in) nonumber nodate;
 
 
-data module01.multi_delimited;
+data perm.multi_delimited;
   infile raw_data delimiter=" ";
   input x y z;
 run;
 
 proc print
-    data=module01.multi_delimited(obs=2);
+    data=perm.multi_delimited(obs=2);
   title1 "First two rows of data";
 run;
 ods pdf close;

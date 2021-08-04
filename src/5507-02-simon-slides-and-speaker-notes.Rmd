@@ -8,12 +8,17 @@ knit: (function(inputFile, encoding) {
   output_dir = "../results", output_format = "all") })  
 ---
 
-```{r setup, echo=FALSE}
-knitr::opts_chunk$set(echo=FALSE, comment="")
-suppressMessages(suppressWarnings(library(dplyr)))
-suppressMessages(suppressWarnings(library(knitr)))
-suppressMessages(suppressWarnings(library(magrittr)))
-suppressMessages(suppressWarnings(library(stringr)))
+```{r common-code, child="common-functions.Rmd"}
+```
+
+```{r}
+tx <- readLines("5507-05-simon-working-with-mix-of-variables.sas")
+```
+
+```{r show-general-structure}
+tx %>%
+  str_subset("^\\* ") %>%
+  paste(collapse="\n\n") -> general_structure
 ```
 
 ### Overview
@@ -39,6 +44,10 @@ purpose: to produce slides for module01 videos
 license: public domain
 
 Here is an overview of the topics I want to cover in module02.
+
+[For my own use]General structure of this program.
+
+`r general_structure`
 
 </div>
 
@@ -124,78 +133,19 @@ Don't obsess about this now, but you'll see a fairly consistent coding style tha
 
 </div>  
 
-### SAS code, documentation header
-
-```{r}
-tx <- readLines("5507-02-simon-continuous-variables.sas")
-px <- function(tx, s1, s2, xtra_lines=-2) {
-  tx %>% str_which(s1) -> i1
-  tx %>% str_which(s2) -> j1
-  if (length(i1)==0) return("No beginning found")
-  if (length(j1)==0) return("No ending found")
-  if (length(i1) > 1) return("Multiple beginnings found")
-  if (length(j1) > 1) return("Multiple endings found")
-  j1 <- j1 + xtra_lines
-  tx %>%
-    extract(i1:j1) %>%
-    paste0(collapse="\n") %>%
-    return
-}
-```
-
-```{}
-`r px(tx, "^\\* 5507-02-", "^\\* license", xtra_lines=0)`
-```
-
-<div class="notes">
-
-Here is the documentation header for a program that will show how to work with a dataset with mostly continuous variables.
-
-</div>
-
-### SAS code: filename, libname, ods statements
-
-```{}
-`r px(tx, "^%let", ("Part01"))`
-```
-
-<div class="notes">
-
-The filename statement tells you where the raw data is stored.
-
-The libname statement tells you where SAS will store any permanent datsets.
-
-The ods statement tells you that SAS is going to store the results with a particular filename and in pdf format.
-
-</div>
-
-### SAS code, input statement (1/2)
-
-```{}
-`r px(tx, "Part01", "^    bmi$", xtra_lines=0)`
-...
-```
-
-<div class="notes">
-
-The input statement is very long.
-
-</div>
 
 
-### SAS code, input statement (2/2)
+### SAS code, `r ti(tx, 0)` <!--documentation header-->
+`r co(tx)`
+`r no(tx)`
 
-```{}
-...
-`r px(tx, "^    ffw$", "Part02")`
+### SAS code: `r ti(tx, 1)` <!--where to find and store things-->
+`r co(tx)`
+`r no(tx)`
 
-```
-
-<div class="notes">
-
-Here's the rest of it.
-
-</div>
+### SAS code, `r ti(tx, 2)` <!--input-->
+`r co(tx)`
+`r no(tx)`
 
 ### Rules for variable names
 
@@ -300,66 +250,17 @@ What makes a good variable label? First take advantage of a mixture of upper and
 
 </div>
 
-### SAS code, labels (1/2)
+### SAS code, `r ti(tx, 3)` <!--label-->
+`r co(tx)`
+`r no(tx)`
 
-```{}
-`r px(tx, "Part02", "^    ffw=")`
-...
-```
+### SAS code, `r ti(tx, 4)` <!--print-->
+`r co(tx)`
+`r no(tx, part=1)`
 
-<div class="notes">
-
-Every variable in a SAS program should have a label. This label will make some (but not all) of the SAS output more readable. it is also part of the internal documentation of your program. Note that some of these labels do not fit well in this Powerpoint slide, but that's okay.
-
-</div>
-
-### SAS code, labels (2/2)
-
-```{}
-...
-`r px(tx, "^    neck=", "Part03")`
-
-```
-
-<div class="notes">
-
-
-
-</div>
-
-### SAS code, proc print
-
-```{}
-`r px(tx, "Print a small piece", "of the fat data set", 1)`
-```
-
-<div class="notes">
-
-It's always a good idea to print out a small piece of your data to make sure everything is okay.
-  
-The data option tells SAS what data set you want to print. If you omit this, SAS will print the most recently created data set.
-  
-The obs=10 option limits the number of rows printed to the first 10. For large data sets, you should always take advantage of this option.
-  
-The var statement limits the variables that you print to those that you specify. Again, this is important for large data sets. 
-
-Please do not ever print more than ten rows or more than five variables, if you can help it. Excessively lengthy outputs will lose you a few points (see the grading rubric).
-  
-The title statement tells SAS to provide a descriptive title at the top of the page of output.
-  
-The run statement says you're done with the procedure.
-
-</div>
-
-### SAS output, proc print
-
-![SAS output](../images/tst_01.png)
-
-<div class="notes">
-
-This is what your output looks like.
-
-</div>
+### SAS output, `r ti(tx, 4)`
+`r ou(1)`
+`r no(tx, part=2)`
 
 ### Break #2
 
@@ -371,103 +272,26 @@ This is what your output looks like.
   + Simple statistics
   + Printing row with smallest/largest value
 
-### SAS code, proc means
+### SAS code, `r ti(tx, 5)` <!--means-->
+`r co(tx)`
+`r no(tx, part=1)`
+### SAS output: `r ti(tx, 5)`
+`r ou(2)`
+`r no(tx, part=2)`
 
-```{}
-`r px(tx, "Part04", "Part05")`
-```
+### SAS code, `r ti(tx, 6)` <!--smallest-->
+`r co(tx)`
+`r no(tx, part=1)`
+### SAS output: `r ti(tx, 6)`
+`r ou(3)`
+`r no(tx, part=2)`
 
-<div class="notes">
-
-The means procedure will produce descriptive statistics for your data. By default, it will produce the count of non-missing values, the mean, the standard deviation, and the minimum and maximum values, but I am listing them explicitly here, just for show.
-
-The data option tells SAS which data set you want descriptive statistics on, and the var statement tells SAS which variable(s) you want descriptive statistics on.
-
-</div>
-
-### SAS output, proc means
-
-![SAS output](../images/tst_02.png)
-
-<div class="notes">
-
-This is what your output looks like.
-
-Notice the unusual minimum value. While this is not totally outside the realm of possibility, you should always ask when you see something unusual like this. 
-
-First, let's look at this value in the context of the other values in this row of data.
-
-</div>
-
-### SAS code, print the smallest value
-
-```{}
-`r px(tx, "Part05", "Part06")`
-```
-
-<div class="notes">
-
-First, let's look at this value in the context of the other values in this row of data.
-
-You do this by sorting the data so that the shortest subject becomes the first row of the data and the tallest subject becomes the last. Then print just the very first row of your data.
-
-Warning: be careful about sorting your data if you can't get the data easily back to the original order. It might be okay, but there are times when you'd like your data all the way back and that means data in the original order. This data set has a case variable that you can resort by in order to get back ot the original order.
-
-If you don't have a case variable, store the sorted data in a separate location: something along the lines of proc sort data=x out=y.
-
-</div>
-
-### SAS output, print the smallest value
-
-![SAS output](../images/tst_03.png)
-
-<div class="notes">
-
-This is what your output looks like.
-
-There is no possible way that a height of 29.5 inches could be paired with a weight of 205 pounds.
-
-With this outlier on the low end, you might consider doing nothing other than noting the unusual value.
-
-Alternately, you could delete the entire row associated with this value. Finally, you might consider converting the small ht value to a missing value code.
-
-There is no one method that is preferred in this setting. If you encounter an unusual value, you should discuss it with your research team, investigate the original data sources, if possible, and review any procedures for handling unusual data values that might be specified in your research protocol.
-
-Your data set may arrive with missing values in it already. Data might be designated as missing for a variety of reasons (lab result lost, value below the limit of detection, patient refused to answer this question) and how you handle missing values is way beyond the scope of this class. Just remember to tread cautiously around missing values as they are a minefield.
-
-Notice that I store the revised data sets with the row removed and with the 29.5 replaced by a missing value in different data frames. This is good programming practice. If you ever have to make a destructive change to your data set (a change that wipes out one or more values or a change that is difficult to undo), it is good form to store the new results in a fresh spot. That way, if you get cold feet, you can easily backtrack.
-
-We'll use the data set with the 29.5 changed to a missing value for all of the remaining analyses of this data set.
-
-Logic statements involving missing value codes are tricky. SAS stores missing value codes as the most extreme legal negative number. So if you want, for example, to exclude negative values, make sure that you account for missing values as well.
-
-   (ht < 0) & (ht ~= .) 
-
-</div>
-
-### SAS code, printing the largest value
-
-```{}
-`r px(tx, "Part06", "Part07")`
-```
-
-<div class="notes">
-
-Just for the sake of completeness, let's look at the row of data with the largest height value. Add the keyword desc to sort the data in reverse order.
-
-</div>
-
-### SAS output, printing the largest value
-
-![SAS output](../images/tst_04.png)
-
-<div class="notes">
-
-This is what your output looks like.
-
-These values seem reasonable to me.
-
-</div>
+### SAS code,`r ti(tx, 7)` <!--largest-->
+`r co(tx)`
+`r no(tx, part=1)`
+### SAS output: `r ti(tx, 7)`
+`r ou(4)`
+`r no(tx, part=2)`
 
 ### Break #3
 
@@ -482,65 +306,21 @@ These values seem reasonable to me.
 
 </div>
 
-### Remove outlier
+### SAS code, ,`r ti(tx, 8)` <!--remove outlier-->
+`r co(tx)`
+`r no(tx)`
 
-```{}
-`r px(tx, "Part07", "Part08")`
-```
+### SAS code, ,`r ti(tx, 9)` <!--convert outlier-->
+`r co(tx)`
+`r no(tx)`
 
 
-<div class="notes">
-
-This code removes the entire row of data. Notice that I store the modified data under a new name. That way, if I regret tossing the entire row out, I can easily revert to the original data.
-
-</div>
-
-### Change to missing value
-
-```{}
-`r px(tx, "Part08", "Part09")`
-```
-
-<div class="notes">
-
-This code converts the height to a missing value, but keeps the original data.
-
-There is no one method that is preferred in this setting. If you encounter an unusual value, you should discuss it with your research team, investigate the original data sources, if possible, and review any procedures for handling unusual data values that might be specified in your research protocol.
-
-Your data set may arrive with missing values in it already. Data might be designated as missing for a variety of reasons (lab result lost, value below the limit of detection, patient refused to answer this question) and how you handle missing values is way beyond the scope of this class. Just remember to tread cautiously around missing values as they are a minefield.
-
-Notice that I store the revised data sets with the row removed and with the 29.5 replaced by a missing value in different data frames. This is good programming practice. If you ever have to make a destructive change to your data set (a change that wipes out one or more values or a change that is difficult to undo), it is good form to store the new results in a fresh spot. That way, if you get cold feet, you can easily backtrack.
-
-We'll use the data set with the 29.5 changed to a missing value for all of the remaining analyses of this data set.
-
-</div>
-
-### Logic statements and missing values
-
-```{}
-`r px(tx, "Part09", "Part10")`
-```
-
-<div class="notes">
-
-Here's an important thing to remember about missing values. SAS stores missing value codes as the most extreme legal negative number. This can sometimes lead to surprising and misleading results.
-
-Every procedure in SAS has its own default approach to missing values and often provides you with one or more alternatives. You have to review this carefully for each and every statistical procedure that you run. If you do data manipulations involving missing values, you have to make sure that the result correctly reflects what you want.
-
-</div>
-
-### SAS output, proc print with faulty logic
-
-![SAS output](../images/tst_05.png)
-
-<div class="notes">
-
-This is what your output looks like.
-
-In order to prevent this from happening, you need to check for missingness before applying any other logic statement.
-
-</div>
-
+### SAS code, ,`r ti(tx, 10)` <!--faulty logic-->
+`r co(tx)`
+`r no(tx, part=1)`
+### SAS output: `r ti(tx, 10)`
+`r ou(5)`
+`r no(tx, part=2)`
 
 ### The proper way to search for negative ht values
 
@@ -554,27 +334,12 @@ You may hate having to do this and wish that SAS would have handled things diffe
 
 </div>
 
-### SAS code, nmiss option
-
-```{}
-`r px(tx, "Part10", "Part11")`
-```
-
-<div class="notes">
-
-If you are concerned at all about missing values (and you should be), ask for the number of missing values in proc means using nmiss.
-
-</div>
-
-### SAS output, proc means with nmiss option
-
-![SAS output](../images/tst_06.png)
-
-<div class="notes">
-
-This is what your output looks like. Note that your data set has 251 observations and 1 missing value.
-
-</div>
+### SAS code, ,`r ti(tx, 11)` <!--nmiss-->
+`r co(tx)`
+`r no(tx, part=1)`
+### SAS output: `r ti(tx, 11)`
+`r ou(6)`
+`r no(tx, part=2)`
 
 ### Break #4
 + What have you learned
@@ -585,98 +350,17 @@ This is what your output looks like. Note that your data set has 251 observation
 
 ### SAS code, simple transformations
 
-```{}
-`r px(tx, "Part11", "Part12")`
-```
-
-<div class="notes">
-
-You can do simple transformations like unit conversions in SAS. Create a new dataset with the data statement. Use the set command to tell SAS that you plan to use and modify an existing dataset.
-
-The conversions done here will turn height and weight into centimeters and kilograms, respectively.
-
-</div>
-
 ### SAS output, simple transformations
-
-![SAS output](../images/tst_07.png)
-
-<div class="notes">
-
-This is your output with measurements both in the original units and metric. Notice that I did not print any more than 10 rows of data.
-
-
-</div>
-
 
 ### SAS code, Histogram
 
-```{}
-`r px(tx, "Part12", "Part13")`
-```
-
-<div class="notes">
-
-Here's the code to create a histogram with the default option. Generally, it is wise to modify the defaults for any graphic image.
-
-</div>
-
 ### SAS output, Histogram
 
-![SAS output](../images/tst_08.png)
-
-<div class="notes">
-
-This is your output with measurements both in the original units and metric. Notice that I did not print any more than 10 rows of data.
-
-
-</div>
-
-### SAS code, Histogram with many bars
-
-```{}
-`r px(tx, "Part13", "Part14")`
-```
-
-<div class="notes">
-
-Here's the code to create a histogram with many bars. The first bar is centered at 60, and each bin has a width of 1 inch (plus or minus 0.5 inches)
-
-</div>
-
 ### SAS output, Histogram with many bars
-
-![SAS output](../images/tst_09.png)
-
-<div class="notes">
-
-This is the revised histogram. You can also go in the opposite direction.
-
-</div>
-
 
 ### SAS code, Histogram with fewer bars
 
-```{}
-`r px(tx, "Part14", "Part15")`
-```
-
-<div class="notes">
-
-Here's the code to create a histogram with few bars. The first bar is again centered at 60, but now each bin has a width of 5 inches (plus or minus 2.5 inches). 
-
-</div>
-
 ### SAS output, Histogram with many bars
-
-![SAS output](../images/tst_10.png)
-
-<div class="notes">
-
-This is the revised histogram. There is no "correct" version of the histogram. Try several widths and see which one gives the clearest picture of your data.
-
-</div>
-
 
 ### Break #5
 + What have you learned
@@ -707,162 +391,31 @@ The corr procedure produces, by default, a square correlation matrix of all the 
 
 ### SAS code, Simple correlations
 
-```{}
-`r px(tx, "Part15", "Part16")`
-```
-
-<div class="notes">
-
-</div>
-
-### SAS output, Correlations (1/2)
-
-![SAS output](../images/tst_12.png)
-
-<div class="notes">
-
-</div>
-
-### SAS output, Correlations (2/2)
-
-![SAS output](../images/tst_13.png)
-
-<div class="notes">
-
-Notice that I deliberately avoided printing out the entire corelation matrix, which would span several pages of output. This is something you yourself should strive for, especially when you are running something that you want to share with others. Don't overwhelm your reader with things that they may not need. If your readers do want more information, it is better for them to tell you rather than you giving them more in the first meeting that they need.
-
-</div>
+### SAS output, Correlations 
 
 ### SAS code, New dataset with correlations
 
-```{}
-`r px(tx, "Part16", "Part17")`
-```
+### SAS output, New dataset with correlations 
 
-<div class="notes">
+### SAS output, New dataset with correlations
 
-You can save the correlations in a separate data file. 
+### SAS code, Modified correlations
 
-</div>
-
-### SAS output, New dataset with correlations (1/2)
-
-![SAS output](../images/tst_14.png)
-
-<div class="notes">
-
-The output is a bit unusual because SAS wants to include means and standard deviations in your output. You can and should remove this. It would be easy enough to do (use the where statement), but I wanted to show you the full data set.
-
-</div>
-
-### SAS output, New dataset with correlations (2/2)
-
-![SAS output](../images/tst_15.png)
-
-<div class="notes">
-
-</div>
-
-### SAS code, Modified correlations (1/2)
-
-```{}
-`r px(tx, "Part17", "Part18")`
-```
-
-<div class="notes">
-
-Saving as a data file allows you to manipulate the individual correlations. Here we multiply the correlations by 100, round them, and sort them. This can often simplify the interpretation of large correlation matrices.
-
-This code does the reordering and printing.
-
-</div>
-
-### SAS code, Modified correlations (2/2)
-
-```{}
-`r px(tx, "Part18", "Part19")`
-```
-
-<div class="notes">
-
-</div>
+### SAS code, Modified correlations
 
 ### SAS output, Modified correlations
 
-![SAS output](../images/tst_16.png)
-
-<div class="notes">
-
-This is the output. You can see that measurements at the extremities are poor predictors of body fat. Apparently, we grow fat from the middle outward.
-
-</div>
-
 ### SAS code, Simple scatterplot
-
-```{}
-`r px(tx, "Part19", "Part20")`
-```
-
-<div class="notes">
-
-A scatterplot is also useful for examining the relationship among variables. You can produce scatterplots several different ways, but the scatterplots produced by the sgplot procedure have the most flexibility.
-
-</div>
 
 ### SAS output, Simple scatterplot
 
-![SAS output](../images/tst_17.png)
-
-<div class="notes">
-
-This plot shows a general upward trend.
-
-</div>
-
 ### SAS code, Linear trend line
-
-```{}
-`r px(tx, "Part20", "Part21")`
-```
-
-<div class="notes">
-
-The reg statement adds a least squares trend line to your graph.
-
-</div>
 
 ### SAS output, Simple scatterplot with linear trend
 
-![SAS output](../images/tst_18.png)
-
-<div class="notes">
-
-The trend line is very useful for large and noisy data sets. It also allows you to more quickly visualize extreme values. Notice, for example, that the person with the largest abdomen measure (the biggest gut, if I can be informal) is quite out of line with what you might expect the relationship to be.
-
-</div>
-
 ### SAS code, Smooth curve
 
-```{}
-`r px(tx, "Part21", "End of program")`
-```
-
-<div class="notes">
-
-The pbspline statement adds a smoothing spline to your graph. This allows you to informally investigate more complex relationships.
-
-</div>
-
-
 ### SAS output, Simple scatterplot with smooth curve
-
-![SAS output](../images/tst_19.png)
-
-<div class="notes">
-
-The smoothing spline provides some evidence that the relationship is roughly linear a low and medium abdomen measurements, but tends to level off a bit at higher levels. Interpret this with caution, of course, because you have very little data at extrmemy high adbomen measures.
-
-</div>
 
 ### Don't forget!
 

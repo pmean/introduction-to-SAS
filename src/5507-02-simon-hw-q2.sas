@@ -7,7 +7,7 @@
 %let path=q:/introduction-to-sas;
 
 ods pdf file=
-    "&path/results/5507-02-simon-hw-q2-output.pdf";
+    "&path/results/5507-02-simon-hw-q2.pdf";
 
 libname perm
     "&path/data";

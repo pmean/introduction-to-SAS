@@ -17,11 +17,18 @@ if you use this material, but this is not required.
 
 #### Slides used in the videos
 
-+   not yet available.
++ [5507-01-simon-sildes-and-speaker-notes.Rmd][sildes-and-speaker-notes.Rmd].
++ [5507-01-simon-slides-and-speaker-notes.pdf][slides-and-speaker-notes.pdf].
 
 #### SAS programs used in the videos
 
-+   not yet available.
++ [5507-01-simon-basic-program.sas][basic-program.sas].
++ [5507-01-simon-documentation-header.sas][documentation-header.sas].
++ [5507-01-simon-input-text.sas][input-text.sas].
++ [5507-01-simon-permanent-storage.sas][permanent-storage.sas].
++ [5507-01-simon-re-use.sas][re-use.sas].
++ [5507-01-simon-read-data.sas][read-data.sas].
++ [5507-01-simon-save-output.sas][save-output.sas].
 
 #### Homework solutions, SAS code and output
 
@@ -30,45 +37,25 @@ if you use this material, but this is not required.
 This file was last updated on 2021-08-03. You can find this file on [my github site][mygit].
 
 <!---my git--->
-
 [mygit]: https://github.com/pmean/introduction-to-SAS/blob/master/modules/5507-01-resources.md
 
 <!---pdf_h--->
-
-
-
 <!---No links for this section--->
-
-
 
 <!---pdf_v--->
-
-
-
-<!---No links for this section--->
-
-
+[slides-and-speaker-notes.pdf]: https://github.com/pmean/introduction-to-SAS/blob/master/results/5507-01-simon-slides-and-speaker-notes.pdf
 
 <!---rmd_v--->
-
-
-
-<!---No links for this section--->
-
-
+[sildes-and-speaker-notes.Rmd]: https://github.com/pmean/introduction-to-SAS/blob/master/src/5507-01-simon-sildes-and-speaker-notes.Rmd
 
 <!---sas_v--->
-
-
-
-<!---No links for this section--->
-
-
+[basic-program.sas]: https://github.com/pmean/introduction-to-SAS/blob/master/src/5507-01-simon-basic-program.sas
+[documentation-header.sas]: https://github.com/pmean/introduction-to-SAS/blob/master/src/5507-01-simon-documentation-header.sas
+[input-text.sas]: https://github.com/pmean/introduction-to-SAS/blob/master/src/5507-01-simon-input-text.sas
+[permanent-storage.sas]: https://github.com/pmean/introduction-to-SAS/blob/master/src/5507-01-simon-permanent-storage.sas
+[re-use.sas]: https://github.com/pmean/introduction-to-SAS/blob/master/src/5507-01-simon-re-use.sas
+[read-data.sas]: https://github.com/pmean/introduction-to-SAS/blob/master/src/5507-01-simon-read-data.sas
+[save-output.sas]: https://github.com/pmean/introduction-to-SAS/blob/master/src/5507-01-simon-save-output.sas
 
 <!---sas_h--->
-
-
-
 <!---No links for this section--->
-
-

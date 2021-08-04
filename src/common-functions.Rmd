@@ -25,7 +25,7 @@ zpad <- function(i) {ifelse(i<10, paste0("0", i), paste0(i))}
 ```{r add_links}
 add_links <- function(md, keyword, folder="modules/") {
   # add links to the bottom of a markdown file
-  if (length(md)==0) return("\n\n<!---No links for this section--->\n\n")
+  if (length(md)==0) return("<!---No links for this section--->")
   md %>%
     str_subset(str_to_lower(keyword)) -> filename
   
@@ -123,9 +123,7 @@ ou <- function(j) {
 ```{r sh}
 sh <- function(s) {
   s %>%
-    str_remove("m0.-") %>%
-    str_remove("5507-") %>%
-    str_remove("simon-") %>%
+    str_remove("5507-0.-simon-") %>%
     return
 }
 ```
@@ -141,14 +139,4 @@ ti <- function(tx=tx, i) {
     str_remove(";$") %>%
     return   
 }
-```
-
-```{r, eval=FALSE}
-tx <- readLines("m05-working-with-mix-of-variables.sas")
-```
-
-```{r show-general-structure, eval=FALSE}
-tx %>%
-  str_subset("^\\* ") %>%
-  paste(collapse="\n\n") -> general_structure
 ```

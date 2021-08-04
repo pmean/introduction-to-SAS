@@ -21,12 +21,12 @@ list.files(path="../results", pattern="\\.pdf") %>%
   str_subset("slides") -> pdf_v
 
 list.files(path="../results", pattern="\\.pdf") %>%
-  str_subset("-hw0") -> pdf_h
+  str_subset("-hw-") -> pdf_h
 
-sas_v %>% kable
-sas_h %>% kable
-pdf_v %>% kable
-pdf_h %>% kable
+sas_v %>% data.frame %>% set_names("sas_v") %>% kable
+sas_h %>% data.frame %>% set_names("sas_h") %>% kable
+pdf_v %>% data.frame %>% set_names("pdf_v") %>% kable
+pdf_h %>% data.frame %>% set_names("pdf_h") %>% kable
 ```
 
 ```{r constants}
@@ -37,11 +37,11 @@ prefix <- 'https://github.com/pmean/introduction-to-SAS/blob/master/'
 ```{r}
 for (module in modules) {
   module_num <- paste0("Module", module)
-  pdf_h %>% str_subset(paste0("m", module, "-")) -> pdf_h_subset
-  pdf_v %>% str_subset(paste0("m", module, "-")) -> pdf_v_subset
-  rmd_v %>% str_subset(paste0("m", module, "-")) -> rmd_v_subset
-  sas_h %>% str_subset(paste0("m", module, "-")) -> sas_h_subset
-  sas_v %>% str_subset(paste0("m", module, "-")) -> sas_v_subset
+  pdf_h %>% str_subset(paste0("-", module, "-")) -> pdf_h_subset
+  pdf_v %>% str_subset(paste0("-", module, "-")) -> pdf_v_subset
+  rmd_v %>% str_subset(paste0("-", module, "-")) -> rmd_v_subset
+  sas_h %>% str_subset(paste0("-", module, "-")) -> sas_h_subset
+  sas_v %>% str_subset(paste0("-", module, "-")) -> sas_v_subset
   filename <- str_replace("../modules/5507-xx-resources.md", "xx", module)
 
   vlist <- sort(c(pdf_v_subset, rmd_v_subset))
@@ -70,26 +70,26 @@ for (module in modules) {
     paste0(". You can find this file on [my github site][mygit].") %>%
       
     paste0("\n\n<!---my git--->") %>%
-    paste0("\n\n[mygit]: ") %>%
+    paste0("\n[mygit]: ") %>%
     paste0(prefix) %>%
     paste0("modules/5507-") %>%
     paste0(module) %>%
     paste0("-resources.md") %>%
     
     paste0("\n\n<!---pdf_h--->") %>%
-    paste0("\n\n", add_links(pdf_h_subset, "pdf", "results/")) %>%
+    paste0("\n", add_links(pdf_h_subset, "pdf", "results/")) %>%
 
     paste0("\n\n<!---pdf_v--->") %>%
-    paste0("\n\n", add_links(pdf_v_subset, "pdf", "results/")) %>%
+    paste0("\n", add_links(pdf_v_subset, "pdf", "results/")) %>%
     
     paste0("\n\n<!---rmd_v--->") %>%
-    paste0("\n\n", add_links(rmd_v_subset, "md", "src/")) %>%
+    paste0("\n", add_links(rmd_v_subset, "md", "src/")) %>%
     
     paste0("\n\n<!---sas_v--->") %>%
-    paste0("\n\n", add_links(sas_v_subset, "sas", "src/")) %>%
+    paste0("\n", add_links(sas_v_subset, "sas", "src/")) %>%
 
     paste0("\n\n<!---sas_h--->") %>%
-    paste0("\n\n", add_links(sas_h_subset, "sas", "src/")) -> module_overviews
+    paste0("\n", add_links(sas_h_subset, "sas", "src/")) -> module_overviews
   
   module_overviews %>% cat
   module_overviews %>%

@@ -8,8 +8,19 @@ knit: (function(inputFile, encoding) {
   output_dir = "../results", output_format = "all") })  
 ---
 
-```{r common-code, child="extract-sas.Rmd"}
+```{r common-code, child="common-functions.Rmd"}
 ```
+
+```{r}
+tx <- readLines("5507-05-simon-working-with-mix-of-variables.sas")
+```
+
+```{r show-general-structure}
+tx %>%
+  str_subset("^\\* ") %>%
+  paste(collapse="\n\n") -> general_structure
+```
+
 
 ### Overview
 
