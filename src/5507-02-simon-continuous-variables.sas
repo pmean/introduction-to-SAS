@@ -33,9 +33,9 @@ filename and in pdf format.
 
 Today, you will analyze some data sets that have
 mostly continuous variables. The first dataset
-at body measurements.;
+at body measurements.
 
-* Notes01. The input statement is very long and
+The input statement is very long and
 does not fit on a single slide. Go to the Canvas
 site if you want to see the full code.;
 
@@ -64,8 +64,12 @@ data intro.fat;
     biceps
     forearm
     wrist;
+    
+* Notes02. This is the code to input all the 
+variables in this data set. It is quite long 
+and does not fit on a single Powerpoint slide.;
 
-* Part02. Add variable labels;
+* Part03. Add variable labels;
 
   label
     case="Case number"
@@ -90,7 +94,7 @@ data intro.fat;
   ;
 run;
 
-* Notes02. SAS offers an opportunity for you to 
+* Notes03. SAS offers an opportunity for you to 
 add documentation to your program about 
 individual variables. These are called variable
 labels. They have almost no restrictions. You can 
@@ -119,7 +123,7 @@ of the internal documentation of your program.
 Note that some of these labels do not fit well 
 in this Powerpoint slide, but that's okay.;
 
-* Part03. Print a small piece of the data;
+* Part04. Print a small piece of the data;
 
 proc print
     data=intro.fat(obs=10);
@@ -128,7 +132,7 @@ proc print
   title2 "of the fat data set";
 run;
 
-* Notes03. It's always a good idea to print out 
+* Notes04. It's always a good idea to print out 
 a small piece of your data to make sure 
 everything is okay.
   
@@ -159,7 +163,7 @@ procedure.;
 Output, page 1. There are no obvious problems 
 with this dataset.;
 
-* Part04. Calculate simple statistics for ht;
+* Part05. Calculate simple statistics for ht;
 
 proc means
     n mean std min max
@@ -169,7 +173,7 @@ proc means
   title2 "Notice the unusual minimum value";
 run;
 
-* Notes04. The means procedure will produce 
+* Notes05. The means procedure will produce 
 descriptive statistics for your data. By default, 
 it will produce the count of non-missing values, 
 the mean, the standard deviation, and the minimum 
@@ -189,7 +193,7 @@ not totally outside the realm of possibility, you
 should always ask when you see something unusual 
 like this.;
 
-* Part05. Look at smallest value;
+* Part06. Look at smallest value;
 
 proc sort
     data=intro.fat;
@@ -202,7 +206,7 @@ proc print
   title2 "Note the inconsistency with wt";
 run;
 
-* Notes05. First, let's look at this value in the 
+* Notes06. First, let's look at this value in the 
 context of the other values in this row of data.
 
 You do this by sorting the data so that the 
@@ -279,7 +283,7 @@ well.
 
    (ht < 0) & (ht ~= .); 
 
-* Part06. Look at the largest value;
+* Part07. Look at the largest value;
 
 proc sort
     data=intro.fat;
@@ -292,7 +296,7 @@ proc print
   title2 "This seems quite normal to me";
 run;
 
-* Notes06. Just for the sake of completeness, 
+* Notes07. Just for the sake of completeness, 
 let's look at the row of data with the largest 
 height value. Add the keyword desc to sort the 
 data in reverse order.;
@@ -300,27 +304,27 @@ data in reverse order.;
 * Output, page 4. This is what your output looks 
 like. These values seem reasonable to me.;
 
-* Part07. Removing the entire row;
+* Part08. Removing the entire row;
 
 data intro.fat1;
   set intro.fat;
   if ht > 29.5;
 run;
 
-* Notes07. This code removes the entire row of 
+* Notes08. This code removes the entire row of 
 data. Notice that I store the modified data under 
 a new name. That way, if I regret tossing the 
 entire row out, I can easily revert to the 
 original data.;
 
-* Part08. Converting the outlier to a missing value;
+* Part09. Converting the outlier to a missing value;
 
 data intro.fat2;
   set intro.fat;
   if ht=29.5 then ht=.;
 run;
 
-* Notes08. This code converts the height to a 
+* Notes09. This code converts the height to a 
 missing value, but keeps the original data.
 
 There is no one method that is preferred in 
@@ -355,7 +359,7 @@ We'll use the data set with the 29.5 changed to a
 missing value for all of the remaining analyses 
 of this data set.;
 
-* Part09. Faulty approach for filtering out negative values;
+* Part10. Faulty approach for filtering out negative values;
 
 proc print
     data=intro.fat2;
@@ -363,7 +367,7 @@ proc print
   title1 "ht < 0 will include ht = .";
 run;
 
-* Notes09. Here's an important thing to remember 
+* Notes10. Here's an important thing to remember 
 about missing values. SAS stores missing value 
 codes as the most extreme legal negative number. 
 This can sometimes lead to surprising and 
@@ -385,7 +389,7 @@ In order to prevent this from happening, you need
 to check for missingness before applying any 
 other logic statement.;
 
-* Part10. Counting missing values;
+* Part11. Counting missing values;
 
 proc means
     n nmiss mean std min max
@@ -394,7 +398,7 @@ proc means
   title "Using the nmiss statistic";
 run;
 
-* Notes10. If you are concerned at all about 
+* Notes11. If you are concerned at all about 
 missing values (and you should be), ask for the 
 number of missing values in proc means using 
 nmiss.;
@@ -403,7 +407,7 @@ nmiss.;
 like. Note that your data set has 251 
 observations and 1 missing value.;
 
-* Part11. Simple transformations;
+* Part12. Simple transformations;
 
 data converted_units;
   set intro.fat2;
@@ -417,7 +421,7 @@ proc print
   title1 "Original and converted units";
 run;
 
-* Notes11. You can do simple transformations like 
+* Notes12. You can do simple transformations like 
 unit conversions in SAS. Create a new dataset 
 with the data statement. Use the set command to 
 tell SAS that you plan to use and modify an 
@@ -432,7 +436,7 @@ measurements both in the original units and
 metric. Notice that I did not print any more than 
 10 rows of data.;
 
-* Part12. Display a histogram;
+* Part13. Display a histogram;
 
 proc sgplot
     data=intro.fat2;
@@ -440,13 +444,13 @@ proc sgplot
   title "Histogram with default bins";
 run;
 
-* Notes12. Here's the code to create a histogram 
+* Notes13. Here's the code to create a histogram 
 with the default option. Generally, it is wise to 
 modify the defaults for any graphic image.;
 
 * Output, page 8. This is the default histogram.;
 
-* Part13. Revised histogram with narrow bins;
+* Part14. Revised histogram with narrow bins;
 
 proc sgplot
     data=intro.fat2;
@@ -454,7 +458,7 @@ proc sgplot
   title "Histogram with narrow bins";
 run;
 
-* Notes13. Here's the code to create a histogram 
+* Notes14. Here's the code to create a histogram 
 with many bars. The first bar is centered at 60, 
 and each bin has a width of 1 inch (plus or minus 
 0.5 inches);
@@ -462,7 +466,7 @@ and each bin has a width of 1 inch (plus or minus
 * Output, page 9. This is what you get. You can 
 also go in the opposite direction.;
 
-* Part14. Revised histogram with wide bins;
+* Part15. Revised histogram with wide bins;
 
 proc sgplot
     data=intro.fat2;
@@ -470,7 +474,7 @@ proc sgplot
   title "Histogram with wide bins";
 run;
 
-* Notes14. Here's the code to create a histogram 
+* Notes15. Here's the code to create a histogram 
 with few bars. The first bar is again centered at 
 60, but now each bin has a width of 5 inches 
 (plus or minus 2.5 inches).;
@@ -480,7 +484,7 @@ There is no "correct" version of the histogram.
 Try several widths and see which one gives the 
 clearest picture of your data.;
 
-* Part15. Calculate correlations;
+* Part16. Calculate correlations;
 
 proc corr
     data=intro.fat2
@@ -490,13 +494,13 @@ proc corr
   title "Correlation matrix";
 run;
 
-* Notes15. Here's the code to compute 
+* Notes16. Here's the code to compute 
 correlations.;
 
 * Output, page 11. The output here really annoys
 me. I want to show something a bit advanced here.;
 
-* Part16. Save the correlations in a separate data file.;
+* Part17. Save the correlations in a separate data file.;
 
 proc corr
     data=intro.fat2
@@ -511,7 +515,7 @@ proc print
   title "Correlation matrix output to a data set";
 run;
 
-* Notes16. You can save the correlations in a 
+* Notes17. You can save the correlations in a 
 separate data file.;
 
 * Output, page 12. The output is a bit unusual 
@@ -521,7 +525,7 @@ remove this. It would be easy enough to do (use
 the where statement), but I wanted to show you 
 the full data set.;
 
-* Part17. Modify these correlations.;
+* Part18. Modify these correlations.;
 
 data correlations;
   set correlations;
@@ -536,7 +540,7 @@ proc sort
   by descending fat_brozek;
 run;
 
-* Notes17. Saving as a data file allows you to 
+* Notes18. Saving as a data file allows you to 
 manipulate the individual correlations. Here we 
 multiply the correlations by 100, round them, and 
 sort them. This can often simplify the 
@@ -544,14 +548,14 @@ interpretation of large correlation matrices.
 
 This code does the reordering and printing;
 
-* Part18. Print the modified correlations.;
+* Part19. Print the modified correlations.;
 
 proc print 
     data=correlations;
   title "Rounded and re-ordered correlation matrix";
 run;
 
-* Notes18. Just to help visualize things, let's
+* Notes19. Just to help visualize things, let's
 print the file before we modify it.;
 
 * Output, page 13. This is the output. You can 
@@ -559,7 +563,7 @@ see that measurements at the extremities are poor
 predictors of body fat. Apparently, we grow fat 
 from the middle outward.;
 
-* Part19. Draw a scatterplot.;
+* Part20. Draw a scatterplot.;
 
 proc sgplot
     data=intro.fat2;
@@ -567,7 +571,7 @@ proc sgplot
   title "Simple scatterplot";
 run;
 
-* Notes19. A scatterplot is also useful for 
+* Notes20. A scatterplot is also useful for 
 examining the relationship among variables. You 
 can produce scatterplots several different ways, 
 but the scatterplots produced by the sgplot 
@@ -576,7 +580,7 @@ procedure have the most flexibility.;
 * Output, page 14. This plot shows a general 
 upward trend.;
 
-* Part20. Adding linear trend line.;
+* Part21. Adding linear trend line.;
 
 proc sgplot
     data=intro.fat2;
@@ -585,7 +589,7 @@ proc sgplot
   title "Scatterplot with linear regression line";
 run;
 
-* Notes20. The trend line is very useful for 
+* Notes21. The trend line is very useful for 
 large and noisy data sets. It also allows you to 
 more quickly visualize extreme values.;
 
@@ -595,7 +599,7 @@ biggest gut, if I can be informal) is quite out
 of line with what you might expect the 
 relationship to be.;
 
-* Part21. Adding a smooth curve.;
+* Part22. Adding a smooth curve.;
 
 proc sgplot
     data=intro.fat2;
@@ -606,7 +610,7 @@ run;
 
 ods pdf close;
 
-* Notes21. Here's the code to compute a smoothing
+* Notes22. Here's the code to compute a smoothing
 spline. It helps you visualize whether the trend
 is linear or not.;
 
@@ -618,5 +622,5 @@ Interpret this with caution, of course, because
 you have very little data at extrmemy high 
 adbomen measures.;
 
-* Part 22. End of program;
+* Part23. End of program;
 

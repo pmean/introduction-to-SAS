@@ -12,7 +12,9 @@ knit: (function(inputFile, encoding) {
 ```
 
 ```{r}
-tx <- readLines("5507-05-simon-working-with-mix-of-variables.sas")
+file_prefix <- "5507-02-simon-continuous-variables"
+sas_file <- paste0(file_prefix, ".sas")
+tx <- readLines(sas_file)
 ```
 
 ```{r show-general-structure}
@@ -306,16 +308,16 @@ What makes a good variable label? First take advantage of a mixture of upper and
 
 </div>
 
-### SAS code, ,`r ti(tx, 8)` <!--remove outlier-->
+### SAS code, `r ti(tx, 8)` <!--remove outlier-->
 `r co(tx)`
 `r no(tx)`
 
-### SAS code, ,`r ti(tx, 9)` <!--convert outlier-->
+### SAS code, `r ti(tx, 9)` <!--convert outlier-->
 `r co(tx)`
 `r no(tx)`
 
 
-### SAS code, ,`r ti(tx, 10)` <!--faulty logic-->
+### SAS code, `r ti(tx, 10)` <!--faulty logic-->
 `r co(tx)`
 `r no(tx, part=1)`
 ### SAS output: `r ti(tx, 10)`
@@ -334,7 +336,7 @@ You may hate having to do this and wish that SAS would have handled things diffe
 
 </div>
 
-### SAS code, ,`r ti(tx, 11)` <!--nmiss-->
+### SAS code, `r ti(tx, 11)` <!--nmiss-->
 `r co(tx)`
 `r no(tx, part=1)`
 ### SAS output: `r ti(tx, 11)`
@@ -348,19 +350,33 @@ You may hate having to do this and wish that SAS would have handled things diffe
   + Simple transformations
   + Histograms
 
-### SAS code, simple transformations
+### SAS code, `r ti(tx, 12)` <!--transformation-->
+`r co(tx)`
+`r no(tx, part=1)`
+### SAS output: `r ti(tx, 12)`
+`r ou(7)`
+`r no(tx, part=2)`
 
-### SAS output, simple transformations
+### SAS code, `r ti(tx, 13)` <!--default historgram-->
+`r co(tx)`
+`r no(tx, part=1)`
+### SAS output: `r ti(tx, 13)`
+`r ou(8)`
+`r no(tx, part=2)`
 
-### SAS code, Histogram
+### SAS code, `r ti(tx, 14)` <!--many bars-->
+`r co(tx)`
+`r no(tx, part=1)`
+### SAS output: `r ti(tx, 14)`
+`r ou(9)`
+`r no(tx, part=2)`
 
-### SAS output, Histogram
-
-### SAS output, Histogram with many bars
-
-### SAS code, Histogram with fewer bars
-
-### SAS output, Histogram with many bars
+### SAS code, `r ti(tx, 15)` <!--few bars-->
+`r co(tx)`
+`r no(tx, part=1)`
+### SAS output: `r ti(tx, 15)`
+`r ou(10)`
+`r no(tx, part=2)`
 
 ### Break #5
 + What have you learned
@@ -389,33 +405,48 @@ The corr procedure produces, by default, a square correlation matrix of all the 
   
 </div>
 
-### SAS code, Simple correlations
+### SAS code, `r ti(tx, 16)` <!--correlation-->
+`r co(tx)`
+`r no(tx, part=1)`
+### SAS output: `r ti(tx, 16)`
+`r ou(11)`
+`r no(tx, part=2)`
 
-### SAS output, Correlations 
+### SAS code, `r ti(tx, 17)` <!--output correlations-->
+`r co(tx)`
+`r no(tx, part=1)`
+### SAS output: `r ti(tx, 17)`
+`r ou(12)`
+`r no(tx, part=2)`
+### SAS output: `r ti(tx, 17)`
+`r ou(13)`
+`r no(tx, part=3)`
 
-### SAS code, New dataset with correlations
+### SAS code, `r ti(tx, 18)` <!--modify correlations-->
+`r co(tx)`
+`r no(tx, part=1)`
+### SAS output: `r ti(tx, 18)`
+`r ou(14)`
+`r no(tx, part=2)`
+### SAS output: `r ti(tx, 18)`
+`r ou(15)`
+`r no(tx, part=2)`
 
-### SAS output, New dataset with correlations 
-
-### SAS output, New dataset with correlations
-
-### SAS code, Modified correlations
-
-### SAS code, Modified correlations
-
-### SAS output, Modified correlations
 
 ### SAS code, Simple scatterplot
 
 ### SAS output, Simple scatterplot
+`r ou(16)`
 
 ### SAS code, Linear trend line
 
 ### SAS output, Simple scatterplot with linear trend
+`r ou(17)`
 
 ### SAS code, Smooth curve
 
 ### SAS output, Simple scatterplot with smooth curve
+`r ou(18)`
 
 ### Don't forget!
 

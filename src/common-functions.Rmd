@@ -80,10 +80,10 @@ px <- function(tx, s1, s2, d1=0, d2=-2) {
   # selects a range of text
   tx %>% str_which(s1) -> i1
   tx %>% str_which(s2) -> j1
-  if (length(i1)==0) return("No beginning found")
-  if (length(j1)==0) return("No ending found")
-  if (length(i1) > 1) return("Multiple beginnings found")
-  if (length(j1) > 1) return("Multiple endings found")
+  if (length(i1)==0) return("No beginning found for " %0% s1)
+  if (length(j1)==0) return("No ending found for " %0% s2)
+  if (length(i1) > 1) return("Multiple beginnings found for " %0% s1)
+  if (length(j1) > 1) return("Multiple endings found for " %0% s2)
   i1 <- i1 + d1
   j1 <- j1 + d2
   tx %>%
@@ -113,9 +113,10 @@ no <- function(tx=tx, i=current_i, d1=0, d2=-2, part=0) {
 ou <- function(j) {
   # creates an image of a page of output
   "![SAS Output]" %0%
-    "(../images/m05-5507" %0%
-	"-simon-mix_" %0%
-	zpad(j) %0%
+    "(../images/" %0%
+  	file_prefix %0%
+    "_" %0%
+	  zpad(j) %0%
 	".png)"
 }
 ```
