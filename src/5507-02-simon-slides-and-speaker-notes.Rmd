@@ -21,6 +21,8 @@ tx <- readLines(sas_file)
 tx %>%
   str_subset("^\\* ") %>%
   paste(collapse="\n\n") -> general_structure
+tx %<>% str_trim %>% paste0(collapse="\n") %>% str_split("\n\n\n") %>% unlist
+output_page <- 0
 ```
 
 ### Overview
@@ -137,17 +139,8 @@ Don't obsess about this now, but you'll see a fairly consistent coding style tha
 
 
 
-### SAS code, `r ti(tx, 0)` <!--documentation header-->
-`r co(tx)`
-`r no(tx)`
+`r add_chunks(0:2, tx)`
 
-### SAS code: `r ti(tx, 1)` <!--where to find and store things-->
-`r co(tx)`
-`r no(tx)`
-
-### SAS code, `r ti(tx, 2)` <!--input-->
-`r co(tx)`
-`r no(tx)`
 
 ### Rules for variable names
 
@@ -252,17 +245,9 @@ What makes a good variable label? First take advantage of a mixture of upper and
 
 </div>
 
-### SAS code, `r ti(tx, 3)` <!--label-->
-`r co(tx)`
-`r no(tx)`
+`r add_chunks(3:4, tx)`
 
-### SAS code, `r ti(tx, 4)` <!--print-->
-`r co(tx)`
-`r no(tx, part=1)`
 
-### SAS output, `r ti(tx, 4)`
-`r ou(1)`
-`r no(tx, part=2)`
 
 ### Break #2
 
@@ -274,26 +259,8 @@ What makes a good variable label? First take advantage of a mixture of upper and
   + Simple statistics
   + Printing row with smallest/largest value
 
-### SAS code, `r ti(tx, 5)` <!--means-->
-`r co(tx)`
-`r no(tx, part=1)`
-### SAS output: `r ti(tx, 5)`
-`r ou(2)`
-`r no(tx, part=2)`
 
-### SAS code, `r ti(tx, 6)` <!--smallest-->
-`r co(tx)`
-`r no(tx, part=1)`
-### SAS output: `r ti(tx, 6)`
-`r ou(3)`
-`r no(tx, part=2)`
-
-### SAS code,`r ti(tx, 7)` <!--largest-->
-`r co(tx)`
-`r no(tx, part=1)`
-### SAS output: `r ti(tx, 7)`
-`r ou(4)`
-`r no(tx, part=2)`
+`r add_chunks(5:7, tx)`
 
 ### Break #3
 
@@ -308,21 +275,9 @@ What makes a good variable label? First take advantage of a mixture of upper and
 
 </div>
 
-### SAS code, `r ti(tx, 8)` <!--remove outlier-->
-`r co(tx)`
-`r no(tx)`
 
-### SAS code, `r ti(tx, 9)` <!--convert outlier-->
-`r co(tx)`
-`r no(tx)`
+`r add_chunks(8:10, tx)`
 
-
-### SAS code, `r ti(tx, 10)` <!--faulty logic-->
-`r co(tx)`
-`r no(tx, part=1)`
-### SAS output: `r ti(tx, 10)`
-`r ou(5)`
-`r no(tx, part=2)`
 
 ### The proper way to search for negative ht values
 
@@ -336,12 +291,9 @@ You may hate having to do this and wish that SAS would have handled things diffe
 
 </div>
 
-### SAS code, `r ti(tx, 11)` <!--nmiss-->
-`r co(tx)`
-`r no(tx, part=1)`
-### SAS output: `r ti(tx, 11)`
-`r ou(6)`
-`r no(tx, part=2)`
+
+`r add_chunks(11:11, tx)`
+
 
 ### Break #4
 + What have you learned
@@ -350,33 +302,9 @@ You may hate having to do this and wish that SAS would have handled things diffe
   + Simple transformations
   + Histograms
 
-### SAS code, `r ti(tx, 12)` <!--transformation-->
-`r co(tx)`
-`r no(tx, part=1)`
-### SAS output: `r ti(tx, 12)`
-`r ou(7)`
-`r no(tx, part=2)`
 
-### SAS code, `r ti(tx, 13)` <!--default historgram-->
-`r co(tx)`
-`r no(tx, part=1)`
-### SAS output: `r ti(tx, 13)`
-`r ou(8)`
-`r no(tx, part=2)`
+`r add_chunks(12:15, tx)`
 
-### SAS code, `r ti(tx, 14)` <!--many bars-->
-`r co(tx)`
-`r no(tx, part=1)`
-### SAS output: `r ti(tx, 14)`
-`r ou(9)`
-`r no(tx, part=2)`
-
-### SAS code, `r ti(tx, 15)` <!--few bars-->
-`r co(tx)`
-`r no(tx, part=1)`
-### SAS output: `r ti(tx, 15)`
-`r ou(10)`
-`r no(tx, part=2)`
 
 ### Break #5
 + What have you learned
@@ -405,48 +333,8 @@ The corr procedure produces, by default, a square correlation matrix of all the 
   
 </div>
 
-### SAS code, `r ti(tx, 16)` <!--correlation-->
-`r co(tx)`
-`r no(tx, part=1)`
-### SAS output: `r ti(tx, 16)`
-`r ou(11)`
-`r no(tx, part=2)`
 
-### SAS code, `r ti(tx, 17)` <!--output correlations-->
-`r co(tx)`
-`r no(tx, part=1)`
-### SAS output: `r ti(tx, 17)`
-`r ou(12)`
-`r no(tx, part=2)`
-### SAS output: `r ti(tx, 17)`
-`r ou(13)`
-`r no(tx, part=3)`
-
-### SAS code, `r ti(tx, 18)` <!--modify correlations-->
-`r co(tx)`
-`r no(tx, part=1)`
-### SAS output: `r ti(tx, 18)`
-`r ou(14)`
-`r no(tx, part=2)`
-### SAS output: `r ti(tx, 18)`
-`r ou(15)`
-`r no(tx, part=2)`
-
-
-### SAS code, Simple scatterplot
-
-### SAS output, Simple scatterplot
-`r ou(16)`
-
-### SAS code, Linear trend line
-
-### SAS output, Simple scatterplot with linear trend
-`r ou(17)`
-
-### SAS code, Smooth curve
-
-### SAS output, Simple scatterplot with smooth curve
-`r ou(18)`
+`r add_chunks(16:22, tx)`
 
 ### Don't forget!
 

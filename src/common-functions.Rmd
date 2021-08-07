@@ -22,6 +22,104 @@ zpad <- function(i) {ifelse(i<10, paste0("0", i), paste0(i))}
 `%[]%` <- function(x, y) {paste0(x, "[", y, "]")}
 ```
 
+```{r add_chunk}
+# There are four chunks in the SAS code. The 
+# "part" chunk gives a title for a piece of sas
+# code. The "notes" chunk provides commentary
+# intended to follow a piece of SAS code. The
+# "output" chunk provides commentary for a page
+# of SAS output. The fourth chunk is SAS code.
+#
+# There are a few rules to follow.
+#
+# 1. Any chunk,other than the first one, has to 
+# be preceded by TWO blank lines.
+#
+# 2. The program has to start with a "part" 
+# chunk, followed by a code chunk.
+#
+# 3. You can't have two consecutive "notes"
+# chunks.
+#
+# 4. You can't have more "ouptut" chunks than
+# there are pages in the output.
+#
+# To process a "part" chunk, just store the
+# results in a variable named "ti". This becomes
+# the title of every PowerPoint slide until you
+# encounter another "part" chunk.
+#
+# To process a "code" chunk, prefix it with
+# "### SAS code: " followed by the current
+# title. Then surround the code chunk with
+# "```{} and "```".
+# 
+# To process a "notes" chunk, surround the code
+# with "<div class="notes"> and "<\div>".
+#
+# To process an "output" chunk, prefix it with
+# "### SAS output: " followed by the current 
+# title, followed by "![SAS output](fn)" where
+# fn points to the apporpriate page of SAS 
+# output.
+
+add_chunk <- function(i, tx=tx) {
+  
+  if (i>length(tx)) {return("###" %0% i %0% " out of bounds.")}
+
+  if(str_detect(tx[i], "^* Part")) {
+    ti <<- tx[[i]] %>% 
+      str_remove("^\\* Part..\\. ") %>%
+      str_remove(";$")
+    return("\n\n")
+  }
+  
+  if(str_detect(tx[i], "^* Notes")) {
+    tx[i] %>%
+      str_remove("^\\* ") -> md
+    '<div class="notes"> ' %0% i %2%
+    md %2%
+    '</div>\n\n' -> md
+    return(md)
+  }
+
+  if(str_detect(tx[i], "Output, page")) {
+    output_page <<- output_page+1
+    tx[i] %>%
+      str_remove("^\\* ") -> md
+    "### SAS output: " %0% 
+      ti %2%
+      '![SAS output](../images/' %0% 
+      file_prefix %0% 
+      '_' %0% 
+      zpad(output_page) %0%
+      '.png)' %2%
+    '<div class="notes"> ' %0% i %2%
+    md %2%
+    '</div>\n\n' -> md
+      
+    return(md)
+  }
+
+  "### SAS code: " %0% ti %2% "```{}" %1% tx[i] %1% "```\n\n" -> md
+  return(md)
+}
+
+add_chunks <- function(i_range, tx=tx) {
+  "Part" %0% zpad(min(i_range)) -> s1
+  "Part" %0% zpad(max(i_range)+1) -> s2
+  
+  j1 <- str_which(tx, s1)
+  j2 <- str_which(tx, s2)-1
+
+  md <- NULL
+  for (i in j1:j2) {
+    md <- md %0% add_chunk(i, tx)
+  }
+  return(md)
+}
+```
+
 ```{r add_links}
 add_links <- function(md, keyword, folder="modules/") {
   # add links to the bottom of a markdown file
