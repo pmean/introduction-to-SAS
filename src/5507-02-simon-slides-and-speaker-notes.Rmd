@@ -21,7 +21,7 @@ tx <- readLines(sas_file)
 tx %>%
   str_subset("^\\* ") %>%
   paste(collapse="\n\n") -> general_structure
-tx %<>% str_trim %>% paste0(collapse="\n") %>% str_split("\n\n\n") %>% unlist
+tx %<>% str_trim(side="right") %>% paste0(collapse="\n") %>% str_split("\n\n\n") %>% unlist
 output_page <- 0
 ```
 

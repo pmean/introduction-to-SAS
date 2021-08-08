@@ -63,46 +63,52 @@ zpad <- function(i) {ifelse(i<10, paste0("0", i), paste0(i))}
 # fn points to the apporpriate page of SAS 
 # output.
 
+add_title <- function(md1, md2="") {"\n\n### " %0% md1 %0% md2 %0% "\n\n"}
+add_code  <- function(md) {"\n\n```{}" %2% md %2% "```\n\n"}
+add_notes <- function(md) {'\n\n<div class="notes"> ' %2% md %2% '</div>\n\n'}
+add_image <- function(prefix, output_page) {
+  '![SAS output](../images/' %0% 
+  file_prefix %0% 
+  '_' %0% 
+  zpad(output_page) %0%
+  '.png)'
+
+}
+
+clean_tx <- function(md) {
+  md %>%
+    str_replace("^\\* Part", "Part") %>% 
+    str_replace("^\\* Notes", "Notes") %>% 
+    str_replace("^\\* Output", "Output") %>% 
+    str_remove(";$")
+}
+
 add_chunk <- function(i, tx=tx) {
   
-  if (i>length(tx)) {return("###" %0% i %0% " out of bounds.")}
-
-  if(str_detect(tx[i], "^* Part")) {
-    ti <<- tx[[i]] %>% 
-      str_remove("^\\* Part..\\. ") %>%
-      str_remove(";$")
+  if (i>length(tx)) {return("\n\n### " %0% i %0% " out of bounds.")}
+  md <- clean_tx(tx[i])
+  # md <- tx[i]
+  
+  if(str_detect(md, "Part")) {
+    ti <<- md
     return("\n\n")
   }
   
-  if(str_detect(tx[i], "^* Notes")) {
-    tx[i] %>%
-      str_remove("^\\* ") -> md
-    '<div class="notes"> ' %0% i %2%
-    md %2%
-    '</div>\n\n' -> md
-    return(md)
+  if(str_detect(md, "Notes")) {
+    add_notes(md) -> x
+    return(x)
   }
 
-  if(str_detect(tx[i], "Output, page")) {
+  if(str_detect(md, "Output")) {
     output_page <<- output_page+1
-    tx[i] %>%
-      str_remove("^\\* ") -> md
-    "### SAS output: " %0% 
-      ti %2%
-      '![SAS output](../images/' %0% 
-      file_prefix %0% 
-      '_' %0% 
-      zpad(output_page) %0%
-      '.png)' %2%
-    '<div class="notes"> ' %0% i %2%
-    md %2%
-    '</div>\n\n' -> md
-      
-    return(md)
+    
+    add_title("SAS Output: ", ti) %2%
+    add_image(prefix, output_page) %2%
+    add_notes(md) -> x
+    return(x)
   }
 
-  "### SAS code: " %0% ti %2% "```{}" %1% tx[i] %1% "```\n\n" -> md
-  return(md)
+  add_title("SAS code: ", ti) %2% add_code(md) %>% return
 }
 
 add_chunks <- function(i_range, tx=tx) {
