@@ -12,15 +12,18 @@ knit: (function(inputFile, encoding) {
 ```
 
 ```{r}
-tx <- readLines("5507-05-simon-working-with-mix-of-variables.sas")
+file_prefix <- "5507-05-simon-working-with-mix-of-variables"
+sas_file <- paste0(file_prefix, ".sas")
+tx <- readLines(sas_file)
 ```
 
 ```{r show-general-structure}
 tx %>%
   str_subset("^\\* ") %>%
   paste(collapse="\n\n") -> general_structure
+tx %<>% str_trim(side="right") %>% paste0(collapse="\n") %>% str_split("\n\n\n") %>% unlist
+output_page <- 0
 ```
-
 
 ### Overview
 
@@ -41,44 +44,9 @@ license: public domain
 
 Here is an overview of what I want to cover in module05. 
 
-[For my own use]General structure of this program.
-
-`r general_structure`
-
 </div>
 
-### SAS code: `r ti(tx, 0)` <!--documentation header-->
-`r co(tx)`
-`r no(tx)`
-
-### SAS code: `r ti(tx, 1)` <!--where to find and store things-->
-`r co(tx)`
-`r no(tx)`
-
-### SAS code: `r ti(tx, 2)` <!--label-->
-`r co(tx)`
-`r no(tx)`
-
-### SAS code: `r ti(tx, 3)` <!--read-->
-`r co(tx)`
-`r no(tx)`
-
-### SAS code: `r ti(tx, 4)` <!--print-->
-`r co(tx)`
-`r no(tx, part=1)`
-### SAS output: `r ti(tx, 4)`
-`r ou(1)`
-`r no(tx, part=2)`
-
-### SAS code: `r ti(tx, 5)` <!--means and freqs-->
-`r co(tx)`
-`r no(tx, part=1)`
-### SAS output: `r ti(tx, 5)`
-`r ou(2)`
-`r no(tx, part=2)`
-### SAS output: `r ti(tx, 5)`
-`r ou(3)`
-`r no(tx, part=2)`
+`r add_chunks(0:5, tx)`
 
 ### Break #1
 + What have you learned
@@ -86,52 +54,23 @@ Here is an overview of what I want to cover in module05.
 + What's next
   + Correlations and scatterplots
 
-### SAS code: `r ti(tx, 6)` <!--corr-->
-`r co(tx)`
-`r no(tx, part=1)`
-### SAS output: `r ti(tx, 6)`
-`r ou(4)`
-`r no(tx, part=2)`
-
-### SAS code: `r ti(tx, 7)` <!--scatter-->
-`r co(tx)`
-`r no(tx, part=1)`
-### SAS output: `r ti(tx, 7)`
-`r ou(5)`
-`r no(tx, part=2)`
-
-### SAS code: `r ti(tx, 8)` <!--loess-->
-`r co(tx)`
-`r no(tx, part=1)`
-### SAS output: `r ti(tx, 8)`
-`r ou(6)`
-`r no(tx, part=2)`
+`r add_chunks(6:8, tx)`
 
 ### Break #2
 + What have you learned
   + Correlations and scatterplots
-+ Wht's next
++ What's next
   + Boxplots
-
-### SAS code: `r ti(tx, 9)` <!--vbox-->
-`r co(tx)`
-`r no(tx, part=1)`
-### SAS output: `r ti(tx, 9)`
-`r ou(7)`
-`r no(tx, part=2)`
-
+  
+`r add_chunks(9:9, tx)`
+  
 ### Break #3
 + What have you learned
   + Boxplots
 + What's next
   + Means by group
 
-### SAS code: `r ti(tx, 10)` <!--by-->
-`r co(tx)`
-`r no(tx, part=1)`
-### SAS output: `r ti(tx, 10)`
-`r ou(8)`
-`r no(tx, part=2)`
+`r add_chunks(10:10, tx)`
 
 ### Break #4
 + What have you learned
@@ -139,15 +78,7 @@ Here is an overview of what I want to cover in module05.
 + What's next
   + Investigating an odd association
 
-### SAS code: `r ti(tx, 11)` <!--sgplot and means-->
-`r co(tx)`
-`r no(tx, part=1)`
-### SAS output: `r ti(tx, 11)`
-`r ou(9)`
-`r no(tx, part=2)`
-### SAS output: `r ti(tx, 11)`
-`r ou(10)`
-`r no(tx, part=3)`
+`r add_chunks(11:11, tx)`
 
 ### Summary
 + Reviewing descriptive statistcs
@@ -155,3 +86,21 @@ Here is an overview of what I want to cover in module05.
 + Boxplots
 + Means by group
 + Investigating an odd association
+
+
+```{r quality-check}
+fn <- "../results/qc05_chunks.txt"
+qc <- "QC check of chunks\n"
+for (i in 0:11) {
+  qc %<>% append("\n<!--Chunk " %0% i %0% "-->\n")
+  qc %<>% append(add_chunks(i:i, tx))
+}
+writeLines(qc, con=fn)
+fn <- "../results/qc05_tx.txt"
+qc <- "QC check of tx\n"
+for (i in 1:length(tx)) {
+  qc %<>% append("\n<!--Tx " %0% i %0% "-->\n")
+  qc %<>% append(tx[i])
+}
+writeLines(qc, con=fn)
+```

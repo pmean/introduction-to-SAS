@@ -1,5 +1,11 @@
+QC check of tx
+
+
+<!--Tx 1-->
+
 * Part00. Documentation header;
 
+<!--Tx 2-->
 
 * 5507-05-simon-working-with-a-mix-of-variables.sas
 author: Steve Simon
@@ -11,14 +17,17 @@ continuous variables.
 
 license: public domain;
 
+<!--Tx 3-->
 
 * Notes00 This is the standard documentation header.;
 
+<!--Tx 4-->
 
 * Part01. Tell SAS where to find and store things.;
 
+<!--Tx 5-->
 
-options papersize=(6in 4in); 
+options papersize=(6in 4in);
 * This needed to have the output fit on PowerPoint;
 
 %let path=q:/introduction-to-sas;
@@ -32,18 +41,19 @@ filename raw_data
 libname perm
   "&path/data";
 
+<!--Tx 6-->
 
-* Notes01. You should already be familiar with 
+* Notes01. You should already be familiar with
 this. The filename statement tells you where
 the raw data is stored. The libname statement
-tells you where SAS will store any permanent 
-datsets. The ods statement tells you that SAS is 
-going to store the results with a particular 
+tells you where SAS will store any permanent
+datsets. The ods statement tells you that SAS is
+going to store the results with a particular
 filename and in pdf format.
 
 Today, you will analyze some data sets
-that have a mix of categorical and 
-continuous variables. The first data 
+that have a mix of categorical and
+continuous variables. The first data
 set looks at pulmonary function in a
 group of children.
 
@@ -53,9 +63,11 @@ You can find a description of this data set at
 
 ;
 
+<!--Tx 7-->
 
 * Part02. Label your categorical variables;
 
+<!--Tx 8-->
 
 proc format;
   value fsex
@@ -68,14 +80,17 @@ proc format;
   ;
 run;
 
+<!--Tx 9-->
 
 * Notes02. There are several categorical
 variables in this data set with number codes,
 so you should define labels for those codes.;
 
+<!--Tx 10-->
 
 * Part03. Reading the data using a data step;
 
+<!--Tx 11-->
 
 data perm.fev;
   infile raw_data delimiter="," firstobs=2;
@@ -89,49 +104,56 @@ data perm.fev;
   ;
 run;
 
+<!--Tx 12-->
 
 * Notes03. The data file is comma delimited and
 the first row includes variable names.
 
 Normally, this means that you can save a bit of
 time by using proc import, but I chose to read
-in the data using a data step. The number of 
+in the data using a data step. The number of
 variables was so small that this didn't matter
-that much. It also allowed me to define 
+that much. It also allowed me to define
 variable labels in the initial data step rather
 than later.;
 
+<!--Tx 13-->
 
 * Part04. Print the first ten rows of data;
 
+<!--Tx 14-->
 
 proc print
     data=perm.fev(obs=10);
-  format 
-    sex fsex. 
+  format
+    sex fsex.
     smoke fsmoke.
   ;
   title1 "Pulmonary function study";
   title2 "Listing of first ten rows of fev data";
 run;
 
+<!--Tx 15-->
 
 * Notes04. It's always a good idea to peek at
 the first few rows of data.
 
+<!--Tx 16-->
 
-Output, page 1. There are no obvious problems 
+Output, page 1. There are no obvious problems
 with this dataset.;
 
+<!--Tx 17-->
 
 * Part05. Proc freq and proc means;
 
+<!--Tx 18-->
 
 proc freq
     data=perm.fev;
   tables sex smoke / missing;
-  format 
-    sex fsex. 
+  format
+    sex fsex.
     smoke fsmoke.
   ;
   title2 "Frequency counts";
@@ -144,31 +166,36 @@ proc means
   title2 "Descriptive statistics";
 run;
 
+<!--Tx 19-->
 
-* Notes05. There is a mix of categorical and 
+* Notes05. There is a mix of categorical and
 continuous variables in this data set. Recall
 that you use proc freq for categorical
-variables and proc means for continuous 
+variables and proc means for continuous
 variables. Always get in the habit of checking for
 missing values.
 
+<!--Tx 20-->
 
 Output, page 2. Look for problems. This could mean
-a lot more categories than you expected, a 
+a lot more categories than you expected, a
 particular category level that is unexpectedly
-small, or multiple categories caused by 
+small, or multiple categories caused by
 misspelling or inconsistent capitalization. There
 are no problems here.
 
+<!--Tx 21-->
 
-Output, page 3. Look for minimum or maximum values 
+Output, page 3. Look for minimum or maximum values
 that are unusual. Also make sure that you don't have
 a continuous variable that is constant (zero
 variation).;
 
+<!--Tx 22-->
 
 * Part06. Pearson correlation, proc corr;
 
+<!--Tx 23-->
 
 title2 "Correlations";
 proc corr
@@ -177,16 +204,18 @@ proc corr
   var age fev ht;
 run;
 
+<!--Tx 24-->
 
-* Notes06. The Pearson correlation coefficient 
-gives you a numeric measure of the 
+* Notes06. The Pearson correlation coefficient
+gives you a numeric measure of the
 strength of association between two
 continuous variables.
 
+<!--Tx 25-->
 
 * Output, page 4. Remember the cut-offs. A
 correlation between +0.7 and 1.0 implies a
-strong positive association. A correlation 
+strong positive association. A correlation
 between +0.3 and +0.7 implies a weak positive
 association. A correlation between -0.3 and
 +0.3 implies little or no association. A
@@ -195,9 +224,11 @@ weak negative association. A correlation
 between -0.7 and -1.0 implies a strong
 negative association.;
 
+<!--Tx 26-->
 
 * Part07. Scatterplot, proc sgplot;
 
+<!--Tx 27-->
 
 title2 "Scatterplots";
 proc sgplot
@@ -205,42 +236,50 @@ proc sgplot
   scatter x=ht y=fev;
 run;
 
+<!--Tx 28-->
 
 * Notes07. You should also examine the association
 between continuous variables using a scatterplot.
 
+<!--Tx 29-->
 
 Output, page 5. I am only showing the plot of ht
 versus fev, but you should also examine the plot
 of age versus fev.;
 
+<!--Tx 30-->
 
 * Part08. Scatterplot, smoothing curve;
 
+<!--Tx 31-->
 
 title3 "with loess, smooth=0.1";
 proc sgplot
     data=perm.fev;
   scatter x=ht y=fev;
-  loess x=ht y=fev / 
-    nomarkers 
+  loess x=ht y=fev /
+    nomarkers
     smooth=0.1
     lineattrs=(color=Red);
 run;
 
+<!--Tx 32-->
 
 * Notes08. Sometimes a trend line can help. You
-should consider a smoothing method like loess or 
+should consider a smoothing method like loess or
 pbspline, as this will help you visualize any
 potential nonlinear relationships.
 
+<!--Tx 33-->
 
 Output, page 6. The relationship looks reasonably
 close to linear.;
 
+<!--Tx 34-->
 
 * Part09. Boxplot, proc sgplot;
 
+<!--Tx 35-->
 
 title2 "Boxplots";
 proc sgplot
@@ -249,17 +288,19 @@ proc sgplot
   format smoke fsmoke.;
 run;
 
+<!--Tx 36-->
 
 * Notes09. When you want to look at a relationship
 between a categorical variable and a continuous
 variable, you should use a boxplot. Notice that
-you use proc sgplot for both a scatterplot and a 
+you use proc sgplot for both a scatterplot and a
 boxplot. This is a big improvement over previous
-methods in SAS to produce plots because it is 
+methods in SAS to produce plots because it is
 easier to learn one procedure and minor variations
 in that procedure rather than having to learn
 multiple procedures.
 
+<!--Tx 37-->
 
 Output, page 7. The bottom and top of the boxplot
 represents the 25th and 75th percentiles,
@@ -270,9 +311,11 @@ data points. Notice the discrepancy in fev.
 Smokers seem to have a much higher FEV than
 non-smokers. This is quite surprising.;
 
+<!--Tx 38-->
 
 * Part10. Descriptive statistics, by statement;
 
+<!--Tx 39-->
 
 proc sort
     data=perm.fev;
@@ -287,18 +330,22 @@ proc means
   title2 "Descriptive statistics by group";
 run;
 
+<!--Tx 40-->
 
 * Notes10. Also look at how the means and standard
 deviations of your continuous variable change for
 each level of your categorical variable.
 
+<!--Tx 41-->
 
-Output, page 8. Notice again the discrepancy in 
+Output, page 8. Notice again the discrepancy in
 fev by smoking status. This is quite surprising.;
 
+<!--Tx 42-->
 
 * Part11. Investigate unusual trend, proc sgplot and means;
 
+<!--Tx 43-->
 
 proc sgplot
     data=perm.fev;
@@ -322,16 +369,19 @@ run;
 
 ods pdf close;
 
+<!--Tx 44-->
 
-* Notes11. This is very odd. You can get a hint as 
+* Notes11. This is very odd. You can get a hint as
 to why smokers might have higher fev values than
 non-smokers by looking at how height and smoking
 status are related.
 
+<!--Tx 45-->
 
-Output, page 9. Smokers are taller than 
+Output, page 9. Smokers are taller than
 non-smokers, and by quite a bit.
 
+<!--Tx 46-->
 
 Output, page 10. These statistics show the same
 trend. It is obvious that smoking is confined to
@@ -339,9 +389,10 @@ mostly older children. And since the older
 children are bigger, that may explain the odd
 relationship we saw earlier. You should also
 examine the relationship between sex and fev.
-Do this on your own, but there is no need to 
+Do this on your own, but there is no need to
 turn anything in. ;
 
+<!--Tx 47-->
 
 * Part12. End of program.;
 
