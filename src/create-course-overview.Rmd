@@ -43,8 +43,8 @@ for (module in modules) {
 ```
 
 ```{r}
-for (keyword in keywords) {
-  course_overview %<>% paste0("\n\n", add_links(md_files, keyword))
+for (md_file in md_files) {
+  course_overview %<>% paste0("\n\n", add_links(md_file, ""))
 }
 ```
 
