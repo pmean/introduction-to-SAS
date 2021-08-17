@@ -17,6 +17,10 @@ date: Created 2021-08-02
 
 This page is available both on Canvas and [my github site][git0]. If you find a discrepancy let me know. The Canvas site should always take precedence.
 
+Here are links to [other important files][mygit] on my github site.
+
+[mygit]: https://github.com/pmean/introduction-to-SAS/blob/master/README.md
+
 [git0]: https://github.com/pmean/introduction-to-SAS/blob/master/modules/5507-01-readings.md
 
 [hem1]: https://blogs.sas.com/content/sasdummy/2016/04/24/how-to-run-sas-programs-in-jupyter-notebook/

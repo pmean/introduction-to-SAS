@@ -20,3 +20,7 @@ knit: (function(inputFile, encoding) {
 + delimiter
 + getnames
 + proc import
+
+Here are links to [other important files][readme] on my github site.
+
+[readme]: https://github.com/pmean/introduction-to-SAS/blob/master/README.md

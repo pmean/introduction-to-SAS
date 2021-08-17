@@ -20,4 +20,6 @@ Here are some elements that you need in your final project.
 
 + Feel free to include a few other tables or graphs if you feel they are appropriate. The total number of pages in your report should be ten pages or less.
 
- 
+Here are links to [other important files][readme] on my github site.
+
+[readme]: https://github.com/pmean/introduction-to-SAS/blob/master/README.md

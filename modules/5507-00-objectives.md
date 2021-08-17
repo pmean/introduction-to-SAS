@@ -15,3 +15,6 @@ knit: (function(inputFile, encoding) {
 + what belongs in a data dictionary
 + simple computing practices to make your research more reproducible.
 
+Here are links to [other important files][mygit] on my github site.
+
+[mygit]: https://github.com/pmean/introduction-to-SAS/blob/master/README.md

@@ -38,3 +38,7 @@ knit: (function(inputFile, encoding) {
 + scatter
 + where
 + with
+
+Here are links to [other important files][readme] on my github site.
+
+[readme]: https://github.com/pmean/introduction-to-SAS/blob/master/README.md

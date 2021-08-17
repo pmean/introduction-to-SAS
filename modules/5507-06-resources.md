@@ -15,7 +15,13 @@ if you use this material, but this is not required.
 
 
 
-This file was last updated on 2021-08-01. You can find this file on [my github site][mygit].
+This file was last updated on 2021-08-01. You can find this file on [my github site][mygit]. Here are links to [other important files][mygit] on my github site.
+
+[mygit]: https://github.com/pmean/introduction-to-SAS/blob/master/README.md
+
+
+
+
 
 ### Resources for Module06
 

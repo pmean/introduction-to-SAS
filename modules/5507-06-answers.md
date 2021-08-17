@@ -19,6 +19,10 @@ Here are the answers to the homework assignment. Please note that you are requir
 + Click [here][m06q02a] for the code and
 + click [here][m06q02b] for the output.
 
+Here are links to [other important files][readme] on my github site.
+
+[readme]: https://github.com/pmean/introduction-to-SAS/blob/master/README.md
+
 [m06q01a]: 
 [m06q02a]: 
 [m06q01b]: 

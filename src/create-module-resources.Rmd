@@ -66,16 +66,23 @@ for (module in modules) {
     paste0("Homework solutions, SAS code and output\n") %>%
     paste0("\n", bullet(hlist)) %>%
     
-    paste0("\n\nThis file was last updated on ", Sys.Date()) %>%
-    paste0(". You can find this file on [my github site][mygit].") %>%
+    paste0("\n\nThis file was automatically generated") %>%
+    paste0(" by create-module-resources.Rmd") %>%
+    paste0(" and was last updated on ", Sys.Date()) %>%
+    paste0(". On my github site, you can find [this file][thisf]") %>%
+    paste0(" and [links to other important files][mygit].") %>%
       
     paste0("\n\n<!---my git--->") %>%
-    paste0("\n[mygit]: ") %>%
+    paste0("\n[thisf]: ") %>%
     paste0(prefix) %>%
     paste0("modules/5507-") %>%
     paste0(module) %>%
     paste0("-resources.md") %>%
     
+    paste0("\n[mygit]: ") %>%
+    paste0(prefix) %>%
+    paste0("README.md") %>%
+
     paste0("\n\n<!---pdf_h--->") %>%
     paste0("\n", add_links(pdf_h_subset, "pdf", "results/")) %>%
 

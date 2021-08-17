@@ -14,5 +14,9 @@ You should start out slowly. There is a very small SAS program that I show. See 
 
 This page is available both on Canvas and [my github site][git0]. If you find a discrepancy let me know. The Canvas site should always take precedence.
 
+Here are links to [other important files][mygit] on my github site.
+
+[mygit]: https://github.com/pmean/introduction-to-SAS/blob/master/README.md
+
 [git0]: https://github.com/pmean/introduction-to-SAS/blob/master/modules/5507-01-overview.md
 

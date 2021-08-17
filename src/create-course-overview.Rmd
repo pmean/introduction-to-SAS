@@ -29,7 +29,9 @@ readLines("create-course-overview.txt") %>%
 ```
 
 ```{r}
-course_overview %<>% paste0("\n\nThis file was last updated on ", Sys.Date())
+course_overview %<>% paste0("\n\nThis file was automatically generated")
+course_overview %<>% paste0(" by create-course-overview.Rmd")
+course_overview %<>% paste0(" and was last updated on ", Sys.Date())
 ```
 
 ```{r}

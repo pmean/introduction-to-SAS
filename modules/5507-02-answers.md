@@ -38,6 +38,10 @@ Here are the answers to the homework assignment. Please note that you are requir
 + Click [here][m02q05a] for the code and
 + click [here][m02q05b] for the output.
 
+Here are links to [other important files][readme] on my github site.
+
+[readme]: https://github.com/pmean/introduction-to-SAS/blob/master/README.md
+
 [m02q01a]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m02-5507-simon-hw02b-q1.sas
 [m02q02a]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m02-5507-simon-hw02b-q2.sas
 [m02q03a]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m02-5507-simon-hw02b-q3.sas

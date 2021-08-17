@@ -31,6 +31,10 @@ This file was last updated on 2021-08-01. You can find this file on [my github s
 
 +   not yet available.<!---my git--->
 
+Here are links to [other important files][readme] on my github site.
+
+[readme]: https://github.com/pmean/introduction-to-SAS/blob/master/README.md
+
 [mygit]: https://github.com/pmean/introduction-to-SAS/blob/master/modules/5507-00-resources.md
 
 <!---pdf_h--->

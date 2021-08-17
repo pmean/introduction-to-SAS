@@ -34,6 +34,9 @@ Here are the answers to the homework assignment. Please note that you are requir
 + Click [here][code0405] for the code and
 + click [here][outp0405] for the output.
 
+Here are links to [other important files][readme] on my github site.
+
+[readme]: https://github.com/pmean/introduction-to-SAS/blob/master/README.md
 
 [code0401]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m04-5507-simon-hw04-q1.sas 
 [code0402]: https://github.com/pmean/introduction-to-SAS/blob/master/src/m04-5507-simon-hw04-q2.sas 
