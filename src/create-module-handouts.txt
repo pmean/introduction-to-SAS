@@ -1,9 +1,9 @@
 ---
-title: "MEDB 5508: Introduction to SQL, Modulexx handouts"
+title: "MEDB 5507: Introduction to SAS, Modulexx handouts"
 author: "Steve Simon"
 output: html_document
 ---
 
-<!--This file was first created on 2021-08-23.-->
+<!--This file was first created on 2021-08-24.-->
 
-This page shows the links to important files used in the individual modules of MEDB 5508, Introduction to SQL, taught by Suman Sahil and Steve Simon. 
+This page shows the links to important files used in the individual modules of MEDB 5507, Introduction to SAS, taught by Steve Simon. 
