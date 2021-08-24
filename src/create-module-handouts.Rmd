@@ -1,0 +1,112 @@
+---
+title: "Create overviews of key files for each module"
+author: "Steve Simon"
+date: "Created 2021-08-24"
+output: html_document
+---
+
+```{r common-code, child="common-functions.Rmd"}
+```
+
+```{r}
+list.files(path="../results", pattern="\\.pdf") %>%
+  str_subset("m..-vi") -> pdf_v
+
+list.files(path="../results", pattern="\\.pptx") %>%
+  str_subset("m..-vi") -> ppt_v
+
+list.files(path="../src", pattern="\\.Rmd") %>%
+  str_subset("m..-vi") -> rmd_v
+
+list.files(path="../src", pattern="\\.sas") %>%
+  str_subset("m..-vi") -> sas_v
+
+pdf_v %>% data.frame %>% set_names("pdf_v") %>% kable
+ppt_v %>% data.frame %>% set_names("ppt_v") %>% kable
+rmd_v %>% data.frame %>% set_names("rmd_v") %>% kable
+sas_v %>% data.frame %>% set_names("sas_h") %>% kable
+```
+
+```{r constants}
+modules <- zpad(1:8)
+prefix <- 'https://github.com/pmean/introduction-to-sql/blob/master/'
+```
+
+```{r write-module-resources}
+for (i in 1:length(modules)) {
+  module <- modules[i]
+  module_num <- paste0("Module", module)
+  pdf_v %>% str_subset(paste0("-m", module, "-")) -> pdf_v_subset
+  ppt_v %>% str_subset(paste0("-m", module, "-")) -> ppt_v_subset
+  rmd_v %>% str_subset(paste0("-m", module, "-")) -> rmd_v_subset
+  sas_v %>% str_subset(paste0("-m", module, "-")) -> sas_v_subset
+  filename <- str_replace("../modules/5508-xx-handouts.md", "xx", module)
+
+  vlist <- sort(c(rmd_v_subset, sas_v_subset))
+  
+  # resources_intro
+  readLines("create-module-handouts.txt") %>%
+    paste0(collapse="\n")  %>%
+    str_replace("xx", module) %>%
+    paste0("\n\n#### Handouts for ") %>%
+    paste0(module_num) -> resources_intro
+
+  # resources_slides
+  paste0("<!--resources-slides-1-->\n") %>%
+    paste0("\n\n") %>%
+    paste0("Here are slides used in the videos (pdf format).\n") %>%
+    paste0("\n", bullet(pdf_v_subset)) %>%
+    
+    paste0("\n\n") %>%
+    paste0("Here are slides used in the videos (pptx format).\n") %>%
+    paste0("\n", bullet(ppt_v_subset)) %>%
+    
+    paste0("\n\n") %>%
+    paste0("Here are R and SAS programs used in the videos.\n") %>%
+    paste0("\n", bullet(rmd_v_subset)) -> resources_slides_1
+    
+  paste0("\n\n<!---pdf_v--->") %>%
+    paste0("\n", add_links(pdf_v_subset, "pdf", "results/")) %>%
+
+    paste0("\n\n<!---ppt_v--->") %>%
+    paste0("\n", add_links(ppt_v_subset, "ppt", "results/")) %>%
+    
+    paste0("\n\n<!---vlist--->") %>%
+    paste0("\n", add_links(vlist, "", "src/")) -> resources_slides_2
+
+  # resources_conclusion
+  paste0("This information is also available on ") %>%
+    paste0("[my github site][thisf].\n\n") %>%
+    paste0("This file was automatically generated ") %>%
+    paste0("by create-module-resources.Rmd ") %>%
+    paste0("and was last updated on ", Sys.Date()) %>%
+    paste0(".\n\n") %>%
+    paste0("The readme.md file on my github site has ") %>%
+    paste0("[links to other important files][mygit].") %>%
+      
+    paste0("\n\n<!---my git--->") %>%
+    paste0("\n[thisf]: ") %>%
+    paste0(prefix) %>%
+    paste0("modules/5508-") %>%
+    paste0(module) %>%
+    paste0("-handouts.md") %>%
+    
+    paste0("\n[mygit]: ") %>%
+    paste0(prefix) %>%
+    paste0("README.md") -> resources_conclusion
+
+  resources_intro %>% 
+    paste0("\n\n") %>%
+    paste0(resources_slides_1) %>%
+    paste0("\n\n") %>%
+    paste0(resources_conclusion) %>%
+    paste0("\n\n") %>%
+    paste0(resources_slides_2) %>%
+    paste0("\n\n") -> resources_text
+  
+  resources_text %>% cat
+  resources_text %>% writeLines(filename)
+}
+```
+
+

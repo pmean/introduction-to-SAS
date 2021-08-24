@@ -1,0 +1,9 @@
+---
+title: "MEDB 5507: Introduction to SAS, Modulexx, answers to the homework"
+author: "Steve Simon"
+output: html_document
+---
+
+<!--This file was first created on 2021-08-24-->
+
+This page shows the links to code and output to answer questions in the homework assignments for Modulexx of MEDB 5507, Introduction to SAS, taught by Steve Simon. 

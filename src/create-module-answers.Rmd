@@ -1,0 +1,99 @@
+---
+title: "Create overviews of homework answers for each module"
+author: "Steve Simon"
+date: "Created 2021-07-28"
+output: html_document
+---
+
+```{r common-code, child="common-functions.Rmd"}
+```
+
+```{r}
+list.files(path="../src", pattern="\\.sas") %>%
+  str_subset("-simon-hw-") -> sas_h
+
+list.files(path="../results", pattern="\\.pdf") %>%
+  str_subset("-simon-hw-") -> sas_o
+
+sas_h %>% data.frame %>% set_names("sas_h") %>% kable
+sas_o %>% data.frame %>% set_names("sas_o") %>% kable
+```
+
+```{r constants}
+modules <- zpad(1:5)
+prefix <- 'https://github.com/pmean/introduction-to-sas/blob/master/'
+```
+
+```{r write-module-resources}
+for (i in 1:length(modules)) {
+  module <- modules[i]
+  module_num <- paste0("Module", module)
+  sas_h %>% str_subset(paste0("-", module, "-")) -> sas_h_subset
+  sas_o %>% str_subset(paste0("-", module, "-")) -> sas_o_subset
+  filename <- str_replace("../modules/5507-xx-answers.md", "xx", module)
+
+  hlist <- sort(c(sas_h_subset, sas_o_subset))
+
+  # resources_intro
+  readLines("create-module-answers.txt") %>%
+    paste0(collapse="\n")  %>%
+    str_replace("xx", module) %>%
+    paste0("\n\n#### Homework answers for ") %>%
+    paste0(module_num) %>%
+    paste("\n\n") -> resources_intro
+
+  # resources_homework
+  resources_homework_1 <- "<!--resources-homework-1-->"
+  resources_homework_2 <- "<!--resources-homework-2-->"
+  if (length(hlist) > 0) {
+    resources_homework_1 %>%
+      paste0("\n\n") %>%
+      paste0("Here are the homework solutions (code and output) ") %>%
+      paste0("from the previous module. ") %>%
+      paste0("Compare your code to ours, ") %>%
+      paste0("but only after submitting your work.\n") %>%
+      paste0("\n", bullet(hlist)) -> resources_homework_1
+    
+    resources_homework_2 %>%
+      paste0("\n\n<!---sas_o--->") %>%
+      paste0("\n", add_links(sas_o_subset, "pdf", "results/")) %>%
+    
+      paste0("\n\n<!---sas_h--->") %>%
+      paste0("\n", add_links(sas_h_subset, "sas", "src/")) %>%
+    
+      paste0("\n\n") -> resources_homework_2
+  }
+  
+  paste0("This information is also available on ") %>%
+    paste0("[my github site][thisf].\n\n") %>%
+    paste0("This file was automatically generated ") %>%
+    paste0("by create-module-resources.Rmd") %>%
+    paste0("and was last updated on ", Sys.Date()) %>%
+    paste0(".\n\n") %>%
+    paste0("The readme.md file on my github site has ") %>%
+    paste0("[links to other important files][mygit].") %>%
+      
+    paste0("\n\n<!---my git--->") %>%
+    paste0("\n[thisf]: ") %>%
+    paste0(prefix) %>%
+    paste0("modules/5507-") %>%
+    paste0(module) %>%
+    paste0("-resources.md") %>%
+    
+    paste0("\n[mygit]: ") %>%
+    paste0(prefix) %>%
+    paste0("README.md") -> resources_conclusion
+
+  resources_intro %>% 
+    paste0(resources_homework_1) %>%
+    paste0("\n\n") %>%
+    paste0(resources_conclusion) %>%
+    paste0("\n\n") %>%
+    paste0(resources_homework_2) -> resources_text
+  
+  resources_text %>% cat
+  resources_text %>% writeLines(filename)
+}
+```
+
+
