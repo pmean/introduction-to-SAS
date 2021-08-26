@@ -27,7 +27,7 @@ rmd_v %>% data.frame %>% set_names("rmd_v") %>% kable
 sas_v %>% data.frame %>% set_names("sas_v") %>% kable
 ```
 
-```{r constants}
+```{r constants} 
 modules <- zpad(1:5)
 prefix <- 'https://github.com/pmean/introduction-to-sas/blob/master/'
 ```
