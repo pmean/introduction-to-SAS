@@ -13,15 +13,13 @@ date: Created 2021-08-02
 + Simon, Stephen. Help! My Q: drive disappeared! Available in [pdf format][sim1].
 + UMKC. Site-Licensed Software, SAS for Windows. Available in [html format][umk1].
 
-#### Note
+This information is available both in Canvas and on [my github site][thisf].
 
-This page is available both on Canvas and [my github site][git0]. If you find a discrepancy let me know. The Canvas site should always take precedence.
+If there is a discrepancy, the Canvas site takes precedence. The [readme.md file][mygit] on my github site has links to other important files for this class.
 
-Here are links to [other important files][mygit] on my github site.
-
-[mygit]: https://github.com/pmean/introduction-to-SAS/blob/master/README.md
-
-[git0]: https://github.com/pmean/introduction-to-SAS/blob/master/modules/5507-01-readings.md
+<!---my git--->
+[thisf]: https://github.com/pmean/introduction-to-sas/blob/master/modules/5507-01-readings.md
+[mygit]: https://github.com/pmean/introduction-to-sas/blob/master/README.md
 
 [hem1]: https://blogs.sas.com/content/sasdummy/2016/04/24/how-to-run-sas-programs-in-jupyter-notebook/
 [hem2]: https://www.ssc.wisc.edu/~hemken/SASworkshops/Markdown/SASmarkdown.html
