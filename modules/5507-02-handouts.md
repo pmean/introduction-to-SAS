@@ -21,7 +21,7 @@ Here are slides used in the videos (pptx format).
 
 + [5507-02-simon-slides-and-speaker-notes.pptx][slides-and-speaker-notes.pptx].
 
-Here is the R program used two create the videos.
+Here is the R program used to create the videos.
 
 + [5507-02-simon-slides-and-speaker-notes.Rmd][slides-and-speaker-notes.Rmd].
 

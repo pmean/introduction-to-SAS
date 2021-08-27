@@ -60,7 +60,7 @@ for (i in 1:length(modules)) {
     paste0("\n", bullet(ppt_v_subset)) %>%
     
     paste0("\n\n") %>%
-    paste0("Here is the R program used two create the videos.\n") %>%
+    paste0("Here is the R program used to create the videos.\n") %>%
     paste0("\n", bullet(rmd_v_subset)) %>%
 
     paste0("\n\n") %>%
