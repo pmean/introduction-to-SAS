@@ -34,7 +34,12 @@ knit: (function(inputFile, encoding) {
 + yaxis
 + ??
 
-Here are links to [other important files][readme] on my github site.
+<!---my git--->
+This information is available both in Canvas and on [my github site][thisf].
 
-[readme]: https://github.com/pmean/introduction-to-SAS/blob/master/README.md
+If there is a discrepancy, the Canvas site takes precedence. The [readme.md file][mygit] on my github site has links to other important files for this class.
+
+[thisf]: https://github.com/pmean/introduction-to-sas/blob/master/modules/5507-04-objectives.md
+[mygit]: https://github.com/pmean/introduction-to-sas/blob/master/README.md
+<!---my git--->
 
