@@ -27,10 +27,11 @@ knit: (function(inputFile, encoding) {
 + run
 + title
 
+<!---my git--->
 This information is available both in Canvas and on [my github site][thisf].
 
 If there is a discrepancy, the Canvas site takes precedence. The [readme.md file][mygit] on my github site has links to other important files for this class.
 
-<!---my git--->
 [thisf]: https://github.com/pmean/introduction-to-sas/blob/master/modules/5507-01-objectives.md
 [mygit]: https://github.com/pmean/introduction-to-sas/blob/master/README.md
+<!---my git--->
