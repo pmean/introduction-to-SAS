@@ -4,6 +4,7 @@
 * purpose: to import data in a fixed width format
 * license: public domain;
 
+
 %let path=q:/introduction-to-sas;
 
 ods pdf file=
@@ -16,6 +17,7 @@ filename raw_data
     "&path/data/fixed-width.txt";
 
 options papersize=(8in 4in) nonumber nodate;
+
 
 data perm.fixed_width;
   infile raw_data delimiter=",";

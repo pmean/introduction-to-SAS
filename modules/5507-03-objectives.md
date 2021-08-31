@@ -9,13 +9,13 @@ knit: (function(inputFile, encoding) {
 
 #### Module03, Reading a variety of different text files
 
-##### In this module, you will learn
+In this module, you will learn
 
 + How to read delimited files
 + How to read fixed width files
 + How to handle strings in your input
 
-##### You will also see the following SAS keywords and procedures
+You will also see the following SAS keywords and procedures
 
 + delimiter
 + getnames

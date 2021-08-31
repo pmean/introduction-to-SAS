@@ -4,6 +4,7 @@
 * purpose: to import a comma delimited file into SAS
 * license: public domain;
 
+
 %let path=q:/introduction-to-sas;
 
 ods pdf file=
@@ -14,6 +15,7 @@ libname perm
 
 filename raw_data
   "&path/data/tab-delimited.txt";
+
 
 data perm.tab_delimited;
   infile raw_data delimiter="09"X;

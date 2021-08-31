@@ -4,6 +4,7 @@
 * purpose: to import data with variable names on the first line
 * license: public domain;
 
+
 %let path=q:/introduction-to-sas;
 
 ods pdf file=
@@ -14,6 +15,7 @@ libname perm
 
 filename raw_data
     "&path/data/first-line-names.csv";
+
 
 proc import
     datafile=raw_data dbms=dlm

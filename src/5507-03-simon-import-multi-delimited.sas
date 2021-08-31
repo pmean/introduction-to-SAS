@@ -4,6 +4,7 @@
 * purpose: to import data with multiple blanks as delimiters
 * license: public domain;
 
+
 %let path=q:/introduction-to-sas;
 
 ods pdf file=

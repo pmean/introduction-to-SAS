@@ -6,7 +6,6 @@ knit: (function(inputFile, encoding) {
   output_dir = "../results", output_format = "all") })  
 ---
 
-
 ```{r setup, echo=FALSE}
 knitr::opts_chunk$set(echo=FALSE, comment="")
 suppressMessages(suppressWarnings(library(dplyr)))
@@ -89,22 +88,14 @@ You've already imported a file similar to this. It is a space delimited file wit
 ### Space delimited, SAS code (1/3)
 
 ```{r 5507-03-simon-import-space-delimited.sas}
-px <- function(tx, s1, s2, xtra_lines=0) {
-  tx %>% str_which(s1) -> i1
-  tx %>% str_which(s2) -> j1
-  if (length(i1)==0) return("No beginning found")
-  if (length(j1)==0) return("No ending found")
-  if (length(i1) > 1) return(paste("Multiple beginnings found:", head(i1)))
-  if (length(j1) > 1) return(paste("Multiple endings found:", head(j1)))
-  j1 <- j1 + xtra_lines
-  tx %>%
-    extract(i1:j1) %>%
-    paste0(collapse="\n") %>%
-    return
-}
 opts_current$get("label") %>%
-  readLines(warn=FALSE) -> tx
-tx %>% px("^\\* m03", "license") %>% cat
+  readLines(warn=FALSE) %>%
+  str_trim(side="right") %>%
+  paste0(collapse="\n") %>% 
+  str_split(pattern="\n\n\n") %>%
+  unlist -> tx
+
+tx[1] %>% cat
 ```
 
 <div class="notes">
@@ -116,7 +107,7 @@ Here is the SAS code to read and print this file, starting with the documentatio
 ### Space delimited, SAS code (2/3)
 
 ```{r}
-tx %>% px("%let", "txt") %>% cat
+tx[2] %>% cat
 ```
 
 <div class="notes">
@@ -128,7 +119,7 @@ Here are the lines to tell SAS where everything belongs
 ### Space delimited, SAS code (3/3)
 
 ```{r}
-tx %>% px("^data", "close;") %>% cat
+tx[3] %>% cat
 ```
 
 <div class="notes">
@@ -166,8 +157,13 @@ Here's a simple example of a comma delimited file.
 
 ```{r 5507-03-simon-import-comma-delimited.sas}
 opts_current$get("label") %>%
-  readLines(warn=FALSE) -> tx
-tx %>% px("^\\* m03", "license") %>% cat
+  readLines(warn=FALSE) %>%
+  str_trim(side="right") %>%
+  paste0(collapse="\n") %>% 
+  str_split(pattern="\n\n\n") %>%
+  unlist -> tx
+
+tx[1] %>% cat
 ```
 
 <div class="notes">
@@ -179,7 +175,7 @@ Here is the SAS code to read and print this file, starting with the documentatio
 ### Comma delimited, SAS code (2/3)
 
 ```{r}
-tx %>% px("%let", "csv") %>% cat
+tx[2] %>% cat
 ```
 
 <div class="notes">
@@ -191,7 +187,7 @@ Here are the lines to tell SAS where everything belongs
 ### Comma delimited, SAS code (3/3)
 
 ```{r}
-tx %>% px("^data", "close;") %>% cat
+tx[3] %>% cat
 ```
 
 <div class="notes">
@@ -237,8 +233,13 @@ You can also detect tabs by opening the file in a text editor like notebook and 
 
 ```{r 5507-03-simon-import-tab-delimited.sas}
 opts_current$get("label") %>%
-  readLines(warn=FALSE) -> tx
-tx %>% px("^\\* m03", "license") %>% cat
+  readLines(warn=FALSE) %>%
+  str_trim(side="right") %>%
+  paste0(collapse="\n") %>% 
+  str_split(pattern="\n\n\n") %>%
+  unlist -> tx
+
+tx[1] %>% cat
 ```
 
 <div class="notes">
@@ -252,7 +253,7 @@ This import worked fine, but beware. Some of these tab separated value files hav
 ### Tab delimited, SAS code (2/3)
 
 ```{r}
-tx %>% px("%let", "txt") %>% cat
+tx[2] %>% cat
 ```
 
 <div class="notes">
@@ -264,7 +265,7 @@ Here are the lines to tell SAS where everything belongs
 ### Tab delimited, SAS code (3/3)
 
 ```{r}
-tx %>% px("^data", "close;") %>% cat
+tx[3] %>% cat
 ```
 
 <div class="notes">
@@ -302,8 +303,13 @@ Here's a simple example of a tilde delimited file.
 
 ```{r 5507-03-simon-import-tilde-delimited.sas}
 opts_current$get("label") %>%
-  readLines(warn=FALSE) -> tx
-tx %>% px("^\\* m03", "license") %>% cat
+  readLines(warn=FALSE) %>%
+  str_trim(side="right") %>%
+  paste0(collapse="\n") %>% 
+  str_split(pattern="\n\n\n") %>%
+  unlist -> tx
+
+tx[1] %>% cat
 ```
 
 <div class="notes">
@@ -317,7 +323,7 @@ This import worked fine, but beware. Some of these tab separated value files hav
 ### Tilde delimited, SAS code (2/3)
 
 ```{r}
-tx %>% px("%let", "txt") %>% cat
+tx[2] %>% cat
 ```
 
 <div class="notes">
@@ -329,7 +335,7 @@ Here are the lines to tell SAS where everything belongs
 ### Tilde delimited, SAS code (3/3)
 
 ```{r}
-tx %>% px("^data", "close;") %>% cat
+tx[3] %>% cat
 ```
 
 <div class="notes">
@@ -375,8 +381,13 @@ In the fixed width file above, you would have to be told there are three numbers
 
 ```{r 5507-03-simon-import-fixed-width.sas}
 opts_current$get("label") %>%
-  readLines(warn=FALSE) -> tx
-tx %>% px("^\\* m03", "license") %>% cat
+  readLines(warn=FALSE) %>%
+  str_trim(side="right") %>%
+  paste0(collapse="\n") %>% 
+  str_split(pattern="\n\n\n") %>%
+  unlist -> tx
+
+tx[1] %>% cat
 ```
 
 <div class="notes">
@@ -390,7 +401,7 @@ This import worked fine, but beware. Some of these tab separated value files hav
 ### Fixed width, SAS code (2/3)
 
 ```{r}
-tx %>% px("%let", "txt") %>% cat
+tx[2] %>% cat
 ```
 
 <div class="notes">
@@ -402,7 +413,7 @@ Here are the lines to tell SAS where everything belongs
 ### Fixed width, SAS code (3/3)
 
 ```{r}
-tx %>% px("^data", "close;") %>% cat
+tx[3] %>% cat
 ```
 
 <div class="notes">
@@ -440,8 +451,13 @@ Here's a small text file with a string of four to six letters.
 
 ```{r 5507-03-simon-import-string-data.sas}
 opts_current$get("label") %>%
-  readLines(warn=FALSE) -> tx
-tx %>% px("^\\* m03", "license") %>% cat
+  readLines(warn=FALSE) %>%
+  str_trim(side="right") %>%
+  paste0(collapse="\n") %>% 
+  str_split(pattern="\n\n\n") %>%
+  unlist -> tx
+
+tx[1] %>% cat
 ```
 
 <div class="notes">
@@ -453,7 +469,7 @@ Here is the documentation header.
 ### String data, SAS code (2/3)
 
 ```{r}
-tx %>% px("%let", "txt") %>% cat
+tx[2] %>% cat
 ```
 
 <div class="notes">
@@ -465,7 +481,7 @@ Here are the lines to tell SAS where everything belongs
 ### String data, SAS code (3/3)
 
 ```{r}
-tx %>% px("^data", "close;") %>% cat
+tx[3] %>% cat
 ```
 
 <div class="notes">
@@ -524,8 +540,13 @@ opts_current$get("label") %>%
 
 ```{r 5507-03-simon-import-first-line-names.sas}
 opts_current$get("label") %>%
-  readLines(warn=FALSE) -> tx
-tx %>% px("^\\* m03", "license") %>% cat
+  readLines(warn=FALSE) %>%
+  str_trim(side="right") %>%
+  paste0(collapse="\n") %>% 
+  str_split(pattern="\n\n\n") %>%
+  unlist -> tx
+
+tx[1] %>% cat
 ```
 
 <div class="notes">
@@ -537,7 +558,7 @@ Here is the documentation header.
 ### First line names, SAS code (2/3)
 
 ```{r}
-tx %>% px("%let", "csv") %>% cat
+tx[2] %>% cat
 ```
 
 <div class="notes">
@@ -549,7 +570,7 @@ Here are the lines to tell SAS where everything belongs
 ### First line names, SAS code (3/3)
 
 ```{r}
-tx %>% px("proc import", "close;") %>% cat
+tx[3] %>% cat
 ```
 
 <div class="notes">

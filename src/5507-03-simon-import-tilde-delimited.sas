@@ -4,6 +4,7 @@
 * purpose: to import comma delimited files
 * license: public domain;
 
+
 %let path=q:/introduction-to-sas;
 
 ods pdf file=
@@ -16,6 +17,7 @@ filename raw_data
   "&path/data/tilde-delimited.txt";
   
 options papersize=(8in 4in) nonumber nodate;
+
 
 data module01.tilde_delimited;
   infile raw_data delimiter="~";

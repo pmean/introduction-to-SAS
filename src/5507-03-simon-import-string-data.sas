@@ -4,6 +4,7 @@
 * purpose: to import data that includes a string
 * license: public domain;
 
+
 %let path=q:/introduction-to-sas;
 
 ods pdf file=
@@ -16,6 +17,7 @@ filename raw_data
     "&path/data/string-data.txt";
 
 options papersize=(8in 4in) nonumber nodate;
+
 
 data perm.string_data;
   infile raw_data delimiter=" ";
