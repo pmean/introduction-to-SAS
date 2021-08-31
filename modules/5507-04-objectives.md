@@ -9,14 +9,14 @@ knit: (function(inputFile, encoding) {
 
 #### Module04, Working with mostly categorical variables
 
-##### In this module, you will learn
+In this module, you will learn
 
 + Formats for categorical data
 + Frequency counts and percentages
 + Creating categories for a continuous variable
 + Bar charts
 
-##### You will also see the following SAS keywords and procedures
+You will also see the following SAS keywords and procedures
 
 + format
 + if - then - else
