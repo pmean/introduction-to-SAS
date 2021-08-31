@@ -9,12 +9,12 @@ nit: (function(inputFile, encoding) {
 
 #### Module05, Working with a mix of categorical and continuous variables
 
-##### In this module, you will learn about
+In this module, you will learn about
 
 + boxplots for a relationship between a continuous and a categorical variable,
 + the by statement to produce group means and standard deviations.
  
-##### You will also see the following R functions
+You will also see the following R functions
 
 + by
 + category
@@ -23,8 +23,12 @@ nit: (function(inputFile, encoding) {
 + proc freq
 + vbox
 
-Here are links to [other important files][readme] on my github site.
+<!---my git--->
+This information is available both in Canvas and on [my github site][thisf].
 
-[readme]: https://github.com/pmean/introduction-to-SAS/blob/master/README.md
+If there is a discrepancy, the Canvas site takes precedence. The [readme.md file][mygit] on my github site has links to other important files for this class.
 
+[thisf]: https://github.com/pmean/introduction-to-sas/blob/master/modules/5507-05-objectives.md
+[mygit]: https://github.com/pmean/introduction-to-sas/blob/master/README.md
+<!---my git--->
 

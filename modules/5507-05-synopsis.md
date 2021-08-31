@@ -4,7 +4,7 @@ authors: Steve Simon
 date: Created 2021-08-31
 ---
 
-### Module05-Working with mostly categorical variables
+### Module05-Working with a mix of categorical and continuous variables
 
 Most datasets will have a mix of categorical and continuous variables. In this module, you will review how to summarize continuous variables, how to summarize categorical variables, and how to examine the relationship between variables when one is categorical and the other is continuous.
 
