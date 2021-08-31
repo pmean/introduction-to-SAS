@@ -12,11 +12,11 @@ You should start out slowly. There is a very small SAS program that I show. See 
 
 #### Note
 
-This page is available both on Canvas and [my github site][git0]. If you find a discrepancy let me know. The Canvas site should always take precedence.
+<!---my git--->
+This information is available both in Canvas and on [my github site][thisf].
 
-Here are links to [other important files][mygit] on my github site.
+If there is a discrepancy, the Canvas site takes precedence. The [readme.md file][mygit] on my github site has links to other important files for this class.
 
-[mygit]: https://github.com/pmean/introduction-to-SAS/blob/master/README.md
-
-[git0]: https://github.com/pmean/introduction-to-SAS/blob/master/modules/5507-01-overview.md
-
+[thisf]: https://github.com/pmean/introduction-to-sas/blob/master/modules/5507-01-synopsis.md
+[mygit]: https://github.com/pmean/introduction-to-sas/blob/master/README.md
+<!---my git--->

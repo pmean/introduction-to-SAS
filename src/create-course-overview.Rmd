@@ -17,11 +17,11 @@ prefix <- 'https://github.com/pmean/introduction-to-SAS/blob/master/'
 list.files(path="../modules", pattern="\\.md") -> md_files
 
 keywords <- c(
-  "Overview",
+  "Synopsis",
   "Objectives",
-  "Resources",
-  "Videos", 
+  "Handouts",
   "Hw", 
+  "Videos", 
   "Answers")
 
 readLines("create-course-overview.txt") %>%
