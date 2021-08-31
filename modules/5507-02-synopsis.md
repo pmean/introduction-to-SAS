@@ -6,7 +6,7 @@ date: Created 2021-07-31
 
 ### Module02-Using mostly continuous variables
 
-Continous variables are those variables that can take on a large number of possible values, potentially any number in an interval. You will see how to look for extremes in these variables. These extremes are, at times, cause for concern if they fall outside a range of plausible values. You will also see how to compute correlations, histograms, and scatterplots.
+Continuous variables are those variables that can take on a large number of possible values, potentially any number in an interval. You will see how to look for extremes in these variables. These extremes are, at times, cause for concern if they fall outside a range of plausible values. You will also see how to compute correlations, histograms, and scatterplots.
 
 This information is available both in Canvas and on [my github site][thisf].
 
