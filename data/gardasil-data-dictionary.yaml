@@ -1,0 +1,97 @@
+---
+data_dictionary: gardasil.csv
+
+description:
+  Gardasil vaccine
+  http://www.amstat.org/publications/jse/v19n1/gardasil.txt
+  
+download:
+  http://www.amstat.org/publications/jse/v19n1/gardasil.xls
+  http://www.pmean.com/15/images/day2gardasil.csv
+  
+format: 
+  delimiter: comma
+  varnames: included on first line
+  missing-value-code: not needed
+  rows: 1413
+  columns: 10
+
+vars:
+  Age:
+    label: Patient age
+    unit: years
+    scale: positive integer
+
+  AgeGroup: 
+    label: THe age group in which the patient falls
+    value:
+      11-17 years: 0
+      18-26 years: 1
+  
+  Race:
+    label: The patient's Race/Ethnicity
+    value:
+      White: 0
+      Black: 1
+      Hispanic: 2
+      Other/unknown: 3
+      
+  Shots:
+    label: The number of shots completed in 12 months
+    scale: 1, 2, or 3
+    
+  Completed:
+    label: Did the patient complete all three shots in 12 months?
+    value:
+      No: 0
+      Yes: 1
+      
+  InsuranceType:
+    label: The type of insurance that the patient had
+    value:
+      Medican assistance: 0
+      Private payer: 1
+      Hospital based: 2
+      Military: 3
+      
+  MedAssist:
+    label: Did th patient have some type of medical assistance
+    value:
+      No: 0
+      Yes: 1
+      
+  Location:
+    label: The clinic that the patient attended
+    value: 
+      Odenton: 1
+      White Marsh: 2
+      Johns Hopkins Outpatient Center: 3
+      Bayview: 4
+      
+  LocationType:
+    label: Was the clinic in a suburban or urban location?
+    value: 
+      Suburban: 0
+      Urban: 1
+  PracticeType:
+    label:The type of practice that the patient visited
+    Pediatric: 0
+    Family practice: 1
+    Ob-gyn: 2
+
+creation_date: 2021-10-12
+
+source: 
+  Chao, C., et al. (2009).  "Correlates for 
+  Completion of 3-Dose Regimen of HPV Vaccine 
+  in Female Members of a Managed Care 
+  Organization." Mayo Clinical Proceedings 84,
+  864-870.
+
+copyright:  
+  Unknown. You should be able to use this data for
+  individual educational purposes under the Fair Use
+  guidelines of U.S. copyright law.
+
+---
+
