@@ -1,0 +1,88 @@
+---
+data_dictionary: gardasil.csv
+
+format: 
+  delimiter: comma
+  varnames: first row of data
+  missing-value-code: Not needed
+  rows: 1413
+  columns: 10
+
+vars:
+
+  Age:
+    label: Age of patient
+    scale: positive integer
+    unit: years
+
+  AgeGroup:
+    label: Age group
+    scale: binary
+    value:
+      11 to 17 years = 0
+      18 to 26 years = 1
+      
+  Race:
+    label: Race/ethnicity of patient
+    scale: integers 0 to 3
+    value:
+      White = 0
+      Black = 1
+      Hispanic = 2
+      Other/unknown = 3
+  
+  Shots:
+    label: Number of shots received
+    scale: integers 0 to 3
+  
+  Completed:
+    label: Did the patient complete all three shots?
+    scale: binary
+    value:
+      Yes = 1
+      No = 0
+  
+  InsuranceType:
+    label: Patient's insurance
+    scale: integer 0 to 3
+    
+  MedAssist:
+    label: Not yet available
+    scale: binary
+    value: Not yet available
+  
+  Location:
+    label: Treatment location of patient
+    scale: integer 1 to 4
+    value:
+      Odenton = 1
+      White Marsh = 2
+      Johns Hopkins Outpatient Center = 3
+      Bayview = 4
+  
+  LocationType:
+    label: Type of treatment location
+    scale: binary
+    value: not yet available
+  
+  PracticeType:
+    label: Practice type for the treating physician
+    scale: binary
+    value: not yet available
+    
+creation_date: 2021-11-08
+
+description:
+  Not yet available
+  
+download:
+  Not yet available
+  
+source: 
+  Not yet available
+  
+copyright:  
+  Unknown. You should be able to use this data for
+  individual educational purposes under the Fair Use
+  guidelines of U.S. copyright law.
+---
