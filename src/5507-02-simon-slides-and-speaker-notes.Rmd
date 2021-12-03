@@ -128,7 +128,7 @@ statement
 
 <div class="notes">
 
-The use of semicolons is nice, in a way, because it allows you to stretch a complicated SAS statement across two or more rows of your program. This can often make your program more readable. It is hard to read a long line of code. Your eye has to scan left to right and you can sometimes lose track of which line you are on. Most newpapers place their articles in narrow columns because it makes them easier to read.
+The use of semicolons is nice, in a way, because it allows you to stretch a complicated SAS statement across two or more rows of your program. This can often make your program more readable. It is hard to read a long line of code. Your eye has to scan left to right and you can sometimes lose track of which line you are on. Most newspapers place their articles in narrow columns because it makes them easier to read.
 
 There is no official rule of thumb on this, but I do try to keep my lines below 50 characters. I also try to indent substatements with a data step or procedure. I use blank lines between data steps and procedures.
 
@@ -172,7 +172,7 @@ I'm a bit more terse with these variable names than I normally would be just to 
 
 You should avoid special symbols in your variable names especially symbols that are likely to cause confusion (the dash symbol, for example, which is also the symbol for subtraction). You should also avoid blanks. These rules are pretty much universal across most statistical software packages.
 
-There are times when you'd like to have a blank in your variable name and you can use two special symbols in SAS (and most other statistical pacakges).
+There are times when you'd like to have a blank in your variable name and you can use two special symbols in SAS (and most other statistical packages).
   
 Here's how you can simulate blanks without actually using blanks.
 
@@ -181,7 +181,7 @@ Here's how you can simulate blanks without actually using blanks.
     
   * the dot (period). (Note that SAS does not allow you to use the period this way.)
 
-These symbols create some artificial spacing that mimics the blanks. Another approach is  "CamelCase" which is the mixture of upper and lower case within a variable name with each uppercase designating the beginning of a new "word".
+These symbols create some artificial spacing that mimics the blanks. Another approach is "CamelCase" which is the mixture of upper and lower case within a variable name with each uppercase designating the beginning of a new "word".
 
 </div>
 
