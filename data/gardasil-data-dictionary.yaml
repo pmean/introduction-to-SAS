@@ -1,8 +1,15 @@
 ---
 data_dictionary: gardasil.csv
 
+copyright:  
+  Unknown. You should be able to use this data for
+  individual educational purposes under the Fair Use
+  guidelines of U.S. copyright law.
+
+creation_date: 2021-10-12
+
 description:
-  Gardasil vaccine
+  You can find a good description of this dataset at
   http://www.amstat.org/publications/jse/v19n1/gardasil.txt
   
 download:
@@ -16,11 +23,19 @@ format:
   rows: 1413
   columns: 10
 
+source: 
+  Chao, C., et al. (2009).  "Correlates for 
+  Completion of 3-Dose Regimen of HPV Vaccine 
+  in Female Members of a Managed Care 
+  Organization." Mayo Clinical Proceedings 84,
+  864-870.
+
 vars:
+
   Age:
-    label: Patient age
-    unit: years
+    label: Age of patient
     scale: positive integer
+    unit: years
 
   AgeGroup: 
     label: THe age group in which the patient falls
@@ -37,9 +52,9 @@ vars:
       Other/unknown: 3
       
   Shots:
-    label: The number of shots completed in 12 months
-    scale: 1, 2, or 3
-    
+    label: Number of shots received
+    scale: integers 0 to 3
+  
   Completed:
     label: Did the patient complete all three shots in 12 months?
     value:
@@ -73,25 +88,11 @@ vars:
     value: 
       Suburban: 0
       Urban: 1
+
   PracticeType:
     label:The type of practice that the patient visited
     Pediatric: 0
     Family practice: 1
     Ob-gyn: 2
 
-creation_date: 2021-10-12
-
-source: 
-  Chao, C., et al. (2009).  "Correlates for 
-  Completion of 3-Dose Regimen of HPV Vaccine 
-  in Female Members of a Managed Care 
-  Organization." Mayo Clinical Proceedings 84,
-  864-870.
-
-copyright:  
-  Unknown. You should be able to use this data for
-  individual educational purposes under the Fair Use
-  guidelines of U.S. copyright law.
-
 ---
-

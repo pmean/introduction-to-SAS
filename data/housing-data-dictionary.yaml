@@ -1,0 +1,70 @@
+---
+data_dictionary: housing.txt
+
+format: 
+  delimiter: tab
+  varnames: first row of data
+  missing-value-code: "."
+  rows: 117
+  columns: 7
+
+vars:
+  price:
+    label: Sales price of house
+    scale: positive real
+    unit: dollars
+    
+  sqft:
+    label: Square footage of house
+    scale: positive real
+    unit: square feet
+    
+  age:
+    label: Age of house
+    scale: positive real
+    unit: years
+    
+  features:
+    label: Number of features of house
+    scale: 0 to 13
+    
+  northeast:
+    label: Is house located in Northeast Albuquerque?
+    scale: binary
+    value:
+      yes = 1
+      no = 0
+    
+  custom_build:
+    label: Is the house custom built?
+    scale: binary
+    value:
+      yes = 1
+      no = 0
+      
+  corner_lot
+    label: Is the house on a corner lot?
+    scale: binary
+    value:
+      yes = 1
+      no = 0
+
+creation_date: 2021-11-08
+
+description:
+  House prices in Albuquerque in 1994. More details at
+  http://www.pmean.com/00files/housing.htm
+
+download:
+  https://github.com/pmean/introduction-to-sas/data/housing.txt
+  
+source: 
+  DASL (Data and Story Library), a repository for various
+  data sets useful for teaching. This site is, sadly, no
+  longer available.
+
+copyright:  
+  Unknown. You should be able to use this data for
+  individual educational purposes under the Fair Use
+  guidelines of U.S. copyright law.
+---

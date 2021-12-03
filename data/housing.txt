@@ -1,4 +1,4 @@
-price	sqft	age	feats	ne	cust	cor
+price	sqft	age	features	northeast	custom_build	corner_lot
 205000	2650	13	7	1	1	0
 208000	2600	.	4	1	1	0
 215000	2664	6	5	1	1	0
