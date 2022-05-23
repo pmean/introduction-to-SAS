@@ -9,17 +9,21 @@ knit: (function(inputFile, encoding) {
 
 ### Synopsis
 
-I recommend that you run SAS using a free product called [SAS OnDemand for Academics][sas1]. More details about this are on the Canvas site for this class.
+I recommend that you run SAS using a free product called [SAS OnDemand for Academics][sas-ondemand]. More details about this are on the Canvas site for this class.
 
-You can also run SAS directly on your computer if you are fortunate enough to have it. It can be installed on computers that are hard-wired into the UMKC network, but usually cannot be installed on laptops or home computers. See [this page][umkc2] for more details. 
+You can also run SAS directly on your computer if you are fortunate enough to have it. It can be installed on computers that are hard-wired into the UMKC network, but usually cannot be installed on laptops or home computers. See [this page][direct-install] for more details. 
 
-You can run SAS at the student computing lab in Royall Hall 3003, Lab #17 and #38.
+You can run SAS at the [student computing lab][student-labs] in Royall Hall 3003, Lab #17 and #38.
 
-You can also run SAS using the [UMKC Remote Labs][umkc1].
+You can also run SAS using the [UMKC Remote Labs][remote-labs]. If you use the student computing lab or the remote labs, you need to store your work on a network folder, often assigned as the Q drive. If you have trouble access in the Q drive, here is a [handout][q-drive] that can help.
+
+You may have heard about a system called SAS University that ran inside a virtual machine; this approach is being phased out. 
+
+There are also ways to run SAS in a Jupyter notebook or as part of a Markdown document. These are options best reserved for the advanced SAS user. See the recommended readings if you are curious.
 
 Choose whatever way is easiest for you to run SAS.
 
-You can also find all the datasets and programs on [my github site][sim01].
+You can also find all the datasets and programs on [my github site][github].
 
 You should start out slowly. There is a very small SAS program that I show. See if you can copy the program (changing my name to your name) and get it to run. If it runs, try adding a documentation header. Then see if you can store the data in a permanent location. See if you can store the output as a PDF file. Finally, see if you can move the data to a separate location.
 
@@ -49,33 +53,22 @@ You will also see the following SAS keywords and procedures
 
 Handouts associated with videos
 
-+ Slides and speaker notes, available in [pdf format][sim4] or [powerpoint format][sim5].
++ Slides and speaker notes, available in [pdf format][v01-pdf] or [powerpoint format][v01-pptx].
 
 Programs used in this module
 
-+ [5507-01-simon-basic-program.sas][sim02]
-+ [5507-01-simon-documentation-header.sas][sim03]
-+ [5507-01-simon-input-text.sas][sim04]
-+ [5507-01-simon-permanent-storage.sas][sim05]
-+ [5507-01-simon-re-use.sas][sim06]
-+ [5507-01-simon-read-data.sas][sim07]
-+ [5507-01-simon-save-output.sas][sim08]
++ [5507-01-simon-basic-program.sas][basic-program]
++ [5507-01-simon-documentation-header.sas][documentation-header]
++ [5507-01-simon-permanent-storage.sas][permanent-storage]
++ [5507-01-simon-re-use.sas][re-use]
++ [5507-01-simon-read-data.sas][read-data]
++ [5507-01-simon-save-output.sas][save-output]
 
 Recommended readings
 
-+ Hemedinger, Chris. How to run SAS programs in Jupyter Notebook, The SAS Dummy blog, 2016-04-24. Available in [html format][r01].
-+ Hemken, Doug. SAS Using R Markdown (Windows). Available in [html format][r02].
-+ SAS Institute. Explore the SAS workspace (1 of 8). Available in [html format][r03].
-+ SAS Institute. SAS University Edition. Available in [html format][r04].
-+ Simon, Stephen. Help! My Q: drive disappeared! Available in [pdf format][r05].
-+ UMKC. Site-Licensed Software, SAS for Windows. Available in [html format][r06].
-
-[r01]: https://blogs.sas.com/content/sasdummy/2016/04/24/how-to-run-sas-programs-in-jupyter-notebook/
-[r02]: https://www.ssc.wisc.edu/~hemken/SASworkshops/Markdown/SASmarkdown.html
-[r03]: http://support.sas.com/training/sas94/m3_1.htm
-[r04]: https://www.sas.com/en_us/software/university-edition.html
-[r05]: https://github.com/pmean/introduction-to-sql/blob/master/results/m01-lost-drive.pdf
-[r06]: https://www.umkc.edu/is/support/services/software/siteLicensed/SAS/Index.asp
++ SAS Institute. Explore the SAS workspace (1 of 8). Available in [html format][workspace].
++ Hemedinger, Chris. How to run SAS programs in Jupyter Notebook, The SAS Dummy blog, 2016-04-24. Available in [html format][jupyter].
++ Hemken, Doug. SAS Using R Markdown (Windows). Available in [html format][markdown].
 
 ### Videos
 
@@ -113,28 +106,43 @@ Please briefly introduce yourself. Tell us a bit about yourself professionally, 
 
 Graded: 20 points, one point deducted if submitted late.
 
-Take the code in [5507-01-simon-basic.sas][sim02] and run it on your system. Be sure to change "simon" to your name. Optionally, and only if you can, include a documentation header, store the dataset in a permanent location, save your output in a pdf file, and/or read the data from a separate file.
+Take the code in [5507-01-simon-basic-program.sas][basic-program] and run it on your system. Be sure to change "simon" to your name. Optionally, and only if you can, include a documentation header, store the dataset in a permanent location, save your output in a pdf file, and/or read the data from a separate file.
 
-If you get an error message that you can't fix, submit your code and document that error message in the text box. You will get full credit for any reasonable attempt to get the program to run. Future assignments will use [this grading rubric][sim3]. If your program ran successfully, describe your difficulties (if any) in getting the program to run in the text box.
+If you get an error message that you can't fix, submit your code and document that error message in the text box. You will get full credit for any reasonable attempt to get the program to run. Future assignments will use [this grading rubric][grading-rubric]. If your program ran successfully, describe your difficulties (if any) in getting the program to run in the text box.
 
-[umkc1]: https://www.umkc.edu/is/support/services/software/sitelicensed/SAS/Index.asp
-[umkc2]: https://www.umkc.edu/is/remotelabs/
+[basic-program]: https://github.com/pmean/introduction-to-sas/blob/master/src/5507-01-simon-basic-program.sas
 
-[sas1]: https://www.sas.com/en_us/software/on-demand-for-academics.html
+[direct-install]: https://www.umkc.edu/is/support/services/software/sitelicensed/SAS/Index.asp
+[documentation-header]: https://github.com/pmean/introduction-to-sas/blob/master/src/5507-01-simon-documentation-header.sas
 
-[sim01]: https://github.com/pmean/introduction-to-SAS
-[sim02]: https://github.com/pmean/introduction-to-sas/blob/master/src/5507-01-simon-basic-program.sas
-[sim03]: https://github.com/pmean/introduction-to-sas/blob/master/src/5507-01-simon-documentation-header.sas
-[sim04]: https://github.com/pmean/introduction-to-sas/blob/master/src/5507-01-simon-input-text.sas
-[sim05]: https://github.com/pmean/introduction-to-sas/blob/master/src/5507-01-simon-permanent-storage.sas
-[sim06]: https://github.com/pmean/introduction-to-sas/blob/master/src/5507-01-simon-re-use.sas
-[sim07]: https://github.com/pmean/introduction-to-sas/blob/master/src/5507-01-simon-read-data.sas
-[sim08]: https://github.com/pmean/introduction-to-sas/blob/master/src/5507-01-simon-save-output.sas
+[github]: https://github.com/pmean/introduction-to-SAS
+[grading-rubric]: https://github.com/pmean/classes/blob/master/software-engineering/src/grading-rubric.md
+
+[jupyter]: https://blogs.sas.com/content/sasdummy/2016/04/24/how-to-run-sas-programs-in-jupyter-notebook/
+
+[markdown]: https://www.ssc.wisc.edu/~hemken/SASworkshops/Markdown/SASmarkdown.html
+
+[permanent-storage]: https://github.com/pmean/introduction-to-sas/blob/master/src/5507-01-simon-permanent-storage.sas
+
+[q-drive]: https://github.com/pmean/introduction-to-sql/blob/master/results/m01-lost-drive.pdf
+
+[re-use]: https://github.com/pmean/introduction-to-sas/blob/master/src/5507-01-simon-re-use.sas
+[read-data]: https://github.com/pmean/introduction-to-sas/blob/master/src/5507-01-simon-read-data.sas
+[remote-labs]: https://www.umkc.edu/is/remotelabs/
+
+[sas-ondemand]: https://www.sas.com/en_us/software/on-demand-for-academics.html
+[save-output]: https://github.com/pmean/introduction-to-sas/blob/master/src/5507-01-simon-save-output.sas
+[student-labs]: https://www.umkc.edu/is/labs/software/
+
+[v01-01]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=700eeac6-121e-46d6-a080-ad4500e4c370
+[v01-pdf]: https://github.com/pmean/introduction-to-sas/blob/master/results/5507-01-simon-slides-and-speaker-notes.pdf
+[v01-pptx]: https://github.com/pmean/introduction-to-SAS/blob/master/results/5507-01-simon-sildes-and-speaker-notes.pptx?raw=true
+
+[workspace]: http://support.sas.com/training/sas94/m3_1.htm
 
 
 
-[sim3]: https://github.com/pmean/classes/blob/master/software-engineering/src/grading-rubric.md
-[sim4]: https://github.com/pmean/introduction-to-sas/blob/master/results/5507-01-simon-slides-and-speaker-notes.pdf
-[sim5]: https://github.com/pmean/introduction-to-SAS/blob/master/results/5507-01-simon-sildes-and-speaker-notes.pptx?raw=true
 
-[2021b-5507-v01-01]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=700eeac6-121e-46d6-a080-ad4500e4c370
+
+
+
