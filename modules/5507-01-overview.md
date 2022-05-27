@@ -13,7 +13,7 @@ I recommend that you run SAS using a free product called [SAS OnDemand for Acade
 
 You can also run SAS directly on your computer if you are fortunate enough to have it. It can be installed on computers that are hard-wired into the UMKC network, but usually cannot be installed on laptops or home computers. See [this page][direct-install] for more details. 
 
-You can run SAS at the [student computing lab][student-labs] in Royall Hall 3003, Lab #17 and #38.
+You can run SAS at the [student computing lab][student-labs] in Royall Hall 303, Lab #17 and #38.
 
 You can also run SAS using the [UMKC Remote Labs][remote-labs]. If you use the student computing lab or the remote labs, you need to store your work on a network folder, often assigned as the Q drive. If you have trouble access in the Q drive, here is a [handout][q-drive] that can help.
 

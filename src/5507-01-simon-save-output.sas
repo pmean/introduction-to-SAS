@@ -4,12 +4,10 @@
 * purpose: to create a permanent dataset
 * license: public domain;
 
-%let path=q:/introduction-to-sas;
-
-libname perm "&path/data";
+libname perm "../data";
 
 ods pdf file=
-   "&path/results/5507-01-simon-save-output.pdf";
+   "../results/5507-01-simon-save-output.pdf";
 
 data perm.small_example;
   input x y;
