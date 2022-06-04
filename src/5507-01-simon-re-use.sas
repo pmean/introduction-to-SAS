@@ -4,9 +4,7 @@
 * purpose: to re-use stored data
 * license: public domain;
 
-%let path=q:/introduction-to-sas;
-
-libname perm "&path/data";
+libname perm "../data";
 
 proc means
     data=perm.simple_example;
