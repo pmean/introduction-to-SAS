@@ -1,7 +1,7 @@
 ---
 title: "MEDB 5507, Introduction to SAS, Module01, Synopsis"
-authors: Steve Simon
-date: Created 2021-07-31
+author: 'Steve Simon'
+date: "Created 2021-07-31"
 ---
 
 ### Module01-Getting started
