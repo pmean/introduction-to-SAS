@@ -41,7 +41,7 @@ license: public domain
 
 Here is an overview of what I want to cover in module02.
 
-Okay. I want to get you started using SAS. It's either going to be really easy or it's going to be really really hard. I want to give you as much guidance as I can without staring over your shoulder. Just quickly, I wrote this Powerpoint presentation and all the Powerpoint presentations using R Markdown. If you are curious I have a repository. It has some beautiful output.
+Okay. I want to get you started using SAS. It's either going to be really easy or it's going to be really really hard. I want to give you as much guidance as I can without staring over your shoulder. Just quickly, I wrote this PowerPoint presentation and all the PowerPoint presentations using R Markdown. If you are curious I have a repository. It has some beautiful output.
 
 Greetings! My name is Steve Simon and I am the instructor for the class, MEDB 5507, Introduction to SAS.
 
@@ -108,7 +108,7 @@ I have a blog and a website. I am trying to combine the two into a single site. 
 
 <div class="notes">[[Speaker notes]]
 
-I have a github site. It includes some of the programs used in this class. All the material is public donain, but please do not plagiarize your homework from this github site.
+I have a github site. It includes some of the programs used in this class. All the material is public domain, but please do not plagiarize your homework from this github site.
 
 </div>
 
@@ -174,7 +174,7 @@ This screenshot may be too small for you to read, but you can find the proper li
 
 If you are fortunate enough to have access to a hard-wired computer, you can get SAS installed easily. Someone else will do it for you. It may already be sitting on your computer.
 
-With a very few rare exceptions, you cannot get UMKC to load SAS on a laptop computer or on a home computer. This because of the license agreement that UMKC signed wih SAS Institute. It does not allow for home use of SAS.
+With a very few rare exceptions, you cannot get UMKC to load SAS on a laptop computer or on a home computer. This because of the license agreement that UMKC signed with SAS Institute. It does not allow for home use of SAS.
 
 </div>
 
@@ -305,7 +305,7 @@ Make sure you store things consistently. This part of the requirements for this 
 
 Store all your programs for this class in a single directory. You can call it "sas" or "5507" or anything you like. Some people may prefer to create a separate directory for each module in this class. That's fine also.
 
-Most importantly, create three subdirectories, src, results, and data. Store your programs in src, your output in results and your raw and intermediate datasets in data. You may wish to create other subdirectories, such an images folder for any graphs you produce, a doc folder for any documentation you collect, but the three imporant subdirectory folders are src, results, and data.
+Most importantly, create three subdirectories, src, results, and data. Store your programs in src, your output in results and your raw and intermediate datasets in data. You may wish to create other subdirectories, such an images folder for any graphs you produce, a doc folder for any documentation you collect, but the three important subdirectory folders are src, results, and data.
 
 </div>
 
@@ -479,7 +479,7 @@ Output is tricky. I want to talk in more detail later about this, but you can ta
 + What's coming next
   + Live demonstration (1 of 5)
   
-### Live demonstartion (1 of 5)
+### Live demonstration (1 of 5)
 
 ### Break #4
 
@@ -536,7 +536,7 @@ SAS Institute was formed in 1976. It is a privately held company.
 
 SAS spends over a quarter of its budget, which is a huge fraction, on Research and Development.
 
-The SAS Headquarters is in Cary, NC, and it is huge. It is a pretty nice place to work with many family friednly policies even from the 1980s. SAS Institure has been rated in many magazine reviews as one of the top places to work.
+The SAS Headquarters is in Cary, NC, and it is huge. It is a pretty nice place to work with many family friendly policies even from the 1980s. SAS Institute has been rated in many magazine reviews as one of the top places to work.
 
 </div>
 
@@ -561,7 +561,7 @@ SAS is oriented around various data sets and procedures. There is a menu driven 
 
 SAS has a licensing model that is prohibitive for individual consultants. They offer a free product, SAS University, that is intended for teaching.
 
-SAS has literally hundreds of books published through an in-house publisher. It has a certification program that allows you to earn credetials that can help you in your job search. SAS also sponsors some very extravagant user conferences.
+SAS has literally hundreds of books published through an in-house publisher. It has a certification program that allows you to earn credentials that can help you in your job search. SAS also sponsors some very extravagant user conferences.
 
 SAS Institute has many products beyond SAS. Most notable of these is JMP (pronounced "jump"). This is an acronym for John's Macintosh Product. it was released in 1989 when the Macintosh series of computers had many graphical user interface features that were not yet available for other personal computers. It pioneered (and continues to lead) in many interactive and dynamic graphic features.
 
