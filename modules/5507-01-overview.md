@@ -38,8 +38,8 @@ In this module, you will learn
 
 You will also see the following SAS keywords and procedures
 
-+ cards
 + data
++ datalines
 + delimiter
 + filename
 + infile
@@ -76,19 +76,38 @@ Total video time, xx minutes
 
 There are two types of videos in this class. The most common is a PowerPoint video. In these videos, I display PowerPoint slides and talk. My comments are captured, more or less, in the speaker's notes. Every PowerPoint video should have an associated pdf file with the slides and speaker notes. For a few of these videos, I have abandoned PowerPoint for a live demonstration on my computer. This will show me typing into SAS or possibly other application software. There are no pdf files for the live demonstrations.
 
-+ V01-01. Introducing your instructor, 3 minutes, available in [Panopto format][2021b-5507-v01-01].
-+ V01-02. Where you can get SAS, xx minutes, available soon in Panopto format.
-+ V01-03. Your first SAS program, xx minutes, available soon in Panopto format.
-+ V01-04. SAS live demonstration (1 of 5), xx minutes, available soon in Panopto format.
-+ V01-05. History of SAS, xx minutes, available soon in Panopto format.
-+ V01-06. Documentation header, xx minutes, available soon in Panopto format.
-+ V01-07. SAS live demonstration (2 of 5), xx minutes, available soon in Panopto format.
-+ V01-08. Storing SAS datasets using libname, xx minutes, available soon in Panopto format.
-+ V01-09. SAS live demonstration (3 of 5), xx minutes, available soon in Panopto format.
-+ V01-10. Storing SAS output using ODS, xx minutes, available soon in Panopto format.
-+ V01-11. SAS live demonstration (4 of 5), xx minutes, available soon in Panopto format.
-+ V01-12. Reading external data using infile and filename, xx minutes, available soon in Panopto format. 
-+ V01-13. SAS live demonstration (5 of 5), xx minutes, available soon in Panopto format.
++ V01-01. Introducing your instructor, 5 minutes, available in [Panopto format][2022b-5507-v01-01].
++ V01-02. Where you can get SAS, 13 minutes, available in [Panopto format][2022b-5507-v01-02].
++ V01-03. Your first SAS program, 7 minutes, available in [Panopto format][2022b-5507-v01-03].
++ V01-04. SAS live demonstration (1 of 5), available in Panopto format.
+  + [Part A. SODA][2022b-5507-v01-04a], 11 minutes
+  + [Part B. Remote labs][2022b-5507-v01-04b], 14 minutes
+  + [Part C. SAS on UMKC computers][2022b-5507-v01-04c], 5 minutes
++ V01-05. History of SAS, xx minutes, available soon.
++ V01-06. Documentation header, xx minutes, available soon.
++ V01-07. SAS live demonstration (2 of 5), xx minutes, available soon.
++ V01-08. Storing SAS datasets using libname, xx minutes, available soon.
++ V01-09. SAS live demonstration (3 of 5), xx minutes, available soon.
++ V01-10. Storing SAS output using ODS, xx minutes, available soon.
++ V01-11. SAS live demonstration (4 of 5), xx minutes, available soon.
++ V01-12. Reading external data using infile and filename, xx minutes, available soon.
++ V01-13. SAS live demonstration (5 of 5), xx minutes, available soon.
+
+[2022b-5507-v01-01]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=427181d2-3d15-49ad-be3e-aeaa0125d864
+[2022b-5507-v01-02]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=81b1ffc7-5f95-4bbc-8382-aeaa0133a34e
+[2022b-5507-v01-03]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=0b6f7a9b-73b4-4616-85b1-aeaa0138229d 
+[2022b-5507-v01-04a]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=09759e48-1dd9-4f93-8676-aeaa01750cd8
+[2022b-5507-v01-04b]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=5e712ad5-ca5f-4f02-a25f-aeaa016f69fe
+[2022b-5507-v01-04c]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=80595ffc-4395-4850-a226-aeaa017399b0
+[2022b-5507-v01-05]: 
+[2022b-5507-v01-06]: 
+[2022b-5507-v01-07]: 
+[2022b-5507-v01-08]: 
+[2022b-5507-v01-09]: 
+[2022b-5507-v01-010]: 
+[2022b-5507-v01-011]: 
+[2022b-5507-v01-012]: 
+[2022b-5507-v01-013]: 
 
 ### Active learning
 
@@ -139,10 +158,3 @@ If you get an error message that you can't fix, submit your code and document th
 [v01-pptx]: https://github.com/pmean/introduction-to-SAS/blob/master/results/5507-01-simon-sildes-and-speaker-notes.pptx?raw=true
 
 [workspace]: http://support.sas.com/training/sas94/m3_1.htm
-
-
-
-
-
-
-
