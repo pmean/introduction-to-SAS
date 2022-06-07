@@ -569,7 +569,7 @@ SAS Viya is a cloud based platform with many advanced visualization and machine 
 
 </div>
 
-### Break #6
+### Break #5
 
 + What have you learned
   + History of SAS
@@ -757,7 +757,7 @@ Notice that there is no data step in this program, you start with a libname stat
 + What's coming next
   + Live demonstration (3 of 5)
 
-### Live demonsration (3 of 5)
+### Live demonstration (3 of 5)
 
 ### Break #9
 
