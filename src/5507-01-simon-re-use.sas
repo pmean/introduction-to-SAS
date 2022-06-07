@@ -1,10 +1,11 @@
 * 5507-01-simon-re-use.sas
-* author: Steve Simon
-* date: created 2021-05-30
-* purpose: to re-use stored data
-* license: public domain;
+  author: Steve Simon
+  date: created 2022-06-06
+  purpose: calculate descriptive statistics 
+    for strored data
+  license: public domain;
 
-libname perm "../data";
+libname perm "q:/introduction-to-sas/data";
 
 proc means
     data=perm.simple_example;

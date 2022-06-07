@@ -1,19 +1,20 @@
 * 5507-01-simon-permanent-storage.sas
-* author: Steve Simon
-* date: created 2021-05-30
-* purpose: to store data set in a permanent location
-* license: public domain;
+  author: Steve Simon
+  date: created 2022-06-06
+  purpose: to read and prints a small dataset
+  license: public domain;
 
-libname perm "../data";
+libname perm "q:/introduction-to-sas/data";
 
-data perm.simple_example;
-  input x y;
-datalines;
+data perm.small_example;
+ input x y;
+ datalines;
 1 2
 2 4
 3 6
 ;
+
 proc print
-    data=perm.simple_example(obs=1);
-  title1 "First row";
+    data=perm.small_example(obs=1);
+title "First row of data";
 run;
