@@ -83,15 +83,24 @@ There are two types of videos in this class. The most common is a PowerPoint vid
   + [Part A. SODA][2022b-5507-v01-04a], 11 minutes
   + [Part B. Remote labs][2022b-5507-v01-04b], 14 minutes
   + [Part C. SAS on UMKC computers][2022b-5507-v01-04c], 5 minutes
-+ V01-05. History of SAS, xx minutes, available soon.
-+ V01-06. Documentation header, xx minutes, available soon.
-+ V01-07. SAS live demonstration (2 of 5), xx minutes, available soon.
-+ V01-08. Storing SAS datasets using libname, xx minutes, available soon.
-+ V01-09. SAS live demonstration (3 of 5), xx minutes, available soon.
-+ V01-10. Storing SAS output using ODS, xx minutes, available soon.
-+ V01-11. SAS live demonstration (4 of 5), xx minutes, available soon.
-+ V01-12. Reading external data using infile and filename, xx minutes, available soon.
-+ V01-13. SAS live demonstration (5 of 5), xx minutes, available soon.
++ V01-05. History of SAS, 10 minutes, available in [Panopto format][2022b-5507-v01-05].
++ V01-06. Documentation header, 5 minutes, available in [Panopto format][2022b-5507-v01-06].
++ V01-07. SAS live demonstration (2 of 5), available in Panopto format.
+  + [Part A. SODA][2022b-5507-v01-07a], 9 minutes
+  + [Part B. Remote labs][2022b-5507-v01-07b], 14 minutes
++ V01-08. Storing SAS datasets using libname, 7 minutes, available in [Panopto format][2022b-5507-v01-08].
++ V01-09. SAS live demonstration (3 of 5), available in Panopto format.
+  + [Part A-1. SODA][2022b-5507-v01-09a1], 11 minutes
+  + [Part A-2. SODA][2022b-5507-v01-09a2], 8 minutes
+  + [Part B. Remote labs][2022b-5507-v01-09b], 16 minutes
++ V01-10. Storing SAS output using ODS, 8 minutes, available  in [Panopto format][2022b-5507-v01-10].
++ V01-11. SAS live demonstration (4 of 5), available in Panopto format.
+  + [Part A. SODA][2022b-5507-v01-11a], 16 minutes
+  + [Part B. Remote labs][2022b-5507-v01-11b], 15 minutes
++ V01-12. Reading external data using infile and filename, xx minutes, available in [Panopto format][2022b-5507-v01-12].
++ V01-13. SAS live demonstration (5 of 5), available in Panopto format.
+  + [Part A. SODA][2022b-5507-v01-13a], xx minutes
+  + [Part B. Remote labs][2022b-5507-v01-13b], xx minutes
 
 [2022b-5507-v01-01]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=427181d2-3d15-49ad-be3e-aeaa0125d864
 [2022b-5507-v01-02]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=81b1ffc7-5f95-4bbc-8382-aeaa0133a34e
@@ -99,15 +108,20 @@ There are two types of videos in this class. The most common is a PowerPoint vid
 [2022b-5507-v01-04a]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=09759e48-1dd9-4f93-8676-aeaa01750cd8
 [2022b-5507-v01-04b]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=5e712ad5-ca5f-4f02-a25f-aeaa016f69fe
 [2022b-5507-v01-04c]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=80595ffc-4395-4850-a226-aeaa017399b0
-[2022b-5507-v01-05]: 
-[2022b-5507-v01-06]: 
-[2022b-5507-v01-07]: 
-[2022b-5507-v01-08]: 
-[2022b-5507-v01-09]: 
-[2022b-5507-v01-010]: 
-[2022b-5507-v01-011]: 
-[2022b-5507-v01-012]: 
-[2022b-5507-v01-013]: 
+[2022b-5507-v01-05]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=5be9d52d-cf63-45ef-becf-aeac011c2989
+[2022b-5507-v01-06]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=4101600e-be64-41a2-8e54-aeac011fc0f8
+[2022b-5507-v01-07a]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=21061974-310b-4854-b90d-aeac0124049d
+[2022b-5507-v01-07b]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=95c2d24c-3041-4241-a6c4-aeac01278eae
+[2022b-5507-v01-08]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=fe24206d-e3d9-4ed6-85a4-aeac012c69c5
+[2022b-5507-v01-09a1]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=edf65720-3825-4548-be15-aeac0134cceb
+[2022b-5507-v01-09a2]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=3ab9c592-0319-4338-9233-aeac013849e2
+[2022b-5507-v01-09b]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=a21cc5fd-c77b-4c6d-9605-aeac013badb5
+[2022b-5507-v01-010]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=30a6ba36-b15e-4645-9e4e-aead01567d74
+[2022b-5507-v01-11a]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=9cee357a-45fb-4040-8ae5-aead015902c6
+[2022b-5507-v01-11b]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=2a15ad1d-5098-423c-8846-aead015e7e45
+[2022b-5507-v01-12]: 
+[2022b-5507-v01-13a]: 
+[2022b-5507-v01-13b]: 
 
 ### Active learning
 
