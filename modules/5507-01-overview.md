@@ -116,7 +116,7 @@ There are two types of videos in this class. The most common is a PowerPoint vid
 [2022b-5507-v01-09a1]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=edf65720-3825-4548-be15-aeac0134cceb
 [2022b-5507-v01-09a2]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=3ab9c592-0319-4338-9233-aeac013849e2
 [2022b-5507-v01-09b]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=a21cc5fd-c77b-4c6d-9605-aeac013badb5
-[2022b-5507-v01-010]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=30a6ba36-b15e-4645-9e4e-aead01567d74
+[2022b-5507-v01-10]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=30a6ba36-b15e-4645-9e4e-aead01567d74
 [2022b-5507-v01-11a]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=9cee357a-45fb-4040-8ae5-aead015902c6
 [2022b-5507-v01-11b]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=2a15ad1d-5098-423c-8846-aead015e7e45
 [2022b-5507-v01-12]: 
