@@ -1,7 +1,8 @@
-* 5507-01-simon-save-output.sas
+* 5507-01-simon-save-output-data.sas
   author: Steve Simon
   date: created 2022-06-06
-  purpose: to read and prints a small dataset
+  purpose: to read a small dataset
+    from a separate file
   license: public domain;
 
 libname perm "q:/introduction-to-sas/data";

@@ -55,6 +55,10 @@ Handouts associated with videos
 
 + Slides and speaker notes, available in [pdf format][v01-pdf] or [powerpoint format][v01-pptx].
 
+Datasets used in this module
+
++ [six-numbers.txt][git1]
+
 Programs used in this module
 
 + [5507-01-simon-basic-program.sas][basic-program]
@@ -97,10 +101,10 @@ There are two types of videos in this class. The most common is a PowerPoint vid
 + V01-11. SAS live demonstration (4 of 5), available in Panopto format.
   + [Part A. SODA][2022b-5507-v01-11a], 16 minutes
   + [Part B. Remote labs][2022b-5507-v01-11b], 15 minutes
-+ V01-12. Reading external data using infile and filename, xx minutes, available in [Panopto format][2022b-5507-v01-12].
++ V01-12. Reading external data using infile and filename, 5 minutes, available in [Panopto format][2022b-5507-v01-12].
 + V01-13. SAS live demonstration (5 of 5), available in Panopto format.
-  + [Part A. SODA][2022b-5507-v01-13a], xx minutes
-  + [Part B. Remote labs][2022b-5507-v01-13b], xx minutes
+  + [Part A. SODA][2022b-5507-v01-13a], 12 minutes
+  + [Part B. Remote labs][2022b-5507-v01-13b], 13 minutes
 
 [2022b-5507-v01-01]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=427181d2-3d15-49ad-be3e-aeaa0125d864
 [2022b-5507-v01-02]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=81b1ffc7-5f95-4bbc-8382-aeaa0133a34e
@@ -119,9 +123,9 @@ There are two types of videos in this class. The most common is a PowerPoint vid
 [2022b-5507-v01-10]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=30a6ba36-b15e-4645-9e4e-aead01567d74
 [2022b-5507-v01-11a]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=9cee357a-45fb-4040-8ae5-aead015902c6
 [2022b-5507-v01-11b]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=2a15ad1d-5098-423c-8846-aead015e7e45
-[2022b-5507-v01-12]: 
-[2022b-5507-v01-13a]: 
-[2022b-5507-v01-13b]: 
+[2022b-5507-v01-12]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=041b68df-3be6-4b14-878c-aeaf0158e579
+[2022b-5507-v01-13a]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=1a0249ed-3d51-4a4a-9fe8-aeaf015abc6b
+[2022b-5507-v01-13b]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=b480957f-b059-47f2-b89f-aeaf015e9479
 
 ### Active learning
 
@@ -149,6 +153,7 @@ If you get an error message that you can't fix, submit your code and document th
 [documentation-header]: https://github.com/pmean/introduction-to-sas/blob/master/src/5507-01-simon-documentation-header.sas
 
 [github]: https://github.com/pmean/introduction-to-SAS
+[git1]: https://github.com/pmean/introduction-to-SAS/blob/master/data/six-numbers.txt
 [grading-rubric]: https://github.com/pmean/classes/blob/master/software-engineering/src/grading-rubric.md
 
 [jupyter]: https://blogs.sas.com/content/sasdummy/2016/04/24/how-to-run-sas-programs-in-jupyter-notebook/
@@ -165,6 +170,7 @@ If you get an error message that you can't fix, submit your code and document th
 
 [sas-ondemand]: https://www.sas.com/en_us/software/on-demand-for-academics.html
 [save-output]: https://github.com/pmean/introduction-to-sas/blob/master/src/5507-01-simon-save-output.sas
+
 [student-labs]: https://www.umkc.edu/is/labs/software/
 
 [v01-01]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=700eeac6-121e-46d6-a080-ad4500e4c370
