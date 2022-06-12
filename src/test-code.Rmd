@@ -92,7 +92,7 @@ output_slide <- '
 
 ### SAS output: {slide_title}
 
-Figure {zpad(i)}
+Figure {zpad(output_page)}
 
 <div class="notes">
 
@@ -107,16 +107,19 @@ Figure {zpad(i)}
 ```{r, echo=FALSE}
 slide_title <- "### SAS code is not in the proper order"
 chunk_type <- rep(99, length(sas_text))
+output_page <- 0
 for (i in 1:length(sas_text)) {
   chunk_type[i] <- 
     1*str_detect(sas_text[i], "^\\* Part") + 
-    2*str_detect(sas_text[i], "^\\* Notes") + 
+    2*str_detect(sas_text[i], "^\\* Speaker notes") + 
     4*str_detect(sas_text[i], "^\\* Output") 
   
   if (chunk_type[i] > 0) {
     sas_text[i] <- str_remove(sas_text[i], "^\\* ")
     sas_text[i] <- str_remove(sas_text[i], ";$")
   }
+  
+  if (chunk_type[i] == 4) output_page <- output_page+1
   
   if (chunk_type[i]==1) {slide_title <- sas_text[i]}
   
@@ -140,26 +143,95 @@ chunk_number <- cumsum(chunk_type==1)
 
 `r chunk_number`
 
-### Chunk 1
+```{r}
+i <- 0
+```
 
-`r paste0(sas_text[chunk_number==1], collapse="\n\n")`
+### Chunk `r i <- i+1; i`
 
-### Chunk 2
+`r paste0(sas_text[chunk_number==i], collapse="\n\n")`
 
-`r paste0(sas_text[chunk_number==2], collapse="\n\n")`
+### Chunk  `r i <- i+1; i`
 
-### Chunk 3
+`r paste0(sas_text[chunk_number==i], collapse="\n\n")`
 
-`r paste0(sas_text[chunk_number==3], collapse="\n\n")`
+### Chunk  `r i <- i+1; i`
 
-### Chunk 4
+`r paste0(sas_text[chunk_number==i], collapse="\n\n")`
 
-`r paste0(sas_text[chunk_number==4], collapse="\n\n")`
+### Chunk  `r i <- i+1; i`
 
-### Chunk 5
+`r paste0(sas_text[chunk_number==i], collapse="\n\n")`
 
-`r paste0(sas_text[chunk_number==5], collapse="\n\n")`
+### Chunk  `r i <- i+1; i`
 
-### Chunk 6
+`r paste0(sas_text[chunk_number==i], collapse="\n\n")`
 
-`r paste0(sas_text[chunk_number==6], collapse="\n\n")`
+### Chunk  `r i <- i+1; i`
+
+`r paste0(sas_text[chunk_number==i], collapse="\n\n")`
+
+### Chunk  `r i <- i+1; i`
+
+`r paste0(sas_text[chunk_number==i], collapse="\n\n")`
+
+### Chunk  `r i <- i+1; i`
+
+`r paste0(sas_text[chunk_number==i], collapse="\n\n")`
+
+### Chunk  `r i <- i+1; i`
+
+`r paste0(sas_text[chunk_number==i], collapse="\n\n")`
+
+### Chunk  `r i <- i+1; i`
+
+`r paste0(sas_text[chunk_number==i], collapse="\n\n")`
+
+### Chunk  `r i <- i+1; i`
+
+`r paste0(sas_text[chunk_number==i], collapse="\n\n")`
+
+### Chunk  `r i <- i+1; i`
+
+`r paste0(sas_text[chunk_number==i], collapse="\n\n")`
+
+### Chunk  `r i <- i+1; i`
+
+`r paste0(sas_text[chunk_number==i], collapse="\n\n")`
+
+### Chunk  `r i <- i+1; i`
+
+`r paste0(sas_text[chunk_number==i], collapse="\n\n")`
+
+### Chunk  `r i <- i+1; i`
+
+`r paste0(sas_text[chunk_number==i], collapse="\n\n")`
+
+### Chunk  `r i <- i+1; i`
+
+`r paste0(sas_text[chunk_number==i], collapse="\n\n")`
+
+### Chunk  `r i <- i+1; i`
+
+`r paste0(sas_text[chunk_number==i], collapse="\n\n")`
+
+### Chunk  `r i <- i+1; i`
+
+`r paste0(sas_text[chunk_number==i], collapse="\n\n")`
+
+### Chunk  `r i <- i+1; i`
+
+`r paste0(sas_text[chunk_number==i], collapse="\n\n")`
+
+### Chunk  `r i <- i+1; i`
+
+`r paste0(sas_text[chunk_number==i], collapse="\n\n")`
+
+### Chunk  `r i <- i+1; i`
+
+`r paste0(sas_text[chunk_number==i], collapse="\n\n")`
+
+### Chunk  `r i <- i+1; i`
+
+`r paste0(sas_text[chunk_number==i], collapse="\n\n")`
+
