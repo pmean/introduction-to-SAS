@@ -1,0 +1,165 @@
+---
+title: "Introduction to SAS, Working with continuous variables"
+author: "Steve Simon"
+date: "Created 2021-05-30"
+output: 
+  powerpoint_presentation: 
+    reference_doc: ../results/wide-screen-template.pptx
+knit: (function(inputFile, encoding) {
+  rmarkdown::render(inputFile, encoding = encoding, 
+  output_dir = "../results", output_format = "all") })  
+---
+
+```{r setup, echo=FALSE}
+suppressMessages(
+  suppressWarnings(
+    library(tidyverse)))
+suppressMessages(
+  suppressWarnings(
+    library(glue)))
+zpad <- function(i) {ifelse(i<10, paste0("0", i), paste0(i))}
+```
+
+```{r, echo=FALSE}
+fn <- "5507-02-simon-continuous-variables" 
+fn %>%
+  paste0(".sas") %>%
+  readLines %>%
+  str_remove_all("^\\W*$") %>%
+  paste0(collapse="\n") %>%
+  str_split("\n\n\n") %>%
+  unlist -> sas_text
+```
+
+```{r, echo=FALSE}
+display_code <- function(slide_title, slide_text) {
+  paste0(
+    "### SAS Code: ", 
+    slide_title,
+    "\n\n```{}\n", 
+    slide_text,
+    "\n```\n\n")
+}
+
+display_notes <- function(slide_text) {
+  paste0(
+    '<div class="notes">', 
+    "\n\n", 
+    slide_text,
+    "\n\n</div>\n\n")
+}
+
+display_output <- function(slide_title, slide_text) {
+  paste0(
+    "### SAS output: ", 
+    slide_title,
+    "\n\n", 
+    slide_text,
+    "\n\n")
+}
+```
+
+```{r echo=FALSE}
+backticks <- "```"
+
+code_slide <- "
+
+### SAS Code: {slide_title}
+
+{backticks}{{}}
+
+{sas_text[i]}
+
+{backticks}
+
+"
+```
+
+```{r echo=FALSE}
+slide_notes <- '
+
+<div class="notes">
+
+{sas_text[i]}
+
+</div>
+
+'
+```
+
+```{r echo=FALSE}
+output_slide <- '
+
+### SAS output: {slide_title}
+
+Figure {zpad(i)}
+
+<div class="notes">
+
+{sas_text[i]}
+
+</div>
+
+'
+```
+
+
+```{r, echo=FALSE}
+slide_title <- "### SAS code is not in the proper order"
+chunk_type <- rep(99, length(sas_text))
+for (i in 1:length(sas_text)) {
+  chunk_type[i] <- 
+    1*str_detect(sas_text[i], "^\\* Part") + 
+    2*str_detect(sas_text[i], "^\\* Notes") + 
+    4*str_detect(sas_text[i], "^\\* Output") 
+  
+  if (chunk_type[i] > 0) {
+    sas_text[i] <- str_remove(sas_text[i], "^\\* ")
+    sas_text[i] <- str_remove(sas_text[i], ";$")
+  }
+  
+  if (chunk_type[i]==1) {slide_title <- sas_text[i]}
+  
+  sas_text[i] <- case_when(
+    chunk_type[i]==1 ~ "",
+    chunk_type[i]==0 ~ as.character(glue(code_slide)),
+    chunk_type[i]==2 ~ as.character(glue(slide_notes)),
+    chunk_type[i]==4 ~ as.character(glue(output_slide)),
+    TRUE ~ paste0("### Error: ", chunk_type[i])
+  )
+}
+
+chunk_number <- cumsum(chunk_type==1)
+```
+
+### QC check
+
+`r chunk_type`
+
+### QC check
+
+`r chunk_number`
+
+### Chunk 1
+
+`r paste0(sas_text[chunk_number==1], collapse="\n\n")`
+
+### Chunk 2
+
+`r paste0(sas_text[chunk_number==2], collapse="\n\n")`
+
+### Chunk 3
+
+`r paste0(sas_text[chunk_number==3], collapse="\n\n")`
+
+### Chunk 4
+
+`r paste0(sas_text[chunk_number==4], collapse="\n\n")`
+
+### Chunk 5
+
+`r paste0(sas_text[chunk_number==5], collapse="\n\n")`
+
+### Chunk 6
+
+`r paste0(sas_text[chunk_number==6], collapse="\n\n")`

@@ -79,8 +79,7 @@ clean_tx <- function(md) {
   md %>%
     str_replace("^\\* Part", "Part") %>% 
     str_replace("^\\* Notes", "Notes") %>% 
-    str_replace("^\\* Output", "Output") %>% 
-    str_remove(";$")
+    str_replace("^\\* Output", "Output") 
 }
 
 add_chunk <- function(i, tx=tx) {
@@ -95,11 +94,15 @@ add_chunk <- function(i, tx=tx) {
   }
   
   if(str_detect(md, "Notes")) {
-    add_notes(md) -> x
-    return(x)
+    md %>%
+      str_remove(";$") %>%
+      add_notes %>%
+      return
   }
 
   if(str_detect(md, "Output")) {
+    md %<>% str_remove(";$")
+    
     output_page <<- output_page+1
     
     add_title("SAS Output: ", ti) %2%

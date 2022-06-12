@@ -2,9 +2,11 @@
 title: "Introduction to SAS, Working with continuous variables"
 author: "Steve Simon"
 date: "Created 2021-05-30"
-output: powerpoint_presentation
+output: 
+  powerpoint_presentation: 
+    reference_doc: ../results/wide-screen-template.pptx
 knit: (function(inputFile, encoding) {
-  rmarkdown::render(inputFile, encoding = encoding,
+  rmarkdown::render(inputFile, encoding = encoding, 
   output_dir = "../results", output_format = "all") })  
 ---
 
@@ -28,7 +30,6 @@ output_page <- 0
 ### Overview
 
 + Using variable labels
-+ Printing a small piece of data
 + Simple descriptive statistics
 + Printing row with smallest/largest value
 + Missing value logic
@@ -142,14 +143,28 @@ Don't obsess about this now, but you'll see a fairly consistent coding style tha
 `r add_chunks(0:2, tx)`
 
 
-### Rules for variable names
+### Rules for variable names (1/2)
 
 + Can use mix of
   + letters (A-Z, a-z),
   + numbers (0-9)
   + underscore (_)
-  + no blanks
-  + no symbols
+  + no blanks, no symbols
+
+<div class="notes">
+
+There are important rules for variable names in SAS. You can use a mix of letters, numbers, and the underscore. You can't use blanks or any special symbols like the dollar sign ($) or the dash/minus sign.
+
+I'm using the variable names provided but if you create your own names, use brief (but descriptive) name for EVERY variable in your data set. There's no precise rule, but names should be around 8 characters long. Longer variable names make your typing tedious and much shorter variable names makes your code terse and cryptic.
+
+I'm a bit more terse with these variable names than I normally would be just to reduce the amount of typing you have to do.
+
+You should avoid special symbols in your variable names especially symbols that are likely to cause confusion (the dash symbol, for example, which is also the symbol for subtraction). You should also avoid blanks. These rules are pretty much universal across most statistical software packages.
+
+</div>
+
+### Rules for variable names (2/2)
+
 + Can't start with a number
   + "a1" but not "1a"
 + Capitalization not important
@@ -157,8 +172,6 @@ Don't obsess about this now, but you'll see a fairly consistent coding style tha
 + Up to 32 characters in length
 
 <div class="notes">
-
-There are important rules for variable names in SAS. You can use a mix of letters, numbers, and the underscore. You can't use blanks or any special symbols like the dollar sign ($) or the dash/minus sign.
 
 You can't start with a number. So "a1" is okay, but "1a" is not.
 
@@ -170,28 +183,28 @@ I'm using the variable names provided but if you create your own names, use brie
 
 I'm a bit more terse with these variable names than I normally would be just to reduce the amount of typing you have to do.
 
-You should avoid special symbols in your variable names especially symbols that are likely to cause confusion (the dash symbol, for example, which is also the symbol for subtraction). You should also avoid blanks. These rules are pretty much universal across most statistical software packages.
-
-There are times when you'd like to have a blank in your variable name and you can use two special symbols in SAS (and most other statistical packages).
-  
-Here's how you can simulate blanks without actually using blanks.
-
-  * the underscore symbol (above the minus key
-  on most keyboards) and
-    
-  * the dot (period). (Note that SAS does not allow you to use the period this way.)
-
-These symbols create some artificial spacing that mimics the blanks. Another approach is "CamelCase" which is the mixture of upper and lower case within a variable name with each uppercase designating the beginning of a new "word".
-
 </div>
 
-### Recommendations for variable names
+### Recommendations for variable names (1/2)
 
 + Avoid generic names (x1, var01, etc.)
 + Keep it short
   + Use commonly known abbreviations...
   + ...but nothing cryptic
 + Use all lower case (age, not AGE or Age)
+
+<div class="notes">
+
+Your variable names should by descriptive. Avoid generic names like x1, var01, and so forth.
+
+Keep things short. You can use commonly known abbreviations, such as "wt" for "weight". But avoid any cryptic abbreviations.
+
+I like to keep everything in lower case. It is more readable than all upper case, and easier to remember than a mixture of upper and lower case. Some people prefer an initiial upper case, and there's nothing wrong with that. It is important, however, to be consistent.
+
+</div>
+
+### Recommendations for variable names (2/2)
+
 + Separate words with underscores
   + fat_brozek, not fatbrozek
 + Alternative: CamelCase
@@ -201,15 +214,10 @@ These symbols create some artificial spacing that mimics the blanks. Another app
   
 <div class="notes">
 
-Your variable names should by descriptive. Avoid generic names like x1, var01, and so forth.
-
-Keep things short. You can use commonly known abbreviations, such as "wt" for "weight". But avoid any cryptic abbreviations.
-
-I like to keep everything in lower case. It is more readable than all upper case, and easier to remember than a mixture of upper and lower case. Some people prefer an initiial upper case, and there's nothing wrong with that. It is important, however, to be consistent.
-
 You can use two or three short words in a variable name, but be sure to separate them using underscores. So the variable for percentage body fat as measured by Brozek's equation is "fat" and "brozek" separated by an underscore. Some people prefer CamelCase, where each word starts with an initial capital letter: capital F fat, capital B brozek.
 
 The one thing you do want to avoid is just running two or three words together and all lower case. There's a story about a group that started up in the era before the web called Writer's Exchange. As you can guess this was a resource for new authors. When the web came out, they decided to put their resources up on a website, www.writersexchange.com. That seemed logical enough, but then someone notices that you could read the website as "www dot writer sex change dot com". Not exactly the image they wanted.
+
 
 </div>
 
@@ -222,13 +230,24 @@ The one thing you do want to avoid is just running two or three words together a
   + Using variable labels
   + Printing a small piece of data
 
-### SAS variable labels
+### SAS variable labels (1/2)
 
 + Longer description of a variable
   + Can include blanks, special symbols
   + Internal documentation
   + Labels substituted on some (but not all) output
 + Required in this class (see grading rubric)
+
+<div class="notes">
+
+SAS offers an opportunity for you to add documentation to your program about individual variables. These are called variable labels. They have almost no restrictions. You can use blanks, or special symbols like a dollar sign or a dash. The documentation that variable labels provide is mostly internal, but these labels are substituted in a few places like some graphs.
+
+I strongly recommend use of variable labels and will require them for any homework you submit in this class. See the grading rubric for details.
+
+</div>
+
+### SAS variable labels (2/2)
+
 + Recommendations for variable labels
   + Judicious use of upper and lower case
   + Spell out abbreviations
@@ -237,17 +256,11 @@ The one thing you do want to avoid is just running two or three words together a
 
 <div class="notes">
 
-SAS offers an opportunity for you to add documentation to your program about individual variables. These are called variable labels. They have almost no restrictions. You can use blanks, or special symbols like a dollar sign or a dash. The documentation that variable labels provide is mostly internal, but these labels are substituted in a few places like some graphs.
-
-I strongly recommend use of variable labels and will require them for any homework you submit in this class. See the grading rubric for details.
-
 What makes a good variable label? First take advantage of a mixture of upper and lower case to make your labels more readable. Spell out any abbreviations, even obvious abbreviations. If your variable has a measurement unit, specify that unit in your variable label. If there are other important details, put these in the variable label as well.
 
 </div>
 
 `r add_chunks(3:4, tx)`
-
-
 
 ### Break #2
 

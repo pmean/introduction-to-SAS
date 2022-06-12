@@ -7,6 +7,8 @@
 * purpose: to work with continuous variables
 * license: public domain;
 
+options papersize=(6 4); 
+
 
 * Notes00 This is the standard documentation header.;
 
@@ -14,18 +16,14 @@
 * Part01. Tell SAS where to find and store things.;
 
 
-options papersize=(6 4); * needed to have the output fit on PowerPoint;
-
-%let p=q:/introduction-to-sas;
-
 filename fat
-  "&p/data/fat.txt";
-
+  "q:/introduction-to-sas/data/fat.txt";
+  
 libname intro
-  "&p/data";
-
+  "q:/introduction-to-sas/data";
+  
 ods pdf file=
-  "&p/results/5507-02-simon-continuous-variables.pdf";
+  "q:/introduction-to-sas/results/5507-02-simon-continuous-variables.pdf";
 
 
 * Notes01. You should already be familiar with 
@@ -55,16 +53,18 @@ data intro.fat;
     fat_brozek
     fat_siri
     dens
+
+
     age
     wt
     ht
     bmi
-
-
     ffw
     neck
     chest
     abdomen
+
+
     hip
     thigh
     knee
@@ -84,27 +84,28 @@ and does not fit on a single Powerpoint slide.;
 
 label
     case="Case number"
-    fat_brozek="Percentage body fat using Brozek's equation, 457/Density - 414.2"
-    fat_siri="Percent body fat using Siri's equation, 495/Density - 450"
+    fat_brozek="Fat (Brozek's equation)"
+    fat_siri="Fat (Siri's equation)"
     dens="Density"
     age="Age (yrs)"
     wt="Weight (lbs)"
+
+
     ht="Height (inches)"
-    bmi="Adiposity index = Weight/Height^2 (kg/m^2)"
-
-
-    ffw="Fat Free Weight = (1 - fraction of body fat) * Weight using Brozek's formula (lbs)"
+    bmi="Body mass index (kg/m^2)"
+    ffw="Fat Free Weight (lbs)"
     neck="Neck circumference (cm)"
     chest="Chest circumference (cm)"
-    abdomen="Abdomen circumference (cm) at the umbilicus and level with the iliac crest"
+    abdomen="Abdomen circumference (cm)"
     hip="Hip circumference (cm)"
+
+
     thigh="Thigh circumference (cm)"
     knee="Knee circumference (cm)"
     ankle="Ankle circumference (cm)"
     biceps="Extended biceps circumference (cm)"
     forearm="Forearm circumference (cm)"
-    wrist="Wrist circumference (cm) distal to the styloid processes"  
-  ;
+    wrist="Wrist circumference (cm)";
 run;
 
 
@@ -144,7 +145,7 @@ in this Powerpoint slide, but that's okay.;
 proc print
     data=intro.fat(obs=10);
   var case fat_brozek fat_siri dens age;
-  title1 "The first ten rows and five columns";
+  title1 "Ten rows and five columns";
   title2 "of the fat data set";
 run;
 
@@ -189,8 +190,8 @@ proc means
     n mean std min max
     data=intro.fat;
   var ht;
-  title1 "Simple descriptive statistics for ht";
-  title2 "Notice the unusual minimum value";
+  title1 "Descriptive statistics for ht";
+  title2 "Notice the unusual minimum";
 run;
 
 
@@ -223,6 +224,7 @@ proc sort
     data=intro.fat;
   by ht;
 run;
+
 
 proc print
     data=intro.fat(obs=1);
@@ -317,6 +319,7 @@ proc sort
     data=intro.fat;
   by descending ht;
 run;
+
 
 proc print
     data=intro.fat(obs=1);
@@ -460,6 +463,7 @@ data converted_units;
   ht_cm = ht * 2.54;
   wt_kg = wt / 2.2; 
 run;
+
 
 proc print 
     data=converted_units(obs=10);
@@ -652,7 +656,7 @@ from the middle outward.;
 proc sgplot
     data=intro.fat2;
   scatter x=abdomen y=fat_brozek;
-  title "Simple scatterplot";
+  title1 "Simple scatterplot";
 run;
 
 
@@ -674,13 +678,15 @@ proc sgplot
     data=intro.fat2;
   scatter x=abdomen y=fat_brozek;
   reg x=abdomen y=fat_brozek;
-  title "Scatterplot with linear regression line";
+  title2 "with linear trend";
 run;
 
 
 * Notes21. The trend line is very useful for 
 large and noisy data sets. It also allows you to 
 more quickly visualize extreme values.;
+
+Notice that there is no title1. When you leave this out, SAS will pull the title1 used in the previous procedure, if it is available. This allows you to repeat the top line title across broad sections of your program.
 
 
 * Output, page 17.  Notice, for example, that the 
@@ -697,7 +703,7 @@ proc sgplot
     data=intro.fat2;
   scatter x=abdomen y=fat_brozek;
   pbspline x=abdomen y=fat_brozek;
-  title "Scatterplot with a smooth curve";
+  title2 "with a smooth curve";
 run;
 
 ods pdf close;
