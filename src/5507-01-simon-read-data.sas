@@ -1,27 +1,26 @@
 * 5507-01-simon-read-data.sas
-* author: Steve Simon and Steve Simon
-* date: created 2021-06-12
-* purpose: to read data from a separate file
-* license: public domain;
+  author: Steve Simon
+  date: created 2022-06-09
+  purpose: to read a small dataset
+    from a separate file
+  license: public domain;
 
-%let path=q:/introduction-to-sas;
-
-libname perm "&path/data";
+libname perm "q:/introduction-to-sas/data";
 
 filename rawdata
-    "&path/data/six-numbers.txt";
+  "q:/introduction-to-sas/data/six-numbers.txt";
 
 ods pdf file=
-   "&path/results/5507-01-simon-read-data.pdf";
+    "q:/introduction-to-sas/results/5507-01-simon-read-data.pdf";
 
 data perm.small_example;
-  infile rawdata;
-  input x y;
+ infile rawdata;
+ input x y;
 run;
 
 proc print
     data=perm.small_example(obs=1);
-  title1 "First row of data";
+title "First row of data";
 run;
 
 ods pdf close;
