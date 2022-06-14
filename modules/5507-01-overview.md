@@ -76,7 +76,7 @@ Recommended readings
 
 ### Videos
 
-Total video time, xx minutes
+Total video time, 199 minutes
 
 There are two types of videos in this class. The most common is a PowerPoint video. In these videos, I display PowerPoint slides and talk. My comments are captured, more or less, in the speaker's notes. Every PowerPoint video should have an associated pdf file with the slides and speaker notes. For a few of these videos, I have abandoned PowerPoint for a live demonstration on my computer. This will show me typing into SAS or possibly other application software. There are no pdf files for the live demonstrations.
 
