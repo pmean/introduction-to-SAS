@@ -21,7 +21,8 @@ filename fat
   
 libname intro
   "q:/introduction-to-sas/data";
-  
+
+
 ods pdf file=
   "q:/introduction-to-sas/results/5507-02-simon-continuous-variables.pdf";
 
@@ -180,7 +181,8 @@ The run statement says you're done with the
 procedure.;
 
 
-* Output: proc print.
+* Output from proc print.;
+
 
 * Speaker notes: There are no obvious
 problems with this dataset.;
@@ -211,7 +213,8 @@ tells SAS which variable(s) you want descriptive
 statistics on.;
 
 
-* Output: proc means. 
+* Output from proc means. 
+
 
 * Speaker notes: This is what your output looks 
 like.
@@ -259,7 +262,7 @@ sorted data in a separate location: something
 along the lines of proc sort data=x out=y.;
 
 
-* Output, proc print
+* Output from proc print
 
 
 * Speaker notes: This is what your output looks 
@@ -343,7 +346,7 @@ keyword desc to sort the data in reverse
 order.;
 
 
-* Output, proc print.;
+* Output from proc print.;
 
 
 * Speaker notes: This is what your output
@@ -438,9 +441,10 @@ to make sure that the result correctly reflects
 what you want.;
 
 
-* Output: proc print.;
+* Output from proc print.;
 
-Speaker notes: This is what your output looks 
+
+* Speaker notes: This is what your output looks 
 like.
 
 In order to prevent this from happening, you need 
@@ -465,7 +469,7 @@ for the number of missing values in proc means
 using nmiss.;
 
 
-* Output, proc means.
+* Output from proc means.
 
 
 * Speaker notes: This is what your output
@@ -478,8 +482,8 @@ observations and 1 missing value.;
 
 data converted_units;
   set intro.fat2;
-  ht_cm = ht * 2.54;
-  wt_kg = wt / 2.2; 
+  ht_cm = round(ht * 2.54, 0.01);
+  wt_kg = round(wt / 2.2, 0.01); 
 run;
 
 
@@ -501,7 +505,7 @@ weight into centimeters and kilograms,
 respectively.;
 
 
-* Output, proc print.;
+* Output from proc print.;
 
 
 * Speaker notes: This is your output with 
@@ -526,7 +530,7 @@ is wise to modify the defaults for any graphic
 image.;
 
 
-* Output, proc sgplot.
+* Output from proc sgplot.
 
 
 * Speaker notes: This is the default histogram.;
@@ -548,7 +552,7 @@ centered at 60, and each bin has a width of
 1 inch (plus or minus 0.5 inches);
 
 
-* Output, proc sgplot.;
+* Output from proc sgplot.;
 
 
 * Speaker notes: This is what you get. You can 
@@ -571,7 +575,7 @@ centered at 60, but now each bin has a width of
 5 inches (plus or minus 2.5 inches).;
 
 
-* Output, proc sgplot.
+* Output from proc sgplot.;
 
 
 * Speaker notes: This is the revised histogram. 
@@ -596,14 +600,14 @@ run;
 correlations.;
 
 
-* Output, proc corr.
+* Output from proc corr.
 
 
 * Speaker notes: The output here extends to a
 fresh page.;
 
 
-* Output, proc corr (continued).;
+* Output from proc corr (continued).;
 
 
 * Speaker notes: The output here really annoys
@@ -631,13 +635,13 @@ run;
 in a separate data file.;
 
 
-* Output, proc print.
+* Output from proc print.
 
 
 * Speaker notes: Continues on the next slide.;
 
 
-* Output, proc print (continued).
+* Output from proc print (continued).
 
 
 * Speaker notes: The output is a bit unusual 
@@ -654,7 +658,7 @@ the full data set.;
 data correlations;
   set correlations;
   if _type_="CORR";
-  drop type;
+  drop _type_;
   fat_brozek=round(100*fat_brozek);
   fat_siri=round(100*fat_siri);
 run;
@@ -687,7 +691,7 @@ run;
 let's print the file before we modify it.;
 
 
-* Output, proc print.
+* Output from proc print.
 
 
 * Speaker notes: This is the output. You can 
@@ -713,7 +717,7 @@ but the scatterplots produced by the sgplot
 procedure have the most flexibility.;
 
 
-* Output, proc sgplot.; 
+* Output from proc sgplot.; 
 
 
 * Speaker notes: This plot shows a general 
@@ -742,7 +746,7 @@ repeat the top line title across broad sections of
 your program.;
 
 
-* Output, proc sgplot.
+* Output from proc sgplot.
 
 
 * Speaker notes: Notice, for example, that the 
@@ -770,7 +774,7 @@ spline. It helps you visualize whether the trend
 is linear or not.;
 
 
-* Output, proc sgplot.
+* Output from proc sgplot.
 
 
 * Speaker notes: The smoothing spline provides 

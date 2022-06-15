@@ -10,21 +10,7 @@ knit: (function(inputFile, encoding) {
   output_dir = "../results", output_format = "all") })  
 ---
 
-```{r common-code, child="common-functions.Rmd"}
-```
-
-```{r}
-file_prefix <- "5507-02-simon-continuous-variables"
-sas_file <- paste0(file_prefix, ".sas")
-tx <- readLines(sas_file)
-```
-
-```{r show-general-structure}
-tx %>%
-  str_subset("^\\* ") %>%
-  paste(collapse="\n\n") -> general_structure
-tx %<>% str_trim(side="right") %>% paste0(collapse="\n") %>% str_split("\n\n\n") %>% unlist
-output_page <- 0
+```{r common-code, child="test-code.Rmd"}
 ```
 
 ### Overview
@@ -47,12 +33,6 @@ date: created 2021-05-30
 purpose: to produce slides for module01 videos
 
 license: public domain
-
-Here is an overview of the topics I want to cover in module02.
-
-[For my own use]General structure of this program.
-
-`r general_structure`
 
 </div>
 
@@ -138,10 +118,7 @@ Don't obsess about this now, but you'll see a fairly consistent coding style tha
 
 </div>  
 
-
-
-`r add_chunks(0:2, tx)`
-
+`r paste0(sas_text[chunk_number==1], collapse="\n\n")`
 
 ### Rules for variable names (1/2)
 
@@ -260,7 +237,7 @@ What makes a good variable label? First take advantage of a mixture of upper and
 
 </div>
 
-`r add_chunks(3:4, tx)`
+`r paste0(sas_text[chunk_number==2], collapse="\n\n")`
 
 ### Break #2
 
@@ -273,7 +250,9 @@ What makes a good variable label? First take advantage of a mixture of upper and
   + Printing row with smallest/largest value
 
 
-`r add_chunks(5:7, tx)`
+`r paste0(sas_text[chunk_number==3], collapse="\n\n")`
+
+`r paste0(sas_text[chunk_number==4], collapse="\n\n")`
 
 ### Break #3
 
@@ -288,9 +267,21 @@ What makes a good variable label? First take advantage of a mixture of upper and
 
 </div>
 
+`r paste0(sas_text[chunk_number==4], collapse="\n\n")`
 
-`r add_chunks(8:10, tx)`
+`r paste0(sas_text[chunk_number==5], collapse="\n\n")`
 
+`r paste0(sas_text[chunk_number==6], collapse="\n\n")`
+
+`r paste0(sas_text[chunk_number==7], collapse="\n\n")`
+
+`r paste0(sas_text[chunk_number==8], collapse="\n\n")`
+
+`r paste0(sas_text[chunk_number==9], collapse="\n\n")`
+
+`r paste0(sas_text[chunk_number==10], collapse="\n\n")`
+
+`r paste0(sas_text[chunk_number==11], collapse="\n\n")`
 
 ### The proper way to search for negative ht values
 
@@ -304,8 +295,7 @@ You may hate having to do this and wish that SAS would have handled things diffe
 
 </div>
 
-
-`r add_chunks(11:11, tx)`
+`r paste0(sas_text[chunk_number==12], collapse="\n\n")`
 
 
 ### Break #4
@@ -315,9 +305,13 @@ You may hate having to do this and wish that SAS would have handled things diffe
   + Simple transformations
   + Histograms
 
+`r paste0(sas_text[chunk_number==13], collapse="\n\n")`
 
-`r add_chunks(12:15, tx)`
+`r paste0(sas_text[chunk_number==14], collapse="\n\n")`
 
+`r paste0(sas_text[chunk_number==15], collapse="\n\n")`
+
+`r paste0(sas_text[chunk_number==16], collapse="\n\n")`
 
 ### Break #5
 + What have you learned
@@ -347,7 +341,19 @@ The corr procedure produces, by default, a square correlation matrix of all the 
 </div>
 
 
-`r add_chunks(16:22, tx)`
+`r paste0(sas_text[chunk_number==17], collapse="\n\n")`
+
+`r paste0(sas_text[chunk_number==18], collapse="\n\n")`
+
+`r paste0(sas_text[chunk_number==19], collapse="\n\n")`
+
+`r paste0(sas_text[chunk_number==20], collapse="\n\n")`
+
+`r paste0(sas_text[chunk_number==21], collapse="\n\n")`
+
+`r paste0(sas_text[chunk_number==22], collapse="\n\n")`
+
+`r paste0(sas_text[chunk_number==23], collapse="\n\n")`
 
 ### Don't forget!
 
