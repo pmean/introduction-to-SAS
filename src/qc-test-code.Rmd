@@ -1,0 +1,153 @@
+---
+title: "Introduction to SAS, Working with continuous variables"
+author: "Steve Simon"
+date: "Created 2021-05-30"
+output: 
+  powerpoint_presentation: 
+    reference_doc: ../results/wide-screen-template.pptx
+knit: (function(inputFile, encoding) {
+  rmarkdown::render(inputFile, encoding = encoding, 
+  output_dir = "../results", output_format = "all") })  
+---
+
+
+```{r, echo=FALSE}
+# Specify the SAS file you are parsing here.
+fn <- "5507-02-simon-continuous-variables" 
+```
+
+
+```{r common-code, child="test-code.Rmd"}
+```
+
+### QC check
+
+`r chunk_type`
+
+### QC check
+
+`r chunk_number`
+
+### QC check
+
+```{r echo=FALSE}
+sas_text[chunk_type==1][1:5]
+```
+
+### QC check
+
+```{r echo=FALSE}
+sas_text[chunk_type==1][6:10]
+```
+
+### QC check
+
+```{r echo=FALSE}
+sas_text[chunk_type==1][11:15]
+```
+
+### QC check
+
+```{r echo=FALSE}
+sas_text[chunk_type==1][16:20]
+```
+
+### QC check
+
+```{r echo=FALSE}
+sas_text[chunk_type==1][21:23]
+```
+
+
+```{r echo=FALSE}
+i <- 0
+```
+
+### Chunk `r i <- i+1; i`
+
+`r paste0(sas_text[chunk_number==i], collapse="\n\n")`
+
+### Chunk  `r i <- i+1; i`
+
+`r paste0(sas_text[chunk_number==i], collapse="\n\n")`
+
+### Chunk  `r i <- i+1; i`
+
+`r paste0(sas_text[chunk_number==i], collapse="\n\n")`
+
+### Chunk  `r i <- i+1; i`
+
+`r paste0(sas_text[chunk_number==i], collapse="\n\n")`
+
+### Chunk  `r i <- i+1; i`
+
+`r paste0(sas_text[chunk_number==i], collapse="\n\n")`
+
+### Chunk  `r i <- i+1; i`
+
+`r paste0(sas_text[chunk_number==i], collapse="\n\n")`
+
+### Chunk  `r i <- i+1; i`
+
+`r paste0(sas_text[chunk_number==i], collapse="\n\n")`
+
+### Chunk  `r i <- i+1; i`
+
+`r paste0(sas_text[chunk_number==i], collapse="\n\n")`
+
+### Chunk  `r i <- i+1; i`
+
+`r paste0(sas_text[chunk_number==i], collapse="\n\n")`
+
+### Chunk  `r i <- i+1; i`
+
+`r paste0(sas_text[chunk_number==i], collapse="\n\n")`
+
+### Chunk  `r i <- i+1; i`
+
+`r paste0(sas_text[chunk_number==i], collapse="\n\n")`
+
+### Chunk  `r i <- i+1; i`
+
+`r paste0(sas_text[chunk_number==i], collapse="\n\n")`
+
+### Chunk  `r i <- i+1; i`
+
+`r paste0(sas_text[chunk_number==i], collapse="\n\n")`
+
+### Chunk  `r i <- i+1; i`
+
+`r paste0(sas_text[chunk_number==i], collapse="\n\n")`
+
+### Chunk  `r i <- i+1; i`
+
+`r paste0(sas_text[chunk_number==i], collapse="\n\n")`
+
+### Chunk  `r i <- i+1; i`
+
+`r paste0(sas_text[chunk_number==i], collapse="\n\n")`
+
+### Chunk  `r i <- i+1; i`
+
+`r paste0(sas_text[chunk_number==i], collapse="\n\n")`
+
+### Chunk  `r i <- i+1; i`
+
+`r paste0(sas_text[chunk_number==i], collapse="\n\n")`
+
+### Chunk  `r i <- i+1; i`
+
+`r paste0(sas_text[chunk_number==i], collapse="\n\n")`
+
+### Chunk  `r i <- i+1; i`
+
+`r paste0(sas_text[chunk_number==i], collapse="\n\n")`
+
+### Chunk  `r i <- i+1; i`
+
+`r paste0(sas_text[chunk_number==i], collapse="\n\n")`
+
+### Chunk  `r i <- i+1; i`
+
+`r paste0(sas_text[chunk_number==i], collapse="\n\n")`
+

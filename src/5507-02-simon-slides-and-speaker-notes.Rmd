@@ -10,6 +10,11 @@ knit: (function(inputFile, encoding) {
   output_dir = "../results", output_format = "all") })  
 ---
 
+```{r, echo=FALSE}
+# Specify the SAS file you are parsing here.
+fn <- "5507-02-simon-continuous-variables" 
+```
+
 ```{r common-code, child="test-code.Rmd"}
 ```
 
@@ -266,26 +271,6 @@ What makes a good variable label? First take advantage of a mixture of upper and
   + Simple statistics
   + Printing row with smallest/largest value
 
-## [1] "<!---Part06. Calculate simple statistics for ht--->"       
-## [2] "<!---Part07. Look at smallest value--->"                   
-## [3] "<!---Part08. Look at the largest value--->"                
-## [4] "<!---Part09. Removing the entire row--->"                  
-## [5] "<!---Part10. Converting the outlier to a missing value--->"
-
-
-### Break #3
-
-+ What have you learned so far
-  + Simple statistics
-  + Printing row with smallest/largest value
-  
-+ What's next
-  + Handling outliers
-  + Missing values
-
-
-</div>
-
 <!---Part06. Calculate simple statistics for ht--->       
 
 `r paste0(sas_text[chunk_number==6], collapse="\n\n")`
@@ -326,7 +311,7 @@ You may hate having to do this and wish that SAS would have handled things diffe
 
 `r paste0(sas_text[chunk_number==12], collapse="\n\n")`
 
-### Break #4
+### Break #3
 + What have you learned
   + Handling outliers
   + Missing values
@@ -350,7 +335,7 @@ You may hate having to do this and wish that SAS would have handled things diffe
 
 `r paste0(sas_text[chunk_number==16], collapse="\n\n")`
 
-### Break #5
+### Break #4
 + What have you learned
   + Simple transformations
   + Histograms
