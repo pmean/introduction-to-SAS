@@ -199,7 +199,7 @@ Your variable names should by descriptive. Avoid generic names like x1, var01, a
 
 Keep things short. You can use commonly known abbreviations, such as "wt" for "weight". But avoid any cryptic abbreviations.
 
-I like to keep everything in lower case. It is more readable than all upper case, and easier to remember than a mixture of upper and lower case. Some people prefer an initiial upper case, and there's nothing wrong with that. It is important, however, to be consistent.
+I like to keep everything in lower case. It is more readable than all upper case, and easier to remember than a mixture of upper and lower case. Some people prefer an initial upper case, and there's nothing wrong with that. It is important, however, to be consistent.
 
 </div>
 
