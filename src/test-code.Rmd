@@ -76,6 +76,10 @@ code_slide <- "
 ```
 
 ```{r echo=FALSE}
+code_title <- "<!---{sas_text[i]}--->"
+```
+
+```{r echo=FALSE}
 slide_notes <- '
 
 <div class="notes">
@@ -118,7 +122,7 @@ for (i in 1:length(sas_text)) {
   if (chunk_type[i]==1) {slide_title <- sas_text[i]}
   
   sas_text[i] <- case_when(
-    chunk_type[i]==1 ~ "",
+    chunk_type[i]==1 ~ as.character(glue(code_title)),
     chunk_type[i]==0 ~ as.character(glue(code_slide)),
     chunk_type[i]==2 ~ as.character(glue(slide_notes)),
     chunk_type[i]==4 ~ as.character(glue(output_slide)),
@@ -128,4 +132,136 @@ for (i in 1:length(sas_text)) {
 
 chunk_number <- cumsum(chunk_type==1)
 ```
+
+=======
+### QC check
+
+`r chunk_type`
+
+### QC check
+
+`r chunk_number`
+
+### QC check
+
+```{r echo=FALSE}
+sas_text[chunk_type==1][1:5]
+```
+
+### QC check
+
+```{r echo=FALSE}
+sas_text[chunk_type==1][6:10]
+```
+
+### QC check
+
+```{r echo=FALSE}
+sas_text[chunk_type==1][11:15]
+```
+
+### QC check
+
+```{r echo=FALSE}
+sas_text[chunk_type==1][16:20]
+```
+
+### QC check
+
+```{r echo=FALSE}
+sas_text[chunk_type==1][21:23]
+```
+
+
+```{r echo=FALSE}
+i <- 0
+```
+
+### Chunk `r i <- i+1; i`
+
+`r paste0(sas_text[chunk_number==i], collapse="\n\n")`
+
+### Chunk  `r i <- i+1; i`
+
+`r paste0(sas_text[chunk_number==i], collapse="\n\n")`
+
+### Chunk  `r i <- i+1; i`
+
+`r paste0(sas_text[chunk_number==i], collapse="\n\n")`
+
+### Chunk  `r i <- i+1; i`
+
+`r paste0(sas_text[chunk_number==i], collapse="\n\n")`
+
+### Chunk  `r i <- i+1; i`
+
+`r paste0(sas_text[chunk_number==i], collapse="\n\n")`
+
+### Chunk  `r i <- i+1; i`
+
+`r paste0(sas_text[chunk_number==i], collapse="\n\n")`
+
+### Chunk  `r i <- i+1; i`
+
+`r paste0(sas_text[chunk_number==i], collapse="\n\n")`
+
+### Chunk  `r i <- i+1; i`
+
+`r paste0(sas_text[chunk_number==i], collapse="\n\n")`
+
+### Chunk  `r i <- i+1; i`
+
+`r paste0(sas_text[chunk_number==i], collapse="\n\n")`
+
+### Chunk  `r i <- i+1; i`
+
+`r paste0(sas_text[chunk_number==i], collapse="\n\n")`
+
+### Chunk  `r i <- i+1; i`
+
+`r paste0(sas_text[chunk_number==i], collapse="\n\n")`
+
+### Chunk  `r i <- i+1; i`
+
+`r paste0(sas_text[chunk_number==i], collapse="\n\n")`
+
+### Chunk  `r i <- i+1; i`
+
+`r paste0(sas_text[chunk_number==i], collapse="\n\n")`
+
+### Chunk  `r i <- i+1; i`
+
+`r paste0(sas_text[chunk_number==i], collapse="\n\n")`
+
+### Chunk  `r i <- i+1; i`
+
+`r paste0(sas_text[chunk_number==i], collapse="\n\n")`
+
+### Chunk  `r i <- i+1; i`
+
+`r paste0(sas_text[chunk_number==i], collapse="\n\n")`
+
+### Chunk  `r i <- i+1; i`
+
+`r paste0(sas_text[chunk_number==i], collapse="\n\n")`
+
+### Chunk  `r i <- i+1; i`
+
+`r paste0(sas_text[chunk_number==i], collapse="\n\n")`
+
+### Chunk  `r i <- i+1; i`
+
+`r paste0(sas_text[chunk_number==i], collapse="\n\n")`
+
+### Chunk  `r i <- i+1; i`
+
+`r paste0(sas_text[chunk_number==i], collapse="\n\n")`
+
+### Chunk  `r i <- i+1; i`
+
+`r paste0(sas_text[chunk_number==i], collapse="\n\n")`
+
+### Chunk  `r i <- i+1; i`
+
+`r paste0(sas_text[chunk_number==i], collapse="\n\n")`
 

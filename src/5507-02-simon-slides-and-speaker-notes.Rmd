@@ -116,9 +116,7 @@ There is no official rule of thumb on this, but I do try to keep my lines below 
 
 Don't obsess about this now, but you'll see a fairly consistent coding style that I use for my SAS code. You don't have to follow my format, of course, which might be a bit too extreme for your tastes. Just experiment with things a bit until you can settle on a layout that you are comfortable with.
 
-</div>  
-
-`r paste0(sas_text[chunk_number==1], collapse="\n\n")`
+</div> 
 
 ### Rules for variable names (1/2)
 
@@ -176,7 +174,7 @@ Your variable names should by descriptive. Avoid generic names like x1, var01, a
 
 Keep things short. You can use commonly known abbreviations, such as "wt" for "weight". But avoid any cryptic abbreviations.
 
-I like to keep everything in lower case. It is more readable than all upper case, and easier to remember than a mixture of upper and lower case. Some people prefer an initiial upper case, and there's nothing wrong with that. It is important, however, to be consistent.
+I like to keep everything in lower case. It is more readable than all upper case, and easier to remember than a mixture of upper and lower case. Some people prefer an initial upper case, and there's nothing wrong with that. It is important, however, to be consistent.
 
 </div>
 
@@ -197,15 +195,6 @@ The one thing you do want to avoid is just running two or three words together a
 
 
 </div>
-
-### Break #1
-
-+ What have you learned so far
-  + Rules for variable names
-  
-+ What's next
-  + Using variable labels
-  + Printing a small piece of data
 
 ### SAS variable labels (1/2)
 
@@ -237,22 +226,52 @@ What makes a good variable label? First take advantage of a mixture of upper and
 
 </div>
 
+### Break #1
+
++ What have you learned so far
+  + Rules for variable names
+  + Using variable labels
+  
++ What's next
+  + SAS code with variable labels
+
+
+<!---Part01. Documentation header--->
+
+`r paste0(sas_text[chunk_number==1], collapse="\n\n")`
+
+<!---Part02. Tell SAS where to find and store things.--->
+
 `r paste0(sas_text[chunk_number==2], collapse="\n\n")`
+
+<!---Part03. Read in your data--->
+
+`r paste0(sas_text[chunk_number==3], collapse="\n\n")`
+
+<!---Part04. Add variable labels--->
+
+`r paste0(sas_text[chunk_number==4], collapse="\n\n")`
+
+<!---Part05. Print a small piece of the data--->
+
+`r paste0(sas_text[chunk_number==5], collapse="\n\n")`
+
 
 ### Break #2
 
 + What have you learned so far
-  + Using variable labels
-  + Printing a small piece of data
+  + SAS code with variable labels
   
 + What's next
   + Simple statistics
   + Printing row with smallest/largest value
 
+## [1] "<!---Part06. Calculate simple statistics for ht--->"       
+## [2] "<!---Part07. Look at smallest value--->"                   
+## [3] "<!---Part08. Look at the largest value--->"                
+## [4] "<!---Part09. Removing the entire row--->"                  
+## [5] "<!---Part10. Converting the outlier to a missing value--->"
 
-`r paste0(sas_text[chunk_number==3], collapse="\n\n")`
-
-`r paste0(sas_text[chunk_number==4], collapse="\n\n")`
 
 ### Break #3
 
@@ -267,19 +286,27 @@ What makes a good variable label? First take advantage of a mixture of upper and
 
 </div>
 
-`r paste0(sas_text[chunk_number==4], collapse="\n\n")`
-
-`r paste0(sas_text[chunk_number==5], collapse="\n\n")`
+<!---Part06. Calculate simple statistics for ht--->       
 
 `r paste0(sas_text[chunk_number==6], collapse="\n\n")`
 
+<!---Part07. Look at smallest value--->
+
 `r paste0(sas_text[chunk_number==7], collapse="\n\n")`
+
+<!---Part08. Look at the largest value--->
 
 `r paste0(sas_text[chunk_number==8], collapse="\n\n")`
 
+<!---Part09. Removing the entire row--->
+
 `r paste0(sas_text[chunk_number==9], collapse="\n\n")`
 
+<!---Part10. Converting the outlier to a missing value--->"
+
 `r paste0(sas_text[chunk_number==10], collapse="\n\n")`
+
+<!---Part11. Faulty approach for filtering out negative values--->
 
 `r paste0(sas_text[chunk_number==11], collapse="\n\n")`
 
@@ -295,21 +322,31 @@ You may hate having to do this and wish that SAS would have handled things diffe
 
 </div>
 
-`r paste0(sas_text[chunk_number==12], collapse="\n\n")`
+<!---Part12. Counting missing values--->
 
+`r paste0(sas_text[chunk_number==12], collapse="\n\n")`
 
 ### Break #4
 + What have you learned
+  + Handling outliers
   + Missing values
 + What's next
   + Simple transformations
   + Histograms
 
+<!---Part13. Simple transformations--->
+
 `r paste0(sas_text[chunk_number==13], collapse="\n\n")`
+
+<!---Part14. Display a histogram--->
 
 `r paste0(sas_text[chunk_number==14], collapse="\n\n")`
 
+<!---Part15. Revised histogram with narrow bins--->"
+
 `r paste0(sas_text[chunk_number==15], collapse="\n\n")`
+
+<!---Part16. Revised histogram with wide bins--->
 
 `r paste0(sas_text[chunk_number==16], collapse="\n\n")`
 
@@ -340,18 +377,31 @@ The corr procedure produces, by default, a square correlation matrix of all the 
   
 </div>
 
+<!---Part17. Calculate correlations--->
 
 `r paste0(sas_text[chunk_number==17], collapse="\n\n")`
 
+<!---Part18. Save the correlations in a separate data file.--->
+
 `r paste0(sas_text[chunk_number==18], collapse="\n\n")`
+
+<!---Part19. Modify these correlations.--->
 
 `r paste0(sas_text[chunk_number==19], collapse="\n\n")`
 
+<!---Part20. Print the modified correlations.--->
+
 `r paste0(sas_text[chunk_number==20], collapse="\n\n")`
+
+<!---Part21. Draw a scatterplot.--->
 
 `r paste0(sas_text[chunk_number==21], collapse="\n\n")`
 
+<!---Part22. Adding linear trend line.--->
+
 `r paste0(sas_text[chunk_number==22], collapse="\n\n")`
+
+<!---Part23. Adding a smooth curve.--->"
 
 `r paste0(sas_text[chunk_number==23], collapse="\n\n")`
 
