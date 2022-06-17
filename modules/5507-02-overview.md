@@ -57,7 +57,10 @@ Handouts associated with videos
   + [powerpoint format][v02-pptx].
 
 [v02-pdf]: https://github.com/pmean/introduction-to-sas/blob/master/results/5507-02-simon-slides-and-speaker-notes.pdf
-[v02-pptx]: https://github.com/pmean/introduction-to-SAS/blob/master/results/5507-02-simon-sildes-and-speaker-notes.pptx?raw=true
+
+[v02-pptx]: https://github.com/pmean/introduction-to-SAS/blob/master/results/5507-02-simon-slides-and-speaker-notes.pptx
+
+
 
 Datasets used in this module
 
