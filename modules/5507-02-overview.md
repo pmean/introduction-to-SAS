@@ -52,7 +52,12 @@ You will also see the following SAS keywords and procedurues
 
 Handouts associated with videos
 
-+ Slides and speaker notes, available in [pdf format][v02-pdf] or [powerpoint format][v02-pptx].
++ Slides and speaker notes
+  + [pdf format][v02-pdf] or
+  + [powerpoint format][v02-pptx].
+
+[v02-pdf]: https://github.com/pmean/introduction-to-sas/blob/master/results/5507-02-simon-slides-and-speaker-notes.pdf
+[v02-pptx]: https://github.com/pmean/introduction-to-SAS/blob/master/results/5507-02-simon-sildes-and-speaker-notes.pptx?raw=true
 
 Datasets used in this module
 
@@ -151,5 +156,3 @@ Not yet available.
 [grading-rubric]: https://github.com/pmean/classes/blob/master/software-engineering/src/grading-rubric.md
 
 [v02-01]: 
-[v02-pdf]: https://github.com/pmean/introduction-to-sas/blob/master/results/5507-02-simon-slides-and-speaker-notes.pdf
-[v02-pptx]: https://github.com/pmean/introduction-to-SAS/blob/master/results/5507-02-simon-sildes-and-speaker-notes.pptx?raw=true
