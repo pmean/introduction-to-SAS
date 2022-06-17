@@ -151,3 +151,14 @@ i <- 0
 
 `r paste0(sas_text[chunk_number==i], collapse="\n\n")`
 
+### Chunk  `r i <- i+1; i`
+
+`r paste0(sas_text[chunk_number==i], collapse="\n\n")`
+
+```{r echo=FALSE}
+save(
+  sas_text, 
+  chunk_type, 
+  chunk_number, 
+  file="../data/qc-test-code.RData")
+```

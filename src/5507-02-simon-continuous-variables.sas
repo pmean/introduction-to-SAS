@@ -7,7 +7,7 @@
 * purpose: to work with continuous variables
 * license: public domain;
 
-options papersize=(6 4); 
+options papersize=(6in 4in);
 
 
 * Speaker notes: This is the standard documentation header.;
@@ -141,6 +141,28 @@ Note that some of these labels do not fit well
 in this Powerpoint slide, but that's okay.;
 
 
+* Some additional details about this data:
+
+Brozek's equation is 457/Density - 414.2
+
+Siri's equation is 495/Density - 450
+
+
+Abdomen circumference is measured at the
+umbilicus and level with the iliac crest
+
+Wrist circumference is distal to the 
+styloid processes;
+    
+    
+* Speaker notes: I am including some additional
+details that would not fit easily into the 
+variable labels. How much documentation you
+include is a judgment call. I am including
+this extra documentation just to remind you
+that such documentation is possible.;
+
+
 * Part05. Print a small piece of the data;
 
 
@@ -181,11 +203,73 @@ The run statement says you're done with the
 procedure.;
 
 
-* Output from proc print.;
+* Figure 1. proc print.;
 
 
 * Speaker notes: There are no obvious
 problems with this dataset.;
+
+
+proc contents
+    data=intro.fat;
+  title1 "Internal description of fat dataset";
+run;
+
+
+* Speaker notes. The contents procedure produces
+information about any dataset produced by SAS,
+including both temporary datasets (one part names)
+and permanent datasets (two part names).
+
+For a dataset that you just created and one that
+is not all that complicated, using proc contents
+is overkill. I am showing it so you will know how
+to use proc contents for very complex datasets,
+especially ones that were created by someone other 
+than yourself.;
+
+
+* Figure 2. proc contents (1 of 4).;
+
+
+* Speaker notes: SAS produces a lot of information
+and much of it is only relevant for advanced
+applications. You have to wade through the details
+to get the important information. The important 
+information on this page is
+
+date created,
+
+date modified,
+
+observations, and
+
+variables.;
+
+
+* Figure 3. proc contents (2 of 4).;
+
+
+* Speaker notes. The only important things on 
+this page are 
+
+filename, and
+
+release created (which tells the precise 
+version of SAS that was used to create
+this dataset.;
+
+
+* Figure 4. proc contents (3 of 4).;
+
+
+* Speaker notes: This page and the following
+page lists all the variables in the dataset,
+their type (all numeric in this dataset), and
+the variable label.;
+
+
+* Figure 5. proc contents (4 of 4).;
 
 
 * Part06. Calculate simple statistics for ht;
@@ -213,7 +297,7 @@ tells SAS which variable(s) you want descriptive
 statistics on.;
 
 
-* Output from proc means. 
+* Figure 6. proc means. 
 
 
 * Speaker notes: This is what your output looks 
@@ -262,7 +346,7 @@ sorted data in a separate location: something
 along the lines of proc sort data=x out=y.;
 
 
-* Output from proc print
+* Figure 7. proc print
 
 
 * Speaker notes: This is what your output looks 
@@ -320,7 +404,7 @@ want, for example, to exclude negative values,
 make sure that you account for missing values as 
 well.
 
-   (ht < 0) & (ht ~= .); 
+   (ht < 0) & (ht ~= .);
 
 
 * Part08. Look at the largest value;
@@ -346,7 +430,7 @@ keyword desc to sort the data in reverse
 order.;
 
 
-* Output from proc print.;
+* Figure 8. proc print.;
 
 
 * Speaker notes: This is what your output
@@ -370,6 +454,54 @@ the entire row out, I can easily revert to the
 original data.;
 
 
+proc contents
+    data=intro.fat;
+  title1 "Internal description of fat dataset";
+run;
+
+
+* Speaker notes: It is reasonable to check the contents
+when you create a new file. In this case, the change
+is so small that it is definitely overkill. I just
+want to encourage you to think about using proc
+contents as a way of reviewing your work in more
+complex settings.;
+
+
+* Figure 9. proc contents (1 of 5).;
+
+
+* Figure 10. proc contents (2 of 5).;
+
+
+* Speaker notes. The only important things on 
+this page are 
+
+filename, and
+
+release created (which tells the precise 
+version of SAS that was used to create
+this dataset.;
+
+
+* Figure 11. proc contents (3 of 5).;
+
+
+* Speaker notes: This page and the following
+page lists all the variables in the dataset,
+their type (all numeric in this dataset), and
+the variable label.;
+
+
+* Figure 12. proc contents (4 of 5).;
+
+
+* Figure 13. proc contents (5 of 5).;
+
+
+* Speaker notes: You get an extra page for this dataset because it notes that your data is sorted by descending height.;
+
+
 * Part10. Converting the outlier to a missing value;
 
 
@@ -381,6 +513,8 @@ run;
 
 * Speaker notes: This code converts the height
 to a missing value, but keeps the original data.
+
+I won't use proc contents a third time.
 
 There is no one method that is preferred in 
 this setting. If you encounter an unusual value, 
@@ -441,7 +575,7 @@ to make sure that the result correctly reflects
 what you want.;
 
 
-* Output from proc print.;
+* Figure 14. proc print.;
 
 
 * Speaker notes: This is what your output looks 
@@ -469,7 +603,7 @@ for the number of missing values in proc means
 using nmiss.;
 
 
-* Output from proc means.
+* Figure 15. proc means.
 
 
 * Speaker notes: This is what your output
@@ -483,7 +617,7 @@ observations and 1 missing value.;
 data converted_units;
   set intro.fat2;
   ht_cm = round(ht * 2.54, 0.01);
-  wt_kg = round(wt / 2.2, 0.01); 
+  wt_kg = round(wt / 2.2, 0.01);
 run;
 
 
@@ -505,7 +639,7 @@ weight into centimeters and kilograms,
 respectively.;
 
 
-* Output from proc print.;
+* Figure 16. proc print.;
 
 
 * Speaker notes: This is your output with 
@@ -520,17 +654,17 @@ metric. Notice that I did not print any more than
 proc sgplot
     data=intro.fat2;
   histogram ht;
-  title "Histogram with default bins";
+  title1 "Histogram with default bins";
 run;
 
 
-* Speaker notes: Here's the code to create a
+* Speaker notes: Here is the code to create a
 histogram with the default option. Generally, it
 is wise to modify the defaults for any graphic
 image.;
 
 
-* Output from proc sgplot.
+* Figure 17. proc sgplot.;
 
 
 * Speaker notes: This is the default histogram.;
@@ -552,7 +686,7 @@ centered at 60, and each bin has a width of
 1 inch (plus or minus 0.5 inches);
 
 
-* Output from proc sgplot.;
+* Figure 18. proc sgplot.;
 
 
 * Speaker notes: This is what you get. You can 
@@ -575,7 +709,7 @@ centered at 60, but now each bin has a width of
 5 inches (plus or minus 2.5 inches).;
 
 
-* Output from proc sgplot.;
+* Figure 19. proc sgplot.;
 
 
 * Speaker notes: This is the revised histogram. 
@@ -600,14 +734,14 @@ run;
 correlations.;
 
 
-* Output from proc corr.
+* Figure 20. proc corr (1 of 2).;
 
 
 * Speaker notes: The output here extends to a
 fresh page.;
 
 
-* Output from proc corr (continued).;
+* Figure 21. proc corr (2 of 2).;
 
 
 * Speaker notes: The output here really annoys
@@ -635,13 +769,13 @@ run;
 in a separate data file.;
 
 
-* Output from proc print.
+* Figure 22. proc print (1 of 2).
 
 
 * Speaker notes: Continues on the next slide.;
 
 
-* Output from proc print (continued).
+* Figure 23. proc print (2 of 2).
 
 
 * Speaker notes: The output is a bit unusual 
@@ -691,7 +825,7 @@ run;
 let's print the file before we modify it.;
 
 
-* Output from proc print.
+* Figure 24. proc print.
 
 
 * Speaker notes: This is the output. You can 
@@ -717,7 +851,7 @@ but the scatterplots produced by the sgplot
 procedure have the most flexibility.;
 
 
-* Output from proc sgplot.; 
+* Figure 25. proc sgplot.;
 
 
 * Speaker notes: This plot shows a general 
@@ -737,7 +871,7 @@ run;
 
 * Speaker notes: The trend line is very useful for 
 large and noisy data sets. It also allows you to 
-more quickly visualize extreme values.;
+more quickly visualize extreme values.
 
 Notice that there is no title1. When you leave this
 out, SAS will pull the title1 used in the previous
@@ -746,7 +880,7 @@ repeat the top line title across broad sections of
 your program.;
 
 
-* Output from proc sgplot.
+* Figure 26. proc sgplot.
 
 
 * Speaker notes: Notice, for example, that the 
@@ -774,7 +908,7 @@ spline. It helps you visualize whether the trend
 is linear or not.;
 
 
-* Output from proc sgplot.
+* Figure 27. proc sgplot.
 
 
 * Speaker notes: The smoothing spline provides 

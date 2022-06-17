@@ -95,7 +95,7 @@ output_slide <- '
 
 ### SAS output: {slide_title}
 
-![Figure {output_page}. {sas_text[i]}](../images/{fn}_{zpad(output_page)}.png) 
+![{sas_text[i]}](../images/{fn}_{zpad(output_page)}.png) 
 
 '
 ```
@@ -109,7 +109,7 @@ for (i in 1:length(sas_text)) {
   chunk_type[i] <- 
     1*str_detect(sas_text[i], "^\\* Part") + 
     2*str_detect(sas_text[i], "^\\* Speaker notes") + 
-    4*str_detect(sas_text[i], "^\\* Output from ") 
+    4*str_detect(sas_text[i], "^\\* Figure ") 
   
   if (chunk_type[i] > 0) {
     sas_text[i] <- str_remove(sas_text[i], "^\\* ")

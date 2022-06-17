@@ -56,17 +56,16 @@ Handouts associated with videos
 
 Datasets used in this module
 
-+ Cigarettes
++ Fat
   + [Text file][git1]
   + [Data dictionary][git2]
   
-[git1]: 
-[git2]: 
+[git1]: https://github.com/pmean/introduction-to-SAS/blob/master/data/fat.txt
+[git2]: https://github.com/pmean/classes/blob/master/introduction-to-r/data/fat-data-dictionary.yaml
 
 Programs used in this module
 
-+ [5507-02-simon-cigarettes.sas][git3]
-+ [5507-02-simon-continuous-variables.sas][git4]
++ [5507-02-simon-continuous-variables.sas][git3]
 
 [git3]: 
 
