@@ -67,7 +67,7 @@ Programs used in this module
 
 + [5507-02-simon-continuous-variables.sas][git3]
 
-[git3]: 
+[git3]: https://github.com/pmean/introduction-to-SAS/blob/master/src/5507-02-simon-continuous-variables.sas
 
 Recommended readings
 
