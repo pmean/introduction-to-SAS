@@ -25,7 +25,7 @@ In this module, you will learn  about:
 + Histograms
 + Scatterplots
 
-You will also see the following SAS keywords and procedurues
+You will also see the following SAS keywords and procedures
 
 + binstart
 + binwidth
