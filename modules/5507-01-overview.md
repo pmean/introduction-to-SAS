@@ -76,56 +76,51 @@ Recommended readings
 
 ### Videos
 
-Total video time, 199 minutes
+Total video time, 199 minutes. All videos are in Panopto format.
 
 There are two types of videos in this class. The most common is a PowerPoint video. In these videos, I display PowerPoint slides and talk. My comments are captured, more or less, in the speaker's notes. Every PowerPoint video should have an associated pdf file with the slides and speaker notes. For a few of these videos, I have abandoned PowerPoint for a live demonstration on my computer. This will show me typing into SAS or possibly other application software. There are no pdf files for the live demonstrations.
 
-+ V01-01. Introducing your instructor, 5 minutes, available in [Panopto format][2022b-5507-v01-01].
-+ V01-02. Where you can get SAS, 13 minutes, available in [Panopto format][2022b-5507-v01-02].
-+ V01-03. Your first SAS program, 7 minutes, available in [Panopto format][2022b-5507-v01-03].
-+ V01-04. SAS live demonstration (1 of 5), available in Panopto format.
-  + [Part A. SODA][2022b-5507-v01-04a], 11 minutes
-  + [Part B. Remote labs][2022b-5507-v01-04b], 14 minutes
-  + [Part C. SAS on UMKC computers][2022b-5507-v01-04c], 5 minutes
-+ V01-05. History of SAS, 10 minutes, available in [Panopto format][2022b-5507-v01-05].
-+ V01-06. Documentation header, 5 minutes, available in [Panopto format][2022b-5507-v01-06].
-+ V01-07. SAS live demonstration (2 of 5), available in Panopto format.
-  + [Part A. SODA][2022b-5507-v01-07a], 9 minutes
-  + [Part B. Remote labs][2022b-5507-v01-07b], 14 minutes
-+ V01-08. Storing SAS datasets using libname, 7 minutes, available in [Panopto format][2022b-5507-v01-08].
-+ V01-09. SAS live demonstration (3 of 5), available in Panopto format.
-  + [Part A-1. SODA][2022b-5507-v01-09a1], 11 minutes
-  + [Part A-2. SODA][2022b-5507-v01-09a2], 8 minutes
-  + [Part B. Remote labs][2022b-5507-v01-09b], 16 minutes
-+ V01-10. Storing SAS output using ODS, 8 minutes, available  in [Panopto format][2022b-5507-v01-10].
-+ V01-11. SAS live demonstration (4 of 5), available in Panopto format.
-  + [Part A. SODA][2022b-5507-v01-11a], 16 minutes
-  + [Part B. Remote labs][2022b-5507-v01-11b], 15 minutes
-+ V01-12. Reading external data using infile and filename, 5 minutes, available in [Panopto format][2022b-5507-v01-12].
-+ V01-13. SAS live demonstration (5 of 5), available in Panopto format.
-  + [Part A. SODA][2022b-5507-v01-13a], 12 minutes
-  + [Part B. Remote labs][2022b-5507-v01-13b], 13 minutes
++ [V01-01][2022b-5507-v01-01] ( 5 minutes). Introducing your instructor.
++ [V01-02][2022b-5507-v01-02] (13 minutes). Where you can get SAS.
++ [V01-03][2022b-5507-v01-03] ( 7 minutes). Your first SAS program.
++ [V01-04][2022b-5507-v01-04] (11 minutes). SAS live demonstration (SODA).
++ [V01-05][2022b-5507-v01-05] (14 minutes). SAS live demonstration (Remote labs).
++ [V01-06][2022b-5507-v01-06] ( 5 minutes). SAS live demonstration (SAS on UMKC computers).
++ [V01-07][2022b-5507-v01-07] (10 minutes). History of SAS.
++ [V01-08][2022b-5507-v01-08] ( 5 minutes). Documentation header.
++ [V01-09][2022b-5507-v01-09] ( 9 minutes). SAS live demonstration (SODA).
++ [V01-10][2022b-5507-v01-10] (14 minutes). SAS live demonstration (Remote labs).
++ [V01-11][2022b-5507-v01-11] ( 7 minutes). Storing SAS datasets using libname.
++ [V01-12][2022b-5507-v01-12] (11 minutes). SAS live demonstration (SODA).
++ [V01-13][2022b-5507-v01-13] ( 8 minutes). SAS live demonstration (SODA).
++ [V01-14][2022b-5507-v01-14] (16 minutes). SAS live demonstration (Remote labs).
++ [V01-15][2022b-5507-v01-15] ( 8 minutes). Storing SAS output using ODS.
++ [V01-16][2022b-5507-v01-16] (16 minutes). SAS live demonstration (SODA).
++ [V01-16][2022b-5507-v01-17] (16 minutes). SAS live demonstration (Remote labs).
++ [V01-18][2022b-5507-v01-18] ( 5 minutes). Reading external data using infile and filename.
++ [V01-19][2022b-5507-v01-19] (12 minutes). SAS live demonstration (SODA).
++ [V01-20][2022b-5507-v01-20] (13 minutes). SAS live demonstration (Remote labs).
 
 [2022b-5507-v01-01]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=427181d2-3d15-49ad-be3e-aeaa0125d864
 [2022b-5507-v01-02]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=81b1ffc7-5f95-4bbc-8382-aeaa0133a34e
 [2022b-5507-v01-03]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=0b6f7a9b-73b4-4616-85b1-aeaa0138229d 
-[2022b-5507-v01-04a]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=09759e48-1dd9-4f93-8676-aeaa01750cd8
-[2022b-5507-v01-04b]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=5e712ad5-ca5f-4f02-a25f-aeaa016f69fe
-[2022b-5507-v01-04c]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=80595ffc-4395-4850-a226-aeaa017399b0
-[2022b-5507-v01-05]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=5be9d52d-cf63-45ef-becf-aeac011c2989
-[2022b-5507-v01-06]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=4101600e-be64-41a2-8e54-aeac011fc0f8
-[2022b-5507-v01-07a]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=21061974-310b-4854-b90d-aeac0124049d
-[2022b-5507-v01-07b]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=95c2d24c-3041-4241-a6c4-aeac01278eae
-[2022b-5507-v01-08]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=fe24206d-e3d9-4ed6-85a4-aeac012c69c5
-[2022b-5507-v01-09a1]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=edf65720-3825-4548-be15-aeac0134cceb
-[2022b-5507-v01-09a2]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=3ab9c592-0319-4338-9233-aeac013849e2
-[2022b-5507-v01-09b]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=a21cc5fd-c77b-4c6d-9605-aeac013badb5
-[2022b-5507-v01-10]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=30a6ba36-b15e-4645-9e4e-aead01567d74
-[2022b-5507-v01-11a]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=9cee357a-45fb-4040-8ae5-aead015902c6
-[2022b-5507-v01-11b]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=2a15ad1d-5098-423c-8846-aead015e7e45
-[2022b-5507-v01-12]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=041b68df-3be6-4b14-878c-aeaf0158e579
-[2022b-5507-v01-13a]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=1a0249ed-3d51-4a4a-9fe8-aeaf015abc6b
-[2022b-5507-v01-13b]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=b480957f-b059-47f2-b89f-aeaf015e9479
+[2022b-5507-v01-04]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=09759e48-1dd9-4f93-8676-aeaa01750cd8
+[2022b-5507-v01-05]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=5e712ad5-ca5f-4f02-a25f-aeaa016f69fe
+[2022b-5507-v01-06]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=80595ffc-4395-4850-a226-aeaa017399b0
+[2022b-5507-v01-07]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=5be9d52d-cf63-45ef-becf-aeac011c2989
+[2022b-5507-v01-08]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=4101600e-be64-41a2-8e54-aeac011fc0f8
+[2022b-5507-v01-09]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=21061974-310b-4854-b90d-aeac0124049d
+[2022b-5507-v01-10]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=95c2d24c-3041-4241-a6c4-aeac01278eae
+[2022b-5507-v01-11]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=fe24206d-e3d9-4ed6-85a4-aeac012c69c5
+[2022b-5507-v01-12]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=edf65720-3825-4548-be15-aeac0134cceb
+[2022b-5507-v01-13]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=3ab9c592-0319-4338-9233-aeac013849e2
+[2022b-5507-v01-14]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=a21cc5fd-c77b-4c6d-9605-aeac013badb5
+[2022b-5507-v01-15]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=30a6ba36-b15e-4645-9e4e-aead01567d74
+[2022b-5507-v01-16]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=9cee357a-45fb-4040-8ae5-aead015902c6
+[2022b-5507-v01-17]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=2a15ad1d-5098-423c-8846-aead015e7e45
+[2022b-5507-v01-18]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=041b68df-3be6-4b14-878c-aeaf0158e579
+[2022b-5507-v01-19]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=1a0249ed-3d51-4a4a-9fe8-aeaf015abc6b
+[2022b-5507-v01-20]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=b480957f-b059-47f2-b89f-aeaf015e9479
 
 ### Active learning
 
