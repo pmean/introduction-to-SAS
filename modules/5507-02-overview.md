@@ -64,18 +64,26 @@ Handouts associated with videos
 
 Datasets used in this module
 
-+ Fat
++ Cigarettes
   + [Text file][git1]
   + [Data dictionary][git2]
+
++ Fat
+  + [Text file][git3]
+  + [Data dictionary][git4]
   
-[git1]: https://github.com/pmean/introduction-to-SAS/blob/master/data/fat.txt
-[git2]: https://github.com/pmean/classes/blob/master/introduction-to-r/data/fat-data-dictionary.yaml
+[git1]: https://github.com/pmean/introduction-to-SAS/blob/master/data/cigarettes.txt
+[git2]: https://github.com/pmean/introduction-to-sql/blob/master/data/cigarettes-data-dictionary.txt
+[git3]: https://github.com/pmean/introduction-to-SAS/blob/master/data/fat.txt
+[git4]: https://github.com/pmean/classes/blob/master/introduction-to-r/data/fat-data-dictionary.yaml
 
 Programs used in this module
 
-+ [5507-02-simon-continuous-variables.sas][git3]
++ [5507-02-simon-cigarettes.sas][git5]
++ [5507-02-simon-continuous-variables.sas][git6]
 
-[git3]: https://github.com/pmean/introduction-to-SAS/blob/master/src/5507-02-simon-continuous-variables.sas
+[git5]: https://github.com/pmean/introduction-to-SAS/blob/master/src/5507-02-simon-cigarettes.sas
+[git6]: https://github.com/pmean/introduction-to-SAS/blob/master/src/5507-02-simon-continuous-variables.sas
 
 Recommended readings
 
