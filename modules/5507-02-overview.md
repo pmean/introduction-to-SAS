@@ -85,13 +85,14 @@ Recommended readings
 
 Total video time, xx minutes. All videos are in Panopto format.
 
-+ V01-01. Using variable labels, xx minutes, available in [Panopto format][2022b-5507-v01-01].
-+ v02-02. SAS code, xx minutes, available in [Panopto format][2022b-5507-v02-02]
-+ v02-03. Descriptive statistics, xx minutes, available in [Panopto format][2022b-5507-v02-03]
-+ v02-04. Transformations and histograms, available in [Panopto format][2022b-5507-v02-04]
-+ v02-05. Correlations and scatterplots, xx minutes, available in [Panopto format][2022b-5507-v02-05]
-+ v02-06. Live demo, xx minutes, available in [Panopto format][2022b-5507-v02-06]
-+ v02-07. Your homework, xx minutes, available in [Panopto format][2022b-5507-v02-07]
++ [V02-01][2022b-5507-v02-01], (xx minutes). Using variable labels.
++ [V02-02][2022b-5507-v02-02], (xx minutes). SAS code
++ [V02-03][2022b-5507-v02-03], (xx minutes). Descriptive statistics
++ [V02-04][2022b-5507-v02-04], (xx minutes). Transformations and histograms
++ [V02-05][2022b-5507-v02-05], (xx minutes). Correlations and scatterplots
++ [V02-06][2022b-5507-v02-06], (xx minutes). Live demo (SODA)
++ [V02-07][2022b-5507-v02-07], (xx minutes). Live demo (Remore labs)
++ [V02-08][2022b-5507-v02-08], (xx minutes). Your homework
 
 [2022b-5507-v02-01]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=1f8f548c-da23-4f2d-a3f0-aeb701624038
 [2022b-5507-v02-02]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=f7a9c5e2-cdc5-4734-8191-aeb70165daf6
@@ -100,6 +101,7 @@ Total video time, xx minutes. All videos are in Panopto format.
 [2022b-5507-v02-05]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=1b7d8391-997d-46c5-be89-aeb7017120f9
 [2022b-5507-v02-06]: 
 [2022b-5507-v02-07]: 
+[2022b-5507-v02-08]: 
 
 ### Active learning
 
