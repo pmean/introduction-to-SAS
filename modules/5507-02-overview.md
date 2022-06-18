@@ -83,15 +83,15 @@ Recommended readings
 
 ### Videos
 
-Total video time, xx minutes. All videos are in Panopto format.
+Total video time, 65+xx minutes. All videos are in Panopto format.
 
-+ [V02-01][2022b-5507-v02-01], (xx minutes). Using variable labels.
-+ [V02-02][2022b-5507-v02-02], (xx minutes). SAS code
-+ [V02-03][2022b-5507-v02-03], (xx minutes). Descriptive statistics
-+ [V02-04][2022b-5507-v02-04], (xx minutes). Transformations and histograms
-+ [V02-05][2022b-5507-v02-05], (xx minutes). Correlations and scatterplots
++ [V02-01][2022b-5507-v02-01], (13 minutes). Using variable labels.
++ [V02-02][2022b-5507-v02-02], (15 minutes). SAS code
++ [V02-03][2022b-5507-v02-03], (18 minutes). Descriptive statistics
++ [V02-04][2022b-5507-v02-04], ( 6 minutes). Transformations and histograms
++ [V02-05][2022b-5507-v02-05], (13 minutes). Correlations and scatterplots
 + [V02-06][2022b-5507-v02-06], (xx minutes). Live demo (SODA)
-+ [V02-07][2022b-5507-v02-07], (xx minutes). Live demo (Remore labs)
++ [V02-07][2022b-5507-v02-07], (xx minutes). Live demo (Remote labs)
 + [V02-08][2022b-5507-v02-08], (xx minutes). Your homework
 
 [2022b-5507-v02-01]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=1f8f548c-da23-4f2d-a3f0-aeb701624038
