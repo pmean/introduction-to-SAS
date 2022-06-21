@@ -99,7 +99,7 @@ Total video time, 65+xx minutes. All videos are in Panopto format.
 + [V02-04][2022b-5507-v02-04], ( 6 minutes). Transformations and histograms
 + [V02-05][2022b-5507-v02-05], (13 minutes). Correlations and scatterplots
 + [V02-06][2022b-5507-v02-06], (38 minutes). Live demo (SODA)
-+ [V02-07][2022b-5507-v02-07], (xx minutes). Live demo (Remote labs)
++ [V02-07][2022b-5507-v02-07], (28 minutes). Live demo (Remote labs)
 + [V02-08][2022b-5507-v02-08], (xx minutes). Your homework
 
 [2022b-5507-v02-01]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=1f8f548c-da23-4f2d-a3f0-aeb701624038
@@ -108,7 +108,7 @@ Total video time, 65+xx minutes. All videos are in Panopto format.
 [2022b-5507-v02-04]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=e601c3dd-43f9-451f-8a14-aeb7016f6c33
 [2022b-5507-v02-05]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=1b7d8391-997d-46c5-be89-aeb7017120f9
 [2022b-5507-v02-06]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=2dbefe95-c028-42c2-aeec-aeb80110b12b
-[2022b-5507-v02-07]: 
+[2022b-5507-v02-07]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=34aa6a30-2363-41ff-9e35-aeba0183ffd5
 [2022b-5507-v02-08]: 
 
 ### Active learning
