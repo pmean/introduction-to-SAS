@@ -91,7 +91,7 @@ Recommended readings
 
 ### Videos
 
-Total video time, 65+xx minutes. All videos are in Panopto format.
+Total video time, 141 minutes. All videos are in Panopto format. If you are using SODA (SAS On Demand for Academics), you do not need to view the Remote Labs live demo (though it doesn't hurt). If you are using SAS on Remote Labs, you do not need to view the SODA live demo.
 
 + [V02-01][2022b-5507-v02-01], (13 minutes). Using variable labels.
 + [V02-02][2022b-5507-v02-02], (15 minutes). SAS code
@@ -100,7 +100,7 @@ Total video time, 65+xx minutes. All videos are in Panopto format.
 + [V02-05][2022b-5507-v02-05], (13 minutes). Correlations and scatterplots
 + [V02-06][2022b-5507-v02-06], (38 minutes). Live demo (SODA)
 + [V02-07][2022b-5507-v02-07], (28 minutes). Live demo (Remote labs)
-+ [V02-08][2022b-5507-v02-08], (xx minutes). Your homework
++ [V02-08][2022b-5507-v02-08], (10 minutes). Your homework
 
 [2022b-5507-v02-01]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=1f8f548c-da23-4f2d-a3f0-aeb701624038
 [2022b-5507-v02-02]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=f7a9c5e2-cdc5-4734-8191-aeb70165daf6
@@ -109,7 +109,7 @@ Total video time, 65+xx minutes. All videos are in Panopto format.
 [2022b-5507-v02-05]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=1b7d8391-997d-46c5-be89-aeb7017120f9
 [2022b-5507-v02-06]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=2dbefe95-c028-42c2-aeec-aeb80110b12b
 [2022b-5507-v02-07]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=34aa6a30-2363-41ff-9e35-aeba0183ffd5
-[2022b-5507-v02-08]: 
+[2022b-5507-v02-08]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=9c0a0a48-5212-4eec-98b1-aebb015d75a8
 
 ### Active learning
 
