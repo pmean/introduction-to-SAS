@@ -67,7 +67,6 @@ Datasets used in this module
 + Cigarettes
   + [Text file][git1]
   + [Data dictionary][git2]
-
 + Fat
   + [Text file][git3]
   + [Data dictionary][git4]
@@ -129,7 +128,7 @@ I'd like some brief feedback to the videos you just watched. Keep it short. One 
 
 2. What was the one thing that you found confusing?
 
-3. What would you like to see covered next?
+3. What topic not covered in the videos would you like to learn about?
 
 #### Hw02a
 
