@@ -30,18 +30,47 @@ You will also see the following SAS keywords and procedures
 Handouts associated with videos
 
 + Slides and speaker notes
-  + [pdf format][v03-pdf] or
-  + [powerpoint format][v03-pptx].
-  + [The R program used to create these slides][v03-Rmd]
+  + [pdf format][slides.pdf] or
+  + [powerpoint format][slides.pptx].
+  + [The R program used to create these slides][slide.Rmd]
 
-[v03-pdf]: https://github.com/pmean/introduction-to-sas/blob/master/results/5507-03-simon-slides-and-speaker-notes.pdf
+[slides.pdf]: https://github.com/pmean/introduction-to-sas/blob/master/results/5507-03-simon-slides-and-speaker-notes.pdf
+[slides.pptx]: https://github.com/pmean/introduction-to-SAS/blob/master/results/5507-03-simon-slides-and-speaker-notes.pptx
+[slides.rmd]: https://github.com/pmean/introduction-to-sas/blob/master/src/5507-03-simon-slides-and-speaker-notes.Rmd
 
-[v03-pptx]: https://github.com/pmean/introduction-to-SAS/blob/master/results/5507-03-simon-slides-and-speaker-notes.pptx
+Here are the SAS programs used in the videos.
 
-[v03-rmd]: https://github.com/pmean/introduction-to-sas/blob/master/src/5507-03-simon-slides-and-speaker-notes.Rmd
++ [5507-03-simon-import-comma-delimited.sas][import-comma-delimited.sas].
++ [5507-03-simon-import-first-line-names.sas][import-first-line-names.sas].
++ [5507-03-simon-import-fixed-width.sas][import-fixed-width.sas].
++ [5507-03-simon-import-multi-delimited.sas][import-multi-delimited.sas].
++ [5507-03-simon-import-space-delimited.sas][import-space-delimited.sas].
++ [5507-03-simon-import-string-data.sas][import-string-data.sas].
++ [5507-03-simon-import-string-to-numeric.sas][import-string-to-numeric.sas].
++ [5507-03-simon-import-tab-delimited.sas][import-tab-delimited.sas].
++ [5507-03-simon-import-tilde-delimited.sas][import-tilde-delimited.sas].
+
+[import-comma-delimited.sas]: https://github.com/pmean/introduction-to-sas/blob/master/src/5507-03-simon-import-comma-delimited.sas
+[import-first-line-names.sas]: https://github.com/pmean/introduction-to-sas/blob/master/src/5507-03-simon-import-first-line-names.sas
+[import-fixed-width.sas]: https://github.com/pmean/introduction-to-sas/blob/master/src/5507-03-simon-import-fixed-width.sas
+[import-multi-delimited.sas]: https://github.com/pmean/introduction-to-sas/blob/master/src/5507-03-simon-import-multi-delimited.sas
+[import-space-delimited.sas]: https://github.com/pmean/introduction-to-sas/blob/master/src/5507-03-simon-import-space-delimited.sas
+[import-string-data.sas]: https://github.com/pmean/introduction-to-sas/blob/master/src/5507-03-simon-import-string-data.sas
+[import-string-to-numeric.sas]: https://github.com/pmean/introduction-to-sas/blob/master/src/5507-03-simon-import-string-to-numeric.sas
+[import-tab-delimited.sas]: https://github.com/pmean/introduction-to-sas/blob/master/src/5507-03-simon-import-tab-delimited.sas
+[import-tilde-delimited.sas]: https://github.com/pmean/introduction-to-sas/blob/master/src/5507-03-simon-import-tilde-delimited.sas
 
 
-Datasets used in this module
+
+Datasets used in this module (There are no data dictionaries for these files because they are simple artificial datasets.)
+
++ [comma-delimited.csv][comma-delimited]
++ [first-line-names.csv][first-line-names]
+
+[comma-delimited]: https://github.com/pmean/introduction-to-SAS/blob/master/data/comma-delimited.csv
+[first-line-names]: https://github.com/pmean/introduction-to-SAS/blob/master/data/first-line-names.csv
+[space-delimited]: https://github.com/pmean/introduction-to-SAS/blob/master/data/space-delimited.txt
+
 
 + Cigarettes
   + [Text file][git1]
