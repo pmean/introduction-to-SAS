@@ -70,7 +70,7 @@ Datasets used in this module (There are no data dictionaries for these files bec
 + [string-data.txt][string-data.txt]
 + [string-to-numeric.txt][string-to-numeric.txt]
 + [tab-delimited.txt][tab-delimited.txt] 
-+ [tilde-delimited.txt][tidle-delimited.txt]
++ [tilde-delimited.txt][tilde-delimited.txt]
 
 [comma-delimited.csv]: https://github.com/pmean/introduction-to-SAS/blob/master/data/comma-delimited.csv
 [first-line-names.csv]: https://github.com/pmean/introduction-to-SAS/blob/master/data/first-line-names.csv
