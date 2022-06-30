@@ -30,64 +30,115 @@ You will also see the following SAS keywords and procedures
 Handouts associated with videos
 
 + Slides and speaker notes
-  + [pdf format][v03-pdf] or
-  + [powerpoint format][v03-pptx].
-  + [The R program used to create these slides][v03-rmd]
+  + [pdf format][slides.pdf] or
+  + [powerpoint format][slides.pptx].
+  + [The R program used to create these slides][slide.Rmd]
 
-[v03-pdf]: https://github.com/pmean/introduction-to-sas/blob/master/results/5507-03-simon-slides-and-speaker-notes.pdf
+[slides.pdf]: https://github.com/pmean/introduction-to-sas/blob/master/results/5507-03-simon-slides-and-speaker-notes.pdf
+[slides.pptx]: https://github.com/pmean/introduction-to-SAS/blob/master/results/5507-03-simon-slides-and-speaker-notes.pptx
+[slides.rmd]: https://github.com/pmean/introduction-to-sas/blob/master/src/5507-03-simon-slides-and-speaker-notes.Rmd
 
-[v03-pptx]: https://github.com/pmean/introduction-to-SAS/blob/master/results/5507-03-simon-slides-and-speaker-notes.pptx
+Here are the SAS programs used in the videos.
 
-[v03-rmd]: https://github.com/pmean/introduction-to-sas/blob/master/src/5507-03-simon-slides-and-speaker-notes.Rmd
++ [5507-03-simon-import-comma-delimited.sas][comma-delimited.sas].
++ [5507-03-simon-import-first-line-names.sas][first-line-names.sas].
++ [5507-03-simon-import-fixed-width.sas][fixed-width.sas].
++ [5507-03-simon-import-multi-delimited.sas][multi-delimited.sas].
++ [5507-03-simon-import-space-delimited.sas][space-delimited.sas].
++ [5507-03-simon-import-string-data.sas][string-data.sas].
++ [5507-03-simon-import-string-to-numeric.sas][string-to-numeric.sas].
++ [5507-03-simon-import-tab-delimited.sas][tab-delimited.sas].
++ [5507-03-simon-import-tilde-delimited.sas][tilde-delimited.sas].
 
+[comma-delimited.sas]: https://github.com/pmean/introduction-to-sas/blob/master/src/5507-03-simon-import-comma-delimited.sas
+[first-line-names.sas]: https://github.com/pmean/introduction-to-sas/blob/master/src/5507-03-simon-import-first-line-names.sas
+[fixed-width.sas]: https://github.com/pmean/introduction-to-sas/blob/master/src/5507-03-simon-import-fixed-width.sas
+[multi-delimited.sas]: https://github.com/pmean/introduction-to-sas/blob/master/src/5507-03-simon-import-multi-delimited.sas
+[space-delimited.sas]: https://github.com/pmean/introduction-to-sas/blob/master/src/5507-03-simon-import-space-delimited.sas
+[string-data.sas]: https://github.com/pmean/introduction-to-sas/blob/master/src/5507-03-simon-import-string-data.sas
+[string-to-numeric.sas]: https://github.com/pmean/introduction-to-sas/blob/master/src/5507-03-simon-import-string-to-numeric.sas
+[tab-delimited.sas]: https://github.com/pmean/introduction-to-sas/blob/master/src/5507-03-simon-import-tab-delimited.sas
+[tilde-delimited.sas]: https://github.com/pmean/introduction-to-sas/blob/master/src/5507-03-simon-import-tilde-delimited.sas
 
-Datasets used in this module
+Datasets used in this module (There are no data dictionaries for these files because they are simple artificial datasets.)
 
-+ Cigarettes
-  + [Text file][git1]
-  + [Data dictionary][git2]
-+ Fat
-  + [Text file][git3]
-  + [Data dictionary][git4]
-  
-[git1]: https://github.com/pmean/introduction-to-SAS/blob/master/data/cigarettes.txt
-[git2]: https://github.com/pmean/introduction-to-sql/blob/master/data/cigarettes-data-dictionary.txt
-[git3]: https://github.com/pmean/introduction-to-SAS/blob/master/data/fat.txt
-[git4]: https://github.com/pmean/classes/blob/master/introduction-to-r/data/fat-data-dictionary.yaml
++ [comma-delimited.csv][comma-delimited.csv]
++ [first-line-names.csv][first-line-names.csv]
++ [space-delimited.txt][space-delimited.txt]
++ [multi-delimited.txt][multi-delimited.txt]
++ [space-delimited.txt][space-delimited.txt]
++ [string-data.txt][string-data.txt]
++ [string-to-numeric.txt][string-to-numeric.txt]
++ [tab-delimited.txt][tab-delimited.txt] 
++ [tilde-delimited.txt][tidle-delimited.txt]
 
-Programs used in this module
+[comma-delimited.csv]: https://github.com/pmean/introduction-to-SAS/blob/master/data/comma-delimited.csv
+[first-line-names.csv]: https://github.com/pmean/introduction-to-SAS/blob/master/data/first-line-names.csv
+[space-delimited.txt]: https://github.com/pmean/introduction-to-SAS/blob/master/data/space-delimited.txt
+[multi-delimited.txt]: https://github.com/pmean/introduction-to-SAS/blob/master/data/multi-delimited.txt
+[space-delimited.txt]: https://github.com/pmean/introduction-to-SAS/blob/master/data/space-delimited.txt
+[string-data.txt]: https://github.com/pmean/introduction-to-SAS/blob/master/data/string-data.txt
+[string-to-numeric.txt]: https://github.com/pmean/introduction-to-SAS/blob/master/data/string-to-numeric.txt
+[tab-delimited.txt]: https://github.com/pmean/introduction-to-SAS/blob/master/data/tab-delimited.txt
+[tilde-delimited.txt]: 
 
-+ [5507-02-simon-cigarettes.sas][git5]
-+ [5507-02-simon-continuous-variables.sas][git6]
+### Recommended readings
 
-[git5]: https://github.com/pmean/introduction-to-SAS/blob/master/src/5507-02-simon-cigarettes.sas
-[git6]: https://github.com/pmean/introduction-to-SAS/blob/master/src/5507-02-simon-continuous-variables.sas
++ To be added.
 
-Recommended readings
+#### Homework answers for Module02 
 
-+ SAS. Available in [html format][workspace].
+Here are the homework solutions (code and output) from the previous module. Compare your code to ours, but only after submitting your work.
+
++ [5507-02-simon-hw-q1.pdf][hw-q1.pdf].
++ [5507-02-simon-hw-q1.sas][hw-q1.sas].
++ [5507-02-simon-hw-q2.pdf][hw-q2.pdf].
++ [5507-02-simon-hw-q2.sas][hw-q2.sas].
++ [5507-02-simon-hw-q3.pdf][hw-q3.pdf].
++ [5507-02-simon-hw-q3.sas][hw-q3.sas].
++ [5507-02-simon-hw-q4.pdf][hw-q4.pdf].
++ [5507-02-simon-hw-q4.sas][hw-q4.sas].
++ [5507-02-simon-hw-q5.pdf][hw-q5.pdf].
++ [5507-02-simon-hw-q5.sas][hw-q5.sas].
+
+[hw-q1.pdf]: https://github.com/pmean/introduction-to-sas/blob/master/results/5507-02-simon-hw-q1.pdf
+[hw-q2.pdf]: https://github.com/pmean/introduction-to-sas/blob/master/results/5507-02-simon-hw-q2.pdf
+[hw-q3.pdf]: https://github.com/pmean/introduction-to-sas/blob/master/results/5507-02-simon-hw-q3.pdf
+[hw-q4.pdf]: https://github.com/pmean/introduction-to-sas/blob/master/results/5507-02-simon-hw-q4.pdf
+[hw-q5.pdf]: https://github.com/pmean/introduction-to-sas/blob/master/results/5507-02-simon-hw-q5.pdf
+
+[hw-q1.sas]: https://github.com/pmean/introduction-to-sas/blob/master/src/5507-02-simon-hw-q1.sas
+[hw-q2.sas]: https://github.com/pmean/introduction-to-sas/blob/master/src/5507-02-simon-hw-q2.sas
+[hw-q3.sas]: https://github.com/pmean/introduction-to-sas/blob/master/src/5507-02-simon-hw-q3.sas
+[hw-q4.sas]: https://github.com/pmean/introduction-to-sas/blob/master/src/5507-02-simon-hw-q4.sas
+[hw-q5.sas]: https://github.com/pmean/introduction-to-sas/blob/master/src/5507-02-simon-hw-q5.sas
+
 
 ### Videos
 
 Total video time, 141 minutes. All videos are in Panopto format. If you are using SODA (SAS On Demand for Academics), you do not need to view the Remote Labs live demo (though it doesn't hurt). If you are using SAS on Remote Labs, you do not need to view the SODA live demo.
 
-+ [V02-01][2022b-5507-v02-01], (13 minutes). Using variable labels.
-+ [V02-02][2022b-5507-v02-02], (15 minutes). SAS code
-+ [V02-03][2022b-5507-v02-03], (18 minutes). Descriptive statistics
-+ [V02-04][2022b-5507-v02-04], ( 6 minutes). Transformations and histograms
-+ [V02-05][2022b-5507-v02-05], (13 minutes). Correlations and scatterplots
-+ [V02-06][2022b-5507-v02-06], (38 minutes). Live demo (SODA)
-+ [V02-07][2022b-5507-v02-07], (28 minutes). Live demo (Remote labs)
-+ [V02-08][2022b-5507-v02-08], (10 minutes). Your homework
++ [V03-01][2021b-5507-v03-01], ( 5 minutes). Space delimited files.
++ [V03-02][2021b-5507-v03-02], ( 2 minutes). Comma delimited files
++ [V03-03][2021b-5507-v03-03], ( 4 minutes). Tab delimited files
++ [V03-04][2021b-5507-v03-04], ( 2 minutes). Tilde delimited files
++ [V03-05][2021b-5507-v03-05], ( 5 minutes). Fixed width files
++ [V03-06][2021b-5507-v03-06], ( 7 minutes). String data
++ [V03-07][2021b-5507-v03-07], ( 6 minutes). First line names
++ [V03-08][2021b-5507-v03-08], ( x minutes). Your homework
++ [V03-99][2021b-5507-v03-99], ( x minutes). Evil tab character
 
-[2022b-5507-v02-01]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=1f8f548c-da23-4f2d-a3f0-aeb701624038
-[2022b-5507-v02-02]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=f7a9c5e2-cdc5-4734-8191-aeb70165daf6
-[2022b-5507-v02-03]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=dc8e3faf-b8e1-4ffa-8f7f-aeb7016a4dad
-[2022b-5507-v02-04]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=e601c3dd-43f9-451f-8a14-aeb7016f6c33
-[2022b-5507-v02-05]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=1b7d8391-997d-46c5-be89-aeb7017120f9
-[2022b-5507-v02-06]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=2dbefe95-c028-42c2-aeec-aeb80110b12b
-[2022b-5507-v02-07]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=34aa6a30-2363-41ff-9e35-aeba0183ffd5
-[2022b-5507-v02-08]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=9c0a0a48-5212-4eec-98b1-aebb015d75a8
+Note: This last recording was from an earlier class, and refers to a homework assignment that I ditched because it was too complicated. The video explains that a large part of the reason the assignment was confusing was because of the evil tab character. It explains very clearly why the tab character is evil. It is well worth watching, even though it references an obsolete homework assignment.
+
+[2021b-5507-v03-01]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=f257dafa-1f47-40a4-a16a-ad5601435c74
+[2021b-5507-v03-02]:  https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=6099f2b8-848f-4140-b185-ad560145001b
+[2021b-5507-v03-03]:  https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=b95a5be9-e282-41e0-aacc-ad5601461018
+[2021b-5507-v03-04]:  https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=47317047-c929-4377-a0ba-ad560147984f
+[2021b-5507-v03-05]:  https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=8081cdf5-d018-4fca-bd6a-ad5601484ad7
+[2021b-5507-v03-06]:  https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=dc031106-04cd-4ad3-a856-ad560149e53a
+[2021b-5507-v03-07]:  https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=35ec8b62-2396-43d3-804c-ad56014c04ee
+[2021b-5507-v03-08]:  https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=c5df8783-9221-4ff1-8b57-ad56015faa80
+[2021b-5507-v03-99]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=0ce9339f-f3c9-4bb3-908e-aa790131a2a9
 
 ### Active learning
 
@@ -97,7 +148,7 @@ There is
 + a homework assignment, and
 + a short quiz.
 
-#### Discussion02. 
+#### Discussion03. 
 
 Graded: 3 points, one point deduction if submitted after the deadline.
 
@@ -109,51 +160,35 @@ I'd like some brief feedback to the videos you just watched. Keep it short. One 
 
 3. What topic not covered in the videos would you like to learn about?
 
-#### Hw02a
+#### Hw03
 
 Graded: 20 points, one point deducted if submitted late.
 
-Take the program, [m02-5507-simon-cigarettes.sas][git1], and modify it so that
+Q1. The file [energy01.csv][git1a] is a comma delimited file. Details about this file are in its [data dictionary][git1b]. Read this file into SAS and print the first three rows of data. 
 
-+ it has a documentation header,
-+ it stores your dataset as a permanent file,
-+ your output is stored as a pdf file, and
-+ your data is in a file separate from the program
+Q2. The file [energy02.tsv][git2a] is the same data, but replaces the commas with tabs as delimiters. Details about this file are in its [data dictionary][git2b]. Read this file into SAS and print the first three rows of data. 
 
-Include your code and your output in a single PDF file. This assignment will use [this grading rubric][git2].
+Q3. The file [energy03.txt][git3a] is the same data but uses a fixed width format. Details about this file are in its [data dictionary][git3b]. Read this file into SAS and print the first three rows of data. 
 
-#### Hw02b
+Q4. The file [energy04.csv][git4a] is a comma delimited file, like above, but the variables names are included in the first row of data. Details about this file are in its [data dictionary][git4b]. Read this file into SAS and print the first three rows of data. 
 
-Graded: 20 points, one point deducted if submitted late.
+Include your code and your output in a single PDF file. This assignment will use [this grading rubric][git5].
 
-Use the dataset from the previous homework assignment and answer the following questions:
+[git1a]: https://raw.githubusercontent.com/pmean/introduction-to-SAS/master/data/energy01.csv
+[git2a]: https://raw.githubusercontent.com/pmean/introduction-to-SAS/master/data/energy02.tsv
+[git3a]: https://raw.githubusercontent.com/pmean/introduction-to-SAS/master/data/energy03.txt
+[git4a]: https://raw.githubusercontent.com/pmean/introduction-to-SAS/master/data/energy04.csv
 
-Q1. What brand has the highest tar?
+[git1b]: https://github.com/pmean/introduction-to-SAS/blob/master/data/energy01-data-dictionary.yaml
+[git2b]: https://github.com/pmean/introduction-to-SAS/blob/master/data/energy02-data-dictionary.yaml
+[git3b]: https://github.com/pmean/introduction-to-SAS/blob/master/data/energy03-data-dictionary.yaml
+[git4b]: https://github.com/pmean/introduction-to-SAS/blob/master/data/energy04-data-dictionary.yaml
 
-Q2. What brand has the lowest tar?
+[git5]: https://github.com/pmean/classes/blob/master/software-engineering/src/grading-rubric.md
 
-Q3. What is the correlation between tar and nicotine? Interpret this correlation.
-
-Include your code and your output in a single PDF file. This assignment will use [this grading rubric][git2].
-
-#### Hw02c
-
-Graded: 20 points, one point deducted if submitted late.
-
-Use the dataset from the previous homework assignment and answer the following questions:
-
-Q4. Draw a histogram for tar, nicotine, weight, and co. Do these histograms provide evidence that the data follows a classic bell shaped curve?
-
-Q5. Draw a scatterplot showing the relationship between tar and nicotine (tar on the x-axis, nicotine on the y-axis). Include a linear trend line. Is there a positive or negative relationship between these two variables?
-
-Include your code and your output in a single PDF file. This assignment will use [this grading rubric][git2].
-
-#### Quiz02
+#### Quiz03
 
 Graded: 3 points, one point deducted if submitted late.
 
 Not yet available.
 
-
-
-[grading-rubric]: https://github.com/pmean/classes/blob/master/software-engineering/src/grading-rubric.md
