@@ -32,7 +32,7 @@ Handouts associated with videos
 + Slides and speaker notes
   + [pdf format][v03-pdf] or
   + [powerpoint format][v03-pptx].
-  + [The R program used to create these slides][v03-Rmd]
+  + [The R program used to create these slides][v03-rmd]
 
 [v03-pdf]: https://github.com/pmean/introduction-to-sas/blob/master/results/5507-03-simon-slides-and-speaker-notes.pdf
 
