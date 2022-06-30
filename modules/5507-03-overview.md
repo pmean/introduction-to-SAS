@@ -80,7 +80,7 @@ Datasets used in this module (There are no data dictionaries for these files bec
 [string-data.txt]: https://github.com/pmean/introduction-to-SAS/blob/master/data/string-data.txt
 [string-to-numeric.txt]: https://github.com/pmean/introduction-to-SAS/blob/master/data/string-to-numeric.txt
 [tab-delimited.txt]: https://github.com/pmean/introduction-to-SAS/blob/master/data/tab-delimited.txt
-[tilde-delimited.txt]: 
+[tilde-delimited.txt]: https://github.com/pmean/introduction-to-SAS/blob/master/data/tilde-delimited.txt
 
 ### Recommended readings
 
