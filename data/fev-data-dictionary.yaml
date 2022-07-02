@@ -1,0 +1,52 @@
+---
+data_dictionary: fev.txt
+
+author:
+  Steve Simon wrote this data dictionary on 2021-03-02.
+  
+copyright:
+  The author of the jse article holds the copyright, but does not list
+  conditions under which it can be used. Individual use for educational
+  purposes is probably permitted under the Fair Use provisions of
+  U.S. Copyright laws.
+
+description:
+  Forced Expiratory Volume (FEV) Data
+  http://jse.amstat.org/datasets/fev.txt
+
+download:
+  http://www.amstat.org/publications/jse/datasets/fev.dat.txt
+  http://www.pmean.com/15/images/day3fev.txt
+
+format:
+  delimiter: space
+  varnames: not included in the first row of data
+  missing-value-code: Not needed
+  rows: 654
+  columns: 5
+
+vars:
+  age:
+    scale: non-negative integer
+    unit: years
+    
+  fev:
+    label: Forced Expiratory Volume
+    scale: non-negative real
+    unit: liters
+    
+  ht:
+    label: Height
+    scale: non-negative integer
+    unit: inches
+
+  sex:
+    value:
+      Female: 0
+      Male: 1
+
+  smoke:
+    value:
+      Nonsmoker: 0
+      Smoker: 1
+---

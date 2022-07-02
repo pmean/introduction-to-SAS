@@ -47,7 +47,7 @@ Handouts associated with videos
 + Slides and speaker notes
   + [pdf format][slides.pdf] or
   + [powerpoint format][slides.pptx].
-  + [The R program used to create these slides][slide.Rmd]
+  + [The R program used to create these slides][slides.Rmd]
 
 [slides.pdf]: https://github.com/pmean/introduction-to-sas/blob/master/results/5507-04-simon-slides-and-speaker-notes.pdf
 [slides.pptx]: https://github.com/pmean/introduction-to-SAS/blob/master/results/5507-04-simon-slides-and-speaker-notes.pptx
@@ -116,13 +116,13 @@ Total video time, ?? minutes. All videos are in Panopto format. If you are using
 + V04-08, (xx minutes). Live demo Remote labs SAS
 + V04-10, (xx minutes). Your homework
 
-[2021b-5507-v03-01]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=746cc8d9-c4f9-42ea-a043-ad640159e272
-[2021b-5507-v03-02]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=3877b83b-33ec-4550-8e62-ad64015b9b0b
-[2021b-5507-v03-03]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=86f5eee5-87ae-4ad4-95ee-ad64015dbf0a
-[2021b-5507-v03-04]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=894ff2ca-2cbe-49a2-a5fa-ad64015f1396
-[2021b-5507-v03-05]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=51ae4c86-ca1b-4964-b5bb-ad6401617818  
-[2021b-5507-v03-06]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=639a8277-6177-4fc5-84ec-ad640164d171
-[2021b-5507-v03-07]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=60c17371-49ee-41f0-ba40-ad64016679e1
+[2021b-5507-v04-01]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=746cc8d9-c4f9-42ea-a043-ad640159e272
+[2021b-5507-v04-02]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=3877b83b-33ec-4550-8e62-ad64015b9b0b
+[2021b-5507-v04-03]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=86f5eee5-87ae-4ad4-95ee-ad64015dbf0a
+[2021b-5507-v04-04]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=894ff2ca-2cbe-49a2-a5fa-ad64015f1396
+[2021b-5507-v04-05]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=51ae4c86-ca1b-4964-b5bb-ad6401617818  
+[2021b-5507-v04-06]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=639a8277-6177-4fc5-84ec-ad640164d171
+[2021b-5507-v04-07]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=60c17371-49ee-41f0-ba40-ad64016679e1
 
 ### Active learning
 
