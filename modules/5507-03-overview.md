@@ -125,10 +125,9 @@ Total video time, 141 minutes. All videos are in Panopto format. If you are usin
 + [V03-05][2021b-5507-v03-05], ( 5 minutes). Fixed width files
 + [V03-06][2021b-5507-v03-06], ( 7 minutes). String data
 + [V03-07][2021b-5507-v03-07], ( 6 minutes). First line names
-+ [V03-08][2021b-5507-v03-08], ( x minutes). Live demo SODA
-+ [V03-09][2021b-5507-v03-09], ( x minutes). Live demo Remote Labs SAS
-+ [V03-10][2021b-5507-v03-10], ( x minutes). Your homework
-+ [V03-99][2021b-5507-v03-99], (12 minutes). Evil tab character
++ [V03-08][2021b-5507-v03-08], (16 minutes). Live demo SODA
++ [V03-09][2021b-5507-v03-09], (41 minutes). Live demo Remote Labs SAS
++ [V03-10][2021b-5507-v03-10], (18 minutes). Your homework
 
 Note: This last recording was from an earlier class, and refers to a homework assignment that I ditched because it was too complicated. The video explains that a large part of the reason the assignment was confusing was because of the evil tab character. It explains very clearly why the tab character is evil. It is well worth watching, even though it references an obsolete homework assignment.
 
@@ -139,9 +138,9 @@ Note: This last recording was from an earlier class, and refers to a homework as
 [2021b-5507-v03-05]:  https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=8081cdf5-d018-4fca-bd6a-ad5601484ad7
 [2021b-5507-v03-06]:  https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=dc031106-04cd-4ad3-a856-ad560149e53a
 [2021b-5507-v03-07]:  https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=35ec8b62-2396-43d3-804c-ad56014c04ee
-
-[2021b-5507-v03-10]:  https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=c5df8783-9221-4ff1-8b57-ad56015faa80
-[2021b-5507-v03-99]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=0ce9339f-f3c9-4bb3-908e-aa790131a2a9
+[2021b-5507-v03-08]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=b978e0cb-62f0-4b61-8e41-aec70102fec2
+[2021b-5507-v03-09]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=ea5e17e3-3b36-41e2-8300-aec7013a06f6
+[2021b-5507-v03-10]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=9c9f531a-2dff-48fd-9ba8-aec800e0df8c
 
 ### Active learning
 
