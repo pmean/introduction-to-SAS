@@ -47,20 +47,18 @@ You will also see the following SAS keywords and procedures
 + where
 + with
 
-
 ### Reading and Resources
 
 Handouts associated with videos
 
 + Slides and speaker notes
-  + [pdf format][v02-pdf] or
-  + [powerpoint format][v02-pptx].
+  + [pdf format][slides.pdf] or
+  + [powerpoint format][slides.pptx].
+  + [The R program used to create these slides][slides.rmd]
 
-[v02-pdf]: https://github.com/pmean/introduction-to-sas/blob/master/results/5507-02-simon-slides-and-speaker-notes.pdf
-
-[v02-pptx]: https://github.com/pmean/introduction-to-SAS/blob/master/results/5507-02-simon-slides-and-speaker-notes.pptx
-
-
+[slides.pdf]: https://github.com/pmean/introduction-to-sas/blob/master/results/5507-02-simon-slides-and-speaker-notes.pdf
+[slides.pptx]: https://github.com/pmean/introduction-to-SAS/blob/master/results/5507-02-simon-slides-and-speaker-notes.pptx
+[slides.rmd]: https://github.com/pmean/introduction-to-SAS/blob/master/src/5507-02-simon-slides-and-speaker-notes.Rmd
 
 Datasets used in this module
 
