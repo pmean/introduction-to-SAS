@@ -1,7 +1,7 @@
 ---
-title: "MEDB 5507, Introduction to SAS, Module05, Overview"
+title: "MEDB 5507, Introduction to SAS, Module06, Overview"
 authors: Steve Simon
-date: Created 2022-07-02
+date: Created 2022-07-10
 knit: (function(inputFile, encoding) {
   rmarkdown::render(inputFile, encoding = encoding,
   output_dir = "../results", output_format = "all") }) 
@@ -9,23 +9,19 @@ knit: (function(inputFile, encoding) {
 
 ### Synopsis
 
-Most datasets will have a mix of categorical and continuous variables. In this module, you will review how to summarize continuous variables, how to summarize categorical variables, and how to examine the relationship between variables when one is categorical and the other is continuous.
+You should develop good programming habits early in your programming career so those habits become almost instinctive. These habits will make it easier for you when you have to review your work months or years into the future. They will also help anyone who has to take over your work. Finally, they will help simplify the division of labor in team projects.
 
 ### Learning objectives
 
 In this module, you will learn about
 
-+ boxplots for a relationship between a continuous and a categorical variable,
-+ the by statement to produce group means and standard deviations.
- 
-You will also see the following SAS keywords:
-
-+ by
-+ category
-+ format
-+ proc format
-+ proc freq
-+ vbox
++ data management
++ collaboration tools
++ standard directory structure
++ version control
++ Markdown and LaTeX for document preparation
++ program documentation
++ data dictionaries
 
 ### Reading and Resources
 
@@ -35,31 +31,11 @@ Handouts associated with videos
   + [pdf format][slides.pdf] or
   + [powerpoint format][slides.pptx].
   + [The R program used to create these slides][slides.Rmd]
-
-[slides.pdf]: https://github.com/pmean/introduction-to-sas/blob/master/results/5507-05-simon-slides-and-speaker-notes.pdf
-[slides.pptx]: https://github.com/pmean/introduction-to-SAS/blob/master/results/5507-05-simon-slides-and-speaker-notes.pptx
-[slides.rmd]: https://github.com/pmean/introduction-to-sas/blob/master/src/5507-05-simon-slides-and-speaker-notes.Rmd
-
-Here are the SAS programs used in the videos.
-
-+ [5507-05-simon-working-with-a-mix-of-variables.sas][working-with-a-mix.sas].
-
-[working-with-a-mix.sas]: https://github.com/pmean/introduction-to-sas/blob/master/src/5507-05-simon-working-with-a-mix-of-variables.sas
-
-Datasets used in this module 
-
-+ FEV
-  + [Comma delimited text file][fev.txt]
-  + [Data dictionary][fev.yaml]
-+ Housing
-  + [Tab delimited text file][housing.txt]
-  + [Data dictionary][housing.yaml]
-
-[fev.txt]: https://github.com/pmean/introduction-to-SAS/blob/master/data/fev.txt
-[fev.yaml]: https://github.com/pmean/introduction-to-SAS/blob/master/data/fev-data-dictionary.yaml
-
-[housing.txt]: https://github.com/pmean/introduction-to-SAS/blob/master/data/titanic.txt
-[housing.yaml]: https://github.com/pmean/introduction-to-SAS/blob/master/data/housing-data-dictionary.yaml
+  
+[git1]: https://github.com/pmean/classes/blob/master/software-engineering/results/good-documentation.pdf
+[git2]: https://github.com/pmean/classes/blob/master/software-engineering/results/good-documentation.pptx
+[git5]: https://github.com/pmean/classes/blob/master/software-engineering/results/data-dictonary.pdf
+[git6]: https://github.com/pmean/classes/blob/master/software-engineering/results/data-dictonary.pptx
 
 Here are the homework solutions (code and output) from the previous module. Compare your code to ours, but only after submitting your work.
 
@@ -92,14 +68,34 @@ Here are the homework solutions (code and output) from the previous module. Comp
 
 ### Videos
 
-Total video time, 18+ minutes. All videos are in Panopto format. If you are using SODA (SAS On Demand for Academics), you do not need to view the Remote Labs live demo (though it doesn't hurt). If you are using SAS on Remote Labs, you do not need to view the SODA live demo.
+Total video time, 122 minutes. All videos are in Panopto format.
 
-+ [V05-01][2021b-5507-v05-01], ( 4 minutes). Means and frequency counts
-+ [V05-02][2021b-5507-v05-02], ( 3 minutes). Correlations and scatterplots
-+ [V05-03][2021b-5507-v05-03], ( 3 minutes). Boxplots
-+ [V05-04][2021b-5507-v05-04], ( 4 minutes). Means by group
-+ [V05-05][2021b-5507-v05-05], ( 4 minutes). Investigating an odd association
-+ V05-06, (xx minutes). Your homework
+Good computing practices
+
++ [Part 1][p1]. (23 minutes)
++ [Part 2][p2]. (11 minutes)
++ [Part 3][p3]. ( 8 minutes)
++ [Part 4][p4]. ( 8 minutes)
++ [Part 5][p5]. (11 minutes)
++ [Part 6][p6]. (20 minutes)
++ [Part 7][p7]. (14 minutes)
+
+Other videos
+
++ [Documentation][p8] ( 20 minutes)
++ [Data dictionary][p9] ( 7 minutes)
+
+[p1]: 
+[gcp1]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=55cf0d09-3647-4135-8354-ab1901530b60
+[gcp2]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=c4813050-49b8-4ff3-a649-ab190159a79c
+[gcp3]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=88c130ee-7317-490f-b6af-ab19015daa71
+[gcp4]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=4fb06e69-fb02-429b-bb08-ab1901610c71
+[gcp5]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=ddc5da52-8300-4f12-996e-ab1901641800
+[gcp6]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=681ca99d-55bf-4c7c-a1e4-ab190167c797
+[gcp7]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=31ad3ca7-2db7-4d1d-a5a8-ab19016db1c6
+[gcp8]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=7d2c7fa4-8d74-45d2-a5ce-aa920149c1cb
+[gcp9]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=1aea13b5-e635-42df-9227-aa92015cdc9b
+
 
 [2021b-5507-v05-01]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=73345cc2-e7cc-440b-82d8-ad6a01069061
 [2021b-5507-v05-02]: https://umsystem.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=0f22f408-d33e-4740-a1d1-ad6a01081402

@@ -71,7 +71,7 @@ Datasets used in this module
 [gardasil.csv]: https://github.com/pmean/introduction-to-SAS/blob/master/data/gardasil.csv
 [gardasil.yaml]: https://github.com/pmean/introduction-to-SAS/blob/master/data/gardasil-data-dictionary.yaml
 
-[titanic.csv]: https://github.com/pmean/introduction-to-SAS/blob/master/data/titanic.txt
+[titanic.txt]: https://github.com/pmean/introduction-to-SAS/blob/master/data/titanic.txt
 [titanic.yaml]: https://github.com/pmean/introduction-to-SAS/blob/master/data/titanic-data-dictionary.yaml
 
 ### Recommended readings
