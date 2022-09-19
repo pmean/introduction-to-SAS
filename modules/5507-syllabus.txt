@@ -36,7 +36,7 @@ What is the format of this course?
   Asynchronous online.
 
 What is this course about (Course Description)?	 
-  SAS is a very popular and very powerful software system for data management and data analysis. In this class, you will learn basic features of SAS that will help you.
+  SAS is a very popular and very powerful software system for data management and data analysis. In this class, you will learn basic features of SAS that will help you get started with importing data, cleaning it, and preparing simple tables and graphs.
 
 What are the knowledge, skills or perspectives (Student Learning Outcomes) that I will gain from the course?	
   You will learn how to read data into SAS from a variety of text formats, how to manipulate data, and how to produce simple tables of descriptive statists and some basic graphs.
