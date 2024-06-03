@@ -1,7 +1,7 @@
 * 5507-01-simon-permanent-storage.sas
   author: Steve Simon
   date: created 2022-06-06
-  purpose: to read and prints a small dataset
+  purpose: to read and print a small dataset
   license: public domain;
 
 libname perm "q:/introduction-to-sas/data";
